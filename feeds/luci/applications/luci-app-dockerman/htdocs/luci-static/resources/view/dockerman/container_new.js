@@ -19,6 +19,20 @@ can now only be configured via endpoint settings when connecting to a network.
 
 */
 
+function formatCommandArg(arg) {
+	if (arg === '' || /[\s"'\\]/.test(arg))
+		return '"' + arg.replace(/\\/g, '\\\\').replace(/"/g, '\\"') + '"';
+
+	return arg;
+}
+
+function parseCommand(command) {
+	return (command.match(/(?:[^\s"\\]+|\\.|"(?:[^"\\]|\\.)*")+/g) || []).map(arg => {
+		const value = arg.startsWith('"') && arg.endsWith('"') ? arg.slice(1, -1) : arg;
+		return value.replace(/\\(["\\])/g, '$1');
+	});
+}
+
 return dm2.dv.extend({
 	load() {
 		const requestPath = L.env.requestpath;
@@ -148,12 +162,7 @@ return dm2.dv.extend({
 					}
 					return ports;
 				})(),
-				command: c.Config?.Cmd ? c.Config?.Cmd.map(arg => {
-					if (arg.includes(' ') || arg.includes('"') || arg.includes("'")) {
-						return '"' + arg.replace(/"/g, '\\"') + '"';
-					}
-					return arg;
-				}).join(' ') : '',
+				command: c.Config?.Cmd ? c.Config.Cmd.map(formatCommandArg).join(' ') : '',
 				hostname: c.Config?.Hostname || '',
 				publish_all: hostConfig.PublishAllPorts ? 1 : 0,
 				device: (hostConfig.Devices || []).map(d => d.PathOnHost + ':' + d.PathInContainer + (d.CgroupPermissions ? ':' + d.CgroupPermissions : '')),
@@ -799,7 +808,7 @@ return dm2.dv.extend({
 					Tty: toBool(get('tty')),
 					OpenStdin: toBool(get('interactive')),
 					Env: get('env'),
-					Cmd: command ? (command.match(/(?:[^\s"]+|"[^"]*")+/g) || []).map(arg => arg.replace(/^"|"$/g, '')) : null,
+					Cmd: command ? parseCommand(command) : null,
 					Image: get('image'),
 					HostConfig: {
 						CpuShares: toInt(get('cpu_shares')),
