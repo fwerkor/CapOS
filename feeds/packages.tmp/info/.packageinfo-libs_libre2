@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/libs/libre2/Makefile
 
 Package: re2
-Version: 2023.02.01~b025c6a3ae05995660e3b882eb3277f4399ced1a-r1
+Version: 2023.02.01~b025c6a3ae05995660e3b882eb3277f4399ced1a-r2
 Depends: +libc +libstdcpp
 Conflicts: 
 Menu-Depends: 

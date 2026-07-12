@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/admin/debootstrap/Makefile
 
 Package: debootstrap
-Version: 1.0.128.2~deb121-r2
+Version: 1.0.143-r1
 Depends: +libc +coreutils +coreutils-chroot +coreutils-sha1sum +ar +xz-utils +xz
 Conflicts: 
 Menu-Depends: 
@@ -11,7 +11,7 @@ Category: Administration
 Repository: base
 Title: Bootstrap a basic Debian system
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: debootstrap-udeb_1.0.128+nmu2+deb12u1_all.udeb
+Source: debootstrap-udeb_1.0.143_all.udeb
 License: Unique
 LicenseFiles: debian/copyright
 URL: https://wiki.debian.org/Debootstrap

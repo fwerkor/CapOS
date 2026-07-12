@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/net/dante/Makefile
 Build-Depends: USE_MUSL:libtirpc
 
 Package: libsocks
-Version: 1.4.4-r2
+Version: 1.4.4-r3
 Depends: +libc +USE_GLIBC:libcrypt-compat
 Conflicts: 
 Menu-Depends: 
@@ -27,7 +27,7 @@ This package provides the shared libsocks library.
 
 Package: sockd
 Submenu: Web Servers/Proxies
-Version: 1.4.4-r2
+Version: 1.4.4-r3
 Depends: +libc +USE_GLIBC:libcrypt-compat
 Conflicts: 
 Menu-Depends: 
@@ -51,7 +51,7 @@ This package provides the Dante sockd daemon.
 
 Package: socksify
 Submenu: Web Servers/Proxies
-Version: 1.4.4-r2
+Version: 1.4.4-r3
 Depends: +libc +USE_GLIBC:libcrypt-compat
 Conflicts: 
 Menu-Depends: 

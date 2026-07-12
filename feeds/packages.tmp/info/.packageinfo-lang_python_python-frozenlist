@@ -1,9 +1,10 @@
 Source-Makefile: feeds/packages/lang/python/python-frozenlist/Makefile
+Build-Depends: python-setuptools/host python-expandvars/host python-cython/host
 
 Package: python3-frozenlist
 Submenu: Python
-Version: 1.4.0-r1
-Depends: +libc +python3-light
+Version: 1.8.0-r1
+Depends: +libc +python3-light +libstdcpp
 Conflicts: 
 Menu-Depends: 
 Provides: @python3-frozenlist-any
@@ -12,7 +13,7 @@ Category: Languages
 Repository: base
 Title: List-like structure
 Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: frozenlist-1.4.0.tar.gz
+Source: frozenlist-1.8.0.tar.gz
 License: Apache-2.0
 LicenseFiles: LICENSE
 URL: https://github.com/aio-libs/frozenlist
@@ -25,7 +26,7 @@ RuntimeError.
 
 Package: python3-frozenlist-src
 Submenu: Python
-Version: 1.4.0-r1
+Version: 1.8.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -35,7 +36,7 @@ Category: Languages
 Repository: base
 Title: List-like structure (sources)
 Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: frozenlist-1.4.0.tar.gz
+Source: frozenlist-1.8.0.tar.gz
 License: Apache-2.0
 LicenseFiles: LICENSE
 URL: https://github.com/aio-libs/frozenlist

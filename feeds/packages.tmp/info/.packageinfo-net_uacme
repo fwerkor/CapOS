@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/net/uacme/Makefile
 
 Package: uacme
-Version: 1.7.6-r1
-Depends: +libc +libcurl +LIBCURL_WOLFSSL:libmbedtls
+Version: 1.8.1-r3
+Depends: +libc +libcurl +LIBCURL_WOLFSSL:libmbedtls +acme-common
 Conflicts: 
 Menu-Depends: 
-Provides: @uacme-any
+Provides: @uacme-any @acme
 Section: net
 Category: Network
 Repository: base
 Title: lightweight client for ACMEv2
 Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
-Source: uacme-1.7.6.tar.gz
+Source: uacme-1.8.1.tar.gz
 License: GPL-3.0-or-later
 LicenseFiles: COPYING
 URL: https://github.com/ndilieto/uacme
@@ -33,7 +33,7 @@ endif
 @@
 
 Package: uacme-ualpn
-Version: 1.7.6-r1
+Version: 1.8.1-r3
 Depends: +libc +uacme +PACKAGE_uacme-ualpn:libev
 Conflicts: 
 Menu-Depends: 
@@ -43,12 +43,31 @@ Category: Network
 Repository: base
 Title: ualpn for uacme
 Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
-Source: uacme-1.7.6.tar.gz
+Source: uacme-1.8.1.tar.gz
 License: GPL-3.0-or-later
 LicenseFiles: COPYING
 URL: https://github.com/ndilieto/uacme
 Type: ipkg
 Description: ualpn for uacme
+@@
+
+Package: uacme-dnsapi-adapter
+Version: 1.8.1-r3
+Depends: +libc +uacme +acme-acmesh-dnsapi +curl
+Conflicts: 
+Menu-Depends: 
+Provides: @uacme-dnsapi-adapter-any
+Section: net
+Category: Network
+Repository: base
+Title: adapter script for use acme.sh dnsapi with uacme
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: uacme-1.8.1.tar.gz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+URL: https://github.com/ndilieto/uacme
+Type: ipkg
+Description: adapter script for use acme.sh dnsapi with uacme
 @@
 
 

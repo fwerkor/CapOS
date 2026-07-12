@@ -3,7 +3,7 @@ Source-Makefile: feeds/packages/net/rsync/Makefile
 Package: rsync
 Menu: 1
 Submenu: File Transfer
-Version: 3.4.1-r3
+Version: 3.4.3-r1
 Depends: +libc +libpopt +zlib +RSYNC_xattr:libattr +RSYNC_acl:libacl +RSYNC_zstd:libzstd +RSYNC_xxhash:libxxhash +RSYNC_lz4:liblz4 +BUILD_NLS:libiconv-full
 Conflicts: 
 Menu-Depends: 
@@ -13,7 +13,7 @@ Category: Network
 Repository: base
 Title: an open source utility that provides fast incremental file transfer
 Maintainer: Maxim Storchak <m.storchak@gmail.com>
-Source: rsync-3.4.1.tar.gz
+Source: rsync-3.4.3.tar.gz
 License: GPL-3.0-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:rsync:rsync
@@ -33,7 +33,7 @@ Config:
 
 Package: rsyncd
 Submenu: File Transfer
-Version: 3.4.1-r3
+Version: 3.4.3-r1
 Depends: +libc +rsync
 Conflicts: 
 Menu-Depends: 
@@ -44,7 +44,7 @@ Repository: base
 Title: Rsync daemon
 Maintainer: Maxim Storchak <m.storchak@gmail.com>
 Require-User: rsyncd=976:rsyncd=976
-Source: rsync-3.4.1.tar.gz
+Source: rsync-3.4.3.tar.gz
 License: GPL-3.0-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:rsync:rsync
@@ -56,7 +56,7 @@ Description:  rsyncd is a configuration file and initscript to utilize rsync as 
 
 Package: rrsync
 Submenu: File Transfer
-Version: 3.4.1-r3
+Version: 3.4.3-r1
 Depends: +libc +rsync python3-light @(PACKAGE_openssh-server||PACKAGE_openssh-server-pam||(PACKAGE_dropbear&&DROPBEAR_SVR_PUBKEY_OPTIONS))
 Conflicts: 
 Menu-Depends: 
@@ -66,7 +66,7 @@ Category: Network
 Repository: base
 Title: Restricted rsync script
 Maintainer: Maxim Storchak <m.storchak@gmail.com>
-Source: rsync-3.4.1.tar.gz
+Source: rsync-3.4.3.tar.gz
 License: GPL-3.0-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:rsync:rsync

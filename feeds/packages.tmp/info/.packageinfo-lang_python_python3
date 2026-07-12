@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/lang/python/python3/Makefile
 Build-Depends: bluez python3/host python-build/host python-installer/host python-wheel/host
-Build-Depends/host: bzip2/host libffi/host
+Build-Depends/host: bzip2/host libffi/host ncurses/host
 Build-Types: host
 
 Package: libpython3
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +libpthread +libatomic
 Conflicts: 
 Menu-Depends: 
@@ -38,7 +38,7 @@ This package contains only core Python library.
 
 Package: python3
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3-light +python3-asyncio +python3-codecs +python3-ctypes +python3-dbm +python3-decimal +python3-email +python3-logging +python3-lzma +python3-multiprocessing +python3-ncurses +python3-openssl +python3-pydoc +python3-readline +python3-sqlite3 +python3-unittest +python3-urllib +python3-uuid +python3-xml
 Conflicts: 
 Menu-Depends: 
@@ -71,7 +71,7 @@ installation.
 
 Package: python3-base
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +libpython3
 Conflicts: 
 Menu-Depends: 
@@ -104,7 +104,7 @@ interpreter to start.
 
 Package: python3-light
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3-base +libbz2 +zlib +USE_GLIBC:libcrypt-compat
 Conflicts: 
 Menu-Depends: 
@@ -140,7 +140,7 @@ Config:
 
 Package: python3-base-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -178,7 +178,7 @@ Config:
 
 Package: python3-light-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -216,7 +216,7 @@ Config:
 
 Package: python3-asyncio
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
@@ -248,7 +248,7 @@ This package contains the asyncio module.
 
 Package: python3-asyncio-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -285,7 +285,7 @@ Config:
 
 Package: python3-codecs
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
@@ -317,7 +317,7 @@ This package contains codecs and Unicode support.
 
 Package: python3-codecs-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -354,7 +354,7 @@ Config:
 
 Package: python3-ctypes
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3-light +libffi
 Conflicts: 
 Menu-Depends: 
@@ -386,7 +386,7 @@ This package contains the ctypes module.
 
 Package: python3-ctypes-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -423,7 +423,7 @@ Config:
 
 Package: python3-dbm
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3-light +libgdbm
 Conflicts: 
 Menu-Depends: 
@@ -455,7 +455,7 @@ This package contains the dbm module.
 
 Package: python3-dbm-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -492,7 +492,7 @@ Config:
 
 Package: python3-decimal
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
@@ -524,7 +524,7 @@ This package contains the decimal module.
 
 Package: python3-decimal-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -561,7 +561,7 @@ Config:
 
 Package: python3-dev
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3
 Conflicts: 
 Menu-Depends: 
@@ -594,7 +594,7 @@ Python interpreter, or embedded Python in applications.
 
 Package: python3-dev-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -632,7 +632,7 @@ Config:
 
 Package: python3-email
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
@@ -664,7 +664,7 @@ This package contains the email module.
 
 Package: python3-email-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -701,7 +701,7 @@ Config:
 
 Package: python3-logging
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
@@ -733,7 +733,7 @@ This package contains the logging module.
 
 Package: python3-logging-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -770,7 +770,7 @@ Config:
 
 Package: python3-lzma
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3-light +liblzma
 Conflicts: 
 Menu-Depends: 
@@ -802,7 +802,7 @@ This package contains the lzma module.
 
 Package: python3-lzma-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -839,7 +839,7 @@ Config:
 
 Package: python3-multiprocessing
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
@@ -871,7 +871,7 @@ This package contains the multiprocessing module.
 
 Package: python3-multiprocessing-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -908,7 +908,7 @@ Config:
 
 Package: python3-ncurses
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3-light +libncursesw
 Conflicts: 
 Menu-Depends: 
@@ -940,7 +940,7 @@ This package contains the ncurses module.
 
 Package: python3-ncurses-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -977,7 +977,7 @@ Config:
 
 Package: python3-openssl
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3-light +libopenssl +ca-certs
 Conflicts: 
 Menu-Depends: 
@@ -1009,7 +1009,7 @@ This package contains the ssl module.
 
 Package: python3-openssl-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -1046,7 +1046,7 @@ Config:
 
 Package: python3-pydoc
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
@@ -1078,7 +1078,7 @@ This package contains the pydoc module.
 
 Package: python3-pydoc-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -1115,7 +1115,7 @@ Config:
 
 Package: python3-readline
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3-light +libreadline
 Conflicts: 
 Menu-Depends: 
@@ -1147,7 +1147,7 @@ This package contains the readline module.
 
 Package: python3-readline-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -1184,7 +1184,7 @@ Config:
 
 Package: python3-sqlite3
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3-light +libsqlite3
 Conflicts: 
 Menu-Depends: 
@@ -1216,7 +1216,7 @@ This package contains the sqlite3 module.
 
 Package: python3-sqlite3-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -1253,7 +1253,7 @@ Config:
 
 Package: python3-unittest
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
@@ -1285,7 +1285,7 @@ This package contains the unittest module.
 
 Package: python3-unittest-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -1322,7 +1322,7 @@ Config:
 
 Package: python3-urllib
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3-light +python3-email
 Conflicts: 
 Menu-Depends: 
@@ -1354,7 +1354,7 @@ This package contains the URL handling modules.
 
 Package: python3-urllib-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -1391,7 +1391,7 @@ Config:
 
 Package: python3-uuid
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3-light +libuuid
 Conflicts: 
 Menu-Depends: 
@@ -1423,7 +1423,7 @@ This package contains the uuid module.
 
 Package: python3-uuid-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -1460,7 +1460,7 @@ Config:
 
 Package: python3-venv
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3
 Conflicts: 
 Menu-Depends: 
@@ -1492,7 +1492,7 @@ This package contains the venv module.
 
 Package: python3-venv-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -1529,7 +1529,7 @@ Config:
 
 Package: python3-xml
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc +python3-light +python3-urllib
 Conflicts: 
 Menu-Depends: 
@@ -1561,7 +1561,7 @@ This package contains the XML modules.
 
 Package: python3-xml-src
 Submenu: Python
-Version: 3.13.9-r2
+Version: 3.13.9-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 

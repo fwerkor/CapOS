@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/utils/watchcat/Makefile
 
 Package: watchcat
-Version: 1-r20
+Version: 1-r22
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 

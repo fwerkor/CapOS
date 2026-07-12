@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/lang/python/python-async-generator/Makefile
 
 Package: python3-async-generator
 Submenu: Python
-Version: 1.10-r1
+Version: 1.10-r2
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
@@ -13,8 +13,8 @@ Repository: base
 Title: Async generators and context managers for Python 3.5+
 Maintainer: Julien Malik <julien.malik@paraiso.me>
 Source: async_generator-1.10.tar.gz
-License: Apache-2.0|MIT
-LicenseFiles: LICENSE.APACHE2|LICENSE.MIT
+License: Apache-2.0 MIT
+LicenseFiles: LICENSE.APACHE2 LICENSE.MIT
 URL: https://github.com/python-trio/async_generator
 Type: ipkg
 Description:   Python 3.6 added async generators. Python 3.7 adds some more tools to make them usable, like contextlib.asynccontextmanager.
@@ -24,7 +24,7 @@ Description:   Python 3.6 added async generators. Python 3.7 adds some more tool
 
 Package: python3-async-generator-src
 Submenu: Python
-Version: 1.10-r1
+Version: 1.10-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -35,8 +35,8 @@ Repository: base
 Title: Async generators and context managers for Python 3.5+ (sources)
 Maintainer: Julien Malik <julien.malik@paraiso.me>
 Source: async_generator-1.10.tar.gz
-License: Apache-2.0|MIT
-LicenseFiles: LICENSE.APACHE2|LICENSE.MIT
+License: Apache-2.0 MIT
+LicenseFiles: LICENSE.APACHE2 LICENSE.MIT
 URL: https://github.com/python-trio/async_generator
 Type: ipkg
 Description:       Python 3.6 added async generators. Python 3.7 adds some more tools to make them usable, like contextlib.asynccontextmanager.

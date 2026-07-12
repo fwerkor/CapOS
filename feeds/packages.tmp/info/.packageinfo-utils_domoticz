@@ -2,8 +2,8 @@ Source-Makefile: feeds/packages/utils/domoticz/Makefile
 Build-Depends: python3 minizip cereal boost jwt-cpp
 
 Package: domoticz
-Version: 2025.2-r1
-Depends: +libc +boost +boost-date_time +boost-thread +jsoncpp +libcurl +python3 +minizip +lua5.3 +libfmt +libmosquitto +libopenssl +libopenzwave +libsqlite3 +libstdcpp +telldus-core +zlib
+Version: 2025.2-r4
+Depends: +libc +boost +boost-date_time +boost-thread +jsoncpp +libcurl +python3 +minizip +lua5.3 +libfmt +libmosquitto +libopenssl +libopenzwave +libsqlite3 +libstdcpp +zlib
 Conflicts: 
 Menu-Depends: 
 Provides: @domoticz-any

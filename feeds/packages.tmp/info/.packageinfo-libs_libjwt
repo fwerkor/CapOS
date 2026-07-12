@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/libs/libjwt/Makefile
 
 Package: libjwt
-Version: 1.17.1-r1
+Version: 1.17.1-r2
 Depends: +libc +libopenssl +jansson
 Conflicts: 
 Menu-Depends: 

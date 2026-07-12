@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/libs/tinycdb/Makefile
 
 Package: tinycdb
-Version: 0.78-r2
+Version: 0.78-r4
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 

@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/libs/libpam/Makefile
 
 Package: libpam
-Version: 1.7.1-r4
+Version: 1.7.1-r5
 Depends: +libc +USE_GLIBC:libcrypt-compat
 Conflicts: 
 Menu-Depends: 
@@ -12,8 +12,8 @@ Repository: base
 Title: the Linux-PAM libraries and modules.
 Maintainer: Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
 Source: Linux-PAM-1.7.1.tar.xz
-License: BSD-3c GPL
-LicenseFiles: COPYING Copyright
+License: BSD-3-Clause GPL-2.0-or-later
+LicenseFiles: COPYING Copyright libpamc/License
 CPE-ID: cpe:/a:linux-pam:linux-pam
 URL: http://www.kernel.org/pub/linux/libs/pam
 Type: ipkg

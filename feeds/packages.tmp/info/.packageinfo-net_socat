@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/net/socat/Makefile
 
 Package: socat
-Version: 1.8.0.3-r2
+Version: 1.8.1.1-r1
 Depends: +libc +libpthread +librt +SOCAT_SSL:libopenssl
 Conflicts: 
 Menu-Depends: 
@@ -11,7 +11,7 @@ Category: Network
 Repository: base
 Title: A multipurpose relay (SOcket CAT)
 Maintainer: Ted Hess <thess@kitschensync.net>
-Source: socat-1.8.0.3.tar.bz2
+Source: socat-1.8.1.1.tar.bz2
 License: GPL-2.0-or-later OpenSSL
 LicenseFiles: COPYING COPYING.OpenSSL
 CPE-ID: cpe:/a:dest-unreach:socat
@@ -28,6 +28,7 @@ Config:
 config SOCAT_SSL
         bool "SSL support"
         depends on PACKAGE_socat
+        select OPENSSL_WITH_DEPRECATED
         default n
         help
           Implements SSL support in socat (using libopenssl).

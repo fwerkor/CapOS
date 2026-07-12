@@ -3,7 +3,7 @@ Build-Depends: golang/host
 
 Package: rclone
 Submenu: File Transfer
-Version: 1.72.1-r1
+Version: 1.74.1-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +ca-bundle +fuse3-utils
 Conflicts: 
 Menu-Depends: 
@@ -14,7 +14,7 @@ Repository: base
 Title: rsync for cloud storage
 Maintainer: Elon Huang <elonhhuang@gmail.com> Tianling Shen <cnsztl@immortalwrt.org>
 Require-User: rclone:rclone
-Source: rclone-1.72.1.tar.gz
+Source: rclone-1.74.1.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:rclone:rclone
@@ -26,7 +26,7 @@ Description:   Rclone ("rsync for cloud storage") is a command line program to s
 
 Package: rclone-config
 Submenu: File Transfer
-Version: 1.72.1-r1
+Version: 1.74.1-r1
 Depends: +libc +rclone
 Conflicts: 
 Menu-Depends: 
@@ -36,7 +36,7 @@ Category: Network
 Repository: base
 Title: rsync for cloud storage (Config Scripts)
 Maintainer: Elon Huang <elonhhuang@gmail.com> Tianling Shen <cnsztl@immortalwrt.org>
-Source: rclone-1.72.1.tar.gz
+Source: rclone-1.74.1.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:rclone:rclone

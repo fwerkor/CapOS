@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/admin/htop/Makefile
 Build-Depends: HTOP_LMSENSORS:lm-sensors
 
 Package: htop
-Version: 3.4.1-r1
+Version: 3.5.1-r1
 Depends: +libc +libncurses
 Conflicts: 
 Menu-Depends: 
@@ -12,7 +12,7 @@ Category: Administration
 Repository: base
 Title: Interactive processes viewer
 Maintainer: Etienne CHAMPETIER <champetier.etienne@gmail.com>
-Source: htop-3.4.1.tar.gz
+Source: htop-3.5.1.tar.gz
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:htop:htop

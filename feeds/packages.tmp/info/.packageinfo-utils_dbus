@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/utils/dbus/Makefile
 
 Package: libdbus
-Version: 1.16.2-r3
+Version: 1.16.2-r4
 Depends: +libc +libpthread
 Conflicts: 
 Menu-Depends: 
@@ -21,7 +21,7 @@ Description: Simple interprocess messaging system (library)
 @@
 
 Package: dbus
-Version: 1.16.2-r3
+Version: 1.16.2-r4
 Depends: +libc +libexpat +libdbus
 Conflicts: 
 Menu-Depends: 
@@ -44,7 +44,7 @@ Config:
 @@
 
 Package: dbus-utils
-Version: 1.16.2-r3
+Version: 1.16.2-r4
 Depends: +libc +dbus
 Conflicts: 
 Menu-Depends: 

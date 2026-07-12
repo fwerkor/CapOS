@@ -4,7 +4,7 @@ Build-Types: host
 
 Package: node
 Submenu: Node.js
-Version: 22.22.0-r1
+Version: 22.23.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -14,7 +14,7 @@ Category: Languages
 Repository: base
 Title: Node.js is a platform built on Chrome's JavaScript runtime
 Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>, Adrian Panella <ianchi74@outlook.com>
-Source: node-v22.22.0.tar.gz
+Source: node-v22.23.0.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:nodejs:node.js

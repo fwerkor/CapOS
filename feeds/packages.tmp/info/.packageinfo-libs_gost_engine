@@ -4,7 +4,7 @@ MOD_TYPE='engine'; MOD_NAME='gost'; MOD_DIR='/usr/lib/engines-3' OSSL_PKG='libop
 
 Package: libopenssl-gost_engine
 Submenu: SSL
-Version: 3.0.3-r11
+Version: 3.0.3-r12
 Depends: +libc libopenssl +libopenssl-conf @OPENSSL_ENGINE
 Conflicts: 
 Menu-Depends: 
@@ -29,7 +29,7 @@ GOST2001-GOST89-GOST89
 
 Package: gost_engine-util
 Submenu: SSL
-Version: 3.0.3-r11
+Version: 3.0.3-r12
 Depends: +libc +libopenssl-gost_engine
 Conflicts: 
 Menu-Depends: 

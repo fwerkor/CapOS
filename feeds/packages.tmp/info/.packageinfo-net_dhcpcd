@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/net/dhcpcd/Makefile
 
 Package: dhcpcd
-Version: 10.0.10-r1
+Version: 10.0.10-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -13,7 +13,8 @@ Title: DHCPv4/IPv4LL/IPv6RS/DHCPv6 quad stack client
 Maintainer: Marko Ratkaj <markoratkaj@gmail.com>
 Require-User: dhcpcd:dhcpcd
 Source: dhcpcd-10.0.10.tar.xz
-License: BSD-2c
+License: BSD-2-Clause
+LicenseFiles: LICENSE
 CPE-ID: cpe:/a:roy_marples:dhcpcd
 URL: http://roy.marples.name/projects/dhcpcd
 Type: ipkg

@@ -1,8 +1,8 @@
 Source-Makefile: feeds/packages/utils/lpac/Makefile
 
 Package: lpac
-Version: 2.2.1-r2
-Depends: +libc +LPAC_WITH_PCSC:libpcsclite +LPAC_WITH_PCSC:pcscd +LPAC_WITH_MBIM:libmbim +libcurl
+Version: 2.3.0-r1
+Depends: +libc +libcurl +LPAC_WITH_PCSC:libpcsclite +LPAC_WITH_PCSC:pcscd +LPAC_WITH_MBIM:libmbim +LPAC_WITH_UQMI:uqmi
 Conflicts: 
 Menu-Depends: 
 Provides: @lpac-any
@@ -11,7 +11,7 @@ Category: Utilities
 Repository: base
 Title: eUICC eSIM LPA written in C
 Maintainer: David Bauer <david.bauer@uniberg.com>
-Source: lpac-2.2.1.tar.gz
+Source: lpac-2.3.0.tar.gz
 License: AGPL-3.0-only LGPL-2.0-only
 URL: https://github.com/estkme-group/lpac
 Type: ipkg

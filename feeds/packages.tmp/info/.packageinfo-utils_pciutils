@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/utils/pciutils/Makefile
 
 Package: libpci
-Version: 3.14.0-r1
+Version: 3.14.0-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -20,7 +20,7 @@ Description: Linux PCI Libraries
 @@
 
 Package: pciutils
-Version: 3.14.0-r1
+Version: 3.14.0-r2
 Depends: +libc +libkmod +libpci +pciids
 Conflicts: 
 Menu-Depends: 

@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/utils/mbpoll/Makefile
 
 Package: mbpoll
-Version: 1.5.2-r1
+Version: 1.5.4-r1
 Depends: +libc +libmodbus
 Conflicts: 
 Menu-Depends: 
@@ -11,7 +11,7 @@ Category: Utilities
 Repository: base
 Title: Command line utility to communicate with Modbus slaves (RTU/TCP)
 Maintainer: Jens Wagner <jens@wagner2013.de>
-Source: mbpoll-1.5.2.tar.gz
+Source: mbpoll-1.5.4.tar.gz
 License: GPL-3.0-or-later
 LicenseFiles: COPYING
 URL: https://epsilonrt.fr/

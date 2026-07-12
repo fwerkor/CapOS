@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/multimedia/gstreamer1/Makefile
 Build-Depends: glib2/host gettext-full/host
 
 Package: libgst1check
-Version: 1.26.4-r1
+Version: 1.26.4-r2
 Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +libgstreamer1
 Conflicts: 
 Menu-Depends: 
@@ -25,7 +25,7 @@ Description:     GStreamer open source multimedia framework
 @@
 
 Package: libgst1controller
-Version: 1.26.4-r1
+Version: 1.26.4-r2
 Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +libgstreamer1
 Conflicts: 
 Menu-Depends: 
@@ -48,7 +48,7 @@ Description:     GStreamer open source multimedia framework
 @@
 
 Package: libgst1net
-Version: 1.26.4-r1
+Version: 1.26.4-r2
 Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +libgstreamer1
 Conflicts: 
 Menu-Depends: 
@@ -71,8 +71,8 @@ Description:     GStreamer open source multimedia framework
 @@
 
 Package: libgstreamer1
-Version: 1.26.4-r1
-Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +glib2 +libpthread +libxml2 +(powerpc||mips||mipsel):libatomic
+Version: 1.26.4-r2
+Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +glib2 +libpthread +libxml2 +(armeb||arm||powerpc||mips||mipsel):libatomic
 Conflicts: 
 Menu-Depends: 
 Provides: @libgstreamer1-any
@@ -94,7 +94,7 @@ Description:   GStreamer open source multimedia framework
 @@
 
 Package: gstreamer1-libs
-Version: 1.26.4-r1
+Version: 1.26.4-r2
 Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +ALL:gstreamer1
 Conflicts: 
 Menu-Depends: 
@@ -144,7 +144,7 @@ Config:
 @@
 
 Package: gstreamer1-utils
-Version: 1.26.4-r1
+Version: 1.26.4-r2
 Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +libgstreamer1 +gstreamer1-libs
 Conflicts: 
 Menu-Depends: 
@@ -166,7 +166,7 @@ Description:   GStreamer open source multimedia framework
 @@
 
 Package: gstreamer1
-Version: 1.26.4-r1
+Version: 1.26.4-r2
 Depends: +libc +libgstreamer1 +libgst1check +libgst1controller +libgst1net
 Conflicts: 
 Menu-Depends: 

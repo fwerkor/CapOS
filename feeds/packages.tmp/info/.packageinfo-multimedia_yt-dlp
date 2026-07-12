@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/multimedia/yt-dlp/Makefile
 Build-Depends: python-hatchling/host
 
 Package: yt-dlp
-Version: 2026.3.3-r1
+Version: 2026.3.17-r1
 Depends: +libc +ca-certificates +python3-asyncio +python3-codecs +python3-ctypes +python3-email +python3-logging +python3-openssl +python3-sqlite3 +python3-urllib +python3-uuid +python3-xml +quickjs
 Conflicts: 
 Menu-Depends: 
@@ -12,7 +12,7 @@ Category: Multimedia
 Repository: base
 Title: A feature-rich command-line audio/video downloader
 Maintainer: George Sapkin <george@sapk.in>
-Source: yt_dlp-2026.3.3.tar.gz
+Source: yt_dlp-2026.3.17.tar.gz
 License: Unlicense
 LicenseFiles: LICENSE THIRD_PARTY_LICENSES.txt
 CPE-ID: cpe:/a:yt-dlp_project:yt-dlp
@@ -23,7 +23,7 @@ Description:   yt-dlp is a feature-rich command-line audio/video downloader with
 @@
 
 Package: yt-dlp-src
-Version: 2026.3.3-r1
+Version: 2026.3.17-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -33,7 +33,7 @@ Category: Multimedia
 Repository: base
 Title: A feature-rich command-line audio/video downloader (sources)
 Maintainer: George Sapkin <george@sapk.in>
-Source: yt_dlp-2026.3.3.tar.gz
+Source: yt_dlp-2026.3.17.tar.gz
 License: Unlicense
 LicenseFiles: LICENSE THIRD_PARTY_LICENSES.txt
 CPE-ID: cpe:/a:yt-dlp_project:yt-dlp

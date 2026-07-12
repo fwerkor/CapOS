@@ -3,7 +3,7 @@ Build-Depends: rust/host pcre2
 
 Package: fish
 Submenu: Shells
-Version: 4.1.2-r2
+Version: 4.7.1-r1
 Depends: +libc @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64) +libpcre2 +libpcre2-32
 Conflicts: 
 Menu-Depends: 
@@ -13,7 +13,7 @@ Category: Utilities
 Repository: base
 Title: A smart and user-friendly command line shell
 Maintainer: Curtis Jiang <jqqqqqqqqqq@gmail.com>
-Source: fish-4.1.2.tar.xz
+Source: fish-4.7.1.tar.xz
 License: GPL-2.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:fishshell:fish

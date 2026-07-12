@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/libs/oniguruma/Makefile
 
 Package: oniguruma
-Version: 6.9.10-r1
+Version: 6.9.10-r4
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 

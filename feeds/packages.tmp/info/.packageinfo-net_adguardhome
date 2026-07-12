@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/net/adguardhome/Makefile
 Build-Depends: golang/host
 
 Package: adguardhome
-Version: 0.107.73-r2
+Version: 0.107.76-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +ca-bundle
 Conflicts: 
 Menu-Depends: 
@@ -13,7 +13,7 @@ Repository: base
 Title: Network-wide ads and trackers blocking DNS server
 Maintainer: Dobroslaw Kijowski <dobo90@gmail.com>, George Sapkin <george@sapk.in>
 Require-User: adguardhome=853:adguardhome=853
-Source: adguardhome-0.107.73.tar.gz
+Source: adguardhome-0.107.76.tar.gz
 License: GPL-3.0-only
 LicenseFiles: LICENSE.txt
 CPE-ID: cpe:/a:adguard:adguardhome

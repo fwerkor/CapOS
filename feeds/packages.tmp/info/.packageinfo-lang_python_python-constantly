@@ -1,5 +1,5 @@
 Source-Makefile: feeds/packages/lang/python/python-constantly/Makefile
-Build-Depends: python-versioneer/host
+Build-Depends: python-setuptools/host
 
 Package: python3-constantly
 Submenu: Python

@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/utils/owut/Makefile
 
 Package: owut
 Default: y if (BUILDBOT && !SMALL_FLASH)
-Version: 2026.01.13~2526d84be888d5c4bcc65e42fc03a7a8ac6276f1-r1
+Version: 2026.07.08~db17536ec5cbcc6a76a51e65f3d192b6a2184abb-r1
 Depends: +libc +attendedsysupgrade-common +rpcd-mod-file +ucode +ucode-mod-fs +ucode-mod-ubus +ucode-mod-uci +ucode-mod-uclient +ucode-mod-uloop
 Conflicts: 
 Menu-Depends: 
@@ -12,7 +12,7 @@ Category: Utilities
 Repository: base
 Title: owut - an OpenWrt Upgrade Tool
 Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>
-Source: owut-2026.01.13~2526d84be888d5c4bcc65e42fc03a7a8ac6276f1.tar.zst
+Source: owut-2026.07.08~db17536ec5cbcc6a76a51e65f3d192b6a2184abb.tar.zst
 License: GPL-2.0-only
 URL: http://github.com/efahl/owut
 Type: ipkg

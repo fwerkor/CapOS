@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/sound/snapcast/Makefile
 
 Package: snapserver
-Version: 0.34.0-r1
+Version: 0.35.0-r1
 Depends: +libc +alsa-lib +libexpat +libatomic +libogg +libflac +libopus +boost +libsoxr +libvorbis
 Conflicts: 
 Menu-Depends: 
@@ -11,7 +11,7 @@ Category: Sound
 Repository: base
 Title: Synchronous multiroom audio player (server)
 Maintainer: Szabolcs Hubai <szab.hu@gmail.com>, David Andreoletti <david@andreoletti.net>
-Source: snapcast-0.34.0.tar.zst
+Source: snapcast-0.35.0.tar.zst
 License: GPL-3.0-or-later
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:badaix:snapcast
@@ -34,7 +34,7 @@ Description:     Synchronous audio player - Snapcast
 @@
 
 Package: snapclient
-Version: 0.34.0-r1
+Version: 0.35.0-r1
 Depends: +libc +alsa-lib +libexpat +libatomic +libogg +libflac +libopus +boost +libsoxr +libvorbisidec
 Conflicts: 
 Menu-Depends: 
@@ -44,7 +44,7 @@ Category: Sound
 Repository: base
 Title: Synchronous multiroom audio player (client)
 Maintainer: Szabolcs Hubai <szab.hu@gmail.com>, David Andreoletti <david@andreoletti.net>
-Source: snapcast-0.34.0.tar.zst
+Source: snapcast-0.35.0.tar.zst
 License: GPL-3.0-or-later
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:badaix:snapcast

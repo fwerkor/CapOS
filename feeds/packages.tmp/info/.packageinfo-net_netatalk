@@ -2,8 +2,8 @@ Source-Makefile: feeds/packages/net/netatalk/Makefile
 
 Package: netatalk-small
 Submenu: Filesystem
-Version: 4.3.2-r2
-Depends: +libc +libevent2 +libdb47 +libgcrypt +iniparser
+Version: 4.4.3-r1
+Depends: +libc +libevent2 +libdb47 +libgcrypt +iniparser +libatomic
 Conflicts: 
 Menu-Depends: 
 Provides: @netatalk-small-any netatalk
@@ -13,11 +13,11 @@ Category: Network
 Repository: base
 Title: Apple Filing Protocol (afpd only)
 Maintainer: Antonio Pastor <antonio.pastor@gmail.com>
-Source: netatalk-4.3.2.tar.xz
+Source: netatalk-4.4.3.tar.xz
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:netatalk:netatalk
-URL: http://netatalk.sourceforge.net
+URL: https://netatalk.io
 Type: ipkg
 Description:     Netatalk is an Open Source Apple Filing Protocol (AFP) fileserver.
   Implements a service that allows Macintosh file sharing
@@ -29,8 +29,8 @@ Description:     Netatalk is an Open Source Apple Filing Protocol (AFP) fileserv
 
 Package: netatalk
 Submenu: Filesystem
-Version: 4.3.2-r2
-Depends: +libc +libevent2 +libdb47 +libgcrypt +iniparser +kmod-appletalk
+Version: 4.4.3-r1
+Depends: +libc +libevent2 +libdb47 +libgcrypt +iniparser +libatomic +kmod-appletalk
 Conflicts: 
 Menu-Depends: 
 Provides: @netatalk-any netatalk
@@ -40,11 +40,11 @@ Category: Network
 Repository: base
 Title: Apple Filing Protocol with AppleTalk support
 Maintainer: Antonio Pastor <antonio.pastor@gmail.com>
-Source: netatalk-4.3.2.tar.xz
+Source: netatalk-4.4.3.tar.xz
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:netatalk:netatalk
-URL: http://netatalk.sourceforge.net
+URL: https://netatalk.io
 Type: ipkg
 Description:     Netatalk is an Open Source Apple Filing Protocol (AFP) fileserver.
   Implements a service that allows Macintosh file sharing
@@ -57,8 +57,8 @@ Description:     Netatalk is an Open Source Apple Filing Protocol (AFP) fileserv
 Package: netatalk-full
 Menu: 1
 Submenu: Filesystem
-Version: 4.3.2-r2
-Depends: +libc +libevent2 +libdb47 +libgcrypt +iniparser +PACKAGE_NETATALK_APPLETALK:kmod-appletalk +PACKAGE_NETATALK_ZEROCONF:libavahi-client +PACKAGE_NETATALK_ACLS:libacl +PACKAGE_NETATALK_PAM:libpam +PACKAGE_NETATALK_LDAP:libopenldap +PACKAGE_NETATALK_ICONV:libiconv-full +PACKAGE_NETATALK_KERBEROS:krb5-libs +PACKAGE_NETATALK_LIBWRAP:libwrap +PACKAGE_NETATALK_SQLITEBACK:libsqlite3 +PACKAGE_NETATALK_BOTHBACK:libsqlite3
+Version: 4.4.3-r1
+Depends: +libc +libevent2 +libdb47 +libgcrypt +iniparser +libatomic +PACKAGE_NETATALK_APPLETALK:kmod-appletalk +PACKAGE_NETATALK_ZEROCONF:libavahi-client +PACKAGE_NETATALK_ACLS:libacl +PACKAGE_NETATALK_PAM:libpam +PACKAGE_NETATALK_LDAP:libopenldap +PACKAGE_NETATALK_ICONV:libiconv-full +PACKAGE_NETATALK_KERBEROS:krb5-libs +PACKAGE_NETATALK_LIBWRAP:libwrap +PACKAGE_NETATALK_SQLITEBACK:libsqlite3 +PACKAGE_NETATALK_BOTHBACK:libsqlite3
 Conflicts: 
 Menu-Depends: 
 Provides: @netatalk-full-any netatalk
@@ -68,11 +68,11 @@ Category: Network
 Repository: base
 Title: Apple Filing Protocol (configurable)
 Maintainer: Antonio Pastor <antonio.pastor@gmail.com>
-Source: netatalk-4.3.2.tar.xz
+Source: netatalk-4.4.3.tar.xz
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:netatalk:netatalk
-URL: http://netatalk.sourceforge.net
+URL: https://netatalk.io
 Type: ipkg
 Description:     Netatalk is an Open Source Apple Filing Protocol (AFP) fileserver.
   Implements a service that allows Macintosh file sharing

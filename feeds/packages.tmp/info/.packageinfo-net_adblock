@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/net/adblock/Makefile
 
 Package: adblock
-Version: 4.5.3-r1
+Version: 4.5.6-r3
 Depends: +libc +jshn +jsonfilter +firewall4 +coreutils +coreutils-sort +gawk +ca-bundle +rpcd +rpcd-mod-rpcsys
 Conflicts: 
 Menu-Depends: 

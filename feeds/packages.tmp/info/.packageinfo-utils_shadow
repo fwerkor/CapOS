@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/utils/shadow/Makefile
 Build-Depends: libxcrypt
 
 Package: shadow-chage
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -12,7 +12,7 @@ Category: Utilities
 Repository: base
 Title: Utility chage from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -24,7 +24,7 @@ Description:     Full version of standard chage utility. Normally, you would not
 @@
 
 Package: shadow-chfn
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -34,7 +34,7 @@ Category: Utilities
 Repository: base
 Title: Utility chfn from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -46,7 +46,7 @@ Description:     Full version of standard chfn utility. Normally, you would not 
 @@
 
 Package: shadow-chgpasswd
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -56,7 +56,7 @@ Category: Utilities
 Repository: base
 Title: Utility chgpasswd from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -68,7 +68,7 @@ Description:     Full version of standard chgpasswd utility. Normally, you would
 @@
 
 Package: shadow-chpasswd
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -78,7 +78,7 @@ Category: Utilities
 Repository: base
 Title: Utility chpasswd from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -90,7 +90,7 @@ Description:     Full version of standard chpasswd utility. Normally, you would 
 @@
 
 Package: shadow-chsh
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -100,7 +100,7 @@ Category: Utilities
 Repository: base
 Title: Utility chsh from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -112,7 +112,7 @@ Description:     Full version of standard chsh utility. Normally, you would not 
 @@
 
 Package: shadow-expiry
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -122,7 +122,7 @@ Category: Utilities
 Repository: base
 Title: Utility expiry from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -134,7 +134,7 @@ Description:     Full version of standard expiry utility. Normally, you would no
 @@
 
 Package: shadow-faillog
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -144,7 +144,7 @@ Category: Utilities
 Repository: base
 Title: Utility faillog from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -156,7 +156,7 @@ Description:     Full version of standard faillog utility. Normally, you would n
 @@
 
 Package: shadow-gpasswd
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -166,7 +166,7 @@ Category: Utilities
 Repository: base
 Title: Utility gpasswd from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -178,7 +178,7 @@ Description:     Full version of standard gpasswd utility. Normally, you would n
 @@
 
 Package: shadow-groupadd
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -188,7 +188,7 @@ Category: Utilities
 Repository: base
 Title: Utility groupadd from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -200,7 +200,7 @@ Description:     Full version of standard groupadd utility. Normally, you would 
 @@
 
 Package: shadow-groupdel
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -210,7 +210,7 @@ Category: Utilities
 Repository: base
 Title: Utility groupdel from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -222,7 +222,7 @@ Description:     Full version of standard groupdel utility. Normally, you would 
 @@
 
 Package: shadow-groupmems
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -232,7 +232,7 @@ Category: Utilities
 Repository: base
 Title: Utility groupmems from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -244,7 +244,7 @@ Description:     Full version of standard groupmems utility. Normally, you would
 @@
 
 Package: shadow-groupmod
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -254,7 +254,7 @@ Category: Utilities
 Repository: base
 Title: Utility groupmod from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -265,30 +265,8 @@ Description:     Full version of standard groupmod utility. Normally, you would 
     package, since the functionality in BusyBox is more than sufficient.
 @@
 
-Package: shadow-groups
-Version: 4.8.1-r3
-Depends: +libc +shadow-common
-Conflicts: 
-Menu-Depends: 
-Provides: @shadow-groups-any
-Section: utils
-Category: Utilities
-Repository: base
-Title: Utility groups from the PLD Linux shadow utilities
-Maintainer: 
-Source: shadow-4.8.1.tar.xz
-License: BSD-3-Clause
-LicenseFiles: COPYING
-CPE-ID: cpe:/a:debian:shadow
-URL: https://github.com/shadow-maint/shadow
-Type: ipkg
-Hidden: 1
-Description:     Full version of standard groups utility. Normally, you would not use this
-    package, since the functionality in BusyBox is more than sufficient.
-@@
-
 Package: shadow-grpck
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -298,7 +276,7 @@ Category: Utilities
 Repository: base
 Title: Utility grpck from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -310,7 +288,7 @@ Description:     Full version of standard grpck utility. Normally, you would not
 @@
 
 Package: shadow-grpconv
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -320,7 +298,7 @@ Category: Utilities
 Repository: base
 Title: Utility grpconv from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -332,7 +310,7 @@ Description:     Full version of standard grpconv utility. Normally, you would n
 @@
 
 Package: shadow-grpunconv
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -342,7 +320,7 @@ Category: Utilities
 Repository: base
 Title: Utility grpunconv from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -353,30 +331,8 @@ Description:     Full version of standard grpunconv utility. Normally, you would
     package, since the functionality in BusyBox is more than sufficient.
 @@
 
-Package: shadow-lastlog
-Version: 4.8.1-r3
-Depends: +libc +shadow-common
-Conflicts: 
-Menu-Depends: 
-Provides: @shadow-lastlog-any
-Section: utils
-Category: Utilities
-Repository: base
-Title: Utility lastlog from the PLD Linux shadow utilities
-Maintainer: 
-Source: shadow-4.8.1.tar.xz
-License: BSD-3-Clause
-LicenseFiles: COPYING
-CPE-ID: cpe:/a:debian:shadow
-URL: https://github.com/shadow-maint/shadow
-Type: ipkg
-Hidden: 1
-Description:     Full version of standard lastlog utility. Normally, you would not use this
-    package, since the functionality in BusyBox is more than sufficient.
-@@
-
 Package: shadow-login
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -386,7 +342,7 @@ Category: Utilities
 Repository: base
 Title: Utility login from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -398,7 +354,7 @@ Description:     Full version of standard login utility. Normally, you would not
 @@
 
 Package: shadow-logoutd
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -408,7 +364,7 @@ Category: Utilities
 Repository: base
 Title: Utility logoutd from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -419,30 +375,8 @@ Description:     Full version of standard logoutd utility. Normally, you would n
     package, since the functionality in BusyBox is more than sufficient.
 @@
 
-Package: shadow-newgidmap
-Version: 4.8.1-r3
-Depends: +libc +shadow-common
-Conflicts: 
-Menu-Depends: 
-Provides: @shadow-newgidmap-any
-Section: utils
-Category: Utilities
-Repository: base
-Title: Utility newgidmap from the PLD Linux shadow utilities
-Maintainer: 
-Source: shadow-4.8.1.tar.xz
-License: BSD-3-Clause
-LicenseFiles: COPYING
-CPE-ID: cpe:/a:debian:shadow
-URL: https://github.com/shadow-maint/shadow
-Type: ipkg
-Hidden: 1
-Description:     Full version of standard newgidmap utility. Normally, you would not use this
-    package, since the functionality in BusyBox is more than sufficient.
-@@
-
 Package: shadow-newgrp
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -452,7 +386,7 @@ Category: Utilities
 Repository: base
 Title: Utility newgrp from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -463,8 +397,30 @@ Description:     Full version of standard newgrp utility. Normally, you would no
     package, since the functionality in BusyBox is more than sufficient.
 @@
 
+Package: shadow-newgidmap
+Version: 4.19.4-r2
+Depends: +libc +shadow-common
+Conflicts: 
+Menu-Depends: 
+Provides: @shadow-newgidmap-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility newgidmap from the PLD Linux shadow utilities
+Maintainer: 
+Source: shadow-4.19.4.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:debian:shadow
+URL: https://github.com/shadow-maint/shadow
+Type: ipkg
+Hidden: 1
+Description:     Full version of standard newgidmap utility. Normally, you would not use this
+    package, since the functionality in BusyBox is more than sufficient.
+@@
+
 Package: shadow-newuidmap
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -474,7 +430,7 @@ Category: Utilities
 Repository: base
 Title: Utility newuidmap from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -486,7 +442,7 @@ Description:     Full version of standard newuidmap utility. Normally, you would
 @@
 
 Package: shadow-newusers
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -496,7 +452,7 @@ Category: Utilities
 Repository: base
 Title: Utility newusers from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -508,7 +464,7 @@ Description:     Full version of standard newusers utility. Normally, you would 
 @@
 
 Package: shadow-nologin
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -518,7 +474,7 @@ Category: Utilities
 Repository: base
 Title: Utility nologin from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -530,7 +486,7 @@ Description:     Full version of standard nologin utility. Normally, you would n
 @@
 
 Package: shadow-passwd
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -540,7 +496,7 @@ Category: Utilities
 Repository: base
 Title: Utility passwd from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -552,7 +508,7 @@ Description:     Full version of standard passwd utility. Normally, you would no
 @@
 
 Package: shadow-pwck
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -562,7 +518,7 @@ Category: Utilities
 Repository: base
 Title: Utility pwck from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -574,7 +530,7 @@ Description:     Full version of standard pwck utility. Normally, you would not 
 @@
 
 Package: shadow-pwconv
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -584,7 +540,7 @@ Category: Utilities
 Repository: base
 Title: Utility pwconv from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -596,7 +552,7 @@ Description:     Full version of standard pwconv utility. Normally, you would no
 @@
 
 Package: shadow-pwunconv
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -606,7 +562,7 @@ Category: Utilities
 Repository: base
 Title: Utility pwunconv from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -618,7 +574,7 @@ Description:     Full version of standard pwunconv utility. Normally, you would 
 @@
 
 Package: shadow-su
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -628,7 +584,7 @@ Category: Utilities
 Repository: base
 Title: Utility su from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -640,7 +596,7 @@ Description:     Full version of standard su utility. Normally, you would not us
 @@
 
 Package: shadow-useradd
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -650,7 +606,7 @@ Category: Utilities
 Repository: base
 Title: Utility useradd from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -662,7 +618,7 @@ Description:     Full version of standard useradd utility. Normally, you would n
 @@
 
 Package: shadow-userdel
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -672,7 +628,7 @@ Category: Utilities
 Repository: base
 Title: Utility userdel from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -684,7 +640,7 @@ Description:     Full version of standard userdel utility. Normally, you would n
 @@
 
 Package: shadow-usermod
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -694,7 +650,7 @@ Category: Utilities
 Repository: base
 Title: Utility usermod from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -706,7 +662,7 @@ Description:     Full version of standard usermod utility. Normally, you would n
 @@
 
 Package: shadow-vipw
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
@@ -716,7 +672,7 @@ Category: Utilities
 Repository: base
 Title: Utility vipw from the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -728,7 +684,7 @@ Description:     Full version of standard vipw utility. Normally, you would not 
 @@
 
 Package: shadow-utils
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -738,7 +694,7 @@ Category: Utilities
 Repository: base
 Title: The PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -795,9 +751,6 @@ Config:
      config PACKAGE_shadow-groupmod
       prompt "Full PLD version of groupmod utility"
 
-     config PACKAGE_shadow-groups
-      prompt "Full PLD version of groups utility"
-
      config PACKAGE_shadow-grpck
       prompt "Full PLD version of grpck utility"
 
@@ -807,20 +760,17 @@ Config:
      config PACKAGE_shadow-grpunconv
       prompt "Full PLD version of grpunconv utility"
 
-     config PACKAGE_shadow-lastlog
-      prompt "Full PLD version of lastlog utility"
-
      config PACKAGE_shadow-login
       prompt "Full PLD version of login utility"
 
      config PACKAGE_shadow-logoutd
       prompt "Full PLD version of logoutd utility"
 
-     config PACKAGE_shadow-newgidmap
-      prompt "Full PLD version of newgidmap utility"
-
      config PACKAGE_shadow-newgrp
       prompt "Full PLD version of newgrp utility"
+
+     config PACKAGE_shadow-newgidmap
+      prompt "Full PLD version of newgidmap utility"
 
      config PACKAGE_shadow-newuidmap
       prompt "Full PLD version of newuidmap utility"
@@ -865,7 +815,7 @@ Config:
 @@
 
 Package: shadow-common
-Version: 4.8.1-r3
+Version: 4.19.4-r2
 Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full
 Conflicts: 
 Menu-Depends: 
@@ -875,7 +825,7 @@ Category: Utilities
 Repository: base
 Title: Shared definitions for the PLD Linux shadow utilities
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow
@@ -886,8 +836,8 @@ Description: Shared definitions for the PLD Linux shadow utilities
 @@
 
 Package: shadow
-Version: 4.8.1-r3
-Depends: +libc +shadow-chage +shadow-chfn +shadow-chgpasswd +shadow-chpasswd +shadow-chsh +shadow-expiry +shadow-faillog +shadow-gpasswd +shadow-groupadd +shadow-groupdel +shadow-groupmems +shadow-groupmod +shadow-groups +shadow-grpck +shadow-grpconv +shadow-grpunconv +shadow-lastlog +shadow-login +shadow-logoutd +shadow-newgidmap +shadow-newgrp +shadow-newuidmap +shadow-newusers +shadow-nologin +shadow-passwd +shadow-pwck +shadow-pwconv +shadow-pwunconv +shadow-su +shadow-useradd +shadow-userdel +shadow-usermod +shadow-vipw
+Version: 4.19.4-r2
+Depends: +libc +shadow-chage +shadow-chfn +shadow-chgpasswd +shadow-chpasswd +shadow-chsh +shadow-expiry +shadow-faillog +shadow-gpasswd +shadow-groupadd +shadow-groupdel +shadow-groupmems +shadow-groupmod +shadow-grpck +shadow-grpconv +shadow-grpunconv +shadow-login +shadow-logoutd +shadow-newgrp +shadow-newgidmap +shadow-newuidmap +shadow-newusers +shadow-nologin +shadow-passwd +shadow-pwck +shadow-pwconv +shadow-pwunconv +shadow-su +shadow-useradd +shadow-userdel +shadow-usermod +shadow-vipw
 Conflicts: 
 Menu-Depends: 
 Provides: @shadow-any
@@ -896,7 +846,7 @@ Category: Utilities
 Repository: base
 Title: The PLD Linux shadow utilities (all)
 Maintainer: 
-Source: shadow-4.8.1.tar.xz
+Source: shadow-4.19.4.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:debian:shadow

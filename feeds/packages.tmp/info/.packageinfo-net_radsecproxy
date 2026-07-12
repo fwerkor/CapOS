@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/net/radsecproxy/Makefile
 
 Package: radsecproxy
-Version: 1.9.1-r1
+Version: 1.11.2-r1
 Depends: +libc +libopenssl +libpthread +libnettle
 Conflicts: 
 Menu-Depends: 
@@ -11,7 +11,7 @@ Category: Network
 Repository: base
 Title: radsecproxy
 Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
-Source: radsecproxy-1.9.1.tar.gz
+Source: radsecproxy-1.11.2.tar.gz
 License: BSD-3-CLAUSE
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:uninett:radsecproxy

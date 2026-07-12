@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/net/xfrpc/Makefile
 
 Package: xfrpc
 Submenu: Web Servers/Proxies
-Version: 4.04.856-r1
+Version: 5.06.909-r1
 Depends: +libc +zlib +libjson-c +libevent2 +libevent2-openssl
 Conflicts: 
 Menu-Depends: 
@@ -12,7 +12,7 @@ Category: Network
 Repository: base
 Title: C language fast reverse proxy client
 Maintainer: Dengfeng Liu <liudf0716@gmail.com>
-Source: xfrpc-4.04.856.tar.zst
+Source: xfrpc-5.06.909.tar.gz
 License: GPL-3.0-or-later
 LicenseFiles: COPYING
 URL: https://github.com/liudf0716/xfrpc

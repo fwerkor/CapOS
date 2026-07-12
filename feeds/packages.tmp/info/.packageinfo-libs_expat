@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/libs/expat/Makefile
 
 Package: libexpat
-Version: 2.7.3-r1
+Version: 2.8.2-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -11,7 +11,7 @@ Category: Libraries
 Repository: base
 Title: An XML parsing library
 Maintainer: 
-Source: expat-2.7.3.tar.gz
+Source: expat-2.8.2.tar.gz
 License: MIT
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:libexpat_project:libexpat

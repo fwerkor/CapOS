@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/libs/libtorrent-rasterbar/Makefile
 Build-Depends: boost
 
 Package: libtorrent-rasterbar
-Version: 2.0.11-r2
+Version: 2.0.11-r3
 Depends: +libc +libopenssl +libatomic +libstdcpp
 Conflicts: 
 Menu-Depends: 
@@ -23,8 +23,8 @@ Description:   Rasterbar libtorrent is a C++ library that aims to be a good alte
 
 Package: python3-libtorrent
 Submenu: Python
-Version: 2.0.11-r2
-Depends: +libc +libtorrent-rasterbar +boost-python3
+Version: 2.0.11-r3
+Depends: +libc +libtorrent-rasterbar +boost +boost-python3
 Conflicts: 
 Menu-Depends: 
 Provides: @python3-libtorrent-any

@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/utils/syncthing/Makefile
 Build-Depends: golang/host
 
 Package: syncthing
-Version: 2.0.15-r1
+Version: 2.1.0-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
@@ -13,7 +13,7 @@ Repository: base
 Title: Continuous file synchronization program
 Maintainer: Van Waholtz <brvphoenix@gmail.com>, George Sapkin <george@sapk.in>
 Require-User: syncthing=499:syncthing=499
-Source: syncthing-source-v2.0.15.tar.gz
+Source: syncthing-source-v2.1.0.tar.gz
 License: MPL-2.0
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:syncthing:syncthing
@@ -26,7 +26,7 @@ Description:   Syncthing replaces proprietary sync and cloud services with somet
 @@
 
 Package: stdiscosrv
-Version: 2.0.15-r1
+Version: 2.1.0-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
@@ -37,7 +37,7 @@ Repository: base
 Title: Discovery server for syncthing
 Maintainer: Van Waholtz <brvphoenix@gmail.com>, George Sapkin <george@sapk.in>
 Require-User: syncthing=499:syncthing=499
-Source: syncthing-source-v2.0.15.tar.gz
+Source: syncthing-source-v2.1.0.tar.gz
 License: MPL-2.0
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:syncthing:syncthing
@@ -50,7 +50,7 @@ Description:   Syncthing relies on a discovery server to find peers on the inter
 @@
 
 Package: strelaysrv
-Version: 2.0.15-r1
+Version: 2.1.0-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
@@ -61,7 +61,7 @@ Repository: base
 Title: Relay server for syncthing
 Maintainer: Van Waholtz <brvphoenix@gmail.com>, George Sapkin <george@sapk.in>
 Require-User: syncthing=499:syncthing=499
-Source: syncthing-source-v2.0.15.tar.gz
+Source: syncthing-source-v2.1.0.tar.gz
 License: MPL-2.0
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:syncthing:syncthing

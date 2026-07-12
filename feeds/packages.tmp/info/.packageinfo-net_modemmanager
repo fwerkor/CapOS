@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/net/modemmanager/Makefile
 Build-Depends: glib2/host libxslt/host
 
 Package: modemmanager
-Version: 1.24.0-r8
+Version: 1.24.0-r10
 Depends: +libc +BUILD_NLS:libintl-full +glib2 +dbus +ppp +MODEMMANAGER_WITH_MBIM:libmbim +MODEMMANAGER_WITH_QMI:libqmi +MODEMMANAGER_WITH_QRTR:libqrtr-glib
 Conflicts: 
 Menu-Depends: 
@@ -26,8 +26,8 @@ Config:
 @@
 
 Package: modemmanager-rpcd
-Version: 1.24.0-r8
-Depends: +libc modemmanager +lua-cjson
+Version: 1.24.0-r10
+Depends: +libc modemmanager +lua +lua-cjson
 Conflicts: 
 Menu-Depends: 
 Provides: @modemmanager-rpcd-any

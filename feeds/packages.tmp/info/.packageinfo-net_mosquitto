@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/net/mosquitto/Makefile
 
 Package: mosquitto-ssl
-Version: 2.0.22-r1
+Version: 2.0.22-r2
 Depends: +libc +librt +libopenssl +MOSQUITTO_LWS:libwebsockets-openssl +MOSQUITTO_DYNAMIC_SECURITY:cJSON
 Conflicts: 
 Menu-Depends: 
@@ -32,7 +32,7 @@ Config:
 @@
 
 Package: mosquitto-nossl
-Version: 2.0.22-r1
+Version: 2.0.22-r2
 Depends: +libc +librt
 Conflicts: 
 Menu-Depends: 
@@ -59,7 +59,7 @@ This package also includes some basic support for configuring via UCI
 @@
 
 Package: libmosquitto-ssl
-Version: 2.0.22-r1
+Version: 2.0.22-r2
 Depends: +libc +libpthread +librt +libcares +libopenssl
 Conflicts: 
 Menu-Depends: 
@@ -87,7 +87,7 @@ server, in addition to Mosquitto.
 @@
 
 Package: libmosquitto-nossl
-Version: 2.0.22-r1
+Version: 2.0.22-r2
 Depends: +libc +libpthread +librt +libcares
 Conflicts: 
 Menu-Depends: 
@@ -115,7 +115,7 @@ server, in addition to Mosquitto.
 @@
 
 Package: libmosquittopp
-Version: 2.0.22-r1
+Version: 2.0.22-r2
 Depends: +libc libmosquitto +libstdcpp
 Conflicts: 
 Menu-Depends: 
@@ -134,7 +134,7 @@ Description:  C++ Library wrapper for libmosquitto.
 @@
 
 Package: mosquitto-client-ssl
-Version: 2.0.22-r1
+Version: 2.0.22-r2
 Depends: +libc +librt +libcares +cJSON +libmosquitto-ssl
 Conflicts: 
 Menu-Depends: 
@@ -159,7 +159,7 @@ and the mosquitto_ctrl tool.
 @@
 
 Package: mosquitto-client-nossl
-Version: 2.0.22-r1
+Version: 2.0.22-r2
 Depends: +libc +librt +libcares +cJSON +libmosquitto-nossl
 Conflicts: 
 Menu-Depends: 

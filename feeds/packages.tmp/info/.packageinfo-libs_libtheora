@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/libs/libtheora/Makefile
 Build-Depends: libvorbis
 
 Package: libtheora
-Version: 1.2.0-r1
+Version: 1.2.0-r2
 Depends: +libc +libogg
 Conflicts: 
 Menu-Depends: 

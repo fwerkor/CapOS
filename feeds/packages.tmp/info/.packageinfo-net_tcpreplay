@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/net/tcpreplay/Makefile
 
 Package: tcpbridge
 Submenu: Tcpreplay
-Version: 4.5.2-r1
+Version: 4.5.2-r2
 Depends: +libc +librt +libpcap +libdnet +USE_MUSL:musl-fts
 Conflicts: 
 Menu-Depends: 
@@ -13,7 +13,7 @@ Repository: base
 Title: Bridge network traffic across two interfaces
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
 Source: tcpreplay-4.5.2.tar.xz
-License: GPL-3.0
+License: GPL-3.0-only
 LicenseFiles: docs/LICENSE
 CPE-ID: cpe:/a:broadcom:tcpreplay
 URL: http://tcpreplay.appneta.com/
@@ -24,7 +24,7 @@ Description:   tcpbridge is a tool for selectively briding network traffic acros
 
 Package: tcpcapinfo
 Submenu: Tcpreplay
-Version: 4.5.2-r1
+Version: 4.5.2-r2
 Depends: +libc +librt +libpcap +libdnet +USE_MUSL:musl-fts
 Conflicts: 
 Menu-Depends: 
@@ -35,7 +35,7 @@ Repository: base
 Title: Pcap file dissector for debugging broken pcap files
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
 Source: tcpreplay-4.5.2.tar.xz
-License: GPL-3.0
+License: GPL-3.0-only
 LicenseFiles: docs/LICENSE
 CPE-ID: cpe:/a:broadcom:tcpreplay
 URL: http://tcpreplay.appneta.com/
@@ -47,7 +47,7 @@ Description:   tcpcapinfo is a tool for decoding the structure of a pcap(3) file
 
 Package: tcpliveplay
 Submenu: Tcpreplay
-Version: 4.5.2-r1
+Version: 4.5.2-r2
 Depends: +libc +librt +libpcap +libdnet +USE_MUSL:musl-fts
 Conflicts: 
 Menu-Depends: 
@@ -58,7 +58,7 @@ Repository: base
 Title: Replays network traffic stored in a pcap file on live networks using new TCP connections
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
 Source: tcpreplay-4.5.2.tar.xz
-License: GPL-3.0
+License: GPL-3.0-only
 LicenseFiles: docs/LICENSE
 CPE-ID: cpe:/a:broadcom:tcpreplay
 URL: http://tcpreplay.appneta.com/
@@ -70,7 +70,7 @@ Description:   This program, 'tcpliveplay' replays a captured set of packets usi
 
 Package: tcpprep
 Submenu: Tcpreplay
-Version: 4.5.2-r1
+Version: 4.5.2-r2
 Depends: +libc +librt +libpcap +libdnet +USE_MUSL:musl-fts
 Conflicts: 
 Menu-Depends: 
@@ -81,7 +81,7 @@ Repository: base
 Title: Create a tcpreplay cache file from a pcap file
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
 Source: tcpreplay-4.5.2.tar.xz
-License: GPL-3.0
+License: GPL-3.0-only
 LicenseFiles: docs/LICENSE
 CPE-ID: cpe:/a:broadcom:tcpreplay
 URL: http://tcpreplay.appneta.com/
@@ -93,7 +93,7 @@ Description:   tcpprep is a ``pcap(3)'' file pre-processor which creates a cache
 
 Package: tcpreplay
 Submenu: Tcpreplay
-Version: 4.5.2-r1
+Version: 4.5.2-r2
 Depends: +libc +librt +libpcap +libdnet +USE_MUSL:musl-fts
 Conflicts: 
 Menu-Depends: 
@@ -104,7 +104,7 @@ Repository: base
 Title: Replay network traffic stored in pcap files
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
 Source: tcpreplay-4.5.2.tar.xz
-License: GPL-3.0
+License: GPL-3.0-only
 LicenseFiles: docs/LICENSE
 CPE-ID: cpe:/a:broadcom:tcpreplay
 URL: http://tcpreplay.appneta.com/
@@ -115,7 +115,7 @@ Description:   tcpreplay is a tool for replaying network traffic from files save
 
 Package: tcpreplay-edit
 Submenu: Tcpreplay
-Version: 4.5.2-r1
+Version: 4.5.2-r2
 Depends: +libc +librt +libpcap +libdnet +USE_MUSL:musl-fts
 Conflicts: 
 Menu-Depends: 
@@ -126,7 +126,7 @@ Repository: base
 Title: Replay network traffic stored in pcap files
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
 Source: tcpreplay-4.5.2.tar.xz
-License: GPL-3.0
+License: GPL-3.0-only
 LicenseFiles: docs/LICENSE
 CPE-ID: cpe:/a:broadcom:tcpreplay
 URL: http://tcpreplay.appneta.com/
@@ -137,7 +137,7 @@ Description:   tcpreplay-edit includes all the functionality of both tcpreplay
 
 Package: tcprewrite
 Submenu: Tcpreplay
-Version: 4.5.2-r1
+Version: 4.5.2-r2
 Depends: +libc +librt +libpcap +libdnet +USE_MUSL:musl-fts
 Conflicts: 
 Menu-Depends: 
@@ -148,7 +148,7 @@ Repository: base
 Title: Rewrite the packets in a pcap file
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
 Source: tcpreplay-4.5.2.tar.xz
-License: GPL-3.0
+License: GPL-3.0-only
 LicenseFiles: docs/LICENSE
 CPE-ID: cpe:/a:broadcom:tcpreplay
 URL: http://tcpreplay.appneta.com/
@@ -158,7 +158,7 @@ Description:   Rewrite/edit the packets in a pcap file
 
 Package: tcpreplay-all
 Submenu: Tcpreplay
-Version: 4.5.2-r1
+Version: 4.5.2-r2
 Depends: +libc +tcpbridge +tcpcapinfo +tcpliveplay +tcpprep +tcpreplay +tcpreplay-edit +tcprewrite
 Conflicts: 
 Menu-Depends: 
@@ -169,7 +169,7 @@ Repository: base
 Title: Pcap editing and replaying utilities
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
 Source: tcpreplay-4.5.2.tar.xz
-License: GPL-3.0
+License: GPL-3.0-only
 LicenseFiles: docs/LICENSE
 CPE-ID: cpe:/a:broadcom:tcpreplay
 URL: http://tcpreplay.appneta.com/

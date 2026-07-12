@@ -4,7 +4,7 @@ Build-Types: host
 
 Package: python3-poetry-core
 Submenu: Python
-Version: 1.8.1-r1
+Version: 2.3.1-r1
 Depends: +libc +python3
 Conflicts: 
 Menu-Depends: 
@@ -14,7 +14,7 @@ Category: Languages
 Repository: base
 Title: Poetry PEP 517 Build Backend
 Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: poetry_core-1.8.1.tar.gz
+Source: poetry_core-2.3.1.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 URL: https://github.com/python-poetry/poetry-core
@@ -28,7 +28,7 @@ build Poetry managed projects.
 
 Package: python3-poetry-core-src
 Submenu: Python
-Version: 1.8.1-r1
+Version: 2.3.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -38,7 +38,7 @@ Category: Languages
 Repository: base
 Title: Poetry PEP 517 Build Backend (sources)
 Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: poetry_core-1.8.1.tar.gz
+Source: poetry_core-2.3.1.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 URL: https://github.com/python-poetry/poetry-core

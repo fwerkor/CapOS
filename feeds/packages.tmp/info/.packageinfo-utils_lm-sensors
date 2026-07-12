@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/utils/lm-sensors/Makefile
 
 Package: libsensors
-Version: 3.6.2-r5
+Version: 3.6.2-r6
 Depends: +libc +sysfsutils
 Conflicts: 
 Menu-Depends: 
@@ -21,7 +21,7 @@ Description:  lm-sensors libraries
 @@
 
 Package: lm-sensors
-Version: 3.6.2-r5
+Version: 3.6.2-r6
 Depends: +libc +sysfsutils +libsensors
 Conflicts: 
 Menu-Depends: 
@@ -40,7 +40,7 @@ Description:  utility to read hardware sensor data
 @@
 
 Package: lm-sensors-detect
-Version: 3.6.2-r5
+Version: 3.6.2-r6
 Depends: +libc +sysfsutils +lm-sensors +PACKAGE_lm-sensors-detect:perl +PACKAGE_lm-sensors-detect:perlbase-essential +PACKAGE_lm-sensors-detect:perlbase-fcntl +PACKAGE_lm-sensors-detect:perlbase-file +PACKAGE_lm-sensors-detect:perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
@@ -59,7 +59,7 @@ Description:  script to autodetect sensor hardware
 @@
 
 Package: isaset
-Version: 3.6.2-r5
+Version: 3.6.2-r6
 Depends: +libc +sysfsutils @TARGET_x86
 Conflicts: 
 Menu-Depends: 
@@ -79,7 +79,7 @@ Description:  isaset is a small helper program to set registers visible through
 @@
 
 Package: isadump
-Version: 3.6.2-r5
+Version: 3.6.2-r6
 Depends: +libc +sysfsutils @TARGET_x86
 Conflicts: 
 Menu-Depends: 
