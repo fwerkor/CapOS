@@ -1,7 +1,7 @@
 Source-Makefile: feeds/routing/alfred/Makefile
 
 Package: alfred
-Version: 2025.4-r2
+Version: 2025.4-r3
 Depends: +libc @IPV6 +libnl-tiny +librt +ALFRED_NEEDS_lua:lua +ALFRED_NEEDS_libgps:libgps
 Conflicts: 
 Menu-Depends: 
