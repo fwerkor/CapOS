@@ -28,6 +28,10 @@
 	};
 };
 
+&afe {
+	status = "okay";
+};
+
 &sound {
 	audio-routing = "Headphone", "HP_L",
 			"Headphone", "HP_R",
@@ -230,6 +234,12 @@
 			};
 		};
 	};
+};
+
+&npu {
+	firmware-name = "airoha/en7581_MT7996_npu_rv32.bin",
+			"airoha/en7581_MT7996_npu_data.bin";
+	status = "okay";
 };
 
 &eth {
