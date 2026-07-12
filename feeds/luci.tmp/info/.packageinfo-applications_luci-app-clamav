@@ -381,6 +381,25 @@ Hidden: 1
 Description:     Translation for luci-app-clamav - 한국어 (Korean)
 @@
 
+Package: luci-i18n-clamav-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-clamav
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-clamav-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-clamav - lo translation
+Maintainer: Marko Ratkaj <marko.ratkaj@sartura.hr> Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-clamav - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-clamav-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x

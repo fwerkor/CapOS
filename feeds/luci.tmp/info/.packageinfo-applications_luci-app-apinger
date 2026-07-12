@@ -20,4 +20,251 @@ Type: ipkg
 Description: LuCI support for the Apinger
 @@
 
+Package: luci-i18n-apinger-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - cs translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - Čeština (Czech)
+@@
+
+Package: luci-i18n-apinger-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-de-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - de translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - Deutsch (German)
+@@
+
+Package: luci-i18n-apinger-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-es-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - es translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - Español (Spanish)
+@@
+
+Package: luci-i18n-apinger-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - ga translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-apinger-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - ko translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - 한국어 (Korean)
+@@
+
+Package: luci-i18n-apinger-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - lo translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - ພາສາລາວ (Lao)
+@@
+
+Package: luci-i18n-apinger-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-lt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - lt translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-apinger-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-pl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - pl translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - Polski (Polish)
+@@
+
+Package: luci-i18n-apinger-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-pt-br-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - pt-br translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - Português do Brasil (Brazilian Portuguese)
+@@
+
+Package: luci-i18n-apinger-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - ru translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - Русский (Russian)
+@@
+
+Package: luci-i18n-apinger-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - uk translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-apinger-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - zh-cn translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-apinger-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - zh-tw translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - 正體中文 (Traditional Chinese)
+@@
+
 

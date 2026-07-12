@@ -248,6 +248,25 @@ Hidden: 1
 Description:     Translation for luci-app-usteer - 한국어 (Korean)
 @@
 
+Package: luci-i18n-usteer-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-usteer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-usteer-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-usteer - lo translation
+Maintainer: Ramon Van Gorkom <Ramon00c00@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-usteer - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-usteer-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x

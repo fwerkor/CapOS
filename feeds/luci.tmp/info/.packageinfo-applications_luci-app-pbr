@@ -3,7 +3,7 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-pbr
 Submenu: 3. Applications
-Version: 1.2.2-r10
+Version: 1.2.2-r18
 Depends: +libc +luci-base +jsonfilter +pbr
 Conflicts: 
 Menu-Depends: 
@@ -24,7 +24,7 @@ Config:
 help
 	Policy Based Routing Service Web UI
 	.
-	Version: 1.2.2-10
+	Version: 1.2.2-18
 @@
 
 Package: luci-i18n-pbr-ar
@@ -367,6 +367,25 @@ License: AGPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-pbr - 한국어 (Korean)
+@@
+
+Package: luci-i18n-pbr-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pbr
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-pbr-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pbr - lo translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pbr - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-pbr-lt

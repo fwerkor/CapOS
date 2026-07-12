@@ -3,7 +3,7 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-adblock-fast
 Submenu: 3. Applications
-Version: 1.2.2-r10
+Version: 1.2.4-r2
 Depends: +libc +luci-base +adblock-fast +rpcd-mod-ucode
 Conflicts: 
 Menu-Depends: 
@@ -24,7 +24,7 @@ Config:
 help
 	AdBlock-Fast Web UI
 	.
-	Version: 1.2.2-10
+	Version: 1.2.4-2
 @@
 
 Package: luci-i18n-adblock-fast-ar

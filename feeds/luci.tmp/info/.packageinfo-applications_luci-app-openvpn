@@ -400,6 +400,25 @@ Hidden: 1
 Description:     Translation for luci-app-openvpn - 한국어 (Korean)
 @@
 
+Package: luci-i18n-openvpn-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-openvpn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-openvpn-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-openvpn - lo translation
+Maintainer: Steven Barth <steven@midlink.org>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-openvpn - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-openvpn-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x

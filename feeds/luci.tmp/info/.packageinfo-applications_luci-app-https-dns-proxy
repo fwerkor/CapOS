@@ -3,7 +3,7 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-https-dns-proxy
 Submenu: 3. Applications
-Version: 2025.12.29-r4
+Version: 2026.03.18-r1
 Depends: +libc +luci-base +https-dns-proxy
 Conflicts: 
 Menu-Depends: 
@@ -24,7 +24,7 @@ Config:
 help
 	DNS Over HTTPS Proxy Web UI
 	.
-	Version: 2025.12.29-4
+	Version: 2026.03.18-1
 @@
 
 Package: luci-i18n-https-dns-proxy-ar

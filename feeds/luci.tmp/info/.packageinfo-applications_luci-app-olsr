@@ -362,6 +362,25 @@ Hidden: 1
 Description:     Translation for luci-app-olsr - 한국어 (Korean)
 @@
 
+Package: luci-i18n-olsr-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-olsr
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-olsr-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-olsr - lo translation
+Maintainer: Manuel Munz <munz@comuno.net>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-olsr - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-olsr-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x

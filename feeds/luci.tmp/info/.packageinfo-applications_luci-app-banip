@@ -3,7 +3,7 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-banip
 Submenu: 3. Applications
-Version: 1.8.1-r2
+Version: 1.8.10-r1
 Depends: +libc +luci-base +banip
 Conflicts: 
 Menu-Depends: 
@@ -379,6 +379,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-banip - 한국어 (Korean)
+@@
+
+Package: luci-i18n-banip-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-banip
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-banip-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-banip - lo translation
+Maintainer: Dirk Brenken <dev@brenken.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-banip - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-banip-lt

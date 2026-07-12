@@ -20,4 +20,270 @@ Type: ipkg
 Description: LuCI support for babeld
 @@
 
+Package: luci-i18n-babeld-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - cs translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - Čeština (Czech)
+@@
+
+Package: luci-i18n-babeld-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-de-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - de translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - Deutsch (German)
+@@
+
+Package: luci-i18n-babeld-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-es-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - es translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - Español (Spanish)
+@@
+
+Package: luci-i18n-babeld-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - ga translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-babeld-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - ko translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - 한국어 (Korean)
+@@
+
+Package: luci-i18n-babeld-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - lo translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - ພາສາລາວ (Lao)
+@@
+
+Package: luci-i18n-babeld-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-lt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - lt translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-babeld-lv
+Default: LUCI_LANG_lv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-lv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - lv translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - Latviešu (Latvian)
+@@
+
+Package: luci-i18n-babeld-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-pl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - pl translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - Polski (Polish)
+@@
+
+Package: luci-i18n-babeld-pt
+Default: LUCI_LANG_pt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-pt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - pt translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - Português (Portuguese)
+@@
+
+Package: luci-i18n-babeld-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - ru translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - Русский (Russian)
+@@
+
+Package: luci-i18n-babeld-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - uk translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-babeld-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - zh-cn translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-babeld-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - zh-tw translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - 正體中文 (Traditional Chinese)
+@@
+
 

@@ -3,7 +3,7 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-rustdesk-server
 Submenu: 3. Applications
-Version: 20250610-r4
+Version: 20260313-r1
 Depends: +libc +luci-base +rpcd +rpcd-mod-ucode
 Conflicts: 
 Menu-Depends: 
@@ -20,9 +20,256 @@ Type: ipkg
 Description: LuCI support for RustDesk Server
 @@
 
+Package: luci-i18n-rustdesk-server-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - cs translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - Čeština (Czech)
+@@
+
+Package: luci-i18n-rustdesk-server-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-de-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - de translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - Deutsch (German)
+@@
+
+Package: luci-i18n-rustdesk-server-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-es-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - es translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - Español (Spanish)
+@@
+
+Package: luci-i18n-rustdesk-server-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - ga translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-rustdesk-server-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - ko translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - 한국어 (Korean)
+@@
+
+Package: luci-i18n-rustdesk-server-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - lo translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - ພາສາລາວ (Lao)
+@@
+
+Package: luci-i18n-rustdesk-server-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-lt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - lt translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-rustdesk-server-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-pl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - pl translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - Polski (Polish)
+@@
+
+Package: luci-i18n-rustdesk-server-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-pt-br-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - pt-br translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - Português do Brasil (Brazilian Portuguese)
+@@
+
+Package: luci-i18n-rustdesk-server-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - ru translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - Русский (Russian)
+@@
+
+Package: luci-i18n-rustdesk-server-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - uk translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-rustdesk-server-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - zh-cn translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-rustdesk-server-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - zh-tw translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - 正體中文 (Traditional Chinese)
+@@
+
 Package: luci-app-rustdesk-server
 Submenu: 3. Applications
-Version: 20250610-r4
+Version: 20260313-r1
 Depends: +libc +luci-base +rpcd +rpcd-mod-ucode
 Conflicts: 
 Menu-Depends: 

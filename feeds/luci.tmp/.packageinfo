@@ -381,6 +381,25 @@ Hidden: 1
 Description:     Translation for luci-app-acl - 한국어 (Korean)
 @@
 
+Package: luci-i18n-acl-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-acl
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-acl-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-acl - lo translation
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-acl - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-acl-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -1145,6 +1164,25 @@ Hidden: 1
 Description:     Translation for luci-app-acme - 한국어 (Korean)
 @@
 
+Package: luci-i18n-acme-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-acme
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-acme-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-acme - lo translation
+Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-acme - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-acme-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -1512,7 +1550,7 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-adblock
 Submenu: 3. Applications
-Version: 4.5.3-r2
+Version: 4.5.6-r1
 Depends: +libc +luci-base +luci-lib-uqr +adblock
 Conflicts: 
 Menu-Depends: 
@@ -1890,6 +1928,25 @@ Hidden: 1
 Description:     Translation for luci-app-adblock - 한국어 (Korean)
 @@
 
+Package: luci-i18n-adblock-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-adblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-adblock-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-adblock - lo translation
+Maintainer: Dirk Brenken <dev@brenken.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-adblock - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-adblock-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -2257,7 +2314,7 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-adblock-fast
 Submenu: 3. Applications
-Version: 1.2.2-r10
+Version: 1.2.4-r2
 Depends: +libc +luci-base +adblock-fast +rpcd-mod-ucode
 Conflicts: 
 Menu-Depends: 
@@ -2278,7 +2335,7 @@ Config:
 help
 	AdBlock-Fast Web UI
 	.
-	Version: 1.2.2-10
+	Version: 1.2.4-2
 @@
 
 Package: luci-i18n-adblock-fast-ar
@@ -2985,12 +3042,54 @@ Description:     Translation for luci-app-adblock-fast - 正體中文 (Tradition
 @@
 
 
+Source-Makefile: feeds/luci/applications/luci-app-adguardhome/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-app-adguardhome
+Submenu: 3. Applications
+Version: x
+Depends: +libc +adguardhome +luci-base
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-app-adguardhome-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: LuCI support for AdGuard Home
+Maintainer: George Sapkin <george@sapk.in>
+Source: 
+License: GPL-2.0-only
+URL: https://github.com/openwrt/luci
+Type: ipkg
+Description: LuCI support for AdGuard Home
+@@
+
+Package: luci-i18n-adguardhome-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-adguardhome
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-adguardhome-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-adguardhome - lo translation
+Maintainer: 
+Source: 
+License: GPL-2.0-only
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-adguardhome - ພາສາລາວ (Lao)
+@@
+
+
 Source-Makefile: feeds/luci/applications/luci-app-advanced-reboot/Makefile
-Build-Depends: jq/host lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
 
 Package: luci-app-advanced-reboot
 Submenu: 3. Applications
-Version: 1.1.1-r15
+Version: 1.1.2-r6
 Depends: +libc +luci-base +jshn
 Conflicts: 
 Menu-Depends: 
@@ -3002,16 +3101,16 @@ Title: Advanced Linksys Reboot Web UI
 Maintainer: OpenWrt LuCI community
 Source: 
 License: AGPL-3.0-or-later
-URL: https://github.com/stangri/luci-app-advanced-reboot/
+URL: https://github.com/mossdef-org/luci-app-advanced-reboot/
 Type: ipkg
-Description:    Provides Web UI (found under System/Advanced Reboot) to reboot supported Linksys and ZyXEL routers to an alternative partition. Also provides Web UI to shut down (power off) your device. Supported dual-partition routers are listed at https://docs.openwrt.melmac.ca/luci-app-advanced-reboot/
+Description:    Provides Web UI (found under System/Advanced Reboot) to reboot supported Linksys and ZyXEL routers to an alternative partition. Also provides Web UI to shut down (power off) your device. Supported dual-partition routers are listed at https://docs.mossdef.org/luci-app-advanced-reboot/
 @@
 Config:
 # shown in make menuconfig <Help>
 help
 	Advanced Linksys Reboot Web UI
 	.
-	Version: 1.1.1-15
+	Version: 1.1.2-6
 @@
 
 Package: luci-i18n-advanced-reboot-ar
@@ -3835,6 +3934,25 @@ Hidden: 1
 Description:     Translation for luci-app-antiblock - 日本語 (Japanese)
 @@
 
+Package: luci-i18n-antiblock-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-antiblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-antiblock-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-antiblock - lo translation
+Maintainer: Khachatryan Karen <karen0734@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-antiblock - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-antiblock-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -4027,6 +4145,253 @@ License: GPL-2.0
 URL: https://github.com/openwrt/luci
 Type: ipkg
 Description: LuCI support for the Apinger
+@@
+
+Package: luci-i18n-apinger-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - cs translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - Čeština (Czech)
+@@
+
+Package: luci-i18n-apinger-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-de-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - de translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - Deutsch (German)
+@@
+
+Package: luci-i18n-apinger-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-es-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - es translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - Español (Spanish)
+@@
+
+Package: luci-i18n-apinger-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - ga translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-apinger-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - ko translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - 한국어 (Korean)
+@@
+
+Package: luci-i18n-apinger-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - lo translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - ພາສາລາວ (Lao)
+@@
+
+Package: luci-i18n-apinger-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-lt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - lt translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-apinger-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-pl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - pl translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - Polski (Polish)
+@@
+
+Package: luci-i18n-apinger-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-pt-br-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - pt-br translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - Português do Brasil (Brazilian Portuguese)
+@@
+
+Package: luci-i18n-apinger-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - ru translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - Русский (Russian)
+@@
+
+Package: luci-i18n-apinger-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - uk translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-apinger-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - zh-cn translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-apinger-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-apinger
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-apinger-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-apinger - zh-tw translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-apinger - 正體中文 (Traditional Chinese)
 @@
 
 
@@ -4411,6 +4776,25 @@ License: MIT
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-aria2 - 한국어 (Korean)
+@@
+
+Package: luci-i18n-aria2-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-aria2
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-aria2-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-aria2 - lo translation
+Maintainer: Xingwang Liao <kuoruan@gmail.com>
+Source: 
+License: MIT
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-aria2 - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-aria2-lt
@@ -5159,6 +5543,25 @@ Hidden: 1
 Description:     Translation for luci-app-attendedsysupgrade - 한국어 (Korean)
 @@
 
+Package: luci-i18n-attendedsysupgrade-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-attendedsysupgrade
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-attendedsysupgrade-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-attendedsysupgrade - lo translation
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-attendedsysupgrade - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-attendedsysupgrade-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -5524,13 +5927,279 @@ Type: ipkg
 Description: LuCI support for babeld
 @@
 
+Package: luci-i18n-babeld-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - cs translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - Čeština (Czech)
+@@
+
+Package: luci-i18n-babeld-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-de-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - de translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - Deutsch (German)
+@@
+
+Package: luci-i18n-babeld-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-es-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - es translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - Español (Spanish)
+@@
+
+Package: luci-i18n-babeld-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - ga translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-babeld-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - ko translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - 한국어 (Korean)
+@@
+
+Package: luci-i18n-babeld-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - lo translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - ພາສາລາວ (Lao)
+@@
+
+Package: luci-i18n-babeld-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-lt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - lt translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-babeld-lv
+Default: LUCI_LANG_lv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-lv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - lv translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - Latviešu (Latvian)
+@@
+
+Package: luci-i18n-babeld-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-pl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - pl translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - Polski (Polish)
+@@
+
+Package: luci-i18n-babeld-pt
+Default: LUCI_LANG_pt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-pt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - pt translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - Português (Portuguese)
+@@
+
+Package: luci-i18n-babeld-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - ru translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - Русский (Russian)
+@@
+
+Package: luci-i18n-babeld-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - uk translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-babeld-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - zh-cn translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-babeld-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-babeld
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-babeld-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-babeld - zh-tw translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-babeld - 正體中文 (Traditional Chinese)
+@@
+
 
 Source-Makefile: feeds/luci/applications/luci-app-banip/Makefile
 Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
 
 Package: luci-app-banip
 Submenu: 3. Applications
-Version: 1.8.1-r2
+Version: 1.8.10-r1
 Depends: +libc +luci-base +banip
 Conflicts: 
 Menu-Depends: 
@@ -5906,6 +6575,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-banip - 한국어 (Korean)
+@@
+
+Package: luci-i18n-banip-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-banip
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-banip-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-banip - lo translation
+Maintainer: Dirk Brenken <dev@brenken.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-banip - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-banip-lt
@@ -6653,6 +7341,25 @@ Hidden: 1
 Description:     Translation for luci-app-bcp38 - 한국어 (Korean)
 @@
 
+Package: luci-i18n-bcp38-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-bcp38
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-bcp38-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-bcp38 - lo translation
+Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-bcp38 - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-bcp38-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -6670,6 +7377,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-bcp38 - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-bcp38-lv
+Default: LUCI_LANG_lv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-bcp38
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-bcp38-lv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-bcp38 - lv translation
+Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-bcp38 - Latviešu (Latvian)
 @@
 
 Package: luci-i18n-bcp38-mr
@@ -7398,6 +8124,25 @@ Hidden: 1
 Description:     Translation for luci-app-bmx7 - 한국어 (Korean)
 @@
 
+Package: luci-i18n-bmx7-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-bmx7
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-bmx7-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-bmx7 - lo translation
+Maintainer: Roger Pueyo <roger.pueyo@guifi.net> Pau Escrich <p4u@dabax.net>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-bmx7 - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-bmx7-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -7761,6 +8506,234 @@ License: Apache-2.0
 URL: https://github.com/openwrt/luci
 Type: ipkg
 Description: LuCI support for chrony
+@@
+
+Package: luci-i18n-chrony-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-chrony
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-chrony-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-chrony - cs translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-chrony - Čeština (Czech)
+@@
+
+Package: luci-i18n-chrony-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-chrony
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-chrony-es-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-chrony - es translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-chrony - Español (Spanish)
+@@
+
+Package: luci-i18n-chrony-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-chrony
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-chrony-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-chrony - ga translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-chrony - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-chrony-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-chrony
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-chrony-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-chrony - ko translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-chrony - 한국어 (Korean)
+@@
+
+Package: luci-i18n-chrony-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-chrony
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-chrony-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-chrony - lo translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-chrony - ພາສາລາວ (Lao)
+@@
+
+Package: luci-i18n-chrony-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-chrony
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-chrony-lt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-chrony - lt translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-chrony - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-chrony-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-chrony
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-chrony-pl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-chrony - pl translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-chrony - Polski (Polish)
+@@
+
+Package: luci-i18n-chrony-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-chrony
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-chrony-pt-br-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-chrony - pt-br translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-chrony - Português do Brasil (Brazilian Portuguese)
+@@
+
+Package: luci-i18n-chrony-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-chrony
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-chrony-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-chrony - ru translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-chrony - Русский (Russian)
+@@
+
+Package: luci-i18n-chrony-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-chrony
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-chrony-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-chrony - uk translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-chrony - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-chrony-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-chrony
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-chrony-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-chrony - zh-cn translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-chrony - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-chrony-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-chrony
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-chrony-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-chrony - zh-tw translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-chrony - 正體中文 (Traditional Chinese)
 @@
 
 
@@ -8145,6 +9118,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-clamav - 한국어 (Korean)
+@@
+
+Package: luci-i18n-clamav-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-clamav
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-clamav-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-clamav - lo translation
+Maintainer: Marko Ratkaj <marko.ratkaj@sartura.hr> Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-clamav - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-clamav-lt
@@ -8871,6 +9863,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-cloudflared - 한국어 (Korean)
+@@
+
+Package: luci-i18n-cloudflared-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-cloudflared
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-cloudflared-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-cloudflared - lo translation
+Maintainer: Hilman Maulana <hilman0.0maulana@gmail.com>, Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-cloudflared - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-cloudflared-lt
@@ -9618,6 +10629,25 @@ Hidden: 1
 Description:     Translation for luci-app-commands - 한국어 (Korean)
 @@
 
+Package: luci-i18n-commands-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-commands
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-commands-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-commands - lo translation
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-commands - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-commands-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -10361,6 +11391,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-coovachilli - 한국어 (Korean)
+@@
+
+Package: luci-i18n-coovachilli-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-coovachilli
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-coovachilli-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-coovachilli - lo translation
+Maintainer: Steven Barth <steven@midlink.org>, Jo-Philipp Wich <jo@mein.io>, Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-coovachilli - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-coovachilli-lt
@@ -11302,6 +12351,253 @@ Type: ipkg
 Description:    LuCI config app for NoPorts daemon (csshnpd)
 @@
 
+Package: luci-i18n-csshnpd-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-csshnpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-csshnpd-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-csshnpd - cs translation
+Maintainer: Chris Swan <chris@atsign.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-csshnpd - Čeština (Czech)
+@@
+
+Package: luci-i18n-csshnpd-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-csshnpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-csshnpd-de-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-csshnpd - de translation
+Maintainer: Chris Swan <chris@atsign.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-csshnpd - Deutsch (German)
+@@
+
+Package: luci-i18n-csshnpd-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-csshnpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-csshnpd-es-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-csshnpd - es translation
+Maintainer: Chris Swan <chris@atsign.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-csshnpd - Español (Spanish)
+@@
+
+Package: luci-i18n-csshnpd-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-csshnpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-csshnpd-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-csshnpd - ga translation
+Maintainer: Chris Swan <chris@atsign.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-csshnpd - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-csshnpd-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-csshnpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-csshnpd-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-csshnpd - ko translation
+Maintainer: Chris Swan <chris@atsign.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-csshnpd - 한국어 (Korean)
+@@
+
+Package: luci-i18n-csshnpd-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-csshnpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-csshnpd-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-csshnpd - lo translation
+Maintainer: Chris Swan <chris@atsign.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-csshnpd - ພາສາລາວ (Lao)
+@@
+
+Package: luci-i18n-csshnpd-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-csshnpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-csshnpd-lt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-csshnpd - lt translation
+Maintainer: Chris Swan <chris@atsign.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-csshnpd - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-csshnpd-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-csshnpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-csshnpd-pl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-csshnpd - pl translation
+Maintainer: Chris Swan <chris@atsign.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-csshnpd - Polski (Polish)
+@@
+
+Package: luci-i18n-csshnpd-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-csshnpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-csshnpd-pt-br-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-csshnpd - pt-br translation
+Maintainer: Chris Swan <chris@atsign.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-csshnpd - Português do Brasil (Brazilian Portuguese)
+@@
+
+Package: luci-i18n-csshnpd-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-csshnpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-csshnpd-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-csshnpd - ru translation
+Maintainer: Chris Swan <chris@atsign.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-csshnpd - Русский (Russian)
+@@
+
+Package: luci-i18n-csshnpd-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-csshnpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-csshnpd-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-csshnpd - uk translation
+Maintainer: Chris Swan <chris@atsign.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-csshnpd - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-csshnpd-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-csshnpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-csshnpd-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-csshnpd - zh-cn translation
+Maintainer: Chris Swan <chris@atsign.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-csshnpd - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-csshnpd-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-csshnpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-csshnpd-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-csshnpd - zh-tw translation
+Maintainer: Chris Swan <chris@atsign.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-csshnpd - 正體中文 (Traditional Chinese)
+@@
+
 
 Source-Makefile: feeds/luci/applications/luci-app-dawn/Makefile
 Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
@@ -11325,6 +12621,25 @@ Type: ipkg
 Description: LuCI support for DAWN
 @@
 
+Package: luci-i18n-dawn-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dawn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dawn-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dawn - cs translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dawn - Čeština (Czech)
+@@
+
 Package: luci-i18n-dawn-es
 Default: LUCI_LANG_es||(ALL&&m)
 Version: x
@@ -11344,6 +12659,25 @@ Hidden: 1
 Description:     Translation for luci-app-dawn - Español (Spanish)
 @@
 
+Package: luci-i18n-dawn-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dawn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dawn-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dawn - ga translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dawn - Gaeilge (Irish)
+@@
+
 Package: luci-i18n-dawn-ja
 Default: LUCI_LANG_ja||(ALL&&m)
 Version: x
@@ -11361,6 +12695,44 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-dawn - 日本語 (Japanese)
+@@
+
+Package: luci-i18n-dawn-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dawn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dawn-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dawn - ko translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dawn - 한국어 (Korean)
+@@
+
+Package: luci-i18n-dawn-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dawn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dawn-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dawn - lo translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dawn - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-dawn-lt
@@ -11399,6 +12771,120 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-dawn - Polski (Polish)
+@@
+
+Package: luci-i18n-dawn-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dawn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dawn-pt-br-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dawn - pt-br translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dawn - Português do Brasil (Brazilian Portuguese)
+@@
+
+Package: luci-i18n-dawn-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dawn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dawn-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dawn - ru translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dawn - Русский (Russian)
+@@
+
+Package: luci-i18n-dawn-sv
+Default: LUCI_LANG_sv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dawn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dawn-sv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dawn - sv translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dawn - Svenska (Swedish)
+@@
+
+Package: luci-i18n-dawn-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dawn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dawn-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dawn - uk translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dawn - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-dawn-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dawn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dawn-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dawn - zh-cn translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dawn - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-dawn-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dawn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dawn-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dawn - zh-tw translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dawn - 正體中文 (Traditional Chinese)
 @@
 
 
@@ -11783,6 +13269,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-dcwapd - 한국어 (Korean)
+@@
+
+Package: luci-i18n-dcwapd-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dcwapd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dcwapd-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dcwapd - lo translation
+Maintainer: Carey Sonsino <csonsino@gmail.com>, Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dcwapd - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-dcwapd-lt
@@ -12530,6 +14035,25 @@ Hidden: 1
 Description:     Translation for luci-app-ddns - 한국어 (Korean)
 @@
 
+Package: luci-i18n-ddns-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ddns
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ddns-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ddns - lo translation
+Maintainer: Ansuel Smith <ansuelsmth@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ddns - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-ddns-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -13275,6 +14799,25 @@ Hidden: 1
 Description:     Translation for luci-app-dockerman - 한국어 (Korean)
 @@
 
+Package: luci-i18n-dockerman-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dockerman
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dockerman-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dockerman - lo translation
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Source: 
+License: AGPL-3.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dockerman - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-dockerman-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -14001,6 +15544,25 @@ Hidden: 1
 Description:     Translation for luci-app-dump1090 - 한국어 (Korean)
 @@
 
+Package: luci-i18n-dump1090-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dump1090
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dump1090-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dump1090 - lo translation
+Maintainer: Alvaro Fernandez Rojas <noltari@gmail.com> Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dump1090 - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-dump1090-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -14592,6 +16154,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-email - 日本語 (Japanese)
+@@
+
+Package: luci-i18n-email-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-email
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-email-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-email - lo translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-email - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-email-lt
@@ -15261,6 +16842,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-eoip - 한국어 (Korean)
+@@
+
+Package: luci-i18n-eoip-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-eoip
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-eoip-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-eoip - lo translation
+Maintainer: Bogdan Shatik <bogdikxxx@mail.ru>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-eoip - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-eoip-lt
@@ -15970,6 +17570,25 @@ Hidden: 1
 Description:     Translation for luci-app-example - 한국어 (Korean)
 @@
 
+Package: luci-i18n-example-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-example
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-example-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-example - lo translation
+Maintainer: Andreas Brau <ab@andi95.de>, Duncan Hill <github.com@cricalix.net>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-example - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-example-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -16563,6 +18182,25 @@ Hidden: 1
 Description:     Translation for luci-app-filebrowser - 日本語 (Japanese)
 @@
 
+Package: luci-i18n-filebrowser-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-filebrowser
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-filebrowser-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-filebrowser - lo translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-filebrowser - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-filebrowser-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -16580,6 +18218,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-filebrowser - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-filebrowser-lv
+Default: LUCI_LANG_lv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-filebrowser
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-filebrowser-lv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-filebrowser - lv translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-filebrowser - Latviešu (Latvian)
 @@
 
 Package: luci-i18n-filebrowser-nl
@@ -17021,6 +18678,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-filemanager - 日本語 (Japanese)
+@@
+
+Package: luci-i18n-filemanager-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-filemanager
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-filemanager-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-filemanager - lo translation
+Maintainer: Dmitry R <rdmitry0911@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-filemanager - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-filemanager-lt
@@ -17597,6 +19273,25 @@ Hidden: 1
 Description:     Translation for luci-app-firewall - 日本語 (Japanese)
 @@
 
+Package: luci-i18n-firewall-ka
+Default: LUCI_LANG_ka||(ALL&&m)
+Version: x
+Depends: +libc luci-app-firewall
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-firewall-ka-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-firewall - ka translation
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-firewall - ქართული ენა (Georgian)
+@@
+
 Package: luci-i18n-firewall-ko
 Default: LUCI_LANG_ko||(ALL&&m)
 Version: x
@@ -17614,6 +19309,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-firewall - 한국어 (Korean)
+@@
+
+Package: luci-i18n-firewall-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-firewall
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-firewall-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-firewall - lo translation
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-firewall - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-firewall-lt
@@ -18342,6 +20056,25 @@ Hidden: 1
 Description:     Translation for luci-app-frpc - 한국어 (Korean)
 @@
 
+Package: luci-i18n-frpc-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frpc
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-frpc-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frpc - lo translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frpc - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-frpc-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -19068,6 +20801,25 @@ Hidden: 1
 Description:     Translation for luci-app-frps - 한국어 (Korean)
 @@
 
+Package: luci-i18n-frps-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-frps-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - lo translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-frps-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -19773,6 +21525,25 @@ License: GPL-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-fwknopd - 한국어 (Korean)
+@@
+
+Package: luci-i18n-fwknopd-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-fwknopd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-fwknopd-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-fwknopd - lo translation
+Maintainer: Jonathan Bennett <JBennett@incomsystems.biz>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-fwknopd - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-fwknopd-lt
@@ -20849,7 +22620,7 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-https-dns-proxy
 Submenu: 3. Applications
-Version: 2025.12.29-r4
+Version: 2026.03.18-r1
 Depends: +libc +luci-base +https-dns-proxy
 Conflicts: 
 Menu-Depends: 
@@ -20870,7 +22641,7 @@ Config:
 help
 	DNS Over HTTPS Proxy Web UI
 	.
-	Version: 2025.12.29-4
+	Version: 2026.03.18-1
 @@
 
 Package: luci-i18n-https-dns-proxy-ar
@@ -21922,6 +23693,25 @@ Hidden: 1
 Description:     Translation for luci-app-irqbalance - 한국어 (Korean)
 @@
 
+Package: luci-i18n-irqbalance-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-irqbalance
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-irqbalance-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-irqbalance - lo translation
+Maintainer: Puran Lyu <pl2355@nyu.edu>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-irqbalance - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-irqbalance-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -22665,6 +24455,25 @@ License: GPL-2.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-keepalived - 한국어 (Korean)
+@@
+
+Package: luci-i18n-keepalived-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-keepalived
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-keepalived-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-keepalived - lo translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-keepalived - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-keepalived-lt
@@ -23412,6 +25221,25 @@ Hidden: 1
 Description:     Translation for luci-app-ksmbd - 한국어 (Korean)
 @@
 
+Package: luci-i18n-ksmbd-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ksmbd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ksmbd-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ksmbd - lo translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ksmbd - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-ksmbd-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -23865,6 +25693,234 @@ Type: ipkg
 Description: Luci Application for IPSec VPN (Libreswan)
 @@
 
+Package: luci-i18n-libreswan-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - cs translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - Čeština (Czech)
+@@
+
+Package: luci-i18n-libreswan-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-es-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - es translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - Español (Spanish)
+@@
+
+Package: luci-i18n-libreswan-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - ga translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-libreswan-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - ko translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - 한국어 (Korean)
+@@
+
+Package: luci-i18n-libreswan-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - lo translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - ພາສາລາວ (Lao)
+@@
+
+Package: luci-i18n-libreswan-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-lt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - lt translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-libreswan-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-pl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - pl translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - Polski (Polish)
+@@
+
+Package: luci-i18n-libreswan-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-pt-br-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - pt-br translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - Português do Brasil (Brazilian Portuguese)
+@@
+
+Package: luci-i18n-libreswan-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - ru translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - Русский (Russian)
+@@
+
+Package: luci-i18n-libreswan-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - uk translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-libreswan-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - zh-cn translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-libreswan-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - zh-tw translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - 正體中文 (Traditional Chinese)
+@@
+
 
 Source-Makefile: feeds/luci/applications/luci-app-lldpd/Makefile
 Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
@@ -24095,6 +26151,25 @@ License: MIT
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-lldpd - 日本語 (Japanese)
+@@
+
+Package: luci-i18n-lldpd-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-lldpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-lldpd-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-lldpd - lo translation
+Maintainer: Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: MIT
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-lldpd - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-lldpd-lt
@@ -24768,6 +26843,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-lxc - 한국어 (Korean)
+@@
+
+Package: luci-i18n-lxc-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-lxc
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-lxc-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-lxc - lo translation
+Maintainer: Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-lxc - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-lxc-lt
@@ -25496,6 +27590,25 @@ Hidden: 1
 Description:     Translation for luci-app-minidlna - 한국어 (Korean)
 @@
 
+Package: luci-i18n-minidlna-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-minidlna
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-minidlna-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-minidlna - lo translation
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-minidlna - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-minidlna-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -25855,9 +27968,6 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-minidlna - 正體中文 (Traditional Chinese)
-@@
-
-
 @@
 
 
@@ -26223,6 +28333,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-mosquitto - 한국어 (Korean)
+@@
+
+Package: luci-i18n-mosquitto-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-mosquitto
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-mosquitto-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-mosquitto - lo translation
+Maintainer: Karl Palsson <karlp@etactica.com> Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-mosquitto - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-mosquitto-lt
@@ -26951,6 +29080,25 @@ Hidden: 1
 Description:     Translation for luci-app-mwan3 - 한국어 (Korean)
 @@
 
+Package: luci-i18n-mwan3-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-mwan3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-mwan3-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-mwan3 - lo translation
+Maintainer: Florian Eckert <fe@dev.tdt.de>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-mwan3 - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-mwan3-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -27675,6 +29823,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-natmap - 한국어 (Korean)
+@@
+
+Package: luci-i18n-natmap-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-natmap
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-natmap-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-natmap - lo translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-natmap - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-natmap-lt
@@ -28403,6 +30570,25 @@ Hidden: 1
 Description:     Translation for luci-app-nextdns - 한국어 (Korean)
 @@
 
+Package: luci-i18n-nextdns-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-nextdns
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-nextdns-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-nextdns - lo translation
+Maintainer: Olivier Poitrey <rs@nextdns.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-nextdns - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-nextdns-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -29127,6 +31313,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-nlbwmon - 한국어 (Korean)
+@@
+
+Package: luci-i18n-nlbwmon-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-nlbwmon
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-nlbwmon-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-nlbwmon - lo translation
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-nlbwmon - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-nlbwmon-lt
@@ -29855,6 +32060,25 @@ Hidden: 1
 Description:     Translation for luci-app-nut - 한국어 (Korean)
 @@
 
+Package: luci-i18n-nut-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-nut
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-nut-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-nut - lo translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca> Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-nut - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-nut-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -30562,6 +32786,25 @@ Hidden: 1
 Description:     Translation for luci-app-ocserv - 한국어 (Korean)
 @@
 
+Package: luci-i18n-ocserv-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ocserv
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ocserv-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ocserv - lo translation
+Maintainer: Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ocserv - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-ocserv-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -31267,6 +33510,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-olsr - 한국어 (Korean)
+@@
+
+Package: luci-i18n-olsr-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-olsr
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-olsr-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-olsr - lo translation
+Maintainer: Manuel Munz <munz@comuno.net>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-olsr - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-olsr-lt
@@ -32014,6 +34276,25 @@ Hidden: 1
 Description:     Translation for luci-app-olsr-services - Lietuvių (Lithuanian)
 @@
 
+Package: luci-i18n-olsr-services-lv
+Default: LUCI_LANG_lv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-olsr-services
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-olsr-services-lv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-olsr-services - lv translation
+Maintainer: Andreas Brau <ab@andi95.de>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-olsr-services - Latviešu (Latvian)
+@@
+
 Package: luci-i18n-olsr-services-mr
 Default: LUCI_LANG_mr||(ALL&&m)
 Version: x
@@ -32740,6 +35021,25 @@ Hidden: 1
 Description:     Translation for luci-app-olsr-viz - Lietuvių (Lithuanian)
 @@
 
+Package: luci-i18n-olsr-viz-lv
+Default: LUCI_LANG_lv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-olsr-viz
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-olsr-viz-lv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-olsr-viz - lv translation
+Maintainer: Lorenz Schori <lo@znerol.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-olsr-viz - Latviešu (Latvian)
+@@
+
 Package: luci-i18n-olsr-viz-mr
 Default: LUCI_LANG_mr||(ALL&&m)
 Version: x
@@ -33445,6 +35745,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-omcproxy - 한국어 (Korean)
+@@
+
+Package: luci-i18n-omcproxy-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-omcproxy
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-omcproxy-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-omcproxy - lo translation
+Maintainer: Shun Li <riverscn@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-omcproxy - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-omcproxy-lt
@@ -34192,6 +36511,25 @@ Hidden: 1
 Description:     Translation for luci-app-openlist - 한국어 (Korean)
 @@
 
+Package: luci-i18n-openlist-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-openlist
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-openlist-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-openlist - lo translation
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-openlist - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-openlist-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -34937,6 +37275,25 @@ Hidden: 1
 Description:     Translation for luci-app-openvpn - 한국어 (Korean)
 @@
 
+Package: luci-i18n-openvpn-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-openvpn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-openvpn-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-openvpn - lo translation
+Maintainer: Steven Barth <steven@midlink.org>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-openvpn - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-openvpn-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -35663,6 +38020,25 @@ Hidden: 1
 Description:     Translation for luci-app-openwisp - 한국어 (Korean)
 @@
 
+Package: luci-i18n-openwisp-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-openwisp
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-openwisp-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-openwisp - lo translation
+Maintainer: Nicholas Smith <nicholas@nbembedded.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-openwisp - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-openwisp-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -36368,6 +38744,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-p910nd - 한국어 (Korean)
+@@
+
+Package: luci-i18n-p910nd-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-p910nd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-p910nd-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-p910nd - lo translation
+Maintainer: Paul Donald <newtwen@gmail.com>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-p910nd - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-p910nd-lt
@@ -37822,6 +40217,25 @@ Hidden: 1
 Description:     Translation for luci-app-pagekitec - 한국어 (Korean)
 @@
 
+Package: luci-i18n-pagekitec-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-pagekitec-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - lo translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-pagekitec-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -37839,6 +40253,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-pagekitec - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-pagekitec-lv
+Default: LUCI_LANG_lv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-pagekitec-lv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - lv translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Latviešu (Latvian)
 @@
 
 Package: luci-i18n-pagekitec-mr
@@ -38189,7 +40622,7 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-pbr
 Submenu: 3. Applications
-Version: 1.2.2-r10
+Version: 1.2.2-r18
 Depends: +libc +luci-base +jsonfilter +pbr
 Conflicts: 
 Menu-Depends: 
@@ -38210,7 +40643,7 @@ Config:
 help
 	Policy Based Routing Service Web UI
 	.
-	Version: 1.2.2-10
+	Version: 1.2.2-18
 @@
 
 Package: luci-i18n-pbr-ar
@@ -38553,6 +40986,25 @@ License: AGPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-pbr - 한국어 (Korean)
+@@
+
+Package: luci-i18n-pbr-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pbr
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-pbr-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pbr - lo translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pbr - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-pbr-lt
@@ -39113,6 +41565,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-privoxy - 日本語 (Japanese)
+@@
+
+Package: luci-i18n-privoxy-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-privoxy
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-privoxy-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-privoxy - lo translation
+Maintainer: Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-privoxy - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-privoxy-lt
@@ -39763,6 +42234,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-qos - 한국어 (Korean)
+@@
+
+Package: luci-i18n-qos-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-qos
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-qos-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-qos - lo translation
+Maintainer: Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-qos - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-qos-lt
@@ -40527,6 +43017,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-radicale3 - 한국어 (Korean)
+@@
+
+Package: luci-i18n-radicale3-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - lo translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-radicale3-lt
@@ -41622,7 +44131,7 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-rustdesk-server
 Submenu: 3. Applications
-Version: 20250610-r4
+Version: 20260313-r1
 Depends: +libc +luci-base +rpcd +rpcd-mod-ucode
 Conflicts: 
 Menu-Depends: 
@@ -41639,9 +44148,256 @@ Type: ipkg
 Description: LuCI support for RustDesk Server
 @@
 
+Package: luci-i18n-rustdesk-server-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - cs translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - Čeština (Czech)
+@@
+
+Package: luci-i18n-rustdesk-server-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-de-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - de translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - Deutsch (German)
+@@
+
+Package: luci-i18n-rustdesk-server-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-es-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - es translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - Español (Spanish)
+@@
+
+Package: luci-i18n-rustdesk-server-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - ga translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-rustdesk-server-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - ko translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - 한국어 (Korean)
+@@
+
+Package: luci-i18n-rustdesk-server-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - lo translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - ພາສາລາວ (Lao)
+@@
+
+Package: luci-i18n-rustdesk-server-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-lt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - lt translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-rustdesk-server-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-pl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - pl translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - Polski (Polish)
+@@
+
+Package: luci-i18n-rustdesk-server-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-pt-br-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - pt-br translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - Português do Brasil (Brazilian Portuguese)
+@@
+
+Package: luci-i18n-rustdesk-server-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - ru translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - Русский (Russian)
+@@
+
+Package: luci-i18n-rustdesk-server-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - uk translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-rustdesk-server-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - zh-cn translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-rustdesk-server-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-rustdesk-server
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-rustdesk-server-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-rustdesk-server - zh-tw translation
+Maintainer: Guilherme Cardoso <luminoso@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-rustdesk-server - 正體中文 (Traditional Chinese)
+@@
+
 Package: luci-app-rustdesk-server
 Submenu: 3. Applications
-Version: 20250610-r4
+Version: 20260313-r1
 Depends: +libc +luci-base +rpcd +rpcd-mod-ucode
 Conflicts: 
 Menu-Depends: 
@@ -42040,6 +44796,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-samba4 - 한국어 (Korean)
+@@
+
+Package: luci-i18n-samba4-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-samba4
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-samba4-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-samba4 - lo translation
+Maintainer: Andy Walsh <andy.walsh44+github@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-samba4 - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-samba4-lt
@@ -42768,6 +45543,25 @@ Hidden: 1
 Description:     Translation for luci-app-ser2net - 한국어 (Korean)
 @@
 
+Package: luci-i18n-ser2net-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ser2net
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ser2net-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ser2net - lo translation
+Maintainer: Michele Primavera <primavera@elmod.it>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ser2net - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-ser2net-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -43473,6 +46267,25 @@ License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-smartdns - 한국어 (Korean)
+@@
+
+Package: luci-i18n-smartdns-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-smartdns
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-smartdns-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-smartdns - lo translation
+Maintainer: Nick Peng <pymumu@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-smartdns - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-smartdns-lt
@@ -44182,6 +46995,25 @@ Hidden: 1
 Description:     Translation for luci-app-snmpd - 한국어 (Korean)
 @@
 
+Package: luci-i18n-snmpd-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-snmpd-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - lo translation
+Maintainer: Christian Korber <ck@dev.tdt.de>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-snmpd-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -44199,6 +47031,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-snmpd - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-snmpd-lv
+Default: LUCI_LANG_lv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-snmpd-lv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - lv translation
+Maintainer: Christian Korber <ck@dev.tdt.de>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Latviešu (Latvian)
 @@
 
 Package: luci-i18n-snmpd-mr
@@ -44566,6 +47417,253 @@ Type: ipkg
 Description: Softether management application
 @@
 
+Package: luci-i18n-softether-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - cs translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - Čeština (Czech)
+@@
+
+Package: luci-i18n-softether-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-de-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - de translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - Deutsch (German)
+@@
+
+Package: luci-i18n-softether-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-es-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - es translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - Español (Spanish)
+@@
+
+Package: luci-i18n-softether-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - ga translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-softether-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - ko translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - 한국어 (Korean)
+@@
+
+Package: luci-i18n-softether-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - lo translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - ພາສາລາວ (Lao)
+@@
+
+Package: luci-i18n-softether-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-lt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - lt translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-softether-lv
+Default: LUCI_LANG_lv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-lv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - lv translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - Latviešu (Latvian)
+@@
+
+Package: luci-i18n-softether-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-pl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - pl translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - Polski (Polish)
+@@
+
+Package: luci-i18n-softether-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - ru translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - Русский (Russian)
+@@
+
+Package: luci-i18n-softether-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - uk translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-softether-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - zh-cn translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-softether-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - zh-tw translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - 正體中文 (Traditional Chinese)
+@@
+
 
 Source-Makefile: feeds/luci/applications/luci-app-sqm/Makefile
 Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
@@ -44929,6 +48027,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-sqm - 한국어 (Korean)
+@@
+
+Package: luci-i18n-sqm-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sqm
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-sqm-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sqm - lo translation
+Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sqm - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-sqm-lt
@@ -45636,6 +48753,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-squid - 한국어 (Korean)
+@@
+
+Package: luci-i18n-squid-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-squid
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-squid-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-squid - lo translation
+Maintainer: Marko Ratkaj <marko.ratkaj@sartura.hr>, Daniel Nilsson <dannil+github@protonmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-squid - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-squid-lt
@@ -46364,6 +49500,25 @@ Hidden: 1
 Description:     Translation for luci-app-sshtunnel - 한국어 (Korean)
 @@
 
+Package: luci-i18n-sshtunnel-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-sshtunnel-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - lo translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-sshtunnel-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -47071,6 +50226,25 @@ Hidden: 1
 Description:     Translation for luci-app-statistics - 日本語 (Japanese)
 @@
 
+Package: luci-i18n-statistics-ka
+Default: LUCI_LANG_ka||(ALL&&m)
+Version: x
+Depends: +libc luci-app-statistics
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-statistics-ka-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-statistics - ka translation
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-statistics - ქართული ენა (Georgian)
+@@
+
 Package: luci-i18n-statistics-ko
 Default: LUCI_LANG_ko||(ALL&&m)
 Version: x
@@ -47088,6 +50262,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-statistics - 한국어 (Korean)
+@@
+
+Package: luci-i18n-statistics-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-statistics
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-statistics-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-statistics - lo translation
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-statistics - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-statistics-lt
@@ -47474,6 +50667,253 @@ Type: ipkg
 Description:    Status and configuration for strongSwan based on swanctl
 @@
 
+Package: luci-i18n-strongswan-swanctl-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-strongswan-swanctl
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-strongswan-swanctl-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-strongswan-swanctl - cs translation
+Maintainer: Nicholas Smith <nicholas@nbembedded.com>, Lukas Voegl <lvoegl@tdt.de>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-strongswan-swanctl - Čeština (Czech)
+@@
+
+Package: luci-i18n-strongswan-swanctl-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-strongswan-swanctl
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-strongswan-swanctl-de-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-strongswan-swanctl - de translation
+Maintainer: Nicholas Smith <nicholas@nbembedded.com>, Lukas Voegl <lvoegl@tdt.de>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-strongswan-swanctl - Deutsch (German)
+@@
+
+Package: luci-i18n-strongswan-swanctl-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-strongswan-swanctl
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-strongswan-swanctl-es-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-strongswan-swanctl - es translation
+Maintainer: Nicholas Smith <nicholas@nbembedded.com>, Lukas Voegl <lvoegl@tdt.de>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-strongswan-swanctl - Español (Spanish)
+@@
+
+Package: luci-i18n-strongswan-swanctl-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-strongswan-swanctl
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-strongswan-swanctl-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-strongswan-swanctl - ga translation
+Maintainer: Nicholas Smith <nicholas@nbembedded.com>, Lukas Voegl <lvoegl@tdt.de>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-strongswan-swanctl - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-strongswan-swanctl-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-strongswan-swanctl
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-strongswan-swanctl-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-strongswan-swanctl - ko translation
+Maintainer: Nicholas Smith <nicholas@nbembedded.com>, Lukas Voegl <lvoegl@tdt.de>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-strongswan-swanctl - 한국어 (Korean)
+@@
+
+Package: luci-i18n-strongswan-swanctl-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-strongswan-swanctl
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-strongswan-swanctl-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-strongswan-swanctl - lo translation
+Maintainer: Nicholas Smith <nicholas@nbembedded.com>, Lukas Voegl <lvoegl@tdt.de>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-strongswan-swanctl - ພາສາລາວ (Lao)
+@@
+
+Package: luci-i18n-strongswan-swanctl-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-strongswan-swanctl
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-strongswan-swanctl-lt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-strongswan-swanctl - lt translation
+Maintainer: Nicholas Smith <nicholas@nbembedded.com>, Lukas Voegl <lvoegl@tdt.de>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-strongswan-swanctl - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-strongswan-swanctl-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-strongswan-swanctl
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-strongswan-swanctl-pl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-strongswan-swanctl - pl translation
+Maintainer: Nicholas Smith <nicholas@nbembedded.com>, Lukas Voegl <lvoegl@tdt.de>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-strongswan-swanctl - Polski (Polish)
+@@
+
+Package: luci-i18n-strongswan-swanctl-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-strongswan-swanctl
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-strongswan-swanctl-pt-br-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-strongswan-swanctl - pt-br translation
+Maintainer: Nicholas Smith <nicholas@nbembedded.com>, Lukas Voegl <lvoegl@tdt.de>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-strongswan-swanctl - Português do Brasil (Brazilian Portuguese)
+@@
+
+Package: luci-i18n-strongswan-swanctl-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-strongswan-swanctl
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-strongswan-swanctl-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-strongswan-swanctl - ru translation
+Maintainer: Nicholas Smith <nicholas@nbembedded.com>, Lukas Voegl <lvoegl@tdt.de>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-strongswan-swanctl - Русский (Russian)
+@@
+
+Package: luci-i18n-strongswan-swanctl-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-strongswan-swanctl
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-strongswan-swanctl-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-strongswan-swanctl - uk translation
+Maintainer: Nicholas Smith <nicholas@nbembedded.com>, Lukas Voegl <lvoegl@tdt.de>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-strongswan-swanctl - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-strongswan-swanctl-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-strongswan-swanctl
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-strongswan-swanctl-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-strongswan-swanctl - zh-cn translation
+Maintainer: Nicholas Smith <nicholas@nbembedded.com>, Lukas Voegl <lvoegl@tdt.de>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-strongswan-swanctl - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-strongswan-swanctl-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-strongswan-swanctl
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-strongswan-swanctl-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-strongswan-swanctl - zh-tw translation
+Maintainer: Nicholas Smith <nicholas@nbembedded.com>, Lukas Voegl <lvoegl@tdt.de>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-strongswan-swanctl - 正體中文 (Traditional Chinese)
+@@
+
 
 Source-Makefile: feeds/luci/applications/luci-app-tailscale-community/Makefile
 Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
@@ -47512,6 +50952,24 @@ Source:
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-tailscale-community - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-tailscale-community-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-tailscale-community
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-tailscale-community-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-tailscale-community - zh-tw translation
+Maintainer: Tokisaki-Galaxy <moebest@outlook.jp>
+Source: 
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-tailscale-community - 正體中文 (Traditional Chinese)
 @@
 
 
@@ -47877,6 +51335,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-tinyproxy - 한국어 (Korean)
+@@
+
+Package: luci-i18n-tinyproxy-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-tinyproxy
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-tinyproxy-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-tinyproxy - lo translation
+Maintainer: Steven Barth <steven@midlink.org>, Jo-Philipp Wich <jo@mein.io>, Ramon Van Gorkom <Ramon00c00@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-tinyproxy - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-tinyproxy-lt
@@ -48584,6 +52061,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-tor - 한국어 (Korean)
+@@
+
+Package: luci-i18n-tor-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-tor
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-tor-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-tor - lo translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-tor - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-tor-lt
@@ -49312,6 +52808,25 @@ Hidden: 1
 Description:     Translation for luci-app-transmission - 한국어 (Korean)
 @@
 
+Package: luci-i18n-transmission-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-transmission
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-transmission-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-transmission - lo translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-transmission - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-transmission-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -49329,6 +52844,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-transmission - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-transmission-lv
+Default: LUCI_LANG_lv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-transmission
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-transmission-lv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-transmission - lv translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-transmission - Latviešu (Latvian)
 @@
 
 Package: luci-i18n-transmission-mr
@@ -49679,7 +53213,7 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-travelmate
 Submenu: 3. Applications
-Version: 2.4.0-r2
+Version: 2.4.6-r1
 Depends: +libc +luci-base +luci-lib-uqr +travelmate
 Conflicts: 
 Menu-Depends: 
@@ -50036,6 +53570,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-travelmate - 한국어 (Korean)
+@@
+
+Package: luci-i18n-travelmate-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-travelmate
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-travelmate-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-travelmate - lo translation
+Maintainer: Dirk Brenken <dev@brenken.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-travelmate - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-travelmate-lt
@@ -50745,6 +54298,25 @@ Hidden: 1
 Description:     Translation for luci-app-ttyd - 한국어 (Korean)
 @@
 
+Package: luci-i18n-ttyd-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ttyd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ttyd-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ttyd - lo translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ttyd - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-ttyd-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -51450,6 +55022,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-udpxy - 한국어 (Korean)
+@@
+
+Package: luci-i18n-udpxy-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-udpxy
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-udpxy-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-udpxy - lo translation
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-udpxy - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-udpxy-lt
@@ -52178,6 +55769,25 @@ Hidden: 1
 Description:     Translation for luci-app-uhttpd - 한국어 (Korean)
 @@
 
+Package: luci-i18n-uhttpd-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-uhttpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-uhttpd-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-uhttpd - lo translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-uhttpd - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-uhttpd-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -52904,6 +56514,25 @@ Hidden: 1
 Description:     Translation for luci-app-unbound - 한국어 (Korean)
 @@
 
+Package: luci-i18n-unbound-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-unbound
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-unbound-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-unbound - lo translation
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-unbound - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-unbound-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -53611,6 +57240,25 @@ Hidden: 1
 Description:     Translation for luci-app-upnp - 한국어 (Korean)
 @@
 
+Package: luci-i18n-upnp-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-upnp
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-upnp-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-upnp - lo translation
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-upnp - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-upnp-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -54223,6 +57871,25 @@ Hidden: 1
 Description:     Translation for luci-app-usteer - 한국어 (Korean)
 @@
 
+Package: luci-i18n-usteer-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-usteer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-usteer-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-usteer - lo translation
+Maintainer: Ramon Van Gorkom <Ramon00c00@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-usteer - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-usteer-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -54525,6 +58192,713 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-usteer - 正體中文 (Traditional Chinese)
+@@
+
+
+Source-Makefile: feeds/luci/applications/luci-app-ustreamer/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-app-ustreamer
+Submenu: 3. Applications
+Version: x
+Depends: +libc +luci-base +ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-app-ustreamer-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: uStreamer service configuration module
+Maintainer: OpenWrt LuCI community
+Source: 
+License: Apache-2.0
+URL: https://github.com/openwrt/luci
+Type: ipkg
+Description: uStreamer service configuration module
+@@
+
+Package: luci-i18n-ustreamer-ar
+Default: LUCI_LANG_ar||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-ar-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - ar translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - العربية (Arabic)
+@@
+
+Package: luci-i18n-ustreamer-bg
+Default: LUCI_LANG_bg||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-bg-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - bg translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - български (Bulgarian)
+@@
+
+Package: luci-i18n-ustreamer-bn
+Default: LUCI_LANG_bn_BD||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-bn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - bn translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - বাংলা (Bengali)
+@@
+
+Package: luci-i18n-ustreamer-ca
+Default: LUCI_LANG_ca||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-ca-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - ca translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Català (Catalan)
+@@
+
+Package: luci-i18n-ustreamer-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - cs translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Čeština (Czech)
+@@
+
+Package: luci-i18n-ustreamer-da
+Default: LUCI_LANG_da||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-da-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - da translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Dansk (Danish)
+@@
+
+Package: luci-i18n-ustreamer-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-de-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - de translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Deutsch (German)
+@@
+
+Package: luci-i18n-ustreamer-el
+Default: LUCI_LANG_el||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-el-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - el translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Ελληνικά (Greek)
+@@
+
+Package: luci-i18n-ustreamer-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-es-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - es translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Español (Spanish)
+@@
+
+Package: luci-i18n-ustreamer-fi
+Default: LUCI_LANG_fi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-fi-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - fi translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Suomi (Finnish)
+@@
+
+Package: luci-i18n-ustreamer-fr
+Default: LUCI_LANG_fr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-fr-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - fr translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Français (French)
+@@
+
+Package: luci-i18n-ustreamer-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - ga translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-ustreamer-he
+Default: LUCI_LANG_he||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-he-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - he translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - עִבְרִית (Hebrew)
+@@
+
+Package: luci-i18n-ustreamer-hi
+Default: LUCI_LANG_hi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-hi-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - hi translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - हिंदी (Hindi)
+@@
+
+Package: luci-i18n-ustreamer-hu
+Default: LUCI_LANG_hu||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-hu-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - hu translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Magyar (Hungarian)
+@@
+
+Package: luci-i18n-ustreamer-it
+Default: LUCI_LANG_it||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-it-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - it translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Italiano (Italian)
+@@
+
+Package: luci-i18n-ustreamer-ja
+Default: LUCI_LANG_ja||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-ja-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - ja translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - 日本語 (Japanese)
+@@
+
+Package: luci-i18n-ustreamer-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - ko translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - 한국어 (Korean)
+@@
+
+Package: luci-i18n-ustreamer-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-lt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - lt translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-ustreamer-mr
+Default: LUCI_LANG_mr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-mr-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - mr translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Marāṭhī (Marathi)
+@@
+
+Package: luci-i18n-ustreamer-ms
+Default: LUCI_LANG_ms||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-ms-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - ms translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Bahasa Melayu (Malay)
+@@
+
+Package: luci-i18n-ustreamer-no
+Default: LUCI_LANG_nb_NO||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-no-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - no translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Norsk (Norwegian)
+@@
+
+Package: luci-i18n-ustreamer-nl
+Default: LUCI_LANG_nl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-nl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - nl translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Nederlands (Dutch)
+@@
+
+Package: luci-i18n-ustreamer-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-pl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - pl translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Polski (Polish)
+@@
+
+Package: luci-i18n-ustreamer-pt
+Default: LUCI_LANG_pt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-pt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - pt translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Português (Portuguese)
+@@
+
+Package: luci-i18n-ustreamer-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-pt-br-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - pt-br translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Português do Brasil (Brazilian Portuguese)
+@@
+
+Package: luci-i18n-ustreamer-ro
+Default: LUCI_LANG_ro||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-ro-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - ro translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Română (Romanian)
+@@
+
+Package: luci-i18n-ustreamer-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - ru translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Русский (Russian)
+@@
+
+Package: luci-i18n-ustreamer-sk
+Default: LUCI_LANG_sk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-sk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - sk translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Slovenčina (Slovak)
+@@
+
+Package: luci-i18n-ustreamer-sv
+Default: LUCI_LANG_sv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-sv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - sv translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Svenska (Swedish)
+@@
+
+Package: luci-i18n-ustreamer-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - ta translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Tamil (Tamil)
+@@
+
+Package: luci-i18n-ustreamer-tr
+Default: LUCI_LANG_tr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-tr-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - tr translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Türkçe (Turkish)
+@@
+
+Package: luci-i18n-ustreamer-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - uk translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-ustreamer-vi
+Default: LUCI_LANG_vi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-vi-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - vi translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Tiếng Việt (Vietnamese)
+@@
+
+Package: luci-i18n-ustreamer-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - zh-cn translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-ustreamer-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - zh-tw translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - 正體中文 (Traditional Chinese)
 @@
 
 
@@ -54890,6 +59264,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-v2raya - 한국어 (Korean)
+@@
+
+Package: luci-i18n-v2raya-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-v2raya
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-v2raya-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-v2raya - lo translation
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-v2raya - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-v2raya-lt
@@ -55637,6 +60030,25 @@ Hidden: 1
 Description:     Translation for luci-app-vnstat2 - 한국어 (Korean)
 @@
 
+Package: luci-i18n-vnstat2-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-vnstat2
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-vnstat2-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-vnstat2 - lo translation
+Maintainer: Jan Hoffmann <jan@3e8.eu>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-vnstat2 - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-vnstat2-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -56363,6 +60775,25 @@ Hidden: 1
 Description:     Translation for luci-app-watchcat - 한국어 (Korean)
 @@
 
+Package: luci-i18n-watchcat-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-watchcat
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-watchcat-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-watchcat - lo translation
+Maintainer: Jo-Philipp Wich <jo@mein.io>, Nicholas Smith <nicholas@nbembedded.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-watchcat - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-watchcat-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -56726,6 +61157,329 @@ License: Apache-2.0
 URL: https://github.com/openwrt/luci
 Type: ipkg
 Description:    Track and display history of WiFi associated stations
+@@
+
+Package: luci-i18n-wifihistory-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - cs translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Čeština (Czech)
+@@
+
+Package: luci-i18n-wifihistory-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-de-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - de translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Deutsch (German)
+@@
+
+Package: luci-i18n-wifihistory-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-es-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - es translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Español (Spanish)
+@@
+
+Package: luci-i18n-wifihistory-fr
+Default: LUCI_LANG_fr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-fr-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - fr translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Français (French)
+@@
+
+Package: luci-i18n-wifihistory-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - ga translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-wifihistory-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - ko translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - 한국어 (Korean)
+@@
+
+Package: luci-i18n-wifihistory-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - lo translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - ພາສາລາວ (Lao)
+@@
+
+Package: luci-i18n-wifihistory-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-lt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - lt translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-wifihistory-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-pl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - pl translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Polski (Polish)
+@@
+
+Package: luci-i18n-wifihistory-pt
+Default: LUCI_LANG_pt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-pt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - pt translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Português (Portuguese)
+@@
+
+Package: luci-i18n-wifihistory-ro
+Default: LUCI_LANG_ro||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-ro-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - ro translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Română (Romanian)
+@@
+
+Package: luci-i18n-wifihistory-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - ru translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Русский (Russian)
+@@
+
+Package: luci-i18n-wifihistory-sv
+Default: LUCI_LANG_sv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-sv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - sv translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Svenska (Swedish)
+@@
+
+Package: luci-i18n-wifihistory-tr
+Default: LUCI_LANG_tr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-tr-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - tr translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Türkçe (Turkish)
+@@
+
+Package: luci-i18n-wifihistory-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - uk translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-wifihistory-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - zh-cn translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-wifihistory-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - zh-tw translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - 正體中文 (Traditional Chinese)
 @@
 
 
@@ -57110,6 +61864,25 @@ License: ISC
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-wifischedule - 한국어 (Korean)
+@@
+
+Package: luci-i18n-wifischedule-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifischedule
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifischedule-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifischedule - lo translation
+Maintainer: Nils Koenig <openwrt@newk.it>
+Source: 
+License: ISC
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifischedule - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-wifischedule-lt
@@ -57857,6 +62630,25 @@ Hidden: 1
 Description:     Translation for luci-app-wol - 한국어 (Korean)
 @@
 
+Package: luci-i18n-wol-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wol
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wol-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wol - lo translation
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wol - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-wol-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -58583,6 +63375,25 @@ Hidden: 1
 Description:     Translation for luci-app-xfrpc - 한국어 (Korean)
 @@
 
+Package: luci-i18n-xfrpc-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-xfrpc
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-xfrpc-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-xfrpc - lo translation
+Maintainer: Dengfeng Liu <liu_df@qq.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-xfrpc - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-xfrpc-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -59288,6 +64099,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-xinetd - 한국어 (Korean)
+@@
+
+Package: luci-i18n-xinetd-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-xinetd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-xinetd-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-xinetd - lo translation
+Maintainer: Helge Mader <ma@dev.tdt.de>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-xinetd - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-xinetd-lt
@@ -60320,13 +65150,22 @@ Config:
 	   tristate "Italian (it)" 
 
      config LUCI_LANG_ja
-	   tristate "Japanese (ja)"  
+	   tristate "Japanese (ja)" 
+
+     config LUCI_LANG_ka
+	   tristate "Georgian (ka)" 
 
      config LUCI_LANG_ko
 	   tristate "Korean (ko)" 
 
+     config LUCI_LANG_lo
+	   tristate "Lao (lo)" 
+
      config LUCI_LANG_lt
-	   tristate "Lithuanian (lt)"   
+	   tristate "Lithuanian (lt)" 
+
+     config LUCI_LANG_lv
+	   tristate "Latvian (lv)"  
 
      config LUCI_LANG_mr
 	   tristate "Marathi (mr)" 
@@ -60765,6 +65604,26 @@ Hidden: 1
 Description:     Translation for luci-base - 日本語 (Japanese)
 @@
 
+Package: luci-i18n-base-ka
+Default: LUCI_LANG_ka||(ALL&&m)
+Version: x
+Depends: +libc luci-base
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-base-ka-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-base - ka translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+LicenseFiles: LICENSE NOTICE
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-base - ქართული ენა (Georgian)
+@@
+
 Package: luci-i18n-base-ko
 Default: LUCI_LANG_ko||(ALL&&m)
 Version: x
@@ -60785,6 +65644,26 @@ Hidden: 1
 Description:     Translation for luci-base - 한국어 (Korean)
 @@
 
+Package: luci-i18n-base-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-base
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-base-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-base - lo translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+LicenseFiles: LICENSE NOTICE
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-base - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-base-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -60803,6 +65682,26 @@ LicenseFiles: LICENSE NOTICE
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-base - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-base-lv
+Default: LUCI_LANG_lv||(ALL&&m)
+Version: x
+Depends: +libc luci-base
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-base-lv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-base - lv translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+LicenseFiles: LICENSE NOTICE
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-base - Latviešu (Latvian)
 @@
 
 Package: luci-i18n-base-mr
@@ -61618,6 +66517,25 @@ Hidden: 1
 Description:     Translation for luci-mod-battstatus - 한국어 (Korean)
 @@
 
+Package: luci-i18n-battstatus-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-mod-battstatus
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-battstatus-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-mod-battstatus - lo translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-mod-battstatus - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-battstatus-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -61635,6 +66553,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-mod-battstatus - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-battstatus-lv
+Default: LUCI_LANG_lv||(ALL&&m)
+Version: x
+Depends: +libc luci-mod-battstatus
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-battstatus-lv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-mod-battstatus - lv translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-mod-battstatus - Latviešu (Latvian)
 @@
 
 Package: luci-i18n-battstatus-mr
@@ -62344,6 +67281,25 @@ Hidden: 1
 Description:     Translation for luci-mod-dashboard - 日本語 (Japanese)
 @@
 
+Package: luci-i18n-dashboard-ka
+Default: LUCI_LANG_ka||(ALL&&m)
+Version: x
+Depends: +libc luci-mod-dashboard
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dashboard-ka-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-mod-dashboard - ka translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-mod-dashboard - ქართული ენა (Georgian)
+@@
+
 Package: luci-i18n-dashboard-ko
 Default: LUCI_LANG_ko||(ALL&&m)
 Version: x
@@ -62361,6 +67317,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-mod-dashboard - 한국어 (Korean)
+@@
+
+Package: luci-i18n-dashboard-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-mod-dashboard
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dashboard-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-mod-dashboard - lo translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-mod-dashboard - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-dashboard-lt
@@ -63068,6 +68043,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-mod-dsl - 한국어 (Korean)
+@@
+
+Package: luci-i18n-dsl-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-mod-dsl
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dsl-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-mod-dsl - lo translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-mod-dsl - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-dsl-lt
@@ -64199,4 +69193,5 @@ URL: https://github.com/openwrt/luci
 Type: ipkg
 Description: LuCI modern OpenWrt theme
 @@
+
 

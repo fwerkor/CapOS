@@ -362,6 +362,25 @@ Hidden: 1
 Description:     Translation for luci-mod-dashboard - 日本語 (Japanese)
 @@
 
+Package: luci-i18n-dashboard-ka
+Default: LUCI_LANG_ka||(ALL&&m)
+Version: x
+Depends: +libc luci-mod-dashboard
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dashboard-ka-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-mod-dashboard - ka translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-mod-dashboard - ქართული ენა (Georgian)
+@@
+
 Package: luci-i18n-dashboard-ko
 Default: LUCI_LANG_ko||(ALL&&m)
 Version: x
@@ -379,6 +398,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-mod-dashboard - 한국어 (Korean)
+@@
+
+Package: luci-i18n-dashboard-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-mod-dashboard
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dashboard-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-mod-dashboard - lo translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-mod-dashboard - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-dashboard-lt

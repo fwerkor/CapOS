@@ -362,6 +362,25 @@ Hidden: 1
 Description:     Translation for luci-app-squid - 한국어 (Korean)
 @@
 
+Package: luci-i18n-squid-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-squid
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-squid-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-squid - lo translation
+Maintainer: Marko Ratkaj <marko.ratkaj@sartura.hr>, Daniel Nilsson <dannil+github@protonmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-squid - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-squid-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x

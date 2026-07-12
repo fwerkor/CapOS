@@ -362,6 +362,25 @@ Hidden: 1
 Description:     Translation for luci-app-watchcat - 한국어 (Korean)
 @@
 
+Package: luci-i18n-watchcat-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-watchcat
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-watchcat-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-watchcat - lo translation
+Maintainer: Jo-Philipp Wich <jo@mein.io>, Nicholas Smith <nicholas@nbembedded.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-watchcat - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-watchcat-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
