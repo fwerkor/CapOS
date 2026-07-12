@@ -2,7 +2,7 @@
 		</div>
 		<footer>
 			<span>
-				Interface:
+				Powered by
 				<a href="https://github.com/openwrt/luci" target="_blank" rel="noreferrer">
 					{{ version.luciname }} ({{ version.luciversion }})</a>
 				/

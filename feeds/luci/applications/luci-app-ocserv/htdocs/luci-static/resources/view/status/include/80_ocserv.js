@@ -39,50 +39,26 @@ return baseclass.extend({
 			
 			return users;
 		} catch (e) {
-			// Fall back to text parsing for non-JSON output
-			console.warn('JSON parsing failed, falling back to text parsing:', e.message);
-			return this.parseUsersText(output);
+			console.error('Failed to parse JSON:', e.message);
+			return users;
 		}
 	},
 
 	normalizeUser: function(entry) {
 		return {
-			id: entry.id,
-			user: entry?.username || entry?.user,
-			group: entry?.group,
-			vpn_ip: entry['vpn-ipv4'] || entry.vpn_ip,
-			vpn_ip6: entry['vpn-ipv6'] || entry.vpn_ip6,
-			ip: entry?.ip,
-			device: entry?.device,
-			time: entry?.time || entry['connected-at'],
-			cipher: entry?.cipher,
-			status: entry?.status
+			id: entry.ID,
+			user: entry?.Username || entry?.User,
+			group: entry?.Groupname || entry?.Group,
+			vpn_ip: entry['vpn-ipv4'] || entry.vpn_ip || entry?.IPv4,
+			vpn_ip6: entry['vpn-ipv6'] || entry.vpn_ip6 || entry?.IPv6,
+			ip: entry?.['Remote IP'],
+			device: entry?.Device,
+			time: entry['_Connected at'] || entry?.raw_connected_at,
+			cipher: entry?.Cipher || entry?.['TLS ciphersuite'],
+			status: entry?.Status || entry?.State,
+			tx: entry?._TX || entry?.TX || entry?.tx || entry?.raw_tx,
+			rx: entry?._RX || entry?.RX || entry?.rx || entry?.raw_rx,
 		};
-	},
-
-	parseUsersText: function(output) {
-		const users = [];
-		if (!output) return users;
-
-		const lines = output.split('\n');
-		for (let line of lines) {
-			// Parse: id user group vpn_ip ip device time cipher status
-			const match = line.match(/^\s*(\d+)\s+([-_\w]+)\s+([().*\-_\w]+)\s+([:.\-_\w]+)\s+([:.\-_\w]+)\s+([:.\-_\w]+)\s+([:.\-_\w]+)\s+([():.\-_\w]+)\s+([:.\-_\w]+)/);
-			if (match) {
-				users.push({
-					id: match[1],
-					user: match[2],
-					group: match[3],
-					vpn_ip: match[4],
-					ip: match[5],
-					device: match[6],
-					time: match[7],
-					cipher: match[8],
-					status: match[9]
-				});
-			}
-		}
-		return users;
 	},
 
 	handleDisconnect: function(id) {
@@ -100,7 +76,7 @@ return baseclass.extend({
 
 	load: function() {
 		return L.resolveDefault(
-			fs.exec('/usr/bin/occtl', ['show', 'users']).then(res => res.stdout),
+			fs.exec('/usr/bin/occtl', ['--json', 'show', 'users']).then(res => res.stdout),
 			''
 		);
 	},
@@ -118,6 +94,8 @@ return baseclass.extend({
 				E('div', { 'class': 'th' }, _('Time')),
 				E('div', { 'class': 'th' }, _('Cipher')),
 				E('div', { 'class': 'th' }, _('Status')),
+				E('div', { 'class': 'th' }, _('Tx')),
+				E('div', { 'class': 'th' }, _('Rx')),
 				E('div', { 'class': 'th' }, '\u00a0')
 			])
 		]);
@@ -141,7 +119,9 @@ return baseclass.extend({
 						E('div', { 'class': 'td' }, user.time),
 						E('div', { 'class': 'td' }, user.cipher),
 						E('div', { 'class': 'td' }, user.status),
-						E('div', { 'class': 'td' }, 
+						E('div', { 'class': 'td' }, user.tx),
+						E('div', { 'class': 'td' }, user.rx),
+						E('div', { 'class': 'td' },
 							E('button', {
 								'class': 'cbi-button cbi-button-remove',
 								'click': L.bind(this.handleDisconnect, this, user.id)
@@ -151,9 +131,6 @@ return baseclass.extend({
 			}
 		}
 
-		return E('div', { 'class': 'cbi-section' }, [
-			E('legend', _('Active OpenConnect Users')),
-			table
-		]);
+		return table;
 	}
 });

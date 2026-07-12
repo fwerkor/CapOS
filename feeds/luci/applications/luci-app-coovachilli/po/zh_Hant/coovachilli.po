@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2026-03-13 14:10+0000\n"
-"Last-Translator: EESF-2 <eesf-2@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-05-21 05:04+0000\n"
+"Last-Translator: 為什麼不加空格 <c++23@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/openwrt/luciapplicationscoovachilli/zh_Hant/>\n"
 "Language: zh_Hant\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:168
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:173
@@ -79,7 +79,7 @@ msgstr "允許的 MAC"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:371
 msgid "Always respond to DHCP to the broadcast IP, when no relay."
-msgstr "如果沒有中繼則始終回應 DHCP 廣播 IP。"
+msgstr "若沒有中繼則始終回應 DHCP 廣播 IP。"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:123
 msgid "Any DNS"
@@ -170,7 +170,7 @@ msgstr "主要 DNS"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:83
 msgid "Debug"
-msgstr "偵錯"
+msgstr "除錯"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:183
 msgid ""
@@ -187,7 +187,7 @@ msgstr "預設閒置逾時"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:178
 msgid "Default interim interval"
-msgstr ""
+msgstr "預設臨時間隔"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:168
 msgid "Default session timeout"
@@ -203,15 +203,15 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:205
 msgid "Directory where embedded local web content is placed"
-msgstr ""
+msgstr "擺放嵌入的本地 web 內容的目錄"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:458
 msgid "Do not check the source IP address of RADIUS disconnect requests"
-msgstr ""
+msgstr "不要檢查 RADIUS 斷線請求的來源 IP 位址"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:125
 msgid "Do not do any WISPr XML, assume the back-end is doing this instead"
-msgstr "不要做任何 WISPr XML，假設後端會代為處理"
+msgstr "不要理會任何 WISPr XML，假設後端會代為處理"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:126
 msgid "Do not offer WISPr 1.0 XML"
@@ -232,7 +232,7 @@ msgstr "網域"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:152
 msgid "Domain suffixes"
-msgstr "網域後綴"
+msgstr "網域尾碼"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:292
 msgid "Dynamic IP"
@@ -248,7 +248,7 @@ msgstr "已啟用"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:207
 msgid "Executable to run as a CGI type program"
-msgstr "以 CGI 類別執行的執行檔"
+msgstr "以 CGI 類型執行的執行檔"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:328
 msgid ""
@@ -343,11 +343,11 @@ msgstr "MAC 重新認證"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:245
 msgid "MAC suffix"
-msgstr "MAC 後綴"
+msgstr "MAC 尾碼"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:279
 msgid "Max clients"
-msgstr ""
+msgstr "最大客戶數"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:183
 msgid "Max download bandwidth"
@@ -379,7 +379,7 @@ msgstr "NAS 連接埠類型"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:287
 msgid "Net"
-msgstr ""
+msgstr "網路"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:67
 msgid "Network Configuration"
@@ -452,7 +452,7 @@ msgstr "代理連接埠"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:482
 msgid "Proxy Secret"
-msgstr "代理秘密"
+msgstr "代理密碼"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:68
 msgid "RADIUS"
@@ -468,7 +468,7 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:85
 msgid "Re-read configuration file at this interval"
-msgstr ""
+msgstr "以此間隔重新讀取配置檔案"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:85
 msgid "Re-read interval"
@@ -476,11 +476,11 @@ msgstr "重新讀取間隔"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:413
 msgid "Retries"
-msgstr ""
+msgstr "重試"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:418
 msgid "Retry seconds"
-msgstr ""
+msgstr "重試秒數"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:128
 msgid "Return the so-called Chilli XML along with WISPr XML."
@@ -493,7 +493,7 @@ msgstr "SSID"
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:120
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:395
 msgid "Secret"
-msgstr "秘密"
+msgstr "密碼"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:447
 msgid "Send CoovaChilli-OriginalURL in Access-Request"
@@ -553,7 +553,7 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:372
 msgid "Support for 802.1Q/VLAN network"
-msgstr ""
+msgstr "支援 802.1Q/VLAN 網路"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:448
 msgid "Swap Octets"
@@ -662,7 +662,7 @@ msgstr "WPA 訪客"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:60
 msgid "access controller for WLAN."
-msgstr ""
+msgstr "WLAN 存取控制器。"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:345
 msgid "in seconds"

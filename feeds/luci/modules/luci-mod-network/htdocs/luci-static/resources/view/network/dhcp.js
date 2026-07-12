@@ -201,7 +201,7 @@ function isValidMAC(sid, s) {
 	if (!s) return true;
 
 	for (const mac of L.toArray(s))
-		if (!mac.match(/^(([0-9a-f]{1,2}|\*)[:-]){5}([0-9a-f]{1,2}|\*)$/i))
+		if (!mac.match(/^(([0-9a-f]{2}|\*):){5}([0-9a-f]{2}|\*)$/i))
 			return _('Expecting a valid MAC address, optionally including wildcards') + _('; invalid MAC: ') + mac;
 
 	return true;
@@ -284,9 +284,9 @@ return view.extend({
 								host = lease.hostname;
 
 							const columns = [
-								host || '-',
+								'%h'.format(host || '-'),
 								lease.ipaddr,
-								vendor ? lease.macaddr + vendor : lease.macaddr,
+								'%h'.format(vendor ? lease.macaddr + vendor : lease.macaddr),
 								lease.duid || '-',
 								lease.iaid || '-',
 								exp
@@ -323,7 +323,7 @@ return view.extend({
 								host = name;
 
 							const columns = [
-								host || '-',
+								'%h'.format(host || '-'),
 								lease.ip6addrs ? lease.ip6addrs.join('<br />') : lease.ip6addr,
 								lease.duid,
 								lease.iaid,

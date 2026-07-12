@@ -62,11 +62,16 @@ return view.extend({
 		*/
 		let parseErrCount = 0;
 		poll.add(function () {
-			return L.resolveDefault(fs.stat('/var/run/banip_runtime.json'), null).then(function (stat) {
+			return L.resolveDefault(fs.stat('/var/run/banIP/banIP.runtime.json'), null).then(function (stat) {
 				if (!stat) {
 					return;
 				}
-				return L.resolveDefault(fs.read_direct('/var/run/banip_runtime.json'), 'null').then(function (res) {
+				return Promise.all([
+					L.resolveDefault(fs.read_direct('/var/run/banIP/banIP.runtime.json'), 'null'),
+					L.resolveDefault(fs.exec_direct('/etc/init.d/banip', ['actual']), '')
+				]).then(function (results) {
+					const res = results[0];
+					const actual = results[1]?.trim() || '';
 					const status = document.getElementById('status');
 					const buttons = document.querySelectorAll('.cbi-page-actions button');
 					let info = null;
@@ -90,7 +95,12 @@ return view.extend({
 						return;
 					}
 					if (status && info) {
-						status.textContent = `${info.status || '-'} (frontend: ${info.frontend_ver || '-'} / backend: ${info.backend_ver || '-'})`;
+						let statusText = info.status || '-';
+						if (actual) {
+							statusText += `: ${actual}`;
+						}
+						statusText += ` (frontend: ${info.frontend_ver || '-'} / backend: ${info.backend_ver || '-'})`;
+						status.textContent = statusText;
 						if (info.status === "processing") {
 							buttons.forEach(function (btn) {
 								btn.disabled = true;
@@ -130,7 +140,7 @@ return view.extend({
 			runtime information and buttons
 		*/
 		s = m.section(form.NamedSection, 'global');
-		s.render = L.bind(function (view, section_id) {
+		s.render = function (view, section_id) {
 			return E('div', { 'class': 'cbi-section' }, [
 				E('h3', _('Information')),
 				E('div', { 'class': 'cbi-value' }, [
@@ -174,7 +184,7 @@ return view.extend({
 					E('div', { 'class': 'cbi-value-field', 'id': 'sys', 'style': 'margin-bottom:-5px;color:#37c;' }, '-')
 				])
 			]);
-		}, o, this);
+		};
 
 		/*
 			tabbed config section
@@ -245,7 +255,7 @@ return view.extend({
 		o.optional = true;
 		o.retain = true;
 
-		o = s.taboption('general', form.Value, 'ban_fetchparm', _('Download Parameters'), _('Override the pre-configured download options for the selected download utility.'));
+		o = s.taboption('general', form.Value, 'ban_fetchparm', _('Download Parameters'), _('Override the pre-configured download options for the selected download utility. The output flag, e.g. \'-o\' for curl or \'-O\' for wget, must be the last parameter.'));
 		o.depends('ban_autodetect', '0');
 		o.optional = true;
 		o.retain = true;
@@ -273,6 +283,14 @@ return view.extend({
 		o.rmempty = true;
 
 		o = s.taboption('general', form.Flag, 'ban_fetchinsecure', _('Download Insecure'), _('Don\'t check SSL server certificates during download.'));
+		o.rmempty = true;
+
+		o = s.taboption('general', form.Flag, 'ban_nftcount', _('Reporting Counters'), _('Enable NFT counters for Set elements and chain rules. Required for the GeoIP Map and packet statistics in the Set Reporting.'));
+		o.rmempty = true;
+
+		o = s.taboption('general', form.Flag, 'ban_map', _('Enable GeoIP Map'), _('Enable a GeoIP Map with suspicious Set elements. This requires external requests to get the map tiles and geolocation data.'));
+		o.depends('ban_nftcount', '1');
+		o.optional = true;
 		o.rmempty = true;
 
 		/*
@@ -355,7 +373,7 @@ return view.extend({
 		o.default = '<em style="color:#37c;font-weight:bold;">' + _('Changes on this tab needs a banIP service restart to take effect.') + '</em>'
 			+ '<hr style="width: 200px; height: 1px;" />';
 
-		o = s.taboption('adv_chain', form.ListValue, 'ban_nftpriority', _('Chain Priority'), _('Set the nft chain priority within the banIP table, lower values means higher priority.'));
+		o = s.taboption('adv_chain', form.ListValue, 'ban_nftpriority', _('Chain Priority'), _('Set the NFT chain priority within the banIP table, lower values means higher priority.'));
 		o.value('10');
 		o.value('0');
 		o.value('-100');
@@ -436,7 +454,7 @@ return view.extend({
 		o.default = '<em style="color:#37c;font-weight:bold;">' + _('Changes on this tab needs a banIP service restart to take effect.') + '</em>'
 			+ '<hr style="width: 200px; height: 1px;" />';
 
-		o = s.taboption('adv_set', form.ListValue, 'ban_nftpolicy', _('Set Policy'), _('Set the nft policy for banIP-related Sets.'));
+		o = s.taboption('adv_set', form.ListValue, 'ban_nftpolicy', _('Set Policy'), _('Set the NFT policy for banIP-related Sets.'));
 		o.value('memory', _('memory'));
 		o.value('performance', _('performance'));
 		o.default = 'memory';
@@ -452,14 +470,6 @@ return view.extend({
 		o.default = '3';
 		o.placeholder = _('-- default --');
 		o.create = true;
-		o.optional = true;
-		o.rmempty = true;
-
-		o = s.taboption('adv_set', form.Flag, 'ban_nftcount', _('Set Element Counter'), _('Enable nft counter for every Set element.'));
-		o.rmempty = true;
-
-		o = s.taboption('adv_set', form.Flag, 'ban_map', _('Enable GeoIP Map'), _('Enable a GeoIP Map with suspicious Set elements. This requires external requests to get the map tiles and geolocation data.'));
-		o.depends('ban_nftcount', '1');
 		o.optional = true;
 		o.rmempty = true;
 
@@ -591,15 +601,43 @@ return view.extend({
 		o.datatype = 'range(1,10)';
 		o.rmempty = true;
 
-		o = s.taboption('adv_log', form.DynamicList, 'ban_logterm', _('Log Terms'), _('Regular expressions to detect suspicious IPs in the system log.'));
+		o = s.taboption('adv_log', form.ListValue, 'ban_logratelimit', _('Log Rate Limit'), _('Rate (per second) for the shared NFT log limit, applied globally across all logged rules. Set to \'0\' to disable rate limiting entirely, e.g. when using ulogd or other userspace log handlers.'));
+		o.value('0');
+		o.value('1');
+		o.value('5');
+		o.value('10');
+		o.value('25');
+		o.value('50');
+		o.value('100');
+		o.default = '10';
+		o.placeholder = _('-- default --');
+		o.create = true;
+		o.optional = true;
+		o.rmempty = true;
+
+		o = s.taboption('adv_log', form.ListValue, 'ban_logburstlimit', _('Log Burst Limit'), _('Burst size in packets for the shared NFT log limit.'));
+		o.depends({ ban_logratelimit: '0', '!reverse': true });
+		o.value('1');
+		o.value('5');
+		o.value('10');
+		o.value('25');
+		o.value('50');
+		o.default = '5';
+		o.placeholder = _('-- default --');
+		o.create = true;
+		o.optional = true;
+		o.rmempty = true;
+
+		o = s.taboption('adv_log', form.DynamicList, 'ban_logterm', _('Log Terms'),
+			_('Regular expressions to detect suspicious IPs in the system log. Uses the last IP per line; prefix a term with \'first:\' for source-first formats, e.g. nginx.'));
 		o.value('Exit before auth from', _('dropbear failed login'));
 		o.value('luci: failed login', _('LuCI failed login'));
 		o.value('error: maximum authentication attempts exceeded', _('sshd failed login'));
 		o.value('sshd.*Connection closed by.*\\[preauth\\]', _('sshd closed connection'));
 		o.value('SecurityEvent=\\"InvalidAccountID\\".*RemoteAddress=', _('asterisk invalid account'));
-		o.value('received a suspicious remote IP .*', _('nginx suspicious IP'));
 		o.value('TLS Error: could not determine wrapping from \\[AF_INET\\]', _('openvpn TLS error'));
 		o.value('AdGuardHome.*\\[error\\].*/control/login: from ip', _('AdGuardHome login error'));
+		o.value('received a suspicious remote IP', _('Remote logging Event'));
 		o.placeholder = _('-- Please choose (optional) --');
 		o.optional = true;
 		o.rmempty = true;

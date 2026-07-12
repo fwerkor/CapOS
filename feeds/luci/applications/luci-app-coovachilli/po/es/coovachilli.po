@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-10 03:41+0200\n"
-"PO-Revision-Date: 2026-03-13 14:09+0000\n"
+"PO-Revision-Date: 2026-03-30 03:54+0000\n"
 "Last-Translator: Franco Castillo <castillofrancodamian@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationscoovachilli/es/>\n"
@@ -457,7 +457,7 @@ msgstr "Servidor primario"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:210
 msgid "Program in inetd style to handle all uam requests"
-msgstr "Programa en estilo inetd para manejar todas las solicitudes UAM"
+msgstr "Programa en estilo inetd para manejar todas las solicitudes uam"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:477
 msgid "Proxy Client"
@@ -515,11 +515,11 @@ msgstr "SSID"
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:120
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:395
 msgid "Secret"
-msgstr "Clave"
+msgstr "Secreto"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:447
 msgid "Send CoovaChilli-OriginalURL in Access-Request"
-msgstr "Enviar CoovaChilli-OriginalURL en Access-Request"
+msgstr "Enviar CoovaChilli-OriginalURL en Solicitud-Acceso"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:382
 msgid "Send IP"
@@ -690,7 +690,7 @@ msgstr "Invitados WPA"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:60
 msgid "access controller for WLAN."
-msgstr "Controlador de acceso para WLAN."
+msgstr "controlador de acceso para WLAN."
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:345
 msgid "in seconds"

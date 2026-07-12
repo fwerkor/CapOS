@@ -13,6 +13,36 @@
 var pkg = adb.pkg;
 
 return view.extend({
+	// Detect the AdBlock-Fast Controller Chrome extension; nag if missing on
+	// browsers that can install Chrome Web Store extensions.
+	maybeNagChromeExtension: function () {
+		var ua = navigator.userAgentData;
+		if (!ua || ua.mobile) return;
+		var supportsChromeStore = ua.brands && ua.brands.some(function (b) {
+			return /^(Google Chrome|Microsoft Edge|Chromium|Brave|Opera|Vivaldi)$/.test(b.brand);
+		});
+		if (!supportsChromeStore) return;
+
+		var self = this;
+		fetch("chrome-extension://" + pkg.ChromeExtensionId + "/info.json")
+			.then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+			.then(function (info) {
+				self.chromeExtensionInfo = info;
+			})
+			.catch(function () {
+				ui.addNotification(
+					null,
+					E("p", {},
+						_("Tip: install the %sAdBlock-Fast Controller Chrome extension%s to control this router from your browser toolbar.").format(
+							'<a href="' + pkg.URL + '#chrome-extension" target="_blank">',
+							"</a>"
+						)
+					),
+					"info"
+				);
+			});
+	},
+
 	// Helper function to parse cron entry into config values
 	parseCronEntry: function (cronEntry) {
 		var defaults = {
@@ -106,50 +136,6 @@ return view.extend({
 		return config;
 	},
 
-	// Helper function to generate cron entry from config values
-	generateCronEntry: function (config) {
-		if (config.auto_update_enabled !== "1") {
-			return "";
-		}
-
-		var minute = config.auto_update_minute || "0";
-		var hour,
-			dom = "*",
-			dow = "*";
-
-		switch (config.auto_update_mode) {
-			case "every_n_hours":
-				hour = "*/" + (config.auto_update_every_nhours || "6");
-				break;
-			case "every_n_days":
-				hour = config.auto_update_hour || "4";
-				dom = "*/" + (config.auto_update_every_ndays || "3");
-				break;
-			case "monthly":
-				hour = config.auto_update_hour || "4";
-				dom = config.auto_update_monthday || "1";
-				break;
-			case "weekly":
-				hour = config.auto_update_hour || "4";
-				dow = config.auto_update_weekday || "0";
-				break;
-			default: // daily
-				hour = config.auto_update_hour || "4";
-				break;
-		}
-
-		return (
-			minute +
-			" " +
-			hour +
-			" " +
-			dom +
-			" * " +
-			dow +
-			" /etc/init.d/adblock-fast dl # adblock-fast-auto"
-		);
-	},
-
 	load: function () {
 		return Promise.all([
 			L.resolveDefault(adb.getInitStatus(pkg.Name), {}),
@@ -157,10 +143,13 @@ return view.extend({
 			L.resolveDefault(L.uci.load(pkg.Name), {}),
 			L.resolveDefault(L.uci.load("dhcp"), {}),
 			L.resolveDefault(L.uci.load("smartdns"), {}),
+			L.resolveDefault(adb.getQueryLogStatus(pkg.Name), {}),
 		]);
 	},
 
 	render: function (data) {
+		this.maybeNagChromeExtension();
+
 		var initData = (data[0] && data[0][pkg.Name]) || {};
 		var reply = {
 			sizes: initData.file_url || [],
@@ -187,6 +176,9 @@ return view.extend({
 		// Parse cron entry into virtual config values
 		var cronConfig = this.parseCronEntry(reply.cronEntry);
 
+		var queryLogData =
+			(data[5] && data[5][pkg.Name]) || {};
+
 		var status, m, s1, s2, s3, o;
 
 		status = new adb.status();
@@ -209,8 +201,9 @@ return view.extend({
 
 		s1 = m.section(form.NamedSection, "config", pkg.Name);
 		s1.tab("tab_basic", _("Basic Configuration"));
-		s1.tab("tab_schedule", _("List Updates Schedule"));
 		s1.tab("tab_advanced", _("Advanced Configuration"));
+		s1.tab("tab_schedule", _("List Updates Schedule"));
+		s1.tab("tab_log", _("DNS Query Log"));
 
 		var text = _(
 			"DNS resolution option, see the %sREADME%s for details.",
@@ -515,7 +508,9 @@ return view.extend({
 		o.value("0", _("Disable"));
 		o.value("1", _("Enable"));
 		o.default = "0";
-		// Override to use cron data instead of UCI
+		// Virtual field: displayed from parsed cron data and submitted to the
+		// backend via syncCron (see handleSaveApply); never written to UCI.
+		o.write = o.remove = function () {};
 		o.cfgvalue = function (section_id) {
 			return cronConfig.auto_update_enabled;
 		};
@@ -534,7 +529,9 @@ return view.extend({
 		o.value("every_n_hours", _("Every N hours"));
 		o.default = "daily";
 		o.depends("auto_update_enabled", "1");
-		// Override to use cron data instead of UCI
+		// Virtual field: displayed from parsed cron data and submitted to the
+		// backend via syncCron (see handleSaveApply); never written to UCI.
+		o.write = o.remove = function () {};
 		o.cfgvalue = function (section_id) {
 			return cronConfig.auto_update_mode;
 		};
@@ -551,7 +548,9 @@ return view.extend({
 		}
 		o.default = "3";
 		o.depends({ auto_update_enabled: "1", auto_update_mode: "every_n_days" });
-		// Override to use cron data instead of UCI
+		// Virtual field: displayed from parsed cron data and submitted to the
+		// backend via syncCron (see handleSaveApply); never written to UCI.
+		o.write = o.remove = function () {};
 		o.cfgvalue = function (section_id) {
 			return cronConfig.auto_update_every_ndays;
 		};
@@ -568,7 +567,9 @@ return view.extend({
 		}
 		o.default = "6";
 		o.depends({ auto_update_enabled: "1", auto_update_mode: "every_n_hours" });
-		// Override to use cron data instead of UCI
+		// Virtual field: displayed from parsed cron data and submitted to the
+		// backend via syncCron (see handleSaveApply); never written to UCI.
+		o.write = o.remove = function () {};
 		o.cfgvalue = function (section_id) {
 			return cronConfig.auto_update_every_nhours;
 		};
@@ -589,7 +590,9 @@ return view.extend({
 		o.value("6", _("Saturday"));
 		o.default = "0";
 		o.depends({ auto_update_enabled: "1", auto_update_mode: "weekly" });
-		// Override to use cron data instead of UCI
+		// Virtual field: displayed from parsed cron data and submitted to the
+		// backend via syncCron (see handleSaveApply); never written to UCI.
+		o.write = o.remove = function () {};
 		o.cfgvalue = function (section_id) {
 			return cronConfig.auto_update_weekday;
 		};
@@ -606,7 +609,9 @@ return view.extend({
 		}
 		o.default = "1";
 		o.depends({ auto_update_enabled: "1", auto_update_mode: "monthly" });
-		// Override to use cron data instead of UCI
+		// Virtual field: displayed from parsed cron data and submitted to the
+		// backend via syncCron (see handleSaveApply); never written to UCI.
+		o.write = o.remove = function () {};
 		o.cfgvalue = function (section_id) {
 			return cronConfig.auto_update_monthday;
 		};
@@ -627,7 +632,9 @@ return view.extend({
 		o.depends({ auto_update_enabled: "1", auto_update_mode: "weekly" });
 		o.depends({ auto_update_enabled: "1", auto_update_mode: "monthly" });
 		o.depends({ auto_update_enabled: "1", auto_update_mode: "every_n_days" });
-		// Override to use cron data instead of UCI
+		// Virtual field: displayed from parsed cron data and submitted to the
+		// backend via syncCron (see handleSaveApply); never written to UCI.
+		o.write = o.remove = function () {};
 		o.cfgvalue = function (section_id) {
 			return cronConfig.auto_update_hour;
 		};
@@ -647,7 +654,9 @@ return view.extend({
 		}
 		o.default = "0";
 		o.depends("auto_update_enabled", "1");
-		// Override to use cron data instead of UCI
+		// Virtual field: displayed from parsed cron data and submitted to the
+		// backend via syncCron (see handleSaveApply); never written to UCI.
+		o.write = o.remove = function () {};
 		o.cfgvalue = function (section_id) {
 			return cronConfig.auto_update_minute;
 		};
@@ -687,6 +696,42 @@ return view.extend({
 		);
 		o.default = "20";
 		o.datatype = "range(1,60)";
+
+		o = s1.taboption(
+			"tab_advanced",
+			form.Value,
+			"download_connect_timeout",
+			_("Connect time-out (in seconds)"),
+			_(
+				"Stop the download if the connection cannot be established within this many seconds. Supported by curl and GNU wget only.",
+			),
+		);
+		o.default = "10";
+		o.datatype = "range(1,60)";
+
+		o = s1.taboption(
+			"tab_advanced",
+			form.Value,
+			"download_max_time",
+			_("Maximum download time (in seconds)"),
+			_(
+				"Abort the download if the whole transfer takes longer than this many seconds, even if it is still progressing. Leave empty to disable. Currently implemented for curl only.",
+			),
+		);
+		o.default = "";
+		o.datatype = "uinteger";
+		o.rmempty = true;
+
+		o = s1.taboption(
+			"tab_advanced",
+			form.Flag,
+			"download_allow_insecure",
+			_("Allow insecure downloads"),
+			_(
+				"Skip SSL certificate verification when downloading block-lists. Enabled by default for compatibility with self-signed or otherwise untrusted certificates.",
+			),
+		);
+		o.default = "1";
 
 		o = s1.taboption(
 			"tab_advanced",
@@ -731,12 +776,12 @@ return view.extend({
 			"parallel_downloads",
 			_("Simultaneous processing"),
 			_(
-				"Launch all lists downloads and processing simultaneously, reducing service start time.",
+				"Maximum number of block lists to download and process at the same time (0 disables). Automatically reduced when free memory is low.",
 			),
 		);
-		o.value("0", _("Do not use simultaneous processing"));
-		o.value("1", _("Use simultaneous processing"));
-		o.default = "1";
+		o.value("0", _("Disabled"));
+		for (var i = 1; i <= 16; i++) o.value(String(i));
+		o.default = "8";
 
 		o = s1.taboption(
 			"tab_advanced",
@@ -802,6 +847,129 @@ return view.extend({
 		o.value("0", _("Disable Debugging"));
 		o.value("1", _("Enable Debugging"));
 		o.default = "0";
+
+		o = s1.taboption(
+			"tab_advanced",
+			form.Value,
+			"rpcd_token",
+			_("Remote Access Token"),
+			_(
+				"Token for %sGoogle Chrome extension%s or other remote API access. " +
+				"Copy this value into the extension settings as the password. " +
+				"Changing it here will update the API user password on save.",
+			).format('<a href="' + pkg.URL + '#chrome-extension" target="_blank">', "</a>"),
+		);
+		o.default = "";
+		o.rmempty = true;
+		o.write = function (section_id, formvalue) {
+			var currentValue = L.uci.get(pkg.Name, section_id, "rpcd_token");
+			if (formvalue && formvalue !== currentValue) {
+				adb.setRpcdToken(pkg.Name, formvalue);
+			}
+			return L.uci.set(pkg.Name, section_id, "rpcd_token", formvalue);
+		};
+
+		o = s1.taboption("tab_log", form.DummyValue, "_log_viewer");
+		o.rawhtml = true;
+		o.cfgvalue = function () {
+			return "";
+		};
+		o.renderWidget = function () {
+			var resolver = queryLogData.resolver || "dnsmasq";
+			var isLogging = queryLogData.logging_enabled || false;
+
+			var logTag;
+			switch (resolver) {
+				case "smartdns":
+					logTag = "smartdns";
+					break;
+				case "unbound":
+					logTag = "unbound";
+					break;
+				default:
+					logTag = "dnsmasq";
+					break;
+			}
+
+			var statusLabel = E(
+				"span",
+				{
+					id: "query-log-status",
+					style: "font-weight: bold; color: " + (isLogging ? "green" : "inherit"),
+				},
+				isLogging ? _("Enabled") : _("Disabled"),
+			);
+
+			var btn_enable_log = E(
+				"button",
+				{
+					class: "btn cbi-button cbi-button-apply",
+					disabled: isLogging ? true : null,
+					click: function (ev) {
+						ev.target.disabled = true;
+						ev.target.classList.add("spinning");
+						return adb
+							.setQueryLog(pkg.Name, "enable")
+							.then(function () {
+								location.reload();
+							});
+					},
+				},
+				_("Enable Logging"),
+			);
+
+			var btn_disable_log = E(
+				"button",
+				{
+					class: "btn cbi-button cbi-button-reset",
+					disabled: !isLogging ? true : null,
+					click: function (ev) {
+						ev.target.disabled = true;
+						ev.target.classList.add("spinning");
+						return adb
+							.setQueryLog(pkg.Name, "disable")
+							.then(function () {
+								location.reload();
+							});
+					},
+				},
+				_("Disable Logging"),
+			);
+
+			var logTextarea = E("textarea", {
+				id: "dns-query-log",
+				style:
+					"min-height: 800px; max-height: 85vh; width: 100%; padding: 5px;" +
+					" font-family: monospace; font-size: 12px; resize: vertical;",
+				readonly: "readonly",
+				wrap: "off",
+			});
+
+			return E("div", { id: "adblock-fast-log-container" }, [
+				E("div", { style: "margin-bottom: 10px;" }, [
+					E("span", {}, [
+						_("Query logging for %s: ").format(resolver),
+						statusLabel,
+					]),
+				]),
+				E("div", { style: "margin-bottom: 10px;" }, [
+					btn_enable_log,
+					E("span", {}, "\u00a0\u00a0"),
+					btn_disable_log,
+				]),
+				E(
+					"div",
+					{
+						class: "cbi-section-descr",
+						style: "margin-bottom: 5px;",
+					},
+					_(
+						"Showing syslog entries for %s. Log refreshes automatically.",
+					).format(logTag),
+				),
+				logTextarea,
+			]);
+		};
 
 		s2 = m.section(
 			form.NamedSection,
@@ -882,70 +1050,117 @@ return view.extend({
 		o.modalonly = true;
 		o.optional = false;
 
-		return Promise.all([status.render(), m.render()]);
-	},
+		return Promise.all([status.render(), m.render()]).then(function (nodes) {
+			var mapNode = nodes[1];
 
-	handleSave: function (ev) {
-		var map = this._map;
-		if (!map) {
-			return this.super("handleSave", [ev]);
-		}
+			// Defer DOM modifications until after browser inserts nodes
+			requestAnimationFrame(function () {
+				var dns = queryLogData.resolver || "dnsmasq";
+				var logTag = dns === "smartdns" ? "smartdns" : dns === "unbound" ? "unbound" : "dnsmasq";
 
-		// Collect virtual scheduling values
-		var schedulingConfig = {};
-		var schedulingFields = [
-			"auto_update_enabled",
-			"auto_update_mode",
-			"auto_update_hour",
-			"auto_update_minute",
-			"auto_update_weekday",
-			"auto_update_monthday",
-			"auto_update_every_ndays",
-			"auto_update_every_nhours",
-		];
+				// Log fetcher
+				var fetchLog = function () {
+					var el = document.getElementById("dns-query-log");
+					if (!el) return;
+					adb.callLogRead(1000, false, true).then(function (logEntries) {
+						var filtered = (logEntries || [])
+							.filter(function (e) { return e.msg && e.msg.indexOf(logTag) >= 0; })
+							.map(function (e) {
+								var d = new Date(e.time);
+								return "[" + d.toLocaleDateString([], { year: "numeric", month: "2-digit", day: "2-digit" })
+									+ "-" + d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false })
+									+ "] " + e.msg;
+							});
+						el.value = filtered.length > 0 ? filtered.join("\n")
+							: _("No %s query log entries found.").format(dns);
+						el.scrollTop = el.scrollHeight;
+					});
+				};
+				L.Poll.add(fetchLog, 5);
+				L.Poll.start();
 
-		schedulingFields.forEach(function (fieldName) {
-			var match = map.lookupOption(fieldName, "config");
-			if (match && match[0].isValid("config")) {
-				schedulingConfig[fieldName] = match[0].formvalue("config");
-			}
-		});
+				// Make the log viewer full-width
+				var style = document.createElement("style");
+				style.textContent =
+					"#cbi-adblock-fast-config-_log_viewer { display: block !important; }";
+				document.head.appendChild(style);
 
-		// Generate cron entry from config
-		var cronEntry = this.generateCronEntry(schedulingConfig);
+				// Hide s2/s3 sections when the log tab is active
+				var logContainer = document.getElementById("adblock-fast-log-container");
+				var cbiMap = logContainer && logContainer.closest(".cbi-map");
+				if (cbiMap) {
+					var sections = cbiMap.querySelectorAll(":scope > .cbi-section");
+					var extraSections = [];
+					for (var i = 1; i < sections.length; i++)
+						extraSections.push(sections[i]);
 
-		// Save cron entry directly
-		var savePromise = L.resolveDefault(adb.setCronEntry(pkg.Name, cronEntry), {
-			result: false,
-		}).then(function (result) {
-			if (!result || result.result === false) {
-				ui.addNotification(
-					null,
-					E("p", {}, _("Failed to update cron schedule.")),
-				);
-				return Promise.reject(new Error("Failed to update cron schedule"));
-			}
+					var updateSections = function () {
+						var activeTab = cbiMap.querySelector(".cbi-tabmenu li.cbi-tab");
+						var isLogTab = activeTab && activeTab.getAttribute("data-tab") === "tab_log";
+						extraSections.forEach(function (s) {
+							s.style.display = isLogTab ? "none" : "";
+						});
+					};
 
-			// Remove scheduling values from UCI before saving
-			schedulingFields.forEach(function (fieldName) {
-				var match = map.lookupOption(fieldName, "config");
-				if (match) {
-					match[0].remove("config");
+					// Handle tab clicks and initial state
+					cbiMap.querySelectorAll(".cbi-tabmenu li[data-tab] a").forEach(function (link) {
+						link.addEventListener("click", function () {
+							requestAnimationFrame(updateSections);
+						});
+					});
+					updateSections();
 				}
 			});
 
-			// Save the rest of UCI config
-			return Promise.resolve();
-		});
-
-		return savePromise.then(() => {
-			return this.super("handleSave", [ev]);
+			return nodes;
 		});
 	},
 
-	handleSaveApply: function (ev, mode) {
-		return this.handleSave(ev).then(function () {
-			return ui.changes.apply(mode == "0");
+	// The schedule (auto_update_*) is NOT stored in UCI — the crontab is its
+	// sole source of truth. On apply we collect the schedule from the form and
+	// send it as discrete, server-validated fields to syncCron, which renders
+	// the crontab. No cron-line string is built in the browser, and no schedule
+	// write touches UCI (so a schedule change never triggers an adbf reload).
+
+	collectSchedule: function (map) {
+		var schedule = {};
+		[
+			"auto_update_enabled", "auto_update_mode",
+			"auto_update_hour", "auto_update_minute",
+			"auto_update_weekday", "auto_update_monthday",
+			"auto_update_every_ndays", "auto_update_every_nhours",
+		].forEach(function (field) {
+			var opt = map ? map.lookupOption(field, "config") : null;
+			// Hidden (mode-irrelevant) fields return null and are omitted; the
+			// backend supplies its matching defaults for those.
+			var val = opt && opt[0] ? opt[0].formvalue("config") : null;
+			if (val != null && val !== "")
+				schedule[field] = val;
 		});
+		// The backend treats auto_update_enabled as the marker of an explicit
+		// schedule update, so always include it.
+		if (schedule.auto_update_enabled == null)
+			schedule.auto_update_enabled = "0";
+		return schedule;
+	},
+
+	handleSaveApply: function (ev, mode) {
+		var self = this, map = this._map;
+		return this.handleSave(ev)
+			.then(function () {
+				return ui.changes.apply(mode == "0");
+			})
+			.then(function () {
+				return L.resolveDefault(
+					adb.syncCron(pkg.Name, null, self.collectSchedule(map)),
+					false,
+				).then(function (result) {
+					if (result === false)
+						ui.addNotification(
+							null,
+							E("p", {}, _("Failed to update cron schedule.")),
+						);
+				});
+			});
 	},
 });

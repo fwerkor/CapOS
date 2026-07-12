@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: luci-app-radicale 3\n"
-"PO-Revision-Date: 2026-02-23 17:10+0000\n"
-"Last-Translator: Oleksii Nazarenko <energy.aleks@gmail.com>\n"
+"PO-Revision-Date: 2026-05-12 09:06+0000\n"
+"Last-Translator: Oleksandr Yurov <oyurov@icloud.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsradicale3/uk/>\n"
 "Language: uk\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:288
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:298
@@ -36,9 +36,13 @@ msgstr "ARGON2"
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:90
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:183
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:377
-#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:465
+#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:468
 msgid "Advanced"
-msgstr "Розширений"
+msgstr "Розширені"
+
+#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:463
+msgid "Alert"
+msgstr "Тривога"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:117
 msgid "Allowed Ciphers"
@@ -81,37 +85,33 @@ msgstr "Команда, яка виконується після змін у с�
 msgid "Confirm Plaintext Password"
 msgstr "Підтвердьте пароль у відкритому тексті"
 
-#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:460
+#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:462
 msgid "Critical"
 msgstr "Критичний"
 
-#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:456
+#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:457
 msgid "Debug"
 msgstr "Налагодження"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:380
 msgid "Default (Multiple files on filesystem)"
-msgstr "За замовчуванням (кілька файлів у файловій системі)"
+msgstr "Типово (кілька файлів у файловій системі)"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:186
 msgid "Default (htpasswd file from users below)"
-msgstr "За замовчуванням (файл htpasswd від користувачів нижче)"
+msgstr "Типово (файл htpasswd із користувачів нижче)"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:455
 msgid "Default (info)"
-msgstr "За замовчуванням (інформація)"
+msgstr "Типово (Інформація)"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:407
 msgid "Default (owner only)"
-msgstr "За замовчуванням (лише для власника)"
+msgstr "Типово (лише для власника)"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:386
 msgid "Delete sync tokens that are older (seconds)"
 msgstr "Видалити старіші маркери синхронізації (секунди)"
-
-#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:467
-msgid "Do not filter debug messages starting with 'TRACE'"
-msgstr "Не фільтрувати повідомлення налагодження, що починаються з «TRACE»"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:437
 msgid "Document Encoding"
@@ -119,7 +119,7 @@ msgstr "Кодування документів"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:95
 msgid "Enable SSL connections"
-msgstr "Увімкнути SSL-з'єднання"
+msgstr "Увімкнути SSL-зʼєднання"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:440
 msgid "Encoding for responding to requests/events"
@@ -141,25 +141,25 @@ msgstr "Шифрування"
 msgid "Encryption method when changing this password"
 msgstr "Метод шифрування під час зміни цього пароля"
 
-#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:459
+#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:461
 msgid "Error"
 msgstr "Помилка"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:394
 msgid "Example storage hook"
-msgstr "Приклад гачка для зберігання"
+msgstr "Приклад обробника зберігання"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:194
 msgid "Filename"
-msgstr "Ім'я файлу"
+msgstr "Імʼя файлу"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:373
 msgid "Folder"
-msgstr "Папка"
+msgstr "Тека"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:373
 msgid "Folder in which to store collections"
-msgstr "Папка для зберігання колекцій"
+msgstr "Тека для зберігання колекцій"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:113
 msgid "For verifying client certificates"
@@ -175,7 +175,7 @@ msgstr "Область базової автентифікації HTTP(S)"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:430
 msgid "HTTP(S) Headers"
-msgstr "HTTP(S) заголовки"
+msgstr "HTTP(S)-заголовки"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:433
 msgid "Header: X-Access-Control-Allow-Origin"
@@ -187,11 +187,11 @@ msgstr "Заголовки"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:391
 msgid "Hook"
-msgstr "Гачок"
+msgstr "Обробник"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:85
 msgid "Host:port"
-msgstr "Хост:порт"
+msgstr "Вузол:порт"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:306
 msgid ""
@@ -200,22 +200,22 @@ msgid ""
 "remains the existing hash (you can also put your own hash value for the type "
 "of hash listed above)."
 msgstr ""
-"Якщо поле «Plaintext Password» заповнено та відповідає «Confirm Plaintext "
-"Password», то це поле стає хешем цього пароля, інакше це поле залишається "
-"існуючим хешем (ви також можете ввести власне хеш-значення для типу хешу, "
-"зазначеного вище)."
+"Якщо поле «Пароль у відкритому тексті» заповнено й відповідає полю "
+"«Підтвердьте пароль у відкритому тексті», то це поле стає хешем цього "
+"пароля; інакше воно залишається з наявним хешем (можна також ввести власне "
+"хеш-значення для типу хешу, зазначеного вище)."
 
-#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:457
+#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:458
 msgid "Info"
-msgstr "Інфо"
+msgstr "Інформація"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:453
 msgid "Log Level"
-msgstr "Рівень Журналу"
+msgstr "Рівень журналювання"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:448
 msgid "Logging"
-msgstr "Логування"
+msgstr "Журналювання"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:170
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:220
@@ -229,7 +229,7 @@ msgstr "MD5-APR1"
 msgid "Main"
 msgstr "Головний"
 
-#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:472
+#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:470
 msgid "Mask Passwords"
 msgstr "Маскування паролів"
 
@@ -243,7 +243,7 @@ msgstr "Максимальна довжина контенту"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:386
 msgid "Max Sync Token Age"
-msgstr "Максимальний вік токена синхронізації"
+msgstr "Максимальний вік маркера синхронізації"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:133
 msgid "Maximum number of simultaneous connections"
@@ -271,19 +271,23 @@ msgstr "Потрібна адреса прослуховування"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:126
 msgid "No SSL"
-msgstr "Без SSL-сертифіката"
+msgstr "Без SSL"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:126
 msgid "No SSL support available. Please install python3-openssl."
-msgstr "Підтримка SSL недоступна. Будь ласка, встановіть python3-openssl."
+msgstr "Підтримка SSL недоступна. Встановіть python3-openssl."
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:188
 msgid "No authentication"
 msgstr "Без автентифікації"
 
+#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:459
+msgid "Notice"
+msgstr "Зауваження"
+
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:68
 msgid "Open Web Interface"
-msgstr "Відкритий веб-інтерфейс"
+msgstr "Відкрити вебінтерфейс"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:166
 msgid "Password encryption method"
@@ -332,8 +336,8 @@ msgid ""
 "Radicale needs a non-loopback IP address for your browser to access the web "
 "interface"
 msgstr ""
-"Для доступу до веб-інтерфейсу Radicale потрібна IP-адреса без зациклення, "
-"щоб ваш браузер міг отримати доступ до веб-інтерфейсу"
+"Radicale потребує IP-адреси, відмінної від loopback, щоб браузер міг "
+"отримати доступ до веб-інтерфейсу"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:77
 msgid "Radicale v3 CalDav/CardDAV Server Configuration"
@@ -345,15 +349,15 @@ msgstr "Radicale3"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:214
 msgid "Radicale3 Users"
-msgstr "Radicale3 Користувачі"
+msgstr "Користувачі Radicale3"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:200
 msgid "Realm"
-msgstr "Царство"
+msgstr "Область автентифікації"
 
-#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:472
+#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:470
 msgid "Redact passwords in logs"
-msgstr "Видалення паролів у журналах"
+msgstr "Маскувати паролі в журналах"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:440
 msgid "Request"
@@ -396,11 +400,11 @@ msgstr "SSL"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:117
 msgid "See python3-openssl documentation for available ciphers"
-msgstr "Див. документацію python3-openssl щодо доступних шифрів"
+msgstr "Дивіться документацію python3-openssl щодо доступних шифрів"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:121
 msgid "See python3-openssl documentation for available protocols"
-msgstr "Див. документацію python3-openssl щодо доступних протоколів"
+msgstr "Дивіться документацію python3-openssl щодо доступних протоколів"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:79
 msgid "Server Settings"
@@ -423,9 +427,9 @@ msgstr "Тип сховища"
 msgid "Timeout"
 msgstr "Тайм-аут"
 
-#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:467
-msgid "Trace on debug"
-msgstr "Трасування під час налагодження"
+#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:456
+msgid "Trace"
+msgstr "Трасування"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:339
 msgid "Unable to encrypt plaintext password"
@@ -441,28 +445,28 @@ msgstr "Налаштування ACL на основі користувачів"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:239
 msgid "Username"
-msgstr "Ім'я користувача"
+msgstr "Імʼя користувача"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:263
 msgid "Username already exists"
-msgstr "Ім'я користувача вже існує"
+msgstr "Імʼя користувача вже існує"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:254
 msgid ""
 "Username can only contain letters, numbers, dots, underscores and hyphens"
 msgstr ""
-"Ім'я користувача може містити лише літери, цифри, крапки, символи "
+"Імʼя користувача може містити лише літери, цифри, крапки, символи "
 "підкреслення та дефіси"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:246
 msgid "Username is required"
-msgstr "Потрібне ім'я користувача"
+msgstr "Потрібне імʼя користувача"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:250
 msgid "Username must be at least 1 character long"
-msgstr "Ім'я користувача має містити щонайменше 1 символ"
+msgstr "Імʼя користувача має містити щонайменше 1 символ"
 
-#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:458
+#: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:460
 msgid "Warning"
 msgstr "Попередження"
 
@@ -481,7 +485,7 @@ msgstr "Під час зміни методу шифрування необхі�
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:190
 msgid "X-Remote-User from web server"
-msgstr "X-Віддалений користувач з веб-сервера"
+msgstr "X-Remote-User з веб-сервера"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:179
 msgid "autodetect"
@@ -489,11 +493,11 @@ msgstr "автовизначення"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:187
 msgid "htpasswd file (manually populated)"
-msgstr "htpasswd файл (заповнюється вручну)"
+msgstr "файл htpasswd (заповнюється вручну)"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:194
 msgid "htpasswd-formatted file filename"
-msgstr "файл у форматі htpasswd ім'я файлу"
+msgstr "Назва файлу у форматі htpasswd"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:179
 msgid "password file can have users with a mix of support encryption methods"
