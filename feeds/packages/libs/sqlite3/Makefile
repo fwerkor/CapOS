@@ -1,17 +1,17 @@
-# SPDX-License-Identifier: GPL-2.0-only
+# Copyright (C) 2006-2026 OpenWrt.org
 #
-# Copyright (C) 2006-2025 OpenWrt.org
+# SPDX-License-Identifier: GPL-2.0-only
 
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=sqlite
-PKG_VERSION:=3.51.2
-PKG_SRC_VERSION:=3510200
+PKG_VERSION:=3.53.1
+PKG_SRC_VERSION:=3530100
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-autoconf-$(PKG_SRC_VERSION).tar.gz
 PKG_SOURCE_URL:=https://www.sqlite.org/2026/
-PKG_HASH:=fbd89f866b1403bb66a143065440089dd76100f2238314d92274a082d4f2b7bb
+PKG_HASH:=83e6b2020a034e9a7ad4a72feea59e1ad52f162e09cbd26735a3ffb98359fc4f
 
 PKG_CPE_ID:=cpe:/a:sqlite:sqlite
 PKG_LICENSE:=blessing

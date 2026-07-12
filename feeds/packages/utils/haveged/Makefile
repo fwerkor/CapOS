@@ -8,16 +8,17 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=haveged
-PKG_VERSION:=1.9.19
+PKG_VERSION:=1.9.24
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/jirka-h/haveged/tar.gz/v$(PKG_VERSION)?
-PKG_HASH:=acbb05776668657012273be9bb3310e3140b79959aa4538e4cca8d30d40c0b8f
+PKG_HASH:=76f2f77547e4b7dafe78352b4c96fa27cd6f03afc7cecf2ed37c7c7b32b679d7
 PKG_BUILD_DIR:=$(BUILD_DIR)/haveged-$(PKG_VERSION)
-PKG_LICENSE:=GPLv3
 
 PKG_MAINTAINER:=Hannu Nyman <hannu.nyman@iki.fi>
+PKG_LICENSE:=GPL-3.0-or-later
+PKG_LICENSE_FILES:=COPYING
 
 PKG_BUILD_PARALLEL:=1
 PKG_BUILD_FLAGS:=no-mips16
@@ -29,13 +30,13 @@ define Package/haveged
   CATEGORY:=Utilities
   DEPENDS:=+libhavege
   TITLE:=Feeds the kernel entropy pool by timing CPU loops.
-  URL:=http://www.issihosts.com/haveged/
+  URL:=https://www.issihosts.com/haveged/
 endef
 
 define Package/libhavege
   CATEGORY:=Libraries
   TITLE:=Library for haveged
-  URL:=http://www.issihosts.com/haveged/
+  URL:=https://www.issihosts.com/haveged/
 endef
 
 CONFIGURE_ARGS+= \
