@@ -199,6 +199,17 @@ define Device/creality_wb-01
 endef
 TARGET_DEVICES += creality_wb-01
 
+define Device/cudy_lt300-v3
+  IMAGE_SIZE := 15872k
+  DEVICE_VENDOR := Cudy
+  DEVICE_MODEL := LT300
+  DEVICE_VARIANT := v3
+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-usb-net-rndis \
+	kmod-usb-serial-option
+  SUPPORTED_DEVICES += R100
+endef
+TARGET_DEVICES += cudy_lt300-v3
+
 define Device/cudy_m1200-v1
   IMAGE_SIZE := 15872k
   DEVICE_VENDOR := Cudy
@@ -231,6 +242,15 @@ define Device/cudy_tr1200-v1
   SUPPORTED_DEVICES += R46
 endef
 TARGET_DEVICES += cudy_tr1200-v1
+
+define Device/cudy_wr300-v1
+  IMAGE_SIZE := 7808k
+  DEVICE_VENDOR := Cudy
+  DEVICE_MODEL := WR300
+  DEVICE_VARIANT := v1
+  SUPPORTED_DEVICES += cudy,wr300
+endef
+TARGET_DEVICES += cudy_wr300-v1
 
 define Device/cudy_wr1000
   IMAGE_SIZE := 7872k
