@@ -362,6 +362,25 @@ Hidden: 1
 Description:     Translation for luci-app-mosquitto - 한국어 (Korean)
 @@
 
+Package: luci-i18n-mosquitto-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-mosquitto
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-mosquitto-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-mosquitto - lo translation
+Maintainer: Karl Palsson <karlp@etactica.com> Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-mosquitto - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-mosquitto-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x

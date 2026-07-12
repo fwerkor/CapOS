@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-10 03:40+0200\n"
-"PO-Revision-Date: 2026-02-05 16:09+0000\n"
-"Last-Translator: EESF-2 <eesf-2@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-04-06 20:00+0000\n"
+"Last-Translator: yohru <yohru7@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/openwrt/luci/ja/"
 ">\n"
 "Language: ja\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:212
 msgid "!known (not known)"
@@ -23,7 +23,7 @@ msgctxt "Yet unknown nftables table family (\"family\" table \"name\")"
 msgid "\"%h\" table \"%h\""
 msgstr "\"%h\" テーブル \"%h\""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1860
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1864
 msgid "%.1f dB"
 msgstr "%.1f dB"
 
@@ -80,7 +80,7 @@ msgstr "%sは複数のVLANでタグなしに設定されています！"
 msgid "%s means \"the address of the system running dnsmasq\"."
 msgstr "%s は \"dnsmasq を実行しているシステムのアドレス\" を意味します。"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1780
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1784
 msgid ""
 "%s services running on this device in the default VRF context (ie., not "
 "bound to any VRF device) shall work across all VRF domains."
@@ -140,8 +140,8 @@ msgid "-- Additional Field --"
 msgstr "-- 追加項目 --"
 
 #: modules/luci-base/htdocs/luci-static/resources/cbi.js:360
-#: modules/luci-base/htdocs/luci-static/resources/form.js:4510
-#: modules/luci-base/htdocs/luci-static/resources/form.js:5195
+#: modules/luci-base/htdocs/luci-static/resources/form.js:4520
+#: modules/luci-base/htdocs/luci-static/resources/form.js:5205
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:830
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:1075
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:2183
@@ -182,7 +182,7 @@ msgstr "0"
 msgid "0 = not using RSSI threshold, 1 = do not change driver default"
 msgstr "0: RSSIしきい値を使用しない、1: ドライバーのデフォルトを使用"
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:2971
+#: modules/luci-base/htdocs/luci-static/resources/form.js:2981
 msgid "0/1"
 msgstr ""
 
@@ -289,7 +289,7 @@ msgstr "24時間表記"
 msgid "24: ARM uboot 64 boot from HTTP"
 msgstr "24: ARM uboot 64 bootをHTTPから起動する"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1805
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1809
 msgid "256"
 msgstr "256"
 
@@ -369,7 +369,7 @@ msgctxt "sstp log level value"
 msgid "4"
 msgstr "4"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1880
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1881
 msgid "4-character hexadecimal ID"
 msgstr "4文字の16進数ID"
 
@@ -400,7 +400,7 @@ msgstr "過去5分間の負荷:"
 msgid "5m (5 minutes)"
 msgstr "5m（5分）"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1909
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1910
 msgid "6-octet identifier as a hex string - no colons"
 msgstr "16進数6オクテットの識別子（コロンを含まない）"
 
@@ -410,19 +410,19 @@ msgstr "16進数6オクテットの識別子（コロンを含まない）"
 msgid "7d (7 days)"
 msgstr "7d（7日間）"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1932
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1933
 msgid "802.11k RRM"
 msgstr "802.11k RRM"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1941
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1942
 msgid "802.11k: Enable beacon report via radio measurements."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1937
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1938
 msgid "802.11k: Enable neighbor report via radio measurements."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1869
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1870
 msgid "802.11r Fast Transition"
 msgstr "802.11r 高速ローミング"
 
@@ -434,52 +434,52 @@ msgstr ""
 msgid "802.11v: BSS Max Idle. Units: seconds."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1967
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1968
 msgid "802.11v: Basic Service Set (BSS) transition management."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1956
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1957
 msgid "802.11v: Local Time Zone Advertisement in management frames."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1971
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1972
 msgid ""
 "802.11v: Proxy ARP enables non-AP STA to remain in power-save for longer."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1947
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1948
 msgid "802.11v: Time Advertisement in management frames."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1960
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1961
 msgid ""
 "802.11v: Wireless Network Management (WNM) Sleep Mode (extended sleep mode "
 "for stations)."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1964
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1965
 msgid ""
 "802.11v: Wireless Network Management (WNM) Sleep Mode Fixes: Prevents "
 "reinstallation attacks."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2114
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2115
 msgid "802.11w Association SA Query maximum timeout"
 msgstr "802.11wアソシエーションSAクエリの最大タイムアウト"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2121
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2122
 msgid "802.11w Association SA Query retry timeout"
 msgstr "802.11wアソシエーションSAクエリの再試行タイムアウト"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2095
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2096
 msgid "802.11w Management Frame Protection"
 msgstr "802.11w管理フレーム保護"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2114
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2115
 msgid "802.11w maximum timeout"
 msgstr "802.11w最大タイムアウト"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2121
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2122
 msgid "802.11w retry timeout"
 msgstr "802.11w再試行タイムアウト"
 
@@ -654,11 +654,11 @@ msgid ""
 "the same network."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1840
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1844
 msgid "A43C + J43 + A43"
 msgstr "A43C + J43 + A43"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1841
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1845
 msgid "A43C + J43 + A43 + V43"
 msgstr "A43C + J43 + A43 + V43"
 
@@ -666,77 +666,81 @@ msgstr "A43C + J43 + A43 + V43"
 msgid "AC"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1853
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1857
 msgid "ADSL"
 msgstr "ADSL"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1827
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1831
 msgid "ADSL (G.992.1) Annex A"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1828
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1832
 msgid "ADSL (G.992.1) Annex B"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1821
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1825
 msgid "ADSL (all variants) Annex A/L/M"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1817
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1821
 msgid "ADSL (all variants) Annex A/L/M + VDSL2 Annex A/B/C"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1822
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1826
 msgid "ADSL (all variants) Annex B"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1818
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1822
 msgid "ADSL (all variants) Annex B + VDSL2 Annex A/B/C"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1823
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1827
 msgid "ADSL (all variants) Annex B/J"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1819
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1823
 msgid "ADSL (all variants) Annex B/J + VDSL2 Annex A/B/C"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1825
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1829
 msgid "ADSL (all variants) Annex M"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1830
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1834
 msgid "ADSL2 (G.992.3) Annex A"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1831
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1835
 msgid "ADSL2 (G.992.3) Annex B"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1832
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1836
 msgid "ADSL2 (G.992.3) Annex L"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1833
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1837
 msgid "ADSL2 (G.992.3) Annex M"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1834
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1838
 msgid "ADSL2+ (G.992.5) Annex A"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1835
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1839
 msgid "ADSL2+ (G.992.5) Annex B"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1836
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1840
 msgid "ADSL2+ (G.992.5) Annex M"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1826
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1830
 msgid "ANSI T1.413"
 msgstr "ANSI T1.413"
+
+#: protocols/luci-proto-batman-adv/htdocs/luci-static/resources/protocol/batadv_vlan.js:66
+msgid "AP Isolation"
+msgstr ""
 
 #: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:95
 #: protocols/luci-proto-mbim/htdocs/luci-static/resources/protocol/mbim.js:65
@@ -782,25 +786,25 @@ msgid ""
 "in 802.11v. Note: might break receiver STA multicast expectations."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1848
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1852
 msgid "ATM (Asynchronous Transfer Mode)"
 msgstr "ATM（非同期転送モード）"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1869
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1873
 msgid "ATM Bridges"
 msgstr "ATM ブリッジ"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1901
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1905
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoa.js:66
 msgid "ATM Virtual Channel Identifier (VCI)"
 msgstr "ATM仮想チャネル識別子（VCI）"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1902
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1906
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoa.js:70
 msgid "ATM Virtual Path Identifier (VPI)"
 msgstr "ATM仮想パス識別子（VPI）"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1869
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1873
 msgid ""
 "ATM bridges expose encapsulated ethernet in AAL5 connections as virtual "
 "Linux network interfaces which can be used in conjunction with DHCP or PPP "
@@ -810,7 +814,7 @@ msgstr ""
 "インターフェイスとして公開し、DHCPまたはPPPと組み合わせて使用し、プロバイダー"
 "ネットワークにダイヤルできます。"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1908
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1912
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoa.js:62
 msgid "ATM device number"
 msgstr "ATMデバイス番号"
@@ -938,11 +942,11 @@ msgstr ""
 msgid "Adaptive transmit load balancing"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:2413
-#: modules/luci-base/htdocs/luci-static/resources/form.js:2416
-#: modules/luci-base/htdocs/luci-static/resources/form.js:2429
-#: modules/luci-base/htdocs/luci-static/resources/form.js:2437
-#: modules/luci-base/htdocs/luci-static/resources/form.js:4284
+#: modules/luci-base/htdocs/luci-static/resources/form.js:2423
+#: modules/luci-base/htdocs/luci-static/resources/form.js:2426
+#: modules/luci-base/htdocs/luci-static/resources/form.js:2439
+#: modules/luci-base/htdocs/luci-static/resources/form.js:2447
+#: modules/luci-base/htdocs/luci-static/resources/form.js:4294
 #: modules/luci-compat/luasrc/view/cbi/nsection.htm:25
 #: modules/luci-compat/luasrc/view/cbi/tblsection.htm:189
 #: modules/luci-compat/luasrc/view/cbi/tblsection.htm:197
@@ -953,7 +957,7 @@ msgstr ""
 msgid "Add"
 msgstr "追加"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1873
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1877
 msgid "Add ATM Bridge"
 msgstr "ATM ブリッジを追加"
 
@@ -979,11 +983,11 @@ msgid ""
 "leaving this value empty disables the feature."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1580
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1582
 msgid "Add device configuration"
 msgstr "デバイス設定を追加"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1520
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1522
 msgid "Add device configuration…"
 msgstr "デバイス設定を追加…"
 
@@ -1017,7 +1021,7 @@ msgid "Add multicast rule"
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:483
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1404
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1406
 msgid "Add new interface..."
 msgstr "インターフェースを新規作成..."
 
@@ -1132,7 +1136,7 @@ msgid "Administration"
 msgstr "管理"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:497
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1899
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1903
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/routes.js:42
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/routes.js:135
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:980
@@ -1164,7 +1168,7 @@ msgstr "エージング時間"
 msgid "Aggregate Originator Messages"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1694
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1696
 msgid "Aggregation device"
 msgstr ""
 
@@ -1172,7 +1176,7 @@ msgstr ""
 msgid "Aggregation ports"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:62
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:63
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:847
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/dmesg.js:23
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/system.js:194
@@ -1348,7 +1352,7 @@ msgstr "フォームの保存中にエラーが発生しました:"
 msgid "An optional, short description for this device"
 msgstr "このデバイスの短い説明（オプション）"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1815
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1819
 msgid "Annex"
 msgstr "Annex"
 
@@ -1399,7 +1403,7 @@ msgstr ""
 "プレフィックスまたはデフォルトルートが存在するかどうかにかかわらず、このデバ"
 "イスをデフォルト ルーターとしてアナウンスします。"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2085
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2086
 msgid "Anonymous Identity"
 msgstr "匿名アイデンティティ"
 
@@ -1411,8 +1415,8 @@ msgstr "匿名マウント"
 msgid "Anonymous Swap"
 msgstr "匿名スワップ"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:32
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:60
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:33
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:61
 msgid "Any"
 msgstr "すべて"
 
@@ -1468,14 +1472,14 @@ msgstr ""
 msgid "As DHCP-Options; send unsolicited (dnsmasq only)."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1246
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1248
 msgid ""
 "Assign a part of given length of every public IPv6-prefix to this interface"
 msgstr ""
 "パブリックIPv6プレフィックスのうち、指定されたプレフィックス長の一部をこのイ"
 "ンターフェースに割り当てる"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1251
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1253
 #: protocols/luci-proto-hnet/htdocs/luci-static/resources/protocol/hnet.js:27
 msgid ""
 "Assign prefix parts using this hexadecimal subprefix ID for this interface."
@@ -1483,7 +1487,7 @@ msgstr ""
 "このサブプレフィックスID（16進数）を使用するプレフィックス領域を、このイン"
 "ターフェースに割り当てます。"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2630
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2631
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/60_wifi.js:397
 msgid "Associated Stations"
 msgstr "接続済み端末"
@@ -1510,12 +1514,12 @@ msgstr ""
 msgid "Attempt to enable configured mount points for attached devices"
 msgstr "接続済みデバイスに対して構成済みのマウントポイントを有効化"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1736
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1743
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1737
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1744
 msgid "Attributes to add/replace in each request."
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:37
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:38
 msgid "Auth"
 msgstr ""
 
@@ -1524,11 +1528,11 @@ msgstr ""
 msgid "Auth Group"
 msgstr "認証グループ"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:43
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:44
 msgid "Auth Priv"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2024
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2025
 msgid "Authentication"
 msgstr "認証"
 
@@ -1581,7 +1585,7 @@ msgstr ""
 msgid "Automatically check filesystem for errors before mounting"
 msgstr "マウントする前にファイルシステムのエラーを自動的にチェック"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1239
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1241
 msgid ""
 "Automatically handle multiple uplink interfaces using source-based policy "
 "routing."
@@ -1629,11 +1633,11 @@ msgstr "平均:"
 msgid "Avoid Bridge Loops"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1842
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1846
 msgid "B43 + B43C"
 msgstr "B43 + B43C"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1843
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1847
 msgid "B43 + B43C + V43"
 msgstr "B43 + B43C + V43"
 
@@ -1641,13 +1645,13 @@ msgstr "B43 + B43C + V43"
 msgid "BR / DMR / AFTR"
 msgstr "BR / DMR / AFTR"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1967
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1968
 msgid "BSS Transition"
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:166
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:192
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2180
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2181
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/channel_analysis.js:463
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/60_wifi.js:155
 msgid "BSSID"
@@ -1662,12 +1666,12 @@ msgstr "概要へ戻る"
 msgid "Back to peer configuration"
 msgstr "ピア構成に戻る"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1662
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1663
 msgid "Back to settings"
 msgstr "設定に戻る"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:908
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1225
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1226
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:389
 msgid "Backup"
 msgstr "バックアップ"
@@ -1708,6 +1712,10 @@ msgstr "Batman デバイス"
 msgid "Batman Interface"
 msgstr "Batman インターフェース"
 
+#: protocols/luci-proto-batman-adv/htdocs/luci-static/resources/protocol/batadv_vlan.js:11
+msgid "Batman VLAN Interface"
+msgstr ""
+
 #: protocols/luci-proto-batman-adv/htdocs/luci-static/resources/protocol/batadv.js:81
 msgid ""
 "Batman-adv has a built-in layer 2 fragmentation for unicast data flowing "
@@ -1723,7 +1731,7 @@ msgstr ""
 msgid "Beacon Interval"
 msgstr "ビーコン間隔"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1941
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1942
 msgid "Beacon Report"
 msgstr "ビーコンレポート"
 
@@ -1827,7 +1835,7 @@ msgid "Bridge VLAN filtering"
 msgstr "ブリッジ VLAN フィルタリング"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:453
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1697
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1699
 msgid "Bridge device"
 msgstr "ブリッジ デバイス"
 
@@ -1844,7 +1852,7 @@ msgstr "ブリッジ ポート"
 msgid "Bridge traffic table \"%h\""
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1909
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1913
 msgid "Bridge unit number"
 msgstr "ブリッジユニット番号"
 
@@ -1940,8 +1948,8 @@ msgstr ""
 #: modules/luci-compat/luasrc/view/cbi/delegator.htm:14
 #: modules/luci-compat/luasrc/view/cbi/simpleform.htm:52
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:186
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1410
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2503
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1412
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2504
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:128
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:297
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/repokeys.js:73
@@ -2005,24 +2013,24 @@ msgstr "セルの位置"
 msgid "Cellular Network"
 msgstr "セルラーネットワーク"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2008
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2009
 msgid "Certificate constraint (Domain)"
 msgstr "証明書制限 (ドメイン)"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2005
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2006
 msgid "Certificate constraint (SAN)"
 msgstr "証明書制限 (SAN)"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2002
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2003
 msgid "Certificate constraint (Subject)"
 msgstr "証明書制限 (サブジェクト)"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2011
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2012
 msgid "Certificate constraint (Wildcard)"
 msgstr "証明書制限 (ワイルドカード)"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2002
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2060
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2003
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2061
 msgid ""
 "Certificate constraint substring - e.g. /CN=wifi.mycompany.com<br />See "
 "`logread -f` during handshake for actual values"
@@ -2030,8 +2038,8 @@ msgstr ""
 "証明書制限の一部（例: /CN=wifi.mycompany.com）<br />実際の値については、ハン"
 "ドシェイク中に`logread -f`で確認してください"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2008
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2066
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2009
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2067
 msgid ""
 "Certificate constraint(s) against DNS SAN values (if available)<br />or "
 "Subject CN (exact match)"
@@ -2039,8 +2047,8 @@ msgstr ""
 "DNS SAN値に対する証明書の制限（使用可能な場合）<br />またはサブジェクトCN（完"
 "全一致）"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2011
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2069
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2012
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2070
 msgid ""
 "Certificate constraint(s) against DNS SAN values (if available)<br />or "
 "Subject CN (suffix match)"
@@ -2048,8 +2056,8 @@ msgstr ""
 "DNS SAN値に対する証明書の制限（使用可能な場合）<br />またはサブジェクトCN（サ"
 "フィックス一致）"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2005
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2063
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2006
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2064
 msgid ""
 "Certificate constraint(s) via Subject Alternate Name values<br />(supported "
 "attributes: EMAIL, DNS, URI) - e.g. DNS:wifi.mycompany.com"
@@ -2091,7 +2099,7 @@ msgstr "デバイスにアクセスするための管理者パスワードを変
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:136
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:194
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:548
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2178
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2179
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/channel_analysis.js:460
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/60_wifi.js:180
 msgid "Channel"
@@ -2110,7 +2118,7 @@ msgstr "チャネル幅"
 msgid "Check filesystems before mount"
 msgstr "マウント前にファイルシステムをチェック"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2463
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2464
 msgid "Check this option to delete the existing networks from this radio."
 msgstr ""
 "この無線から既存のネットワークを削除する場合、このオプションを有効にしてくだ"
@@ -2134,7 +2142,7 @@ msgid "Choose mtdblock"
 msgstr "mtdblock を選択"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:624
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2493
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2494
 msgid ""
 "Choose the firewall zone you want to assign to this interface. Select "
 "<em>unspecified</em> to remove the interface from the associated zone or "
@@ -2190,8 +2198,8 @@ msgstr "クライアント"
 msgid "Client ID to send when requesting DHCP"
 msgstr "DHCPリクエスト時に送信するクライアントID"
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:3242
-#: modules/luci-base/htdocs/luci-static/resources/form.js:3246
+#: modules/luci-base/htdocs/luci-static/resources/form.js:3252
+#: modules/luci-base/htdocs/luci-static/resources/form.js:3256
 msgid "Clone"
 msgstr "クローン"
 
@@ -2214,7 +2222,7 @@ msgstr ""
 "設定した秒数後に、非アクティブな接続を閉じます。0を設定した場合、接続を維持し"
 "ます"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1226
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1227
 msgid ""
 "Cold standby; Establish a connection only when no other interface is "
 "available (slower)"
@@ -2222,7 +2230,7 @@ msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:64
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:85
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2628
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2629
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/connections.js:518
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/index.js:27
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:355
@@ -2256,7 +2264,7 @@ msgstr "コメント"
 msgid "Common name or numeric ID of the %s in which this route is found"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2149
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2150
 msgid ""
 "Complicates key reinstallation attacks on the client side by disabling "
 "retransmission of EAPOL-Key frames that are used to install keys. This "
@@ -2353,7 +2361,7 @@ msgid ""
 "Configures the operation mode of the NDP proxy service on this interface."
 msgstr "このデバイスにおける NDP プロキシーサービスの動作モードを設定します。"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1566
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1568
 msgid "Configure…"
 msgstr "設定…"
 
@@ -2480,7 +2488,7 @@ msgid "Create"
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:624
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2493
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2494
 msgid "Create / Assign firewall-zone"
 msgstr "ファイアウォールゾーンの作成または割り当て"
 
@@ -2488,11 +2496,11 @@ msgstr "ファイアウォールゾーンの作成または割り当て"
 msgid "Create Directory"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1442
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1444
 msgid "Create interface"
 msgstr "インターフェースを作成"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:63
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:64
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:1155
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:848
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/dmesg.js:24
@@ -2500,7 +2508,7 @@ msgstr "インターフェースを作成"
 msgid "Critical"
 msgstr "重大"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:42
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:43
 msgid "Cron"
 msgstr ""
 
@@ -2559,15 +2567,15 @@ msgstr ""
 msgid "DAD transmits"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1788
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1789
 msgid "DAE-Client"
 msgstr "DAEクライアント"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1793
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1794
 msgid "DAE-Port"
 msgstr "DAEポート"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1799
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1800
 msgid "DAE-Secret"
 msgstr "DAEシークレット"
 
@@ -2705,7 +2713,7 @@ msgstr "DS-Lite AFTRアドレス"
 msgid "DSCP"
 msgstr "DSCP"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1812
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1816
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:37
 msgid "DSL"
 msgstr "DSL"
@@ -2714,7 +2722,7 @@ msgstr "DSL"
 msgid "DSL Status"
 msgstr "DSLステータス"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1851
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1855
 msgid "DSL line mode"
 msgstr "DSL回線モード"
 
@@ -2737,7 +2745,7 @@ msgstr ""
 msgid "DUID/IAIDs"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:36
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:37
 msgid "Daemon"
 msgstr "デーモン"
 
@@ -2753,7 +2761,7 @@ msgstr "受信済みデータ"
 msgid "Data Transmitted"
 msgstr "送信済みデータ"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:68
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:69
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:853
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/dmesg.js:29
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/system.js:188
@@ -2771,7 +2779,7 @@ msgstr "デバッグ"
 msgid "Default"
 msgstr "既定"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1772
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1774
 msgid "Default DUID"
 msgstr ""
 
@@ -2836,14 +2844,14 @@ msgstr ""
 msgid "Delay before enabling port after MII link up event (msec)"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1243
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1245
 msgid "Delegate IPv6 prefixes"
 msgstr "IPv6 プレフィックスの委任"
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:2500
-#: modules/luci-base/htdocs/luci-static/resources/form.js:3255
-#: modules/luci-base/htdocs/luci-static/resources/form.js:3259
-#: modules/luci-base/htdocs/luci-static/resources/form.js:4267
+#: modules/luci-base/htdocs/luci-static/resources/form.js:2510
+#: modules/luci-base/htdocs/luci-static/resources/form.js:3265
+#: modules/luci-base/htdocs/luci-static/resources/form.js:3269
+#: modules/luci-base/htdocs/luci-static/resources/form.js:4277
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:3515
 #: modules/luci-compat/luasrc/view/cbi/nsection.htm:11
 #: modules/luci-compat/luasrc/view/cbi/tblsection.htm:162
@@ -2942,8 +2950,8 @@ msgstr "宛先ゾーン"
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:54
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:93
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:609
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1392
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1716
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1394
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1718
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/30_network.js:71
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/routes.js:184
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/routes.js:211
@@ -2954,6 +2962,7 @@ msgstr "宛先ゾーン"
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/mounts.js:260
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/mounts.js:334
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/mounts.js:369
+#: protocols/luci-proto-batman-adv/htdocs/luci-static/resources/protocol/batadv_vlan.js:48
 #: protocols/luci-proto-external/htdocs/luci-static/resources/protocol/external.js:29
 msgid "Device"
 msgstr "デバイス"
@@ -2983,7 +2992,7 @@ msgstr "デバイス名"
 msgid "Device not managed by ModemManager."
 msgstr "モデムマネージャーはデバイスを管理していません。"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1685
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1687
 msgid "Device not present"
 msgstr "デバイスが存在しません"
 
@@ -2999,7 +3008,7 @@ msgstr "デバイスにアクセスできません！"
 msgid "Device unreachable! Still waiting for device..."
 msgstr "デバイスにアクセスできません！まだデバイスを待っています..."
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1517
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1519
 #: protocols/luci-proto-yggdrasil/htdocs/luci-static/resources/protocol/yggdrasil.js:289
 msgid "Devices"
 msgstr "デバイス"
@@ -3053,7 +3062,7 @@ msgid ""
 "e.g. <code>dnsmasq</code>."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1801
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1805
 msgid ""
 "Directs packet flows to specific CPUs where the local socket owner listens "
 "(the local service)."
@@ -3095,12 +3104,12 @@ msgstr "このネットワークを無効化"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:1138
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:1144
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1792
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1796
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1010
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1752
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1948
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2096
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2130
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1753
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1949
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2097
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2131
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/60_wifi.js:14
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/startup.js:65
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/system.js:200
@@ -3122,7 +3131,7 @@ msgctxt "Label indicating that WireGuard peer is disabled"
 msgid "Disabled"
 msgstr "無効"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1222
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1223
 msgid "Disables this interface for MPTCP"
 msgstr ""
 
@@ -3161,12 +3170,12 @@ msgid "Disk space"
 msgstr "ディスク領域"
 
 #: modules/luci-base/htdocs/luci-static/resources/form.js:633
-#: modules/luci-base/htdocs/luci-static/resources/form.js:3601
-#: modules/luci-base/htdocs/luci-static/resources/form.js:3883
-#: modules/luci-base/htdocs/luci-static/resources/form.js:3897
+#: modules/luci-base/htdocs/luci-static/resources/form.js:3611
+#: modules/luci-base/htdocs/luci-static/resources/form.js:3893
+#: modules/luci-base/htdocs/luci-static/resources/form.js:3907
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:4388
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:5340
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2203
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2204
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:360
 #: protocols/luci-proto-wireguard/htdocs/luci-static/resources/view/wireguard/status.js:54
 #: protocols/luci-proto-wireguard/htdocs/luci-static/resources/view/wireguard/status.js:75
@@ -3321,7 +3330,7 @@ msgstr "mtdblockをダウンロード"
 msgid "Download peer configuration file"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1856
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1860
 msgid "Downstream SNR offset"
 msgstr "下りSNRオフセット"
 
@@ -3331,7 +3340,7 @@ msgid ""
 "WireGuard interface."
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:3187
+#: modules/luci-base/htdocs/luci-static/resources/form.js:3197
 msgid "Drag to reorder"
 msgstr "ドラッグして並び替え"
 
@@ -3408,15 +3417,15 @@ msgstr ""
 msgid "Dynamic <abbr title=\"Dynamic Host Configuration Protocol\">DHCP</abbr>"
 msgstr "動的<abbr title=\"Dynamic Host Configuration Protocol\">DHCP</abbr>"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1788
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1789
 msgid "Dynamic Authorization Extension client."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1793
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1794
 msgid "Dynamic Authorization Extension port."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1799
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1800
 msgid "Dynamic Authorization Extension secret."
 msgstr ""
 
@@ -3436,11 +3445,11 @@ msgstr ""
 "クライアントに対して動的にDHCPアドレスを割り振ります。無効化した場合、固定IP"
 "アドレスが設定されたクライアントのみ接続できます。"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1781
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1782
 msgid "E.g. <code>br-vlan</code> or <code>brvlan</code>."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1771
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1772
 msgid "E.g. eth0, eth1"
 msgstr "例: eth0, eth1"
 
@@ -3448,11 +3457,11 @@ msgstr "例: eth0, eth1"
 msgid "EA-bits length"
 msgstr "EA ビット長"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1980
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1981
 msgid "EAP-Method"
 msgstr "EAP メソッド"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1759
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1760
 msgid "Each STA is assigned its own AP_VLAN interface."
 msgstr ""
 
@@ -3467,9 +3476,9 @@ msgid ""
 "package manager."
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:3220
-#: modules/luci-base/htdocs/luci-static/resources/form.js:3223
-#: modules/luci-base/htdocs/luci-static/resources/form.js:4101
+#: modules/luci-base/htdocs/luci-static/resources/form.js:3230
+#: modules/luci-base/htdocs/luci-static/resources/form.js:3233
+#: modules/luci-base/htdocs/luci-static/resources/form.js:4111
 #: modules/luci-compat/luasrc/view/cbi/tblsection.htm:154
 #: modules/luci-compat/luasrc/view/cbi/tblsection.htm:160
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:514
@@ -3561,7 +3570,7 @@ msgid ""
 "prefix, or specify a prefix also (e.g. %s)"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:61
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:62
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:846
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/system.js:195
 msgid "Emergency"
@@ -3606,6 +3615,16 @@ msgstr "<abbr title=\"Spanning Tree Protocol\">STP</abbr>を有効化"
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:892
 msgid "Enable <abbr title=\"Stateless Address Auto Config\">SLAAC</abbr>"
 msgstr "<abbr title=\"Stateless Address Auto Config\">SLAAC</abbr> の有効化"
+
+#: protocols/luci-proto-batman-adv/htdocs/luci-static/resources/protocol/batadv_vlan.js:67
+msgid ""
+"Enable AP Isolation to isolate wireless clients connected to this Batman "
+"VLAN on this AP from wireless clients connected to this Batman VLAN on "
+"different APs. To isolate all wireless clients connected to this Batman VLAN "
+"on all APs from each other, be sure to enable this option on all APs, and be "
+"sure to enable additional wireless client isolation options ('isolate' and "
+"'bridge_isolate') for all associated wireless interfaces on all APs."
+msgstr ""
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/connections.js:279
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/connections.js:495
@@ -3659,7 +3678,7 @@ msgstr "MAC アドレス学習を有効化"
 msgid "Enable NTP client"
 msgstr "NTPクライアントを有効化"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1682
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1683
 msgid "Enable Private PSK (PPSK)"
 msgstr "Private PSK (PPSK) を有効にする"
 
@@ -3679,7 +3698,7 @@ msgstr "VLAN フィルタリングを有効化"
 msgid "Enable VLAN functionality"
 msgstr "VLAN機能を有効化"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2153
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2154
 msgid "Enable WPS pushbutton, requires WPA(2)-PSK/WPA3-SAE"
 msgstr "WPSプッシュボタンを有効にします。WPA（2）-PSK/WPA3-SAEが必要です"
 
@@ -3697,14 +3716,14 @@ msgstr ""
 "title=\"Hypertext Transfer Protocol Secure\">HTTPS</abbr> ポートへの自動リダ"
 "イレクトを有効にします。"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1243
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1245
 msgid ""
 "Enable downstream delegation of IPv6 prefixes available on this interface"
 msgstr ""
 "このデバイスで利用可能な IPv6 プレフィックスのダウンストリーム委任を有効にし"
 "ます"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2149
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2150
 msgid "Enable key reinstallation (KRACK) countermeasures"
 msgstr "Key Reinstallation（KRACK）対策を有効化"
 
@@ -3744,7 +3763,7 @@ msgstr ""
 msgid "Enable or disable DHCPv4 services on this interface."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1791
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1795
 msgid "Enable packet steering across CPUs. May help or hinder network speed."
 msgstr ""
 "複数のCPUに跨ったパケットステアリングを有効化します。ネットワークスピードの改"
@@ -3799,9 +3818,9 @@ msgstr "ユニキャスト フラッディングを有効化"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:1137
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:1143
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1793
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1949
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2131
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1797
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1950
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2132
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/mounts.js:222
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/mounts.js:330
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/startup.js:65
@@ -3810,11 +3829,11 @@ msgstr "ユニキャスト フラッディングを有効化"
 msgid "Enabled"
 msgstr "有効"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1794
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1798
 msgid "Enabled (all CPUs)"
 msgstr "有効（全てのCPU）"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2132
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2133
 msgid "Enabled (workaround mode)"
 msgstr ""
 
@@ -3822,7 +3841,7 @@ msgstr ""
 msgid "Enables IGMP snooping on this bridge"
 msgstr "このブリッジのIGMPスヌーピングを有効化"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1869
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1870
 msgid ""
 "Enables fast roaming among access points that belong to the same Mobility "
 "Domain"
@@ -3851,15 +3870,15 @@ msgstr ""
 msgid "Encapsulation limit"
 msgstr "カプセル化限度"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1846
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1904
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1850
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1908
 msgid "Encapsulation mode"
 msgstr "カプセル化モード"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:167
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:193
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1272
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2181
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2182
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/60_wifi.js:156
 msgid "Encryption"
 msgstr "暗号化"
@@ -3923,7 +3942,7 @@ msgstr "エントリー"
 msgid "Erasing..."
 msgstr "消去中..."
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:64
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:65
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:3297
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:849
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:104
@@ -4002,7 +4021,7 @@ msgstr ""
 msgid "Expected port number."
 msgstr "正しいポート番号を指定してください。"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1260
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1262
 #, fuzzy
 msgid "Expecting a hexadecimal assignment hint"
 msgstr "16進数の割り当てヒントである必要があります"
@@ -4015,7 +4034,7 @@ msgstr ""
 msgid "Expecting two priority values separated by a colon"
 msgstr "コロンで区切られた2つの優先度の値である必要があります"
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:2449
+#: modules/luci-base/htdocs/luci-static/resources/form.js:2459
 #: modules/luci-base/htdocs/luci-static/resources/validation.js:215
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:156
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:162
@@ -4060,11 +4079,11 @@ msgstr ""
 msgid "External"
 msgstr "外部"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1920
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1921
 msgid "External R0 Key Holder List"
 msgstr "外部R0キーホルダーリスト"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1924
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1925
 msgid "External R1 Key Holder List"
 msgstr "外部R1キーホルダーリスト"
 
@@ -4118,19 +4137,19 @@ msgstr ""
 msgid "FQDN"
 msgstr "FQDN"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1895
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1896
 msgid "FT over DS"
 msgstr "FT over DS"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1894
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1895
 msgid "FT over the Air"
 msgstr "FT over the Air"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1892
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1893
 msgid "FT protocol"
 msgstr "FT プロトコル"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:44
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:45
 msgid "FTP"
 msgstr "FTP"
 
@@ -4252,8 +4271,8 @@ msgstr "ファイル"
 msgid "Filesystem"
 msgstr "ファイルシステム"
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:2958
-#: modules/luci-base/htdocs/luci-static/resources/form.js:2971
+#: modules/luci-base/htdocs/luci-static/resources/form.js:2968
+#: modules/luci-base/htdocs/luci-static/resources/form.js:2981
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:910
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dns.js:200
 msgid "Filter"
@@ -4335,7 +4354,7 @@ msgstr "ファイアウォール状態"
 msgid "Firewall mark"
 msgstr "ファイアウォール マーク"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1863
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1867
 msgid "Firmware File"
 msgstr "ファームウェア ファイル"
 
@@ -4390,8 +4409,8 @@ msgstr "%s をインストールして bonding を使用します"
 msgid "For multicast, an outgoing interface (%s) needs to be specified"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1221
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1777
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1222
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1780
 msgid "For packets originating from this device, e.g. VPN."
 msgstr ""
 
@@ -4408,11 +4427,11 @@ msgstr "強制"
 msgid "Force 40MHz mode"
 msgstr "40MHz モードを強制"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1315
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1316
 msgid "Force CCMP (AES)"
 msgstr "CCMP (AES) を強制"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1316
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1317
 msgid "Force CCMP-256 (AES)"
 msgstr "CCMP-256 (AES) を強制"
 
@@ -4425,11 +4444,11 @@ msgstr ""
 msgid "Force DHCP-Options"
 msgstr "DHCP-Options を強制"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1317
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1318
 msgid "Force GCMP (AES)"
 msgstr "GCMP (AES) を強制"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1318
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1319
 msgid "Force GCMP-256 (AES)"
 msgstr "GCMP-256 (AES) を強制"
 
@@ -4441,11 +4460,11 @@ msgstr "IGMP バージョンを強制"
 msgid "Force MLD version"
 msgstr "MLD バージョンを強制"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1319
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1320
 msgid "Force TKIP"
 msgstr "TKIP を強制"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1320
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1321
 msgid "Force TKIP and CCMP (AES)"
 msgstr "TKIP と CCMP (AES) を強制"
 
@@ -4453,7 +4472,7 @@ msgstr "TKIP と CCMP (AES) を強制"
 msgid "Force broadcast DHCP response."
 msgstr "ブロードキャスト DHCP レスポンスを強制する。"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1508
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1510
 msgid "Force link"
 msgstr "リンクを強制"
 
@@ -4469,7 +4488,7 @@ msgstr "NAT-T の使用を強制"
 msgid "Form token mismatch"
 msgstr "フォームトークンの不一致"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1731
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1732
 msgid "Format:"
 msgstr ""
 
@@ -4534,7 +4553,7 @@ msgstr ""
 msgid "Forwarding DataBase"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1911
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1915
 msgid "Forwarding mode"
 msgstr "転送モード"
 
@@ -4654,7 +4673,7 @@ msgid "General Settings"
 msgstr "一般設定"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:673
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1898
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1902
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:979
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1048
 msgid "General Setup"
@@ -4668,15 +4687,15 @@ msgstr "デバイスの一般オプション"
 msgid "Generate Config"
 msgstr "設定を生成"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1898
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1899
 msgid "Generate PMK locally"
 msgstr "ローカルでPMKを生成"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1677
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1678
 msgid "Generate QR…"
 msgstr "QR を生成…"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1642
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1643
 msgid "Generate WiFi QR…"
 msgstr "WiFi QR を生成…"
 
@@ -4719,7 +4738,7 @@ msgstr ""
 msgid "Global Settings"
 msgstr "全体設定"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1762
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1764
 msgid "Global network options"
 msgstr "グローバルネットワークオプション"
 
@@ -4737,8 +4756,8 @@ msgstr "ファームウェアのアップグレードへ移動..."
 msgid "Go to password configuration..."
 msgstr "パスワード設定へ移動..."
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:2933
-#: modules/luci-base/htdocs/luci-static/resources/form.js:4465
+#: modules/luci-base/htdocs/luci-static/resources/form.js:2943
+#: modules/luci-base/htdocs/luci-static/resources/form.js:4475
 #: modules/luci-compat/luasrc/view/cbi/full_valueheader.htm:4
 #: modules/luci-compat/luasrc/view/cbi/tblsection.htm:58
 msgid "Go to relevant configuration page"
@@ -4801,7 +4820,7 @@ msgstr "基本的なLuCIプロシージャへのアクセスを許可"
 msgid "Grant access to crontab configuration"
 msgstr "crontab設定へのアクセスを許可"
 
-#: modules/luci-mod-status/root/usr/share/rpcd/acl.d/luci-mod-status.json:86
+#: modules/luci-mod-status/root/usr/share/rpcd/acl.d/luci-mod-status.json:88
 msgid "Grant access to firewall status"
 msgstr "ファイアウォールステータスへのアクセスを許可"
 
@@ -4845,8 +4864,8 @@ msgstr "プロセスステータスへのアクセスを許可"
 msgid "Grant access to realtime statistics"
 msgstr "リアルタイム統計へのアクセスを許可"
 
-#: modules/luci-mod-status/root/usr/share/rpcd/acl.d/luci-mod-status.json:47
-#: modules/luci-mod-status/root/usr/share/rpcd/acl.d/luci-mod-status.json:62
+#: modules/luci-mod-status/root/usr/share/rpcd/acl.d/luci-mod-status.json:49
+#: modules/luci-mod-status/root/usr/share/rpcd/acl.d/luci-mod-status.json:64
 msgid "Grant access to routing status"
 msgstr ""
 
@@ -4866,7 +4885,7 @@ msgstr "システムログへのアクセスを許可"
 msgid "Grant access to uHTTPd configuration"
 msgstr ""
 
-#: modules/luci-mod-status/root/usr/share/rpcd/acl.d/luci-mod-status.json:77
+#: modules/luci-mod-status/root/usr/share/rpcd/acl.d/luci-mod-status.json:79
 msgid "Grant access to wireless channel status"
 msgstr ""
 
@@ -4908,7 +4927,7 @@ msgstr "HTTP(S) アクセス"
 msgid "Half Duplex"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1226
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1227
 msgid "Handover"
 msgstr ""
 
@@ -4956,7 +4975,7 @@ msgstr "空のチェインを非表示"
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:1156
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:903
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1012
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1596
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1597
 msgid "High"
 msgstr "高"
 
@@ -4973,7 +4992,7 @@ msgstr ""
 msgid "Hop Penalty"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2622
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2623
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/60_wifi.js:247
 msgid "Host"
 msgstr "ホスト"
@@ -5031,7 +5050,7 @@ msgstr ""
 msgid "Hosts file"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1225
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1226
 msgid ""
 "Hot standby; use this interface; do not forward traffic until no other "
 "interface is available (faster)"
@@ -5352,7 +5371,7 @@ msgstr "IPv6 設定"
 msgid "IPv6 Token"
 msgstr "IPv6 トークン"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1766
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1768
 msgid "IPv6 ULA-Prefix"
 msgstr "IPv6 ULA プレフィックス"
 
@@ -5373,12 +5392,12 @@ msgstr "IPv6 アドレス"
 msgid "IPv6 addresses"
 msgstr "IPv6 アドレス"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1251
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1253
 #: protocols/luci-proto-hnet/htdocs/luci-static/resources/protocol/hnet.js:27
 msgid "IPv6 assignment hint"
 msgstr "IPv6 割り当てヒント"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1246
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1248
 msgid "IPv6 assignment length"
 msgstr "IPv6 割り当て長"
 
@@ -5395,7 +5414,7 @@ msgstr "IPv6 ネットワーク（アドレス/ネットマスク表記）"
 msgid "IPv6 only"
 msgstr "IPv6 のみ"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1295
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1297
 msgid "IPv6 preference"
 msgstr ""
 
@@ -5404,7 +5423,7 @@ msgstr ""
 msgid "IPv6 prefix"
 msgstr "IPv6 プレフィックス"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1268
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1270
 msgid "IPv6 prefix filter"
 msgstr ""
 
@@ -5419,11 +5438,11 @@ msgstr "IPv6プレフィックス長"
 msgid "IPv6 routed prefix"
 msgstr "IPv6ルートプレフィックス"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1239
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1241
 msgid "IPv6 source routing"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1291
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1293
 msgid "IPv6 suffix"
 msgstr "IPv6サフィックス"
 
@@ -5458,7 +5477,7 @@ msgstr "IPv6-over-IPv4（6rd）"
 msgid "IPv6-over-IPv4 (6to4)"
 msgstr "IPv6-over-IPv4（6to4）"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2082
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2083
 msgid "Identity"
 msgstr "識別子"
 
@@ -5504,7 +5523,13 @@ msgid ""
 "the <em>Local IPv6 DNS server</em> option is disabled."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1268
+#: protocols/luci-proto-batman-adv/htdocs/luci-static/resources/protocol/batadv_vlan.js:49
+msgid ""
+"If not listed, please open the drop-down list and type in the name of the "
+"Batman VLAN device in the 'custom' field."
+msgstr ""
+
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1270
 msgid ""
 "If set, downstream subnets are only allocated from the given IPv6 prefix "
 "classes."
@@ -5694,7 +5719,7 @@ msgstr "受信シリアル化"
 msgid "Indoor Only Channel Selected"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:67
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:68
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:852
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/dmesg.js:28
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/system.js:189
@@ -5763,19 +5788,19 @@ msgstr "起動スクリプト"
 msgid "Initscripts"
 msgstr "起動スクリプト"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2066
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2067
 msgid "Inner certificate constraint (Domain)"
 msgstr "内部証明書制約（ドメイン）"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2063
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2064
 msgid "Inner certificate constraint (SAN)"
 msgstr "内部証明書制約（SAN）"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2060
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2061
 msgid "Inner certificate constraint (Subject)"
 msgstr "内部証明書制約（件名）"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2069
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2070
 msgid "Inner certificate constraint (Wildcard)"
 msgstr "内部証明書制約（ワイルドカード）"
 
@@ -5807,7 +5832,7 @@ msgstr "インスタンス \"%q\""
 msgid "Instance Details"
 msgstr "インスタンスの詳細"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2489
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2490
 msgid ""
 "Instead of joining any network with a matching SSID, only connect to the "
 "BSSID <code>%h</code>."
@@ -5913,6 +5938,10 @@ msgstr ""
 
 #: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/view/modemmanager/status.js:139
 msgid "International Mobile Subscriber Identity"
+msgstr ""
+
+#: modules/luci-mod-system/htdocs/luci-static/resources/view/system/leds.js:128
+msgid "Interval"
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:1066
@@ -6064,15 +6093,15 @@ msgstr ""
 msgid "JavaScript required!"
 msgstr "JavaScript が必要です!"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2262
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2263
 msgid "Join Network"
 msgstr "ネットワークに接続"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2195
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2196
 msgid "Join Network: Wireless Scan"
 msgstr "ネットワークに接続: 無線スキャン"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2497
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2498
 msgid "Joining Network: %q"
 msgstr "ネットワークに接続中: %q"
 
@@ -6096,7 +6125,7 @@ msgstr "現在の設定を残す"
 msgid "Keep-Alive"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:33
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:34
 msgid "Kernel"
 msgstr "カーネル"
 
@@ -6109,16 +6138,16 @@ msgstr "カーネル ログ"
 msgid "Kernel Version"
 msgstr "カーネルのバージョン"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1809
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1810
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/repokeys.js:238
 msgid "Key"
 msgstr "キー"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1835
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1836
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1837
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1838
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1850
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1839
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1851
 msgid "Key #%d"
 msgstr "キー#%d"
 
@@ -6209,11 +6238,11 @@ msgstr "LCP echo送信間隔"
 msgid "LED Configuration"
 msgstr "LED 設定"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1905
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1909
 msgid "LLC"
 msgstr "LLC"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:39
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:40
 msgid "LPR"
 msgstr ""
 
@@ -6414,7 +6443,7 @@ msgstr ""
 "ここで指定されたFQDNのDNSルックアップ結果のIPを投入するIPsetのリストも指定す"
 "る。"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1920
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1921
 msgid ""
 "List of R0KHs in the same Mobility Domain. <br />Format: MAC-address,NAS-"
 "Identifier,256-bit key as hex string. <br />This list is used to map R0KH-ID "
@@ -6423,7 +6452,7 @@ msgid ""
 "Association."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1924
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1925
 msgid ""
 "List of R1KHs in the same Mobility Domain. <br />Format: MAC-address,R1KH-ID "
 "as 6 octets with colons,256-bit key as hex string. <br />This list is used "
@@ -6524,8 +6553,8 @@ msgstr ""
 msgid "Load configuration…"
 msgstr "構成をロード…"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1438
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2426
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1440
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2427
 #: protocols/luci-proto-wireguard/htdocs/luci-static/resources/view/wireguard/status.js:182
 msgid "Loading data…"
 msgstr "データの読込中…"
@@ -6546,35 +6575,35 @@ msgstr "画面表示を読み込み中…"
 msgid "Local"
 msgstr "ローカル"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:49
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:50
 msgid "Local 0"
 msgstr "ローカル 0"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:50
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:51
 msgid "Local 1"
 msgstr "ローカル 1"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:51
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:52
 msgid "Local 2"
 msgstr "ローカル 2"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:52
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:53
 msgid "Local 3"
 msgstr "ローカル 3"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:53
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:54
 msgid "Local 4"
 msgstr "ローカル 4"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:54
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:55
 msgid "Local 5"
 msgstr "ローカル 5"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:55
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:56
 msgid "Local 6"
 msgstr "ローカル 6"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:56
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:57
 msgid "Local 7"
 msgstr "ローカル 7"
 
@@ -6622,7 +6651,7 @@ msgstr "ローカルスタートアップ"
 msgid "Local Time"
 msgstr "時刻"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1269
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1271
 msgid "Local ULA"
 msgstr "ローカル ULA"
 
@@ -6659,7 +6688,7 @@ msgstr "クエリをローカライズ"
 msgid "Location Area Code"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2489
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2490
 msgid "Lock to BSSID"
 msgstr "BSSIDにロック"
 
@@ -6668,7 +6697,7 @@ msgstr "BSSIDにロック"
 msgid "Log"
 msgstr "ログ"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:47
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:48
 msgid "Log alert"
 msgstr ""
 
@@ -6679,7 +6708,7 @@ msgstr ""
 "DHCP クライアントに送信された全てのオプションと、検出に使用されたタグを記録し"
 "ます。"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:46
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:47
 msgid "Log audit"
 msgstr ""
 
@@ -6757,7 +6786,7 @@ msgstr "緩いフィルタリング"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:1157
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:901
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1593
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1594
 msgid "Low"
 msgstr ""
 
@@ -6779,7 +6808,7 @@ msgstr ""
 msgid "MAC"
 msgstr "MAC"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1738
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1740
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoe.js:51
 msgid "MAC Address"
 msgstr "MAC アドレス"
@@ -6793,14 +6822,14 @@ msgid "MAC Addresses"
 msgstr "MAC アドレス"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:456
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1703
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1705
 msgid "MAC VLAN"
 msgstr "MAC ベース VLAN"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:1101
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:58
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1235
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2621
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2622
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/30_network.js:72
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/40_dhcp.js:112
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/60_wifi.js:246
@@ -6855,7 +6884,7 @@ msgid "MII link monitoring"
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:1090
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1750
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1752
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/routes.js:91
 #: protocols/luci-proto-vpnc/htdocs/luci-static/resources/protocol/vpnc.js:53
 #: protocols/luci-proto-vxlan/htdocs/luci-static/resources/protocol/vxlan.js:83
@@ -6870,7 +6899,7 @@ msgstr "MTU"
 msgid "MX"
 msgstr "MX"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:35
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:36
 msgid "Mail"
 msgstr "メール"
 
@@ -6895,7 +6924,7 @@ msgstr "手動"
 msgid "Manufacturer"
 msgstr "メーカー"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1224
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1225
 msgid "Master"
 msgstr ""
 
@@ -6984,7 +7013,7 @@ msgstr ""
 msgid "Max cache TTL"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:257
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:271
 msgid "Max rows:"
 msgstr ""
 
@@ -7093,7 +7122,7 @@ msgid "Mbit/s"
 msgstr "Mbps"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:902
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1594
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1595
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/password.js:35
 msgid "Medium"
 msgstr "中"
@@ -7213,7 +7242,7 @@ msgstr ""
 msgid "Mobile Number"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1880
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1881
 msgid "Mobility Domain"
 msgstr "モビリティドメイン"
 
@@ -7223,7 +7252,7 @@ msgstr "モビリティドメイン"
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:190
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:530
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1054
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2179
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2180
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/channel_analysis.js:462
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/60_wifi.js:154
 msgid "Mode"
@@ -7295,7 +7324,7 @@ msgstr ""
 msgid "More Characters"
 msgstr "文字数不足"
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:2853
+#: modules/luci-base/htdocs/luci-static/resources/form.js:2863
 msgid "More…"
 msgstr "さらに表示…"
 
@@ -7361,9 +7390,9 @@ msgstr "上へ移動"
 msgid "Multi To Unicast"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1219
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1220
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1777
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1221
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1780
 msgid "Multi-Path TCP"
 msgstr ""
 
@@ -7390,7 +7419,7 @@ msgstr ""
 msgid "Multicast to unicast"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1726
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1727
 msgid "Must be in %s format."
 msgstr ""
 
@@ -7399,7 +7428,7 @@ msgstr ""
 msgid "My Peer"
 msgstr "ピア"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1875
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1876
 msgid "NAS ID"
 msgstr "NAS ID"
 
@@ -7436,7 +7465,7 @@ msgstr ""
 msgid "NT Domain"
 msgstr "NTドメイン"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:45
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:46
 msgid "NTP"
 msgstr "NTP"
 
@@ -7452,11 +7481,11 @@ msgstr "NTPサーバー候補"
 msgid "NUD"
 msgstr "NUD"
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:2911
+#: modules/luci-base/htdocs/luci-static/resources/form.js:2921
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:4952
 #: modules/luci-compat/luasrc/view/cbi/tblsection.htm:27
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:117
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1368
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1370
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/leds.js:63
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/repokeys.js:236
 #: protocols/luci-proto-wireguard/htdocs/luci-static/resources/view/wireguard/status.js:45
@@ -7467,13 +7496,13 @@ msgstr "名前"
 msgid "Name already exists."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2466
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2467
 msgid ""
 "Name for OpenWrt network configuration. (No relation to wireless network "
 "name/SSID)"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2465
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2466
 msgid "Name of the new network"
 msgstr "新規ネットワークの名前"
 
@@ -7504,7 +7533,7 @@ msgstr "ナビゲーション"
 msgid "Nebula Network"
 msgstr "Nebula ネットワーク"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1937
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1938
 msgid "Neighbour Report"
 msgstr ""
 
@@ -7518,7 +7547,7 @@ msgstr ""
 
 #: modules/luci-base/root/usr/share/luci/menu.d/luci-base.json:45
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1089
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2620
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2621
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/connections.js:510
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/30_network.js:79
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/60_wifi.js:245
@@ -7537,7 +7566,7 @@ msgstr "ネットワーク モード"
 msgid "Network Registration"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2459
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2460
 msgid "Network SSID"
 msgstr "ネットワーク SSID"
 
@@ -7564,7 +7593,7 @@ msgid "Network bridge configuration migration"
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:449
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1712
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1714
 msgid "Network device"
 msgstr "ネットワーク デバイス"
 
@@ -7625,15 +7654,15 @@ msgctxt "Dnsmasq instance"
 msgid "New instance name…"
 msgstr "新規インスタンス名…"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1424
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1426
 msgid "New interface for \"%s\" can not be created: %s"
 msgstr "\"%s\"の新規インターフェースを作成できません: %s"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1371
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1373
 msgid "New interface name…"
 msgstr "新規インターフェース名…"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:40
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:41
 msgid "News"
 msgstr "ニュース"
 
@@ -7641,7 +7670,7 @@ msgstr "ニュース"
 msgid "Next »"
 msgstr "次 »"
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:5131
+#: modules/luci-base/htdocs/luci-static/resources/form.js:5141
 msgid "No"
 msgstr "いいえ"
 
@@ -7653,7 +7682,7 @@ msgstr "このインターフェースにはDHCPサーバーが設定されて�
 msgid "No Data"
 msgstr "データなし"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1473
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1474
 msgid "No Encryption"
 msgstr "暗号化なし"
 
@@ -7806,12 +7835,12 @@ msgstr ""
 msgid "No rules in this chain."
 msgstr "このチェインにルールがありません。"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1223
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1224
 msgid "No special configuration"
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:151
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1469
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1471
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/29_ports.js:332
 msgid "No zone assigned"
 msgstr "割り当てられたゾーンがありません"
@@ -7865,9 +7894,9 @@ msgstr "なし"
 msgid "Normal"
 msgstr "標準"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:243
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:247
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:253
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:257
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:261
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:267
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/dmesg.js:256
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/dmesg.js:264
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/dmesg.js:275
@@ -7918,7 +7947,7 @@ msgstr ""
 msgid "Note: IPv4 only."
 msgstr "備考: IPv4 のみ。"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2095
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2096
 msgid ""
 "Note: Some wireless drivers do not fully support 802.11w. E.g. mwlwifi may "
 "have problems"
@@ -7926,7 +7955,7 @@ msgstr ""
 "注: 一部のワイヤレス ドライバーは、802.11w を完全にはサポートしていません。 "
 "例えば、 mwlwifi に問題がある可能性があります"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2129
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2130
 msgid ""
 "Note: Workaround mode allows a STA that claims OCV capability to connect "
 "even if the STA doesn't send OCI or negotiate PMF."
@@ -7939,7 +7968,7 @@ msgid ""
 "which should no longer be used)."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1802
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1806
 msgid ""
 "Note: this setting is for local services on the device only (not for "
 "forwarding)."
@@ -7955,7 +7984,7 @@ msgstr ""
 msgid "Notes"
 msgstr "備考"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:66
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:67
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:851
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/dmesg.js:27
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/system.js:190
@@ -8005,14 +8034,14 @@ msgstr "難読化されたパスワード"
 msgid "Obtain IPv6 address"
 msgstr "IPv6アドレス取得"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1222
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1223
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/led-trigger/none.js:19
 #: protocols/luci-proto-batman-adv/htdocs/luci-static/resources/protocol/batadv.js:87
 #: protocols/luci-proto-yggdrasil/htdocs/luci-static/resources/protocol/yggdrasil.js:345
 msgid "Off"
 msgstr "オフ"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1781
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1785
 msgid ""
 "Off means VRF traffic will be handled exclusively by sockets bound to VRFs."
 msgstr ""
@@ -8021,7 +8050,7 @@ msgstr ""
 msgid "Off-State Delay"
 msgstr "消灯時間"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1764
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1765
 msgid ""
 "Off: <code>vlanXXX</code>, e.g., <code>vlan1</code>. On: "
 "<code>vlan_tagged_interface.XXX</code>, e.g. <code>eth0.1</code>."
@@ -8033,7 +8062,7 @@ msgid ""
 "file"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1223
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1224
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/led-trigger/none.js:19
 msgid "On"
 msgstr "オン"
@@ -8139,7 +8168,7 @@ msgid ""
 "otherwise disable service."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2129
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2130
 msgid "Operating Channel Validation"
 msgstr ""
 
@@ -8159,12 +8188,12 @@ msgstr "オペレーター コード"
 msgid "Operator Name"
 msgstr "オペレーター名"
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:2139
-#: modules/luci-base/htdocs/luci-static/resources/form.js:5144
+#: modules/luci-base/htdocs/luci-static/resources/form.js:2145
+#: modules/luci-base/htdocs/luci-static/resources/form.js:5154
 msgid "Option \"%s\" contains an invalid input value."
 msgstr "オプション\"%s\"に無効な入力値が含まれています。"
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:2154
+#: modules/luci-base/htdocs/luci-static/resources/form.js:2160
 msgid "Option \"%s\" must not be empty."
 msgstr "オプション\"%s\"を設定してください。"
 
@@ -8176,8 +8205,8 @@ msgstr "変更されるオプション"
 msgid "Option removed"
 msgstr "削除されるオプション"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1753
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2097
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1754
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2098
 msgid "Optional"
 msgstr "オプション"
 
@@ -8200,7 +8229,7 @@ msgstr ""
 "暗号化された送信パケットの32ビットマークです。<code>0x</code>から始まる16進数"
 "を入力してください（オプション）。"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1291
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1293
 msgid ""
 "Optional. Allowed values: 'eui64', 'random', fixed value like '::1' or "
 "'::1:2'. When IPv6 prefix (like 'a:b:c:d::') is received from a delegating "
@@ -8363,11 +8392,11 @@ msgstr "出力ゾーン"
 msgid "Overlap"
 msgstr "オーバーラップ"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1228
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1230
 msgid "Override IPv4 routing table"
 msgstr "IPv4 ルーティングテーブルのオーバーライド"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1233
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1235
 msgid "Override IPv6 routing table"
 msgstr "IPv6 ルーティング テーブルのオーバーライド"
 
@@ -8519,7 +8548,7 @@ msgstr "PINコードが拒否されました"
 msgid "PIO directory"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1915
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1916
 msgid "PMK R1 Push"
 msgstr "PMK R1プッシュ"
 
@@ -8565,7 +8594,7 @@ msgctxt "Label indicating that WireGuard peer uses a PSK"
 msgid "PSK"
 msgstr "PSK"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1849
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1853
 msgid "PTM/EFM (Packet Transfer Mode)"
 msgstr "PTM/EFM（パケット転送モード）"
 
@@ -8583,7 +8612,7 @@ msgstr "PXE/TFTP"
 msgid "Packet Service State"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1791
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1795
 msgid "Packet Steering"
 msgstr "パケット ステアリング"
 
@@ -8615,7 +8644,7 @@ msgid_plural "Part of networks:"
 msgstr[0] ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:151
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1469
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1471
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/29_ports.js:332
 msgid "Part of zone %q"
 msgstr "ゾーン%qの一部"
@@ -8626,7 +8655,7 @@ msgid "Pass-through (Mirror physical device to single MAC VLAN)"
 msgstr "パススルー（物理デバイスを単一の MAC ベース VLAN へミラー）"
 
 #: modules/luci-base/ucode/template/sysauth.ut:29
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2088
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2089
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/password.js:51
 #: protocols/luci-proto-openconnect/htdocs/luci-static/resources/protocol/openconnect.js:145
 #: protocols/luci-proto-vpnc/htdocs/luci-static/resources/protocol/vpnc.js:58
@@ -8639,11 +8668,11 @@ msgstr "パスワード"
 msgid "Password authentication"
 msgstr "パスワード認証"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2020
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2021
 msgid "Password of Private Key"
 msgstr "秘密鍵のパスワード"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2078
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2079
 msgid "Password of inner Private Key"
 msgstr "内部秘密鍵のパスワード"
 
@@ -8687,15 +8716,15 @@ msgstr ""
 msgid "Paste or drag supplied WireGuard configuration file…"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1999
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2000
 msgid "Path to CA-Certificate"
 msgstr "CA証明書のパス"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2014
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2015
 msgid "Path to Client-Certificate"
 msgstr "クライアント証明書のパス"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2017
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2018
 msgid "Path to Private Key"
 msgstr "秘密鍵のパス"
 
@@ -8703,15 +8732,15 @@ msgstr "秘密鍵のパス"
 msgid "Path to a script to run each time the lease file changes."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2057
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2058
 msgid "Path to inner CA-Certificate"
 msgstr "内部CA証明書のパス"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2072
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2073
 msgid "Path to inner Client-Certificate"
 msgstr "内部クライアント証明書のパス"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2075
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2076
 msgid "Path to inner Private Key"
 msgstr "内部秘密鍵のパス"
 
@@ -8843,6 +8872,12 @@ msgstr "パケット"
 #: modules/luci-base/ucode/template/sysauth.ut:19
 msgid "Please enter your username and password."
 msgstr "ユーザー名とパスワードを入力してください。"
+
+#: protocols/luci-proto-batman-adv/htdocs/luci-static/resources/protocol/batadv_vlan.js:63
+msgid ""
+"Please open the drop-down list and select or type in the name of the Batman "
+"VLAN device."
+msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:4935
 msgid "Please select the file to upload."
@@ -9059,7 +9094,7 @@ msgstr "プライベート（MAC ベース VLAN間の通信を防ぐ）"
 msgid "Private Key"
 msgstr "秘密鍵"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1682
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1683
 msgid ""
 "Private Pre-Shared Key (PPSK) allows the use of different Pre-Shared Key for "
 "each STA MAC address. Private MAC PSKs are stored on the RADIUS server."
@@ -9088,7 +9123,7 @@ msgstr "プロトコル"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:92
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:593
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1386
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1388
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/connections.js:511
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/30_network.js:60
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/routes.js:190
@@ -9132,7 +9167,7 @@ msgstr "プロキシ"
 msgid "Proxy Server"
 msgstr "プロキシ サーバー"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1971
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1972
 msgid "ProxyARP"
 msgstr ""
 
@@ -9188,11 +9223,11 @@ msgstr ""
 msgid "QMI Cellular"
 msgstr "QMI セルラー"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1486
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1487
 msgid "QR Code"
 msgstr "QR コード"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1592
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1593
 msgid "QR Error Correction Code Level"
 msgstr ""
 
@@ -9208,7 +9243,7 @@ msgid ""
 "packets"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1595
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1596
 msgid "Quartile"
 msgstr ""
 
@@ -9228,11 +9263,11 @@ msgstr "クエリー レスポンス間隔"
 msgid "Query upstream resolvers in the order they appear in the resolv file."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1903
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1904
 msgid "R0 Key Lifetime"
 msgstr "R0キー有効期限"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1909
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1910
 msgid "R1 Key Holder"
 msgstr "R1キーホルダー"
 
@@ -9240,55 +9275,55 @@ msgstr "R1キーホルダー"
 msgid "RA <abbr title=\"Prefix Information Option\">PIO</abbr> Flags"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1735
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1736
 msgid "RADIUS Access-Request attributes"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1709
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1710
 msgid "RADIUS Accounting Port"
 msgstr "Radiusアカウンティング-ポート"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1715
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1716
 msgid "RADIUS Accounting Secret"
 msgstr "Radiusアカウンティング-秘密鍵"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1704
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1705
 msgid "RADIUS Accounting Server"
 msgstr "Radiusアカウンティング-サーバー"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1742
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1743
 msgid "RADIUS Accounting-Request attributes"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1691
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1692
 msgid "RADIUS Authentication Port"
 msgstr "Radius認証-ポート"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1698
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1699
 msgid "RADIUS Authentication Secret"
 msgstr "Radius認証-秘密鍵"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1685
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1686
 msgid "RADIUS Authentication Server"
 msgstr "Radius認証-サーバー"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1749
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1750
 msgid "RADIUS Dynamic VLAN Assignment"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1759
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1760
 msgid "RADIUS Per STA VLAN"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1781
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1782
 msgid "RADIUS VLAN Bridge Naming Scheme"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1764
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1765
 msgid "RADIUS VLAN Naming"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1771
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1772
 msgid "RADIUS VLAN Tagged Interface"
 msgstr ""
 
@@ -9296,7 +9331,7 @@ msgstr ""
 msgid "RFC3947 NAT-T mode"
 msgstr "RFC3947 NAT-Tモード"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1805
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1806
 msgid "RSN Preauth"
 msgstr ""
 
@@ -9318,11 +9353,11 @@ msgstr "RX"
 msgid "RX Rate"
 msgstr "受信レート"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2624
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2625
 msgid "RX Rate / TX Rate"
 msgstr "受信レート/送信レート"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1932
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1933
 msgid ""
 "Radio Resource Measurement - Sends beacons to assist roaming. Not all "
 "clients support this."
@@ -9359,7 +9394,7 @@ msgstr "本当にプロトコルを変更しますか？"
 msgid "Realtime Graphs"
 msgstr "リアルタイムグラフ"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1886
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1887
 msgid "Reassociation Deadline"
 msgstr "再接続制限時間"
 
@@ -9604,7 +9639,7 @@ msgctxt "Dnsmasq instance"
 msgid "Remove instance #%d"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1570
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1572
 msgid "Remove related device settings from the configuration"
 msgstr "関連するデバイス構成を設定から削除します"
 
@@ -9616,7 +9651,7 @@ msgstr ""
 msgid "Removes records of the specified type(s) from answers."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2463
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2464
 msgid "Replace wireless configuration"
 msgstr "無線設定を置換"
 
@@ -9663,8 +9698,8 @@ msgstr "受信チェックサムを要求（オプション）。"
 msgid "Require incoming packets serialization (optional)."
 msgstr "受信パケットのシリアル化を要求（オプション）。"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1754
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2098
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1755
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2099
 msgid "Required"
 msgstr "必須"
 
@@ -9688,75 +9723,75 @@ msgstr ""
 msgid "Required. XFRM interface ID to be used for SA."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1749
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1750
 msgid ""
 "Required: Rejects auth if RADIUS server does not provide appropriate VLAN "
 "attributes."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1400
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1401
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1402
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1403
 msgid "Requires hostapd"
 msgstr "hostapdが必要"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1407
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1408
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1409
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1410
 msgid "Requires hostapd with EAP Suite-B support"
 msgstr "EAP Suite-Bをサポートするhostapdが必要"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1405
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1406
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1407
 msgid "Requires hostapd with EAP support"
 msgstr "EAPをサポートするhostapdが必要"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1410
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1411
 msgid "Requires hostapd with OWE support"
 msgstr "OWEをサポートするhostapdが必要"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1403
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1404
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1405
 msgid "Requires hostapd with SAE support"
 msgstr "SAEをサポートするhostapdが必要"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1398
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1399
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1400
 msgid "Requires hostapd with WEP support"
 msgstr "WEPをサポートするhostapdが必要"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1415
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1416
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1417
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1430
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1418
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1431
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1432
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1433
 msgid "Requires wpa-supplicant"
 msgstr "wpa-supplicantが必要"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1422
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1423
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1424
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1425
 msgid "Requires wpa-supplicant with EAP Suite-B support"
 msgstr "EAP Suite-Bをサポートするwpa-supplicantが必要"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1420
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1421
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1422
 msgid "Requires wpa-supplicant with EAP support"
 msgstr "EAPをサポートするwpa-supplicantが必要"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1425
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1426
 msgid "Requires wpa-supplicant with OWE support"
 msgstr "OWEをサポートするwpa-supplicantが必要"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1418
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1419
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1435
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1420
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1436
 msgid "Requires wpa-supplicant with SAE support"
 msgstr "SAEをサポートするwpa-supplicantが必要"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1413
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1414
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1415
 msgid "Requires wpa-supplicant with WEP support"
 msgstr "WEPをサポートするwpa-supplicantが必要"
 
@@ -9774,7 +9809,7 @@ msgstr ""
 msgid "Reserved tag"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:2996
+#: modules/luci-base/htdocs/luci-static/resources/form.js:3006
 #: modules/luci-base/htdocs/luci-static/resources/luci.js:2220
 #: modules/luci-compat/luasrc/view/cbi/delegator.htm:17
 #: modules/luci-compat/luasrc/view/cbi/footer.htm:30
@@ -9786,7 +9821,7 @@ msgstr "リセット"
 msgid "Reset Counters"
 msgstr "カウンターをリセット"
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:2986
+#: modules/luci-base/htdocs/luci-static/resources/form.js:2996
 msgid "Reset filters"
 msgstr ""
 
@@ -9934,7 +9969,7 @@ msgstr ""
 msgid "Rewrite to egress device address"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1805
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1806
 msgid ""
 "Robust Security Network (RSN): Allow roaming preauth for WPA2-EAP networks "
 "(and advertise it in WLAN beacons). Only works if the specified network "
@@ -10120,13 +10155,13 @@ msgstr "SSH キー"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:164
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:191
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2177
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2178
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/channel_analysis.js:459
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/60_wifi.js:153
 msgid "SSID"
 msgstr "SSID"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1487
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1488
 msgid "SSID and passwords with URIencoded sequences (e.g. %20) may not work."
 msgstr ""
 
@@ -10146,7 +10181,7 @@ msgstr "SSTP サーバー"
 msgid "SWAP"
 msgstr "スワップ"
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:3902
+#: modules/luci-base/htdocs/luci-static/resources/form.js:3912
 #: modules/luci-base/htdocs/luci-static/resources/luci.js:2215
 #: modules/luci-compat/luasrc/view/cbi/error.htm:17
 #: modules/luci-compat/luasrc/view/cbi/footer.htm:26
@@ -10178,7 +10213,7 @@ msgstr "mtdblockの内容を保存"
 msgid "Scan"
 msgstr "スキャン"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1574
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1575
 msgid "Scan this QR code with the client device."
 msgstr ""
 
@@ -10187,17 +10222,17 @@ msgstr ""
 msgid "Scheduled Tasks"
 msgstr "スケジュールタスク"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:48
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:49
 msgid "Scheduling daemon"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:154
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:168
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/dmesg.js:144
 msgctxt "scroll to top (the head) of the log file"
 msgid "Scroll to head"
 msgstr "上にスクロール"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:144
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:158
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/dmesg.js:134
 msgctxt "scroll to bottom (the tail) of the log file"
 msgid "Scroll to tail"
@@ -10241,6 +10276,10 @@ msgstr ""
 "イメージ形式のチェックが失敗した場合でも更新を行う場合、'強制アップグレード' "
 "を選択してください。正しいファームウェアであること、デバイスに適したものであ"
 "ることが確かな場合のみ使用してください！"
+
+#: protocols/luci-proto-batman-adv/htdocs/luci-static/resources/protocol/batadv_vlan.js:52
+msgid "Select Batman VLAN device…"
+msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:3158
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:3389
@@ -10351,7 +10390,7 @@ msgstr ""
 msgid "Set interface as NDP-Proxy external slave. Default is off."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1508
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1510
 msgid ""
 "Set interface properties regardless of the link carrier (If set, carrier "
 "sense events do not invoke hotplug handlers)."
@@ -10386,7 +10425,7 @@ msgstr "DHCP サーバーをセットアップ"
 msgid "Set up routes for proxied IPv6 neighbours."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1224
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1225
 msgid "Sets default route for all traffic"
 msgstr ""
 
@@ -10425,7 +10464,7 @@ msgstr "ショートGI"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1240
 msgid "Short Preamble"
-msgstr "ショートプリアンブル"
+msgstr "ショートプリアンブル(Preamble)"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/index.js:17
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/index.js:142
@@ -10452,7 +10491,7 @@ msgstr "このインターフェースをシャットダウン"
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:64
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:71
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:196
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2176
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2177
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/channel_analysis.js:42
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/channel_analysis.js:458
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/60_wifi.js:152
@@ -10462,7 +10501,7 @@ msgstr "このインターフェースをシャットダウン"
 msgid "Signal"
 msgstr "信号強度"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2623
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2624
 msgid "Signal / Noise"
 msgstr "信号強度 / ノイズ"
 
@@ -10806,7 +10845,7 @@ msgid ""
 "Specify the number of peer notifications to be issued after a failover event."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2482
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2483
 msgid "Specify the secret encryption key here."
 msgstr "ここで秘密暗号鍵を指定します。"
 
@@ -10814,7 +10853,7 @@ msgstr "ここで秘密暗号鍵を指定します。"
 msgid "Speed: %d Mbit/s, Duplex: %s"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1829
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1833
 msgid "Splitterless ADSL (G.992.2) Annex A"
 msgstr ""
 
@@ -10831,7 +10870,7 @@ msgstr ""
 msgid "Stale neighbour cache timeout"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1803
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1807
 msgid "Standard: none"
 msgstr ""
 
@@ -10853,7 +10892,7 @@ msgstr "WPS 開始"
 msgid "Start priority"
 msgstr "開始優先順位"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2282
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2283
 msgid "Start refresh"
 msgstr "更新開始"
 
@@ -10861,7 +10900,7 @@ msgstr "更新開始"
 msgid "Starting configuration apply…"
 msgstr "設定の適用を開始しています…"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2193
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2194
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/channel_analysis.js:484
 msgid "Starting wireless scan..."
 msgstr "無線のスキャンを開始しています..."
@@ -10916,7 +10955,7 @@ msgstr "非アクティブなステーションの制限"
 msgid "Status"
 msgstr "状態"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1800
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1804
 msgid "Steering flows (<abbr title=\"Receive Packet Steering\">RPS</abbr>)"
 msgstr ""
 
@@ -10933,8 +10972,8 @@ msgstr "停止"
 msgid "Stop WPS"
 msgstr "WPS 停止"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2191
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2287
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2192
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2288
 msgid "Stop refresh"
 msgstr "更新停止"
 
@@ -10955,11 +10994,11 @@ msgid "Strong"
 msgstr "強"
 
 #: modules/luci-compat/luasrc/view/cbi/simpleform.htm:61
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2507
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2508
 msgid "Submit"
 msgstr "送信"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1804
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1808
 msgid "Suggested: 128"
 msgstr ""
 
@@ -11054,7 +11093,7 @@ msgstr ""
 msgid "Syntax: {code_syntax}."
 msgstr "文法: {code_syntax}."
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:38
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:39
 msgid "Syslog"
 msgstr ""
 
@@ -11065,7 +11104,7 @@ msgstr ""
 msgid "System"
 msgstr "システム"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:28
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:29
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/syslog.js:4
 #: modules/luci-mod-status/root/usr/share/luci/menu.d/luci-mod-status.json:84
 #: modules/luci-mod-status/root/usr/share/luci/menu.d/luci-mod-status.json:96
@@ -11091,7 +11130,7 @@ msgstr "システム ログのバッファ サイズ"
 msgid "System running in recovery (initramfs) mode."
 msgstr "システムはリカバリー (initramfs) モードで実行中です。"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1783
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1787
 msgid "TCP Layer 3 Master Device (tcp_l3mdev) accept"
 msgstr ""
 
@@ -11367,7 +11406,7 @@ msgstr ""
 msgid "The algorithm that is used to discover mesh routes"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2467
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2468
 msgid ""
 "The allowed characters are: <code>A-Z</code>, <code>a-z</code>, <code>0-9</"
 "code> and <code>_</code>"
@@ -11393,7 +11432,7 @@ msgstr ""
 msgid "The configuration file could not be loaded due to the following error:"
 msgstr "設定ファイルは次のエラーにより読み込めませんでした:"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2459
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2460
 msgid ""
 "The correct SSID must be manually specified when joining a hidden wireless "
 "network"
@@ -11405,7 +11444,7 @@ msgstr ""
 msgid "The default (%s) is zero for both IPv4 and IPv6."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1773
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1775
 msgid ""
 "The default <abbr title=\"DHCP Unique Identifier\">DUID</abbr> for this "
 "device, used when acting as a DHCP server or client. The client identifier "
@@ -11528,11 +11567,11 @@ msgstr ""
 msgid "The interface could not be found"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1374
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1376
 msgid "The interface name is already used"
 msgstr "インターフェース名はすでに使用されています"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1381
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1383
 msgid "The interface name is too long"
 msgstr "インターフェース名が長すぎます"
 
@@ -11594,7 +11633,7 @@ msgstr ""
 msgid "The netfilter components below are only regarded when running fw4."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2473
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2474
 msgid "The network name is already used"
 msgstr "ネットワーク名はすでに使用されています"
 
@@ -11662,7 +11701,7 @@ msgid ""
 "one is expected to be in active use on the network at any given time."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1460
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1461
 msgid "The selected %s mode is incompatible with %s encryption"
 msgstr "選択された%sモードは、%s暗号化と互換性がありません"
 
@@ -11670,7 +11709,7 @@ msgstr "選択された%sモードは、%s暗号化と互換性がありませ�
 msgid "The submitted security token is invalid or already expired!"
 msgstr "送信されたセキュリティトークンは無効または期限切れです！"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:241
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:255
 msgid "The syslog output, pre-filtered for messages related to:"
 msgstr ""
 
@@ -11743,8 +11782,8 @@ msgstr ""
 "ません。このプラットフォームの通常のイメージフォーマットかどうか、確認してく"
 "ださい。"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1746
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1758
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1748
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1760
 msgid "The value is overridden by configuration."
 msgstr "設定値によりオーバーライドされます。"
 
@@ -11791,11 +11830,11 @@ msgstr ""
 msgid "This IPv4 address of the relay"
 msgstr "リレーのIPv4アドレス"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2040
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2041
 msgid "This authentication type is not applicable to the selected EAP method."
 msgstr "この認証タイプは、選択されたEAP方式に適用できません。"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1774
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1776
 msgid ""
 "This identifier is randomly generated the first time the device is booted."
 msgstr ""
@@ -11906,8 +11945,8 @@ msgstr "このリストは現在実行中のシステムプロセスとステー
 msgid "This option adds additional record types to the cache."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1994
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2052
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1995
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2053
 msgid ""
 "This option cannot be used because the ca-bundle package is not installed."
 msgstr ""
@@ -11928,7 +11967,7 @@ msgid ""
 "This page displays the wireless metrics for each available radio interface."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1769
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1771
 msgid "This prefix is randomly generated at first install."
 msgstr ""
 
@@ -11936,7 +11975,7 @@ msgstr ""
 msgid "This prevents unreachable IPs in subnets not accessible to you."
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:2463
+#: modules/luci-base/htdocs/luci-static/resources/form.js:2473
 #: modules/luci-compat/luasrc/view/cbi/tblsection.htm:172
 #: modules/luci-compat/luasrc/view/cbi/tsection.htm:32
 msgid "This section contains no values yet"
@@ -11960,7 +11999,7 @@ msgstr ""
 msgid "Time Synchronization"
 msgstr "時刻同期"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1947
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1948
 msgid "Time advertisement"
 msgstr ""
 
@@ -11976,7 +12015,7 @@ msgstr "リスニングとラーニングの状態で経過させる時間（秒
 msgid "Time interval for rekeying GTK"
 msgstr "Group Temporal Key（GTK）再生成間隔"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1956
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1957
 msgid "Time zone"
 msgstr "タイムゾーン"
 
@@ -12029,7 +12068,7 @@ msgstr "ToS"
 msgid "Toggle IPv6 PD via DHCPv6."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1838
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1842
 msgid "Tone"
 msgstr "トーン"
 
@@ -12151,7 +12190,7 @@ msgstr "トンネルインターフェース"
 msgid "Tunnel Link"
 msgstr "トンネルリンク"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1700
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1702
 msgid "Tunnel device"
 msgstr "トンネル デバイス"
 
@@ -12164,7 +12203,7 @@ msgid "Tx-Power"
 msgstr "送信出力"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:53
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1734
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1736
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/60_wifi.js:178
 #: protocols/luci-proto-ipv6/htdocs/luci-static/resources/protocol/map.js:43
 msgid "Type"
@@ -12178,7 +12217,7 @@ msgstr ""
 msgid "UC"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1787
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1791
 msgid "UDP Layer 3 Master Device (udp_l3mdev) accept"
 msgstr ""
 
@@ -12207,7 +12246,7 @@ msgstr "UDP:"
 msgid "UID-range"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1768
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1770
 msgid "ULA for IPv6 is analogous to IPv4 private network addressing."
 msgstr ""
 
@@ -12233,7 +12272,7 @@ msgstr "URI スキーム %s はサポートされていません"
 msgid "URL"
 msgstr "URL"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:41
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:42
 msgid "UUCP"
 msgstr "UUCP"
 
@@ -12263,7 +12302,7 @@ msgstr "アップストリーム インターフェースを確定できませ�
 msgid "Unable to dispatch"
 msgstr "ディスパッチできません"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:116
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:130
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/dmesg.js:111
 msgid "Unable to load log data:"
 msgstr "ログデータを読み込めません:"
@@ -12322,7 +12361,7 @@ msgstr ""
 msgid "Unchecked means the timezone offset (E.g. GMT+1) is displayed"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1569
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1571
 msgid "Unconfigure"
 msgstr "設定解除"
 
@@ -12339,7 +12378,7 @@ msgstr "Unet"
 msgid "Unexpected reply data format"
 msgstr "予期しない応答データ形式"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1767
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1769
 msgid ""
 "Unique Local Address (%s) - prefix <code>fd00::/8</code> (the L bit is "
 "always 1)."
@@ -12579,7 +12618,7 @@ msgstr "ルートファイルシステムとして使用（/）"
 msgid "Use broadcast flag"
 msgstr "ブロードキャストフラグを使用"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1504
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1506
 msgid "Use builtin IPv6-management"
 msgstr "ビルトインIPv6管理を使用"
 
@@ -12626,11 +12665,11 @@ msgctxt "nft nat flag persistent"
 msgid "Use same source and destination for each connection"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1987
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1988
 msgid "Use system certificates"
 msgstr "システム証明書を使用"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2045
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2046
 msgid "Use system certificates for inner-tunnel"
 msgstr "内部トンネルにシステム証明書を使用"
 
@@ -12661,11 +12700,11 @@ msgstr ""
 msgid "Used"
 msgstr "使用中"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1832
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1833
 msgid "Used Key Slot"
 msgstr "使用するキースロット"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1875
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1876
 msgid ""
 "Used for two different purposes: RADIUS NAS ID and 802.11r R0KH-ID. Not "
 "needed with normal WPA(2)-PSK."
@@ -12678,7 +12717,7 @@ msgstr ""
 msgid "Useful for systems behind firewalls."
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:34
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:35
 msgid "User"
 msgstr "ユーザー"
 
@@ -12713,11 +12752,11 @@ msgstr ""
 msgid "VC"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1906
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1910
 msgid "VC-Mux"
 msgstr "VC多重化"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1854
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1858
 msgid "VDSL"
 msgstr "VDSL"
 
@@ -12727,12 +12766,12 @@ msgid "VEPA (Virtual Ethernet Port Aggregator)"
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:455
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1691
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1693
 msgid "VLAN (802.1ad)"
 msgstr "VLAN (802.1ad)"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:454
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1688
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1690
 msgid "VLAN (802.1q)"
 msgstr "VLAN (802.1q)"
 
@@ -12811,8 +12850,8 @@ msgstr ""
 "未署名のドメインレスポンスが、本当にその未署名のドメインから来たものであるか"
 "検証します。上位サーバが DNSSEC をサポートしている必要があります。"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1987
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2045
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1988
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2046
 msgid ""
 "Validate server certificate using built-in system CA bundle,<br />requires "
 "the \"ca-bundle\" package"
@@ -12855,12 +12894,12 @@ msgid "Via shall be specified when %s is a multicast address"
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:457
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1706
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1708
 msgid "Virtual Ethernet"
 msgstr "仮想イーサネット"
 
 #: modules/luci-base/htdocs/luci-static/resources/network.js:3057
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1709
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1711
 msgid "Virtual Routing and Forwarding (VRF)"
 msgstr ""
 
@@ -12874,17 +12913,17 @@ msgstr "仮想ダイナミックインターフェース"
 msgid "WDS"
 msgstr "WDS"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1377
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1469
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1378
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1470
 msgid "WEP Open System"
 msgstr "WEP オープン システム"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1378
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1470
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1379
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1471
 msgid "WEP Shared Key"
 msgstr "WEP 共有キー"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2482
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2483
 msgid "WEP passphrase"
 msgstr "WEP 暗号フレーズ"
 
@@ -12896,19 +12935,19 @@ msgstr "WLAN ローミング"
 msgid "WMM Mode"
 msgstr "WMM モード"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1960
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1961
 msgid "WNM Sleep Mode"
 msgstr "WNM スリープ モード"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1964
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1965
 msgid "WNM Sleep Mode Fixes"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2482
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2483
 msgid "WPA passphrase"
 msgstr "WPA暗号フレーズ"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1368
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1369
 msgid ""
 "WPA-Encryption requires wpa_supplicant (for client mode) or hostapd (for AP "
 "and ad-hoc mode) to be installed."
@@ -12929,7 +12968,7 @@ msgstr "起動が終了するのを待っています..."
 msgid "Warn"
 msgstr "警告"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:65
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:66
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:850
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/dmesg.js:26
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/system.js:191
@@ -12955,7 +12994,7 @@ msgid ""
 "all known hosts."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1295
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1297
 msgid ""
 "When delegating prefixes to multiple downstreams, interfaces with a higher "
 "preference value are considered first when allocating subnets."
@@ -12999,7 +13038,7 @@ msgid ""
 "capable of optimizing the traffic flow to gain maximum performance."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1898
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1899
 msgid ""
 "When using a PSK, the PMK can be automatically generated. When enabled, the "
 "R0/R1 key options below are not applied. Disable this to use the R0 and R1 "
@@ -13108,7 +13147,7 @@ msgstr "無線ネットワークが無効です"
 msgid "Wireless network is enabled"
 msgstr "無線ネットワークが有効です"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2142
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2143
 msgid "Workaround mode can only be used when acting as an access point."
 msgstr ""
 
@@ -13120,7 +13159,7 @@ msgstr "受信した DNS リクエストを syslog へ記録します。"
 msgid "Write system log to file"
 msgstr "システムログをファイルに書き込む"
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:5131
+#: modules/luci-base/htdocs/luci-static/resources/form.js:5141
 msgid "Yes"
 msgstr "はい"
 
@@ -13206,13 +13245,13 @@ msgid "any"
 msgstr "すべて"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:1149
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1839
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1847
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1852
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1843
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1851
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1856
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/routes.js:88
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/routes.js:103
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/routes.js:141
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1314
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1315
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/system.js:231
 #: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:83
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoe.js:48
@@ -13235,11 +13274,11 @@ msgstr "自動 (無効)"
 msgid "automatic (enabled)"
 msgstr "自動 (有効)"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1911
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1912
 msgid "automatically derived from Mobility Domain and PSK"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1882
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1883
 msgid "automatically derived from SSID"
 msgstr ""
 
@@ -13251,7 +13290,7 @@ msgstr "baseT"
 msgid "between:"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1912
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1916
 msgid "bridged"
 msgstr "ブリッジ"
 
@@ -13331,7 +13370,7 @@ msgstr "無効"
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:871
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1088
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1177
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1247
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1249
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:99
 #: protocols/luci-proto-ipv6/htdocs/luci-static/resources/protocol/dhcpv6.js:26
 msgid "disabled"
@@ -13388,7 +13427,7 @@ msgstr ""
 msgid "expired"
 msgstr "期限切れ"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:245
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:259
 msgid "facility:"
 msgstr ""
 
@@ -13429,7 +13468,7 @@ msgstr "半二重"
 msgid "hexadecimal encoded value"
 msgstr "エンコードされた値（16進数）"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2254
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2255
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/channel_analysis.js:372
 msgid "hidden"
 msgstr "（非表示）"
@@ -13450,7 +13489,7 @@ msgstr "ハイブリッドモード"
 msgid "ignore"
 msgstr "無視"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:255
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:269
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/dmesg.js:277
 msgid "including:"
 msgstr ""
@@ -13465,7 +13504,7 @@ msgstr ""
 msgid "input"
 msgstr "入力"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1732
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1733
 msgid "integer"
 msgstr ""
 
@@ -13503,16 +13542,20 @@ msgstr ""
 msgid "maximum one \"%\""
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1479
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1480
 msgid "medium security"
 msgstr "セキュリティ: 中"
+
+#: modules/luci-mod-system/htdocs/luci-static/resources/view/system/leds.js:128
+msgid "milliseconds"
+msgstr ""
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:81
 msgctxt "nft unit"
 msgid "minute"
 msgstr "分"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1903
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1904
 msgid "minutes"
 msgstr "分"
 
@@ -13534,12 +13577,12 @@ msgstr "リンクなし"
 msgid "no override"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:2449
+#: modules/luci-base/htdocs/luci-static/resources/form.js:2459
 #: modules/luci-base/htdocs/luci-static/resources/validation.js:210
 msgid "non-empty value"
 msgstr "空でない値"
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:4083
+#: modules/luci-base/htdocs/luci-static/resources/form.js:4093
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:841
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:916
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:960
@@ -13560,7 +13603,7 @@ msgstr ""
 msgid "not present"
 msgstr "存在しません"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1732
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1733
 msgid "octet string"
 msgstr ""
 
@@ -13580,7 +13623,7 @@ msgstr "オフ"
 msgid "on available prefix"
 msgstr "利用可能なプレフィックス"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1480
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1481
 msgid "open network"
 msgstr "オープンネットワーク"
 
@@ -13643,7 +13686,7 @@ msgstr ""
 msgid "relay mode"
 msgstr "リレーモード"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1913
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1917
 msgid "routed"
 msgstr "ルート"
 
@@ -13660,7 +13703,7 @@ msgstr "秒"
 msgid "server mode"
 msgstr "サーバーモード"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:249
+#: modules/luci-base/htdocs/luci-static/resources/tools/views.js:263
 msgid "severity:"
 msgstr ""
 
@@ -13673,7 +13716,7 @@ msgstr "sstpcログレベル"
 msgid "stderr"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1732
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1733
 msgid "string (UTF-8)"
 msgstr ""
 
@@ -13681,7 +13724,7 @@ msgstr ""
 msgid "string: \"%s\""
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1478
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1479
 msgid "strong security"
 msgstr "セキュリティ: 強"
 
@@ -13707,7 +13750,7 @@ msgid ""
 "to. Used only when the VXLAN device is in external or collect metadata mode"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1886
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1887
 msgid "time units (TUs / 1.024 ms) [1000-65535]"
 msgstr "時間単位（TUs/1.024ミリ秒）[1000-65535]"
 
@@ -13746,7 +13789,7 @@ msgstr ""
 msgid "unlimited"
 msgstr "無制限"
 
-#: modules/luci-base/htdocs/luci-static/resources/form.js:4510
+#: modules/luci-base/htdocs/luci-static/resources/form.js:4520
 #: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:106
 #: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:167
 #: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:397
@@ -13977,7 +14020,7 @@ msgstr "%d文字以上の値"
 msgid "value with at most %d characters"
 msgstr "最大%d文字の値"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1480
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1481
 msgid "weak security"
 msgstr "セキュリティ: 弱"
 

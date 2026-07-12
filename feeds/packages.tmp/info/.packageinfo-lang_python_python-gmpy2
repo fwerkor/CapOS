@@ -1,9 +1,10 @@
 Source-Makefile: feeds/packages/lang/python/python-gmpy2/Makefile
+Build-Depends: python-setuptools/host python-setuptools-scm/host
 
 Package: python3-gmpy2
 Submenu: Python
-Version: 2.1.5-r1
-Depends: +libc +libgmp +libmpc +libmpfr +python3-light
+Version: 2.3.0-r1
+Depends: +libc +libgmp +libmpc +libmpfr +python3-light +python3-email python3-urllib
 Conflicts: 
 Menu-Depends: 
 Provides: @python3-gmpy2-any
@@ -11,8 +12,8 @@ Section: lang
 Category: Languages
 Repository: base
 Title: GMP/MPIR, MPFR, and MPC interface
-Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: gmpy2-2.1.5.tar.gz
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: gmpy2-2.3.0.tar.gz
 License: LGPL-3.0-or-later
 LicenseFiles: COPYING.LESSER
 URL: https://github.com/aleaxit/gmpy
@@ -28,7 +29,7 @@ functionality.
 
 Package: python3-gmpy2-src
 Submenu: Python
-Version: 2.1.5-r1
+Version: 2.3.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -37,8 +38,8 @@ Section: lang
 Category: Languages
 Repository: base
 Title: GMP/MPIR, MPFR, and MPC interface (sources)
-Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: gmpy2-2.1.5.tar.gz
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: gmpy2-2.3.0.tar.gz
 License: LGPL-3.0-or-later
 LicenseFiles: COPYING.LESSER
 URL: https://github.com/aleaxit/gmpy

@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/libs/libyaml-cpp/Makefile
 
 Package: libyaml-cpp
-Version: 0.8.0-r2
+Version: 0.8.0-r4
 Depends: +libc +libstdcpp
 Conflicts: 
 Menu-Depends: 

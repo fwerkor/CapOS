@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/net/v2ray-geodata/Makefile
 
 Package: v2ray-geoip
 Submenu: IP Addresses and Names
-Version: 202601050204-r1
+Version: 202605120112-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -22,7 +22,7 @@ Description: GeoIP List for V2Ray
 
 Package: v2ray-geosite
 Submenu: IP Addresses and Names
-Version: 20260117053629-r1
+Version: 20260518025449-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -42,7 +42,7 @@ Description: Geosite List for V2Ray
 
 Package: v2ray-geosite-ir
 Submenu: IP Addresses and Names
-Version: 202601120047-r1
+Version: 202603230100-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 

@@ -1,0 +1,42 @@
+Source-Makefile: feeds/luci/applications/luci-app-adguardhome/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-app-adguardhome
+Submenu: 3. Applications
+Version: x
+Depends: +libc +adguardhome +luci-base
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-app-adguardhome-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: LuCI support for AdGuard Home
+Maintainer: George Sapkin <george@sapk.in>
+Source: 
+License: GPL-2.0-only
+URL: https://github.com/openwrt/luci
+Type: ipkg
+Description: LuCI support for AdGuard Home
+@@
+
+Package: luci-i18n-adguardhome-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-adguardhome
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-adguardhome-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-adguardhome - lo translation
+Maintainer: 
+Source: 
+License: GPL-2.0-only
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-adguardhome - ພາສາລາວ (Lao)
+@@
+
+

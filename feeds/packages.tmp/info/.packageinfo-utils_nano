@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/utils/nano/Makefile
 
 Package: nano
 Submenu: Editors
-Version: 8.7.1-r2
+Version: 9.1-r1
 Depends: +libc +libncurses
 Conflicts: 
 Menu-Depends: 
@@ -14,7 +14,7 @@ Category: Utilities
 Repository: base
 Title: GNU nano text editor (minimal features)
 Maintainer: Hannu Nyman <hannu.nyman@iki.fi>
-Source: nano-8.7.1.tar.xz
+Source: nano-9.1.tar.xz
 License: GPL-3.0-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:gnu:nano
@@ -31,7 +31,7 @@ Description:   Nano is a small and simple text editor for use on the terminal.
 
 Package: nano-plus
 Submenu: Editors
-Version: 8.7.1-r2
+Version: 9.1-r1
 Depends: +libc +libncurses
 Conflicts: 
 Menu-Depends: 
@@ -42,7 +42,7 @@ Category: Utilities
 Repository: base
 Title: GNU nano text editor (more features, Unicode)
 Maintainer: Hannu Nyman <hannu.nyman@iki.fi>
-Source: nano-8.7.1.tar.xz
+Source: nano-9.1.tar.xz
 License: GPL-3.0-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:gnu:nano
@@ -63,7 +63,7 @@ Description:   nano-plus - Additional features enabled, larger size than default
 
 Package: nano-full
 Submenu: Editors
-Version: 8.7.1-r2
+Version: 9.1-r1
 Depends: +libc +libncurses
 Conflicts: 
 Menu-Depends: 
@@ -74,7 +74,7 @@ Category: Utilities
 Repository: base
 Title: GNU nano text editor (all features, Unicode)
 Maintainer: Hannu Nyman <hannu.nyman@iki.fi>
-Source: nano-8.7.1.tar.xz
+Source: nano-9.1.tar.xz
 License: GPL-3.0-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:gnu:nano

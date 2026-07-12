@@ -20,4 +20,327 @@ Type: ipkg
 Description:    Track and display history of WiFi associated stations
 @@
 
+Package: luci-i18n-wifihistory-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - cs translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Čeština (Czech)
+@@
+
+Package: luci-i18n-wifihistory-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-de-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - de translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Deutsch (German)
+@@
+
+Package: luci-i18n-wifihistory-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-es-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - es translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Español (Spanish)
+@@
+
+Package: luci-i18n-wifihistory-fr
+Default: LUCI_LANG_fr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-fr-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - fr translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Français (French)
+@@
+
+Package: luci-i18n-wifihistory-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - ga translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-wifihistory-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - ko translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - 한국어 (Korean)
+@@
+
+Package: luci-i18n-wifihistory-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - lo translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - ພາສາລາວ (Lao)
+@@
+
+Package: luci-i18n-wifihistory-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-lt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - lt translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-wifihistory-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-pl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - pl translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Polski (Polish)
+@@
+
+Package: luci-i18n-wifihistory-pt
+Default: LUCI_LANG_pt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-pt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - pt translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Português (Portuguese)
+@@
+
+Package: luci-i18n-wifihistory-ro
+Default: LUCI_LANG_ro||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-ro-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - ro translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Română (Romanian)
+@@
+
+Package: luci-i18n-wifihistory-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - ru translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Русский (Russian)
+@@
+
+Package: luci-i18n-wifihistory-sv
+Default: LUCI_LANG_sv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-sv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - sv translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Svenska (Swedish)
+@@
+
+Package: luci-i18n-wifihistory-tr
+Default: LUCI_LANG_tr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-tr-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - tr translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Türkçe (Turkish)
+@@
+
+Package: luci-i18n-wifihistory-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - uk translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-wifihistory-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - zh-cn translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-wifihistory-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wifihistory
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wifihistory-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifihistory - zh-tw translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifihistory - 正體中文 (Traditional Chinese)
+@@
+
 

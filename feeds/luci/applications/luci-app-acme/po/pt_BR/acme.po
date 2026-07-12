@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-02-14 00:51+0000\n"
-"Last-Translator: jcneviadunski <janjao.haastari@gmail.com>\n"
+"PO-Revision-Date: 2026-05-26 08:43+0000\n"
+"Last-Translator: Volenski <volenski@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "openwrt/luciapplicationsacme/pt_BR/>\n"
 "Language: pt_BR\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:227
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:235
@@ -49,10 +49,12 @@ msgid ""
 "Add multiple entries here in KEY=VAL shell variable format to supply "
 "multiple credential variables."
 msgstr ""
+"Adicione várias entradas aqui no formato de variável shell KEY=VAL para "
+"fornecer múltiplas variáveis de credenciais."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:84
 msgid "Advanced Settings"
-msgstr "Configurações avançadas"
+msgstr "Configurações Avançadas"
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:191
 msgid "Alternative DNS API options"
@@ -68,7 +70,7 @@ msgstr "Onde os certificados são armazenados"
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:306
 msgid "Certificate Profile"
-msgstr ""
+msgstr "Perfil de certificado"
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:76
 msgid "Certificate config"
@@ -110,6 +112,8 @@ msgstr "DNS Validação do Desafio"
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:168
 msgid "DNS mode is also the only mode that supports wildcard certificates."
 msgstr ""
+"O modo DNS também é o único modo que oferece suporte a certificados "
+"genéricos."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:300
 msgid "Days until renewal"
@@ -121,7 +125,7 @@ msgstr "Dias até a renovação"
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:284
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:448
 msgid "Default"
-msgstr "Predefinido"
+msgstr "Padrão"
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:233
 msgid "Domain Alias"

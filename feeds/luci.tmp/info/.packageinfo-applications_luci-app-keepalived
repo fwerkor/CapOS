@@ -381,6 +381,25 @@ Hidden: 1
 Description:     Translation for luci-app-keepalived - 한국어 (Korean)
 @@
 
+Package: luci-i18n-keepalived-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-keepalived
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-keepalived-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-keepalived - lo translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-keepalived - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-keepalived-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x

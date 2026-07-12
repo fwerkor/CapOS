@@ -1,0 +1,56 @@
+Source-Makefile: feeds/packages/lang/python/python-pybind11/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-setuptools/host python-wheel/host
+Build-Types: host
+
+Package: python3-pybind11
+Submenu: Python
+Version: 2.13.6-r1
+Depends: +libc +python3
+Conflicts: 
+Menu-Depends: 
+Provides: @python3-pybind11-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Seamless operability between C++11 and Python
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: pybind11-2.13.6.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/pybind/pybind11
+Type: ipkg
+Build-Only: 1
+Description:   pybind11 is a lightweight header-only library that exposes C++ types
+  in Python and vice versa, mainly to create Python bindings of existing
+  C++ code.
+@@
+
+Package: python3-pybind11-src
+Submenu: Python
+Version: 2.13.6-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @python3-pybind11-src-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Seamless operability between C++11 and Python (sources)
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: pybind11-2.13.6.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/pybind/pybind11
+Type: ipkg
+Build-Only: 1
+Description:       pybind11 is a lightweight header-only library that exposes C++ types
+  in Python and vice versa, mainly to create Python bindings of existing
+  C++ code.
+
+    This package contains the Python source files for python3-pybind11.
+@@
+Config:
+    depends on PACKAGE_python3-pybind11
+@@
+
+

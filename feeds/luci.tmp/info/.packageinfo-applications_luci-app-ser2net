@@ -362,6 +362,25 @@ Hidden: 1
 Description:     Translation for luci-app-ser2net - 한국어 (Korean)
 @@
 
+Package: luci-i18n-ser2net-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ser2net
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ser2net-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ser2net - lo translation
+Maintainer: Michele Primavera <primavera@elmod.it>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ser2net - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-ser2net-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x

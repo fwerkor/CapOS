@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/admin/syslog-ng/Makefile
 Build-Depends: HOST_OS_MACOS:fakeuname/host 
 
 Package: syslog-ng
-Version: 4.10.2-r2
+Version: 4.11.0-r1
 Depends: +libc +libpcre2 +glib2 +libopenssl +libpthread +librt +libdbi +libjson-c +libcurl +libuuid +ivykis +SYSLOGNG_LOGROTATE:logrotate +LIBCURL_ZLIB:zlib
 Conflicts: 
 Menu-Depends: 
@@ -12,7 +12,7 @@ Category: Administration
 Repository: base
 Title: A powerful syslog daemon
 Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
-Source: syslog-ng-4.10.2.tar.gz
+Source: syslog-ng-4.11.0.tar.gz
 License: LGPL-2.1-or-later GPL-2.0-or-later
 LicenseFiles: COPYING LGPL.txt GPL.txt
 CPE-ID: cpe:/a:oneidentity:syslog-ng

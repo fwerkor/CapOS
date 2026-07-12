@@ -1,8 +1,9 @@
 Source-Makefile: feeds/packages/lang/python/python-ubus/Makefile
+Build-Depends: python-setuptools/host
 
 Package: python3-ubus
 Submenu: Python
-Version: 0.1.2-r1
+Version: 0.1.3-r1
 Depends: +libc +libubus +libblobmsg-json +python3-light
 Conflicts: 
 Menu-Depends: 
@@ -12,7 +13,7 @@ Category: Languages
 Repository: base
 Title: libubus bindings
 Maintainer: Erik Larsson <who+openwrt@cnackers.org>
-Source: ubus-0.1.2.tar.gz
+Source: ubus-0.1.3.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: LICENSE
 URL: https://gitlab.nic.cz/turris/python-ubus/
@@ -22,7 +23,7 @@ Description:   Python bindings for ubus.
 
 Package: python3-ubus-src
 Submenu: Python
-Version: 0.1.2-r1
+Version: 0.1.3-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -32,7 +33,7 @@ Category: Languages
 Repository: base
 Title: libubus bindings (sources)
 Maintainer: Erik Larsson <who+openwrt@cnackers.org>
-Source: ubus-0.1.2.tar.gz
+Source: ubus-0.1.3.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: LICENSE
 URL: https://gitlab.nic.cz/turris/python-ubus/

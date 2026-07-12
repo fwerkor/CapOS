@@ -20,4 +20,232 @@ Type: ipkg
 Description: Luci Application for IPSec VPN (Libreswan)
 @@
 
+Package: luci-i18n-libreswan-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - cs translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - Čeština (Czech)
+@@
+
+Package: luci-i18n-libreswan-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-es-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - es translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - Español (Spanish)
+@@
+
+Package: luci-i18n-libreswan-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - ga translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-libreswan-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - ko translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - 한국어 (Korean)
+@@
+
+Package: luci-i18n-libreswan-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - lo translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - ພາສາລາວ (Lao)
+@@
+
+Package: luci-i18n-libreswan-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-lt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - lt translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-libreswan-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-pl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - pl translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - Polski (Polish)
+@@
+
+Package: luci-i18n-libreswan-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-pt-br-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - pt-br translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - Português do Brasil (Brazilian Portuguese)
+@@
+
+Package: luci-i18n-libreswan-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - ru translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - Русский (Russian)
+@@
+
+Package: luci-i18n-libreswan-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - uk translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-libreswan-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - zh-cn translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-libreswan-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-libreswan
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-libreswan-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-libreswan - zh-tw translation
+Maintainer: Jaymin Patel <jem.patel@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-libreswan - 正體中文 (Traditional Chinese)
+@@
+
 

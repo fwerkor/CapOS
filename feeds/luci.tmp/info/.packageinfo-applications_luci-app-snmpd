@@ -362,6 +362,25 @@ Hidden: 1
 Description:     Translation for luci-app-snmpd - 한국어 (Korean)
 @@
 
+Package: luci-i18n-snmpd-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-snmpd-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - lo translation
+Maintainer: Christian Korber <ck@dev.tdt.de>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-snmpd-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -379,6 +398,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-snmpd - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-snmpd-lv
+Default: LUCI_LANG_lv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-snmpd-lv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - lv translation
+Maintainer: Christian Korber <ck@dev.tdt.de>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Latviešu (Latvian)
 @@
 
 Package: luci-i18n-snmpd-mr

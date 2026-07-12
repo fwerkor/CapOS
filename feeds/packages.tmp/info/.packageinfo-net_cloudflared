@@ -3,7 +3,7 @@ Build-Depends: golang/host
 
 Package: cloudflared
 Submenu: Web Servers/Proxies
-Version: 2025.11.0-r2
+Version: 2026.3.0-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +ca-bundle
 Conflicts: 
 Menu-Depends: 
@@ -13,7 +13,7 @@ Category: Network
 Repository: base
 Title: Cloudflare Tunnel client
 Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
-Source: cloudflared-2025.11.0.tar.gz
+Source: cloudflared-2026.3.0.tar.gz
 License: Apache-2.0
 LicenseFiles: LICENSE
 URL: https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/get-started/

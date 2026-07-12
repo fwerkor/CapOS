@@ -3,7 +3,7 @@ Build-Depends: python-cffi/host python-greenlet/host python-cython/host
 
 Package: python3-gevent
 Submenu: Python
-Version: 23.9.1-r1
+Version: 25.9.1-r1
 Depends: +libc +python3-light +python3-cffi +python3-greenlet +python3-zope-interface +libcares +libev +libuv
 Conflicts: 
 Menu-Depends: 
@@ -13,7 +13,7 @@ Category: Languages
 Repository: base
 Title: Coroutine-based network library
 Maintainer: Andy Syam <privasisource@gmail.com>
-Source: gevent-23.9.1.tar.gz
+Source: gevent-25.9.1.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 URL: https://github.com/gevent/gevent
@@ -24,7 +24,7 @@ Description:   gevent is a coroutine -based Python networking library that uses 
 
 Package: python3-gevent-src
 Submenu: Python
-Version: 23.9.1-r1
+Version: 25.9.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -34,7 +34,7 @@ Category: Languages
 Repository: base
 Title: Coroutine-based network library (sources)
 Maintainer: Andy Syam <privasisource@gmail.com>
-Source: gevent-23.9.1.tar.gz
+Source: gevent-25.9.1.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 URL: https://github.com/gevent/gevent

@@ -381,6 +381,25 @@ Hidden: 1
 Description:     Translation for luci-app-bcp38 - 한국어 (Korean)
 @@
 
+Package: luci-i18n-bcp38-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-bcp38
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-bcp38-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-bcp38 - lo translation
+Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-bcp38 - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-bcp38-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -398,6 +417,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-bcp38 - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-bcp38-lv
+Default: LUCI_LANG_lv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-bcp38
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-bcp38-lv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-bcp38 - lv translation
+Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-bcp38 - Latviešu (Latvian)
 @@
 
 Package: luci-i18n-bcp38-mr

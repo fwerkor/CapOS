@@ -381,6 +381,25 @@ Hidden: 1
 Description:     Translation for luci-mod-battstatus - 한국어 (Korean)
 @@
 
+Package: luci-i18n-battstatus-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-mod-battstatus
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-battstatus-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-mod-battstatus - lo translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-mod-battstatus - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-battstatus-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -398,6 +417,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-mod-battstatus - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-battstatus-lv
+Default: LUCI_LANG_lv||(ALL&&m)
+Version: x
+Depends: +libc luci-mod-battstatus
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-battstatus-lv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-mod-battstatus - lv translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-mod-battstatus - Latviešu (Latvian)
 @@
 
 Package: luci-i18n-battstatus-mr

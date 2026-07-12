@@ -20,4 +20,251 @@ Type: ipkg
 Description: Softether management application
 @@
 
+Package: luci-i18n-softether-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - cs translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - Čeština (Czech)
+@@
+
+Package: luci-i18n-softether-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-de-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - de translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - Deutsch (German)
+@@
+
+Package: luci-i18n-softether-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-es-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - es translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - Español (Spanish)
+@@
+
+Package: luci-i18n-softether-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - ga translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-softether-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - ko translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - 한국어 (Korean)
+@@
+
+Package: luci-i18n-softether-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - lo translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - ພາສາລາວ (Lao)
+@@
+
+Package: luci-i18n-softether-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-lt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - lt translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-softether-lv
+Default: LUCI_LANG_lv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-lv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - lv translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - Latviešu (Latvian)
+@@
+
+Package: luci-i18n-softether-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-pl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - pl translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - Polski (Polish)
+@@
+
+Package: luci-i18n-softether-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - ru translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - Русский (Russian)
+@@
+
+Package: luci-i18n-softether-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - uk translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-softether-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - zh-cn translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-softether-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-softether
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-softether-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-softether - zh-tw translation
+Maintainer: BERENYI Balazs <balazs@wee.hu>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-softether - 正體中文 (Traditional Chinese)
+@@
+
 

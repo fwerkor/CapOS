@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/multimedia/ffmpeg/Makefile
 
 Package: ffmpeg
-Version: 6.1.3-r1
+Version: 6.1.4-r1
 Depends: +libc +libatomic +libffmpeg-full
 Conflicts: 
 Menu-Depends: 
@@ -12,7 +12,7 @@ Category: Multimedia
 Repository: base
 Title: FFmpeg program
 Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
-Source: ffmpeg-6.1.3.tar.xz
+Source: ffmpeg-6.1.4.tar.xz
 License: LGPL-2.1-or-later GPL-2.0-or-later LGPL-3.0-or-later
 LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
 CPE-ID: cpe:/a:ffmpeg:ffmpeg
@@ -29,7 +29,7 @@ Description:  FFmpeg is a a software package that can record, convert and stream
 @@
 
 Package: ffprobe
-Version: 6.1.3-r1
+Version: 6.1.4-r1
 Depends: +libc +libatomic +libffmpeg-full
 Conflicts: 
 Menu-Depends: 
@@ -40,7 +40,7 @@ Category: Multimedia
 Repository: base
 Title: FFmpeg CLI media identifier
 Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
-Source: ffmpeg-6.1.3.tar.xz
+Source: ffmpeg-6.1.4.tar.xz
 License: LGPL-2.1-or-later GPL-2.0-or-later LGPL-3.0-or-later
 LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
 CPE-ID: cpe:/a:ffmpeg:ffmpeg
@@ -57,7 +57,7 @@ Description:  FFmpeg is a a software package that can record, convert and stream
 @@
 
 Package: ffmpeg-custom
-Version: 6.1.3-r1
+Version: 6.1.4-r1
 Depends: +libc +libatomic @!ALL libffmpeg-custom
 Conflicts: 
 Menu-Depends: 
@@ -68,7 +68,7 @@ Category: Multimedia
 Repository: base
 Title: FFmpeg program (custom)
 Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
-Source: ffmpeg-6.1.3.tar.xz
+Source: ffmpeg-6.1.4.tar.xz
 License: LGPL-2.1-or-later GPL-2.0-or-later LGPL-3.0-or-later
 LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
 CPE-ID: cpe:/a:ffmpeg:ffmpeg
@@ -85,7 +85,7 @@ Description:  FFmpeg is a a software package that can record, convert and stream
 @@
 
 Package: ffprobe-custom
-Version: 6.1.3-r1
+Version: 6.1.4-r1
 Depends: +libc +libatomic @!ALL libffmpeg-custom
 Conflicts: 
 Menu-Depends: 
@@ -96,7 +96,7 @@ Category: Multimedia
 Repository: base
 Title: FFmpeg CLI media identifier (custom)
 Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
-Source: ffmpeg-6.1.3.tar.xz
+Source: ffmpeg-6.1.4.tar.xz
 License: LGPL-2.1-or-later GPL-2.0-or-later LGPL-3.0-or-later
 LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
 CPE-ID: cpe:/a:ffmpeg:ffmpeg
@@ -113,7 +113,7 @@ Description:  FFmpeg is a a software package that can record, convert and stream
 @@
 
 Package: libffmpeg-audio-dec
-Version: 6.1.3-r1
+Version: 6.1.4-r1
 Depends: +libc +libatomic +libpthread +zlib +libbz2
 Conflicts: libffmpeg-full
 Menu-Depends: 
@@ -124,7 +124,7 @@ Category: Libraries
 Repository: base
 Title: FFmpeg libraries (audio)
 Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
-Source: ffmpeg-6.1.3.tar.xz
+Source: ffmpeg-6.1.4.tar.xz
 License: LGPL-2.1-or-later GPL-2.0-or-later LGPL-3.0-or-later
 LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
 CPE-ID: cpe:/a:ffmpeg:ffmpeg
@@ -141,7 +141,7 @@ Description:  FFmpeg is a a software package that can record, convert and stream
 @@
 
 Package: libffmpeg-full
-Version: 6.1.3-r1
+Version: 6.1.4-r1
 Depends: +libc +libatomic +libpthread +zlib +libbz2 +alsa-lib +libgnutls +PACKAGE_libopus:libopus +PACKAGE_libv4l:libv4l +SOFT_FLOAT:shine +!SOFT_FLOAT:lame-lib +PACKAGE_libx264:libx264 +!PACKAGE_libx264:fdk-aac
 Conflicts: 
 Menu-Depends: 
@@ -152,7 +152,7 @@ Category: Libraries
 Repository: base
 Title: FFmpeg libraries (full)
 Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
-Source: ffmpeg-6.1.3.tar.xz
+Source: ffmpeg-6.1.4.tar.xz
 License: LGPL-2.1-or-later GPL-2.0-or-later LGPL-3.0-or-later
 LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
 CPE-ID: cpe:/a:ffmpeg:ffmpeg
@@ -169,7 +169,7 @@ Description:  FFmpeg is a a software package that can record, convert and stream
 @@
 
 Package: libffmpeg-mini
-Version: 6.1.3-r1
+Version: 6.1.4-r1
 Depends: +libc +libatomic +libpthread +zlib +libbz2
 Conflicts: libffmpeg-full
 Menu-Depends: 
@@ -180,7 +180,7 @@ Category: Libraries
 Repository: base
 Title: FFmpeg libraries (mini)
 Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
-Source: ffmpeg-6.1.3.tar.xz
+Source: ffmpeg-6.1.4.tar.xz
 License: LGPL-2.1-or-later GPL-2.0-or-later LGPL-3.0-or-later
 LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
 CPE-ID: cpe:/a:ffmpeg:ffmpeg
@@ -198,7 +198,7 @@ Description:  FFmpeg is a a software package that can record, convert and stream
 
 Package: libffmpeg-custom
 Menu: 1
-Version: 6.1.3-r1
+Version: 6.1.4-r1
 Depends: +libc +libatomic +libpthread +zlib +libbz2 @!ALL +FFMPEG_CUSTOM_SELECT_libopus:libopus +PACKAGE_libx264:libx264 +PACKAGE_lame-lib:lame-lib +FFMPEG_CUSTOM_SELECT_libshine:shine +PACKAGE_fdk-aac:fdk-aac
 Conflicts: 
 Menu-Depends: 
@@ -209,7 +209,7 @@ Category: Libraries
 Repository: base
 Title: FFmpeg libraries (custom)
 Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
-Source: ffmpeg-6.1.3.tar.xz
+Source: ffmpeg-6.1.4.tar.xz
 License: LGPL-2.1-or-later GPL-2.0-or-later LGPL-3.0-or-later
 LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
 CPE-ID: cpe:/a:ffmpeg:ffmpeg

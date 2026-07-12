@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/net/https-dns-proxy/Makefile
 
 Package: https-dns-proxy
-Version: 2025.12.29-r4
+Version: 2026.03.18-r4
 Depends: +libc +libcares +libcurl +libev +ca-bundle +jsonfilter +resolveip +!BUSYBOX_DEFAULT_GREP:grep +!BUSYBOX_DEFAULT_SED:sed
 Conflicts: https_dns_proxy
 Menu-Depends: 
@@ -11,14 +11,14 @@ Category: Network
 Repository: base
 Title: DNS Over HTTPS Proxy
 Maintainer: Stan Grishin <stangri@melmac.ca>
-Source: https-dns-proxy-2025.12.29.tar.zst
+Source: https-dns-proxy-2026.03.18.tar.zst
 License: MIT
 LicenseFiles: LICENSE
 URL: https://github.com/mossdef-org/https-dns-proxy/
 Type: ipkg
 Description: Light-weight DNS-over-HTTPS, non-caching translation proxy for the RFC 8484 DoH standard.
 It receives regular, unencrypted (UDP) DNS requests and resolves them via DoH resolver.
-Please see https://docs.openwrt.melmac.ca/https-dns-proxy/ for more information.
+Please see https://docs.mossdef.org/https-dns-proxy/ for more information.
 @@
 
 

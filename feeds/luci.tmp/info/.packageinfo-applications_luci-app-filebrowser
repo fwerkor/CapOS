@@ -267,6 +267,25 @@ Hidden: 1
 Description:     Translation for luci-app-filebrowser - 日本語 (Japanese)
 @@
 
+Package: luci-i18n-filebrowser-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-filebrowser
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-filebrowser-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-filebrowser - lo translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-filebrowser - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-filebrowser-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -284,6 +303,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-filebrowser - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-filebrowser-lv
+Default: LUCI_LANG_lv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-filebrowser
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-filebrowser-lv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-filebrowser - lv translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-filebrowser - Latviešu (Latvian)
 @@
 
 Package: luci-i18n-filebrowser-nl

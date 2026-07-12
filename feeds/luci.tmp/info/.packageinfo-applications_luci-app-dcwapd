@@ -381,6 +381,25 @@ Hidden: 1
 Description:     Translation for luci-app-dcwapd - 한국어 (Korean)
 @@
 
+Package: luci-i18n-dcwapd-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dcwapd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dcwapd-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dcwapd - lo translation
+Maintainer: Carey Sonsino <csonsino@gmail.com>, Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dcwapd - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-dcwapd-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x

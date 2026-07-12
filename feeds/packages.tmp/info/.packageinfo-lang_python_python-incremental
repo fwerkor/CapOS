@@ -1,11 +1,12 @@
 Source-Makefile: feeds/packages/lang/python/python-incremental/Makefile
-Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host
+Build-Depends: python3/host python-build/host python-installer/host python-hatchling/host
+Build-Depends/host: python3/host python-build/host python-installer/host python-hatchling/host
 Build-Types: host
 
 Package: python3-incremental
 Submenu: Python
-Version: 24.7.2-r2
-Depends: +libc +python3-light +python3-pkg-resources
+Version: 24.11.0-r1
+Depends: +libc +python3-light +python3-packaging
 Conflicts: 
 Menu-Depends: 
 Provides: @python3-incremental-any
@@ -14,7 +15,7 @@ Category: Languages
 Repository: base
 Title: Versions your Python projects
 Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: incremental-24.7.2.tar.gz
+Source: incremental-24.11.0.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 URL: https://github.com/twisted/incremental
@@ -24,7 +25,7 @@ Description: Incremental is a small library that versions your Python projects.
 
 Package: python3-incremental-src
 Submenu: Python
-Version: 24.7.2-r2
+Version: 24.11.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -34,7 +35,7 @@ Category: Languages
 Repository: base
 Title: Versions your Python projects (sources)
 Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: incremental-24.7.2.tar.gz
+Source: incremental-24.11.0.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 URL: https://github.com/twisted/incremental

@@ -1,0 +1,54 @@
+Source-Makefile: feeds/packages/lang/python/python-expandvars/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-hatchling/host
+Build-Types: host
+
+Package: python3-expandvars
+Submenu: Python
+Version: 1.1.2-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: @python3-expandvars-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Expand system variables Unix style
+Maintainer: Jean Thomas <jean.thomas@wifirst.fr>
+Source: expandvars-1.1.2.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/sayanarijit/expandvars/
+Type: ipkg
+Build-Only: 1
+Description: This module is inspired by GNU bash's variable expansion features.
+It can be used as an alternative to Python's os.path.expandvars function.
+@@
+
+Package: python3-expandvars-src
+Submenu: Python
+Version: 1.1.2-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @python3-expandvars-src-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Expand system variables Unix style (sources)
+Maintainer: Jean Thomas <jean.thomas@wifirst.fr>
+Source: expandvars-1.1.2.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/sayanarijit/expandvars/
+Type: ipkg
+Build-Only: 1
+Description:     This module is inspired by GNU bash's variable expansion features.
+It can be used as an alternative to Python's os.path.expandvars function.
+
+    This package contains the Python source files for python3-expandvars.
+@@
+Config:
+    depends on PACKAGE_python3-expandvars
+@@
+
+

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-03-02 15:15+0000\n"
+"PO-Revision-Date: 2026-04-21 11:00+0000\n"
 "Last-Translator: Werner Schleifer <werner.schleifer@gmail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsolsr/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/status-olsr/mid.js:79
 msgid "Active MID announcements"
@@ -29,7 +29,7 @@ msgstr "Aktive HNA-Ankündigungen"
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:126
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:124
 msgid "Advanced Settings"
-msgstr "erweiterte Einstellungen"
+msgstr "Erweiterte Einstellungen"
 
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:67
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:67
@@ -479,6 +479,8 @@ msgid ""
 "It runs on any wifi card that supports ad-hoc mode and of course on any "
 "ethernet device. Visit %s for help and documentation."
 msgstr ""
+"Es läuft auf jeder WLAN-Karte, die den Ad-hoc-Modus unterstützt und "
+"natürlich auf jedem Ethernet-Gerät. Siehe %s für Hilfe und Dokumentation."
 
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/status-olsr/routes.js:194
 msgid "Known OLSR routes"
@@ -998,6 +1000,8 @@ msgid ""
 "The OLSR daemon is an implementation of the Optimized Link State Routing "
 "protocol. As such it allows mesh routing for any network equipment."
 msgstr ""
+"Der OLSR-Daemon ist eine Umsetzung des Optimierten Link State Routing "
+"Protokolls. So ermöglicht es das Netz-Routing für jede Netzwerk-Ausstattung."
 
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:242
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:236
@@ -1174,7 +1178,7 @@ msgstr "down"
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/status-olsr/smartgw.js:92
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/status-olsr/smartgw.js:176
 msgid "infinite"
-msgstr ""
+msgstr "unendlich"
 
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/status-olsr/interfaces.js:76
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/status-olsr/smartgw.js:91

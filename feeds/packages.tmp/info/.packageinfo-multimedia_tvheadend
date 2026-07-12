@@ -3,7 +3,7 @@ Build-Depends: gettext-full/host
 
 Package: tvheadend
 Menu: 1
-Version: 2025.06.04~0f74b0ab0a3b96d87da04d9c778142ecfb370a1d-r1
+Version: 2026.04.03~395afb8512d0d636ef223db4cccf722b70992e76-r1
 Depends: +libc +librt +libffi +libopenssl +BUILD_NLS:libiconv-full +zlib +TVHEADEND_AVAHI_SUPPORT:libavahi-client +TVHEADEND_REGEX_PCRE2:libpcre2 +BUILD_PATENTED&&TVHEADEND_CSA:libdvbcsa
 Conflicts: 
 Menu-Depends: 
@@ -14,7 +14,7 @@ Repository: base
 Title: TV streaming server
 Maintainer: Marius Dinu <m95d+git@psihoexpert.ro>
 Require-User: tvheadend:dvb
-Source: tvheadend-2025.06.04~0f74b0ab0a3b96d87da04d9c778142ecfb370a1d.tar.zst
+Source: tvheadend-2026.04.03~395afb8512d0d636ef223db4cccf722b70992e76.tar.zst
 License: GPL-3.0
 LicenseFiles: LICENSE.md
 URL: https://tvheadend.org

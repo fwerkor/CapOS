@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-03-13 14:10+0000\n"
+"PO-Revision-Date: 2026-03-30 03:54+0000\n"
 "Last-Translator: Franco Castillo <castillofrancodamian@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsdawn/es/>\n"
@@ -20,7 +20,7 @@ msgstr "Métrica de la banda de 5 GHz"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:292
 msgid "802.11 code used when ASSOCIATION is denied"
-msgstr "Código 802.11 empleado cuando se rechaza la asociación﻿"
+msgstr "Código 802.11 utilizado cuando se deniega la ASOCIACIÓN."
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:298
 msgid "802.11 code used when AUTHENTICATION is denied"
@@ -585,7 +585,7 @@ msgstr "Parece que algo está mal, pero es recuperable"
 msgid "Space separated list of MACS to use in \"static\" AP Neighbor Report"
 msgstr ""
 "Lista de direcciones MAC separada por espacios para usar en el informe "
-"\"estático\" de vecinos del punto de acceso"
+"«estático» de vecinos del punto de acceso"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:140
 msgid "Standard behaviour always worth reporting"

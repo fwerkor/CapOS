@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/utils/prometheus-node-exporter-lua/Makefile
 
 Package: prometheus-node-exporter-lua
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc +luasocket +lua +uhttpd +uhttpd-mod-lua +libubus-lua
 Conflicts: 
 Menu-Depends: 
@@ -16,11 +16,11 @@ License: Apache-2.0
 Type: ipkg
 Description:   Provides node metrics as Prometheus scraping endpoint.
 
-  This service is a lightweight rewrite in LUA of the offical Prometheus node_exporter.
+  This service is a lightweight rewrite in LUA of the official Prometheus node_exporter.
 @@
 
 Package: prometheus-node-exporter-lua-bmx7
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc prometheus-node-exporter-lua bmx7 +lua-cjson +bmx7-json
 Conflicts: 
 Menu-Depends: 
@@ -37,7 +37,7 @@ Description: Prometheus node exporter (bmx7 links collector)
 @@
 
 Package: prometheus-node-exporter-lua-dawn
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc prometheus-node-exporter-lua +libiwinfo-lua
 Conflicts: 
 Menu-Depends: 
@@ -53,8 +53,25 @@ Type: ipkg
 Description: Prometheus node exporter (dawn collector)
 @@
 
+Package: prometheus-node-exporter-lua-filesystem
+Version: 2026.06.05-r1
+Depends: +libc prometheus-node-exporter-lua +luci-lib-nixio
+Conflicts: 
+Menu-Depends: 
+Provides: @prometheus-node-exporter-lua-filesystem-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: Prometheus node exporter (filesystem collector)
+Maintainer: Etienne CHAMPETIER <champetier.etienne@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Description: Prometheus node exporter (filesystem collector)
+@@
+
 Package: prometheus-node-exporter-lua-hostapd_stations
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc prometheus-node-exporter-lua +hostapd-utils +lua-bit32
 Conflicts: 
 Menu-Depends: 
@@ -71,7 +88,7 @@ Description: Prometheus node exporter (hostapd_stations collector) - Requires a 
 @@
 
 Package: prometheus-node-exporter-lua-hostapd_ubus_stations
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc prometheus-node-exporter-lua +luabitop
 Conflicts: 
 Menu-Depends: 
@@ -88,7 +105,7 @@ Description: Prometheus node exporter (hostapd_ubus_stations collector)
 @@
 
 Package: prometheus-node-exporter-lua-hwmon
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc prometheus-node-exporter-lua +luci-lib-nixio
 Conflicts: 
 Menu-Depends: 
@@ -105,7 +122,7 @@ Description: Prometheus node exporter (hwmon collector)
 @@
 
 Package: prometheus-node-exporter-lua-ltq-dsl
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc prometheus-node-exporter-lua ltq-dsl-app
 Conflicts: 
 Menu-Depends: 
@@ -122,7 +139,7 @@ Description: Prometheus node exporter (lantiq dsl collector)
 @@
 
 Package: prometheus-node-exporter-lua-nat_traffic
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc prometheus-node-exporter-lua
 Conflicts: 
 Menu-Depends: 
@@ -139,7 +156,7 @@ Description: Prometheus node exporter (nat_traffic collector)
 @@
 
 Package: prometheus-node-exporter-lua-netstat
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc prometheus-node-exporter-lua
 Conflicts: 
 Menu-Depends: 
@@ -156,7 +173,7 @@ Description: Prometheus node exporter (netstat collector)
 @@
 
 Package: prometheus-node-exporter-lua-openwrt
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc prometheus-node-exporter-lua
 Conflicts: 
 Menu-Depends: 
@@ -173,7 +190,7 @@ Description: Prometheus node exporter (openwrt collector)
 @@
 
 Package: prometheus-node-exporter-lua-textfile
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc prometheus-node-exporter-lua +luci-lib-nixio
 Conflicts: 
 Menu-Depends: 
@@ -190,7 +207,7 @@ Description: Prometheus node exporter (textfile collector)
 @@
 
 Package: prometheus-node-exporter-lua-thermal
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc prometheus-node-exporter-lua
 Conflicts: 
 Menu-Depends: 
@@ -207,7 +224,7 @@ Description: Prometheus node exporter (thermal collector)
 @@
 
 Package: prometheus-node-exporter-lua-ubnt-manager
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc prometheus-node-exporter-lua +ubnt-manager +lua-cjson
 Conflicts: 
 Menu-Depends: 
@@ -224,7 +241,7 @@ Description: Prometheus node exporter (ubnt-manager collector)
 @@
 
 Package: prometheus-node-exporter-lua-uci_dhcp_host
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc prometheus-node-exporter-lua +libuci-lua
 Conflicts: 
 Menu-Depends: 
@@ -241,7 +258,7 @@ Description: Prometheus node exporter (uci_dhcp_host collector)
 @@
 
 Package: prometheus-node-exporter-lua-wifi
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc prometheus-node-exporter-lua +libiwinfo-lua
 Conflicts: 
 Menu-Depends: 
@@ -258,7 +275,7 @@ Description: Prometheus node exporter (wifi collector)
 @@
 
 Package: prometheus-node-exporter-lua-wifi_stations
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc prometheus-node-exporter-lua +libiwinfo-lua
 Conflicts: 
 Menu-Depends: 
@@ -275,7 +292,7 @@ Description: Prometheus node exporter (wifi_stations collector)
 @@
 
 Package: prometheus-node-exporter-lua-snmp6
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc prometheus-node-exporter-lua
 Conflicts: 
 Menu-Depends: 
@@ -292,7 +309,7 @@ Description: Prometheus node exporter (snmp6 collector)
 @@
 
 Package: prometheus-node-exporter-lua-realtek-poe
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc prometheus-node-exporter-lua +realtek-poe
 Conflicts: 
 Menu-Depends: 
@@ -309,7 +326,7 @@ Description: Prometheus node exporter (realtek-poe collector)
 @@
 
 Package: prometheus-node-exporter-lua-mwan3
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc prometheus-node-exporter-lua +mwan3
 Conflicts: 
 Menu-Depends: 
@@ -326,7 +343,7 @@ Description: Prometheus node exporter (mwan3 collector)
 @@
 
 Package: prometheus-node-exporter-lua-ethtool
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc prometheus-node-exporter-lua +ethtool-lua
 Conflicts: 
 Menu-Depends: 
@@ -343,7 +360,7 @@ Description: Prometheus node exporter (ethtool collector)
 @@
 
 Package: prometheus-node-exporter-lua-nft-counters
-Version: 2025.11.22-r1
+Version: 2026.06.05-r1
 Depends: +libc prometheus-node-exporter-lua +nftables-json +lua-cjson
 Conflicts: 
 Menu-Depends: 
@@ -357,6 +374,41 @@ Source:
 License: Apache-2.0
 Type: ipkg
 Description: Prometheus node exporter (nftables counters collector)
+@@
+
+Package: prometheus-node-exporter-lua-modemmanager
+Version: 2026.06.05-r1
+Depends: +libc prometheus-node-exporter-lua +modemmanager +lua-cjson
+Conflicts: 
+Menu-Depends: 
+Provides: @prometheus-node-exporter-lua-modemmanager-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: Prometheus node exporter (modemmanager collector)
+Maintainer: Etienne CHAMPETIER <champetier.etienne@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Description: Prometheus node exporter (modemmanager collector)
+@@
+
+Package: prometheus-node-exporter-lua-unbound
+Version: 2026.06.05-r1
+Depends: +libc prometheus-node-exporter-lua +unbound-daemon
+Conflicts: 
+Menu-Depends: 
+Provides: @prometheus-node-exporter-lua-unbound-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: Prometheus node exporter (unbound stats collector)
+Maintainer: Etienne CHAMPETIER <champetier.etienne@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Description:   Adds a Unbound stats collector to the Prometheus node exporter.
+  Refer to https://github.com/marinierb/prometheus-node-exporter-lua-unbound for configuration details.
 @@
 
 

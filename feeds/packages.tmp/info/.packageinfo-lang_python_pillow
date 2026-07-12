@@ -1,9 +1,9 @@
 Source-Makefile: feeds/packages/lang/python/pillow/Makefile
-Build-Depends: python-setuptools-scm/host
+Build-Depends: python-setuptools/host python-pybind11/host
 
 Package: python3-pillow
 Submenu: Python
-Version: 10.1.0-r1
+Version: 12.1.1-r1
 Depends: +libc +libfreetype +libjpeg +libtiff +zlib +libwebp +python3
 Conflicts: 
 Menu-Depends: 
@@ -13,7 +13,7 @@ Category: Languages
 Repository: base
 Title: The friendly PIL fork
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
-Source: Pillow-10.1.0.tar.gz
+Source: pillow-12.1.1.tar.gz
 License: HPND
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:python:pillow
@@ -24,7 +24,7 @@ Description:   The friendly PIL fork
 
 Package: python3-pillow-src
 Submenu: Python
-Version: 10.1.0-r1
+Version: 12.1.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -34,7 +34,7 @@ Category: Languages
 Repository: base
 Title: The friendly PIL fork (sources)
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
-Source: Pillow-10.1.0.tar.gz
+Source: pillow-12.1.1.tar.gz
 License: HPND
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:python:pillow

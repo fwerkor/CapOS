@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/utils/bash/Makefile
 
 Package: bash
 Submenu: Shells
-Version: 5.3-r2
+Version: 5.3-r4
 Depends: +libc +libncurses +libreadline
 Conflicts: 
 Menu-Depends: 

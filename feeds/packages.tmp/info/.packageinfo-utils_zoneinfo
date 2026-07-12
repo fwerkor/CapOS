@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/utils/zoneinfo/Makefile
 
 Package: zoneinfo-simple
 Submenu: Time Zone info
-Version: 2025c-r1
+Version: 2026b-r1
 Depends: +libc +zoneinfo-core
 Conflicts: 
 Menu-Depends: 
@@ -12,7 +12,7 @@ Category: Utilities
 Repository: base
 Title: Zone Information (simple)
 Maintainer: Vladimir Ulrich <admin@evl.su>
-Source: tzdata2025c.tar.gz
+Source: tzdata2026b.tar.gz
 License: Public-Domain
 Type: ipkg
 Description: Zone Information (simple)
@@ -20,7 +20,7 @@ Description: Zone Information (simple)
 
 Package: zoneinfo-core
 Submenu: Time Zone info
-Version: 2025c-r1
+Version: 2026b-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -30,7 +30,7 @@ Category: Utilities
 Repository: base
 Title: Zone Information (core)
 Maintainer: Vladimir Ulrich <admin@evl.su>
-Source: tzdata2025c.tar.gz
+Source: tzdata2026b.tar.gz
 License: Public-Domain
 Type: ipkg
 Description: Zone Information (core)
@@ -38,7 +38,7 @@ Description: Zone Information (core)
 
 Package: zoneinfo-africa
 Submenu: Time Zone info
-Version: 2025c-r1
+Version: 2026b-r1
 Depends: +libc +zoneinfo-core
 Conflicts: 
 Menu-Depends: 
@@ -48,7 +48,7 @@ Category: Utilities
 Repository: base
 Title: Zone Information (Africa)
 Maintainer: Vladimir Ulrich <admin@evl.su>
-Source: tzdata2025c.tar.gz
+Source: tzdata2026b.tar.gz
 License: Public-Domain
 Type: ipkg
 Description: Zone Information (Africa)
@@ -56,7 +56,7 @@ Description: Zone Information (Africa)
 
 Package: zoneinfo-america
 Submenu: Time Zone info
-Version: 2025c-r1
+Version: 2026b-r1
 Depends: +libc +zoneinfo-core
 Conflicts: 
 Menu-Depends: 
@@ -66,7 +66,7 @@ Category: Utilities
 Repository: base
 Title: Zone Information (America North/South)
 Maintainer: Vladimir Ulrich <admin@evl.su>
-Source: tzdata2025c.tar.gz
+Source: tzdata2026b.tar.gz
 License: Public-Domain
 Type: ipkg
 Description: Zone Information (America North/South)
@@ -74,7 +74,7 @@ Description: Zone Information (America North/South)
 
 Package: zoneinfo-poles
 Submenu: Time Zone info
-Version: 2025c-r1
+Version: 2026b-r1
 Depends: +libc +zoneinfo-core
 Conflicts: 
 Menu-Depends: 
@@ -84,7 +84,7 @@ Category: Utilities
 Repository: base
 Title: Zone Information (Arctic, Antarctic)
 Maintainer: Vladimir Ulrich <admin@evl.su>
-Source: tzdata2025c.tar.gz
+Source: tzdata2026b.tar.gz
 License: Public-Domain
 Type: ipkg
 Description: Zone Information (Arctic, Antarctic)
@@ -92,7 +92,7 @@ Description: Zone Information (Arctic, Antarctic)
 
 Package: zoneinfo-asia
 Submenu: Time Zone info
-Version: 2025c-r1
+Version: 2026b-r1
 Depends: +libc +zoneinfo-core
 Conflicts: 
 Menu-Depends: 
@@ -102,7 +102,7 @@ Category: Utilities
 Repository: base
 Title: Zone Information (Asia)
 Maintainer: Vladimir Ulrich <admin@evl.su>
-Source: tzdata2025c.tar.gz
+Source: tzdata2026b.tar.gz
 License: Public-Domain
 Type: ipkg
 Description: Zone Information (Asia)
@@ -110,7 +110,7 @@ Description: Zone Information (Asia)
 
 Package: zoneinfo-atlantic
 Submenu: Time Zone info
-Version: 2025c-r1
+Version: 2026b-r1
 Depends: +libc +zoneinfo-core
 Conflicts: 
 Menu-Depends: 
@@ -120,7 +120,7 @@ Category: Utilities
 Repository: base
 Title: Zone Information (Atlantic Ocean)
 Maintainer: Vladimir Ulrich <admin@evl.su>
-Source: tzdata2025c.tar.gz
+Source: tzdata2026b.tar.gz
 License: Public-Domain
 Type: ipkg
 Description: Zone Information (Atlantic Ocean)
@@ -128,7 +128,7 @@ Description: Zone Information (Atlantic Ocean)
 
 Package: zoneinfo-australia-nz
 Submenu: Time Zone info
-Version: 2025c-r1
+Version: 2026b-r1
 Depends: +libc +zoneinfo-core
 Conflicts: 
 Menu-Depends: 
@@ -138,7 +138,7 @@ Category: Utilities
 Repository: base
 Title: Zone Information (Australia-NZ)
 Maintainer: Vladimir Ulrich <admin@evl.su>
-Source: tzdata2025c.tar.gz
+Source: tzdata2026b.tar.gz
 License: Public-Domain
 Type: ipkg
 Description: Zone Information (Australia-NZ)
@@ -146,7 +146,7 @@ Description: Zone Information (Australia-NZ)
 
 Package: zoneinfo-pacific
 Submenu: Time Zone info
-Version: 2025c-r1
+Version: 2026b-r1
 Depends: +libc +zoneinfo-core
 Conflicts: 
 Menu-Depends: 
@@ -156,7 +156,7 @@ Category: Utilities
 Repository: base
 Title: Zone Information (Pacific Ocean)
 Maintainer: Vladimir Ulrich <admin@evl.su>
-Source: tzdata2025c.tar.gz
+Source: tzdata2026b.tar.gz
 License: Public-Domain
 Type: ipkg
 Description: Zone Information (Pacific Ocean)
@@ -164,7 +164,7 @@ Description: Zone Information (Pacific Ocean)
 
 Package: zoneinfo-europe
 Submenu: Time Zone info
-Version: 2025c-r1
+Version: 2026b-r1
 Depends: +libc +zoneinfo-core
 Conflicts: 
 Menu-Depends: 
@@ -174,7 +174,7 @@ Category: Utilities
 Repository: base
 Title: Zone Information (Europe)
 Maintainer: Vladimir Ulrich <admin@evl.su>
-Source: tzdata2025c.tar.gz
+Source: tzdata2026b.tar.gz
 License: Public-Domain
 Type: ipkg
 Description: Zone Information (Europe)
@@ -182,7 +182,7 @@ Description: Zone Information (Europe)
 
 Package: zoneinfo-indian
 Submenu: Time Zone info
-Version: 2025c-r1
+Version: 2026b-r1
 Depends: +libc +zoneinfo-core
 Conflicts: 
 Menu-Depends: 
@@ -192,7 +192,7 @@ Category: Utilities
 Repository: base
 Title: Zone Information (Indian Ocean)
 Maintainer: Vladimir Ulrich <admin@evl.su>
-Source: tzdata2025c.tar.gz
+Source: tzdata2026b.tar.gz
 License: Public-Domain
 Type: ipkg
 Description: Zone Information (Indian Ocean)
@@ -200,7 +200,7 @@ Description: Zone Information (Indian Ocean)
 
 Package: zoneinfo-all
 Submenu: Time Zone info
-Version: 2025c-r1
+Version: 2026b-r1
 Depends: +libc +zoneinfo-core +zoneinfo-africa +zoneinfo-america +zoneinfo-poles +zoneinfo-asia +zoneinfo-atlantic +zoneinfo-australia-nz +zoneinfo-pacific +zoneinfo-europe +zoneinfo-indian
 Conflicts: 
 Menu-Depends: 
@@ -210,7 +210,7 @@ Category: Utilities
 Repository: base
 Title: Zone Information (all zones)
 Maintainer: Vladimir Ulrich <admin@evl.su>
-Source: tzdata2025c.tar.gz
+Source: tzdata2026b.tar.gz
 License: Public-Domain
 Type: ipkg
 Description: Zone Information (all zones)

@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/libs/libstrophe/Makefile
 
 Package: libstrophe
 Menu: 1
-Version: 0.13.1-r1
+Version: 0.13.1-r2
 Depends: +libc +libopenssl +libstrophe-libxml2:libxml2 +libstrophe-expat:libexpat +zlib
 Conflicts: 
 Menu-Depends: 
@@ -13,7 +13,7 @@ Repository: base
 Title: XMPP client library
 Maintainer: Chih-Wei Chen <changeway@gmail.com>
 Source: libstrophe-0.13.1.tar.xz
-License: MIT OR GPL-3.0-only
+License: GPL-3.0-only MIT
 LicenseFiles: COPYING
 URL: http://strophe.im/libstrophe
 Type: ipkg

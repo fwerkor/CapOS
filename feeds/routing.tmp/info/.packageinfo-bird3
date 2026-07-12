@@ -3,7 +3,7 @@ Build-Depends: ncurses readline
 
 Package: bird3
 Submenu: Routing and Redirection
-Version: 3.2.0-r1
+Version: 3.2.2-r1
 Depends: +libc +libpthread +libatomic
 Conflicts: bird2
 Menu-Depends: 
@@ -13,7 +13,7 @@ Category: Network
 Repository: base
 Title: The BIRD Internet Routing Daemon (v3)
 Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>, Nick Hainke <vincent@systemli.org>
-Source: bird-3.2.0.tar.gz
+Source: bird-3.2.2.tar.gz
 License: GPL-2.0-or-later
 URL: https://bird.nic.cz/
 Type: ipkg
@@ -36,7 +36,7 @@ This is the 3.0 branch of Bird which is a multithreaded rewrite.
 
 Package: bird3c
 Submenu: Routing and Redirection
-Version: 3.2.0-r1
+Version: 3.2.2-r1
 Depends: +libc +bird3 +libreadline +libncurses
 Conflicts: bird2
 Menu-Depends: 
@@ -46,7 +46,7 @@ Category: Network
 Repository: base
 Title: The BIRD command-line client (v3)
 Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>, Nick Hainke <vincent@systemli.org>
-Source: bird-3.2.0.tar.gz
+Source: bird-3.2.2.tar.gz
 License: GPL-2.0-or-later
 URL: https://bird.nic.cz/
 Type: ipkg
@@ -66,7 +66,7 @@ should install BIRD command-line client together with BIRD.
 
 Package: bird3cl
 Submenu: Routing and Redirection
-Version: 3.2.0-r1
+Version: 3.2.2-r1
 Depends: +libc +bird3
 Conflicts: bird2
 Menu-Depends: 
@@ -76,7 +76,7 @@ Category: Network
 Repository: base
 Title: The BIRD lightweight command-line client (v2)
 Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>, Nick Hainke <vincent@systemli.org>
-Source: bird-3.2.0.tar.gz
+Source: bird-3.2.2.tar.gz
 License: GPL-2.0-or-later
 URL: https://bird.nic.cz/
 Type: ipkg

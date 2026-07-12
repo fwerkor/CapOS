@@ -20,6 +20,25 @@ Type: ipkg
 Description: LuCI support for DAWN
 @@
 
+Package: luci-i18n-dawn-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dawn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dawn-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dawn - cs translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dawn - Čeština (Czech)
+@@
+
 Package: luci-i18n-dawn-es
 Default: LUCI_LANG_es||(ALL&&m)
 Version: x
@@ -39,6 +58,25 @@ Hidden: 1
 Description:     Translation for luci-app-dawn - Español (Spanish)
 @@
 
+Package: luci-i18n-dawn-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dawn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dawn-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dawn - ga translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dawn - Gaeilge (Irish)
+@@
+
 Package: luci-i18n-dawn-ja
 Default: LUCI_LANG_ja||(ALL&&m)
 Version: x
@@ -56,6 +94,44 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-dawn - 日本語 (Japanese)
+@@
+
+Package: luci-i18n-dawn-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dawn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dawn-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dawn - ko translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dawn - 한국어 (Korean)
+@@
+
+Package: luci-i18n-dawn-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dawn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dawn-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dawn - lo translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dawn - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-dawn-lt
@@ -94,6 +170,120 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-dawn - Polski (Polish)
+@@
+
+Package: luci-i18n-dawn-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dawn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dawn-pt-br-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dawn - pt-br translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dawn - Português do Brasil (Brazilian Portuguese)
+@@
+
+Package: luci-i18n-dawn-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dawn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dawn-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dawn - ru translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dawn - Русский (Russian)
+@@
+
+Package: luci-i18n-dawn-sv
+Default: LUCI_LANG_sv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dawn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dawn-sv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dawn - sv translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dawn - Svenska (Swedish)
+@@
+
+Package: luci-i18n-dawn-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dawn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dawn-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dawn - uk translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dawn - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-dawn-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dawn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dawn-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dawn - zh-cn translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dawn - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-dawn-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dawn
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dawn-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dawn - zh-tw translation
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dawn - 正體中文 (Traditional Chinese)
 @@
 
 

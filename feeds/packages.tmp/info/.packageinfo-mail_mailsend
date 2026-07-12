@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/mail/mailsend/Makefile
 
 Package: mailsend
-Version: 1.19-r3
+Version: 1.19-r4
 Depends: +libc +libopenssl
 Conflicts: 
 Menu-Depends: 
@@ -23,7 +23,7 @@ Description:     Mailsend is a simple command line program to send mail via SMTP
 @@
 
 Package: mailsend-nossl
-Version: 1.19-r3
+Version: 1.19-r4
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 

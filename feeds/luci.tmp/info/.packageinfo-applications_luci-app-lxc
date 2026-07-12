@@ -381,6 +381,25 @@ Hidden: 1
 Description:     Translation for luci-app-lxc - 한국어 (Korean)
 @@
 
+Package: luci-i18n-lxc-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-lxc
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-lxc-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-lxc - lo translation
+Maintainer: Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-lxc - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-lxc-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x

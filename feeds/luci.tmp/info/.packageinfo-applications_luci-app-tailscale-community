@@ -37,4 +37,22 @@ Hidden: 1
 Description:     Translation for luci-app-tailscale-community - 简体中文 (Simplified Chinese)
 @@
 
+Package: luci-i18n-tailscale-community-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-tailscale-community
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-tailscale-community-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-tailscale-community - zh-tw translation
+Maintainer: Tokisaki-Galaxy <moebest@outlook.jp>
+Source: 
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-tailscale-community - 正體中文 (Traditional Chinese)
+@@
+
 

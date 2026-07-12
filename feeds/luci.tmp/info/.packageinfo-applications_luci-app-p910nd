@@ -362,6 +362,25 @@ Hidden: 1
 Description:     Translation for luci-app-p910nd - 한국어 (Korean)
 @@
 
+Package: luci-i18n-p910nd-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-p910nd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-p910nd-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-p910nd - lo translation
+Maintainer: Paul Donald <newtwen@gmail.com>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-p910nd - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-p910nd-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x

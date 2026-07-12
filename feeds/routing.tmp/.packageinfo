@@ -26,7 +26,7 @@ Description:  Ahcpd is a daemon for configuring an IPv6 network using the Ad-Hoc
 Source-Makefile: feeds/routing/alfred/Makefile
 
 Package: alfred
-Version: 2025.4-r2
+Version: 2025.4-r3
 Depends: +libc @IPV6 +libnl-tiny +librt +ALFRED_NEEDS_lua:lua +ALFRED_NEEDS_libgps:libgps
 Conflicts: 
 Menu-Depends: 
@@ -113,7 +113,7 @@ Description:   Babel is a loop-avoiding distance-vector routing protocol for IPv
 Source-Makefile: feeds/routing/batctl/Makefile
 
 Package: batctl-default
-Version: 2025.4-r1
+Version: 2025.4-r2
 Depends: +libc +libnl-tiny +librt
 Conflicts: 
 Menu-Depends: 
@@ -137,7 +137,7 @@ Description:   batctl is a more intuitive managment utility for B.A.T.M.A.N.-Adv
 @@
 
 Package: batctl-tiny
-Version: 2025.4-r1
+Version: 2025.4-r2
 Depends: +libc +libnl-tiny +librt
 Conflicts: 
 Menu-Depends: 
@@ -161,7 +161,7 @@ Description:   batctl is a more intuitive managment utility for B.A.T.M.A.N.-Adv
 @@
 
 Package: batctl-full
-Version: 2025.4-r1
+Version: 2025.4-r2
 Depends: +libc +libnl-tiny +librt
 Conflicts: 
 Menu-Depends: 
@@ -189,7 +189,7 @@ Source-Makefile: feeds/routing/batman-adv/Makefile
 
 Package: kmod-batman-adv
 Submenu: Network Support
-Version: <LINUX_VERSION>.2025.4-r2
+Version: <LINUX_VERSION>.2025.4-r5
 Depends: +BATMAN_ADV_BLA:kmod-lib-crc16 +kmod-lib-crc32c +kmod-cfg80211 +batctl
 Conflicts: 
 Menu-Depends: 
@@ -242,7 +242,7 @@ Build-Depends: ncurses readline
 
 Package: bird2
 Submenu: Routing and Redirection
-Version: 2.18-r1
+Version: 2.18.2-r1
 Depends: +libc +libpthread
 Conflicts: bird1-ipv4 bird1-ipv6 bird4 bird6
 Menu-Depends: 
@@ -252,7 +252,7 @@ Category: Network
 Repository: base
 Title: The BIRD Internet Routing Daemon (v2)
 Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
-Source: bird-2.18.tar.gz
+Source: bird-2.18.2.tar.gz
 License: GPL-2.0-or-later
 CPE-ID: cpe:/a:nic:bird
 URL: https://bird.nic.cz/
@@ -277,7 +277,7 @@ into a single branch, and also adds support for the Babel routing protocol.
 
 Package: bird2c
 Submenu: Routing and Redirection
-Version: 2.18-r1
+Version: 2.18.2-r1
 Depends: +libc +bird2 +libreadline +libncurses
 Conflicts: bird1c-ipv4 bird1c-ipv6 birdc4 birdc6
 Menu-Depends: 
@@ -287,7 +287,7 @@ Category: Network
 Repository: base
 Title: The BIRD command-line client (v2)
 Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
-Source: bird-2.18.tar.gz
+Source: bird-2.18.2.tar.gz
 License: GPL-2.0-or-later
 CPE-ID: cpe:/a:nic:bird
 URL: https://bird.nic.cz/
@@ -308,7 +308,7 @@ should install BIRD command-line client together with BIRD.
 
 Package: bird2cl
 Submenu: Routing and Redirection
-Version: 2.18-r1
+Version: 2.18.2-r1
 Depends: +libc +bird2
 Conflicts: bird1cl-ipv4 bird1cl-ipv6 birdcl4 birdcl6
 Menu-Depends: 
@@ -318,7 +318,7 @@ Category: Network
 Repository: base
 Title: The BIRD lightweight command-line client (v2)
 Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
-Source: bird-2.18.tar.gz
+Source: bird-2.18.2.tar.gz
 License: GPL-2.0-or-later
 CPE-ID: cpe:/a:nic:bird
 URL: https://bird.nic.cz/
@@ -340,7 +340,7 @@ Build-Depends: ncurses readline
 
 Package: bird3
 Submenu: Routing and Redirection
-Version: 3.2.0-r1
+Version: 3.2.2-r1
 Depends: +libc +libpthread +libatomic
 Conflicts: bird2
 Menu-Depends: 
@@ -350,7 +350,7 @@ Category: Network
 Repository: base
 Title: The BIRD Internet Routing Daemon (v3)
 Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>, Nick Hainke <vincent@systemli.org>
-Source: bird-3.2.0.tar.gz
+Source: bird-3.2.2.tar.gz
 License: GPL-2.0-or-later
 URL: https://bird.nic.cz/
 Type: ipkg
@@ -373,7 +373,7 @@ This is the 3.0 branch of Bird which is a multithreaded rewrite.
 
 Package: bird3c
 Submenu: Routing and Redirection
-Version: 3.2.0-r1
+Version: 3.2.2-r1
 Depends: +libc +bird3 +libreadline +libncurses
 Conflicts: bird2
 Menu-Depends: 
@@ -383,7 +383,7 @@ Category: Network
 Repository: base
 Title: The BIRD command-line client (v3)
 Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>, Nick Hainke <vincent@systemli.org>
-Source: bird-3.2.0.tar.gz
+Source: bird-3.2.2.tar.gz
 License: GPL-2.0-or-later
 URL: https://bird.nic.cz/
 Type: ipkg
@@ -403,7 +403,7 @@ should install BIRD command-line client together with BIRD.
 
 Package: bird3cl
 Submenu: Routing and Redirection
-Version: 3.2.0-r1
+Version: 3.2.2-r1
 Depends: +libc +bird3
 Conflicts: bird2
 Menu-Depends: 
@@ -413,7 +413,7 @@ Category: Network
 Repository: base
 Title: The BIRD lightweight command-line client (v2)
 Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>, Nick Hainke <vincent@systemli.org>
-Source: bird-3.2.0.tar.gz
+Source: bird-3.2.2.tar.gz
 License: GPL-2.0-or-later
 URL: https://bird.nic.cz/
 Type: ipkg

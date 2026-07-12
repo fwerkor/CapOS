@@ -1,4 +1,5 @@
 Source-Makefile: feeds/packages/net/fail2ban/Makefile
+Build-Depends: python3/host python-setuptools/host
 
 Package: fail2ban
 Version: 1.1.0-r2

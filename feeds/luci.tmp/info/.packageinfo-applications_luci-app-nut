@@ -362,6 +362,25 @@ Hidden: 1
 Description:     Translation for luci-app-nut - 한국어 (Korean)
 @@
 
+Package: luci-i18n-nut-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-nut
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-nut-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-nut - lo translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca> Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-nut - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-nut-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x

@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/net/acme-common/Makefile
 
 Package: acme-common
-Version: 1.5.1
+Version: 1.5.2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 

@@ -343,6 +343,25 @@ Hidden: 1
 Description:     Translation for luci-app-example - 한국어 (Korean)
 @@
 
+Package: luci-i18n-example-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-example
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-example-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-example - lo translation
+Maintainer: Andreas Brau <ab@andi95.de>, Duncan Hill <github.com@cricalix.net>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-example - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-example-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x

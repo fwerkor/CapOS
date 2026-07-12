@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/utils/dos2unix/Makefile
 
 Package: dos2unix
-Version: 7.5.3-r1
+Version: 7.5.5-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -11,7 +11,7 @@ Category: Utilities
 Repository: base
 Title: Text file format converters (dos2unix)
 Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
-Source: dos2unix-7.5.3.tar.gz
+Source: dos2unix-7.5.5.tar.gz
 License: BSD-2-Clause
 LicenseFiles: COPYING.txt
 URL: https://waterlan.home.xs4all.nl/dos2unix.html
@@ -23,7 +23,7 @@ Description:   Convert text files with DOS or Mac line breaks to Unix line break
 @@
 
 Package: unix2dos
-Version: 7.5.3-r1
+Version: 7.5.5-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -33,7 +33,7 @@ Category: Utilities
 Repository: base
 Title: Text file format converters (unix2dos)
 Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
-Source: dos2unix-7.5.3.tar.gz
+Source: dos2unix-7.5.5.tar.gz
 License: BSD-2-Clause
 LicenseFiles: COPYING.txt
 URL: https://waterlan.home.xs4all.nl/dos2unix.html

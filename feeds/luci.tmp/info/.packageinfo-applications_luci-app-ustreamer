@@ -1,0 +1,707 @@
+Source-Makefile: feeds/luci/applications/luci-app-ustreamer/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-app-ustreamer
+Submenu: 3. Applications
+Version: x
+Depends: +libc +luci-base +ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-app-ustreamer-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: uStreamer service configuration module
+Maintainer: OpenWrt LuCI community
+Source: 
+License: Apache-2.0
+URL: https://github.com/openwrt/luci
+Type: ipkg
+Description: uStreamer service configuration module
+@@
+
+Package: luci-i18n-ustreamer-ar
+Default: LUCI_LANG_ar||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-ar-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - ar translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - العربية (Arabic)
+@@
+
+Package: luci-i18n-ustreamer-bg
+Default: LUCI_LANG_bg||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-bg-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - bg translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - български (Bulgarian)
+@@
+
+Package: luci-i18n-ustreamer-bn
+Default: LUCI_LANG_bn_BD||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-bn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - bn translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - বাংলা (Bengali)
+@@
+
+Package: luci-i18n-ustreamer-ca
+Default: LUCI_LANG_ca||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-ca-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - ca translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Català (Catalan)
+@@
+
+Package: luci-i18n-ustreamer-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - cs translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Čeština (Czech)
+@@
+
+Package: luci-i18n-ustreamer-da
+Default: LUCI_LANG_da||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-da-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - da translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Dansk (Danish)
+@@
+
+Package: luci-i18n-ustreamer-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-de-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - de translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Deutsch (German)
+@@
+
+Package: luci-i18n-ustreamer-el
+Default: LUCI_LANG_el||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-el-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - el translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Ελληνικά (Greek)
+@@
+
+Package: luci-i18n-ustreamer-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-es-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - es translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Español (Spanish)
+@@
+
+Package: luci-i18n-ustreamer-fi
+Default: LUCI_LANG_fi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-fi-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - fi translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Suomi (Finnish)
+@@
+
+Package: luci-i18n-ustreamer-fr
+Default: LUCI_LANG_fr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-fr-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - fr translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Français (French)
+@@
+
+Package: luci-i18n-ustreamer-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - ga translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-ustreamer-he
+Default: LUCI_LANG_he||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-he-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - he translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - עִבְרִית (Hebrew)
+@@
+
+Package: luci-i18n-ustreamer-hi
+Default: LUCI_LANG_hi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-hi-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - hi translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - हिंदी (Hindi)
+@@
+
+Package: luci-i18n-ustreamer-hu
+Default: LUCI_LANG_hu||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-hu-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - hu translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Magyar (Hungarian)
+@@
+
+Package: luci-i18n-ustreamer-it
+Default: LUCI_LANG_it||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-it-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - it translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Italiano (Italian)
+@@
+
+Package: luci-i18n-ustreamer-ja
+Default: LUCI_LANG_ja||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-ja-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - ja translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - 日本語 (Japanese)
+@@
+
+Package: luci-i18n-ustreamer-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - ko translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - 한국어 (Korean)
+@@
+
+Package: luci-i18n-ustreamer-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-lt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - lt translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-ustreamer-mr
+Default: LUCI_LANG_mr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-mr-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - mr translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Marāṭhī (Marathi)
+@@
+
+Package: luci-i18n-ustreamer-ms
+Default: LUCI_LANG_ms||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-ms-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - ms translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Bahasa Melayu (Malay)
+@@
+
+Package: luci-i18n-ustreamer-no
+Default: LUCI_LANG_nb_NO||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-no-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - no translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Norsk (Norwegian)
+@@
+
+Package: luci-i18n-ustreamer-nl
+Default: LUCI_LANG_nl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-nl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - nl translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Nederlands (Dutch)
+@@
+
+Package: luci-i18n-ustreamer-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-pl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - pl translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Polski (Polish)
+@@
+
+Package: luci-i18n-ustreamer-pt
+Default: LUCI_LANG_pt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-pt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - pt translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Português (Portuguese)
+@@
+
+Package: luci-i18n-ustreamer-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-pt-br-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - pt-br translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Português do Brasil (Brazilian Portuguese)
+@@
+
+Package: luci-i18n-ustreamer-ro
+Default: LUCI_LANG_ro||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-ro-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - ro translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Română (Romanian)
+@@
+
+Package: luci-i18n-ustreamer-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - ru translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Русский (Russian)
+@@
+
+Package: luci-i18n-ustreamer-sk
+Default: LUCI_LANG_sk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-sk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - sk translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Slovenčina (Slovak)
+@@
+
+Package: luci-i18n-ustreamer-sv
+Default: LUCI_LANG_sv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-sv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - sv translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Svenska (Swedish)
+@@
+
+Package: luci-i18n-ustreamer-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - ta translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Tamil (Tamil)
+@@
+
+Package: luci-i18n-ustreamer-tr
+Default: LUCI_LANG_tr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-tr-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - tr translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Türkçe (Turkish)
+@@
+
+Package: luci-i18n-ustreamer-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - uk translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-ustreamer-vi
+Default: LUCI_LANG_vi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-vi-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - vi translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - Tiếng Việt (Vietnamese)
+@@
+
+Package: luci-i18n-ustreamer-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - zh-cn translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-ustreamer-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-ustreamer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-ustreamer-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-ustreamer - zh-tw translation
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-ustreamer - 正體中文 (Traditional Chinese)
+@@
+
+

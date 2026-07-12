@@ -400,6 +400,25 @@ Hidden: 1
 Description:     Translation for luci-app-olsr-services - Lietuvių (Lithuanian)
 @@
 
+Package: luci-i18n-olsr-services-lv
+Default: LUCI_LANG_lv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-olsr-services
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-olsr-services-lv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-olsr-services - lv translation
+Maintainer: Andreas Brau <ab@andi95.de>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-olsr-services - Latviešu (Latvian)
+@@
+
 Package: luci-i18n-olsr-services-mr
 Default: LUCI_LANG_mr||(ALL&&m)
 Version: x

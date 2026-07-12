@@ -91,13 +91,22 @@ Config:
 	   tristate "Italian (it)" 
 
      config LUCI_LANG_ja
-	   tristate "Japanese (ja)"  
+	   tristate "Japanese (ja)" 
+
+     config LUCI_LANG_ka
+	   tristate "Georgian (ka)" 
 
      config LUCI_LANG_ko
 	   tristate "Korean (ko)" 
 
+     config LUCI_LANG_lo
+	   tristate "Lao (lo)" 
+
      config LUCI_LANG_lt
-	   tristate "Lithuanian (lt)"   
+	   tristate "Lithuanian (lt)" 
+
+     config LUCI_LANG_lv
+	   tristate "Latvian (lv)"  
 
      config LUCI_LANG_mr
 	   tristate "Marathi (mr)" 
@@ -536,6 +545,26 @@ Hidden: 1
 Description:     Translation for luci-base - 日本語 (Japanese)
 @@
 
+Package: luci-i18n-base-ka
+Default: LUCI_LANG_ka||(ALL&&m)
+Version: x
+Depends: +libc luci-base
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-base-ka-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-base - ka translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+LicenseFiles: LICENSE NOTICE
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-base - ქართული ენა (Georgian)
+@@
+
 Package: luci-i18n-base-ko
 Default: LUCI_LANG_ko||(ALL&&m)
 Version: x
@@ -556,6 +585,26 @@ Hidden: 1
 Description:     Translation for luci-base - 한국어 (Korean)
 @@
 
+Package: luci-i18n-base-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-base
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-base-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-base - lo translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+LicenseFiles: LICENSE NOTICE
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-base - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-base-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
@@ -574,6 +623,26 @@ LicenseFiles: LICENSE NOTICE
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-base - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-base-lv
+Default: LUCI_LANG_lv||(ALL&&m)
+Version: x
+Depends: +libc luci-base
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-base-lv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-base - lv translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+LicenseFiles: LICENSE NOTICE
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-base - Latviešu (Latvian)
 @@
 
 Package: luci-i18n-base-mr

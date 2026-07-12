@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/net/tor/Makefile
 
 Package: tor
-Version: 0.4.8.21-r1
+Version: 0.4.9.10-r1
 Depends: +libc +libevent2 +libopenssl +libpthread +librt +zlib +libcap
 Conflicts: tor-basic
 Menu-Depends: 
@@ -13,7 +13,7 @@ Repository: base
 Title: Tor routing daemon (full)
 Maintainer: Rui Salvaterra <rsalvaterra@gmail.com>
 Require-User: tor=52:tor=52
-Source: tor-0.4.8.21.tar.gz
+Source: tor-0.4.9.10.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:torproject:tor
@@ -30,7 +30,7 @@ This package contains the full tor daemon.
 @@
 
 Package: tor-basic
-Version: 0.4.8.21-r1
+Version: 0.4.9.10-r1
 Depends: +libc +libevent2 +libopenssl +libpthread +librt +zlib +libcap
 Conflicts: 
 Menu-Depends: 
@@ -42,7 +42,7 @@ Repository: base
 Title: Tor routing daemon (no bridge/relay support)
 Maintainer: Rui Salvaterra <rsalvaterra@gmail.com>
 Require-User: tor=52:tor=52
-Source: tor-0.4.8.21.tar.gz
+Source: tor-0.4.9.10.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:torproject:tor
@@ -59,7 +59,7 @@ This package contains the basic tor daemon, without bridge/relay support.
 @@
 
 Package: tor-gencert
-Version: 0.4.8.21-r1
+Version: 0.4.9.10-r1
 Depends: +libc tor
 Conflicts: 
 Menu-Depends: 
@@ -70,7 +70,7 @@ Repository: base
 Title: Tor certificate generation
 Maintainer: Rui Salvaterra <rsalvaterra@gmail.com>
 Require-User: tor=52:tor=52
-Source: tor-0.4.8.21.tar.gz
+Source: tor-0.4.9.10.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:torproject:tor
@@ -87,7 +87,7 @@ Generate certs and keys for Tor directory authorities.
 @@
 
 Package: tor-resolve
-Version: 0.4.8.21-r1
+Version: 0.4.9.10-r1
 Depends: +libc tor-basic
 Conflicts: 
 Menu-Depends: 
@@ -98,7 +98,7 @@ Repository: base
 Title: tor hostname resolve
 Maintainer: Rui Salvaterra <rsalvaterra@gmail.com>
 Require-User: tor=52:tor=52
-Source: tor-0.4.8.21.tar.gz
+Source: tor-0.4.9.10.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:torproject:tor
@@ -115,7 +115,7 @@ Resolve a hostname to an IP address via tor.
 @@
 
 Package: tor-geoip
-Version: 0.4.8.21-r1
+Version: 0.4.9.10-r1
 Depends: +libc tor-basic
 Conflicts: 
 Menu-Depends: 
@@ -126,7 +126,7 @@ Repository: base
 Title: GeoIP db for tor
 Maintainer: Rui Salvaterra <rsalvaterra@gmail.com>
 Require-User: tor=52:tor=52
-Source: tor-0.4.8.21.tar.gz
+Source: tor-0.4.9.10.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:torproject:tor

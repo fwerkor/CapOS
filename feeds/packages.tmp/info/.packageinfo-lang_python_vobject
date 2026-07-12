@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/lang/python/vobject/Makefile
 
 Package: python3-vobject
 Submenu: Python
-Version: 0.9.6.1-r2
+Version: 0.9.9-r1
 Depends: +libc +python3 +python3-dateutil
 Conflicts: 
 Menu-Depends: 
@@ -11,8 +11,8 @@ Section: lang
 Category: Languages
 Repository: base
 Title: VObject
-Maintainer: 
-Source: vobject-0.9.6.1.tar.gz
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: vobject-0.9.9.tar.gz
 License: Apache-2.0
 URL: http://eventable.github.io/vobject/
 Type: ipkg
@@ -21,7 +21,7 @@ Description:   vCard and vCalendar support for Python
 
 Package: python3-vobject-src
 Submenu: Python
-Version: 0.9.6.1-r2
+Version: 0.9.9-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -30,8 +30,8 @@ Section: lang
 Category: Languages
 Repository: base
 Title: VObject (sources)
-Maintainer: 
-Source: vobject-0.9.6.1.tar.gz
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: vobject-0.9.9.tar.gz
 License: Apache-2.0
 URL: http://eventable.github.io/vobject/
 Type: ipkg

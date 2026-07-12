@@ -54,6 +54,11 @@
 			no-map;
 			reg = <0x0 0x90c00000 0x0 0x6800>;
 		};
+
+		npu_ba: npu-ba@90c06800 {
+			no-map;
+			reg = <0x0 0x90c06800 0x0 0x200000>;
+		};
 	};
 
 	psci {
@@ -434,6 +439,7 @@
 			reg = <0x0 0x1fbe2200 0x0 0x9000>;
 
 			interrupts = <GIC_SPI 48 IRQ_TYPE_LEVEL_HIGH>;
+			status = "disabled";
 		};
 
 		uart4: serial@1fbf0600 {
@@ -569,14 +575,14 @@
 			#phy-cells = <1>;
 		};
 
-		crypto@1e004000 {
+		crypto@1fb70000 {
 			compatible = "inside-secure,safexcel-eip93ies";
 			reg = <0x0 0x1fb70000 0x0 0x1000>;
 
 			interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
 		};
 
-		thermal: thermal-sensor@1efbd800 {
+		thermal: thermal-sensor@1efbd000 {
 			compatible = "airoha,en7581-thermal";
 			reg = <0x0 0x1efbd000 0x0 0xd5c>;
 			interrupts = <GIC_SPI 23 IRQ_TYPE_LEVEL_HIGH>;
@@ -855,9 +861,10 @@
 				     <GIC_SPI 122 IRQ_TYPE_LEVEL_HIGH>,
 				     <GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>;
 			memory-region = <&npu_binary>, <&npu_pkt>, <&npu_txpkt>,
-					<&npu_txbufid>;
+					<&npu_txbufid>, <&npu_ba>;
 			memory-region-names = "binary", "pkt", "tx-pkt",
-					      "tx-bufid";
+					      "tx-bufid", "ba";
+			status = "disabled";
 		};
 
 		eth: ethernet@1fb50000 {
@@ -997,7 +1004,6 @@
 				gsw_phy1: ethernet-phy@9 {
 					compatible = "ethernet-phy-ieee802.3-c22";
 					reg = <9>;
-					interrupts = <1>;
 					phy-mode = "internal";
 					status = "disabled";
 
@@ -1020,7 +1026,6 @@
 				gsw_phy2: ethernet-phy@a {
 					compatible = "ethernet-phy-ieee802.3-c22";
 					reg = <10>;
-					interrupts = <2>;
 					phy-mode = "internal";
 					status = "disabled";
 
@@ -1043,7 +1048,6 @@
 				gsw_phy3: ethernet-phy@b {
 					compatible = "ethernet-phy-ieee802.3-c22";
 					reg = <11>;
-					interrupts = <3>;
 					phy-mode = "internal";
 					status = "disabled";
 
@@ -1066,7 +1070,6 @@
 				gsw_phy4: ethernet-phy@c {
 					compatible = "ethernet-phy-ieee802.3-c22";
 					reg = <12>;
-					interrupts = <4>;
 					phy-mode = "internal";
 					status = "disabled";
 

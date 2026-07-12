@@ -3,7 +3,7 @@ Build-Depends: libb64
 
 Package: transmission-daemon
 Submenu: BitTorrent
-Version: 4.0.6-r2
+Version: 4.1.2-r1
 Depends: +libc +libatomic +libcurl +libdeflate +libdht +libevent2 +libevent2-pthreads +libminiupnpc +libnatpmp +libpthread +libpsl +librt +libutp +zlib +LIBCURL_NOSSL:libmbedtls +LIBCURL_GNUTLS:libmbedtls +LIBCURL_MBEDTLS:libmbedtls
 Conflicts: 
 Menu-Depends: 
@@ -14,7 +14,7 @@ Repository: base
 Title: BitTorrent client
 Maintainer: Daniel Golle <daniel@makrotopia.org>
 Require-User: transmission=224:transmission=224
-Source: transmission-4.0.6.tar.xz
+Source: transmission-4.1.2.tar.xz
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:transmissionbt:transmission
@@ -28,7 +28,7 @@ Description:  Transmission is a simple BitTorrent client.
 
 Package: transmission-cli
 Submenu: BitTorrent
-Version: 4.0.6-r2
+Version: 4.1.2-r1
 Depends: +libc +libatomic +libcurl +libdeflate +libdht +libevent2 +libevent2-pthreads +libminiupnpc +libnatpmp +libpthread +libpsl +librt +libutp +zlib +LIBCURL_NOSSL:libmbedtls +LIBCURL_GNUTLS:libmbedtls +LIBCURL_MBEDTLS:libmbedtls
 Conflicts: 
 Menu-Depends: 
@@ -38,7 +38,7 @@ Category: Network
 Repository: base
 Title: BitTorrent client (utilities)
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: transmission-4.0.6.tar.xz
+Source: transmission-4.1.2.tar.xz
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:transmissionbt:transmission
@@ -49,7 +49,7 @@ Description:  CLI utilities for transmission.
 
 Package: transmission-remote
 Submenu: BitTorrent
-Version: 4.0.6-r2
+Version: 4.1.2-r1
 Depends: +libc +libatomic +libcurl +libdeflate +libdht +libevent2 +libevent2-pthreads +libminiupnpc +libnatpmp +libpthread +libpsl +librt +libutp +zlib +LIBCURL_NOSSL:libmbedtls +LIBCURL_GNUTLS:libmbedtls +LIBCURL_MBEDTLS:libmbedtls
 Conflicts: 
 Menu-Depends: 
@@ -59,7 +59,7 @@ Category: Network
 Repository: base
 Title: BitTorrent client (remote)
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: transmission-4.0.6.tar.xz
+Source: transmission-4.1.2.tar.xz
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:transmissionbt:transmission
@@ -70,7 +70,7 @@ Description:  CLI remote interface for transmission.
 
 Package: transmission-web
 Submenu: BitTorrent
-Version: 4.0.6-r2
+Version: 4.1.2-r1
 Depends: +libc +transmission-daemon
 Conflicts: 
 Menu-Depends: 
@@ -80,7 +80,7 @@ Category: Network
 Repository: base
 Title: BitTorrent client (webinterface)
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: transmission-4.0.6.tar.xz
+Source: transmission-4.1.2.tar.xz
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:transmissionbt:transmission

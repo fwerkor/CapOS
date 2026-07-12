@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/net/unbound/Makefile
 
 Package: unbound-daemon
 Submenu: IP Addresses and Names
-Version: 1.24.2-r1
+Version: 1.25.1-r1
 Depends: +libc +ca-bundle +libopenssl +@OPENSSL_WITH_EC +libunbound
 Conflicts: 
 Menu-Depends: 
@@ -13,7 +13,7 @@ Repository: base
 Title: Recursive DNS Server (daemon)
 Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Require-User: unbound:unbound
-Source: unbound-1.24.2.tar.gz
+Source: unbound-1.25.1.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:nlnetlabs:unbound
@@ -27,7 +27,7 @@ Description:   This package contains the Unbound daemon including 'libevent', 'l
 
 Package: libunbound
 Submenu: Networking
-Version: 1.24.2-r1
+Version: 1.25.1-r1
 Depends: +libc +ca-bundle +libopenssl +@OPENSSL_WITH_EC +PACKAGE_libunbound_dnscrypt:libsodium +PACKAGE_libunbound_ipset:libmnl +PACKAGE_libunbound_libevent:libevent2 +PACKAGE_libunbound_libpthread:libpthread +PACKAGE_libunbound_nghttp2:libnghttp2 +PACKAGE_libunbound_pythonmodule:python3-base +PACKAGE_libunbound_dnstap:libprotobuf-c
 Conflicts: 
 Menu-Depends: 
@@ -38,7 +38,7 @@ Repository: base
 Title: Recursive DNS Server (library)
 Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Require-User: unbound:unbound
-Source: unbound-1.24.2.tar.gz
+Source: unbound-1.25.1.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:nlnetlabs:unbound
@@ -79,7 +79,7 @@ Config:
 
 Package: unbound-anchor
 Submenu: IP Addresses and Names
-Version: 1.24.2-r1
+Version: 1.25.1-r1
 Depends: +libc +ca-bundle +libopenssl +@OPENSSL_WITH_EC +unbound-daemon +libexpat
 Conflicts: 
 Menu-Depends: 
@@ -90,7 +90,7 @@ Repository: base
 Title: Recursive DNS Server (root DSKEY)
 Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Require-User: unbound:unbound
-Source: unbound-1.24.2.tar.gz
+Source: unbound-1.25.1.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:nlnetlabs:unbound
@@ -101,7 +101,7 @@ Description:   This package contains the Unbound anchor utility.
 
 Package: unbound-checkconf
 Submenu: IP Addresses and Names
-Version: 1.24.2-r1
+Version: 1.25.1-r1
 Depends: +libc +ca-bundle +libopenssl +@OPENSSL_WITH_EC +unbound-daemon
 Conflicts: 
 Menu-Depends: 
@@ -112,7 +112,7 @@ Repository: base
 Title: Recursive DNS Server (config checker)
 Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Require-User: unbound:unbound
-Source: unbound-1.24.2.tar.gz
+Source: unbound-1.25.1.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:nlnetlabs:unbound
@@ -123,7 +123,7 @@ Description:   This package contains the Unbound DNS configuration checker utili
 
 Package: unbound-control
 Submenu: IP Addresses and Names
-Version: 1.24.2-r1
+Version: 1.25.1-r1
 Depends: +libc +ca-bundle +libopenssl +@OPENSSL_WITH_EC +unbound-daemon
 Conflicts: 
 Menu-Depends: 
@@ -134,7 +134,7 @@ Repository: base
 Title: Recursive DNS Server (remote control)
 Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Require-User: unbound:unbound
-Source: unbound-1.24.2.tar.gz
+Source: unbound-1.25.1.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:nlnetlabs:unbound
@@ -145,7 +145,7 @@ Description:   This package contains the Unbound control utility.
 
 Package: unbound-control-setup
 Submenu: IP Addresses and Names
-Version: 1.24.2-r1
+Version: 1.25.1-r1
 Depends: +libc +ca-bundle +libopenssl +@OPENSSL_WITH_EC +unbound-control +openssl-util
 Conflicts: 
 Menu-Depends: 
@@ -156,7 +156,7 @@ Repository: base
 Title: Recursive DNS Server (control setup)
 Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Require-User: unbound:unbound
-Source: unbound-1.24.2.tar.gz
+Source: unbound-1.25.1.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:nlnetlabs:unbound
@@ -167,7 +167,7 @@ Description:   This package contains the Unbound control setup utility.
 
 Package: unbound-host
 Submenu: IP Addresses and Names
-Version: 1.24.2-r1
+Version: 1.25.1-r1
 Depends: +libc +ca-bundle +libopenssl +@OPENSSL_WITH_EC +libunbound
 Conflicts: 
 Menu-Depends: 
@@ -178,7 +178,7 @@ Repository: base
 Title: Recursive DNS Server (DNS lookup)
 Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Require-User: unbound:unbound
-Source: unbound-1.24.2.tar.gz
+Source: unbound-1.25.1.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:nlnetlabs:unbound

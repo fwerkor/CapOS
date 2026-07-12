@@ -5,7 +5,7 @@ Build-Types: host
 
 Package: golang1.26
 Submenu: Go
-Version: 1.26.1-r1
+Version: 1.26.4-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +golang1.26-src
 Conflicts: 
 Menu-Depends: +golang-bootstrap
@@ -15,7 +15,7 @@ Category: Languages
 Repository: base
 Title: Go programming language (compiler)
 Maintainer: George Sapkin <george@sapk.in>
-Source: go1.26.1.src.tar.gz
+Source: go1.26.4.src.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:golang:go
@@ -38,7 +38,7 @@ Description:     The Go programming language is an open source project to make p
 
 Package: golang1.26-doc
 Submenu: Go
-Version: 1.26.1-r1
+Version: 1.26.4-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
@@ -48,7 +48,7 @@ Category: Languages
 Repository: base
 Title: Go programming language (documentation)
 Maintainer: George Sapkin <george@sapk.in>
-Source: go1.26.1.src.tar.gz
+Source: go1.26.4.src.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:golang:go
@@ -70,7 +70,7 @@ Description:     The Go programming language is an open source project to make p
 
 Package: golang1.26-misc
 Submenu: Go
-Version: 1.26.1-r1
+Version: 1.26.4-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
@@ -80,7 +80,7 @@ Category: Languages
 Repository: base
 Title: Go programming language (misc source files)
 Maintainer: George Sapkin <george@sapk.in>
-Source: go1.26.1.src.tar.gz
+Source: go1.26.4.src.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:golang:go
@@ -102,7 +102,7 @@ Description:     The Go programming language is an open source project to make p
 
 Package: golang1.26-src
 Submenu: Go
-Version: 1.26.1-r1
+Version: 1.26.4-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
@@ -112,7 +112,7 @@ Category: Languages
 Repository: base
 Title: Go programming language (source files)
 Maintainer: George Sapkin <george@sapk.in>
-Source: go1.26.1.src.tar.gz
+Source: go1.26.4.src.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:golang:go
@@ -135,7 +135,7 @@ Description:     The Go programming language is an open source project to make p
 
 Package: golang1.26-tests
 Submenu: Go
-Version: 1.26.1-r1
+Version: 1.26.4-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +golang1.26-src
 Conflicts: 
 Menu-Depends: 
@@ -145,7 +145,7 @@ Category: Languages
 Repository: base
 Title: Go programming language (compiler tests)
 Maintainer: George Sapkin <george@sapk.in>
-Source: go1.26.1.src.tar.gz
+Source: go1.26.4.src.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:golang:go

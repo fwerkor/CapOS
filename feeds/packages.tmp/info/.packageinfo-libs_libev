@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/libs/libev/Makefile
 
 Package: libev
-Version: 4.33-r2
+Version: 4.33-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -12,7 +12,7 @@ Repository: base
 Title: High-performance event loop
 Maintainer: Karl Palsson <karlp@tweak.net.au>
 Source: libev-4.33.tar.gz
-License: BSD-2-Clause or GPL-2.0-or-later
+License: BSD-2-Clause GPL-2.0-or-later
 LicenseFiles: LICENSE
 URL: http://software.schmorp.de/pkg/libev.html
 Type: ipkg

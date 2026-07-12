@@ -362,6 +362,25 @@ Hidden: 1
 Description:     Translation for luci-app-omcproxy - 한국어 (Korean)
 @@
 
+Package: luci-i18n-omcproxy-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-omcproxy
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-omcproxy-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-omcproxy - lo translation
+Maintainer: Shun Li <riverscn@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-omcproxy - ພາສາລາວ (Lao)
+@@
+
 Package: luci-i18n-omcproxy-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x

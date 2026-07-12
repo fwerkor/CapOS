@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/utils/apparmor/Makefile
 Build-Depends: swig/host python-setuptools-scm/host
 
 Package: libapparmor
-Version: 3.0.13-r1
+Version: 3.0.13-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -22,7 +22,7 @@ Description:   Library to support AppArmor userspace utilities
 
 Package: python3-apparmor
 Submenu: Python
-Version: 3.0.13-r1
+Version: 3.0.13-r2
 Depends: +libc +libapparmor +python3
 Conflicts: 
 Menu-Depends: 
@@ -42,7 +42,7 @@ Description: AppArmor Python bindings
 
 Package: apparmor-utils
 Submenu: AppArmor
-Version: 3.0.13-r1
+Version: 3.0.13-r2
 Depends: +libc +BUILD_NLS:libintl-full +libapparmor +python3-apparmor +python3 +python3-readline +python3-psutil +ss +findutils-xargs
 Conflicts: 
 Menu-Depends: 
@@ -63,7 +63,7 @@ Description:   AppArmor application security system init script and
 
 Package: apparmor-profiles
 Submenu: AppArmor
-Version: 3.0.13-r1
+Version: 3.0.13-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
