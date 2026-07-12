@@ -416,7 +416,7 @@ define Device/solidrun_clearfog-base-a1
   DEVICE_MODEL := ClearFog Base
   KERNEL_INSTALL := 1
   KERNEL := kernel-bin
-  DEVICE_PACKAGES := mkf2fs e2fsprogs partx-utils
+  DEVICE_PACKAGES := mkf2fs e2fsprogs partx-utils kmod-dsa-mv88e6xxx
   IMAGES := sdcard.img.gz
   IMAGE/sdcard.img.gz := boot-scr | boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
   DEVICE_DTS := armada-388-clearfog-base armada-388-clearfog-pro
@@ -434,7 +434,7 @@ define Device/solidrun_clearfog-pro-a1
   DEVICE_MODEL := ClearFog Pro
   KERNEL_INSTALL := 1
   KERNEL := kernel-bin
-  DEVICE_PACKAGES := mkf2fs e2fsprogs partx-utils
+  DEVICE_PACKAGES := mkf2fs e2fsprogs partx-utils kmod-dsa-mv88e6xxx
   IMAGES := sdcard.img.gz
   IMAGE/sdcard.img.gz := boot-scr | boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
   DEVICE_DTS := armada-388-clearfog-pro armada-388-clearfog-base
@@ -496,3 +496,17 @@ define Device/wd_cloud-mirror-gen2
   IMAGE/uImage-factory.bin := append-kernel
 endef
 TARGET_DEVICES += wd_cloud-mirror-gen2
+
+define Device/zyxel_nas326
+  $(Device/NAND-128K)
+  DEVICE_VENDOR := Zyxel
+  DEVICE_MODEL := NAS326
+  DEVICE_PACKAGES += mkf2fs e2fsprogs \
+	partx-utils kmod-hwmon-drivetemp -ppp -kmod-nft-offload -dnsmasq \
+	-odhcpd-ipv6only
+  DEVICE_DTS := armada-380-zyxel-nas326
+  FILESYSTEMS := squashfs ubifs
+  KERNEL := kernel-bin | append-dtb
+  KERNEL_INITRAMFS := kernel-bin | append-dtb | uImage none
+endef
+TARGET_DEVICES += zyxel_nas326
