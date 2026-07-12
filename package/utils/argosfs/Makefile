@@ -2,7 +2,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=argosfs
 PKG_VERSION:=0.1.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/fwerkor/argosfs
@@ -44,20 +44,20 @@ define Package/argosfs/install
 	$(INSTALL_DIR) $(1)/usr/sbin
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/bin/argosfs $(1)/usr/sbin/argosfs
 	$(INSTALL_DIR) $(1)/lib/argosfs
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/contrib/capos/initramfs/argosfs-root.sh $(1)/lib/argosfs/argosfs-root.sh
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/integrations/capos/initramfs/argosfs-root.sh $(1)/lib/argosfs/argosfs-root.sh
 	$(INSTALL_DIR) $(1)/lib/argosfs/initramfs-hooks
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/contrib/capos/initramfs/hooks/argosfs $(1)/lib/argosfs/initramfs-hooks/argosfs
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/integrations/capos/initramfs/hooks/argosfs $(1)/lib/argosfs/initramfs-hooks/argosfs
 	$(INSTALL_DIR) $(1)/lib/preinit
 	$(INSTALL_BIN) ./files/05_argosfs_root $(1)/lib/preinit/05_argosfs_root
 	$(INSTALL_BIN) ./files/79_argosfs_skip_mount_root $(1)/lib/preinit/79_argosfs_skip_mount_root
 	$(INSTALL_BIN) ./files/81_argosfs_restore_preinit $(1)/lib/preinit/81_argosfs_restore_preinit
 	$(INSTALL_DIR) $(1)/etc/argosfs
-	$(INSTALL_DATA) $(PKG_BUILD_DIR)/contrib/capos/mkinitramfs/argosfs.conf $(1)/etc/argosfs/initramfs.conf
+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/integrations/capos/mkinitramfs/argosfs.conf $(1)/etc/argosfs/initramfs.conf
 	$(INSTALL_DIR) $(1)/lib/systemd/system
-	$(INSTALL_DATA) $(PKG_BUILD_DIR)/contrib/capos/systemd/argosfs-root.service $(1)/lib/systemd/system/
-	$(INSTALL_DATA) $(PKG_BUILD_DIR)/contrib/capos/systemd/argosfs-health.service $(1)/lib/systemd/system/
-	$(INSTALL_DATA) $(PKG_BUILD_DIR)/contrib/capos/systemd/argosfs-watchdog.service $(1)/lib/systemd/system/
-	$(INSTALL_DATA) $(PKG_BUILD_DIR)/contrib/capos/systemd/argosfs-recovery.target $(1)/lib/systemd/system/
+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/integrations/capos/systemd/argosfs-root.service $(1)/lib/systemd/system/
+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/integrations/capos/systemd/argosfs-health.service $(1)/lib/systemd/system/
+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/integrations/capos/systemd/argosfs-watchdog.service $(1)/lib/systemd/system/
+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/integrations/capos/systemd/argosfs-recovery.target $(1)/lib/systemd/system/
 endef
 
 $(eval $(call RustBinHostBuild))
