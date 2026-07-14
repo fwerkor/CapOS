@@ -356,13 +356,15 @@ define Image/mkfs/argosfs
 	$(STAGING_DIR_HOSTPKG)/bin/argosfs mkfs --backend loop \
 		--images $@ \
 		--k 1 --m 0 \
-		--chunk-size 262144 \
+		--chunk-size 65536 \
 		--compression none \
 		--image-size $(ROOTFS_PARTSIZE) \
 		--pool-name capos-root \
 		--defer-journal-flush \
 		--defer-metadata-commit \
 		--defer-data-flush \
+		--deferred-commit-interval-ms 5000 \
+		--deferred-commit-max-transactions 128 \
 		--force
 	$(STAGING_DIR_HOSTPKG)/bin/argosfs import-tree --backend loop \
 		--images $@ \
