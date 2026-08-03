@@ -70,9 +70,13 @@ jobs:
           - name: x86_64
             target: x86
             subtarget: "64"
+            boot_timeout_s: 360
           - name: aarch64
             target: armsr
             subtarget: armv8
+            # AArch64 runs entirely under TCG on GitHub-hosted x86 runners.
+            # ArgosFS root mount and userspace startup can exceed six minutes.
+            boot_timeout_s: 720
 
     steps:
       - name: Checkout
@@ -205,7 +209,7 @@ jobs:
         run: |
           set -euxo pipefail
           CAPOS_CI_ARTIFACT_DIR=ci-artifacts \
-          CAPOS_CI_BOOT_TIMEOUT_S=360 \
+          CAPOS_CI_BOOT_TIMEOUT_S=${{ matrix.boot_timeout_s }} \
             scripts/ci/qemu-port-check.sh "${{ matrix.target }}" "${{ matrix.subtarget }}"
 
       - name: Upload diagnostics
