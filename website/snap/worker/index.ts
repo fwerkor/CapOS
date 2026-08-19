@@ -22,11 +22,15 @@ async function body<T>(request: Request): Promise<T> { return request.json() as 
 function publicCacheKey(request: Request, env: Env) {
   const source = new URL(request.url);
   const key = new URL(source.origin + source.pathname);
-  if (source.pathname === '/api/storefront') {
+  if (source.pathname === '/api/storefront' || source.pathname === '/api/catalog') {
     key.searchParams.set('version', safeVersion(source.searchParams.get('version'), env));
+    if (source.pathname === '/api/catalog') key.searchParams.set('schema', 'v3');
   } else if (source.pathname === '/api/search') {
     key.searchParams.set('version', safeVersion(source.searchParams.get('version'), env));
     key.searchParams.set('q', (source.searchParams.get('q') || '').trim().toLowerCase());
+  } else if (source.pathname === '/api/app') {
+    key.searchParams.set('version', safeVersion(source.searchParams.get('version'), env));
+    key.searchParams.set('name', (source.searchParams.get('name') || '').trim().toLowerCase());
   }
   return new Request(key.toString(), { method: 'GET' });
 }
@@ -46,6 +50,12 @@ async function edgeCached(request: Request, env: Env, ctx: ExecutionContext, edg
 
   const response = await loader();
   if (!response.ok) return response;
+  if (response.headers.get('x-capos-skip-edge-cache') === '1') {
+    const headers = new Headers(response.headers);
+    headers.delete('x-capos-skip-edge-cache');
+    headers.set('x-capos-cache', 'BYPASS');
+    return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+  }
   const stored = response.clone();
   stored.headers.set('cache-control', `public, max-age=${edgeTtl}`);
   stored.headers.delete('set-cookie');
@@ -100,14 +110,102 @@ function mediaIcon(media: unknown) {
 function canonicalApp(result: Record<string, any>) {
   const snap = result.snap || {}; const revision = result.revision || {}; const publisher = snap.publisher || {}; const categories = Array.isArray(snap.categories) ? snap.categories : [];
   const category = categories.find((c:any) => c.name !== 'featured')?.name || 'Utilities';
-  return { id: result['snap-id'] || result.name, name: result.name, displayName: snap.title || result.name, publisher: publisher['display-name'] || publisher.username || 'Unknown', summary: snap.summary || '', description: snap.description || snap.summary || '', category: String(category).replace(/(^|-)\w/g,(m:string)=>m.replace('-',' ').toUpperCase()), icon: mediaIcon(snap.media), accent: '#2563eb', source: 'upstream', sourceName: 'Canonical', verified: publisher.validation === 'verified', featured: categories.some((c:any)=>c.featured), version: revision.version || '—', channel: revision.channel || 'stable', architectures: ['amd64','arm64'], webdesktop: 'unknown', updated: 'Upstream' };
+  return { id: result['snap-id'] || result.name, name: result.name, displayName: snap.title || result.name, publisher: publisher['display-name'] || publisher.username || 'Unknown', summary: snap.summary || '', description: snap.description || '', category: String(category).replace(/(^|-)\w/g,(m:string)=>m.replace('-',' ').toUpperCase()), icon: mediaIcon(snap.media), accent: '#2563eb', source: 'upstream', sourceName: 'Canonical', verified: publisher.validation === 'verified', featured: categories.some((c:any)=>c.featured), version: revision.version || '—', channel: revision.channel || 'stable', architectures: ['amd64','arm64'], webdesktop: 'unknown', updated: 'Upstream' };
 }
 
+const CANONICAL_LIST_FIELDS = 'title,summary,publisher,version,media,categories,channel,revision';
+
 async function canonicalFind(base: string, query: URLSearchParams, cacheTtl = 120) {
-  const params = new URLSearchParams(query); params.set('fields','title,summary,description,publisher,version,media,categories,download,channel,revision');
+  const params = new URLSearchParams(query); params.set('fields',CANONICAL_LIST_FIELDS);
   const response = await fetch(`${base.replace(/\/$/,'')}/v2/snaps/find?${params}`, { headers: { 'Snap-Device-Series': '16', 'Snap-Device-Architecture': 'amd64', 'User-Agent': 'CapOS-Snap-Store/0.1' }, cf: { cacheTtl, cacheEverything: true } });
   if (!response.ok) throw new Error(`Upstream returned ${response.status}`);
   const payload = await response.json<{results?:Record<string,any>[]}>(); return (payload.results || []).map(canonicalApp);
+}
+
+async function canonicalInfo(base: string, name: string, cacheTtl = 3600) {
+  const params = new URLSearchParams({fields:'title,summary,description,publisher,media,categories'});
+  const response = await fetch(`${base.replace(/\/$/,'')}/v2/snaps/info/${encodeURIComponent(name)}?${params}`, { headers: { 'Snap-Device-Series': '16', 'Snap-Device-Architecture': 'amd64', 'User-Agent': 'CapOS-Snap-Store/0.1' }, cf: { cacheTtl, cacheEverything: true } });
+  if (!response.ok) throw new Error(`Upstream returned ${response.status}`);
+  const payload = await response.json<Record<string,any>>();
+  const channelMap = Array.isArray(payload['channel-map']) ? payload['channel-map'] : [];
+  const preferred = channelMap.find((entry:any) => entry.channel?.architecture === 'amd64' && entry.channel?.risk === 'stable') || channelMap[0] || {};
+  const app = canonicalApp({ 'snap-id': payload['snap-id'], name: payload.name || name, snap: payload.snap || {}, revision: { version: preferred.version, channel: preferred.channel?.name || preferred.channel?.risk } });
+  app.architectures = [...new Set(channelMap.map((entry:any) => entry.channel?.architecture).filter(Boolean))] as string[];
+  return app;
+}
+
+const CANONICAL_CATALOG_CATEGORIES = [
+  'art-and-design', 'books-and-reference', 'development', 'devices-and-iot', 'education',
+  'entertainment', 'finance', 'games', 'health-and-fitness', 'music-and-audio',
+  'news-and-weather', 'personalisation', 'photo-and-video', 'productivity', 'science',
+  'security', 'server-and-cloud', 'social', 'utilities'
+];
+const CATALOG_SNAPSHOT_KEY = '_cache/canonical-catalog-v3.json';
+const CATALOG_SNAPSHOT_TTL = 6 * 3600;
+let catalogRefreshPromise: Promise<void> | null = null;
+
+interface CatalogSnapshot {
+  generatedAt: number;
+  apps: any[];
+  availableCount: number;
+}
+
+function storefrontCategories(apps: any[]) {
+  const categoryCounts = new Map<string,number>();
+  for (const app of apps) categoryCounts.set(app.category,(categoryCounts.get(app.category)||0)+1);
+  const glyphs=['⌘','◫','▶','◎','▱','✦'];
+  return [...categoryCounts.entries()].sort((a,b)=>b[1]-a[1]).slice(0,6).map(([name,count],i)=>({name,count,glyph:glyphs[i]}));
+}
+
+async function canonicalCatalogSize() {
+  try {
+    const response = await fetch('https://snapcraft.io/store/sitemap.xml', { cf: { cacheTtl: 21600, cacheEverything: true } });
+    if (!response.ok) return 0;
+    const xml = await response.text();
+    const matches = xml.match(/<loc>https:\/\/snapcraft\.io\/[a-z0-9][a-z0-9-]*<\/loc>/g) || [];
+    return Math.max(0, matches.length - (matches.some(line => line.endsWith('/store</loc>')) ? 1 : 0));
+  } catch {
+    return 0;
+  }
+}
+
+async function readCatalogSnapshot(env: Env): Promise<CatalogSnapshot | null> {
+  try {
+    const object = await env.ARTIFACTS.get(CATALOG_SNAPSHOT_KEY);
+    if (!object) return null;
+    const snapshot = JSON.parse(await object.text()) as CatalogSnapshot;
+    return snapshot && Array.isArray(snapshot.apps) && Number.isFinite(snapshot.generatedAt) ? snapshot : null;
+  } catch {
+    return null;
+  }
+}
+
+async function buildCatalogSnapshot(base: string): Promise<CatalogSnapshot> {
+  const [defaultCatalog, featured, categoryCatalogs, availableCount] = await Promise.all([
+    canonicalFind(base, new URLSearchParams(), 21600).catch(()=>[]),
+    canonicalFind(base, new URLSearchParams({category:'featured'}), 21600).catch(()=>[]),
+    Promise.all(CANONICAL_CATALOG_CATEGORIES.map(category => canonicalFind(base, new URLSearchParams({category}), 21600).catch(()=>[]))),
+    canonicalCatalogSize()
+  ]);
+  const featuredNames = new Set(featured.map(app=>app.name));
+  const remote = [
+    ...featured.map(app=>({...app,featured:true})),
+    ...defaultCatalog.map(app=>({...app,featured:featuredNames.has(app.name)})),
+    ...categoryCatalogs.flat().map(app=>({...app,featured:featuredNames.has(app.name)}))
+  ];
+  const seen = new Set<string>();
+  const apps = remote.filter(app => { if (seen.has(app.name)) return false; seen.add(app.name); return true; }).slice(0,1500);
+  return { generatedAt: now(), apps, availableCount: availableCount || apps.length };
+}
+
+function refreshCatalogSnapshot(env: Env, base: string) {
+  if (!catalogRefreshPromise) {
+    catalogRefreshPromise = (async () => {
+      const snapshot = await buildCatalogSnapshot(base);
+      await env.ARTIFACTS.put(CATALOG_SNAPSHOT_KEY, JSON.stringify(snapshot), { httpMetadata: { contentType: 'application/json' } });
+    })().finally(() => { catalogRefreshPromise = null; });
+  }
+  return catalogRefreshPromise;
 }
 
 async function localApps(env: Env, version: string) {
@@ -122,11 +220,19 @@ async function upstreams(env: Env, version: string) {
 
 async function storefront(request: Request, env: Env) {
   const url = new URL(request.url); const version = safeVersion(url.searchParams.get('version'), env); const locals = await localApps(env, version); const sources = await upstreams(env, version); let catalog:any[]=[]; let featured:any[]=[];
-  const first = sources.find(s=>s.enabled); if (first?.kind === 'canonical') {
+  const first = sources.find(s=>s.enabled);
+  if (first?.kind === 'canonical') {
+    const snapshot = await readCatalogSnapshot(env);
+    if (snapshot) {
+      const seen = new Set(locals.map(app=>app.name));
+      const remote = snapshot.apps.filter(app => { if (seen.has(app.name)) return false; seen.add(app.name); return true; });
+      const apps = [...locals, ...remote].slice(0,120);
+      return json({version,apps,categories:storefrontCategories(apps),availableCount:snapshot.availableCount},200,{'cache-control':'public, max-age=60'});
+    }
     try {
       [catalog, featured] = await Promise.all([
-        canonicalFind(first.apiUrl, new URLSearchParams(), 600),
-        canonicalFind(first.apiUrl, new URLSearchParams({category:'featured'}), 300)
+        canonicalFind(first.apiUrl, new URLSearchParams(), 21600),
+        canonicalFind(first.apiUrl, new URLSearchParams({category:'featured'}), 21600)
       ]);
     } catch { catalog=[]; featured=[]; }
   }
@@ -135,9 +241,24 @@ async function storefront(request: Request, env: Env) {
   const seen = new Set(locals.map(a=>a.name));
   const uniqueRemote = remote.filter(app => { if (seen.has(app.name)) return false; seen.add(app.name); return true; });
   const apps=[...locals,...uniqueRemote].slice(0,120);
-  const categoryCounts = new Map<string,number>(); for(const app of apps) categoryCounts.set(app.category,(categoryCounts.get(app.category)||0)+1);
-  const glyphs=['⌘','◫','▶','◎','▱','✦']; const categories=[...categoryCounts.entries()].sort((a,b)=>b[1]-a[1]).slice(0,6).map(([name,count],i)=>({name,count,glyph:glyphs[i]}));
+  const categories=storefrontCategories(apps);
   return json({version,apps,categories},200,{'cache-control':'public, max-age=60'});
+}
+
+async function richCatalog(request: Request, env: Env, ctx: ExecutionContext) {
+  const url = new URL(request.url); const version = safeVersion(url.searchParams.get('version'), env);
+  const [locals, sources] = await Promise.all([localApps(env, version), upstreams(env, version)]);
+  const first = sources.find(s=>s.enabled);
+  if (first?.kind !== 'canonical') return json({version,apps:locals,categories:storefrontCategories(locals),availableCount:locals.length},200,{'cache-control':'public, max-age=300'});
+  const snapshot = await readCatalogSnapshot(env);
+  const stale = !snapshot || now() - snapshot.generatedAt > CATALOG_SNAPSHOT_TTL;
+  if (stale) ctx.waitUntil(refreshCatalogSnapshot(env, first.apiUrl));
+  if (!snapshot) return json({version,apps:locals,categories:storefrontCategories(locals),availableCount:0,refreshing:true},200,{'cache-control':'no-store','x-capos-skip-edge-cache':'1'});
+  const seen = new Set(locals.map(app=>app.name));
+  const uniqueRemote = snapshot.apps.filter(app => { if (seen.has(app.name)) return false; seen.add(app.name); return true; });
+  const apps = [...locals, ...uniqueRemote].slice(0, 1500);
+  const headers: Record<string,string> = stale ? {'cache-control':'no-store','x-capos-skip-edge-cache':'1'} : {'cache-control':'public, max-age=300'};
+  return json({version,apps,categories:storefrontCategories(apps),availableCount:snapshot.availableCount || apps.length,refreshing:stale},200,headers);
 }
 
 async function searchStore(request: Request, env: Env) {
@@ -157,6 +278,17 @@ async function searchStore(request: Request, env: Env) {
   });
   const merged = [...locals, ...uniqueRemote].slice(0, 60);
   return json({ apps: merged }, 200, { 'cache-control': 'public, max-age=45' });
+}
+
+async function appDetail(request: Request, env: Env) {
+  const url = new URL(request.url); const version = safeVersion(url.searchParams.get('version'), env); const name = (url.searchParams.get('name') || '').trim().toLowerCase();
+  if (!/^[a-z0-9][a-z0-9-]{0,79}$/.test(name)) return json({ error: 'Invalid app name.' }, 400);
+  const locals = await localApps(env, version); const local = locals.find(app => app.name === name);
+  if (local) return json({ app: local }, 200, { 'cache-control': 'public, max-age=60' });
+  const sources = await upstreams(env, version); const first = sources.find(source => source.enabled && source.kind === 'canonical');
+  if (!first) return json({ error: 'App not found.' }, 404);
+  try { return json({ app: await canonicalInfo(first.apiUrl, name) }, 200, { 'cache-control': 'public, max-age=300' }); }
+  catch { return json({ error: 'App not found.' }, 404); }
 }
 
 async function adminState(request: Request, env: Env) {
@@ -269,7 +401,9 @@ async function proxyDownload(request:Request){const u=new URL(request.url);const
 
 async function api(request:Request,env:Env,ctx:ExecutionContext){const url=new URL(request.url);const p=url.pathname;
   if(p==='/api/storefront'&&request.method==='GET')return edgeCached(request,env,ctx,120,15,()=>storefront(request,env));
+  if(p==='/api/catalog'&&request.method==='GET')return edgeCached(request,env,ctx,300,30,()=>richCatalog(request,env,ctx));
   if(p==='/api/search'&&request.method==='GET')return edgeCached(request,env,ctx,60,10,()=>searchStore(request,env));
+  if(p==='/api/app'&&request.method==='GET')return edgeCached(request,env,ctx,1800,60,()=>appDetail(request,env));
   if(p==='/api/admin/auth'&&request.method==='POST')return login(request,env);
   if(p==='/api/admin/logout'&&request.method==='POST')return logout(request,env);
   if(p==='/download/upstream'&&request.method==='GET')return proxyDownload(request);

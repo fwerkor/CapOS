@@ -46,6 +46,8 @@ export interface StorefrontData {
   version: string;
   apps: StoreApp[];
   categories: { name: string; count: number; glyph: string }[];
+  availableCount?: number;
+  refreshing?: boolean;
 }
 
 export interface AdminState {
