@@ -52,4 +52,10 @@ The admin session is an HttpOnly/Secure/SameSite=Strict cookie. Five failed PIN 
 
 Large Snap files are uploaded as a Cloudflare R2 multipart upload. The browser splits the file into 32 MiB parts and sends authenticated same-origin requests to the Worker; the Worker streams each part into the `ARTIFACTS` R2 binding. This avoids single-request body limits without creating R2 S3 access keys or exposing any storage credential to the browser.
 
+## Caching
+
+Public catalog reads use two cache layers. Canonical catalog responses are cached at Cloudflare for 10 minutes (5 minutes for the featured feed and 2 minutes for searches), while the final aggregated `/api/storefront` and `/api/search` responses use a short Worker Cache API layer of 120 and 60 seconds respectively. Browser caching remains deliberately short at 15 seconds for the storefront and 10 seconds for search results. Responses expose `X-CapOS-Cache: HIT|MISS` for diagnostics.
+
+Administrative endpoints and mutations remain `no-store`; credentials and admin state are never written to the public cache.
+
 After every part is accepted, `/api/admin/packages/finalize` completes the multipart upload, verifies the final object size, and records the local package in D1. Failed uploads are explicitly aborted.
