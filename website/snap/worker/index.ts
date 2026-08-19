@@ -4,20 +4,50 @@ interface Env {
   DEFAULT_VERSION: string;
   REPO_PUBLIC_BASE: string;
   ARTIFACTS: R2Bucket;
-  ADMIN_PIN_HASH?: string;
-  SESSION_SECRET?: string;
+  ACCESS_TEAM_DOMAIN: string;
+  ACCESS_AUD: string;
 }
 
 type JsonValue = Record<string, unknown> | unknown[];
 const encoder = new TextEncoder();
 const json = (value: JsonValue, status = 200, headers: HeadersInit = {}) => new Response(JSON.stringify(value), { status, headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store', ...headers } });
 const now = () => Math.floor(Date.now() / 1000);
-const hex = (bytes: ArrayBuffer) => [...new Uint8Array(bytes)].map(b => b.toString(16).padStart(2, '0')).join('');
-async function sha256(value: string) { return hex(await crypto.subtle.digest('SHA-256', encoder.encode(value))); }
 function ipOf(request: Request) { return request.headers.get('CF-Connecting-IP') || 'unknown'; }
 function safeVersion(value: string | null, env: Env) { const v = value || env.DEFAULT_VERSION || 'rolling'; return /^[A-Za-z0-9._-]{1,64}$/.test(v) ? v : env.DEFAULT_VERSION || 'rolling'; }
-function cookie(request: Request, name: string) { const raw = request.headers.get('cookie') || ''; for (const part of raw.split(';')) { const [k,...rest] = part.trim().split('='); if (k === name) return decodeURIComponent(rest.join('=')); } return null; }
 async function body<T>(request: Request): Promise<T> { return request.json() as Promise<T>; }
+
+function base64UrlBytes(value: string) {
+  const base64 = value.replaceAll('-', '+').replaceAll('_', '/').padEnd(Math.ceil(value.length / 4) * 4, '=');
+  return Uint8Array.from(atob(base64), char => char.charCodeAt(0));
+}
+
+function base64UrlJson<T>(value: string): T {
+  return JSON.parse(new TextDecoder().decode(base64UrlBytes(value))) as T;
+}
+
+async function verifyAccess(request: Request, env: Env) {
+  const token = request.headers.get('Cf-Access-Jwt-Assertion');
+  if (!token || !env.ACCESS_TEAM_DOMAIN || !env.ACCESS_AUD) return false;
+  const parts = token.split('.');
+  if (parts.length !== 3) return false;
+  try {
+    const header = base64UrlJson<{ alg?: string; kid?: string }>(parts[0]);
+    const payload = base64UrlJson<{ aud?: string | string[]; exp?: number; iss?: string }>(parts[1]);
+    if (header.alg !== 'RS256' || !header.kid || !payload.exp || payload.exp <= now()) return false;
+    const audience = Array.isArray(payload.aud) ? payload.aud : [payload.aud];
+    if (!audience.includes(env.ACCESS_AUD)) return false;
+    if ((payload.iss || '').replace(/\/$/, '') !== `https://${env.ACCESS_TEAM_DOMAIN}`) return false;
+    const certs = await fetch(`https://${env.ACCESS_TEAM_DOMAIN}/cdn-cgi/access/certs`, { cf: { cacheTtl: 3600, cacheEverything: true } });
+    if (!certs.ok) return false;
+    const result = await certs.json<{ keys?: Array<JsonWebKey & { kid?: string }> }>();
+    const jwk = result.keys?.find(key => key.kid === header.kid);
+    if (!jwk) return false;
+    const key = await crypto.subtle.importKey('jwk', jwk, { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' }, false, ['verify']);
+    return crypto.subtle.verify('RSASSA-PKCS1-v1_5', key, base64UrlBytes(parts[2]), encoder.encode(`${parts[0]}.${parts[1]}`));
+  } catch {
+    return false;
+  }
+}
 
 function publicCacheKey(request: Request, env: Env) {
   const source = new URL(request.url);
@@ -65,40 +95,6 @@ async function edgeCached(request: Request, env: Env, ctx: ExecutionContext, edg
 
 async function audit(env: Env, request: Request, action: string, detail: Record<string, unknown> = {}) {
   await env.DB.prepare('INSERT INTO audit_log(action,detail_json,ip) VALUES(?,?,?)').bind(action, JSON.stringify(detail), ipOf(request)).run();
-}
-
-async function authenticate(request: Request, env: Env) {
-  const token = cookie(request, 'capos_store_session');
-  if (!token) return false;
-  const tokenHash = await sha256(token);
-  const row = await env.DB.prepare('SELECT expires_at FROM admin_sessions WHERE token_hash=?').bind(tokenHash).first<{ expires_at: number }>();
-  if (!row || row.expires_at <= now()) return false;
-  return true;
-}
-
-async function login(request: Request, env: Env) {
-  if (!env.ADMIN_PIN_HASH || !env.SESSION_SECRET) return json({ error: 'Administrator authentication is not configured.' }, 503);
-  const ip = ipOf(request); const t = now();
-  const failure = await env.DB.prepare('SELECT attempts,window_start,locked_until FROM login_failures WHERE ip=?').bind(ip).first<{attempts:number;window_start:number;locked_until:number}>();
-  if (failure?.locked_until && failure.locked_until > t) return json({ error: 'Too many attempts. Try again later.' }, 429);
-  const input = await body<{ pin?: string }>(request);
-  const candidate = await sha256(`${input.pin || ''}:${env.SESSION_SECRET}`);
-  if (candidate !== env.ADMIN_PIN_HASH) {
-    const inWindow = failure && t - failure.window_start < 300; const attempts = inWindow ? failure!.attempts + 1 : 1; const locked = attempts >= 5 ? t + 900 : 0;
-    await env.DB.prepare(`INSERT INTO login_failures(ip,attempts,window_start,locked_until) VALUES(?,?,?,?) ON CONFLICT(ip) DO UPDATE SET attempts=excluded.attempts,window_start=excluded.window_start,locked_until=excluded.locked_until`).bind(ip, attempts, inWindow ? failure!.window_start : t, locked).run();
-    return json({ error: attempts >= 5 ? 'Too many attempts. Try again later.' : 'Incorrect administrator PIN.' }, attempts >= 5 ? 429 : 401);
-  }
-  await env.DB.prepare('DELETE FROM login_failures WHERE ip=?').bind(ip).run();
-  const raw = crypto.getRandomValues(new Uint8Array(32)); const token = btoa(String.fromCharCode(...raw)).replaceAll('+','-').replaceAll('/','_').replaceAll('=',''); const tokenHash = await sha256(token); const expires = t + 12 * 3600;
-  await env.DB.prepare('DELETE FROM admin_sessions WHERE expires_at <= ?').bind(t).run();
-  await env.DB.prepare('INSERT INTO admin_sessions(token_hash,expires_at,created_at,ip) VALUES(?,?,?,?)').bind(tokenHash, expires, t, ip).run();
-  await audit(env, request, 'admin.login');
-  return json({ ok: true }, 200, { 'set-cookie': `capos_store_session=${encodeURIComponent(token)}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=${12*3600}` });
-}
-
-async function logout(request: Request, env: Env) {
-  const token = cookie(request, 'capos_store_session'); if (token) await env.DB.prepare('DELETE FROM admin_sessions WHERE token_hash=?').bind(await sha256(token)).run();
-  return json({ ok: true }, 200, { 'set-cookie': 'capos_store_session=; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=0' });
 }
 
 function mediaIcon(media: unknown) {
@@ -418,10 +414,8 @@ async function api(request:Request,env:Env,ctx:ExecutionContext){const url=new U
   if(p==='/api/catalog'&&request.method==='GET')return edgeCached(request,env,ctx,300,30,()=>richCatalog(request,env,ctx));
   if(p==='/api/search'&&request.method==='GET')return edgeCached(request,env,ctx,60,10,()=>searchStore(request,env));
   if(p==='/api/app'&&request.method==='GET')return edgeCached(request,env,ctx,1800,60,()=>appDetail(request,env));
-  if(p==='/api/admin/auth'&&request.method==='POST')return login(request,env);
-  if(p==='/api/admin/logout'&&request.method==='POST')return logout(request,env);
   if(p==='/download/upstream'&&request.method==='GET')return proxyDownload(request);
-  if(p.startsWith('/api/admin/')){if(!(await authenticate(request,env)))return json({error:'Authentication required.'},401);if(p==='/api/admin/state'&&request.method==='GET')return adminState(request,env);if(p==='/api/admin/versions'&&request.method==='POST')return postVersion(request,env);if(p==='/api/admin/upstreams'&&request.method==='PUT')return putUpstreams(request,env);if(p==='/api/admin/upstreams'&&request.method==='POST')return postUpstream(request,env);if(p==='/api/admin/packages/uploads'&&request.method==='POST')return startPackageUpload(request,env);if(p==='/api/admin/packages/upload-part'&&request.method==='PUT')return uploadPackagePart(request,env);if(p==='/api/admin/packages/abort'&&request.method==='POST')return abortPackageUpload(request,env);if(p==='/api/admin/packages/finalize'&&request.method==='POST')return finalizePackage(request,env);}
+  if(p==='/api/admin'||p.startsWith('/api/admin/')){if(!(await verifyAccess(request,env)))return json({error:'Cloudflare Access authentication required.'},401);if(p==='/api/admin/state'&&request.method==='GET')return adminState(request,env);if(p==='/api/admin/versions'&&request.method==='POST')return postVersion(request,env);if(p==='/api/admin/upstreams'&&request.method==='PUT')return putUpstreams(request,env);if(p==='/api/admin/upstreams'&&request.method==='POST')return postUpstream(request,env);if(p==='/api/admin/packages/uploads'&&request.method==='POST')return startPackageUpload(request,env);if(p==='/api/admin/packages/upload-part'&&request.method==='PUT')return uploadPackagePart(request,env);if(p==='/api/admin/packages/abort'&&request.method==='POST')return abortPackageUpload(request,env);if(p==='/api/admin/packages/finalize'&&request.method==='POST')return finalizePackage(request,env);}
   if(p.startsWith('/v2/')){const version=safeVersion(request.headers.get('X-CapOS-Version'),env);const sources=await upstreams(env,version);const first=sources.find(s=>s.enabled);if(!first)return json({'error-list':[{'code':'no-upstream','message':'No enabled Snap upstream.'}]},503);const target=new URL(first.apiUrl);target.pathname=p;target.search=url.search;const headers=new Headers(request.headers);headers.set('Snap-Device-Series',headers.get('Snap-Device-Series')||'16');headers.set('User-Agent','CapOS-snapd/1');headers.delete('host');const response=await fetch(new Request(target,{method:request.method,headers,body:['GET','HEAD'].includes(request.method)?undefined:request.body,redirect:'manual'}));return response;}
   return json({error:'Not found.'},404);
 }
