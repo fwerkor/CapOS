@@ -1,0 +1,27 @@
+name = "capos-snap-store"
+main = "worker/index.ts"
+compatibility_date = "2026-08-18"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = ["/api/*", "/v2/*", "/download/*"]
+
+# Fill the database id after creating the production D1 database:
+# npx wrangler d1 create capos-snap-store
+[[d1_databases]]
+binding = "DB"
+database_name = "capos-snap-store"
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"
+
+[[r2_buckets]]
+binding = "ARTIFACTS"
+bucket_name = "capos"
+
+[vars]
+DEFAULT_VERSION = "rolling"
+REPO_PUBLIC_BASE = "https://repo.capos.top"
+# Secrets: ADMIN_PIN_HASH, SESSION_SECRET
