@@ -89,7 +89,7 @@ function Storefront() {
   const [selected, setSelected] = useState<StoreApp | null>(null);
   const [detailLoadingName, setDetailLoadingName] = useState<string | null>(null);
   const [featuredPage, setFeaturedPage] = useState(0);
-  const [showAll, setShowAll] = useState(false);
+  const [visibleCatalogCount, setVisibleCatalogCount] = useState(36);
   const [catalogLoading, setCatalogLoading] = useState(true);
   useEffect(() => {
     let cancelled = false;
@@ -157,7 +157,8 @@ function Storefront() {
   const featured = featuredApps.slice(featuredPage * 4, featuredPage * 4 + 4);
   const essential = data?.apps.filter(a => !a.featured).slice(0, 8) || [];
   const categoryShelves = (data?.categories || []).slice(0, 3).map(category => ({ category, apps: data?.apps.filter(app => app.category === category.name).slice(0, 4) || [] })).filter(shelf => shelf.apps.length > 0);
-  const visibleCatalog = data?.apps.slice(0, showAll ? undefined : 36) || [];
+  const visibleCatalog = data?.apps.slice(0, visibleCatalogCount) || [];
+  const catalogRemaining = Math.max(0, (data?.apps.length || 0) - visibleCatalogCount);
   useEffect(() => { if (featuredPage >= featuredPageCount) setFeaturedPage(0); }, [featuredPage, featuredPageCount]);
 
   return <Shell><main>
@@ -173,7 +174,7 @@ function Storefront() {
 
         {categoryShelves.length > 0 && <section className="section-block"><div className="section-heading"><div><span>COLLECTIONS</span><h2>Explore more</h2></div></div><div className="store-shelves">{categoryShelves.map(shelf => <div className="store-shelf" key={shelf.category.name}><div className="shelf-heading"><span>{shelf.category.glyph}</span><div><strong>{shelf.category.name}</strong><small>{shelf.category.count} apps in this collection</small></div></div>{shelf.apps.map(app => <AppRow key={app.id} app={app} onOpen={() => openApp(app)}/>)}</div>)}</div></section>}
 
-        <section id="all" className="section-block"><div className="section-heading"><div><span>EXPLORE</span><h2>Apps & services</h2><small className="catalog-note">{catalogLoading ? <><span className="catalog-spinner"/> Loading more apps…</> : <>{data?.apps.length || 0} apps loaded{data?.availableCount && data.availableCount > (data?.apps.length || 0) ? ` · ${data.availableCount.toLocaleString()} available upstream · search spans the full catalog` : ' from CapOS and upstream stores'}</>}</small></div><SearchBox value={query} onChange={updateQuery} compact/></div><div className="app-list broad">{visibleCatalog.map(app => <AppRow key={app.id} app={app} onOpen={() => openApp(app)}/>)}</div>{data && data.apps.length > visibleCatalog.length && <div className="show-more"><button onClick={() => setShowAll(true)}>Show all {data.apps.length} apps <ChevronDown/></button></div>}</section>
+        <section id="all" className="section-block"><div className="section-heading"><div><span>EXPLORE</span><h2>Apps & services</h2><small className="catalog-note">{catalogLoading ? <><span className="catalog-spinner"/> Loading more apps…</> : <>{data?.availableCount ? `${data.availableCount.toLocaleString()} apps available upstream · search spans the full catalog` : 'Apps from CapOS and upstream stores'}</>}</small></div><SearchBox value={query} onChange={updateQuery} compact/></div><div className="app-list broad">{visibleCatalog.map(app => <AppRow key={app.id} app={app} onOpen={() => openApp(app)}/>)}</div>{data && catalogRemaining > 0 && <div className="show-more"><button onClick={() => setVisibleCatalogCount(count => Math.min(count + 100, data.apps.length))}>Show {Math.min(100, catalogRemaining)} more <ChevronDown/></button></div>}</section>
       </>}
     </div>
   </main><footer className="store-footer"><div className="store-container"><div><b>CapOS App Store</b><span>Packages from CapOS and configured upstreams.</span></div><div><a href="https://capos.top">capos.top</a><a href="https://repo.capos.top">Repository</a><a href="/admin">Admin</a></div></div></footer>{selected && <AppDetail app={selected} loading={detailLoadingName === selected.name} onClose={closeDetail}/>}</Shell>;
