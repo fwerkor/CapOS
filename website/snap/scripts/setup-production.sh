@@ -62,36 +62,12 @@ echo "D1 database: $DB_ID"
 say "Applying D1 migrations"
 npx wrangler d1 migrations apply capos-snap-store --remote
 
-say "Preparing administrator credentials"
-read -rsp "Choose the administrator PIN: " ADMIN_PIN
-echo
-read -rsp "Confirm the administrator PIN: " ADMIN_PIN_CONFIRM
-echo
-if [[ -z "$ADMIN_PIN" || "$ADMIN_PIN" != "$ADMIN_PIN_CONFIRM" ]]; then
-  echo "PINs did not match or were empty." >&2
-  exit 1
-fi
-
-SESSION_SECRET="$(node -e 'console.log(require("crypto").randomBytes(32).toString("hex"))')"
-ADMIN_PIN_HASH="$(PIN="$ADMIN_PIN" SECRET="$SESSION_SECRET" node -e 'console.log(require("crypto").createHash("sha256").update(process.env.PIN+":"+process.env.SECRET).digest("hex"))')"
-unset ADMIN_PIN ADMIN_PIN_CONFIRM
-
-SECRETS_FILE="$(mktemp)"
-trap 'rm -f "$SECRETS_FILE"' EXIT
-chmod 600 "$SECRETS_FILE"
-SESSION_SECRET="$SESSION_SECRET" ADMIN_PIN_HASH="$ADMIN_PIN_HASH" node >"$SECRETS_FILE" <<'NODE'
-process.stdout.write(JSON.stringify({
-  SESSION_SECRET: process.env.SESSION_SECRET,
-  ADMIN_PIN_HASH: process.env.ADMIN_PIN_HASH,
-}));
-NODE
-
 say "Building the Snap Store"
 npm ci --no-audit --no-fund
 npm run build
 
 say "Deploying capos-snap"
-npx wrangler deploy --secrets-file "$SECRETS_FILE"
+npx wrangler deploy
 
 if [[ "${SKIP_VERIFY:-0}" != "1" ]]; then
   say "Verifying public endpoints"
@@ -134,6 +110,6 @@ Production setup is complete.
   Admin:  https://snap.capos.top/admin
   D1 ID:  $DB_ID
 
-The generated SESSION_SECRET and PIN hash were uploaded directly to Cloudflare and were not saved in the repository.
+The admin UI and API are protected by Cloudflare Access; no application-level PIN secret is required.
 The D1 database ID was written to website/snap/wrangler.toml; it is not a secret and should be committed.
 EOF

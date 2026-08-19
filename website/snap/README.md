@@ -4,12 +4,12 @@
 
 - a public, App Store-style catalog for CapOS users;
 - Snap Store compatible `/v2/*` federation endpoints and proxied upstream downloads;
-- a PIN-protected `/admin` console for repository versions, upstream order, local packages and CapOS metadata.
+- a Cloudflare Access-protected `/admin` console for repository versions, upstream order, local packages and CapOS metadata.
 
 ## Architecture
 
-- **Cloudflare Worker**: API, authentication, upstream federation, streaming proxy and authenticated package upload controller.
-- **D1**: repository versions, ordered upstreams, local Snap metadata, sessions and audit log.
+- **Cloudflare Worker**: API, Access JWT verification, upstream federation, streaming proxy and authenticated package upload controller.
+- **D1**: repository versions, ordered upstreams, local Snap metadata and audit log.
 - **Cloudflare R2 / `repo.capos.top`**: the existing `capos` bucket stores local artifacts at `/<version>/snaps/*.snap`.
 - **Canonical/other upstreams**: queried in priority order. Their Snap downloads are proxied in real time and are never mirrored into R2.
 
@@ -24,7 +24,7 @@ npm install
 npm run dev
 ```
 
-Vite development mode uses representative catalog/admin data so the UI can be developed without production credentials. Any non-empty PIN unlocks the local admin preview.
+Vite development mode uses representative catalog/admin data so the UI can be developed without production credentials.
 
 ## Production setup
 
@@ -34,19 +34,11 @@ The production bootstrap is intentionally one command:
 npm run setup:production
 ```
 
-It authenticates Wrangler if necessary, reuses or creates the `capos-snap-store` D1 database in APAC, writes its non-secret database ID into `wrangler.toml`, applies migrations, prompts for the administrator PIN, generates `SESSION_SECRET` and `ADMIN_PIN_HASH`, builds and deploys the Worker, binds the existing `capos` R2 bucket, creates the `snap.capos.top` custom domain, and verifies the public endpoints.
+It authenticates Wrangler if necessary, reuses or creates the `capos-snap-store` D1 database in APAC, writes its non-secret database ID into `wrangler.toml`, applies migrations, builds and deploys the Worker, binds the existing `capos` R2 bucket, creates the `snap.capos.top` custom domain, and verifies the public endpoints.
 
-The only interactive steps are Cloudflare authorization in the browser and choosing the administrator PIN. The generated session secret and PIN hash are sent to Cloudflare through Wrangler and are never written to the repository.
+Production admin access is enforced by the `CapOS Snap Admin` Cloudflare Access application. It protects `/admin`, `/admin/*`, `/api/admin` and `/api/admin/*`; the Worker also validates the Access JWT audience before serving admin APIs. The public storefront and `/embed` stay outside Access.
 
-The resulting D1 database ID is not secret and should be committed after the first production setup.
-
-Generate the administrator hash without putting the PIN into the repository:
-
-```sh
-node -e "const c=require('crypto'); const pin=process.env.PIN; const secret=process.env.SESSION_SECRET; console.log(c.createHash('sha256').update(pin+':'+secret).digest('hex'))"
-```
-
-The admin session is an HttpOnly/Secure/SameSite=Strict cookie. Five failed PIN attempts from one IP lock authentication for 15 minutes.
+The resulting D1 database ID and Access audience ID are not secrets and should be committed after the first production setup.
 
 ## R2 uploads
 

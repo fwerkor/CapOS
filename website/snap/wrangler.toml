@@ -2,6 +2,8 @@ name = "capos-snap"
 main = "worker/index.ts"
 compatibility_date = "2026-08-18"
 compatibility_flags = ["nodejs_compat"]
+workers_dev = false
+preview_urls = false
 
 [assets]
 directory = "./dist"
@@ -28,4 +30,5 @@ custom_domain = true
 [vars]
 DEFAULT_VERSION = "rolling"
 REPO_PUBLIC_BASE = "https://repo.capos.top"
-# Secrets: ADMIN_PIN_HASH, SESSION_SECRET
+ACCESS_TEAM_DOMAIN = "fwerkor.cloudflareaccess.com"
+ACCESS_AUD = "c35348d6e3f59bc8857131672c0c59096083cdaaed23536cecee3d9921c2e2a5"
