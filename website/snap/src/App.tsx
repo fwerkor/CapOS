@@ -95,7 +95,7 @@ function Storefront() {
     let cancelled = false;
     let retryTimer: number | undefined;
     let attempts = 0;
-    void getStorefront().then(result => { if (!cancelled) setData(result); });
+    void getStorefront().then(result => { if (!cancelled) setData(current => !current || result.apps.length > current.apps.length ? result : current); });
     const loadCatalog = async () => {
       attempts += 1;
       try {
