@@ -80,14 +80,16 @@ function AppActionButton({ action, onAction, detail = false }: { action: AppActi
 
 function Shell({ children, admin = false }: { children: React.ReactNode; admin?: boolean }) {
   const [mobile, setMobile] = useState(false);
+  const embedded = !admin && window.location.pathname.startsWith('/embed');
+  const home = embedded ? '/embed' : '/';
   return <div className={admin ? 'admin-shell' : undefined}>
     {!admin && <header className="site-header">
       <div className="header-inner">
-        <a className="wordmark" href="/" aria-label="CapOS App Store home"><span className="mark"><Store size={18} /></span><span>CapOS</span><b>App Store</b></a>
+        <a className="wordmark" href={home} aria-label="CapOS App Store home"><span className="mark"><Store size={18} /></span><span>CapOS</span><b>App Store</b></a>
         <nav className={mobile ? 'top-nav mobile-open' : 'top-nav'}>
-          <a href="/" className="active">Discover</a><a href="/#categories">Categories</a><a href="https://capos.top">CapOS</a>
+          <a href={home} className="active">Discover</a><a href={`${home}#categories`}>Categories</a><a href="https://capos.top">CapOS</a>
         </nav>
-        <div className="header-actions"><a href="/admin" className="admin-link"><LockKeyhole size={16} /> Admin</a><button className="menu-button" onClick={() => setMobile(v => !v)}>{mobile ? <X /> : <Menu />}</button></div>
+        <div className="header-actions"><a href="/admin" target={embedded ? '_blank' : undefined} className="admin-link"><LockKeyhole size={16} /> Admin</a><button className="menu-button" onClick={() => setMobile(v => !v)}>{mobile ? <X /> : <Menu />}</button></div>
       </div>
     </header>}
     {children}
