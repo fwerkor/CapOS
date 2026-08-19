@@ -1,11 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import {
   AppWindow, ArrowLeft, ArrowRight, BadgeCheck, Boxes, Check, ChevronDown, ChevronRight,
   CircleGauge, Cloud, Database, Download, ExternalLink, GripVertical, HardDriveDownload,
   LayoutGrid, LockKeyhole, LogOut, Menu, Package, Plus, Search, Server, Settings, ShieldCheck,
   Sparkles, Star, Store, UploadCloud, Users, X
 } from 'lucide-react';
-import { abortPackageUpload, createUpstream, createVersion, finalizePackage, getAdminState, getStorefront, login, logout, requestPackageUpload, saveUpstreams, searchApps, uploadPackagePart } from './api';
+import { abortPackageUpload, createUpstream, createVersion, finalizePackage, getAdminState, getAppDetails, getCatalog, getStorefront, login, logout, requestPackageUpload, saveUpstreams, searchApps, uploadPackagePart } from './api';
 import type { AdminState, StoreApp, StorefrontData, Upstream } from './types';
 
 function initials(app: StoreApp) {
@@ -60,9 +62,9 @@ function AppRow({ app, onOpen }: { app: StoreApp; onOpen: () => void }) {
   </button>;
 }
 
-function AppDetail({ app, onClose }: { app: StoreApp; onClose: () => void }) {
-  return <div className="detail-overlay" role="dialog" aria-modal="true" aria-label={`${app.displayName} details`}>
-    <div className="detail-panel">
+function AppDetail({ app, loading, onClose }: { app: StoreApp; loading: boolean; onClose: () => void }) {
+  return <div className="detail-overlay" role="dialog" aria-modal="true" aria-label={`${app.displayName} details`} onClick={onClose}>
+    <div className="detail-panel" onClick={event => event.stopPropagation()}>
       <button className="close-detail" onClick={onClose}><X /></button>
       <div className="detail-hero">
         <AppIcon app={app} size="lg" />
@@ -72,7 +74,7 @@ function AppDetail({ app, onClose }: { app: StoreApp; onClose: () => void }) {
       <div className="detail-stats">
         <div><span>VERSION</span><strong>{app.version}</strong></div><div><span>CHANNEL</span><strong>{app.channel}</strong></div><div><span>ARCHITECTURES</span><strong>{app.architectures.join(' · ')}</strong></div><div><span>SOURCE</span><strong>{app.sourceName}</strong></div>
       </div>
-      <section className="detail-section"><h3>About</h3><p>{app.description}</p></section>
+      <section className="detail-section"><h3>About</h3>{loading ? <div className="detail-about-loading"><div className="spinner"/>Loading details…</div> : <div className="detail-markdown"><ReactMarkdown remarkPlugins={[remarkGfm]}>{app.description || app.summary}</ReactMarkdown></div>}</section>
       <section className="detail-section"><h3>CapOS integration</h3><div className="integration-card"><div className="integration-icon"><AppWindow /></div><div><strong>{app.webdesktop === 'native' ? 'Native WebDesktop app' : app.webdesktop === 'web' ? 'Web service integration' : app.webdesktop === 'gui' ? 'GUI bridge ready' : 'Service integration'}</strong><p>CapOS can install, update and manage this app from WebDesktop.</p></div><Check /></div></section>
       <section className="detail-section"><h3>Information</h3><dl className="info-list"><div><dt>Publisher</dt><dd>{app.publisher}</dd></div><div><dt>Category</dt><dd>{app.category}</dd></div><div><dt>Updated</dt><dd>{app.updated || 'Recently'}</dd></div><div><dt>Package</dt><dd>{app.name}</dd></div></dl></section>
     </div>
@@ -83,27 +85,72 @@ function Storefront() {
   const [data, setData] = useState<StorefrontData | null>(null);
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState<StoreApp[] | null>(null);
+  const [searchLoading, setSearchLoading] = useState(false);
   const [selected, setSelected] = useState<StoreApp | null>(null);
+  const [detailLoadingName, setDetailLoadingName] = useState<string | null>(null);
   const [featuredPage, setFeaturedPage] = useState(0);
   const [showAll, setShowAll] = useState(false);
-  useEffect(() => { getStorefront().then(setData); }, []);
+  const [catalogLoading, setCatalogLoading] = useState(true);
+  useEffect(() => {
+    let cancelled = false;
+    let retryTimer: number | undefined;
+    let attempts = 0;
+    void getStorefront().then(result => { if (!cancelled) setData(result); });
+    const loadCatalog = async () => {
+      attempts += 1;
+      try {
+        const result = await getCatalog();
+        if (cancelled) return;
+        setData(current => !current || result.apps.length >= current.apps.length ? result : current);
+        if (result.apps.length > 120) setCatalogLoading(false);
+        if (result.refreshing && attempts < 8) retryTimer = window.setTimeout(() => void loadCatalog(), 5000);
+        else setCatalogLoading(false);
+      } catch {
+        if (!cancelled) setCatalogLoading(false);
+      }
+    };
+    void loadCatalog();
+    return () => { cancelled = true; if (retryTimer) window.clearTimeout(retryTimer); };
+  }, []);
   useEffect(() => {
     const q = query.trim();
-    if (!q) { setSearchResults(null); return; }
+    if (!q) { setSearchResults(null); setSearchLoading(false); return; }
+    let cancelled = false;
     const timer = window.setTimeout(() => {
-      void searchApps(q).then(setSearchResults).catch(() => {
-        if (!data) return setSearchResults([]);
+      void searchApps(q).then(results => {
+        if (cancelled) return;
+        setSearchResults(results);
+        setSearchLoading(false);
+      }).catch(() => {
+        if (cancelled) return;
+        if (!data) { setSearchResults([]); setSearchLoading(false); return; }
         const local = q.toLowerCase();
         setSearchResults(data.apps.filter(a => [a.displayName,a.publisher,a.summary,a.category,a.name].some(v => v.toLowerCase().includes(local))));
+        setSearchLoading(false);
       });
     }, 220);
-    return () => window.clearTimeout(timer);
+    return () => { cancelled = true; window.clearTimeout(timer); };
   }, [query, data]);
+  const updateQuery = (value: string) => {
+    setQuery(value);
+    setSearchResults(null);
+    setSearchLoading(Boolean(value.trim()));
+  };
+  const openApp = (app: StoreApp) => {
+    setSelected(app);
+    setDetailLoadingName(app.name);
+    void getAppDetails(app.name).then(detail => {
+      setSelected(current => current?.name === app.name ? { ...current, ...detail, version: current.version, channel: current.channel, architectures: current.architectures } : current);
+    }).catch(() => {}).finally(() => {
+      setDetailLoadingName(current => current === app.name ? null : current);
+    });
+  };
+  const closeDetail = () => { setSelected(null); setDetailLoadingName(null); };
   const apps = useMemo(() => {
     if (!data) return [];
     const q = query.trim().toLowerCase();
     if (!q) return data.apps;
-    return searchResults ?? data.apps.filter(a => [a.displayName,a.publisher,a.summary,a.category,a.name].some(v => v.toLowerCase().includes(q)));
+    return searchResults ?? [];
   }, [data, query, searchResults]);
   const featuredApps = data?.apps.filter(a => a.featured) || [];
   const featuredPageCount = Math.max(1, Math.ceil(featuredApps.length / 4));
@@ -114,22 +161,22 @@ function Storefront() {
   useEffect(() => { if (featuredPage >= featuredPageCount) setFeaturedPage(0); }, [featuredPage, featuredPageCount]);
 
   return <Shell><main>
-    <section className="store-hero"><div className="hero-glow"/><div className="store-container hero-content"><div className="hero-kicker"><Sparkles size={16}/> Apps for your CapOS</div><h1>Everything your server<br/>can become.</h1><p>Discover trusted apps, services and tools from CapOS and the wider Snap ecosystem.</p><SearchBox value={query} onChange={setQuery}/><div className="hero-note"><ShieldCheck size={15}/> Verified packages · Fast proxied downloads · Managed by CapOS</div></div></section>
+    <section className="store-hero"><div className="hero-glow"/><div className="store-container hero-content"><div className="hero-kicker"><Sparkles size={16}/> Apps for your CapOS</div><h1>Everything your server<br/>can become.</h1><p>Discover trusted apps, services and tools from CapOS and the wider Snap ecosystem.</p><SearchBox value={query} onChange={updateQuery}/><div className="hero-note"><ShieldCheck size={15}/> Verified packages · Fast proxied downloads · Managed by CapOS</div></div></section>
 
     <div className="store-container store-body">
-      {query ? <section className="section-block"><div className="section-heading"><div><span>SEARCH RESULTS</span><h2>{apps.length} app{apps.length === 1 ? '' : 's'} for “{query}”</h2></div></div><div className="app-list">{apps.map(app => <AppRow key={app.id} app={app} onOpen={() => setSelected(app)}/>)}</div></section> : <>
-        <section className="section-block"><div className="section-heading"><div><span>DISCOVER</span><h2>Featured this week</h2></div><div className="carousel-controls"><span>{featuredPage + 1} / {featuredPageCount}</span><div className="carousel-arrows"><button aria-label="Previous featured apps" disabled={featuredPageCount <= 1} onClick={() => setFeaturedPage(page => (page - 1 + featuredPageCount) % featuredPageCount)}><ArrowLeft/></button><button aria-label="Next featured apps" disabled={featuredPageCount <= 1} onClick={() => setFeaturedPage(page => (page + 1) % featuredPageCount)}><ArrowRight/></button></div></div></div><div className="featured-grid" key={featuredPage}>{featured.map(app => <FeaturedCard key={app.id} app={app} onOpen={() => setSelected(app)}/>)}</div></section>
+      {query ? <section className="section-block">{searchLoading ? <div className="search-loading"><div className="spinner"/><span>Loading results…</span></div> : <><div className="section-heading"><div><span>SEARCH RESULTS</span><h2>{apps.length} app{apps.length === 1 ? '' : 's'} for “{query}”</h2></div></div><div className="app-list">{apps.map(app => <AppRow key={app.id} app={app} onOpen={() => openApp(app)}/>)}</div>{apps.length === 0 && <div className="search-empty">No apps found for “{query}”.</div>}</>}</section> : <>
+        <section className="section-block"><div className="section-heading"><div><span>DISCOVER</span><h2>Featured this week</h2></div><div className="carousel-controls"><span>{featuredPage + 1} / {featuredPageCount}</span><div className="carousel-arrows"><button aria-label="Previous featured apps" disabled={featuredPageCount <= 1} onClick={() => setFeaturedPage(page => (page - 1 + featuredPageCount) % featuredPageCount)}><ArrowLeft/></button><button aria-label="Next featured apps" disabled={featuredPageCount <= 1} onClick={() => setFeaturedPage(page => (page + 1) % featuredPageCount)}><ArrowRight/></button></div></div></div><div className="featured-grid" key={featuredPage}>{featured.map(app => <FeaturedCard key={app.id} app={app} onOpen={() => openApp(app)}/>)}</div></section>
 
-        <section className="section-block"><div className="section-heading"><div><span>TOP PICKS</span><h2>Essential apps</h2></div><a href="#all">See all <ChevronRight size={16}/></a></div><div className="three-column-list">{(essential.length ? essential : data?.apps.slice(0,8) || []).map(app => <AppRow key={app.id} app={app} onOpen={() => setSelected(app)}/>)}</div></section>
+        <section className="section-block"><div className="section-heading"><div><span>TOP PICKS</span><h2>Essential apps</h2></div><a href="#all">See all <ChevronRight size={16}/></a></div><div className="three-column-list">{(essential.length ? essential : data?.apps.slice(0,8) || []).map(app => <AppRow key={app.id} app={app} onOpen={() => openApp(app)}/>)}</div></section>
 
-        <section id="categories" className="section-block"><div className="section-heading"><div><span>BROWSE</span><h2>Categories</h2></div></div><div className="category-grid">{data?.categories.map((c,i) => <button key={c.name} className={`category-card category-${i}`} onClick={() => setQuery(c.name)}><span className="category-glyph">{c.glyph}</span><span><strong>{c.name}</strong><small>{c.count} apps</small></span><ChevronRight/></button>)}</div></section>
+        <section id="categories" className="section-block"><div className="section-heading"><div><span>BROWSE</span><h2>Categories</h2></div></div><div className="category-grid">{data?.categories.map((c,i) => <button key={c.name} className={`category-card category-${i}`} onClick={() => updateQuery(c.name)}><span className="category-glyph">{c.glyph}</span><span><strong>{c.name}</strong><small>{c.count} apps</small></span><ChevronRight/></button>)}</div></section>
 
-        {categoryShelves.length > 0 && <section className="section-block"><div className="section-heading"><div><span>COLLECTIONS</span><h2>Explore more</h2></div></div><div className="store-shelves">{categoryShelves.map(shelf => <div className="store-shelf" key={shelf.category.name}><div className="shelf-heading"><span>{shelf.category.glyph}</span><div><strong>{shelf.category.name}</strong><small>{shelf.category.count} apps in this collection</small></div></div>{shelf.apps.map(app => <AppRow key={app.id} app={app} onOpen={() => setSelected(app)}/>)}</div>)}</div></section>}
+        {categoryShelves.length > 0 && <section className="section-block"><div className="section-heading"><div><span>COLLECTIONS</span><h2>Explore more</h2></div></div><div className="store-shelves">{categoryShelves.map(shelf => <div className="store-shelf" key={shelf.category.name}><div className="shelf-heading"><span>{shelf.category.glyph}</span><div><strong>{shelf.category.name}</strong><small>{shelf.category.count} apps in this collection</small></div></div>{shelf.apps.map(app => <AppRow key={app.id} app={app} onOpen={() => openApp(app)}/>)}</div>)}</div></section>}
 
-        <section id="all" className="section-block"><div className="section-heading"><div><span>EXPLORE</span><h2>Apps & services</h2><small className="catalog-note">{data?.apps.length || 0} apps loaded from CapOS and upstream stores</small></div><SearchBox value={query} onChange={setQuery} compact/></div><div className="app-list broad">{visibleCatalog.map(app => <AppRow key={app.id} app={app} onOpen={() => setSelected(app)}/>)}</div>{data && data.apps.length > visibleCatalog.length && <div className="show-more"><button onClick={() => setShowAll(true)}>Show all {data.apps.length} apps <ChevronDown/></button></div>}</section>
+        <section id="all" className="section-block"><div className="section-heading"><div><span>EXPLORE</span><h2>Apps & services</h2><small className="catalog-note">{catalogLoading ? <><span className="catalog-spinner"/> Loading more apps…</> : <>{data?.apps.length || 0} apps loaded{data?.availableCount && data.availableCount > (data?.apps.length || 0) ? ` · ${data.availableCount.toLocaleString()} available upstream · search spans the full catalog` : ' from CapOS and upstream stores'}</>}</small></div><SearchBox value={query} onChange={updateQuery} compact/></div><div className="app-list broad">{visibleCatalog.map(app => <AppRow key={app.id} app={app} onOpen={() => openApp(app)}/>)}</div>{data && data.apps.length > visibleCatalog.length && <div className="show-more"><button onClick={() => setShowAll(true)}>Show all {data.apps.length} apps <ChevronDown/></button></div>}</section>
       </>}
     </div>
-  </main><footer className="store-footer"><div className="store-container"><div><b>CapOS App Store</b><span>Packages from CapOS and configured upstreams.</span></div><div><a href="https://capos.top">capos.top</a><a href="https://repo.capos.top">Repository</a><a href="/admin">Admin</a></div></div></footer>{selected && <AppDetail app={selected} onClose={() => setSelected(null)}/>}</Shell>;
+  </main><footer className="store-footer"><div className="store-container"><div><b>CapOS App Store</b><span>Packages from CapOS and configured upstreams.</span></div><div><a href="https://capos.top">capos.top</a><a href="https://repo.capos.top">Repository</a><a href="/admin">Admin</a></div></div></footer>{selected && <AppDetail app={selected} loading={detailLoadingName === selected.name} onClose={closeDetail}/>}</Shell>;
 }
 
 function AdminLogin({ onSuccess }: { onSuccess: () => void }) {
