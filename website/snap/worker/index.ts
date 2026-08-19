@@ -19,6 +19,40 @@ function safeVersion(value: string | null, env: Env) { const v = value || env.DE
 function cookie(request: Request, name: string) { const raw = request.headers.get('cookie') || ''; for (const part of raw.split(';')) { const [k,...rest] = part.trim().split('='); if (k === name) return decodeURIComponent(rest.join('=')); } return null; }
 async function body<T>(request: Request): Promise<T> { return request.json() as Promise<T>; }
 
+function publicCacheKey(request: Request, env: Env) {
+  const source = new URL(request.url);
+  const key = new URL(source.origin + source.pathname);
+  if (source.pathname === '/api/storefront') {
+    key.searchParams.set('version', safeVersion(source.searchParams.get('version'), env));
+  } else if (source.pathname === '/api/search') {
+    key.searchParams.set('version', safeVersion(source.searchParams.get('version'), env));
+    key.searchParams.set('q', (source.searchParams.get('q') || '').trim().toLowerCase());
+  }
+  return new Request(key.toString(), { method: 'GET' });
+}
+
+function publicCacheResponse(response: Response, status: 'HIT' | 'MISS', browserTtl: number) {
+  const headers = new Headers(response.headers);
+  headers.set('cache-control', `public, max-age=${browserTtl}, stale-while-revalidate=${browserTtl * 2}`);
+  headers.set('x-capos-cache', status);
+  return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+}
+
+async function edgeCached(request: Request, env: Env, ctx: ExecutionContext, edgeTtl: number, browserTtl: number, loader: () => Promise<Response>) {
+  const cache = await caches.open('capos-snap-public-v1');
+  const key = publicCacheKey(request, env);
+  const cached = await cache.match(key);
+  if (cached) return publicCacheResponse(cached, 'HIT', browserTtl);
+
+  const response = await loader();
+  if (!response.ok) return response;
+  const stored = response.clone();
+  stored.headers.set('cache-control', `public, max-age=${edgeTtl}`);
+  stored.headers.delete('set-cookie');
+  ctx.waitUntil(cache.put(key, stored));
+  return publicCacheResponse(response, 'MISS', browserTtl);
+}
+
 async function audit(env: Env, request: Request, action: string, detail: Record<string, unknown> = {}) {
   await env.DB.prepare('INSERT INTO audit_log(action,detail_json,ip) VALUES(?,?,?)').bind(action, JSON.stringify(detail), ipOf(request)).run();
 }
@@ -69,9 +103,9 @@ function canonicalApp(result: Record<string, any>) {
   return { id: result['snap-id'] || result.name, name: result.name, displayName: snap.title || result.name, publisher: publisher['display-name'] || publisher.username || 'Unknown', summary: snap.summary || '', description: snap.description || snap.summary || '', category: String(category).replace(/(^|-)\w/g,(m:string)=>m.replace('-',' ').toUpperCase()), icon: mediaIcon(snap.media), accent: '#2563eb', source: 'upstream', sourceName: 'Canonical', verified: publisher.validation === 'verified', featured: categories.some((c:any)=>c.featured), version: revision.version || '—', channel: revision.channel || 'stable', architectures: ['amd64','arm64'], webdesktop: 'unknown', updated: 'Upstream' };
 }
 
-async function canonicalFind(base: string, query: URLSearchParams) {
+async function canonicalFind(base: string, query: URLSearchParams, cacheTtl = 120) {
   const params = new URLSearchParams(query); params.set('fields','title,summary,description,publisher,version,media,categories,download,channel,revision');
-  const response = await fetch(`${base.replace(/\/$/,'')}/v2/snaps/find?${params}`, { headers: { 'Snap-Device-Series': '16', 'Snap-Device-Architecture': 'amd64', 'User-Agent': 'CapOS-Snap-Store/0.1' }, cf: { cacheTtl: 120, cacheEverything: true } });
+  const response = await fetch(`${base.replace(/\/$/,'')}/v2/snaps/find?${params}`, { headers: { 'Snap-Device-Series': '16', 'Snap-Device-Architecture': 'amd64', 'User-Agent': 'CapOS-Snap-Store/0.1' }, cf: { cacheTtl, cacheEverything: true } });
   if (!response.ok) throw new Error(`Upstream returned ${response.status}`);
   const payload = await response.json<{results?:Record<string,any>[]}>(); return (payload.results || []).map(canonicalApp);
 }
@@ -91,8 +125,8 @@ async function storefront(request: Request, env: Env) {
   const first = sources.find(s=>s.enabled); if (first?.kind === 'canonical') {
     try {
       [catalog, featured] = await Promise.all([
-        canonicalFind(first.apiUrl, new URLSearchParams()),
-        canonicalFind(first.apiUrl, new URLSearchParams({category:'featured'}))
+        canonicalFind(first.apiUrl, new URLSearchParams(), 600),
+        canonicalFind(first.apiUrl, new URLSearchParams({category:'featured'}), 300)
       ]);
     } catch { catalog=[]; featured=[]; }
   }
@@ -113,7 +147,7 @@ async function searchStore(request: Request, env: Env) {
   const sources = await upstreams(env, version); const remote: any[] = [];
   for (const source of sources.filter(s => s.enabled)) {
     if (source.kind !== 'canonical') continue;
-    try { remote.push(...await canonicalFind(source.apiUrl, new URLSearchParams({ q }))); } catch { /* try the next configured source */ }
+    try { remote.push(...await canonicalFind(source.apiUrl, new URLSearchParams({ q }), 120)); } catch { /* try the next configured source */ }
   }
   const seen = new Set(locals.map(app => app.name));
   const uniqueRemote = remote.filter(app => {
@@ -233,9 +267,9 @@ async function finalizePackage(request: Request, env: Env) {
 
 async function proxyDownload(request:Request){const u=new URL(request.url);const target=u.searchParams.get('url');if(!target)return json({error:'Missing download URL.'},400);let upstream:URL;try{upstream=new URL(target)}catch{return json({error:'Invalid download URL.'},400)}const allowed=upstream.protocol==='https:'&&(upstream.hostname.endsWith('.snapcraftcontent.com')||upstream.hostname.endsWith('.canonical.com')||upstream.hostname.endsWith('.ubuntu.com'));if(!allowed)return json({error:'Download host is not an allowed upstream.'},403);const headers=new Headers(request.headers);headers.delete('cookie');headers.delete('authorization');const response=await fetch(new Request(upstream,{method:'GET',headers,redirect:'follow'}));const out=new Headers(response.headers);out.set('cache-control','public, max-age=3600');out.delete('set-cookie');return new Response(response.body,{status:response.status,headers:out})}
 
-async function api(request:Request,env:Env){const url=new URL(request.url);const p=url.pathname;
-  if(p==='/api/storefront'&&request.method==='GET')return storefront(request,env);
-  if(p==='/api/search'&&request.method==='GET')return searchStore(request,env);
+async function api(request:Request,env:Env,ctx:ExecutionContext){const url=new URL(request.url);const p=url.pathname;
+  if(p==='/api/storefront'&&request.method==='GET')return edgeCached(request,env,ctx,120,15,()=>storefront(request,env));
+  if(p==='/api/search'&&request.method==='GET')return edgeCached(request,env,ctx,60,10,()=>searchStore(request,env));
   if(p==='/api/admin/auth'&&request.method==='POST')return login(request,env);
   if(p==='/api/admin/logout'&&request.method==='POST')return logout(request,env);
   if(p==='/download/upstream'&&request.method==='GET')return proxyDownload(request);
@@ -244,4 +278,4 @@ async function api(request:Request,env:Env){const url=new URL(request.url);const
   return json({error:'Not found.'},404);
 }
 
-export default {async fetch(request:Request,env:Env):Promise<Response>{try{const p=new URL(request.url).pathname;if(p.startsWith('/api/')||p.startsWith('/v2/')||p.startsWith('/download/'))return await api(request,env);return env.ASSETS.fetch(request)}catch(error){console.error(error);return json({error:'Internal store error.'},500)}}};
+export default {async fetch(request:Request,env:Env,ctx:ExecutionContext):Promise<Response>{try{const p=new URL(request.url).pathname;if(p.startsWith('/api/')||p.startsWith('/v2/')||p.startsWith('/download/'))return await api(request,env,ctx);return env.ASSETS.fetch(request)}catch(error){console.error(error);return json({error:'Internal store error.'},500)}}};
