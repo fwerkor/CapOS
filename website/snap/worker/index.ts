@@ -143,6 +143,21 @@ async function postUpstream(request: Request, env: Env) {
   const inserted=await env.DB.prepare('INSERT INTO upstreams(name,api_url,kind,enabled) VALUES(?,?,?,1) RETURNING id').bind(input.name.trim(),parsed.origin,'snap-store').first<{id:number}>(); const max=await env.DB.prepare('SELECT COALESCE(MAX(priority),0) p FROM version_upstreams WHERE version_name=?').bind(version).first<{p:number}>(); await env.DB.prepare('INSERT INTO version_upstreams(version_name,upstream_id,priority,enabled) VALUES(?,?,?,1)').bind(version,inserted!.id,(max?.p||0)+10).run(); await audit(env,request,'upstream.add',{version,id:inserted!.id,name:input.name}); return json({ok:true,id:inserted!.id});
 }
 
+async function postVersion(request: Request, env: Env) {
+  const input=await body<{name:string;label:string;copyFrom?:string}>(request);
+  const name=(input.name||'').trim(); const label=(input.label||'').trim(); const copyFrom=safeVersion(input.copyFrom||null,env);
+  if(!/^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$/.test(name))return json({error:'Version name may only contain letters, numbers, dot, underscore and hyphen.'},400);
+  if(!label||label.length>80)return json({error:'Enter a display label up to 80 characters.'},400);
+  const exists=await env.DB.prepare('SELECT name FROM repository_versions WHERE name=?').bind(name).first<{name:string}>();
+  if(exists)return json({error:'That repository version already exists.'},409);
+  const source=await env.DB.prepare('SELECT name FROM repository_versions WHERE name=?').bind(copyFrom).first<{name:string}>();
+  if(!source)return json({error:'The source repository version does not exist.'},400);
+  await env.DB.prepare('INSERT INTO repository_versions(name,label,active,frozen) VALUES(?,?,1,0)').bind(name,label).run();
+  await env.DB.prepare('INSERT INTO version_upstreams(version_name,upstream_id,priority,enabled) SELECT ?,upstream_id,priority,enabled FROM version_upstreams WHERE version_name=?').bind(name,copyFrom).run();
+  await audit(env,request,'version.create',{name,label,copyFrom});
+  return json({ok:true,version:{name,label,active:true,frozen:false,appCount:0}});
+}
+
 const UPLOAD_PART_SIZE = 32 * 1024 * 1024;
 const MAX_UPLOAD_PART_SIZE = 64 * 1024 * 1024;
 
@@ -224,7 +239,7 @@ async function api(request:Request,env:Env){const url=new URL(request.url);const
   if(p==='/api/admin/auth'&&request.method==='POST')return login(request,env);
   if(p==='/api/admin/logout'&&request.method==='POST')return logout(request,env);
   if(p==='/download/upstream'&&request.method==='GET')return proxyDownload(request);
-  if(p.startsWith('/api/admin/')){if(!(await authenticate(request,env)))return json({error:'Authentication required.'},401);if(p==='/api/admin/state'&&request.method==='GET')return adminState(request,env);if(p==='/api/admin/upstreams'&&request.method==='PUT')return putUpstreams(request,env);if(p==='/api/admin/upstreams'&&request.method==='POST')return postUpstream(request,env);if(p==='/api/admin/packages/uploads'&&request.method==='POST')return startPackageUpload(request,env);if(p==='/api/admin/packages/upload-part'&&request.method==='PUT')return uploadPackagePart(request,env);if(p==='/api/admin/packages/abort'&&request.method==='POST')return abortPackageUpload(request,env);if(p==='/api/admin/packages/finalize'&&request.method==='POST')return finalizePackage(request,env);}
+  if(p.startsWith('/api/admin/')){if(!(await authenticate(request,env)))return json({error:'Authentication required.'},401);if(p==='/api/admin/state'&&request.method==='GET')return adminState(request,env);if(p==='/api/admin/versions'&&request.method==='POST')return postVersion(request,env);if(p==='/api/admin/upstreams'&&request.method==='PUT')return putUpstreams(request,env);if(p==='/api/admin/upstreams'&&request.method==='POST')return postUpstream(request,env);if(p==='/api/admin/packages/uploads'&&request.method==='POST')return startPackageUpload(request,env);if(p==='/api/admin/packages/upload-part'&&request.method==='PUT')return uploadPackagePart(request,env);if(p==='/api/admin/packages/abort'&&request.method==='POST')return abortPackageUpload(request,env);if(p==='/api/admin/packages/finalize'&&request.method==='POST')return finalizePackage(request,env);}
   if(p.startsWith('/v2/')){const version=safeVersion(request.headers.get('X-CapOS-Version'),env);const sources=await upstreams(env,version);const first=sources.find(s=>s.enabled);if(!first)return json({'error-list':[{'code':'no-upstream','message':'No enabled Snap upstream.'}]},503);const target=new URL(first.apiUrl);target.pathname=p;target.search=url.search;const headers=new Headers(request.headers);headers.set('Snap-Device-Series',headers.get('Snap-Device-Series')||'16');headers.set('User-Agent','CapOS-snapd/1');headers.delete('host');const response=await fetch(new Request(target,{method:request.method,headers,body:['GET','HEAD'].includes(request.method)?undefined:request.body,redirect:'manual'}));return response;}
   return json({error:'Not found.'},404);
 }
