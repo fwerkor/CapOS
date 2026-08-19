@@ -1,0 +1,8 @@
+/*
+  ! X-Frame-Options
+
+/admin
+  X-Frame-Options: SAMEORIGIN
+
+/admin/*
+  X-Frame-Options: SAMEORIGIN
