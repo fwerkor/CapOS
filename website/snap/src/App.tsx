@@ -211,7 +211,7 @@ function Storefront() {
   const actionFor = (app: StoreApp, detail = false): AppAction => {
     if (!webdesktop.connected) {
       return detail
-        ? { kind: 'install', label: copiedInstall === app.name ? 'Copied' : 'Install', title: `Copy: snap install ${app.name}` }
+        ? { kind: 'install', label: copiedInstall === app.name ? 'Copied' : 'Install', title: `Copy: sudo snap install ${app.name}` }
         : { kind: 'get' };
     }
     if (webdesktop.installed.has(app.name)) return { kind: 'open' };
@@ -235,7 +235,7 @@ function Storefront() {
       return;
     }
     try {
-      if (!await copyText(`snap install ${app.name}`)) return;
+      if (!await copyText(`sudo snap install ${app.name}`)) return;
       setCopiedInstall(app.name);
       window.setTimeout(() => setCopiedInstall(current => current === app.name ? null : current), 1600);
     } catch {
