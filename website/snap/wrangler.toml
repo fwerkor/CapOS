@@ -1,4 +1,4 @@
-name = "capos-snap-store"
+name = "capos-snap"
 main = "worker/index.ts"
 compatibility_date = "2026-08-18"
 compatibility_flags = ["nodejs_compat"]
