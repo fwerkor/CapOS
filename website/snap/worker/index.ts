@@ -87,9 +87,20 @@ async function upstreams(env: Env, version: string) {
 }
 
 async function storefront(request: Request, env: Env) {
-  const url = new URL(request.url); const version = safeVersion(url.searchParams.get('version'), env); const locals = await localApps(env, version); const sources = await upstreams(env, version); let remote:any[]=[];
-  const first = sources.find(s=>s.enabled); if (first?.kind === 'canonical') { try { remote = await canonicalFind(first.apiUrl,new URLSearchParams({category:'featured'})); } catch { remote=[]; } }
-  const localNames = new Set(locals.map(a=>a.name)); const apps=[...locals,...remote.filter(a=>!localNames.has(a.name))].slice(0,40);
+  const url = new URL(request.url); const version = safeVersion(url.searchParams.get('version'), env); const locals = await localApps(env, version); const sources = await upstreams(env, version); let catalog:any[]=[]; let featured:any[]=[];
+  const first = sources.find(s=>s.enabled); if (first?.kind === 'canonical') {
+    try {
+      [catalog, featured] = await Promise.all([
+        canonicalFind(first.apiUrl, new URLSearchParams()),
+        canonicalFind(first.apiUrl, new URLSearchParams({category:'featured'}))
+      ]);
+    } catch { catalog=[]; featured=[]; }
+  }
+  const featuredNames = new Set(featured.map(app=>app.name));
+  const remote = [...featured.map(app=>({...app,featured:true})), ...catalog.map(app=>({...app,featured:featuredNames.has(app.name)}))];
+  const seen = new Set(locals.map(a=>a.name));
+  const uniqueRemote = remote.filter(app => { if (seen.has(app.name)) return false; seen.add(app.name); return true; });
+  const apps=[...locals,...uniqueRemote].slice(0,120);
   const categoryCounts = new Map<string,number>(); for(const app of apps) categoryCounts.set(app.category,(categoryCounts.get(app.category)||0)+1);
   const glyphs=['⌘','◫','▶','◎','▱','✦']; const categories=[...categoryCounts.entries()].sort((a,b)=>b[1]-a[1]).slice(0,6).map(([name,count],i)=>({name,count,glyph:glyphs[i]}));
   return json({version,apps,categories},200,{'cache-control':'public, max-age=60'});
