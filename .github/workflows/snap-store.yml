@@ -1,0 +1,37 @@
+name: Snap Store
+
+on:
+  pull_request:
+    paths:
+      - "website/snap/**"
+      - ".github/workflows/snap-store.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "website/snap/**"
+      - ".github/workflows/snap-store.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Build and validate Worker
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: website/snap
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: website/snap/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - run: npm run check
+      - run: npm run build
+      - run: bash -n scripts/setup-production.sh
+      - run: npx wrangler deploy --dry-run
