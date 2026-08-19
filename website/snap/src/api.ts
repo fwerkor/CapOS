@@ -35,20 +35,6 @@ export async function searchApps(query: string, version = 'rolling'): Promise<St
   return result.apps;
 }
 
-export async function login(pin: string): Promise<void> {
-  if (import.meta.env.DEV) {
-    if (!pin.trim()) throw new Error('Enter an administrator PIN.');
-    sessionStorage.setItem('capos-admin-dev', '1');
-    return;
-  }
-  await request('/api/admin/auth', { method: 'POST', body: JSON.stringify({ pin }) });
-}
-
-export async function logout(): Promise<void> {
-  if (import.meta.env.DEV) sessionStorage.removeItem('capos-admin-dev');
-  else await request('/api/admin/logout', { method: 'POST', body: '{}' });
-}
-
 export async function getAdminState(version = 'rolling'): Promise<AdminState> {
   if (import.meta.env.DEV) return mockAdmin;
   return request<AdminState>(`/api/admin/state?version=${encodeURIComponent(version)}`);
