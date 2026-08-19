@@ -13,7 +13,7 @@ function initials(app: StoreApp) {
 }
 
 function AppIcon({ app, size = 'md' }: { app: StoreApp; size?: 'sm' | 'md' | 'lg' }) {
-  return <div className={`app-icon app-icon-${size}`} style={{ '--accent': app.accent } as React.CSSProperties}>
+  return <div className={`app-icon app-icon-${size}${app.icon ? ' app-icon-image' : ''}`} style={{ '--accent': app.accent } as React.CSSProperties}>
     {app.icon ? <img src={app.icon} alt="" /> : <span>{initials(app)}</span>}
   </div>;
 }
