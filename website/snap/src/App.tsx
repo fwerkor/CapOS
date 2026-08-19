@@ -84,6 +84,8 @@ function Storefront() {
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState<StoreApp[] | null>(null);
   const [selected, setSelected] = useState<StoreApp | null>(null);
+  const [featuredPage, setFeaturedPage] = useState(0);
+  const [showAll, setShowAll] = useState(false);
   useEffect(() => { getStorefront().then(setData); }, []);
   useEffect(() => {
     const q = query.trim();
@@ -103,20 +105,28 @@ function Storefront() {
     if (!q) return data.apps;
     return searchResults ?? data.apps.filter(a => [a.displayName,a.publisher,a.summary,a.category,a.name].some(v => v.toLowerCase().includes(q)));
   }, [data, query, searchResults]);
-  const featured = data?.apps.filter(a => a.featured).slice(0, 4) || [];
+  const featuredApps = data?.apps.filter(a => a.featured) || [];
+  const featuredPageCount = Math.max(1, Math.ceil(featuredApps.length / 4));
+  const featured = featuredApps.slice(featuredPage * 4, featuredPage * 4 + 4);
+  const essential = data?.apps.filter(a => !a.featured).slice(0, 8) || [];
+  const categoryShelves = (data?.categories || []).slice(0, 3).map(category => ({ category, apps: data?.apps.filter(app => app.category === category.name).slice(0, 4) || [] })).filter(shelf => shelf.apps.length > 0);
+  const visibleCatalog = data?.apps.slice(0, showAll ? undefined : 36) || [];
+  useEffect(() => { if (featuredPage >= featuredPageCount) setFeaturedPage(0); }, [featuredPage, featuredPageCount]);
 
   return <Shell><main>
     <section className="store-hero"><div className="hero-glow"/><div className="store-container hero-content"><div className="hero-kicker"><Sparkles size={16}/> Apps for your CapOS</div><h1>Everything your server<br/>can become.</h1><p>Discover trusted apps, services and tools from CapOS and the wider Snap ecosystem.</p><SearchBox value={query} onChange={setQuery}/><div className="hero-note"><ShieldCheck size={15}/> Verified packages · Fast proxied downloads · Managed by CapOS</div></div></section>
 
     <div className="store-container store-body">
       {query ? <section className="section-block"><div className="section-heading"><div><span>SEARCH RESULTS</span><h2>{apps.length} app{apps.length === 1 ? '' : 's'} for “{query}”</h2></div></div><div className="app-list">{apps.map(app => <AppRow key={app.id} app={app} onOpen={() => setSelected(app)}/>)}</div></section> : <>
-        <section className="section-block"><div className="section-heading"><div><span>DISCOVER</span><h2>Featured this week</h2></div><div className="carousel-arrows"><button aria-label="Previous"><ArrowLeft/></button><button aria-label="Next"><ArrowRight/></button></div></div><div className="featured-grid">{featured.map(app => <FeaturedCard key={app.id} app={app} onOpen={() => setSelected(app)}/>)}</div></section>
+        <section className="section-block"><div className="section-heading"><div><span>DISCOVER</span><h2>Featured this week</h2></div><div className="carousel-controls"><span>{featuredPage + 1} / {featuredPageCount}</span><div className="carousel-arrows"><button aria-label="Previous featured apps" disabled={featuredPageCount <= 1} onClick={() => setFeaturedPage(page => (page - 1 + featuredPageCount) % featuredPageCount)}><ArrowLeft/></button><button aria-label="Next featured apps" disabled={featuredPageCount <= 1} onClick={() => setFeaturedPage(page => (page + 1) % featuredPageCount)}><ArrowRight/></button></div></div></div><div className="featured-grid" key={featuredPage}>{featured.map(app => <FeaturedCard key={app.id} app={app} onOpen={() => setSelected(app)}/>)}</div></section>
 
-        <section className="section-block"><div className="section-heading"><div><span>TOP PICKS</span><h2>Essential apps</h2></div><a href="#all">See all <ChevronRight size={16}/></a></div><div className="three-column-list">{data?.apps.slice(0,6).map(app => <AppRow key={app.id} app={app} onOpen={() => setSelected(app)}/>)}</div></section>
+        <section className="section-block"><div className="section-heading"><div><span>TOP PICKS</span><h2>Essential apps</h2></div><a href="#all">See all <ChevronRight size={16}/></a></div><div className="three-column-list">{(essential.length ? essential : data?.apps.slice(0,8) || []).map(app => <AppRow key={app.id} app={app} onOpen={() => setSelected(app)}/>)}</div></section>
 
         <section id="categories" className="section-block"><div className="section-heading"><div><span>BROWSE</span><h2>Categories</h2></div></div><div className="category-grid">{data?.categories.map((c,i) => <button key={c.name} className={`category-card category-${i}`} onClick={() => setQuery(c.name)}><span className="category-glyph">{c.glyph}</span><span><strong>{c.name}</strong><small>{c.count} apps</small></span><ChevronRight/></button>)}</div></section>
 
-        <section id="all" className="section-block"><div className="section-heading"><div><span>EXPLORE</span><h2>Apps & services</h2></div><SearchBox value={query} onChange={setQuery} compact/></div><div className="app-list broad">{data?.apps.map(app => <AppRow key={app.id} app={app} onOpen={() => setSelected(app)}/>)}</div></section>
+        {categoryShelves.length > 0 && <section className="section-block"><div className="section-heading"><div><span>COLLECTIONS</span><h2>Explore more</h2></div></div><div className="store-shelves">{categoryShelves.map(shelf => <div className="store-shelf" key={shelf.category.name}><div className="shelf-heading"><span>{shelf.category.glyph}</span><div><strong>{shelf.category.name}</strong><small>{shelf.category.count} apps in this collection</small></div></div>{shelf.apps.map(app => <AppRow key={app.id} app={app} onOpen={() => setSelected(app)}/>)}</div>)}</div></section>}
+
+        <section id="all" className="section-block"><div className="section-heading"><div><span>EXPLORE</span><h2>Apps & services</h2><small className="catalog-note">{data?.apps.length || 0} apps loaded from CapOS and upstream stores</small></div><SearchBox value={query} onChange={setQuery} compact/></div><div className="app-list broad">{visibleCatalog.map(app => <AppRow key={app.id} app={app} onOpen={() => setSelected(app)}/>)}</div>{data && data.apps.length > visibleCatalog.length && <div className="show-more"><button onClick={() => setShowAll(true)}>Show all {data.apps.length} apps <ChevronDown/></button></div>}</section>
       </>}
     </div>
   </main><footer className="store-footer"><div className="store-container"><div><b>CapOS App Store</b><span>Packages from CapOS and configured upstreams.</span></div><div><a href="https://capos.top">capos.top</a><a href="https://repo.capos.top">Repository</a><a href="/admin">Admin</a></div></div></footer>{selected && <AppDetail app={selected} onClose={() => setSelected(null)}/>}</Shell>;
