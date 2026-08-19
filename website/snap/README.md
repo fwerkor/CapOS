@@ -28,13 +28,17 @@ Vite development mode uses representative catalog/admin data so the UI can be de
 
 ## Production setup
 
-1. Create the D1 database and replace the placeholder `database_id` in `wrangler.toml`.
-2. Apply `migrations/0001_init.sql` with `npm run db:migrate:remote`.
-3. Keep the `ARTIFACTS` R2 binding pointed at the existing `capos` bucket.
-4. Add Worker secrets:
-   - `SESSION_SECRET`: a long random value;
-   - `ADMIN_PIN_HASH`: SHA-256 hex of `<PIN>:<SESSION_SECRET>`.
-5. Deploy with `npm run deploy` and route `snap.capos.top` to the Worker.
+The production bootstrap is intentionally one command:
+
+```sh
+npm run setup:production
+```
+
+It authenticates Wrangler if necessary, reuses or creates the `capos-snap-store` D1 database in APAC, writes its non-secret database ID into `wrangler.toml`, applies migrations, prompts for the administrator PIN, generates `SESSION_SECRET` and `ADMIN_PIN_HASH`, builds and deploys the Worker, binds the existing `capos` R2 bucket, creates the `snap.capos.top` custom domain, and verifies the public endpoints.
+
+The only interactive steps are Cloudflare authorization in the browser and choosing the administrator PIN. The generated session secret and PIN hash are sent to Cloudflare through Wrangler and are never written to the repository.
+
+The resulting D1 database ID is not secret and should be committed after the first production setup.
 
 Generate the administrator hash without putting the PIN into the repository:
 

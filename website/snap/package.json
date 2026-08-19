@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "check": "tsc -b --pretty false",
     "deploy": "npm run build && wrangler deploy",
+    "setup:production": "bash scripts/setup-production.sh",
     "db:migrate:local": "wrangler d1 migrations apply capos-snap-store --local",
     "db:migrate:remote": "wrangler d1 migrations apply capos-snap-store --remote"
   },

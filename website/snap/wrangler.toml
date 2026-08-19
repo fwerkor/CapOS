@@ -21,6 +21,10 @@ migrations_dir = "migrations"
 binding = "ARTIFACTS"
 bucket_name = "capos"
 
+[[routes]]
+pattern = "snap.capos.top"
+custom_domain = true
+
 [vars]
 DEFAULT_VERSION = "rolling"
 REPO_PUBLIC_BASE = "https://repo.capos.top"
