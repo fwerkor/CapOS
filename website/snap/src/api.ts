@@ -1,5 +1,5 @@
 import { mockAdmin, mockStorefront } from './mock';
-import type { AdminState, StorefrontData, VersionInfo } from './types';
+import type { AdminState, StoreApp, StorefrontData, VersionInfo } from './types';
 
 async function request<T>(url: string, init?: RequestInit): Promise<T> {
   const res = await fetch(url, { credentials: 'same-origin', ...init, headers: { 'content-type': 'application/json', ...(init?.headers || {}) } });
@@ -13,6 +13,17 @@ async function request<T>(url: string, init?: RequestInit): Promise<T> {
 export async function getStorefront(version = 'rolling'): Promise<StorefrontData> {
   if (import.meta.env.DEV) return mockStorefront;
   return request<StorefrontData>(`/api/storefront?version=${encodeURIComponent(version)}`).catch(() => mockStorefront);
+}
+
+export async function getCatalog(version = 'rolling'): Promise<StorefrontData> {
+  if (import.meta.env.DEV) return { ...mockStorefront, availableCount: mockStorefront.apps.length };
+  return request<StorefrontData>(`/api/catalog?version=${encodeURIComponent(version)}`);
+}
+
+export async function getAppDetails(name: string, version = 'rolling'): Promise<StoreApp> {
+  if (import.meta.env.DEV) return mockStorefront.apps.find(app => app.name === name) || mockStorefront.apps[0];
+  const result = await request<{ app: StoreApp }>(`/api/app?version=${encodeURIComponent(version)}&name=${encodeURIComponent(name)}`);
+  return result.app;
 }
 
 export async function searchApps(query: string, version = 'rolling'): Promise<StorefrontData['apps']> {
