@@ -90,7 +90,7 @@ say "Building the Snap Store"
 npm ci --no-audit --no-fund
 npm run build
 
-say "Deploying capos-snap-store"
+say "Deploying capos-snap"
 npx wrangler deploy --secrets-file "$SECRETS_FILE"
 
 if [[ "${SKIP_VERIFY:-0}" != "1" ]]; then
