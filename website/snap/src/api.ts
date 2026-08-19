@@ -1,5 +1,5 @@
 import { mockAdmin, mockStorefront } from './mock';
-import type { AdminState, StorefrontData } from './types';
+import type { AdminState, StorefrontData, VersionInfo } from './types';
 
 async function request<T>(url: string, init?: RequestInit): Promise<T> {
   const res = await fetch(url, { credentials: 'same-origin', ...init, headers: { 'content-type': 'application/json', ...(init?.headers || {}) } });
@@ -51,6 +51,12 @@ export async function saveUpstreams(version: string, upstreams: AdminState['upst
 export async function createUpstream(version: string, name: string, apiUrl: string): Promise<void> {
   if (import.meta.env.DEV) return;
   await request('/api/admin/upstreams', { method: 'POST', body: JSON.stringify({ version, name, apiUrl }) });
+}
+
+export async function createVersion(input: { name: string; label: string; copyFrom: string }): Promise<VersionInfo> {
+  if (import.meta.env.DEV) return { name: input.name, label: input.label, active: true, frozen: false, appCount: 0 };
+  const result = await request<{ version: VersionInfo }>('/api/admin/versions', { method: 'POST', body: JSON.stringify(input) });
+  return result.version;
 }
 
 export interface PackageUploadTicket {
