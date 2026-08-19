@@ -16,7 +16,7 @@ fi
 say "Checking Cloudflare authentication"
 if ! npx wrangler whoami >/dev/null 2>&1; then
   echo "Wrangler is not authenticated. A browser authorization flow will open now."
-  npx wrangler login
+  npx wrangler login --device
 fi
 npx wrangler whoami
 
