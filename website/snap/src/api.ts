@@ -53,9 +53,36 @@ export async function createUpstream(version: string, name: string, apiUrl: stri
   await request('/api/admin/upstreams', { method: 'POST', body: JSON.stringify({ version, name, apiUrl }) });
 }
 
-export async function requestPackageUpload(input: { version: string; name: string; versionString: string; architecture: string; size: number }): Promise<{ uploadUrl: string; objectPath: string }> {
-  if (import.meta.env.DEV) return { uploadUrl: '#mock-upload', objectPath: `${input.version}/snaps/${input.name}_${input.versionString}_${input.architecture}.snap` };
-  return request<{ uploadUrl: string; objectPath: string }>('/api/admin/packages/upload-url', { method: 'POST', body: JSON.stringify(input) });
+export interface PackageUploadTicket {
+  uploadId: string;
+  objectPath: string;
+  partSize: number;
+}
+
+export interface UploadedPart {
+  partNumber: number;
+  etag: string;
+}
+
+export async function requestPackageUpload(input: { version: string; name: string; versionString: string; architecture: string; size: number }): Promise<PackageUploadTicket> {
+  if (import.meta.env.DEV) return { uploadId: 'mock-upload', objectPath: `${input.version}/snaps/${input.name}_${input.versionString}_${input.architecture}.snap`, partSize: 32 * 1024 * 1024 };
+  return request<PackageUploadTicket>('/api/admin/packages/uploads', { method: 'POST', body: JSON.stringify(input) });
+}
+
+export async function uploadPackagePart(input: { version: string; uploadId: string; objectPath: string; partNumber: number; chunk: Blob }): Promise<UploadedPart> {
+  if (import.meta.env.DEV) return { partNumber: input.partNumber, etag: `mock-${input.partNumber}` };
+  const params = new URLSearchParams({ version: input.version, uploadId: input.uploadId, objectPath: input.objectPath, partNumber: String(input.partNumber) });
+  const res = await fetch(`/api/admin/packages/upload-part?${params}`, { method: 'PUT', credentials: 'same-origin', headers: { 'content-type': 'application/octet-stream' }, body: input.chunk });
+  if (!res.ok) {
+    const payload = await res.json().catch(() => null) as { error?: string } | null;
+    throw new Error(payload?.error || `Upload part failed (${res.status})`);
+  }
+  return res.json() as Promise<UploadedPart>;
+}
+
+export async function abortPackageUpload(payload: { version: string; uploadId: string; objectPath: string }): Promise<void> {
+  if (import.meta.env.DEV) return;
+  await request('/api/admin/packages/abort', { method: 'POST', body: JSON.stringify(payload) });
 }
 
 export async function finalizePackage(payload: Record<string, unknown>): Promise<void> {

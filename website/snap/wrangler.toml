@@ -17,9 +17,11 @@ database_name = "capos-snap-store"
 database_id = "00000000-0000-0000-0000-000000000000"
 migrations_dir = "migrations"
 
+[[r2_buckets]]
+binding = "ARTIFACTS"
+bucket_name = "capos"
+
 [vars]
 DEFAULT_VERSION = "rolling"
 REPO_PUBLIC_BASE = "https://repo.capos.top"
-B2_BUCKET = "capos"
-# B2_ENDPOINT must be the S3 endpoint, e.g. https://s3.us-west-004.backblazeb2.com
-# Secrets: ADMIN_PIN_HASH, SESSION_SECRET, B2_KEY_ID, B2_APPLICATION_KEY
+# Secrets: ADMIN_PIN_HASH, SESSION_SECRET

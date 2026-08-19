@@ -3,11 +3,7 @@ interface Env {
   ASSETS: Fetcher;
   DEFAULT_VERSION: string;
   REPO_PUBLIC_BASE: string;
-  B2_BUCKET: string;
-  B2_ENDPOINT?: string;
-  B2_REGION?: string;
-  B2_KEY_ID?: string;
-  B2_APPLICATION_KEY?: string;
+  ARTIFACTS: R2Bucket;
   ADMIN_PIN_HASH?: string;
   SESSION_SECRET?: string;
 }
@@ -136,13 +132,78 @@ async function postUpstream(request: Request, env: Env) {
   const inserted=await env.DB.prepare('INSERT INTO upstreams(name,api_url,kind,enabled) VALUES(?,?,?,1) RETURNING id').bind(input.name.trim(),parsed.origin,'snap-store').first<{id:number}>(); const max=await env.DB.prepare('SELECT COALESCE(MAX(priority),0) p FROM version_upstreams WHERE version_name=?').bind(version).first<{p:number}>(); await env.DB.prepare('INSERT INTO version_upstreams(version_name,upstream_id,priority,enabled) VALUES(?,?,?,1)').bind(version,inserted!.id,(max?.p||0)+10).run(); await audit(env,request,'upstream.add',{version,id:inserted!.id,name:input.name}); return json({ok:true,id:inserted!.id});
 }
 
-async function hmac(key:ArrayBuffer|Uint8Array,value:string){const raw=key instanceof Uint8Array?new Uint8Array(key).buffer:key;const k=await crypto.subtle.importKey('raw',raw,{name:'HMAC',hash:'SHA-256'},false,['sign']);return new Uint8Array(await crypto.subtle.sign('HMAC',k,encoder.encode(value)))}
-function awsEncode(s:string){return encodeURIComponent(s).replace(/[!'()*]/g,c=>`%${c.charCodeAt(0).toString(16).toUpperCase()}`)}
-async function presignedPut(env:Env,objectPath:string,expires=900){if(!env.B2_ENDPOINT||!env.B2_KEY_ID||!env.B2_APPLICATION_KEY)throw new Error('B2 upload credentials are not configured');const endpoint=new URL(env.B2_ENDPOINT);const region=env.B2_REGION||endpoint.hostname.split('.')[1]||'us-west-004';const d=new Date();const amz=d.toISOString().replace(/[:-]|\.\d{3}/g,'');const date=amz.slice(0,8);const scope=`${date}/${region}/s3/aws4_request`;const canonicalUri=`/${awsEncode(env.B2_BUCKET)}/${objectPath.split('/').map(awsEncode).join('/')}`;const q=new URLSearchParams({'X-Amz-Algorithm':'AWS4-HMAC-SHA256','X-Amz-Credential':`${env.B2_KEY_ID}/${scope}`,'X-Amz-Date':amz,'X-Amz-Expires':String(expires),'X-Amz-SignedHeaders':'host'});q.sort();const canonicalRequest=`PUT\n${canonicalUri}\n${q.toString()}\nhost:${endpoint.host}\n\nhost\nUNSIGNED-PAYLOAD`;const requestHash=await sha256(canonicalRequest);const stringToSign=`AWS4-HMAC-SHA256\n${amz}\n${scope}\n${requestHash}`;const kDate=await hmac(encoder.encode(`AWS4${env.B2_APPLICATION_KEY}`),date);const kRegion=await hmac(kDate,region);const kService=await hmac(kRegion,'s3');const kSigning=await hmac(kService,'aws4_request');const signature=hex((await hmac(kSigning,stringToSign)).buffer as ArrayBuffer);return `${endpoint.origin}${canonicalUri}?${q.toString()}&X-Amz-Signature=${signature}`}
+const UPLOAD_PART_SIZE = 32 * 1024 * 1024;
+const MAX_UPLOAD_PART_SIZE = 64 * 1024 * 1024;
 
-async function packageUploadUrl(request:Request,env:Env){const input=await body<{version:string;name:string;versionString:string;architecture:string;size:number}>(request);const version=safeVersion(input.version,env);if(!/^[a-z0-9][a-z0-9+.-]{0,62}$/.test(input.name))return json({error:'Invalid Snap package name.'},400);if(!/^[A-Za-z0-9._+~-]{1,80}$/.test(input.versionString))return json({error:'Invalid version string.'},400);if(!['amd64','arm64','armhf','all'].includes(input.architecture))return json({error:'Invalid architecture.'},400);const objectPath=`${version}/snaps/${input.name}_${input.versionString}_${input.architecture}.snap`;try{return json({uploadUrl:await presignedPut(env,objectPath),objectPath})}catch(error){return json({error:error instanceof Error?error.message:'Unable to sign upload.'},503)}}
+function validSnapObjectPath(objectPath: string, version: string) {
+  return objectPath.startsWith(`${version}/snaps/`) && objectPath.endsWith('.snap') && !objectPath.includes('..');
+}
 
-async function finalizePackage(request:Request,env:Env){const input=await body<Record<string,any>>(request);const version=safeVersion(input.version,env);if(!String(input.objectPath||'').startsWith(`${version}/snaps/`)||!String(input.objectPath).endsWith('.snap'))return json({error:'Invalid object path.'},400);const id=`local:${input.name}`;await env.DB.prepare(`INSERT INTO apps(id,name,display_name,publisher,summary,description,category,accent,verified,featured,webdesktop_mode) VALUES(?,?,?,?,?,?,?,?,1,0,'unknown') ON CONFLICT(id) DO UPDATE SET display_name=excluded.display_name,updated_at=CURRENT_TIMESTAMP`).bind(id,input.name,input.displayName||input.name,'CapOS',input.summary||'',input.description||'',input.category||'Utilities',input.accent||'#2563eb').run();const rev=String(Date.now());await env.DB.prepare(`INSERT INTO snap_revisions(app_id,repository_version,snap_version,revision,architecture,channel,object_path,size,published) VALUES(?,?,?,?,?,?,?,?,1)`).bind(id,version,input.versionString,rev,input.architecture,input.channel||'stable',input.objectPath,Number(input.size)||0).run();await audit(env,request,'package.publish',{version,name:input.name,objectPath:input.objectPath});return json({ok:true,revision:rev,downloadUrl:`${env.REPO_PUBLIC_BASE.replace(/\/$/,'')}/${input.objectPath}`})}
+async function startPackageUpload(request: Request, env: Env) {
+  const input = await body<{ version: string; name: string; versionString: string; architecture: string; size: number }>(request);
+  const version = safeVersion(input.version, env);
+  if (!/^[a-z0-9][a-z0-9+.-]{0,62}$/.test(input.name)) return json({ error: 'Invalid Snap package name.' }, 400);
+  if (!/^[A-Za-z0-9._+~-]{1,80}$/.test(input.versionString)) return json({ error: 'Invalid version string.' }, 400);
+  if (!['amd64', 'arm64', 'armhf', 'all'].includes(input.architecture)) return json({ error: 'Invalid architecture.' }, 400);
+  if (!Number.isSafeInteger(input.size) || input.size <= 0) return json({ error: 'Invalid package size.' }, 400);
+
+  const objectPath = `${version}/snaps/${input.name}_${input.versionString}_${input.architecture}.snap`;
+  const upload = await env.ARTIFACTS.createMultipartUpload(objectPath, {
+    httpMetadata: { contentType: 'application/vnd.snap' },
+  });
+  await audit(env, request, 'package.upload.start', { version, name: input.name, objectPath, size: input.size });
+  return json({ uploadId: upload.uploadId, objectPath, partSize: UPLOAD_PART_SIZE });
+}
+
+async function uploadPackagePart(request: Request, env: Env) {
+  const url = new URL(request.url);
+  const version = safeVersion(url.searchParams.get('version'), env);
+  const objectPath = url.searchParams.get('objectPath') || '';
+  const uploadId = url.searchParams.get('uploadId') || '';
+  const partNumber = Number(url.searchParams.get('partNumber'));
+  const contentLength = Number(request.headers.get('content-length') || '0');
+
+  if (!validSnapObjectPath(objectPath, version) || !uploadId) return json({ error: 'Invalid multipart upload.' }, 400);
+  if (!Number.isInteger(partNumber) || partNumber < 1 || partNumber > 10000) return json({ error: 'Invalid part number.' }, 400);
+  if (!request.body) return json({ error: 'Missing upload part.' }, 400);
+  if (contentLength > MAX_UPLOAD_PART_SIZE) return json({ error: 'Upload part is too large.' }, 413);
+
+  const upload = env.ARTIFACTS.resumeMultipartUpload(objectPath, uploadId);
+  const part = await upload.uploadPart(partNumber, request.body);
+  return json({ partNumber: part.partNumber, etag: part.etag });
+}
+
+async function abortPackageUpload(request: Request, env: Env) {
+  const input = await body<{ version: string; objectPath: string; uploadId: string }>(request);
+  const version = safeVersion(input.version, env);
+  if (!validSnapObjectPath(input.objectPath, version) || !input.uploadId) return json({ error: 'Invalid multipart upload.' }, 400);
+  await env.ARTIFACTS.resumeMultipartUpload(input.objectPath, input.uploadId).abort();
+  await audit(env, request, 'package.upload.abort', { version, objectPath: input.objectPath });
+  return json({ ok: true });
+}
+
+async function finalizePackage(request: Request, env: Env) {
+  const input = await body<Record<string, any>>(request);
+  const version = safeVersion(input.version, env);
+  const objectPath = String(input.objectPath || '');
+  const uploadId = String(input.uploadId || '');
+  const parts = Array.isArray(input.parts) ? input.parts : [];
+  const expectedSize = Number(input.size) || 0;
+  if (!validSnapObjectPath(objectPath, version) || !uploadId || !parts.length) return json({ error: 'Invalid multipart upload.' }, 400);
+
+  const completed = await env.ARTIFACTS.resumeMultipartUpload(objectPath, uploadId).complete(parts);
+  if (expectedSize <= 0 || completed.size !== expectedSize) {
+    await env.ARTIFACTS.delete(objectPath);
+    return json({ error: 'Uploaded package size did not match the expected size.' }, 400);
+  }
+
+  const id = `local:${input.name}`;
+  await env.DB.prepare(`INSERT INTO apps(id,name,display_name,publisher,summary,description,category,accent,verified,featured,webdesktop_mode) VALUES(?,?,?,?,?,?,?,?,1,0,'unknown') ON CONFLICT(id) DO UPDATE SET display_name=excluded.display_name,updated_at=CURRENT_TIMESTAMP`).bind(id,input.name,input.displayName||input.name,'CapOS',input.summary||'',input.description||'',input.category||'Utilities',input.accent||'#2563eb').run();
+  const rev = String(Date.now());
+  await env.DB.prepare(`INSERT INTO snap_revisions(app_id,repository_version,snap_version,revision,architecture,channel,object_path,size,published) VALUES(?,?,?,?,?,?,?,?,1)`).bind(id,version,input.versionString,rev,input.architecture,input.channel||'stable',objectPath,completed.size).run();
+  await audit(env,request,'package.publish',{version,name:input.name,objectPath,size:completed.size});
+  return json({ok:true,revision:rev,downloadUrl:`${env.REPO_PUBLIC_BASE.replace(/\/$/,'')}/${objectPath}`});
+}
 
 async function proxyDownload(request:Request){const u=new URL(request.url);const target=u.searchParams.get('url');if(!target)return json({error:'Missing download URL.'},400);let upstream:URL;try{upstream=new URL(target)}catch{return json({error:'Invalid download URL.'},400)}const allowed=upstream.protocol==='https:'&&(upstream.hostname.endsWith('.snapcraftcontent.com')||upstream.hostname.endsWith('.canonical.com')||upstream.hostname.endsWith('.ubuntu.com'));if(!allowed)return json({error:'Download host is not an allowed upstream.'},403);const headers=new Headers(request.headers);headers.delete('cookie');headers.delete('authorization');const response=await fetch(new Request(upstream,{method:'GET',headers,redirect:'follow'}));const out=new Headers(response.headers);out.set('cache-control','public, max-age=3600');out.delete('set-cookie');return new Response(response.body,{status:response.status,headers:out})}
 
@@ -152,7 +213,7 @@ async function api(request:Request,env:Env){const url=new URL(request.url);const
   if(p==='/api/admin/auth'&&request.method==='POST')return login(request,env);
   if(p==='/api/admin/logout'&&request.method==='POST')return logout(request,env);
   if(p==='/download/upstream'&&request.method==='GET')return proxyDownload(request);
-  if(p.startsWith('/api/admin/')){if(!(await authenticate(request,env)))return json({error:'Authentication required.'},401);if(p==='/api/admin/state'&&request.method==='GET')return adminState(request,env);if(p==='/api/admin/upstreams'&&request.method==='PUT')return putUpstreams(request,env);if(p==='/api/admin/upstreams'&&request.method==='POST')return postUpstream(request,env);if(p==='/api/admin/packages/upload-url'&&request.method==='POST')return packageUploadUrl(request,env);if(p==='/api/admin/packages/finalize'&&request.method==='POST')return finalizePackage(request,env);}
+  if(p.startsWith('/api/admin/')){if(!(await authenticate(request,env)))return json({error:'Authentication required.'},401);if(p==='/api/admin/state'&&request.method==='GET')return adminState(request,env);if(p==='/api/admin/upstreams'&&request.method==='PUT')return putUpstreams(request,env);if(p==='/api/admin/upstreams'&&request.method==='POST')return postUpstream(request,env);if(p==='/api/admin/packages/uploads'&&request.method==='POST')return startPackageUpload(request,env);if(p==='/api/admin/packages/upload-part'&&request.method==='PUT')return uploadPackagePart(request,env);if(p==='/api/admin/packages/abort'&&request.method==='POST')return abortPackageUpload(request,env);if(p==='/api/admin/packages/finalize'&&request.method==='POST')return finalizePackage(request,env);}
   if(p.startsWith('/v2/')){const version=safeVersion(request.headers.get('X-CapOS-Version'),env);const sources=await upstreams(env,version);const first=sources.find(s=>s.enabled);if(!first)return json({'error-list':[{'code':'no-upstream','message':'No enabled Snap upstream.'}]},503);const target=new URL(first.apiUrl);target.pathname=p;target.search=url.search;const headers=new Headers(request.headers);headers.set('Snap-Device-Series',headers.get('Snap-Device-Series')||'16');headers.set('User-Agent','CapOS-snapd/1');headers.delete('host');const response=await fetch(new Request(target,{method:request.method,headers,body:['GET','HEAD'].includes(request.method)?undefined:request.body,redirect:'manual'}));return response;}
   return json({error:'Not found.'},404);
 }
