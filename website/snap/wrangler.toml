@@ -14,7 +14,7 @@ run_worker_first = ["/api/*", "/v2/*", "/download/*"]
 [[d1_databases]]
 binding = "DB"
 database_name = "capos-snap-store"
-database_id = "00000000-0000-0000-0000-000000000000"
+database_id = "fb9274f3-a475-4ba8-8d78-86ddad6f911a"
 migrations_dir = "migrations"
 
 [[r2_buckets]]
