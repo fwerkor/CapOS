@@ -399,6 +399,20 @@ async function finalizePackage(request: Request, env: Env) {
 
 async function proxyDownload(request:Request){const u=new URL(request.url);const target=u.searchParams.get('url');if(!target)return json({error:'Missing download URL.'},400);let upstream:URL;try{upstream=new URL(target)}catch{return json({error:'Invalid download URL.'},400)}const allowed=upstream.protocol==='https:'&&(upstream.hostname.endsWith('.snapcraftcontent.com')||upstream.hostname.endsWith('.canonical.com')||upstream.hostname.endsWith('.ubuntu.com'));if(!allowed)return json({error:'Download host is not an allowed upstream.'},403);const headers=new Headers(request.headers);headers.delete('cookie');headers.delete('authorization');const response=await fetch(new Request(upstream,{method:'GET',headers,redirect:'follow'}));const out=new Headers(response.headers);out.set('cache-control','public, max-age=3600');out.delete('set-cookie');return new Response(response.body,{status:response.status,headers:out})}
 
+async function embeddedStore(request: Request, env: Env) {
+  const url = new URL(request.url);
+  url.pathname = '/';
+  url.search = '';
+  const assetRequest = new Request(url.toString(), { method: request.method, headers: request.headers });
+  const response = await env.ASSETS.fetch(assetRequest);
+  const headers = new Headers(response.headers);
+  headers.delete('x-frame-options');
+  headers.delete('content-security-policy');
+  headers.set('content-security-policy', 'frame-ancestors *');
+  headers.set('cache-control', 'no-cache');
+  return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+}
+
 async function api(request:Request,env:Env,ctx:ExecutionContext){const url=new URL(request.url);const p=url.pathname;
   if(p==='/api/storefront'&&request.method==='GET')return edgeCached(request,env,ctx,120,15,()=>storefront(request,env));
   if(p==='/api/catalog'&&request.method==='GET')return edgeCached(request,env,ctx,300,30,()=>richCatalog(request,env,ctx));
@@ -412,4 +426,4 @@ async function api(request:Request,env:Env,ctx:ExecutionContext){const url=new U
   return json({error:'Not found.'},404);
 }
 
-export default {async fetch(request:Request,env:Env,ctx:ExecutionContext):Promise<Response>{try{const p=new URL(request.url).pathname;if(p.startsWith('/api/')||p.startsWith('/v2/')||p.startsWith('/download/'))return await api(request,env,ctx);return env.ASSETS.fetch(request)}catch(error){console.error(error);return json({error:'Internal store error.'},500)}}};
+export default {async fetch(request:Request,env:Env,ctx:ExecutionContext):Promise<Response>{try{const p=new URL(request.url).pathname;if(p==='/embed'||p.startsWith('/embed/'))return await embeddedStore(request,env);if(p.startsWith('/api/')||p.startsWith('/v2/')||p.startsWith('/download/'))return await api(request,env,ctx);return env.ASSETS.fetch(request)}catch(error){console.error(error);return json({error:'Internal store error.'},500)}}};
