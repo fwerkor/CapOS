@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { abortPackageUpload, createUpstream, createVersion, finalizePackage, getAdminState, getAppDetails, getCatalog, getStorefront, login, logout, requestPackageUpload, saveUpstreams, searchApps, uploadPackagePart } from './api';
 import type { AdminState, StoreApp, StorefrontData, Upstream } from './types';
+import { useWebDesktopBridge } from './webdesktop';
 
 function initials(app: StoreApp) {
   return app.displayName.split(/\s+/).slice(0, 2).map(part => part[0]).join('').toUpperCase();
@@ -22,6 +23,59 @@ function AppIcon({ app, size = 'md' }: { app: StoreApp; size?: 'sm' | 'md' | 'lg
 
 function Verified({ app }: { app: StoreApp }) {
   return app.verified ? <BadgeCheck size={15} className="verified" aria-label="Verified publisher" /> : null;
+}
+
+async function copyText(value: string) {
+  if (navigator.clipboard?.writeText) {
+    try {
+      await navigator.clipboard.writeText(value);
+      return true;
+    } catch {
+      // Fall through to the DOM copy path for browsers that deny Clipboard API access.
+    }
+  }
+  const input = document.createElement('textarea');
+  input.value = value;
+  input.setAttribute('readonly', '');
+  input.style.position = 'fixed';
+  input.style.opacity = '0';
+  document.body.appendChild(input);
+  input.select();
+  const copied = document.execCommand('copy');
+  input.remove();
+  return copied;
+}
+
+type AppAction = {
+  kind: 'get' | 'install' | 'open' | 'installing';
+  progress?: number;
+  disabled?: boolean;
+  label?: string;
+  title?: string;
+};
+
+function InstallProgress({ progress, large = false }: { progress: number; large?: boolean }) {
+  return <span
+    className={`install-progress${large ? ' large' : ''}`}
+    style={{ '--install-progress': `${Math.max(0, Math.min(100, progress))}%` } as React.CSSProperties}
+    role="progressbar"
+    aria-label={`Installing ${progress}%`}
+    aria-valuemin={0}
+    aria-valuemax={100}
+    aria-valuenow={progress}
+  ><span>{progress}</span></span>;
+}
+
+function AppActionButton({ action, onAction, detail = false }: { action: AppAction; onAction: () => void; detail?: boolean }) {
+  if (action.kind === 'installing') return <InstallProgress progress={action.progress || 0} large={detail}/>;
+  const label = action.label || (action.kind === 'open' ? 'OPEN' : action.kind === 'install' ? 'Install' : 'GET');
+  return <button
+    type="button"
+    className={detail ? 'primary-action' : 'get-button'}
+    disabled={action.disabled}
+    title={action.title}
+    onClick={event => { event.stopPropagation(); onAction(); }}
+  >{label}</button>;
 }
 
 function Shell({ children, admin = false }: { children: React.ReactNode; admin?: boolean }) {
@@ -55,21 +109,25 @@ function FeaturedCard({ app, onOpen }: { app: StoreApp; onOpen: () => void }) {
   </article>;
 }
 
-function AppRow({ app, onOpen }: { app: StoreApp; onOpen: () => void }) {
-  return <button className="app-row" onClick={onOpen}>
+function AppRow({ app, onOpen, action, onAction }: { app: StoreApp; onOpen: () => void; action: AppAction; onAction: () => void }) {
+  return <div className="app-row" role="button" tabIndex={0} onClick={onOpen} onKeyDown={event => {
+    if (event.target !== event.currentTarget || (event.key !== 'Enter' && event.key !== ' ')) return;
+    event.preventDefault();
+    onOpen();
+  }}>
     <AppIcon app={app} /><span className="app-row-main"><span className="app-title-line"><strong>{app.displayName}</strong><Verified app={app}/></span><span>{app.summary}</span><small>{app.category} · {app.sourceName}</small></span>
-    <span className="get-button">GET</span>
-  </button>;
+    <AppActionButton action={action} onAction={onAction}/>
+  </div>;
 }
 
-function AppDetail({ app, loading, onClose }: { app: StoreApp; loading: boolean; onClose: () => void }) {
+function AppDetail({ app, loading, onClose, action, onAction }: { app: StoreApp; loading: boolean; onClose: () => void; action: AppAction; onAction: () => void }) {
   return <div className="detail-overlay" role="dialog" aria-modal="true" aria-label={`${app.displayName} details`} onClick={onClose}>
     <div className="detail-panel" onClick={event => event.stopPropagation()}>
       <button className="close-detail" onClick={onClose}><X /></button>
       <div className="detail-hero">
         <AppIcon app={app} size="lg" />
         <div><div className="app-title-line big"><h1>{app.displayName}</h1><Verified app={app}/></div><p>{app.summary}</p><div className="publisher">{app.publisher}</div></div>
-        <button className="primary-action">Install</button>
+        <AppActionButton action={action} onAction={onAction} detail/>
       </div>
       <div className="detail-stats">
         <div><span>VERSION</span><strong>{app.version}</strong></div><div><span>CHANNEL</span><strong>{app.channel}</strong></div><div><span>ARCHITECTURES</span><strong>{app.architectures.join(' · ')}</strong></div><div><span>SOURCE</span><strong>{app.sourceName}</strong></div>
@@ -82,6 +140,7 @@ function AppDetail({ app, loading, onClose }: { app: StoreApp; loading: boolean;
 }
 
 function Storefront() {
+  const webdesktop = useWebDesktopBridge();
   const [data, setData] = useState<StorefrontData | null>(null);
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState<StoreApp[] | null>(null);
@@ -91,6 +150,7 @@ function Storefront() {
   const [featuredPage, setFeaturedPage] = useState(0);
   const [visibleCatalogCount, setVisibleCatalogCount] = useState(36);
   const [catalogLoading, setCatalogLoading] = useState(true);
+  const [copiedInstall, setCopiedInstall] = useState<string | null>(null);
   useEffect(() => {
     let cancelled = false;
     let retryTimer: number | undefined;
@@ -146,6 +206,40 @@ function Storefront() {
     });
   };
   const closeDetail = () => { setSelected(null); setDetailLoadingName(null); };
+  const actionFor = (app: StoreApp, detail = false): AppAction => {
+    if (!webdesktop.connected) {
+      return detail
+        ? { kind: 'install', label: copiedInstall === app.name ? 'Copied' : 'Install', title: `Copy: snap install ${app.name}` }
+        : { kind: 'get' };
+    }
+    if (webdesktop.installed.has(app.name)) return { kind: 'open' };
+    if (Object.prototype.hasOwnProperty.call(webdesktop.installing, app.name)) {
+      return { kind: 'installing', progress: webdesktop.installing[app.name] };
+    }
+    return {
+      kind: detail ? 'install' : 'get',
+      disabled: !webdesktop.canInstall,
+      title: webdesktop.canInstall ? `Install ${app.name} on this CapOS system` : 'Administrator access is required to install snaps',
+    };
+  };
+  const performAction = async (app: StoreApp, detail = false) => {
+    if (webdesktop.connected) {
+      if (webdesktop.installed.has(app.name)) webdesktop.open(app.name);
+      else if (webdesktop.canInstall && !Object.prototype.hasOwnProperty.call(webdesktop.installing, app.name)) webdesktop.install(app.name, app.channel || 'stable');
+      return;
+    }
+    if (!detail) {
+      openApp(app);
+      return;
+    }
+    try {
+      if (!await copyText(`snap install ${app.name}`)) return;
+      setCopiedInstall(app.name);
+      window.setTimeout(() => setCopiedInstall(current => current === app.name ? null : current), 1600);
+    } catch {
+      setCopiedInstall(null);
+    }
+  };
   const apps = useMemo(() => {
     if (!data) return [];
     const q = query.trim().toLowerCase();
@@ -165,19 +259,19 @@ function Storefront() {
     <section className="store-hero"><div className="hero-glow"/><div className="store-container hero-content"><div className="hero-kicker"><Sparkles size={16}/> Apps for your CapOS</div><h1>Everything your server<br/>can become.</h1><p>Discover trusted apps, services and tools from CapOS and the wider Snap ecosystem.</p><SearchBox value={query} onChange={updateQuery}/><div className="hero-note"><ShieldCheck size={15}/> Verified packages · Fast proxied downloads · Managed by CapOS</div></div></section>
 
     <div className="store-container store-body">
-      {query ? <section className="section-block">{searchLoading ? <div className="search-loading"><div className="spinner"/><span>Loading results…</span></div> : <><div className="section-heading"><div><span>SEARCH RESULTS</span><h2>{apps.length} app{apps.length === 1 ? '' : 's'} for “{query}”</h2></div></div><div className="app-list">{apps.map(app => <AppRow key={app.id} app={app} onOpen={() => openApp(app)}/>)}</div>{apps.length === 0 && <div className="search-empty">No apps found for “{query}”.</div>}</>}</section> : <>
+      {query ? <section className="section-block">{searchLoading ? <div className="search-loading"><div className="spinner"/><span>Loading results…</span></div> : <><div className="section-heading"><div><span>SEARCH RESULTS</span><h2>{apps.length} app{apps.length === 1 ? '' : 's'} for “{query}”</h2></div></div><div className="app-list">{apps.map(app => <AppRow key={app.id} app={app} onOpen={() => openApp(app)} action={actionFor(app)} onAction={() => void performAction(app)}/>)}</div>{apps.length === 0 && <div className="search-empty">No apps found for “{query}”.</div>}</>}</section> : <>
         <section className="section-block"><div className="section-heading"><div><span>DISCOVER</span><h2>Featured this week</h2></div><div className="carousel-controls"><span>{featuredPage + 1} / {featuredPageCount}</span><div className="carousel-arrows"><button aria-label="Previous featured apps" disabled={featuredPageCount <= 1} onClick={() => setFeaturedPage(page => (page - 1 + featuredPageCount) % featuredPageCount)}><ArrowLeft/></button><button aria-label="Next featured apps" disabled={featuredPageCount <= 1} onClick={() => setFeaturedPage(page => (page + 1) % featuredPageCount)}><ArrowRight/></button></div></div></div><div className="featured-grid" key={featuredPage}>{featured.map(app => <FeaturedCard key={app.id} app={app} onOpen={() => openApp(app)}/>)}</div></section>
 
-        <section className="section-block"><div className="section-heading"><div><span>TOP PICKS</span><h2>Essential apps</h2></div><a href="#all">See all <ChevronRight size={16}/></a></div><div className="three-column-list">{(essential.length ? essential : data?.apps.slice(0,8) || []).map(app => <AppRow key={app.id} app={app} onOpen={() => openApp(app)}/>)}</div></section>
+        <section className="section-block"><div className="section-heading"><div><span>TOP PICKS</span><h2>Essential apps</h2></div><a href="#all">See all <ChevronRight size={16}/></a></div><div className="three-column-list">{(essential.length ? essential : data?.apps.slice(0,8) || []).map(app => <AppRow key={app.id} app={app} onOpen={() => openApp(app)} action={actionFor(app)} onAction={() => void performAction(app)}/>)}</div></section>
 
         <section id="categories" className="section-block"><div className="section-heading"><div><span>BROWSE</span><h2>Categories</h2></div></div><div className="category-grid">{data?.categories.map((c,i) => <button key={c.name} className={`category-card category-${i}`} onClick={() => updateQuery(c.name)}><span className="category-glyph">{c.glyph}</span><span><strong>{c.name}</strong><small>{c.count} apps</small></span><ChevronRight/></button>)}</div></section>
 
-        {categoryShelves.length > 0 && <section className="section-block"><div className="section-heading"><div><span>COLLECTIONS</span><h2>Explore more</h2></div></div><div className="store-shelves">{categoryShelves.map(shelf => <div className="store-shelf" key={shelf.category.name}><div className="shelf-heading"><span>{shelf.category.glyph}</span><div><strong>{shelf.category.name}</strong><small>{shelf.category.count} apps in this collection</small></div></div>{shelf.apps.map(app => <AppRow key={app.id} app={app} onOpen={() => openApp(app)}/>)}</div>)}</div></section>}
+        {categoryShelves.length > 0 && <section className="section-block"><div className="section-heading"><div><span>COLLECTIONS</span><h2>Explore more</h2></div></div><div className="store-shelves">{categoryShelves.map(shelf => <div className="store-shelf" key={shelf.category.name}><div className="shelf-heading"><span>{shelf.category.glyph}</span><div><strong>{shelf.category.name}</strong><small>{shelf.category.count} apps in this collection</small></div></div>{shelf.apps.map(app => <AppRow key={app.id} app={app} onOpen={() => openApp(app)} action={actionFor(app)} onAction={() => void performAction(app)}/>)}</div>)}</div></section>}
 
-        <section id="all" className="section-block"><div className="section-heading"><div><span>EXPLORE</span><h2>Apps & services</h2><small className="catalog-note">{catalogLoading ? <><span className="catalog-spinner"/> Loading more apps…</> : <>{data?.availableCount ? `${data.availableCount.toLocaleString()} apps available upstream · search spans the full catalog` : 'Apps from CapOS and upstream stores'}</>}</small></div><SearchBox value={query} onChange={updateQuery} compact/></div><div className="app-list broad">{visibleCatalog.map(app => <AppRow key={app.id} app={app} onOpen={() => openApp(app)}/>)}</div>{data && catalogRemaining > 0 && <div className="show-more"><button onClick={() => setVisibleCatalogCount(count => Math.min(count + 100, data.apps.length))}>Show {Math.min(100, catalogRemaining)} more <ChevronDown/></button></div>}</section>
+        <section id="all" className="section-block"><div className="section-heading"><div><span>EXPLORE</span><h2>Apps & services</h2><small className="catalog-note">{catalogLoading ? <><span className="catalog-spinner"/> Loading more apps…</> : <>{data?.availableCount ? `${data.availableCount.toLocaleString()} apps available upstream · search spans the full catalog` : 'Apps from CapOS and upstream stores'}</>}</small></div><SearchBox value={query} onChange={updateQuery} compact/></div><div className="app-list broad">{visibleCatalog.map(app => <AppRow key={app.id} app={app} onOpen={() => openApp(app)} action={actionFor(app)} onAction={() => void performAction(app)}/>)}</div>{data && catalogRemaining > 0 && <div className="show-more"><button onClick={() => setVisibleCatalogCount(count => Math.min(count + 100, data.apps.length))}>Show {Math.min(100, catalogRemaining)} more <ChevronDown/></button></div>}</section>
       </>}
     </div>
-  </main><footer className="store-footer"><div className="store-container"><div><b>CapOS App Store</b><span>Packages from CapOS and configured upstreams.</span></div><div><a href="https://capos.top">capos.top</a><a href="https://repo.capos.top">Repository</a><a href="/admin">Admin</a></div></div></footer>{selected && <AppDetail app={selected} loading={detailLoadingName === selected.name} onClose={closeDetail}/>}</Shell>;
+  </main><footer className="store-footer"><div className="store-container"><div><b>CapOS App Store</b><span>Packages from CapOS and configured upstreams.</span></div><div><a href="https://capos.top">capos.top</a><a href="https://repo.capos.top">Repository</a><a href="/admin">Admin</a></div></div></footer>{webdesktop.error && <div className="bridge-error" role="alert">{webdesktop.error}</div>}{selected && <AppDetail app={selected} loading={detailLoadingName === selected.name} onClose={closeDetail} action={actionFor(selected, true)} onAction={() => void performAction(selected, true)}/>}</Shell>;
 }
 
 function AdminLogin({ onSuccess }: { onSuccess: () => void }) {
