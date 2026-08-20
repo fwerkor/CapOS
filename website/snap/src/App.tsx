@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
+import { createPortal } from 'react-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import {
-  AppWindow, ArrowLeft, ArrowRight, BadgeCheck, Boxes, Check, ChevronDown, ChevronRight,
-  CircleGauge, Cloud, Database, Download, ExternalLink, GripVertical, HardDriveDownload,
-  LayoutGrid, Link2, LockKeyhole, LogOut, Menu, Package, Play, Plus, Search, Server, Settings, ShieldCheck,
-  Sparkles, Star, Store, UploadCloud, Users, X
+  AppWindow, ArrowLeft, ArrowRight, BadgeCheck, BookOpen, Boxes, Bug, Check, ChevronDown, ChevronRight,
+  CircleDollarSign, CircleGauge, Cloud, Database, Download, ExternalLink, FileCode2, Globe2, GripVertical,
+  HardDriveDownload, LayoutGrid, Link2, LockKeyhole, LogOut, Mail, Menu, MessageCircle, Package, Play, Plus,
+  Search, Server, Settings, ShieldCheck, Sparkles, Star, Store, UploadCloud, Users, X
 } from 'lucide-react';
 import { abortPackageUpload, createUpstream, createVersion, finalizePackage, getAdminState, getAppDetails, getCatalog, getStorefront, requestPackageUpload, saveUpstreams, searchApps, uploadPackagePart } from './api';
 import type { AdminState, StoreApp, StorefrontData, Upstream } from './types';
@@ -157,12 +158,28 @@ function linkDestination(value: string) {
   }
 }
 
+function PublisherLinkIcon({ label }: { label: string }) {
+  switch (label.trim().toLowerCase()) {
+    case 'website': return <Globe2 />;
+    case 'contact': return <Mail />;
+    case 'documentation': return <BookOpen />;
+    case 'report a bug': return <Bug />;
+    case 'source code': return <FileCode2 />;
+    case 'donate': return <CircleDollarSign />;
+    case 'video': return <Play />;
+    case 'community': return <Users />;
+    case 'chat': return <MessageCircle />;
+    default: return <Link2 />;
+  }
+}
+
 function MediaGallery({ app }: { app: StoreApp }) {
   const items = [
-    ...(app.screenshots || []).map(url => ({ kind: 'image' as const, url })),
     ...(app.videos || []).map(url => ({ kind: 'video' as const, url })),
+    ...(app.screenshots || []).map(url => ({ kind: 'image' as const, url })),
   ];
   const [active, setActive] = useState(0);
+  const [expandedImage, setExpandedImage] = useState<string | null>(null);
   useEffect(() => { if (active >= items.length) setActive(0); }, [active, items.length]);
   if (!items.length) return null;
   const current = items[active] || items[0];
@@ -170,9 +187,10 @@ function MediaGallery({ app }: { app: StoreApp }) {
   return <section className="detail-section media-section">
     <div className="detail-section-heading"><h3>Preview</h3><span>{items.length} {items.length === 1 ? 'item' : 'items'}</span></div>
     <div className="media-stage">
-      {current.kind === 'image' ? <img src={current.url} alt={`${app.displayName} screenshot ${active + 1}`} /> : embed ? <iframe src={embed} title={`${app.displayName} video`} allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowFullScreen /> : <a className="video-link-preview" href={current.url} target="_blank" rel="noreferrer"><span><Play /></span><strong>Watch app video</strong><small>Open the publisher's video <ExternalLink /></small></a>}
+      {current.kind === 'image' ? <button type="button" className="media-image-button" onClick={() => setExpandedImage(current.url)} aria-label="Enlarge screenshot"><img src={current.url} alt={`${app.displayName} screenshot ${active + 1}`} /></button> : embed ? <iframe src={embed} title={`${app.displayName} video`} referrerPolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowFullScreen /> : <a className="video-link-preview" href={current.url} target="_blank" rel="noreferrer"><span><Play /></span><strong>Watch app video</strong><small>Open the publisher's video <ExternalLink /></small></a>}
     </div>
     {items.length > 1 && <div className="media-strip">{items.map((item, index) => <button key={`${item.kind}:${item.url}`} type="button" className={index === active ? 'active' : ''} onClick={() => setActive(index)} aria-label={`Show ${item.kind} ${index + 1}`}>{item.kind === 'image' ? <img src={item.url} alt="" loading="lazy" /> : <span className="video-thumb"><Play /></span>}</button>)}</div>}
+    {expandedImage && createPortal(<div className="media-lightbox" role="dialog" aria-modal="true" aria-label={`${app.displayName} screenshot`} onClick={() => setExpandedImage(null)}><button type="button" className="media-lightbox-close" onClick={() => setExpandedImage(null)} aria-label="Close enlarged screenshot"><X /></button><img src={expandedImage} alt={`${app.displayName} screenshot enlarged`} onClick={event => event.stopPropagation()} /></div>, document.body)}
   </section>;
 }
 
@@ -198,7 +216,7 @@ function AppDetail({ app, loading, onClose, action, onAction }: { app: StoreApp;
       </div>
       <MediaGallery app={app} />
       <section className="detail-section"><h3>About</h3>{loading ? <div className="detail-about-loading"><div className="spinner"/>Loading details…</div> : <div className="detail-markdown"><ReactMarkdown remarkPlugins={[remarkGfm]}>{app.description || app.summary}</ReactMarkdown></div>}</section>
-      {(links.length > 0 || app.storeUrl) && <section className="detail-section"><div className="detail-section-heading"><h3>Links</h3><span>From publisher</span></div><div className="app-link-grid">{links.map(link => <a key={`${link.label}:${link.url}`} href={link.url} target="_blank" rel="noreferrer"><span className="app-link-icon"><Link2 /></span><span><strong>{link.label}</strong><small>{linkDestination(link.url)}</small></span><ExternalLink /></a>)}{app.storeUrl && <a href={app.storeUrl} target="_blank" rel="noreferrer"><span className="app-link-icon"><Store /></span><span><strong>Snap Store</strong><small>Official listing</small></span><ExternalLink /></a>}</div></section>}
+      {(links.length > 0 || app.storeUrl) && <section className="detail-section"><div className="detail-section-heading"><h3>Links</h3><span>From publisher</span></div><div className="app-link-grid">{links.map(link => <a key={`${link.label}:${link.url}`} href={link.url} target="_blank" rel="noreferrer"><span className="app-link-icon"><PublisherLinkIcon label={link.label} /></span><span><strong>{link.label}</strong><small>{linkDestination(link.url)}</small></span><ExternalLink /></a>)}{app.storeUrl && <a href={app.storeUrl} target="_blank" rel="noreferrer"><span className="app-link-icon"><Store /></span><span><strong>Snap Store</strong><small>Official listing</small></span><ExternalLink /></a>}</div></section>}
       <section className="detail-section"><h3>CapOS integration</h3><div className="integration-card"><div className="integration-icon"><AppWindow /></div><div><strong>{app.webdesktop === 'native' ? 'Native WebDesktop app' : app.webdesktop === 'web' ? 'Web service integration' : app.webdesktop === 'gui' ? 'GUI bridge ready' : app.webdesktop === 'service' ? 'Service integration' : 'Snap managed by CapOS'}</strong><p>CapOS can install, update and manage this app from WebDesktop.</p></div><Check /></div></section>
       <section className="detail-section"><h3>Information</h3><dl className="info-list"><div><dt>Publisher</dt><dd>{app.publisher}</dd></div>{app.license && <div><dt>License</dt><dd>{app.license}</dd></div>}{app.confinement && <div><dt>Confinement</dt><dd className="info-capitalize">{app.confinement}</dd></div>}<div><dt>Category</dt><dd>{app.category}</dd></div><div><dt>Updated</dt><dd>{releasedAt || app.updated || 'Recently'}</dd></div><div><dt>Package</dt><dd><code>{app.name}</code></dd></div></dl></section>
     </div>
