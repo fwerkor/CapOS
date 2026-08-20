@@ -44,7 +44,9 @@ define Build/Prepare
 	$(call Build/Prepare/Default)
 	$(SED) 's|AC_CHECK_HEADERS(\[xfs/xqm.h\], \[\], \[AC_MSG_ERROR(xfs/xqm.h unavailable)\])|AC_CHECK_HEADERS([xfs/xqm.h])|' $(PKG_BUILD_DIR)/cmd/configure.ac
 	$(SED) 's|SNAP_MOUNT_DIR_SYSTEMD_UNIT="$$(systemd-escape -p "$$STATIC_SNAP_MOUNT_DIR")"|SNAP_MOUNT_DIR_SYSTEMD_UNIT="var-lib-snapd-snap"|' $(PKG_BUILD_DIR)/cmd/configure.ac
-	(cd $(PKG_BUILD_DIR) && ./mkversion.sh $(PKG_VERSION))
+	(cd $(PKG_BUILD_DIR) && \
+		$(GO_BIN_PATH) GOENV=off GOTOOLCHAIN=local \
+		./mkversion.sh $(PKG_VERSION))
 endef
 
 define Build/Configure
