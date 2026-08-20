@@ -9,6 +9,7 @@ import {
   Search, Server, Settings, ShieldCheck, Sparkles, Star, Store, UploadCloud, Users, X
 } from 'lucide-react';
 import { abortPackageUpload, createUpstream, createVersion, finalizePackage, getAdminState, getAppDetails, getCatalog, getStorefront, requestPackageUpload, saveUpstreams, searchApps, uploadPackagePart } from './api';
+import { snapInstallCommand } from './install';
 import type { AdminState, StoreApp, StorefrontData, Upstream } from './types';
 import { useWebDesktopBridge } from './webdesktop';
 
@@ -337,8 +338,12 @@ function Storefront() {
   };
   const actionFor = (app: StoreApp, detail = false): AppAction => {
     if (!webdesktop.connected) {
+      if (detail && app.source === 'upstream' && !app.confinementByArchitecture) {
+        return { kind: 'install', disabled: true, title: 'Loading architecture-specific install metadata' };
+      }
+      const installCommand = snapInstallCommand(app);
       return detail
-        ? { kind: 'install', label: copiedInstall === app.name ? 'Copied' : 'Install', title: `Copy: sudo snap install ${app.name}` }
+        ? { kind: 'install', label: copiedInstall === app.name ? 'Copied' : 'Install', title: `Copy: ${installCommand}` }
         : { kind: 'get' };
     }
     if (webdesktop.installed.has(app.name)) return { kind: 'open' };
@@ -361,8 +366,9 @@ function Storefront() {
       openApp(app);
       return;
     }
+    if (app.source === 'upstream' && !app.confinementByArchitecture) return;
     try {
-      if (!await copyText(`sudo snap install ${app.name}`)) return;
+      if (!await copyText(snapInstallCommand(app))) return;
       setCopiedInstall(app.name);
       window.setTimeout(() => setCopiedInstall(current => current === app.name ? null : current), 1600);
     } catch {

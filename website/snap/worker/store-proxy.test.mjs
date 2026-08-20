@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import worker from './index.ts';
+import { snapInstallCommand } from '../src/install.ts';
 
 const upstreamRows = [{
   id: 1,
@@ -45,10 +46,19 @@ const ctx = { waitUntil(promise) { pending.push(Promise.resolve(promise)); } };
 const realFetch = globalThis.fetch;
 const realCaches = globalThis.caches;
 const upstreamRequests = [];
+const cacheNames = [];
+const cacheLookups = [];
 
 globalThis.caches = {
-  async open() {
-    return { match: async () => undefined, put: async () => undefined };
+  async open(name) {
+    cacheNames.push(name);
+    return {
+      match: async key => {
+        cacheLookups.push(key instanceof Request ? key.url : String(key));
+        return undefined;
+      },
+      put: async () => undefined,
+    };
   },
 };
 
@@ -109,10 +119,35 @@ globalThis.fetch = async (input, init) => {
         },
         'store-url': 'https://snapcraft.io/nextcloud',
       },
-      'channel-map': [{
-        channel: { architecture: 'amd64', name: 'stable', risk: 'stable', 'released-at': '2026-08-14T08:20:00+00:00' },
-        confinement: 'strict',
-        version: '31.0.8',
+      'channel-map': [
+        {
+          channel: { architecture: 'amd64', name: 'stable', risk: 'stable', 'released-at': '2026-08-14T08:20:00+00:00' },
+          confinement: 'strict',
+          version: '31.0.8',
+        },
+        {
+          channel: { architecture: 'arm64', name: 'stable', risk: 'stable', 'released-at': '2026-08-14T08:20:00+00:00' },
+          confinement: 'classic',
+          version: '31.0.8',
+        },
+      ],
+    }), { headers: { 'content-type': 'application/json' } });
+  }
+
+  if (url.pathname === '/v2/snaps/find') {
+    const fields = url.searchParams.get('fields') || '';
+    assert.match(fields, /confinement/);
+    return new Response(JSON.stringify({
+      results: [{
+        name: 'code',
+        'snap-id': 'code-id',
+        snap: {
+          title: 'Code',
+          summary: 'Code editing. Redefined.',
+          publisher: { 'display-name': 'Microsoft', username: 'vscode', validation: 'verified' },
+          categories: [{ name: 'development' }],
+        },
+        revision: { channel: 'stable', confinement: 'classic', revision: 258, version: '110a328e' },
       }],
     }), { headers: { 'content-type': 'application/json' } });
   }
@@ -192,10 +227,26 @@ try {
   assert.equal(detail.links.find(link => link.label === 'Video')?.url, 'https://notyoutube.com/watch?v=lookalike');
   assert.equal(detail.license, 'AGPL-3.0+');
   assert.equal(detail.confinement, 'strict');
+  assert.deepEqual(detail.confinementByArchitecture, { amd64: 'strict', arm64: 'classic' });
+  const installCommand = snapInstallCommand(detail);
+  assert.match(installCommand, /x86_64\) sudo snap install nextcloud ;;/);
+  assert.match(installCommand, /aarch64\|arm64\) sudo snap install nextcloud --classic ;;/);
+  assert.doesNotMatch(installCommand, /^sudo snap install nextcloud/);
   assert.equal(detail.releasedAt, '2026-08-14T08:20:00+00:00');
   assert.equal(detail.links.find(link => link.label === 'Report a bug')?.url, 'https://github.com/nextcloud-snap/nextcloud-snap/issues');
   assert.equal(detail.links.find(link => link.label === 'Contact')?.url, 'mailto:support@nextcloud.com');
   assert.equal(detail.storeUrl, 'https://snapcraft.io/nextcloud');
+
+  const searchResponse = await worker.fetch(new Request('https://snap.capos.top/api/search?version=rolling&q=code'), env, ctx);
+  assert.equal(searchResponse.status, 200);
+  const search = await searchResponse.json();
+  assert.equal(search.apps[0].name, 'code');
+  assert.equal(search.apps[0].confinement, 'classic');
+
+  const catalogResponse = await worker.fetch(new Request('https://snap.capos.top/api/catalog?version=rolling'), env, ctx);
+  assert.equal(catalogResponse.status, 200);
+  assert.ok(cacheNames.every(name => name === 'capos-snap-public-v4'));
+  assert.ok(cacheLookups.some(value => new URL(value).pathname === '/api/catalog' && new URL(value).searchParams.get('schema') === 'v4'));
 
   localRows = [{
     id: 'local-special-name',

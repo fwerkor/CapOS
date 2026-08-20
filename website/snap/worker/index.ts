@@ -56,7 +56,7 @@ function publicCacheKey(request: Request, env: Env) {
   const key = new URL(source.origin + source.pathname);
   if (source.pathname === '/api/storefront' || source.pathname === '/api/catalog') {
     key.searchParams.set('version', safeVersion(source.searchParams.get('version'), env));
-    if (source.pathname === '/api/catalog') key.searchParams.set('schema', 'v3');
+    if (source.pathname === '/api/catalog') key.searchParams.set('schema', 'v4');
   } else if (source.pathname === '/api/search') {
     key.searchParams.set('version', safeVersion(source.searchParams.get('version'), env));
     key.searchParams.set('q', (source.searchParams.get('q') || '').trim().toLowerCase());
@@ -75,7 +75,7 @@ function publicCacheResponse(response: Response, status: 'HIT' | 'MISS', browser
 }
 
 async function edgeCached(request: Request, env: Env, ctx: ExecutionContext, edgeTtl: number, browserTtl: number, loader: () => Promise<Response>) {
-  const cache = await caches.open('capos-snap-public-v2');
+  const cache = await caches.open('capos-snap-public-v4');
   const key = publicCacheKey(request, env);
   const cached = await cache.match(key);
   if (cached) return publicCacheResponse(cached, 'HIT', browserTtl);
@@ -181,6 +181,7 @@ function canonicalApp(result: Record<string, any>, includeRich = false) {
     featured: categories.some((c: any) => c.featured),
     version: revision.version || '—',
     channel: revision.channel || 'stable',
+    confinement: revision.confinement || undefined,
     architectures: ['amd64', 'arm64'],
     webdesktop: 'unknown',
     updated: 'Upstream',
@@ -206,7 +207,7 @@ function canonicalApp(result: Record<string, any>, includeRich = false) {
   };
 }
 
-const CANONICAL_LIST_FIELDS = 'title,summary,publisher,version,media,categories,channel,revision';
+const CANONICAL_LIST_FIELDS = 'title,summary,publisher,version,media,categories,channel,revision,confinement';
 
 async function canonicalFind(base: string, query: URLSearchParams, cacheTtl = 120) {
   const params = new URLSearchParams(query); params.set('fields',CANONICAL_LIST_FIELDS);
@@ -223,6 +224,9 @@ async function canonicalInfo(base: string, name: string, cacheTtl = 3600) {
   const payload = await response.json<Record<string,any>>();
   const channelMap = Array.isArray(payload['channel-map']) ? payload['channel-map'] : [];
   const preferred = channelMap.find((entry:any) => entry.channel?.architecture === 'amd64' && entry.channel?.risk === 'stable') || channelMap[0] || {};
+  const confinementByArchitecture = Object.fromEntries(channelMap
+    .filter((entry:any) => entry.channel?.name === 'stable' && ['strict','classic','devmode'].includes(entry.confinement))
+    .map((entry:any) => [entry.channel.architecture, entry.confinement]));
   const app = canonicalApp({
     'snap-id': payload['snap-id'],
     name: payload.name || name,
@@ -234,8 +238,11 @@ async function canonicalInfo(base: string, name: string, cacheTtl = 3600) {
       releasedAt: preferred.channel?.['released-at'] || preferred['created-at'],
     },
   }, true);
-  app.architectures = [...new Set(channelMap.map((entry:any) => entry.channel?.architecture).filter(Boolean))] as string[];
-  return app;
+  return {
+    ...app,
+    architectures: [...new Set(channelMap.map((entry:any) => entry.channel?.architecture).filter(Boolean))] as string[],
+    confinementByArchitecture,
+  };
 }
 
 const CANONICAL_CATALOG_CATEGORIES = [
@@ -244,7 +251,7 @@ const CANONICAL_CATALOG_CATEGORIES = [
   'news-and-weather', 'personalisation', 'photo-and-video', 'productivity', 'science',
   'security', 'server-and-cloud', 'social', 'utilities'
 ];
-const CATALOG_SNAPSHOT_KEY = '_cache/canonical-catalog-v3.json';
+const CATALOG_SNAPSHOT_KEY = '_cache/canonical-catalog-v4.json';
 const CATALOG_SNAPSHOT_TTL = 6 * 3600;
 let catalogRefreshPromise: Promise<void> | null = null;
 

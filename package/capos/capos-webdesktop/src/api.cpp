@@ -103,9 +103,19 @@ void handleSystemInfo() {
 }
 
 void handleSnapFind(const std::map<std::string, std::string>& query) {
+    const auto name = query.find("name");
+    if (name != query.end() && !trim(name->second).empty()) {
+        const auto snapName = trim(name->second);
+        if (!validSnapName(snapName)) {
+            sendJson(400, jsonError("invalid snap name", "INVALID_SNAP_NAME"));
+            return;
+        }
+        sendSnapdResponse(snapdRequest("GET", "/v2/find?name=" + percentEncode(snapName)));
+        return;
+    }
     const auto it = query.find("q");
     if (it == query.end() || trim(it->second).empty()) {
-        sendJson(400, jsonError("q is required", "INVALID_REQUEST"));
+        sendJson(400, jsonError("q or name is required", "INVALID_REQUEST"));
         return;
     }
     sendSnapdResponse(snapdRequest("GET", "/v2/find?q=" + percentEncode(trim(it->second))));
@@ -156,6 +166,14 @@ void handleSnapAction(const Session& session, const std::string& snapName, const
         const auto form = parseKv(readRequestBody());
         if (const auto channel = form.find("channel"); channel != form.end() && !channel->second.empty())
             payload += ",\"channel\":\"" + jsonEscape(channel->second) + "\"";
+        if (const auto confinement = form.find("confinement"); confinement != form.end() && !confinement->second.empty()) {
+            if (confinement->second == "classic") payload += ",\"classic\":true";
+            else if (confinement->second == "devmode") payload += ",\"devmode\":true";
+            else if (confinement->second != "strict") {
+                sendJson(400, jsonError("invalid snap confinement", "INVALID_CONFINEMENT"));
+                return;
+            }
+        }
     }
     payload += '}';
     sendSnapdResponse(snapdRequest("POST", "/v2/snaps/" + percentEncode(snapName), payload));

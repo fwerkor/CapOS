@@ -30,6 +30,7 @@ export interface StoreApp {
   links?: { label: string; url: string }[];
   publisherUsername?: string;
   confinement?: 'strict' | 'classic' | 'devmode' | string;
+  confinementByArchitecture?: Record<string, 'strict' | 'classic' | 'devmode' | string>;
   releasedAt?: string;
   updated?: string;
 }
