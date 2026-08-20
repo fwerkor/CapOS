@@ -130,7 +130,7 @@ function videoEmbedUrl(raw: string) {
       const id = url.pathname.split('/').filter(Boolean)[0];
       return id ? `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}` : null;
     }
-    if (host.endsWith('youtube.com')) {
+    if (host === 'youtube.com' || host.endsWith('.youtube.com')) {
       const id = url.searchParams.get('v') || url.pathname.match(/^\/(?:shorts|embed)\/([^/?#]+)/)?.[1];
       return id ? `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}` : null;
     }

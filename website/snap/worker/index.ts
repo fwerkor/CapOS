@@ -113,7 +113,10 @@ function mediaIcon(media: unknown) {
 function isVideoUrl(value: string) {
   try {
     const host = new URL(value).hostname.toLowerCase().replace(/^www\./, '');
-    return host === 'youtu.be' || host.endsWith('youtube.com') || host.endsWith('vimeo.com') || host.endsWith('asciinema.org');
+    return host === 'youtu.be'
+      || host === 'youtube.com' || host.endsWith('.youtube.com')
+      || host === 'vimeo.com' || host.endsWith('.vimeo.com')
+      || host === 'asciinema.org' || host.endsWith('.asciinema.org');
   } catch {
     return false;
   }

@@ -102,6 +102,7 @@ globalThis.fetch = async (input, init) => {
         links: {
           website: ['https://nextcloud.com'],
           issues: ['https://github.com/nextcloud-snap/nextcloud-snap/issues'],
+          video: ['https://notyoutube.com/watch?v=lookalike'],
         },
         'store-url': 'https://snapcraft.io/nextcloud',
       },
@@ -185,6 +186,7 @@ try {
   assert.equal(detail.banner, 'https://example.invalid/banner.png');
   assert.deepEqual(detail.screenshots, ['https://example.invalid/screenshot.png']);
   assert.deepEqual(detail.videos, ['https://vimeo.com/555692548']);
+  assert.equal(detail.links.find(link => link.url.includes('notyoutube.com'))?.label, 'Video');
   assert.equal(detail.license, 'AGPL-3.0+');
   assert.equal(detail.confinement, 'strict');
   assert.equal(detail.releasedAt, '2026-08-14T08:20:00+00:00');
