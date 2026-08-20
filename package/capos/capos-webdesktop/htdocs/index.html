@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CapOS WebDesktop</title>
+  <link rel="stylesheet" href="/cap/assets/styles.css" />
+</head>
+<body>
+  <section class="login" id="loginView">
+    <form class="login-card" id="loginForm">
+      <div class="brand-mark">CapOS</div>
+      <div><h1>WebDesktop</h1><p>使用系统 Linux 用户登录。</p></div>
+      <label><span>用户名</span><input id="username" autocomplete="username" required /></label>
+      <label><span>密码</span><input id="password" type="password" autocomplete="current-password" required /></label>
+      <button class="primary wide" type="submit">登录</button>
+    </form>
+  </section>
+
+  <section class="shell" id="appShell">
+    <header class="topbar">
+      <div class="identity"><strong>CapOS WebDesktop</strong><span id="activeApp">桌面就绪</span></div>
+      <div class="top-actions">
+        <span class="pill" id="userBadge">访客</span>
+        <a class="secondary link-button" href="/cgi-bin/luci/" id="luciLink">LuCI</a>
+        <button class="secondary" id="refreshBtn">刷新</button>
+        <button class="secondary" id="toggleDrawerBtn">应用</button>
+        <button class="danger" id="logoutBtn">退出</button>
+      </div>
+    </header>
+
+    <main class="desktop">
+      <div class="desktop-welcome" id="welcome">
+        <div class="welcome-card">
+          <span class="eyebrow">Official Snap ecosystem</span>
+          <h2>选择一个 Web 应用</h2>
+          <p>CapOS 会从 Snap 的实际运行进程自动发现监听端口并检测 HTTP/HTTPS 入口，不需要单独维护应用适配表。</p>
+          <button class="primary" id="welcomeAppsBtn">查看应用</button>
+        </div>
+      </div>
+      <iframe id="desktopFrame" class="desktop-frame" src="about:blank" title="Snap Web application"></iframe>
+      <div class="desktop-status" id="desktopStatus"></div>
+    </main>
+
+    <aside class="drawer" id="drawer">
+      <div class="drawer-head">
+        <div><h2>应用</h2><p>官方 Snap Store 与本机安装状态。</p></div>
+        <button class="secondary" id="closeDrawerBtn">收起</button>
+      </div>
+      <div class="tabs">
+        <button class="tab active" data-tab="installed">已安装</button>
+        <button class="tab" id="storeTab">Snap Store</button>
+      </div>
+      <section class="tab-pane active" id="installedPane">
+        <div class="pane-tools"><input id="installedSearch" type="search" placeholder="搜索已安装应用" /><span id="installedCount">0 个</span></div>
+        <div class="cards" id="installedList"></div>
+      </section>
+    </aside>
+  </section>
+
+  <dialog id="confirmDialog">
+    <form method="dialog" class="dialog-card">
+      <h3 id="confirmTitle">确认操作</h3><p id="confirmText"></p>
+      <div class="dialog-actions"><button class="secondary" value="cancel">取消</button><button class="danger" id="confirmOk" value="ok">确认</button></div>
+    </form>
+  </dialog>
+  <div class="toasts" id="toasts"></div>
+  <script src="/cap/assets/app.js" defer></script>
+</body>
+</html>

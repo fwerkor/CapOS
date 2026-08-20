@@ -3,7 +3,7 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-SCRIPT="$ROOT_DIR/package/capos/capos-webpanel/files/90-capos-webpanel-uhttpd"
+SCRIPT="$ROOT_DIR/package/capos/capos-webdesktop/files/90-capos-webdesktop-uhttpd"
 TMPDIR="$(mktemp -d)"
 LOG="$TMPDIR/uci.log"
 cleanup() { rm -rf "$TMPDIR"; }
@@ -26,4 +26,4 @@ grep -Fx "add_list uhttpd.main.listen_http=0.0.0.0:2000" "$LOG"
 grep -Fx "add_list uhttpd.main.listen_https=0.0.0.0:2020" "$LOG"
 grep -Fx "set uhttpd.main.cgi_prefix=/cgi-bin" "$LOG"
 
-echo "webpanel runtime config smoke passed"
+echo "webdesktop runtime config smoke passed"

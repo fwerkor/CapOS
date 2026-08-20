@@ -173,8 +173,8 @@ probe_service() {
             return 1
         fi
         if curl -fsS --connect-timeout 2 --max-time 5 "$probe_url" -o "$response"; then
-            if grep -q '"service"[[:space:]]*:[[:space:]]*"capos-webpanel-api"' "$response"; then
-                echo "CapOS webpanel responded on $probe_url"
+            if grep -q '"service"[[:space:]]*:[[:space:]]*"capos-webdesktop-api"' "$response"; then
+                echo "CapOS WebDesktop responded on $probe_url"
                 return 0
             fi
             last_status=1
@@ -184,7 +184,7 @@ probe_service() {
         sleep 3
     done
 
-    echo "timed out waiting for CapOS webpanel on $probe_url (last curl status: $last_status)" >&2
+    echo "timed out waiting for CapOS WebDesktop on $probe_url (last curl status: $last_status)" >&2
     tail -n 240 "$log" >&2 || true
     return 1
 }
