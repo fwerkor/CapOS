@@ -1426,6 +1426,55 @@ config KERNEL_AUDIT
 config KERNEL_SECURITY
 	bool "Enable different security models"
 
+config KERNEL_SECURITYFS
+	bool "Security filesystem support"
+	default y if KERNEL_SECURITY_APPARMOR
+
+config KERNEL_SECURITY_PATH
+	bool "Path based security hooks"
+	default y if KERNEL_SECURITY_APPARMOR
+	select KERNEL_SECURITY
+
+config KERNEL_SECURITY_APPARMOR
+	bool "AppArmor support"
+	default y if PACKAGE_snapd
+	select KERNEL_SECURITY
+	select KERNEL_SECURITYFS
+	select KERNEL_SECURITY_PATH
+	select KERNEL_SECURITY_NETWORK
+	select KERNEL_AUDIT
+	select KERNEL_SQUASHFS_XATTR
+
+config KERNEL_SECURITY_APPARMOR_DEBUG
+	bool "Build AppArmor with debug code"
+	depends on KERNEL_SECURITY_APPARMOR
+	default n
+
+config KERNEL_SECURITY_APPARMOR_INTROSPECT_POLICY
+	bool "Allow loaded AppArmor policy introspection"
+	depends on KERNEL_SECURITY_APPARMOR
+	default y
+
+config KERNEL_SECURITY_APPARMOR_HASH
+	bool "Enable AppArmor profile hash introspection"
+	depends on KERNEL_SECURITY_APPARMOR_INTROSPECT_POLICY
+	default y
+
+config KERNEL_SECURITY_APPARMOR_HASH_DEFAULT
+	bool "Enable AppArmor profile hashing by default"
+	depends on KERNEL_SECURITY_APPARMOR_HASH
+	default y
+
+config KERNEL_SECURITY_APPARMOR_EXPORT_BINARY
+	bool "Allow exporting raw AppArmor policy"
+	depends on KERNEL_SECURITY_APPARMOR_INTROSPECT_POLICY
+	default y
+
+config KERNEL_SECURITY_APPARMOR_PARANOID_LOAD
+	bool "Fully verify loaded AppArmor policy"
+	depends on KERNEL_SECURITY_APPARMOR
+	default y
+
 config KERNEL_SECURITY_NETWORK
 	bool "Socket and Networking Security Hooks"
 	select KERNEL_SECURITY
@@ -1457,8 +1506,10 @@ config KERNEL_SECURITY_SELINUX_SID2STR_CACHE_SIZE
 
 config KERNEL_LSM
 	string
-	default "lockdown,yama,loadpin,safesetid,integrity,selinux"
-	depends on KERNEL_SECURITY_SELINUX
+	default "lockdown,yama,loadpin,safesetid,integrity,apparmor,selinux" if KERNEL_SECURITY_APPARMOR && KERNEL_SECURITY_SELINUX
+	default "lockdown,yama,loadpin,safesetid,integrity,apparmor" if KERNEL_SECURITY_APPARMOR
+	default "lockdown,yama,loadpin,safesetid,integrity,selinux" if KERNEL_SECURITY_SELINUX
+	depends on KERNEL_SECURITY_APPARMOR || KERNEL_SECURITY_SELINUX
 
 config KERNEL_EROFS_FS_SECURITY
 	bool "EROFS Security Labels"
