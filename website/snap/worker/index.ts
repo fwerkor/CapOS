@@ -74,7 +74,7 @@ function publicCacheResponse(response: Response, status: 'HIT' | 'MISS', browser
 }
 
 async function edgeCached(request: Request, env: Env, ctx: ExecutionContext, edgeTtl: number, browserTtl: number, loader: () => Promise<Response>) {
-  const cache = await caches.open('capos-snap-public-v1');
+  const cache = await caches.open('capos-snap-public-v2');
   const key = publicCacheKey(request, env);
   const cached = await cache.match(key);
   if (cached) return publicCacheResponse(cached, 'HIT', browserTtl);
@@ -98,16 +98,111 @@ async function audit(env: Env, request: Request, action: string, detail: Record<
   await env.DB.prepare('INSERT INTO audit_log(action,detail_json,ip) VALUES(?,?,?)').bind(action, JSON.stringify(detail), ipOf(request)).run();
 }
 
-function mediaIcon(media: unknown) {
-  if (!Array.isArray(media)) return undefined;
-  const icon = media.find(item => typeof item === 'object' && item && (item as {type?:string}).type === 'icon') as {url?:string}|undefined;
-  return icon?.url;
+function mediaUrls(media: unknown, type: string) {
+  if (!Array.isArray(media)) return [];
+  return media
+    .filter(item => typeof item === 'object' && item && (item as { type?: string }).type === type)
+    .map(item => (item as { url?: string }).url)
+    .filter((url): url is string => typeof url === 'string' && /^https?:\/\//.test(url));
 }
 
-function canonicalApp(result: Record<string, any>) {
-  const snap = result.snap || {}; const revision = result.revision || {}; const publisher = snap.publisher || {}; const categories = Array.isArray(snap.categories) ? snap.categories : [];
-  const category = categories.find((c:any) => c.name !== 'featured')?.name || 'Utilities';
-  return { id: result['snap-id'] || result.name, name: result.name, displayName: snap.title || result.name, publisher: publisher['display-name'] || publisher.username || 'Unknown', summary: snap.summary || '', description: snap.description || '', category: String(category).replace(/(^|-)\w/g,(m:string)=>m.replace('-',' ').toUpperCase()), icon: mediaIcon(snap.media), accent: '#2563eb', source: 'upstream', sourceName: 'Canonical', verified: publisher.validation === 'verified', featured: categories.some((c:any)=>c.featured), version: revision.version || '—', channel: revision.channel || 'stable', architectures: ['amd64','arm64'], webdesktop: 'unknown', updated: 'Upstream' };
+function mediaIcon(media: unknown) {
+  return mediaUrls(media, 'icon')[0];
+}
+
+function isVideoUrl(value: string) {
+  try {
+    const host = new URL(value).hostname.toLowerCase().replace(/^www\./, '');
+    return host === 'youtu.be'
+      || host === 'youtube.com' || host.endsWith('.youtube.com')
+      || host === 'vimeo.com' || host.endsWith('.vimeo.com')
+      || host === 'asciinema.org' || host.endsWith('.asciinema.org');
+  } catch {
+    return false;
+  }
+}
+
+function linkLabel(value: string) {
+  const labels: Record<string, string> = {
+    website: 'Website', contact: 'Contact', documentation: 'Documentation', issues: 'Report a bug',
+    'source-code': 'Source code', source: 'Source code', donation: 'Donate', donations: 'Donate',
+    video: 'Video', videos: 'Video', forum: 'Community', chat: 'Chat',
+  };
+  return labels[value] || value.split(/[-_]/).filter(Boolean).map(part => part[0]?.toUpperCase() + part.slice(1)).join(' ');
+}
+
+function canonicalLinks(snap: Record<string, any>) {
+  const links: { label: string; url: string }[] = [];
+  const seen = new Set<string>();
+  const push = (label: string, value: unknown) => {
+    if (typeof value !== 'string') return;
+    let url = value.trim();
+    if (label === 'Contact') {
+      const address = url.replace(/^mailto:/i, '');
+      if (/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(address)) url = `mailto:${address}`;
+    }
+    const isWeb = /^https?:\/\//i.test(url);
+    const isMail = label === 'Contact' && /^mailto:[^@\s]+@[^@\s]+\.[^@\s]+$/i.test(url);
+    if (!isWeb && !isMail) return;
+    if (seen.has(url)) return;
+    seen.add(url);
+    links.push({ label, url });
+  };
+  if (snap.links && typeof snap.links === 'object') {
+    for (const [kind, values] of Object.entries(snap.links as Record<string, unknown>)) {
+      for (const value of Array.isArray(values) ? values : [values]) push(linkLabel(kind), value);
+    }
+  }
+  push('Website', snap.website);
+  push('Contact', snap.contact);
+  return links;
+}
+
+function canonicalApp(result: Record<string, any>, includeRich = false) {
+  const snap = result.snap || {};
+  const revision = result.revision || {};
+  const publisher = snap.publisher || {};
+  const categories = Array.isArray(snap.categories) ? snap.categories : [];
+  const category = categories.find((c: any) => c.name !== 'featured')?.name || 'Utilities';
+  const app = {
+    id: result['snap-id'] || result.name,
+    name: result.name,
+    displayName: snap.title || result.name,
+    publisher: publisher['display-name'] || publisher.username || 'Unknown',
+    summary: snap.summary || '',
+    description: snap.description || '',
+    category: String(category).replace(/(^|-)\w/g, (m: string) => m.replace('-', ' ').toUpperCase()),
+    icon: mediaIcon(snap.media),
+    accent: '#2563eb',
+    source: 'upstream',
+    sourceName: 'Canonical',
+    verified: publisher.validation === 'verified',
+    featured: categories.some((c: any) => c.featured),
+    version: revision.version || '—',
+    channel: revision.channel || 'stable',
+    architectures: ['amd64', 'arm64'],
+    webdesktop: 'unknown',
+    updated: 'Upstream',
+  };
+  if (!includeRich) return app;
+
+  const links = canonicalLinks(snap);
+  const linkedVideos = links.filter(link => isVideoUrl(link.url)).map(link => link.url);
+  const videos = [...new Set([...mediaUrls(snap.media, 'video'), ...linkedVideos])];
+  return {
+    ...app,
+    publisherUsername: publisher.username || undefined,
+    banner: mediaUrls(snap.media, 'banner')[0],
+    screenshots: mediaUrls(snap.media, 'screenshot'),
+    videos,
+    license: snap.license || undefined,
+    website: snap.website || undefined,
+    contact: snap.contact || undefined,
+    storeUrl: snap['store-url'] || undefined,
+    links: links.filter(link => !videos.includes(link.url)),
+    confinement: revision.confinement || undefined,
+    releasedAt: revision.releasedAt || undefined,
+  };
 }
 
 const CANONICAL_LIST_FIELDS = 'title,summary,publisher,version,media,categories,channel,revision';
@@ -116,17 +211,28 @@ async function canonicalFind(base: string, query: URLSearchParams, cacheTtl = 12
   const params = new URLSearchParams(query); params.set('fields',CANONICAL_LIST_FIELDS);
   const response = await fetch(`${base.replace(/\/$/,'')}/v2/snaps/find?${params}`, { headers: { 'Snap-Device-Series': '16', 'Snap-Device-Architecture': 'amd64', 'User-Agent': 'CapOS-Snap-Store/0.1' }, cf: { cacheTtl, cacheEverything: true } });
   if (!response.ok) throw new Error(`Upstream returned ${response.status}`);
-  const payload = await response.json<{results?:Record<string,any>[]}>(); return (payload.results || []).map(canonicalApp);
+  const payload = await response.json<{results?:Record<string,any>[]}>(); return (payload.results || []).map(result => canonicalApp(result));
 }
 
 async function canonicalInfo(base: string, name: string, cacheTtl = 3600) {
-  const params = new URLSearchParams({fields:'title,summary,description,publisher,media,categories'});
+  const fields = 'title,summary,description,publisher,media,categories,license,contact,website,store-url,links,version,revision,confinement,created-at';
+  const params = new URLSearchParams({ fields });
   const response = await fetch(`${base.replace(/\/$/,'')}/v2/snaps/info/${encodeURIComponent(name)}?${params}`, { headers: { 'Snap-Device-Series': '16', 'Snap-Device-Architecture': 'amd64', 'User-Agent': 'CapOS-Snap-Store/0.1' }, cf: { cacheTtl, cacheEverything: true } });
   if (!response.ok) throw new Error(`Upstream returned ${response.status}`);
   const payload = await response.json<Record<string,any>>();
   const channelMap = Array.isArray(payload['channel-map']) ? payload['channel-map'] : [];
   const preferred = channelMap.find((entry:any) => entry.channel?.architecture === 'amd64' && entry.channel?.risk === 'stable') || channelMap[0] || {};
-  const app = canonicalApp({ 'snap-id': payload['snap-id'], name: payload.name || name, snap: payload.snap || {}, revision: { version: preferred.version, channel: preferred.channel?.name || preferred.channel?.risk } });
+  const app = canonicalApp({
+    'snap-id': payload['snap-id'],
+    name: payload.name || name,
+    snap: payload.snap || {},
+    revision: {
+      version: preferred.version,
+      channel: preferred.channel?.name || preferred.channel?.risk,
+      confinement: preferred.confinement,
+      releasedAt: preferred.channel?.['released-at'] || preferred['created-at'],
+    },
+  }, true);
   app.architectures = [...new Set(channelMap.map((entry:any) => entry.channel?.architecture).filter(Boolean))] as string[];
   return app;
 }

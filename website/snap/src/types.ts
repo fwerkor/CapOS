@@ -20,7 +20,17 @@ export interface StoreApp {
   webdesktop?: 'native' | 'web' | 'gui' | 'service' | 'unknown';
   rating?: number;
   downloads?: string;
+  banner?: string;
   screenshots?: string[];
+  videos?: string[];
+  license?: string;
+  website?: string;
+  contact?: string;
+  storeUrl?: string;
+  links?: { label: string; url: string }[];
+  publisherUsername?: string;
+  confinement?: 'strict' | 'classic' | 'devmode' | string;
+  releasedAt?: string;
   updated?: string;
 }
 
