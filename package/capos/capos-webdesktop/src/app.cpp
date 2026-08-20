@@ -1,4 +1,5 @@
 #include "common.hpp"
+#include "snap.hpp"
 
 #include <netdb.h>
 #include <openssl/err.h>
@@ -13,6 +14,8 @@ using namespace capos;
 extern char** environ;
 
 namespace {
+
+std::string gProxyPrefix = "/cgi-bin/cap/app";
 
 struct UpstreamResponse {
     int status = 502;
@@ -91,7 +94,7 @@ std::string effectivePathInfo() {
 }
 
 std::string proxyPrefix() {
-    return "/cgi-bin/cap/app";
+    return gProxyPrefix;
 }
 
 std::string lowerAscii(std::string value) {
@@ -204,22 +207,6 @@ std::string urlEncode(const std::string& input) {
     return out.str();
 }
 
-std::string joinQuery(const std::map<std::string, std::string>& params, const std::vector<std::string>& exclude = {}) {
-    std::ostringstream out;
-    bool first = true;
-    for (const auto& [key, value] : params) {
-        if (std::find(exclude.begin(), exclude.end(), key) != exclude.end()) {
-            continue;
-        }
-        if (!first) {
-            out << '&';
-        }
-        first = false;
-        out << urlEncode(key) << '=' << urlEncode(value);
-    }
-    return out.str();
-}
-
 std::string htmlShell(const std::string& title, const std::string& body) {
     std::ostringstream out;
     out << "<!DOCTYPE html><html><head><meta charset=\"utf-8\">"
@@ -250,31 +237,6 @@ std::string renderEmpty(const std::string& heading, const std::string& message, 
         + extra +
         "</section>"
     );
-}
-
-std::optional<int> findMappedListenPort(const std::string& json, long long targetPort) {
-    const std::regex pattern("\\{\\s*\"proto\"\\s*:\\s*\"([^\"]+)\"\\s*,\\s*\"listen\"\\s*:\\s*([0-9]+)\\s*,\\s*\"target_port\"\\s*:\\s*([0-9]+)\\s*\\}");
-    for (std::sregex_iterator it(json.begin(), json.end(), pattern), end; it != end; ++it) {
-        const auto proto = (*it)[1].str();
-        const auto listen = std::stoi((*it)[2].str());
-        const auto target = std::stoll((*it)[3].str());
-        if (proto == "tcp" && target == targetPort) {
-            return listen;
-        }
-    }
-    return std::nullopt;
-}
-
-std::string replaceAll(std::string text, const std::string& from, const std::string& to) {
-    if (from.empty()) {
-        return text;
-    }
-    size_t pos = 0;
-    while ((pos = text.find(from, pos)) != std::string::npos) {
-        text.replace(pos, from.size(), to);
-        pos += to.size();
-    }
-    return text;
 }
 
 std::string rewriteHtmlBody(std::string body) {
@@ -868,12 +830,12 @@ std::string renderStatusPage(const std::string& selectedApp, const std::string& 
          << "<div class=\"meta\">"
          << "<div><strong>应用名</strong>" << htmlEscape(selectedApp) << "</div>"
          << "<div><strong>版本</strong>" << htmlEscape(version) << "</div>"
-         << "<div><strong>桌面端口</strong>" << (desktopPort.has_value() ? std::to_string(*desktopPort) : std::string("-")) << "</div>"
-         << "<div><strong>访问方式</strong>" << (hostNetwork ? "Host Network" : "Container Proxy") << "</div>"
+         << "<div><strong>自动发现端口</strong>" << (desktopPort.has_value() ? std::to_string(*desktopPort) : std::string("-")) << "</div>"
+         << "<div><strong>访问方式</strong>" << (hostNetwork ? "Host Socket" : "Host Socket") << "</div>"
          << "<div><strong>目标</strong>" << htmlEscape(target) << "</div>"
          << "</div>"
          << "<div class=\"actions\">"
-         << "<button class=\"button\" onclick=\"fetch('/cgi-bin/cap/api/apps/" << htmlEscape(appUrl) << "/start',{method:'POST',credentials:'same-origin'}).then(function(){location.reload();})\">启动应用</button>"
+         << "<button class=\"button\" onclick=\"fetch('/cgi-bin/cap/api/snapd/snaps/" << htmlEscape(appUrl) << "/service/start',{method:'POST',credentials:'same-origin'}).then(function(){location.reload();})\">启动应用</button>"
          << "<a class=\"button secondary\" href=\"javascript:location.reload()\">刷新</a>"
          << "<a class=\"button secondary\" target=\"_top\" href=\"/cap/\">返回面板</a>"
          << "</div>"
@@ -889,64 +851,63 @@ int main() {
 
     const auto session = currentSession();
     if (!session.has_value()) {
-        sendHtml(401, renderEmpty("需要登录", "请先返回 CapOS 面板完成登录，然后再查看桌面应用。"));
+        sendHtml(401, renderEmpty("需要登录", "请先返回 CapOS WebDesktop 完成登录。"));
         return 0;
     }
 
     const auto rawQuery = getenvOrEmpty("QUERY_STRING");
     const auto query = parseKv(rawQuery);
+    auto rawPath = effectivePathInfo();
+    const auto pathSegments = splitPath(rawPath);
+
     std::string selectedApp;
-    if (const auto it = query.find("app"); it != query.end()) {
+    size_t appPathOffset = 0;
+    if (!pathSegments.empty() && validSnapName(pathSegments[0])) {
+        selectedApp = pathSegments[0];
+        const auto marker = "/" + selectedApp;
+        if (rawPath.rfind(marker, 0) == 0) appPathOffset = marker.size();
+    } else if (const auto it = query.find("snap"); it != query.end() && validSnapName(it->second)) {
         selectedApp = it->second;
     }
 
     if (selectedApp.empty()) {
-        const auto desktop = runCapbox({"desktop", "get", "--user", session->username});
-        if (desktop.exit_code != 0) {
-            sendHtml(500, renderEmpty("桌面应用加载失败", trim(desktop.output)));
-            return 0;
-        }
-        if (const auto app = findJsonString(desktop.output, "app"); app.has_value()) {
-            selectedApp = *app;
-        }
-    }
-
-    if (selectedApp.empty()) {
-        sendHtml(200, renderEmpty("还没有桌面应用", "先在面板里从你已安装的应用中选择一个桌面应用，桌面区就会在这里显示。"));
+        sendHtml(400, renderEmpty("未选择应用", "请从 WebDesktop 的已安装 Snap 列表中打开应用。"));
         return 0;
     }
 
-    const auto info = runCapbox({"app", "info", selectedApp, "--user", session->username});
-    if (info.exit_code != 0) {
-        sendHtml(404, renderEmpty("应用不存在", trim(info.output)));
+    gProxyPrefix = "/cgi-bin/cap/app/" + selectedApp;
+    auto endpoint = primarySnapWebEndpoint(selectedApp);
+    if (!endpoint.has_value()) {
+        const auto emptyInfo = std::string("{\"nickname\":\"") + jsonEscape(selectedApp) +
+            "\",\"description\":\"CapOS 尚未从该 Snap 的运行进程中发现 HTTP/HTTPS 入口。\","
+            "\"version\":\"-\",\"running\":false,\"host_network\":true}";
+        sendHtml(200, renderStatusPage(selectedApp, emptyInfo, "应用可能尚未启动、没有 Web UI，或正在等待首次配置。"));
         return 0;
     }
 
-    const auto running = findJsonBool(info.output, "running").value_or(false);
-    const auto scheme = findJsonString(info.output, "scheme").value_or("http");
-    const auto host = findJsonString(info.output, "target_host");
-    const auto port = findJsonInt(info.output, "port");
-    const auto httpsSkipCheck = findJsonBool(info.output, "https_skip_check").value_or(true);
+    const std::string host = "127.0.0.1";
+    int port = endpoint->port;
+    std::string scheme = endpoint->protocol;
+    const bool httpsSkipCheck = true;
+    const auto buildInfo = [&]() {
+        std::ostringstream value;
+        value << "{\"nickname\":\"" << jsonEscape(selectedApp)
+              << "\",\"description\":\"Web endpoint discovered automatically from Snap-owned listening sockets.\""
+              << ",\"version\":\"-\",\"running\":true,\"host_network\":true"
+              << ",\"target_host\":\"127.0.0.1\",\"port\":" << port
+              << ",\"scheme\":\"" << jsonEscape(scheme) << "\",\"https_skip_check\":true}";
+        return value.str();
+    };
+    std::string info = buildInfo();
 
-    if (!running || !host.has_value() || !port.has_value() || (scheme != "http" && scheme != "https")) {
-        std::string why = "当前桌面应用还没有可代理的 HTTP/HTTPS 入口。";
-        if (!running) {
-            why = "当前桌面应用还没有启动。";
-        } else if (!port.has_value()) {
-            why = "当前桌面应用在元数据里没有声明 service 端口。";
-        } else if (scheme != "http" && scheme != "https") {
-            why = "当前桌面应用声明了暂不支持的 service scheme。";
-        }
-        sendHtml(200, renderStatusPage(selectedApp, info.output, why));
-        return 0;
+    std::string path = "/";
+    if (appPathOffset > 0 && appPathOffset < rawPath.size()) {
+        path = rawPath.substr(appPathOffset);
+        if (path.empty()) path = "/";
     }
 
-    auto path = effectivePathInfo();
-    if (path.empty() || path == "/") {
-        path = "/";
-    }
-
-    const auto upstreamQuery = stripQueryParam(rawQuery, "app");
+    auto upstreamQuery = stripQueryParam(rawQuery, "snap");
+    upstreamQuery = stripQueryParam(upstreamQuery, "app");
     std::string upstreamPath = path;
     if (!upstreamQuery.empty()) {
         upstreamPath += (upstreamPath.find('?') == std::string::npos ? "?" : "&");
@@ -954,64 +915,60 @@ int main() {
     }
 
     if (isWebSocketRequest()) {
-        proxyWebSocket(*session, selectedApp, info.output, *host, static_cast<int>(*port), scheme, !httpsSkipCheck, upstreamPath);
+        proxyWebSocket(*session, selectedApp, info, host, port, scheme, !httpsSkipCheck, upstreamPath);
         return 0;
     }
 
     const auto requestBody = readRequestBody();
-    const auto requestText = buildForwardRequest(*host, static_cast<int>(*port), upstreamPath, requestBody, session->id);
-    auto response = fetchHttp(*host, static_cast<int>(*port), scheme, !httpsSkipCheck, requestText);
+    auto requestText = buildForwardRequest(host, port, upstreamPath, requestBody, session->id);
+    auto response = fetchHttp(host, port, scheme, !httpsSkipCheck, requestText);
     if (!response.has_value()) {
-        sendHtml(502, renderStatusPage(selectedApp, info.output, "连接桌面应用失败，可能容器尚未完全启动，或目标服务没有监听声明的端口。"));
+        // A Snap may switch ports after refresh/restart. Expire the short-lived
+        // cache immediately and retry once using a fresh process/socket scan.
+        invalidateSnapEndpointCache(selectedApp);
+        const auto refreshed = discoverSnapEndpoints(selectedApp);
+        const auto replacement = std::find_if(refreshed.begin(), refreshed.end(), [](const SnapEndpoint& candidate) {
+            return candidate.web;
+        });
+        if (replacement != refreshed.end()) {
+            port = replacement->port;
+            scheme = replacement->protocol;
+            info = buildInfo();
+            requestText = buildForwardRequest(host, port, upstreamPath, requestBody, session->id);
+            response = fetchHttp(host, port, scheme, !httpsSkipCheck, requestText);
+        }
+    }
+    if (!response.has_value()) {
+        sendHtml(502, renderStatusPage(selectedApp, info, "自动发现了入口，但当前无法连接该服务。"));
         return 0;
     }
 
     std::string contentType;
     bool chunkedEncoding = false;
     for (const auto& [name, value] : response->headers) {
-        std::string lowered = name;
-        std::transform(lowered.begin(), lowered.end(), lowered.begin(), [](unsigned char ch) { return static_cast<char>(std::tolower(ch)); });
-        if (lowered == "content-type") {
-            contentType = value;
-        } else if (lowered == "transfer-encoding") {
-            std::string loweredValue = value;
-            std::transform(loweredValue.begin(), loweredValue.end(), loweredValue.begin(), [](unsigned char ch) { return static_cast<char>(std::tolower(ch)); });
-            if (loweredValue.find("chunked") != std::string::npos) {
-                chunkedEncoding = true;
-            }
-        }
+        const auto lowered = lowerAscii(name);
+        if (lowered == "content-type") contentType = value;
+        else if (lowered == "transfer-encoding" && lowerAscii(value).find("chunked") != std::string::npos) chunkedEncoding = true;
     }
-
     if (chunkedEncoding) {
         const auto decoded = decodeChunkedBody(response->body);
         if (!decoded.has_value()) {
-            sendHtml(502, renderStatusPage(selectedApp, info.output, "桌面应用返回了无法解析的 chunked 响应，代理暂时无法继续。"));
+            sendHtml(502, renderStatusPage(selectedApp, info, "应用返回了无法解析的 chunked 响应。"));
             return 0;
         }
         response->body = *decoded;
     }
-
-    if (lowerAscii(contentType).find("text/html") != std::string::npos) {
-        response->body = rewriteHtmlBody(response->body);
-    }
+    if (lowerAscii(contentType).find("text/html") != std::string::npos) response->body = rewriteHtmlBody(response->body);
 
     std::vector<std::pair<std::string, std::string>> outHeaders;
     for (const auto& [name, value] : response->headers) {
-        std::string lowered = name;
-        lowered = lowerAscii(lowered);
-        if (isHopByHop(lowered) || lowered == "content-type") {
-            continue;
-        }
-        if (lowered == "location") {
-            outHeaders.emplace_back(name, rewriteResponseLocation(value, scheme, *host, static_cast<int>(*port)));
-        } else if (lowered == "set-cookie") {
-            outHeaders.emplace_back(name, rewriteSetCookiePath(value));
-        } else {
-            outHeaders.emplace_back(name, value);
-        }
+        const auto lowered = lowerAscii(name);
+        if (isHopByHop(lowered) || lowered == "content-type") continue;
+        if (lowered == "location") outHeaders.emplace_back(name, rewriteResponseLocation(value, scheme, host, port));
+        else if (lowered == "set-cookie") outHeaders.emplace_back(name, rewriteSetCookiePath(value));
+        else outHeaders.emplace_back(name, value);
     }
     outHeaders.emplace_back("Content-Length", std::to_string(response->body.size()));
-
     writeHeaders(response->status, contentType.empty() ? "text/plain; charset=utf-8" : contentType, outHeaders);
     std::cout << response->body;
     return 0;

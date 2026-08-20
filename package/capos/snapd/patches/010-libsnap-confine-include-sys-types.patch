@@ -1,0 +1,6 @@
+--- a/cmd/libsnap-confine-private/utils.h
++++ b/cmd/libsnap-confine-private/utils.h
+@@ -19,2 +19,3 @@
+ #include <stdbool.h>
+ #include <stdlib.h>
++#include <sys/types.h>

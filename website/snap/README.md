@@ -1,19 +1,21 @@
 # CapOS Snap Store
 
-`snap.capos.top` combines three surfaces in one Cloudflare Worker deployment:
+`snap.capos.top` is the complete client-facing Snap source for CapOS and combines three surfaces in one Cloudflare Worker deployment:
 
 - a public, App Store-style catalog for CapOS users;
-- Snap Store compatible `/v2/*` federation endpoints and proxied upstream downloads;
+- Snap Store compatible `/v2/*` and legacy `/api/v1/*` endpoints, assertion federation and Snap payload delivery;
 - a Cloudflare Access-protected `/admin` console for repository versions, upstream order, local packages and CapOS metadata.
 
 ## Architecture
 
-- **Cloudflare Worker**: API, Access JWT verification, upstream federation, streaming proxy and authenticated package upload controller.
+- **Cloudflare Worker**: the Store API presented to `snapd`, Access JWT verification, upstream federation, URL rewriting, streaming proxy and authenticated package upload controller.
 - **D1**: repository versions, ordered upstreams, local Snap metadata and audit log.
-- **Cloudflare R2 / `repo.capos.top`**: the existing `capos` bucket stores local artifacts at `/<version>/snaps/*.snap`.
-- **Canonical/other upstreams**: queried in priority order. Their Snap downloads are proxied in real time and are never mirrored into R2.
+- **Cloudflare R2 / `repo.capos.top`**: the existing `capos` bucket stores local artifacts at `/<version>/snaps/*.snap` and lazily caches federated upstream Snap payloads under `upstream-cache/`.
+- **Canonical/other upstreams**: server-side federation sources queried in priority order. CapOS clients do not need to contact those Store or CDN hosts directly.
 
 Resolution order is always `local > upstream[0] > upstream[1] > ...` for a repository version.
+
+CapOS starts `snapd` with both its Store API and assertion service rooted at `https://snap.capos.top/`. Federated Store responses are rewritten before they leave the Worker: Store API links stay on `snap.capos.top`, while payload URLs point to `/download/upstream`. The payload endpoint supports `HEAD` and byte ranges and serves cached R2 objects when available. Canonical assertions and Store-provided SHA3-384 values are still verified by `snapd`; changing the transport endpoint does not bypass Snap's trust checks.
 
 ## Local development
 
@@ -47,6 +49,8 @@ Large Snap files are uploaded as a Cloudflare R2 multipart upload. The browser s
 ## Caching
 
 Public catalog reads use two cache layers. Canonical catalog responses are cached at Cloudflare for 10 minutes (5 minutes for the featured feed and 2 minutes for searches), while the final aggregated `/api/storefront` and `/api/search` responses use a short Worker Cache API layer of 120 and 60 seconds respectively. Browser caching remains deliberately short at 15 seconds for the storefront and 10 seconds for search results. Responses expose `X-CapOS-Cache: HIT|MISS` for diagnostics.
+
+Federated Snap payloads use a separate R2 cache. A full upstream GET is streamed to the client and R2 simultaneously; later full or ranged downloads are served from the `ARTIFACTS` binding and expose `X-CapOS-Store: payload-cache`. Store metadata and assertion responses expose `X-CapOS-Store: federated`.
 
 Administrative endpoints and mutations remain `no-store`; credentials and admin state are never written to the public cache.
 

@@ -95,6 +95,7 @@ menu "Target Images"
 		bool "argosfs"
 		default y
 		select TARGET_ROOTFS_INITRAMFS
+		select TARGET_ROOTFS_PERSIST_VAR
 		select PACKAGE_argosfs
 		select PACKAGE_kmod-fuse
 		select PACKAGE_libfuse3

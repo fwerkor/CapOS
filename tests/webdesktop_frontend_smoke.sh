@@ -3,7 +3,7 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-HTDOCS="$ROOT_DIR/package/capos/capos-webpanel/htdocs"
+HTDOCS="$ROOT_DIR/package/capos/capos-webdesktop/htdocs"
 INDEX="$HTDOCS/index.html"
 APP_JS="$HTDOCS/assets/app.js"
 STYLES="$HTDOCS/assets/styles.css"
@@ -19,8 +19,15 @@ if grep -Eq '<style|<script>[[:space:]]*[^<]' "$INDEX"; then
     exit 1
 fi
 
-if grep -RInE 'https?://|cdn|telemetry|window\.prompt|window\.confirm' "$HTDOCS"; then
-    echo "frontend should stay local-only and avoid prompt/confirm" >&2
+if grep -RInE 'cdn|telemetry|window\.prompt|window\.confirm' "$HTDOCS"; then
+    echo "frontend should avoid remote dependencies, telemetry, and prompt/confirm" >&2
+    exit 1
+fi
+
+unexpected_urls="$(grep -RhoE 'https?://[^"[:space:]]+' "$HTDOCS" | sort -u | grep -vFx 'https://snap.capos.top/embed' || true)"
+if [[ -n "$unexpected_urls" ]]; then
+    echo "unexpected remote frontend URL(s):" >&2
+    echo "$unexpected_urls" >&2
     exit 1
 fi
 
@@ -40,6 +47,19 @@ if (missing.length) {
   console.error(`missing DOM ids referenced by app.js: ${[...new Set(missing)].join(", ")}`);
   process.exit(1);
 }
+for (const expected of [
+  'event.origin!==STORE_ORIGIN',
+  'event.source!==frame.contentWindow',
+  'capos-webdesktop:state',
+  'capos-webdesktop:progress',
+  'capos-store:install',
+  'capos-store:open',
+]) {
+  if (!app.includes(expected)) {
+    console.error(`missing Snap Store bridge guard/protocol marker: ${expected}`);
+    process.exit(1);
+  }
+}
 NODE
 
-echo "webpanel frontend smoke passed"
+echo "webdesktop frontend smoke passed"

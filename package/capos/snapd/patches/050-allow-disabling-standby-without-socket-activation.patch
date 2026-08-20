@@ -1,0 +1,39 @@
+--- a/overlord/standby/standby.go
++++ b/overlord/standby/standby.go
+@@ -39,6 +39,7 @@ type StandbyOpinions struct {
+ 	state       *state.State
+ 	standbyWait time.Duration
+ 	startTime   time.Time
++	disabled    bool
+ 	opinions    []Opinionator
+ 
+ 	stoppingCh chan struct{}
+@@ -82,6 +83,7 @@ func New(st *state.State) *StandbyOpinions {
+ 	return &StandbyOpinions{
+ 		state:       st,
+ 		standbyWait: w,
++		disabled:    os.Getenv("SNAPD_DISABLE_STANDBY") == "1",
+ 		startTime:   time.Now(),
+ 		stoppingCh:  make(chan struct{}),
+ 		stoppedCh:   make(chan struct{}),
+@@ -90,6 +92,10 @@ func New(st *state.State) *StandbyOpinions {
+ }
+ 
+ func (m *StandbyOpinions) Start() {
++	if m.disabled {
++		logger.Noticef("standby disabled by SNAPD_DISABLE_STANDBY")
++		return
++	}
+ 	logger.Noticef("will consider standby after: %v", m.standbyWait)
+ 	go func() {
+ 		wait := m.standbyWait
+@@ -118,6 +124,9 @@ func (m *StandbyOpinions) Start() {
+ }
+ 
+ func (m *StandbyOpinions) Stop() {
++	if m.disabled {
++		return
++	}
+ 	logger.Noticef("standby monitoring stop requested")
+ 	select {
+ 	case <-m.stoppedCh:

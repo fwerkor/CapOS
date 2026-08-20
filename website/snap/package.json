@@ -11,7 +11,8 @@
     "deploy": "npm run build && wrangler deploy",
     "setup:production": "bash scripts/setup-production.sh",
     "db:migrate:local": "wrangler d1 migrations apply capos-snap-store --local",
-    "db:migrate:remote": "wrangler d1 migrations apply capos-snap-store --remote"
+    "db:migrate:remote": "wrangler d1 migrations apply capos-snap-store --remote",
+    "test:worker": "node --no-warnings --experimental-strip-types worker/store-proxy.test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",

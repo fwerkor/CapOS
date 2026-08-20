@@ -70,6 +70,11 @@ skip_profile() {
 
 	local profile="$1"
 
+	# snapd owns this profile and reloads it with the exact kernel feature ABI
+	# it detected. Loading it generically before snapd starts can compile it
+	# against a broader parser ABI than the running kernel accepts.
+	[ "${profile##*/}" = "usr.lib.snapd.snap-confine" ] && return 2
+
 	if [ "${profile%.rpmnew}"   != "$profile" ] || \
 	   [ "${profile%.rpmsave}"  != "$profile" ] || \
 	   [ "${profile%.orig}"     != "$profile" ] || \
@@ -127,28 +132,43 @@ __parse_profiles_dir() {
 	local xargs_args=""
 	[ "$nprocs" -ge 2 ] && xargs_args="--max-procs=$nprocs"
 
-	"$PARSER" $PARSER_OPTS "$parser_cmd" -- "$profile_dir" || {
-
-		for profile in "$profile_dir"/*; do
-			skip_profile "$profile"
-			skip=$?
-			[ "$skip" -ne 0 ] && {
-				[ "$skip" -ne 2 ] && log_write info "Skipped loading profile $profile"
-				continue
-			}
-			[ -f "$profile" ] || continue
-			echo "$profile"
-		done | \
-
-		# Use xargs to parallelize calls to the parser over all CPUs
-
-		/usr/libexec/xargs-findutils -n1 -d"\n" $xargs_args \
-			"$PARSER" $PARSER_OPTS "$parser_cmd" --
-
+	# apparmor_parser can consume a whole directory efficiently, but doing so
+	# bypasses skip_profile(). If the directory contains package-manager backup
+	# files or a profile owned by another subsystem (notably snap-confine), use
+	# the filtered per-file path from the outset instead of first producing a
+	# spurious parser failure and only then falling back.
+	local needs_filtering=0
+	for profile in "$profile_dir"/*; do
+		skip_profile "$profile"
 		[ "$?" -ne 0 ] && {
-			rc=1
-			log_write err "At least one profile failed to load"
+			needs_filtering=1
+			break
 		}
+	done
+
+	if [ "$needs_filtering" -eq 0 ]; then
+		"$PARSER" $PARSER_OPTS "$parser_cmd" -- "$profile_dir" && return 0
+	fi
+
+	for profile in "$profile_dir"/*; do
+		skip_profile "$profile"
+		skip=$?
+		[ "$skip" -ne 0 ] && {
+			[ "$skip" -ne 2 ] && log_write info "Skipped loading profile $profile"
+			continue
+		}
+		[ -f "$profile" ] || continue
+		echo "$profile"
+	done | \
+
+	# Use xargs to parallelize calls to the parser over all CPUs
+
+	/usr/libexec/xargs-findutils -n1 -d"\n" $xargs_args \
+		"$PARSER" $PARSER_OPTS "$parser_cmd" --
+
+	[ "$?" -ne 0 ] && {
+		rc=1
+		log_write err "At least one profile failed to load"
 	}
 
 	return $rc

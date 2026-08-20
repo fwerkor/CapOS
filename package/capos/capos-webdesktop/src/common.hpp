@@ -1,5 +1,5 @@
-#ifndef CAPOS_WEBPANEL_COMMON_HPP
-#define CAPOS_WEBPANEL_COMMON_HPP
+#ifndef CAPOS_WEBDESKTOP_COMMON_HPP
+#define CAPOS_WEBDESKTOP_COMMON_HPP
 
 #include <algorithm>
 #include <array>
@@ -52,8 +52,7 @@ struct Session {
 };
 
 inline constexpr const char* kSessionCookieName = "capos_session";
-inline constexpr const char* kSessionDir = "/tmp/capos-webpanel/sessions";
-inline constexpr const char* kUploadDir = "/tmp/capos-webpanel/uploads";
+inline constexpr const char* kSessionDir = "/tmp/capos-webdesktop/sessions";
 inline constexpr std::time_t kSessionTtl = 60 * 60 * 12;
 
 inline std::string getenvOrEmpty(const char* key) {
@@ -380,10 +379,6 @@ inline std::string sessionCookieHeader(const std::string& value, std::time_t max
     return header.str();
 }
 
-inline std::string uploadPathFor(const std::string& sessionId, const std::string& uploadId, const std::string& name) {
-    return std::string(kUploadDir) + "/" + sessionId + "/" + uploadId + "_" + name;
-}
-
 inline bool saveSession(const Session& session) {
     if (!isSafeSessionId(session.id)) {
         return false;
@@ -539,32 +534,6 @@ inline std::string jsonError(const std::string& message, const std::string& code
 
 inline std::string jsonOk(const std::string& dataJson) {
     return "{\"ok\":true,\"data\":" + dataJson + "}";
-}
-
-inline std::string sanitizeUploadFilename(std::string filename) {
-    for (char& ch : filename) {
-        const bool safe =
-            (ch >= 'a' && ch <= 'z') ||
-            (ch >= 'A' && ch <= 'Z') ||
-            (ch >= '0' && ch <= '9') ||
-            ch == '.' || ch == '_' || ch == '-';
-        if (!safe) {
-            ch = '_';
-        }
-    }
-    if (filename.empty()) {
-        filename = "upload.cpk";
-    }
-    return filename;
-}
-
-inline ExecResult runCapbox(const std::vector<std::string>& args) {
-    std::ostringstream command;
-    command << "capbox";
-    for (const auto& arg : args) {
-        command << ' ' << shellQuote(arg);
-    }
-    return execCommand(command.str());
 }
 
 inline std::optional<std::string> regexFirst(const std::string& text, const std::regex& pattern) {

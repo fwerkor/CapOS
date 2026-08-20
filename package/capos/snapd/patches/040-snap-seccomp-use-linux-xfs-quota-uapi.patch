@@ -1,0 +1,19 @@
+--- a/cmd/snap-seccomp/main.go
++++ b/cmd/snap-seccomp/main.go
+@@ -46,16 +46,7 @@ package main
+ //#include <termios.h>
+ //#include <unistd.h>
+-// //The XFS interface requires a 64 bit file system interface
+-// //but we don't want to leak this anywhere else if not globally
+-// //defined.
+-//#ifndef _FILE_OFFSET_BITS
+-//#define _FILE_OFFSET_BITS 64
+-//#include <xfs/xqm.h>
+-//#undef _FILE_OFFSET_BITS
+-//#else
+-//#include <xfs/xqm.h>
+-//#endif
++//#include <linux/dqblk_xfs.h>
+ //#include <seccomp.h>
+ //#include <linux/sched.h>
+ //#include <linux/seccomp.h>

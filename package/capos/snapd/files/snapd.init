@@ -1,0 +1,48 @@
+#!/bin/sh /etc/rc.common
+
+START=80
+STOP=80
+USE_PROCD=1
+
+apply_snap_confine_caps() {
+    local snap_confine=/usr/lib/snapd/snap-confine
+    local caps_file=/usr/lib/snapd/snap-confine.v2-only.caps
+
+    [ -x "$snap_confine" ] || return 0
+    [ -r "$caps_file" ] || return 0
+    command -v setcap >/dev/null 2>&1 || return 0
+
+    setcap "$(cat "$caps_file")" "$snap_confine" || \
+        logger -t snapd "failed to restore snap-confine file capabilities"
+}
+
+load_snap_apparmor_profiles() {
+    [ -x /usr/lib/snapd/snapd-apparmor ] || return 0
+    if command -v systemctl >/dev/null 2>&1 && [ -r /usr/lib/systemd/system/snapd.apparmor.service ]; then
+        systemctl start snapd.apparmor.service || \
+            logger -t snapd "failed to start snapd.apparmor.service"
+        return
+    fi
+    /usr/lib/snapd/snapd-apparmor start || \
+        logger -t snapd "failed to restore snap-managed AppArmor profiles"
+}
+
+start_service() {
+    mkdir -p /run /run/netns /var/lib/snapd /var/cache/snapd /var/lib/snapd/snap/bin
+    rm -f /run/snapd.socket /run/snapd-snap.socket
+    apply_snap_confine_caps
+    load_snap_apparmor_profiles
+
+    procd_open_instance
+    procd_set_param command /usr/lib/snapd/snapd
+    procd_set_param respawn 3600 5 -1
+    procd_set_param stdout 1
+    procd_set_param stderr 1
+    procd_set_param env PATH=/usr/sbin:/usr/bin:/sbin:/bin:/var/lib/snapd/snap/bin SNAPD_DISABLE_STANDBY=1 SNAPPY_FORCE_API_URL=https://snap.capos.top/ SNAPPY_FORCE_SAS_URL=https://snap.capos.top/
+    procd_set_param file /etc/environment
+    procd_close_instance
+}
+
+service_triggers() {
+    procd_add_reload_trigger snapd
+}

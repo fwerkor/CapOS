@@ -46,8 +46,8 @@ Instead of feeling like a stripped-down build environment, CapOS aims to feel li
       <p>Runs with a small footprint and works well across a broad range of hardware, from compact devices to full PCs.</p>
     </td>
     <td width="50%">
-      <h3>Webdesktop Management</h3>
-      <p>Manage the system from a browser through a more visual, approachable interface for settings, packages, and system status.</p>
+      <h3>WebDesktop + Snap Store</h3>
+      <p>Manage the system and install applications from the official Snap ecosystem directly in CapOS WebDesktop. Web services are discovered and integrated automatically.</p>
     </td>
   </tr>
   <tr>
@@ -76,12 +76,23 @@ Instead of feeling like a stripped-down build environment, CapOS aims to feel li
 
 | Area | Default |
 | --- | --- |
-| Web panel | `2000/tcp` (HTTP), `2020/tcp` (HTTPS) |
+| WebDesktop | `2000/tcp` (HTTP), `2020/tcp` (HTTPS) |
 | Remote access | `23/tcp` for Telnet before a root password is set, `22/tcp` for SSH |
 | Network mode | Uses `DHCP` and `DHCPv6` by default |
 | Firewall | Accepts inbound traffic from `LAN`; rejects inbound traffic from `WAN` except `2000/tcp` and `2020/tcp` |
 
 More usage details are available in the [User Guide](https://github.com/fwerkor/capos/wiki/User-guide).
+
+## Application Architecture
+
+CapOS separates system packages from user applications:
+
+- `apk` manages CapOS itself: the kernel, drivers, WebDesktop, snapd, networking, storage, and other system components.
+- `snapd` installs user applications directly from the official Snap Store.
+- `systemd-on-procd` implements the systemd command/unit boundary needed by systemd-centric software while keeping procd as PID 1.
+- `capos-webdesktop` talks to snapd over `/run/snapd.socket`, manages install/update/remove operations, and discovers Web entrypoints from Snap-owned listening sockets. It probes HTTP/HTTPS and proxies the best Web endpoint without a curated CapOS application catalog.
+
+This means CapOS does not repackage third-party Snap applications or maintain a parallel application ecosystem.
 
 ## Downloads
 
@@ -93,13 +104,13 @@ More usage details are available in the [User Guide](https://github.com/fwerkor/
 
 ## Development
 
-CapOS welcomes contributors, maintainers, and application developers. If you want to improve the platform or build apps around it, the best starting points are below.
+CapOS welcomes contributors and maintainers. System components continue to use CapOS/OpenWrt packages, while user applications are installed from the official Snap Store. Application authors do not need a CapOS-specific package format.
 
 | Topic | Link |
 | --- | --- |
 | Developer guide | [CapOS Developer Guide](https://github.com/fwerkor/capos/wiki/Developer-guide) |
-| App development | [CAPP Development Guide](https://blog.fwerkor.com/archives/1123) |
-| Example project | [capp-helloworld](https://github.com/fwerkor/capp-helloworld) |
+| Application packaging | [Snapcraft documentation](https://snapcraft.io/docs) |
+| systemd compatibility | [systemd-on-procd](https://github.com/fwerkor/systemd-on-procd) |
 
 ### Source Code Access
 

@@ -57,21 +57,19 @@ jobs:
           # 只做可读性检查，不 update/install（不触网）
           ./scripts/feeds list >/dev/null
 
-      - name: CapOS webdesktop and capbox smoke tests
+      - name: CapOS WebDesktop smoke tests
         shell: bash
         run: |
           set -euxo pipefail
 
-          bash -n package/capos/capbox/files/capbox
-          g++ -std=gnu++17 -Ipackage/capos/capos-webpanel/src \
-            -o /tmp/capos-api-smoke package/capos/capos-webpanel/src/api.cpp -lcrypt
-          g++ -std=gnu++17 -Ipackage/capos/capos-webpanel/src \
-            -o /tmp/capos-app-smoke package/capos/capos-webpanel/src/app.cpp -lcrypt -lssl -lcrypto
+          g++ -std=gnu++17 -Ipackage/capos/capos-webdesktop/src \
+            -o /tmp/capos-api-smoke package/capos/capos-webdesktop/src/api.cpp -lcrypt -lssl -lcrypto
+          g++ -std=gnu++17 -Ipackage/capos/capos-webdesktop/src \
+            -o /tmp/capos-app-smoke package/capos/capos-webdesktop/src/app.cpp -lcrypt -lssl -lcrypto
 
-          tests/capbox_logic_tests.sh
-          tests/webpanel_frontend_smoke.sh
-          tests/webpanel_proxy_smoke.sh
-          tests/webpanel_runtime_config_smoke.sh
+          tests/webdesktop_frontend_smoke.sh
+          tests/webdesktop_proxy_smoke.sh
+          tests/webdesktop_runtime_config_smoke.sh
 
       - name: Kconfig sanity (defconfig)
         shell: bash
@@ -79,6 +77,8 @@ jobs:
           set -euxo pipefail
           # 不跑交互 menuconfig，只验证 Kconfig/配置生成链路
           make defconfig
+          grep -q '^CONFIG_TARGET_ROOTFS_ARGOSFS=y' .config
+          grep -q '^CONFIG_TARGET_ROOTFS_PERSIST_VAR=y' .config
 
       - name: Package metadata sanity (prepare-tmpinfo)
         shell: bash
