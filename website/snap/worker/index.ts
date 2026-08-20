@@ -13,6 +13,7 @@ type JsonValue = Record<string, unknown> | unknown[];
 const encoder = new TextEncoder();
 const json = (value: JsonValue, status = 200, headers: HeadersInit = {}) => new Response(JSON.stringify(value), { status, headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store', ...headers } });
 const now = () => Math.floor(Date.now() / 1000);
+const SNAP_PACKAGE_NAME_RE = /^[a-z0-9][a-z0-9+.-]{0,62}$/;
 function ipOf(request: Request) { return request.headers.get('CF-Connecting-IP') || 'unknown'; }
 function safeVersion(value: string | null, env: Env) { const v = value || env.DEFAULT_VERSION || 'rolling'; return /^[A-Za-z0-9._-]{1,64}$/.test(v) ? v : env.DEFAULT_VERSION || 'rolling'; }
 async function body<T>(request: Request): Promise<T> { return request.json() as Promise<T>; }
@@ -386,7 +387,7 @@ async function searchStore(request: Request, env: Env) {
 
 async function appDetail(request: Request, env: Env) {
   const url = new URL(request.url); const version = safeVersion(url.searchParams.get('version'), env); const name = (url.searchParams.get('name') || '').trim().toLowerCase();
-  if (!/^[a-z0-9][a-z0-9-]{0,79}$/.test(name)) return json({ error: 'Invalid app name.' }, 400);
+  if (!SNAP_PACKAGE_NAME_RE.test(name)) return json({ error: 'Invalid app name.' }, 400);
   const locals = await localApps(env, version); const local = locals.find(app => app.name === name);
   if (local) return json({ app: local }, 200, { 'cache-control': 'public, max-age=60' });
   const sources = await upstreams(env, version); const first = sources.find(source => source.enabled && source.kind === 'canonical');
@@ -438,7 +439,7 @@ function validSnapObjectPath(objectPath: string, version: string) {
 async function startPackageUpload(request: Request, env: Env) {
   const input = await body<{ version: string; name: string; versionString: string; architecture: string; size: number }>(request);
   const version = safeVersion(input.version, env);
-  if (!/^[a-z0-9][a-z0-9+.-]{0,62}$/.test(input.name)) return json({ error: 'Invalid Snap package name.' }, 400);
+  if (!SNAP_PACKAGE_NAME_RE.test(input.name)) return json({ error: 'Invalid Snap package name.' }, 400);
   if (!/^[A-Za-z0-9._+~-]{1,80}$/.test(input.versionString)) return json({ error: 'Invalid version string.' }, 400);
   if (!['amd64', 'arm64', 'armhf', 'all'].includes(input.architecture)) return json({ error: 'Invalid architecture.' }, 400);
   if (!Number.isSafeInteger(input.size) || input.size <= 0) return json({ error: 'Invalid package size.' }, 400);
