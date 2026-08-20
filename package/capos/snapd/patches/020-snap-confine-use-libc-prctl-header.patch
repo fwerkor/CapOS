@@ -1,0 +1,10 @@
+--- a/cmd/snap-confine/snap-confine.c
++++ b/cmd/snap-confine/snap-confine.c
+@@ -22,7 +22,6 @@
+ #include <fcntl.h>
+ #include <glob.h>
+ #include <inttypes.h>
+-#include <linux/prctl.h>
+ #include <sched.h>
+ #include <signal.h>
+ #include <stdbool.h>

@@ -1,0 +1,16 @@
+--- a/sandbox/cgroup/tracking.go
++++ b/sandbox/cgroup/tracking.go
+@@ -329,9 +329,10 @@
+ 			logger.Debugf("StartTransientUnit failed with %q: %v", dbusErr.Name, dbusErr.Body)
+ 			// Some specific DBus errors have distinct handling.
+ 			switch dbusErr.Name {
+-			case "org.freedesktop.DBus.Error.NameHasNoOwner":
+-				// Nothing is providing systemd bus name. This is, most likely,
+-				// an Ubuntu 14.04 system with the special deputy systemd.
++			case "org.freedesktop.DBus.Error.NameHasNoOwner", "org.freedesktop.DBus.Error.ServiceUnknown":
++				// Nothing is providing the systemd bus name. Different D-Bus
++				// implementations report either NameHasNoOwner or ServiceUnknown
++				// when no activatable org.freedesktop.systemd1 service exists.
+ 				return "", errDBusNameHasNoOwner
+ 			case "org.freedesktop.DBus.Error.UnknownMethod":
+ 				// The DBus API is not supported on this system. This can happen on

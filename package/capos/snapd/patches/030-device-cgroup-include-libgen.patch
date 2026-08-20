@@ -1,0 +1,6 @@
+--- a/cmd/libsnap-confine-private/device-cgroup-support.c
++++ b/cmd/libsnap-confine-private/device-cgroup-support.c
+@@ -19,2 +19,3 @@
+ #include <errno.h>
+ #include <fcntl.h>
++#include <libgen.h>
