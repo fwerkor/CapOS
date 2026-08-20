@@ -10,6 +10,8 @@ const upstreamRows = [{
   enabled: 1,
 }];
 
+let localRows = [];
+
 const env = {
   DEFAULT_VERSION: 'rolling',
   REPO_PUBLIC_BASE: 'https://repo.capos.top',
@@ -19,7 +21,7 @@ const env = {
       if (/FROM apps a JOIN snap_revisions/.test(sql)) {
         return {
           bind() {
-            return { all: async () => ({ results: [] }) };
+            return { all: async () => ({ results: localRows }) };
           },
         };
       }
@@ -194,6 +196,28 @@ try {
   assert.equal(detail.links.find(link => link.label === 'Report a bug')?.url, 'https://github.com/nextcloud-snap/nextcloud-snap/issues');
   assert.equal(detail.links.find(link => link.label === 'Contact')?.url, 'mailto:support@nextcloud.com');
   assert.equal(detail.storeUrl, 'https://snapcraft.io/nextcloud');
+
+  localRows = [{
+    id: 'local-special-name',
+    name: 'local+tool.test',
+    display_name: 'Local Tool',
+    publisher: 'CapOS',
+    summary: 'Local package with Snap-compatible punctuation.',
+    description: 'Local package detail.',
+    category: 'Utilities',
+    icon_url: null,
+    accent: '#000000',
+    verified: 1,
+    featured: 0,
+    snap_version: '1.0.0',
+    channel: 'stable',
+    architecture: 'amd64',
+    webdesktop_mode: 'service',
+  }];
+  const localDetailResponse = await worker.fetch(new Request('https://snap.capos.top/api/app?version=rolling&name=local%2Btool.test'), env, ctx);
+  assert.equal(localDetailResponse.status, 200);
+  assert.equal((await localDetailResponse.json()).app.name, 'local+tool.test');
+  localRows = [];
 
   assert.equal(new URL(upstreamRequests[0].url).origin, 'https://api.snapcraft.io');
   assert.equal(upstreamRequests[0].headers.get('Snap-Device-Series'), '16');

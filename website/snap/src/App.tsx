@@ -47,6 +47,22 @@ async function copyText(value: string) {
   return copied;
 }
 
+const APP_DETAIL_HISTORY_STATE = 'caposAppDetail';
+
+function appNameFromLocation() {
+  return new URLSearchParams(window.location.search).get('app')?.trim() || null;
+}
+
+function updateAppLocation(name: string | null, mode: 'push' | 'replace' = 'push') {
+  const url = new URL(window.location.href);
+  if (name) url.searchParams.set('app', name);
+  else url.searchParams.delete('app');
+  const next = `${url.pathname}${url.search}${url.hash}`;
+  const currentState = window.history.state && typeof window.history.state === 'object' ? window.history.state : {};
+  if (mode === 'push') window.history.pushState({ ...currentState, [APP_DETAIL_HISTORY_STATE]: true }, '', next);
+  else window.history.replaceState(currentState, '', next);
+}
+
 type AppAction = {
   kind: 'get' | 'install' | 'open' | 'installing';
   progress?: number;
@@ -236,6 +252,28 @@ function Storefront() {
   const [catalogLoading, setCatalogLoading] = useState(true);
   const [copiedInstall, setCopiedInstall] = useState<string | null>(null);
   useEffect(() => {
+    const openFromLocation = () => {
+      const name = appNameFromLocation();
+      if (!name) {
+        setSelected(null);
+        setDetailLoadingName(null);
+        return;
+      }
+      setSelected(current => current?.name === name ? current : null);
+      setDetailLoadingName(name);
+      void getAppDetails(name).then(detail => {
+        if (appNameFromLocation() === name) setSelected(detail);
+      }).catch(() => {
+        if (appNameFromLocation() === name) setSelected(null);
+      }).finally(() => {
+        setDetailLoadingName(current => current === name ? null : current);
+      });
+    };
+    openFromLocation();
+    window.addEventListener('popstate', openFromLocation);
+    return () => window.removeEventListener('popstate', openFromLocation);
+  }, []);
+  useEffect(() => {
     let cancelled = false;
     let retryTimer: number | undefined;
     let attempts = 0;
@@ -281,6 +319,7 @@ function Storefront() {
     setSearchLoading(Boolean(value.trim()));
   };
   const openApp = (app: StoreApp) => {
+    updateAppLocation(app.name, appNameFromLocation() === app.name ? 'replace' : 'push');
     setSelected(app);
     setDetailLoadingName(app.name);
     void getAppDetails(app.name).then(detail => {
@@ -289,7 +328,13 @@ function Storefront() {
       setDetailLoadingName(current => current === app.name ? null : current);
     });
   };
-  const closeDetail = () => { setSelected(null); setDetailLoadingName(null); };
+  const closeDetail = () => {
+    setSelected(null);
+    setDetailLoadingName(null);
+    if (!appNameFromLocation()) return;
+    if (window.history.state?.[APP_DETAIL_HISTORY_STATE]) window.history.back();
+    else updateAppLocation(null, 'replace');
+  };
   const actionFor = (app: StoreApp, detail = false): AppAction => {
     if (!webdesktop.connected) {
       return detail
