@@ -75,7 +75,7 @@ function publicCacheResponse(response: Response, status: 'HIT' | 'MISS', browser
 }
 
 async function edgeCached(request: Request, env: Env, ctx: ExecutionContext, edgeTtl: number, browserTtl: number, loader: () => Promise<Response>) {
-  const cache = await caches.open('capos-snap-public-v3');
+  const cache = await caches.open('capos-snap-public-v4');
   const key = publicCacheKey(request, env);
   const cached = await cache.match(key);
   if (cached) return publicCacheResponse(cached, 'HIT', browserTtl);
@@ -224,6 +224,9 @@ async function canonicalInfo(base: string, name: string, cacheTtl = 3600) {
   const payload = await response.json<Record<string,any>>();
   const channelMap = Array.isArray(payload['channel-map']) ? payload['channel-map'] : [];
   const preferred = channelMap.find((entry:any) => entry.channel?.architecture === 'amd64' && entry.channel?.risk === 'stable') || channelMap[0] || {};
+  const confinementByArchitecture = Object.fromEntries(channelMap
+    .filter((entry:any) => entry.channel?.name === 'stable' && ['strict','classic','devmode'].includes(entry.confinement))
+    .map((entry:any) => [entry.channel.architecture, entry.confinement]));
   const app = canonicalApp({
     'snap-id': payload['snap-id'],
     name: payload.name || name,
@@ -235,8 +238,11 @@ async function canonicalInfo(base: string, name: string, cacheTtl = 3600) {
       releasedAt: preferred.channel?.['released-at'] || preferred['created-at'],
     },
   }, true);
-  app.architectures = [...new Set(channelMap.map((entry:any) => entry.channel?.architecture).filter(Boolean))] as string[];
-  return app;
+  return {
+    ...app,
+    architectures: [...new Set(channelMap.map((entry:any) => entry.channel?.architecture).filter(Boolean))] as string[],
+    confinementByArchitecture,
+  };
 }
 
 const CANONICAL_CATALOG_CATEGORIES = [

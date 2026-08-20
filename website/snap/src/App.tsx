@@ -338,6 +338,9 @@ function Storefront() {
   };
   const actionFor = (app: StoreApp, detail = false): AppAction => {
     if (!webdesktop.connected) {
+      if (detail && app.source === 'upstream' && !app.confinementByArchitecture) {
+        return { kind: 'install', disabled: true, title: 'Loading architecture-specific install metadata' };
+      }
       const installCommand = snapInstallCommand(app);
       return detail
         ? { kind: 'install', label: copiedInstall === app.name ? 'Copied' : 'Install', title: `Copy: ${installCommand}` }
@@ -363,6 +366,7 @@ function Storefront() {
       openApp(app);
       return;
     }
+    if (app.source === 'upstream' && !app.confinementByArchitecture) return;
     try {
       if (!await copyText(snapInstallCommand(app))) return;
       setCopiedInstall(app.name);
