@@ -14,6 +14,13 @@ $(if $(findstring $(space),$(TOPDIR)),$(error ERROR: The path to the OpenWrt dir
 
 world:
 
+CAPOS_OCI_TARGET ?= x86/64
+
+capos-oci:
+	@./scripts/capos-oci-build.sh "$(CAPOS_OCI_TARGET)"
+
+.PHONY: capos-oci
+
 DISTRO_PKG_CONFIG:=$(shell $(TOPDIR)/scripts/command_all.sh pkg-config | grep -e '/usr' -e '/nix/store' -m 1)
 
 export ORIG_PATH:=$(if $(ORIG_PATH),$(ORIG_PATH),$(PATH))
