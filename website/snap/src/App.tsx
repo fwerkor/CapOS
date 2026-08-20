@@ -311,7 +311,7 @@ function Storefront() {
   const performAction = async (app: StoreApp, detail = false) => {
     if (webdesktop.connected) {
       if (webdesktop.installed.has(app.name)) webdesktop.open(app.name);
-      else if (webdesktop.canInstall && !Object.prototype.hasOwnProperty.call(webdesktop.installing, app.name)) webdesktop.install(app.name, app.channel || 'stable', app.confinement);
+      else if (webdesktop.canInstall && !Object.prototype.hasOwnProperty.call(webdesktop.installing, app.name)) webdesktop.install(app.name, app.channel || 'stable');
       return;
     }
     if (!detail) {

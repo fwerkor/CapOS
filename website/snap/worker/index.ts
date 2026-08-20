@@ -55,7 +55,7 @@ function publicCacheKey(request: Request, env: Env) {
   const key = new URL(source.origin + source.pathname);
   if (source.pathname === '/api/storefront' || source.pathname === '/api/catalog') {
     key.searchParams.set('version', safeVersion(source.searchParams.get('version'), env));
-    if (source.pathname === '/api/catalog') key.searchParams.set('schema', 'v3');
+    if (source.pathname === '/api/catalog') key.searchParams.set('schema', 'v4');
   } else if (source.pathname === '/api/search') {
     key.searchParams.set('version', safeVersion(source.searchParams.get('version'), env));
     key.searchParams.set('q', (source.searchParams.get('q') || '').trim().toLowerCase());
@@ -74,7 +74,7 @@ function publicCacheResponse(response: Response, status: 'HIT' | 'MISS', browser
 }
 
 async function edgeCached(request: Request, env: Env, ctx: ExecutionContext, edgeTtl: number, browserTtl: number, loader: () => Promise<Response>) {
-  const cache = await caches.open('capos-snap-public-v2');
+  const cache = await caches.open('capos-snap-public-v3');
   const key = publicCacheKey(request, env);
   const cached = await cache.match(key);
   if (cached) return publicCacheResponse(cached, 'HIT', browserTtl);

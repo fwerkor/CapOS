@@ -103,9 +103,19 @@ void handleSystemInfo() {
 }
 
 void handleSnapFind(const std::map<std::string, std::string>& query) {
+    const auto name = query.find("name");
+    if (name != query.end() && !trim(name->second).empty()) {
+        const auto snapName = trim(name->second);
+        if (!validSnapName(snapName)) {
+            sendJson(400, jsonError("invalid snap name", "INVALID_SNAP_NAME"));
+            return;
+        }
+        sendSnapdResponse(snapdRequest("GET", "/v2/find?name=" + percentEncode(snapName)));
+        return;
+    }
     const auto it = query.find("q");
     if (it == query.end() || trim(it->second).empty()) {
-        sendJson(400, jsonError("q is required", "INVALID_REQUEST"));
+        sendJson(400, jsonError("q or name is required", "INVALID_REQUEST"));
         return;
     }
     sendSnapdResponse(snapdRequest("GET", "/v2/find?q=" + percentEncode(trim(it->second))));

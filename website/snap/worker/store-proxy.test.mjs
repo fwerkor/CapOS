@@ -43,10 +43,19 @@ const ctx = { waitUntil(promise) { pending.push(Promise.resolve(promise)); } };
 const realFetch = globalThis.fetch;
 const realCaches = globalThis.caches;
 const upstreamRequests = [];
+const cacheNames = [];
+const cacheLookups = [];
 
 globalThis.caches = {
-  async open() {
-    return { match: async () => undefined, put: async () => undefined };
+  async open(name) {
+    cacheNames.push(name);
+    return {
+      match: async key => {
+        cacheLookups.push(key instanceof Request ? key.url : String(key));
+        return undefined;
+      },
+      put: async () => undefined,
+    };
   },
 };
 
@@ -218,6 +227,11 @@ try {
   const search = await searchResponse.json();
   assert.equal(search.apps[0].name, 'code');
   assert.equal(search.apps[0].confinement, 'classic');
+
+  const catalogResponse = await worker.fetch(new Request('https://snap.capos.top/api/catalog?version=rolling'), env, ctx);
+  assert.equal(catalogResponse.status, 200);
+  assert.ok(cacheNames.every(name => name === 'capos-snap-public-v3'));
+  assert.ok(cacheLookups.some(value => new URL(value).pathname === '/api/catalog' && new URL(value).searchParams.get('schema') === 'v4'));
 
   assert.equal(new URL(upstreamRequests[0].url).origin, 'https://api.snapcraft.io');
   assert.equal(upstreamRequests[0].headers.get('Snap-Device-Series'), '16');
