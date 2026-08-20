@@ -47,6 +47,8 @@ async function copyText(value: string) {
   return copied;
 }
 
+const APP_DETAIL_HISTORY_STATE = 'caposAppDetail';
+
 function appNameFromLocation() {
   return new URLSearchParams(window.location.search).get('app')?.trim() || null;
 }
@@ -56,8 +58,9 @@ function updateAppLocation(name: string | null, mode: 'push' | 'replace' = 'push
   if (name) url.searchParams.set('app', name);
   else url.searchParams.delete('app');
   const next = `${url.pathname}${url.search}${url.hash}`;
-  if (mode === 'push') window.history.pushState(null, '', next);
-  else window.history.replaceState(null, '', next);
+  const currentState = window.history.state && typeof window.history.state === 'object' ? window.history.state : {};
+  if (mode === 'push') window.history.pushState({ ...currentState, [APP_DETAIL_HISTORY_STATE]: true }, '', next);
+  else window.history.replaceState(currentState, '', next);
 }
 
 type AppAction = {
@@ -328,7 +331,9 @@ function Storefront() {
   const closeDetail = () => {
     setSelected(null);
     setDetailLoadingName(null);
-    if (appNameFromLocation()) updateAppLocation(null, 'replace');
+    if (!appNameFromLocation()) return;
+    if (window.history.state?.[APP_DETAIL_HISTORY_STATE]) window.history.back();
+    else updateAppLocation(null, 'replace');
   };
   const actionFor = (app: StoreApp, detail = false): AppAction => {
     if (!webdesktop.connected) {
