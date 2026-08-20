@@ -156,6 +156,14 @@ void handleSnapAction(const Session& session, const std::string& snapName, const
         const auto form = parseKv(readRequestBody());
         if (const auto channel = form.find("channel"); channel != form.end() && !channel->second.empty())
             payload += ",\"channel\":\"" + jsonEscape(channel->second) + "\"";
+        if (const auto confinement = form.find("confinement"); confinement != form.end() && !confinement->second.empty()) {
+            if (confinement->second == "classic") payload += ",\"classic\":true";
+            else if (confinement->second == "devmode") payload += ",\"devmode\":true";
+            else if (confinement->second != "strict") {
+                sendJson(400, jsonError("invalid snap confinement", "INVALID_CONFINEMENT"));
+                return;
+            }
+        }
     }
     payload += '}';
     sendSnapdResponse(snapdRequest("POST", "/v2/snaps/" + percentEncode(snapName), payload));

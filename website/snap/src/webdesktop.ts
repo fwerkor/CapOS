@@ -16,7 +16,7 @@ export interface WebDesktopBridge {
   installed: ReadonlySet<string>;
   installing: Readonly<Record<string, number>>;
   error: string | null;
-  install: (name: string, channel?: string) => void;
+  install: (name: string, channel?: string, confinement?: string) => void;
   open: (name: string) => void;
 }
 
@@ -87,9 +87,9 @@ export function useWebDesktopBridge(): WebDesktopBridge {
     };
   }, []);
 
-  const install = useCallback((name: string, channel = 'stable') => {
+  const install = useCallback((name: string, channel = 'stable', confinement?: string) => {
     setError(null);
-    window.parent.postMessage({ type: 'capos-store:install', version: 1, name, channel }, '*');
+    window.parent.postMessage({ type: 'capos-store:install', version: 1, name, channel, confinement }, '*');
   }, []);
 
   const open = useCallback((name: string) => {

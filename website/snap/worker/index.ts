@@ -180,6 +180,7 @@ function canonicalApp(result: Record<string, any>, includeRich = false) {
     featured: categories.some((c: any) => c.featured),
     version: revision.version || '—',
     channel: revision.channel || 'stable',
+    confinement: revision.confinement || undefined,
     architectures: ['amd64', 'arm64'],
     webdesktop: 'unknown',
     updated: 'Upstream',
@@ -205,7 +206,7 @@ function canonicalApp(result: Record<string, any>, includeRich = false) {
   };
 }
 
-const CANONICAL_LIST_FIELDS = 'title,summary,publisher,version,media,categories,channel,revision';
+const CANONICAL_LIST_FIELDS = 'title,summary,publisher,version,media,categories,channel,revision,confinement';
 
 async function canonicalFind(base: string, query: URLSearchParams, cacheTtl = 120) {
   const params = new URLSearchParams(query); params.set('fields',CANONICAL_LIST_FIELDS);
@@ -243,7 +244,7 @@ const CANONICAL_CATALOG_CATEGORIES = [
   'news-and-weather', 'personalisation', 'photo-and-video', 'productivity', 'science',
   'security', 'server-and-cloud', 'social', 'utilities'
 ];
-const CATALOG_SNAPSHOT_KEY = '_cache/canonical-catalog-v3.json';
+const CATALOG_SNAPSHOT_KEY = '_cache/canonical-catalog-v4.json';
 const CATALOG_SNAPSHOT_TTL = 6 * 3600;
 let catalogRefreshPromise: Promise<void> | null = null;
 

@@ -115,6 +115,24 @@ globalThis.fetch = async (input, init) => {
     }), { headers: { 'content-type': 'application/json' } });
   }
 
+  if (url.pathname === '/v2/snaps/find') {
+    const fields = url.searchParams.get('fields') || '';
+    assert.match(fields, /confinement/);
+    return new Response(JSON.stringify({
+      results: [{
+        name: 'code',
+        'snap-id': 'code-id',
+        snap: {
+          title: 'Code',
+          summary: 'Code editing. Redefined.',
+          publisher: { 'display-name': 'Microsoft', username: 'vscode', validation: 'verified' },
+          categories: [{ name: 'development' }],
+        },
+        revision: { channel: 'stable', confinement: 'classic', revision: 258, version: '110a328e' },
+      }],
+    }), { headers: { 'content-type': 'application/json' } });
+  }
+
   if (url.pathname === '/v2/redirect-test') {
     return new Response(null, {
       status: 302,
@@ -194,6 +212,12 @@ try {
   assert.equal(detail.links.find(link => link.label === 'Report a bug')?.url, 'https://github.com/nextcloud-snap/nextcloud-snap/issues');
   assert.equal(detail.links.find(link => link.label === 'Contact')?.url, 'mailto:support@nextcloud.com');
   assert.equal(detail.storeUrl, 'https://snapcraft.io/nextcloud');
+
+  const searchResponse = await worker.fetch(new Request('https://snap.capos.top/api/search?version=rolling&q=code'), env, ctx);
+  assert.equal(searchResponse.status, 200);
+  const search = await searchResponse.json();
+  assert.equal(search.apps[0].name, 'code');
+  assert.equal(search.apps[0].confinement, 'classic');
 
   assert.equal(new URL(upstreamRequests[0].url).origin, 'https://api.snapcraft.io');
   assert.equal(upstreamRequests[0].headers.get('Snap-Device-Series'), '16');
