@@ -204,6 +204,33 @@ jobs:
               make -j1 V=sc
           fi
 
+      - name: Package compiled rootfs as OCI
+        shell: bash
+        run: |
+          set -euxo pipefail
+          rootfs_dir="$(make -s val.TARGET_DIR)"
+          source_epoch="$(scripts/get_source_date_epoch.sh)"
+          rootfs_tar="/tmp/capos-${{ matrix.name }}-rootfs.tar.gz"
+          oci_archive="/tmp/capos-${{ matrix.name }}.oci.tar"
+
+          case "${{ matrix.target }}/${{ matrix.subtarget }}" in
+            x86/64) architecture=amd64 ;;
+            armsr/armv8) architecture=arm64 ;;
+            *) echo "unsupported OCI CI target" >&2; exit 2 ;;
+          esac
+
+          tar -cp --numeric-owner --owner=0 --group=0 --mode=a-s --sort=name \
+            --mtime="@$source_epoch" -C "$rootfs_dir" . | gzip -9n > "$rootfs_tar"
+          python3 scripts/capos-oci-pack.py \
+            "$rootfs_tar" "$oci_archive" \
+            --architecture "$architecture" \
+            --ref-name "capos:ci-${{ matrix.name }}" \
+            --created-epoch "$source_epoch" \
+            --revision "${{ github.sha }}"
+          tar -tf "$oci_archive" | grep -q '^index.json$'
+          tar -tf "$oci_archive" | grep -q '^oci-layout$'
+          rm -f "$rootfs_tar" "$oci_archive"
+
       - name: QEMU boot and probe 2000/tcp
         shell: bash
         run: |

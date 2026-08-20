@@ -142,6 +142,30 @@ Build steps:
 
 Use a non-root user for builds.
 
+### Build an OCI Image
+
+CapOS can also be built as a Linux OCI system image. The OCI build uses a
+separate tar-based root filesystem profile; normal firmware builds continue to
+use ArgosFS.
+
+```sh
+# linux/amd64 (default)
+make capos-oci
+
+# linux/arm64
+make capos-oci CAPOS_OCI_TARGET=armsr/armv8
+```
+
+The resulting `*.oci.tar` archive is written under the matching
+`bin/targets/<target>/<subtarget>/` directory. `CAPOS_OCI_REF`,
+`CAPOS_OCI_VERSION`, and `CAPOS_OCI_JOBS` can be set to override the embedded
+reference, image version, and build parallelism.
+
+The archive is a standard OCI Image Layout with `/sbin/init` as its entrypoint.
+It is intended as a system container image; running the full CapOS service stack
+and Snap confinement requires a sufficiently privileged container runtime and
+host kernel support.
+
 ## About
 
 ### Documentation

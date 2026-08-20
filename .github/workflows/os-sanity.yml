@@ -80,6 +80,26 @@ jobs:
           grep -q '^CONFIG_TARGET_ROOTFS_ARGOSFS=y' .config
           grep -q '^CONFIG_TARGET_ROOTFS_PERSIST_VAR=y' .config
 
+      - name: CapOS OCI smoke tests
+        shell: bash
+        run: |
+          set -euxo pipefail
+          bash -n scripts/capos-oci-config.sh scripts/capos-oci-build.sh
+          python3 -m py_compile scripts/capos-oci-pack.py tests/capos_oci_smoke.py
+          python3 tests/capos_oci_smoke.py
+
+          scripts/capos-oci-config.sh armsr/armv8
+          grep -q '^CONFIG_TARGET_armsr=y' .config
+          grep -q '^CONFIG_TARGET_armsr_armv8=y' .config
+
+          scripts/capos-oci-config.sh x86/64
+          make defconfig
+          grep -q '^CONFIG_TARGET_x86=y' .config
+          grep -q '^CONFIG_TARGET_x86_64=y' .config
+          grep -q '^# CONFIG_TARGET_ROOTFS_ARGOSFS is not set$' .config
+          grep -q '^CONFIG_TARGET_ROOTFS_TARGZ=y' .config
+          grep -q '^CONFIG_TARGET_ROOTFS_PERSIST_VAR=y' .config
+
       - name: Package metadata sanity (prepare-tmpinfo)
         shell: bash
         run: |
