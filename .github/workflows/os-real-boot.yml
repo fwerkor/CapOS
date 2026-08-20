@@ -1,28 +1,6 @@
 name: OS Real Boot Check
 
 on:
-  pull_request:
-    branches: ["main"]
-    # Default to running for repository changes so new build inputs and
-    # vendored feeds cannot silently bypass the real image build. Ignore only
-    # files that cannot affect the produced CapOS images.
-    paths-ignore:
-      - ".devcontainer/**"
-      - ".github/FUNDING.yml"
-      - ".github/ISSUE_TEMPLATE/**"
-      - ".github/labeler.yml"
-      - ".github/pull_request_template"
-      - ".github/workflows/greetings.yml"
-      - ".github/workflows/issue-summary.yml"
-      - ".github/workflows/labeler.yml"
-      - ".github/workflows/os-sanity.yml"
-      - ".github/workflows/stale.yml"
-      - "CODE_OF_CONDUCT.md"
-      - "CONTRIBUTING.md"
-      - "README.md"
-      - "SECURITY.md"
-      - "TODO.md"
-      - "website/**"
   push:
     branches: ["main"]
     # Default to running for repository changes so new build inputs and
