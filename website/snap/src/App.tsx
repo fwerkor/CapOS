@@ -147,6 +147,16 @@ function formatReleasedAt(value?: string) {
   return new Intl.DateTimeFormat(undefined, { year: 'numeric', month: 'short', day: 'numeric' }).format(date);
 }
 
+function linkDestination(value: string) {
+  try {
+    const url = new URL(value);
+    if (url.protocol === 'mailto:') return decodeURIComponent(url.pathname);
+    return url.hostname.replace(/^www\./, '');
+  } catch {
+    return value;
+  }
+}
+
 function MediaGallery({ app }: { app: StoreApp }) {
   const items = [
     ...(app.screenshots || []).map(url => ({ kind: 'image' as const, url })),
@@ -188,7 +198,7 @@ function AppDetail({ app, loading, onClose, action, onAction }: { app: StoreApp;
       </div>
       <MediaGallery app={app} />
       <section className="detail-section"><h3>About</h3>{loading ? <div className="detail-about-loading"><div className="spinner"/>Loading details…</div> : <div className="detail-markdown"><ReactMarkdown remarkPlugins={[remarkGfm]}>{app.description || app.summary}</ReactMarkdown></div>}</section>
-      {(links.length > 0 || app.storeUrl) && <section className="detail-section"><div className="detail-section-heading"><h3>Links</h3><span>From publisher</span></div><div className="app-link-grid">{links.map(link => <a key={`${link.label}:${link.url}`} href={link.url} target="_blank" rel="noreferrer"><span className="app-link-icon"><Link2 /></span><span><strong>{link.label}</strong><small>{(() => { try { return new URL(link.url).hostname.replace(/^www\./, ''); } catch { return link.url; } })()}</small></span><ExternalLink /></a>)}{app.storeUrl && <a href={app.storeUrl} target="_blank" rel="noreferrer"><span className="app-link-icon"><Store /></span><span><strong>Snap Store</strong><small>Official listing</small></span><ExternalLink /></a>}</div></section>}
+      {(links.length > 0 || app.storeUrl) && <section className="detail-section"><div className="detail-section-heading"><h3>Links</h3><span>From publisher</span></div><div className="app-link-grid">{links.map(link => <a key={`${link.label}:${link.url}`} href={link.url} target="_blank" rel="noreferrer"><span className="app-link-icon"><Link2 /></span><span><strong>{link.label}</strong><small>{linkDestination(link.url)}</small></span><ExternalLink /></a>)}{app.storeUrl && <a href={app.storeUrl} target="_blank" rel="noreferrer"><span className="app-link-icon"><Store /></span><span><strong>Snap Store</strong><small>Official listing</small></span><ExternalLink /></a>}</div></section>}
       <section className="detail-section"><h3>CapOS integration</h3><div className="integration-card"><div className="integration-icon"><AppWindow /></div><div><strong>{app.webdesktop === 'native' ? 'Native WebDesktop app' : app.webdesktop === 'web' ? 'Web service integration' : app.webdesktop === 'gui' ? 'GUI bridge ready' : app.webdesktop === 'service' ? 'Service integration' : 'Snap managed by CapOS'}</strong><p>CapOS can install, update and manage this app from WebDesktop.</p></div><Check /></div></section>
       <section className="detail-section"><h3>Information</h3><dl className="info-list"><div><dt>Publisher</dt><dd>{app.publisher}</dd></div>{app.license && <div><dt>License</dt><dd>{app.license}</dd></div>}{app.confinement && <div><dt>Confinement</dt><dd className="info-capitalize">{app.confinement}</dd></div>}<div><dt>Category</dt><dd>{app.category}</dd></div><div><dt>Updated</dt><dd>{releasedAt || app.updated || 'Recently'}</dd></div><div><dt>Package</dt><dd><code>{app.name}</code></dd></div></dl></section>
     </div>

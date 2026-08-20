@@ -92,6 +92,7 @@ globalThis.fetch = async (input, init) => {
         summary: 'A safe home for all your data.',
         description: 'Private productivity platform.',
         license: 'AGPL-3.0+',
+        contact: 'support@nextcloud.com',
         publisher: { 'display-name': 'Nextcloud', username: 'nextcloud', validation: 'verified' },
         media: [
           { type: 'icon', url: 'https://example.invalid/icon.png' },
@@ -191,6 +192,7 @@ try {
   assert.equal(detail.confinement, 'strict');
   assert.equal(detail.releasedAt, '2026-08-14T08:20:00+00:00');
   assert.equal(detail.links.find(link => link.label === 'Report a bug')?.url, 'https://github.com/nextcloud-snap/nextcloud-snap/issues');
+  assert.equal(detail.links.find(link => link.label === 'Contact')?.url, 'mailto:support@nextcloud.com');
   assert.equal(detail.storeUrl, 'https://snapcraft.io/nextcloud');
 
   assert.equal(new URL(upstreamRequests[0].url).origin, 'https://api.snapcraft.io');

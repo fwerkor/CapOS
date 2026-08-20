@@ -134,8 +134,17 @@ function linkLabel(value: string) {
 function canonicalLinks(snap: Record<string, any>) {
   const links: { label: string; url: string }[] = [];
   const seen = new Set<string>();
-  const push = (label: string, url: unknown) => {
-    if (typeof url !== 'string' || !/^https?:\/\//.test(url) || seen.has(url)) return;
+  const push = (label: string, value: unknown) => {
+    if (typeof value !== 'string') return;
+    let url = value.trim();
+    if (label === 'Contact') {
+      const address = url.replace(/^mailto:/i, '');
+      if (/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(address)) url = `mailto:${address}`;
+    }
+    const isWeb = /^https?:\/\//i.test(url);
+    const isMail = label === 'Contact' && /^mailto:[^@\s]+@[^@\s]+\.[^@\s]+$/i.test(url);
+    if (!isWeb && !isMail) return;
+    if (seen.has(url)) return;
     seen.add(url);
     links.push({ label, url });
   };
