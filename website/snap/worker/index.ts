@@ -3,6 +3,7 @@ interface Env {
   ASSETS: Fetcher;
   DEFAULT_VERSION: string;
   REPO_PUBLIC_BASE: string;
+  STORE_PUBLIC_BASE: string;
   ARTIFACTS: R2Bucket;
   ACCESS_TEAM_DOMAIN: string;
   ACCESS_AUD: string;
@@ -393,7 +394,238 @@ async function finalizePackage(request: Request, env: Env) {
   return json({ok:true,revision:rev,downloadUrl:`${env.REPO_PUBLIC_BASE.replace(/\/$/,'')}/${objectPath}`});
 }
 
-async function proxyDownload(request:Request){const u=new URL(request.url);const target=u.searchParams.get('url');if(!target)return json({error:'Missing download URL.'},400);let upstream:URL;try{upstream=new URL(target)}catch{return json({error:'Invalid download URL.'},400)}const allowed=upstream.protocol==='https:'&&(upstream.hostname.endsWith('.snapcraftcontent.com')||upstream.hostname.endsWith('.canonical.com')||upstream.hostname.endsWith('.ubuntu.com'));if(!allowed)return json({error:'Download host is not an allowed upstream.'},403);const headers=new Headers(request.headers);headers.delete('cookie');headers.delete('authorization');const response=await fetch(new Request(upstream,{method:'GET',headers,redirect:'follow'}));const out=new Headers(response.headers);out.set('cache-control','public, max-age=3600');out.delete('set-cookie');return new Response(response.body,{status:response.status,headers:out})}
+function sameOrigin(a: URL, b: URL) {
+  return a.protocol === b.protocol && a.host === b.host;
+}
+
+function upstreamApiOrigins(sources: { apiUrl: string }[]) {
+  const origins = new Set<string>();
+  for (const source of sources) {
+    try { origins.add(new URL(source.apiUrl).origin); } catch { /* validated when configured */ }
+  }
+  return origins;
+}
+
+function upstreamApiHosts(sources: { apiUrl: string }[]) {
+  const hosts = new Set<string>();
+  for (const source of sources) {
+    try { hosts.add(new URL(source.apiUrl).hostname); } catch { /* validated when configured */ }
+  }
+  return hosts;
+}
+
+function canonicalPayloadHost(hostname: string) {
+  return hostname === 'api.snapcraft.io' ||
+    hostname === 'api.staging.snapcraft.io' ||
+    hostname.endsWith('.snapcraft.io') ||
+    hostname.endsWith('.snapcraftcontent.com') ||
+    hostname.endsWith('.canonical.com') ||
+    hostname.endsWith('.ubuntu.com');
+}
+
+function payloadDownloadPath(pathname: string) {
+  return pathname.includes('/api/v1/snaps/download/') ||
+    pathname.includes('/api/v1/snaps/dm-verity/download/');
+}
+
+function storePublicOrigin(request: Request, env: Env) {
+  const configured = env.STORE_PUBLIC_BASE || new URL(request.url).origin;
+  return new URL(configured).origin;
+}
+
+function downloadProxyUrl(origin: string, target: URL, version: string) {
+  const out = new URL('/download/upstream', origin);
+  out.searchParams.set('url', target.toString());
+  out.searchParams.set('version', version);
+  return out.toString();
+}
+
+function rewriteStoreUrl(raw: string, requestOrigin: string, version: string, sources: { apiUrl: string }[], path: string[] = []) {
+  let value: URL;
+  try { value = new URL(raw); } catch { return raw; }
+
+  const sourceOrigins = upstreamApiOrigins(sources);
+  const sourceHosts = upstreamApiHosts(sources);
+  const isStoreApiPath = value.pathname.startsWith('/v2/') ||
+    (value.pathname.startsWith('/api/v1/') && !payloadDownloadPath(value.pathname));
+  if ((sourceOrigins.has(value.origin) || sourceHosts.has(value.hostname)) && isStoreApiPath) {
+    const local = new URL(value.pathname + value.search + value.hash, requestOrigin);
+    return local.toString();
+  }
+
+  const inDownloadField = path.some(part => part.toLowerCase().includes('download'));
+  const canonicalDownload = canonicalPayloadHost(value.hostname) &&
+    (payloadDownloadPath(value.pathname) || value.hostname.endsWith('.snapcraftcontent.com'));
+  if (inDownloadField || canonicalDownload) return downloadProxyUrl(requestOrigin, value, version);
+
+  return raw;
+}
+
+function rewriteStoreJson(value: unknown, requestOrigin: string, version: string, sources: { apiUrl: string }[], path: string[] = []): unknown {
+  if (typeof value === 'string') return rewriteStoreUrl(value, requestOrigin, version, sources, path);
+  if (Array.isArray(value)) return value.map((item, index) => rewriteStoreJson(item, requestOrigin, version, sources, [...path, String(index)]));
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(Object.entries(value as Record<string, unknown>).map(([key, item]) => [key, rewriteStoreJson(item, requestOrigin, version, sources, [...path, key])]));
+  }
+  return value;
+}
+
+function rewriteStoreLocation(location: string, requestOrigin: string, version: string, sources: { apiUrl: string }[]) {
+  return rewriteStoreUrl(location, requestOrigin, version, sources, ['location']);
+}
+
+async function rewriteStoreResponse(response: Response, request: Request, env: Env, version: string, sources: { apiUrl: string }[]) {
+  const headers = new Headers(response.headers);
+  headers.delete('set-cookie');
+  headers.set('x-capos-store', 'federated');
+  const publicOrigin = storePublicOrigin(request, env);
+
+  const location = headers.get('location');
+  if (location) headers.set('location', rewriteStoreLocation(location, publicOrigin, version, sources));
+
+  const contentType = headers.get('content-type') || '';
+  if (!contentType.toLowerCase().includes('application/json')) {
+    return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+  }
+
+  const raw = await response.text();
+  if (!raw) {
+    headers.delete('content-length');
+    headers.delete('content-encoding');
+    headers.delete('etag');
+    return new Response(null, { status: response.status, statusText: response.statusText, headers });
+  }
+  const payload = JSON.parse(raw) as unknown;
+  const rewritten = rewriteStoreJson(payload, publicOrigin, version, sources);
+  headers.delete('content-length');
+  headers.delete('content-encoding');
+  headers.delete('etag');
+  return new Response(JSON.stringify(rewritten), { status: response.status, statusText: response.statusText, headers });
+}
+
+async function proxyStore(request: Request, env: Env, version: string) {
+  const sources = (await upstreams(env, version)).filter(source => source.enabled);
+  if (!sources.length) return json({'error-list':[{'code':'no-upstream','message':'No enabled Snap upstream.'}]},503);
+
+  const incoming = new URL(request.url);
+  const bodyBytes = ['GET', 'HEAD'].includes(request.method) ? undefined : await request.arrayBuffer();
+  let lastError: unknown;
+
+  for (const source of sources) {
+    const target = new URL(source.apiUrl);
+    if (sameOrigin(target, incoming)) continue; // Never recursively proxy ourselves.
+    target.pathname = incoming.pathname;
+    target.search = incoming.search;
+
+    const headers = new Headers(request.headers);
+    headers.set('Snap-Device-Series', headers.get('Snap-Device-Series') || '16');
+    if (!headers.get('User-Agent')) headers.set('User-Agent', 'CapOS-snapd/1');
+    headers.delete('host');
+    headers.delete('cookie');
+
+    try {
+      const response = await fetch(new Request(target, {
+        method: request.method,
+        headers,
+        body: bodyBytes,
+        redirect: 'manual',
+      }));
+      if (response.status >= 500 && sources.length > 1) {
+        lastError = new Error(`${source.name} returned ${response.status}`);
+        continue;
+      }
+      return rewriteStoreResponse(response, request, env, version, sources);
+    } catch (error) {
+      lastError = error;
+    }
+  }
+
+  console.error('all Snap Store upstreams failed', lastError);
+  return json({'error-list':[{'code':'upstream-unavailable','message':'All configured Snap upstreams are unavailable.'}]},502);
+}
+
+async function sha256Hex(value: string) {
+  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(value));
+  return Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, '0')).join('');
+}
+
+async function upstreamPayloadCacheKey(upstream: URL) {
+  return `upstream-cache/${await sha256Hex(upstream.toString())}.snap`;
+}
+
+function r2RangeHeaders(object: R2ObjectBody, headers: Headers) {
+  if (!object.range) return;
+  const range = object.range as { offset?: number; length?: number; suffix?: number };
+  let offset = 0;
+  let length = object.size;
+  if (typeof range.suffix === 'number') {
+    length = Math.min(range.suffix, object.size);
+    offset = object.size - length;
+  } else {
+    offset = typeof range.offset === 'number' ? range.offset : 0;
+    length = typeof range.length === 'number' ? range.length : Math.max(0, object.size - offset);
+  }
+  headers.set('content-range', `bytes ${offset}-${offset + Math.max(0, length - 1)}/${object.size}`);
+  headers.set('content-length', String(length));
+}
+
+async function cachedPayload(request: Request, env: Env, cacheKey: string) {
+  const object = await env.ARTIFACTS.get(cacheKey, request.headers.has('range') ? { range: request.headers } : undefined);
+  if (!object) return null;
+  const headers = new Headers();
+  object.writeHttpMetadata(headers);
+  headers.set('etag', object.httpEtag);
+  headers.set('accept-ranges', 'bytes');
+  headers.set('cache-control', 'public, max-age=86400, stale-while-revalidate=604800');
+  headers.set('x-capos-store', 'payload-cache');
+  r2RangeHeaders(object, headers);
+  return new Response(request.method === 'HEAD' ? null : object.body, {
+    status: object.range ? 206 : 200,
+    headers,
+  });
+}
+
+async function proxyDownload(request: Request, env: Env, ctx: ExecutionContext) {
+  const u = new URL(request.url);
+  const version = safeVersion(u.searchParams.get('version'), env);
+  const target = u.searchParams.get('url');
+  if (!target) return json({error:'Missing download URL.'},400);
+
+  let upstream: URL;
+  try { upstream = new URL(target); } catch { return json({error:'Invalid download URL.'},400); }
+  const sources = (await upstreams(env, version)).filter(source => source.enabled);
+  const allowedOrigins = upstreamApiOrigins(sources);
+  const allowed = upstream.protocol === 'https:' && (canonicalPayloadHost(upstream.hostname) || allowedOrigins.has(upstream.origin));
+  if (!allowed) return json({error:'Download host is not an allowed upstream.'},403);
+
+  const cacheKey = await upstreamPayloadCacheKey(upstream);
+  const cached = await cachedPayload(request, env, cacheKey);
+  if (cached) return cached;
+
+  const headers = new Headers(request.headers);
+  headers.delete('cookie');
+  headers.delete('authorization');
+  headers.delete('host');
+  const response = await fetch(new Request(upstream, {
+    method: request.method,
+    headers,
+    redirect: 'follow',
+  }), { cf: { cacheEverything: request.method === 'GET', cacheTtl: 86400 } });
+  const out = new Headers(response.headers);
+  out.set('cache-control','public, max-age=3600, stale-while-revalidate=86400');
+  out.set('x-capos-store','payload');
+  out.delete('set-cookie');
+  if (request.method === 'GET' && !request.headers.has('range') && response.status === 200 && response.body) {
+    const [clientBody, cacheBody] = response.body.tee();
+    ctx.waitUntil(env.ARTIFACTS.put(cacheKey, cacheBody, {
+      httpMetadata: response.headers,
+      customMetadata: { source: upstream.toString() },
+    }).catch(error => console.error('unable to cache upstream Snap payload', error)));
+    return new Response(clientBody,{status:response.status,statusText:response.statusText,headers:out});
+  }
+  return new Response(request.method === 'HEAD' ? null : response.body,{status:response.status,statusText:response.statusText,headers:out});
+}
+
 
 async function embeddedStore(request: Request, env: Env) {
   const url = new URL(request.url);
@@ -414,9 +646,9 @@ async function api(request:Request,env:Env,ctx:ExecutionContext){const url=new U
   if(p==='/api/catalog'&&request.method==='GET')return edgeCached(request,env,ctx,300,30,()=>richCatalog(request,env,ctx));
   if(p==='/api/search'&&request.method==='GET')return edgeCached(request,env,ctx,60,10,()=>searchStore(request,env));
   if(p==='/api/app'&&request.method==='GET')return edgeCached(request,env,ctx,1800,60,()=>appDetail(request,env));
-  if(p==='/download/upstream'&&request.method==='GET')return proxyDownload(request);
+  if(p==='/download/upstream'&&(request.method==='GET'||request.method==='HEAD'))return proxyDownload(request,env,ctx);
   if(p==='/api/admin'||p.startsWith('/api/admin/')){if(!(await verifyAccess(request,env)))return json({error:'Cloudflare Access authentication required.'},401);if(p==='/api/admin/state'&&request.method==='GET')return adminState(request,env);if(p==='/api/admin/versions'&&request.method==='POST')return postVersion(request,env);if(p==='/api/admin/upstreams'&&request.method==='PUT')return putUpstreams(request,env);if(p==='/api/admin/upstreams'&&request.method==='POST')return postUpstream(request,env);if(p==='/api/admin/packages/uploads'&&request.method==='POST')return startPackageUpload(request,env);if(p==='/api/admin/packages/upload-part'&&request.method==='PUT')return uploadPackagePart(request,env);if(p==='/api/admin/packages/abort'&&request.method==='POST')return abortPackageUpload(request,env);if(p==='/api/admin/packages/finalize'&&request.method==='POST')return finalizePackage(request,env);}
-  if(p.startsWith('/v2/')){const version=safeVersion(request.headers.get('X-CapOS-Version'),env);const sources=await upstreams(env,version);const first=sources.find(s=>s.enabled);if(!first)return json({'error-list':[{'code':'no-upstream','message':'No enabled Snap upstream.'}]},503);const target=new URL(first.apiUrl);target.pathname=p;target.search=url.search;const headers=new Headers(request.headers);headers.set('Snap-Device-Series',headers.get('Snap-Device-Series')||'16');headers.set('User-Agent','CapOS-snapd/1');headers.delete('host');const response=await fetch(new Request(target,{method:request.method,headers,body:['GET','HEAD'].includes(request.method)?undefined:request.body,redirect:'manual'}));return response;}
+  if(p.startsWith('/api/v1/')||p.startsWith('/v2/')){const version=safeVersion(request.headers.get('X-CapOS-Version'),env);return proxyStore(request,env,version);}
   return json({error:'Not found.'},404);
 }
 
