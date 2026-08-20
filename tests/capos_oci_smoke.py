@@ -5,8 +5,8 @@ from __future__ import annotations
 
 import gzip
 import hashlib
-import io
 import json
+import stat
 import subprocess
 import tarfile
 import tempfile
@@ -14,28 +14,42 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PACKER = REPO_ROOT / "scripts" / "capos-oci-pack.py"
+ROOTFS_PACKER = REPO_ROOT / "scripts" / "capos-oci-rootfs.sh"
 
 
-def make_rootfs(path: Path) -> bytes:
-    raw = io.BytesIO()
-    with tarfile.open(fileobj=raw, mode="w", format=tarfile.USTAR_FORMAT) as archive:
-        for name, payload, mode in (
-            ("etc/capos-release", b"NAME=CapOS\n", 0o644),
-            ("sbin/init", b"#!/bin/sh\nexec /bin/sh\n", 0o755),
-            ("bin/sh", b"#!/bin/sh\n", 0o755),
-        ):
-            info = tarfile.TarInfo(name)
-            info.size = len(payload)
-            info.mode = mode
-            info.uid = 0
-            info.gid = 0
-            info.mtime = 0
-            archive.addfile(info, io.BytesIO(payload))
-    uncompressed = raw.getvalue()
-    with path.open("wb") as fileobj:
-        with gzip.GzipFile(fileobj=fileobj, mode="wb", mtime=0) as compressed:
-            compressed.write(uncompressed)
-    return uncompressed
+def make_rootfs(directory: Path, path: Path) -> bytes:
+    files = (
+        ("etc/capos-release", b"NAME=CapOS\n", 0o644),
+        ("sbin/init", b"#!/bin/sh\nexec /bin/sh\n", 0o755),
+        ("bin/sh", b"#!/bin/sh\n", 0o755),
+        ("usr/bin/sudo", b"#!/bin/sh\n", 0o4755),
+        ("usr/bin/setgid-helper", b"#!/bin/sh\n", 0o2755),
+    )
+    for name, payload, mode in files:
+        target = directory / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(payload)
+        target.chmod(mode)
+
+    subprocess.run(
+        [str(ROOTFS_PACKER), str(directory), str(path), "1234567890"],
+        cwd=REPO_ROOT,
+        check=True,
+    )
+    with tarfile.open(path, "r:gz") as archive:
+        members = {
+            member.name[2:] if member.name.startswith("./") else member.name: member
+            for member in archive.getmembers()
+        }
+        if not members["usr/bin/sudo"].mode & stat.S_ISUID:
+            raise AssertionError("rootfs packer lost setuid mode")
+        if not members["usr/bin/setgid-helper"].mode & stat.S_ISGID:
+            raise AssertionError("rootfs packer lost setgid mode")
+        if members["usr/bin/sudo"].uid != 0 or members["usr/bin/sudo"].gid != 0:
+            raise AssertionError("rootfs packer did not normalize ownership to root")
+
+    with gzip.open(path, "rb") as compressed:
+        return compressed.read()
 
 
 def sha256(data: bytes) -> str:
@@ -58,10 +72,11 @@ def read_json(archive: tarfile.TarFile, name: str) -> dict[str, object]:
 def main() -> int:
     with tempfile.TemporaryDirectory(prefix="capos-oci-test-") as temp_dir:
         temp = Path(temp_dir)
+        rootfs_dir = temp / "rootfs"
         rootfs = temp / "rootfs.tar.gz"
         output_a = temp / "capos-a.oci.tar"
         output_b = temp / "capos-b.oci.tar"
-        uncompressed = make_rootfs(rootfs)
+        uncompressed = make_rootfs(rootfs_dir, rootfs)
 
         args = [
             "python3",

@@ -219,8 +219,21 @@ jobs:
             *) echo "unsupported OCI CI target" >&2; exit 2 ;;
           esac
 
-          tar -cp --numeric-owner --owner=0 --group=0 --mode=a-s --sort=name \
-            --mtime="@$source_epoch" -C "$rootfs_dir" . | gzip -9n > "$rootfs_tar"
+          scripts/capos-oci-rootfs.sh "$rootfs_dir" "$rootfs_tar" "$source_epoch"
+          python3 - "$rootfs_tar" <<'PY'
+          import stat
+          import sys
+          import tarfile
+
+          with tarfile.open(sys.argv[1], "r:gz") as archive:
+              sudo = next(
+                  member
+                  for member in archive.getmembers()
+                  if member.name.lstrip("./") == "usr/bin/sudo"
+              )
+              if not sudo.mode & stat.S_ISUID:
+                  raise SystemExit("OCI rootfs layer lost sudo setuid mode")
+          PY
           python3 scripts/capos-oci-pack.py \
             "$rootfs_tar" "$oci_archive" \
             --architecture "$architecture" \

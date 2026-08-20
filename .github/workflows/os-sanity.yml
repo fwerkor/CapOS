@@ -84,7 +84,7 @@ jobs:
         shell: bash
         run: |
           set -euxo pipefail
-          bash -n scripts/capos-oci-config.sh scripts/capos-oci-build.sh
+          bash -n scripts/capos-oci-config.sh scripts/capos-oci-build.sh scripts/capos-oci-rootfs.sh
           python3 -m py_compile scripts/capos-oci-pack.py tests/capos_oci_smoke.py
           python3 tests/capos_oci_smoke.py
 

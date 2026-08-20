@@ -41,12 +41,16 @@ created_epoch="$(scripts/get_source_date_epoch.sh 2>/dev/null || echo 0)"
 
 config_backup="$(mktemp "${TMPDIR:-/tmp}/capos-oci-config.XXXXXX")"
 had_config=0
+rootfs_tar=""
 if [[ -f .config ]]; then
     cp .config "$config_backup"
     had_config=1
 fi
 
-restore_config() {
+cleanup() {
+    if [[ -n "$rootfs_tar" ]]; then
+        rm -f "$rootfs_tar"
+    fi
     if (( had_config )); then
         cp "$config_backup" .config
     else
@@ -54,7 +58,7 @@ restore_config() {
     fi
     rm -f "$config_backup"
 }
-trap restore_config EXIT
+trap cleanup EXIT
 trap 'exit 130' INT
 trap 'exit 143' TERM
 
@@ -74,19 +78,18 @@ grep -q '^CONFIG_TARGET_ROOTFS_PERSIST_VAR=y$' .config
 make -j"$jobs"
 
 output_dir="bin/targets/$target/$subtarget"
-shopt -s nullglob
-rootfs_candidates=("$output_dir"/*-"$target"-"$subtarget"-rootfs.tar.gz)
-shopt -u nullglob
-if [[ ${#rootfs_candidates[@]} -eq 0 ]]; then
-    echo "CapOS rootfs tarball was not produced in $output_dir" >&2
+rootfs_dir="$(make -s val.TARGET_DIR)"
+if [[ ! -d "$rootfs_dir" ]]; then
+    echo "CapOS target rootfs directory was not produced: $rootfs_dir" >&2
     exit 1
 fi
-rootfs="$(ls -1t -- "${rootfs_candidates[@]}" | head -n 1)"
-stem="$(basename "$rootfs" -rootfs.tar.gz)"
-oci_archive="$output_dir/$stem.oci.tar"
+rootfs_tar="$(mktemp "${TMPDIR:-/tmp}/capos-oci-rootfs.XXXXXX.tar.gz")"
+oci_archive="$output_dir/capos-$target-$subtarget.oci.tar"
+
+scripts/capos-oci-rootfs.sh "$rootfs_dir" "$rootfs_tar" "$created_epoch"
 
 python3 scripts/capos-oci-pack.py \
-    "$rootfs" "$oci_archive" \
+    "$rootfs_tar" "$oci_archive" \
     --architecture "$architecture" \
     --ref-name "$ref_name" \
     --created-epoch "$created_epoch" \
