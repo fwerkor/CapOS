@@ -85,8 +85,10 @@ jobs:
         run: |
           set -euxo pipefail
           bash -n scripts/capos-oci-config.sh scripts/capos-oci-build.sh scripts/capos-oci-rootfs.sh
+          bash -n tests/capos_oci_build_smoke.sh
           python3 -m py_compile scripts/capos-oci-pack.py tests/capos_oci_smoke.py
           python3 tests/capos_oci_smoke.py
+          tests/capos_oci_build_smoke.sh
 
           scripts/capos-oci-config.sh armsr/armv8
           grep -q '^CONFIG_TARGET_armsr=y' .config

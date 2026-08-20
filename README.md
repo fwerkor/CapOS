@@ -159,7 +159,8 @@ make capos-oci CAPOS_OCI_TARGET=armsr/armv8
 The resulting `*.oci.tar` archive is written under the matching
 `bin/targets/<target>/<subtarget>/` directory. `CAPOS_OCI_REF`,
 `CAPOS_OCI_VERSION`, and `CAPOS_OCI_JOBS` can be set to override the embedded
-reference, image version, and build parallelism.
+tag, image version, and build parallelism. `CAPOS_OCI_REF` must use standard
+container tag syntax (for example, `latest` or `v1.0-test`).
 
 The archive is a standard OCI Image Layout with `/sbin/init` as its entrypoint.
 It is intended as a system container image; running the full CapOS service stack

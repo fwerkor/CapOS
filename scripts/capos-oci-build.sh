@@ -34,13 +34,18 @@ if [[ ! "$jobs" =~ ^[1-9][0-9]*$ ]]; then
     exit 2
 fi
 
-ref_name="${CAPOS_OCI_REF:-capos:latest}"
+ref_name="${CAPOS_OCI_REF:-latest}"
+if [[ ! "$ref_name" =~ ^[A-Za-z0-9_][A-Za-z0-9_.-]{0,127}$ ]]; then
+    echo "CAPOS_OCI_REF must be a valid OCI tag" >&2
+    exit 2
+fi
 version="${CAPOS_OCI_VERSION:-SNAPSHOT}"
 revision="$(git rev-parse HEAD 2>/dev/null || echo unknown)"
 created_epoch="$(scripts/get_source_date_epoch.sh 2>/dev/null || echo 0)"
 
 config_backup="$(mktemp "${TMPDIR:-/tmp}/capos-oci-config.XXXXXX")"
 had_config=0
+created_feeds_conf=0
 rootfs_tar=""
 if [[ -f .config ]]; then
     cp .config "$config_backup"
@@ -50,6 +55,9 @@ fi
 cleanup() {
     if [[ -n "$rootfs_tar" ]]; then
         rm -f "$rootfs_tar"
+    fi
+    if (( created_feeds_conf )); then
+        rm -f feeds.conf
     fi
     if (( had_config )); then
         cp "$config_backup" .config
@@ -63,6 +71,7 @@ trap 'exit 130' INT
 trap 'exit 143' TERM
 
 if [[ ! -f feeds.conf && -f feeds.conf.default ]]; then
+    created_feeds_conf=1
     cp feeds.conf.default feeds.conf
 fi
 ./scripts/feeds list >/dev/null

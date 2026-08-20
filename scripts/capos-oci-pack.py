@@ -104,7 +104,7 @@ def main() -> int:
     parser.add_argument("rootfs", type=Path, help="CapOS rootfs.tar.gz produced by the OpenWrt image build")
     parser.add_argument("output", type=Path, help="output OCI archive (.oci.tar)")
     parser.add_argument("--architecture", choices=("amd64", "arm64"), required=True)
-    parser.add_argument("--ref-name", default="capos:latest")
+    parser.add_argument("--ref-name", default="latest")
     parser.add_argument("--created-epoch", type=int, default=0)
     parser.add_argument("--version", default="SNAPSHOT")
     parser.add_argument("--revision", default="unknown")

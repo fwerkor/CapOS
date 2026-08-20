@@ -86,7 +86,7 @@ def main() -> int:
             "--architecture",
             "amd64",
             "--ref-name",
-            "capos:test",
+            "test",
             "--created-epoch",
             "1234567890",
             "--version",
@@ -114,7 +114,7 @@ def main() -> int:
             manifest_desc = index["manifests"][0]
             if manifest_desc["platform"] != {"architecture": "amd64", "os": "linux"}:
                 raise AssertionError(f"unexpected platform: {manifest_desc['platform']}")
-            if manifest_desc["annotations"]["org.opencontainers.image.ref.name"] != "capos:test":
+            if manifest_desc["annotations"]["org.opencontainers.image.ref.name"] != "test":
                 raise AssertionError("OCI reference annotation is missing")
 
             manifest_digest = digest_value(manifest_desc["digest"])

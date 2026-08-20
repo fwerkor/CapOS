@@ -237,7 +237,7 @@ jobs:
           python3 scripts/capos-oci-pack.py \
             "$rootfs_tar" "$oci_archive" \
             --architecture "$architecture" \
-            --ref-name "capos:ci-${{ matrix.name }}" \
+            --ref-name "ci-${{ matrix.name }}" \
             --created-epoch "$source_epoch" \
             --revision "${{ github.sha }}"
           tar -tf "$oci_archive" | grep -q '^index.json$'
