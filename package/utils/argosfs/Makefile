@@ -1,14 +1,16 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=argosfs
-PKG_VERSION:=0.1.0
-PKG_RELEASE:=6
+PKG_VERSION:=1.0.0
+PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/fwerkor/argosfs
-PKG_SOURCE_VERSION:=45e6a5c455c0068207eeeaceb945d7355487ede4
+# v1.0.0 release commit. Keep this on a release/tag-protected revision so the
+# source cannot disappear after upstream branch history maintenance.
+PKG_SOURCE_VERSION:=8a9f001f73dd3e8a8b3c406198a21f8786023f18
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_SOURCE_VERSION).tar.zst
-PKG_MIRROR_HASH:=1053038380bbb8f31fcc94d074f2128631dbd3b2d38ba561cebb06ffa1c696aa
+PKG_MIRROR_HASH:=a01053a6c7a27f1e391439b2fa3252fb0bc4342f51931f06550c4660ef1daf74
 
 PKG_MAINTAINER:=FWERKOR
 PKG_LICENSE:=Apache-2.0
