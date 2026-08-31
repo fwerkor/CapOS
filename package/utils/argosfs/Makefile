@@ -1,14 +1,16 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=argosfs
-PKG_VERSION:=0.1.0
-PKG_RELEASE:=6
+PKG_VERSION:=1.0.1
+PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/fwerkor/argosfs
-PKG_SOURCE_VERSION:=45e6a5c455c0068207eeeaceb945d7355487ede4
+# Current ArgosFS main HEAD after the v1.0.1 release. ArgosFS is developed for
+# CapOS; refresh this commit/hash when intentionally updating ArgosFS.
+PKG_SOURCE_VERSION:=0fd75b82295a161df302059bd06f2347a35b10a2
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_SOURCE_VERSION).tar.zst
-PKG_MIRROR_HASH:=1053038380bbb8f31fcc94d074f2128631dbd3b2d38ba561cebb06ffa1c696aa
+PKG_MIRROR_HASH:=249e415c344a826187844b79b12af413d487aba507a33a562ffd7ec700c5eb21
 
 PKG_MAINTAINER:=FWERKOR
 PKG_LICENSE:=Apache-2.0

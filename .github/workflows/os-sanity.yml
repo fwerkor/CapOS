@@ -26,6 +26,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: ArgosFS source pin preflight
+        shell: bash
+        run: |
+          set -euxo pipefail
+          scripts/ci/check-argosfs-source.sh
+
       - name: Install minimal prerequisites
         shell: bash
         run: |
