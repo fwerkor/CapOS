@@ -2,7 +2,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=snapd
 PKG_VERSION:=2.76.2
-PKG_RELEASE:=6
+PKG_RELEASE:=7
 
 PKG_SOURCE:=snapd_$(PKG_VERSION).vendor.tar.xz
 PKG_SOURCE_URL:=https://github.com/canonical/snapd/releases/download/$(PKG_VERSION)
@@ -58,6 +58,7 @@ define Build/Configure
 			--host=$(GNU_TARGET_NAME) \
 			--build=$(GNU_HOST_NAME) \
 			--prefix=/usr \
+			--localstatedir=/var \
 			--libexecdir=/usr/lib/snapd \
 			--with-apparmorconfigdir=/etc/apparmor.d \
 			--with-snap-mount-dir=/var/lib/snapd/snap \
@@ -100,6 +101,10 @@ define Build/Compile
 	rm -rf $(PKG_INSTALL_DIR)
 	$(INSTALL_DIR) $(PKG_INSTALL_DIR)
 	+$(MAKE) -C $(PKG_BUILD_DIR)/cmd DESTDIR=$(PKG_INSTALL_DIR) install
+	# Upstream intentionally creates this directory as 0111. OpenWrt's
+	# recursive package copy must be able to enumerate it, so make the
+	# staging copy readable and restore 0111 in Package/snapd/install.
+	chmod 0755 $(PKG_INSTALL_DIR)/var/lib/snapd/void
 	+$(MAKE) -C $(PKG_BUILD_DIR)/data DESTDIR=$(PKG_INSTALL_DIR) $(SNAPD_DATA_VARS) install
 
 	$(INSTALL_DIR) $(PKG_INSTALL_DIR)/usr/lib/snapd $(PKG_INSTALL_DIR)/usr/bin
@@ -140,6 +145,7 @@ endef
 
 define Package/snapd/install
 	$(CP) $(PKG_INSTALL_DIR)/* $(1)/
+	chmod 0111 $(1)/var/lib/snapd/void
 	$(INSTALL_DIR) $(1)/etc/init.d $(1)/etc/default
 	$(INSTALL_BIN) ./files/snapd.init $(1)/etc/init.d/snapd
 	$(INSTALL_CONF) ./files/snapd.default $(1)/etc/default/snapd
