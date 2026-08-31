@@ -2,7 +2,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=snapd
 PKG_VERSION:=2.76.2
-PKG_RELEASE:=6
+PKG_RELEASE:=7
 
 PKG_SOURCE:=snapd_$(PKG_VERSION).vendor.tar.xz
 PKG_SOURCE_URL:=https://github.com/canonical/snapd/releases/download/$(PKG_VERSION)
@@ -28,6 +28,7 @@ define Package/snapd
   TITLE:=Snap package manager daemon
   URL:=https://snapcraft.io/
   DEPENDS:=$(GO_ARCH_DEPENDS) @ARCH_64BIT +systemd-on-procd +libseccomp +libcap +libcap-bin +libapparmor +apparmor-parser +eudev +dbus +ca-bundle +openssh-keygen +kmod-loop +kmod-fs-squashfs +squashfs-tools-unsquashfs
+  FILE_MODES:=/var/lib/snapd/void:root:root:0111
 endef
 
 define Package/snapd/description
@@ -58,6 +59,7 @@ define Build/Configure
 			--host=$(GNU_TARGET_NAME) \
 			--build=$(GNU_HOST_NAME) \
 			--prefix=/usr \
+			--localstatedir=/var \
 			--libexecdir=/usr/lib/snapd \
 			--with-apparmorconfigdir=/etc/apparmor.d \
 			--with-snap-mount-dir=/var/lib/snapd/snap \
@@ -100,6 +102,10 @@ define Build/Compile
 	rm -rf $(PKG_INSTALL_DIR)
 	$(INSTALL_DIR) $(PKG_INSTALL_DIR)
 	+$(MAKE) -C $(PKG_BUILD_DIR)/cmd DESTDIR=$(PKG_INSTALL_DIR) install
+	# Upstream intentionally creates this directory as 0111. Keep the physical
+	# staging tree readable through packaging; FILE_MODES records 0111 under
+	# fakeroot when the final package archive is created.
+	chmod 0755 $(PKG_INSTALL_DIR)/var/lib/snapd/void
 	+$(MAKE) -C $(PKG_BUILD_DIR)/data DESTDIR=$(PKG_INSTALL_DIR) $(SNAPD_DATA_VARS) install
 
 	$(INSTALL_DIR) $(PKG_INSTALL_DIR)/usr/lib/snapd $(PKG_INSTALL_DIR)/usr/bin
