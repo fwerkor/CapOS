@@ -28,6 +28,7 @@ define Package/snapd
   TITLE:=Snap package manager daemon
   URL:=https://snapcraft.io/
   DEPENDS:=$(GO_ARCH_DEPENDS) @ARCH_64BIT +systemd-on-procd +libseccomp +libcap +libcap-bin +libapparmor +apparmor-parser +eudev +dbus +ca-bundle +openssh-keygen +kmod-loop +kmod-fs-squashfs +squashfs-tools-unsquashfs
+  FILE_MODES:=/var/lib/snapd/void:root:root:0111
 endef
 
 define Package/snapd/description
@@ -101,9 +102,9 @@ define Build/Compile
 	rm -rf $(PKG_INSTALL_DIR)
 	$(INSTALL_DIR) $(PKG_INSTALL_DIR)
 	+$(MAKE) -C $(PKG_BUILD_DIR)/cmd DESTDIR=$(PKG_INSTALL_DIR) install
-	# Upstream intentionally creates this directory as 0111. OpenWrt's
-	# recursive package copy must be able to enumerate it, so make the
-	# staging copy readable and restore 0111 in Package/snapd/install.
+	# Upstream intentionally creates this directory as 0111. Keep the physical
+	# staging tree readable through packaging; FILE_MODES records 0111 under
+	# fakeroot when the final package archive is created.
 	chmod 0755 $(PKG_INSTALL_DIR)/var/lib/snapd/void
 	+$(MAKE) -C $(PKG_BUILD_DIR)/data DESTDIR=$(PKG_INSTALL_DIR) $(SNAPD_DATA_VARS) install
 
@@ -145,7 +146,6 @@ endef
 
 define Package/snapd/install
 	$(CP) $(PKG_INSTALL_DIR)/* $(1)/
-	chmod 0111 $(1)/var/lib/snapd/void
 	$(INSTALL_DIR) $(1)/etc/init.d $(1)/etc/default
 	$(INSTALL_BIN) ./files/snapd.init $(1)/etc/init.d/snapd
 	$(INSTALL_CONF) ./files/snapd.default $(1)/etc/default/snapd
