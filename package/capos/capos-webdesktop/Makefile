@@ -2,7 +2,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=capos-webdesktop
 PKG_VERSION:=1.0.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 $(shell mkdir -p $(PKG_BUILD_DIR))
@@ -13,7 +13,7 @@ define Package/capos-webdesktop
   SECTION:=capos
   CATEGORY:=CapOS
   TITLE:=CapOS WebDesktop
-  DEPENDS:=+libstdcpp +libopenssl +luci +uhttpd +libustream-mbedtls +px5g-mbedtls +snapd
+  DEPENDS:=+libstdcpp +libopenssl +luci +uhttpd +libustream-mbedtls +px5g-mbedtls
 endef
 
 define Package/capos-webdesktop/description

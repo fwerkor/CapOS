@@ -2,7 +2,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=capos-core
 PKG_VERSION:=0.1.0
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -10,7 +10,7 @@ define Package/capos-core
   SECTION:=capos
   CATEGORY:=CapOS
   TITLE:=CapOS Core Meta Package
-  DEPENDS:=@ARCH_64BIT @!SMALL_FLASH +snapd +capos-webdesktop +sudo
+  DEPENDS:=@ARCH_64BIT @!SMALL_FLASH +capos-webdesktop +sudo
 endef
 
 define Package/capos-core/description
