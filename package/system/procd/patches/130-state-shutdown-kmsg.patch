@@ -1,0 +1,43 @@
+From 7367daeb2ff4c52b68dbcc57d08df0b659f54882 Mon Sep 17 00:00:00 2001
+From: Daniel Golle <daniel@makrotopia.org>
+Date: Mon, 21 Sep 2026 14:25:36 +0100
+Subject: [PATCH 4/6] state: narrate the shutdown on /dev/kmsg
+
+From STATE_INIT onwards procd logs to syslog, so its narration of the
+shutdown has to reach logd over a datagram socket and be written out by
+logread before STATE_HALT's kill(-1, SIGTERM) destroys both. Only
+"- shutdown -" wins that race, by luck of the inittab run and the sync()
+that follow it; "- SIGTERM processes -" loses although it is emitted
+before the kill it announces, and the later markers are logged when logd
+is already dead. Reordering cannot help, because logd has to die before
+the machine does.
+
+Switch the channel to /dev/kmsg on entry to STATE_SHUTDOWN, symmetric to
+the switch to syslog at STATE_INIT. The kernel owns that ring to the
+last instant and echoes it to the console, and logd reads /proc/kmsg, so
+the markers still reach logread while logd lives; the switch precedes
+set_console() so that its own failures are reported too. Syslog is not
+kept in parallel, as it would only duplicate the one marker that already
+survives. The lines keep their procd: prefix but move from facility
+daemon to user, which the kernel forces on anything userspace writes to
+/dev/kmsg.
+
+Fixes: 4bccbfa967d7 ("Convert log calls to ulog() api")
+Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+(cherry picked from commit 2e9b11af58f6b930fabd41c6339428e9fe28b91a)
+---
+ state.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/state.c b/state.c
+index 478919c..957afce 100644
+--- a/state.c
++++ b/state.c
+@@ -171,6 +171,7 @@ static void state_enter(void)
+ 		break;
+ 
+ 	case STATE_SHUTDOWN:
++		ulog_open(ULOG_KMSG, LOG_DAEMON, "procd");
+ 		/* Redirect output to the console for the users' benefit */
+ 		set_console();
+ 		LOG("- shutdown -\n");
