@@ -1,0 +1,79 @@
+From 9b4237afc01b8ab87d06b0aa5127eba1902cca9b Mon Sep 17 00:00:00 2001
+From: Cao Yuhang <caoyuhang@fwerkor.com>
+Date: Fri, 9 Oct 2026 04:54:22 +0000
+Subject: [PATCH] coldplug: recreate device nodes before udevtrigger
+
+coldplug replaces /dev with an empty tmpfs and then relies on asynchronous uevents to recreate device nodes. Reuse the existing mkdev scanner so devices already present in sysfs are available synchronously before the state machine can advance.
+
+Because the normal hotplug mknod path may now encounter those nodes with EEXIST, explicitly apply the requested mode to existing nodes before applying any configured group. The regular udevtrigger/hotplug pass still remains authoritative for final permissions and handlers.
+
+Signed-off-by: Cao Yuhang <caoyuhang@fwerkor.com>
+---
+ CMakeLists.txt  |  2 +-
+ plug/coldplug.c |  2 ++
+ plug/hotplug.c  | 11 +++++++----
+ 3 files changed, 10 insertions(+), 5 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index a52f821..48d9b21 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -23,7 +23,7 @@ SET(SOURCES procd.c signal.c state.c hotplug-dispatch.c inittab.c rcS.c ubus.c
+ 	service/validate.c service/trigger.c service/watch.c service/vrf.c
+ 	utils/utils.c)
+ IF(NOT DISABLE_INIT)
+-  SET(SOURCES ${SOURCES} watchdog.c plug/coldplug.c plug/hotplug.c)
++  SET(SOURCES ${SOURCES} watchdog.c plug/coldplug.c plug/hotplug.c initd/mkdev.c)
+ ENDIF()
+ 
+ FIND_LIBRARY(ubox NAMES ubox)
+diff --git a/plug/coldplug.c b/plug/coldplug.c
+index 557d069..4bb89c9 100644
+--- a/plug/coldplug.c
++++ b/plug/coldplug.c
+@@ -25,6 +25,7 @@
+ 
+ #include "hotplug.h"
+ #include "../container.h"
++#include "../initd/init.h"
+ 
+ static struct uloop_process udevtrigger;
+ 
+@@ -51,6 +52,7 @@ void procd_coldplug(void)
+ 		umount2("/dev/", MNT_DETACH);
+ 		mount("tmpfs", "/dev", "tmpfs", MS_NOATIME | MS_NOEXEC | MS_NOSUID, "mode=0755,size=512K");
+ 		mknod("/dev/null", S_IFCHR | 0666, makedev(1, 3));
++		mkdev("*", 0600);
+ 		mkdir("/dev/pts", 0755);
+ 		mount("devpts", "/dev/pts", "devpts", MS_NOATIME | MS_NOEXEC | MS_NOSUID, 0);
+ 	}
+diff --git a/plug/hotplug.c b/plug/hotplug.c
+index b968a54..ebe94d5 100644
+--- a/plug/hotplug.c
++++ b/plug/hotplug.c
+@@ -165,8 +165,11 @@ static void handle_makedev(struct blob_attr *msg, struct blob_attr *data)
+ 
+ 	blobmsg_parse_array(mkdev_policy, 3, tb, blobmsg_data(data), blobmsg_data_len(data));
+ 	if (tb[0] && tb[1] && minor && major && subsystem) {
++		const char *target = blobmsg_get_string(tb[0]);
++		mode_t mode = strtoul(blobmsg_data(tb[1]), NULL, 8);
+ 		mode_t m = S_IFCHR;
+-		char *d = strdup(blobmsg_get_string(tb[0]));
++		char *d = strdup(target);
++		int ret;
+ 
+ 		d = dirname(d);
+ 		mkdir_p(d, 0755);
+@@ -174,9 +177,9 @@ static void handle_makedev(struct blob_attr *msg, struct blob_attr *data)
+ 
+ 		if (!strcmp(subsystem, "block"))
+ 			m = S_IFBLK;
+-		mknod(blobmsg_get_string(tb[0]),
+-				m | strtoul(blobmsg_data(tb[1]), NULL, 8),
+-				makedev(atoi(major), atoi(minor)));
++		ret = mknod(target, m | mode, makedev(atoi(major), atoi(minor)));
++		if (!ret || errno == EEXIST)
++			chmod(target, mode);
+ 		if (tb[2])
+ 			chgrp_target(tb[2], tb[0]);
+ 	}
