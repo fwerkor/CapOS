@@ -1,0 +1,30 @@
+From c0348511e320ad2d6f1452486bc8c0c90ce49ce0 Mon Sep 17 00:00:00 2001
+From: Daniel Golle <daniel@makrotopia.org>
+Date: Sun, 20 Sep 2026 17:22:00 +0100
+Subject: [PATCH 6/6] hotplug: release the JSON object after parsing a rule
+ file
+
+rule_handle_file() converts the parsed json-c object into a blobmsg
+buffer but never drops its reference, so the object tree stays
+allocated for the lifetime of procd. Only one rule file is ever
+loaded, so a single object is leaked rather than one per uevent.
+
+Fixes: 54108c71df64 ("fix hotplug")
+Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+(cherry picked from commit daa7bb065de7acd0f7fd0b261a888af6330f5a20)
+---
+ plug/hotplug.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/plug/hotplug.c b/plug/hotplug.c
+index 432df5e..3b658ca 100644
+--- a/plug/hotplug.c
++++ b/plug/hotplug.c
+@@ -502,6 +502,7 @@ rule_handle_file(struct json_script_ctx *ctx, const char *name)
+ 
+ 	blob_buf_init(&script, 0);
+ 	blobmsg_add_json_element(&script, "", obj);
++	json_object_put(obj);
+ 
+ 	return json_script_file_from_blobmsg(name, blob_data(script.head), blob_len(script.head));
+ }
