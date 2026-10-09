@@ -1,0 +1,34 @@
+From 7de7c8fb322239a6fca44bcd88ec0be01e655c20 Mon Sep 17 00:00:00 2001
+From: Daniel Golle <daniel@makrotopia.org>
+Date: Mon, 21 Sep 2026 14:08:52 +0100
+Subject: [PATCH 3/6] signal: drop the unsafe stdio calls from do_reboot()
+
+do_reboot() has exactly one caller, signal_crash(), so every statement
+in it runs inside a SIGSEGV or SIGBUS handler. Neither fflush() nor
+ulog() is async-signal-safe: both take a lock, so a crash raised inside
+any stdio or syslog call deadlocks procd against itself instead of
+rebooting the box. The flush has had nothing to flush since procd's own
+messages stopped travelling on stderr, and the line it announced is now
+written to /dev/kmsg by the caller. Only sync(), sleep() and reboot()
+remain.
+
+Fixes: f1bf99b09f66 ("add signal handler")
+Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+(cherry picked from commit 46dc5e51faed205bda5514e03a70136a50add9f9)
+---
+ signal.c | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/signal.c b/signal.c
+index b9fa0bc..3c44ee3 100644
+--- a/signal.c
++++ b/signal.c
+@@ -47,8 +47,6 @@ static void crash_kmsg(void)
+ 
+ static void do_reboot(void)
+ {
+-	LOG("reboot\n");
+-	fflush(stderr);
+ 	sync();
+ 	sleep(2);
+ 	reboot(RB_AUTOBOOT);
