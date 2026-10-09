@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-26 08:43+0000\n"
-"Last-Translator: Volenski <volenski@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-09-29 13:09+0000\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "openwrt/luciapplicationsacme/pt_BR/>\n"
 "Language: pt_BR\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:227
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:235
@@ -54,7 +54,7 @@ msgstr ""
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:84
 msgid "Advanced Settings"
-msgstr "Configurações Avançadas"
+msgstr "Configurações avançadas"
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:191
 msgid "Alternative DNS API options"
@@ -200,6 +200,8 @@ msgstr "Importar"
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:167
 msgid "In DNS mode, the domain name does not have to resolve to the router IP."
 msgstr ""
+"No modo DNS, não é necessário que o nome de domínio resolva para o IP do "
+"roteador."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:107
 msgid "Install package %s"
@@ -233,11 +235,11 @@ msgstr "Tamanho da chave"
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:229
 msgid "LUCI only supports one challenge alias per certificate."
-msgstr ""
+msgstr "O LUCI suporta apenas um apelido de desafio por certificado."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:237
 msgid "LUCI only supports one challenge domain per certificate."
-msgstr ""
+msgstr "O LUCI suporta apenas um domínio de desafio por certificado."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:115
 msgid "Listen port"
@@ -256,12 +258,16 @@ msgid ""
 "Note that the domain names in the certificate must already be configured to "
 "point at the router's public IP address."
 msgstr ""
+"Observe que os nomes de domínio no certificado já devem estar configurados "
+"para apontar para o endereço IP público do roteador."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:46
 msgid ""
 "Once configured, issuing certificates can take a while. Check the logs for "
 "progress and any errors."
 msgstr ""
+"Uma vez configurado, a emissão de certificados pode demorar um pouco. "
+"Verifique os registros para acompanhar o progresso e quaisquer erros."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:106
 msgid "Package is not installed"
@@ -339,11 +345,11 @@ msgstr ""
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:226
 msgid "The challenge alias to use for ALL domains."
-msgstr ""
+msgstr "O apelido do desafio a ser usado para TODOS os domínios."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:217
 msgid "The credentials for the DNS API mode selected above."
-msgstr ""
+msgstr "As credenciais para o modo de API DNS selecionado acima."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:407
 msgid ""
@@ -355,7 +361,7 @@ msgstr ""
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:234
 msgid "The domain alias to use for ALL domains."
-msgstr ""
+msgstr "O apelido de domínio a ser usado para TODOS os domínios."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:41
 msgid ""
@@ -363,6 +369,9 @@ msgid ""
 "Simply fill out this to have the router configured with Letsencrypt-issued "
 "certificates for the web interface."
 msgstr ""
+"Isto configura a instalação automática de certificados ACME (Let's Encrypt). "
+"Basta preencher isto para ter o roteador configurado com certificados "
+"emitidos pelo Let's Encrypt para a interface web."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:119
 msgid "To temporary open port you can specify your web server port e.g. 80."
@@ -375,6 +384,8 @@ msgid ""
 "To use DNS mode to issue certificates, set this to the name of a DNS API "
 "supported by acme.sh."
 msgstr ""
+"Para usar o modo DNS na emissão de certificados, defina isto com o nome de "
+"uma API DNS suportada pelo acme.sh."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:282
 msgid "Use a custom CA instead of Let's Encrypt."
@@ -386,7 +397,7 @@ msgstr "Use o servidor de encenação"
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:169
 msgid "Using this mode requires the acme-dnsapi package to be installed."
-msgstr ""
+msgstr "O uso deste modo requer que o pacote acme-dnsapi esteja instalado."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:93
 msgid "Validate via TLS port 443."
@@ -429,3 +440,104 @@ msgstr ""
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:147
 msgid "wildcards * require Validation method: DNS"
 msgstr "curingas (wildcards) * requerido. Método de validação: DNS"
+
+#~ msgid ""
+#~ "The challenge alias to use for ALL domains. See https://github.com/acmesh-"
+#~ "official/acme.sh/wiki/DNS-alias-mode for the details of this process. "
+#~ "LUCI only supports one challenge alias per certificate."
+#~ msgstr ""
+#~ "O aliás do desafio usado em TODOS os domínios. Consulte https://"
+#~ "github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode para obter mais "
+#~ "detalhes sobre este processo. O LUCI é compatível apenas com um desafio "
+#~ "aliás por certificado."
+
+#~ msgid ""
+#~ "The credentials for the DNS API mode selected above. See https://"
+#~ "github.com/acmesh-official/acme.sh/wiki/dnsapi for the format of "
+#~ "credentials required by each API. Add multiple entries here in KEY=VAL "
+#~ "shell variable format to supply multiple credential variables."
+#~ msgstr ""
+#~ "As credenciais para o modo da API DNS selecionado acima. Consulte https://"
+#~ "github.com/acmesh-official/acme.sh/wiki/dnsapi para obter o formato das "
+#~ "credenciais exigidas por cada API. Adicione várias entradas aqui no "
+#~ "formato como variável da shell KEY=VAL suprindo múltiplas variáveis para "
+#~ "as credenciais."
+
+#~ msgid ""
+#~ "The domain alias to use for ALL domains. See https://github.com/acmesh-"
+#~ "official/acme.sh/wiki/DNS-alias-mode for the details of this process. "
+#~ "LUCI only supports one challenge domain per certificate."
+#~ msgstr ""
+#~ "O aliás do desafio usado em TODOS os domínios. Consulte https://"
+#~ "github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode para obter mais "
+#~ "detalhes sobre este processo. O LUCI é compatível apenas com um desafio "
+#~ "aliás por certificado."
+
+#~ msgid ""
+#~ "This configures ACME (Letsencrypt) automatic certificate installation. "
+#~ "Simply fill out this to have the router configured with Letsencrypt-"
+#~ "issued certificates for the web interface. Note that the domain names in "
+#~ "the certificate must already be configured to point at the router's "
+#~ "public IP address. Once configured, issuing certificates can take a "
+#~ "while. Check the logs for progress and any errors."
+#~ msgstr ""
+#~ "Isso configura a instalação automática do certificado ACME (Letsencrypt). "
+#~ "Preencha isso para que a interface web do roteador seja configurado com "
+#~ "os certificados emitidos pelo Letsencrypt. Observe que os nomes de "
+#~ "domínio no certificado já devem estar configurados para apontar para o "
+#~ "endereço IP público do roteador. Uma vez configurados, a emissão dos "
+#~ "certificados pode demorar um pouco. Verifique os registros log para ver "
+#~ "os progressos e quaisquer outros erros."
+
+#~ msgid ""
+#~ "To use DNS mode to issue certificates, set this to the name of a DNS API "
+#~ "supported by acme.sh. See https://github.com/acmesh-official/acme.sh/wiki/"
+#~ "dnsapi for the list of available APIs. In DNS mode, the domain name does "
+#~ "not have to resolve to the router IP. DNS mode is also the only mode that "
+#~ "supports wildcard certificates. Using this mode requires the acme-dnsapi "
+#~ "package to be installed."
+#~ msgstr ""
+#~ "Para usar o modo DNS para emitir certificados, defina-o como o nome de "
+#~ "uma API DNS compatível pelo acme.sh. Consulte https://github.com/acmesh-"
+#~ "official/acme.sh/wiki/dnsapi para obter uma lista de todas as APIs "
+#~ "disponíveis. No modo DNS, o nome do domínio não precisa ser resolvido "
+#~ "para o IP do roteador. O modo DNS também é o único modo que é compatível "
+#~ "com certificados curinga. O uso desse modo requer que o pacote acme-"
+#~ "dnsapi esteja instalado."
+
+#~ msgid "Base64 content of private key. Use instead of YC_SA_Key_File_Path"
+#~ msgstr "Conteúdo Base64 da chave privada. Use em vez do YC_SA_Key_File_Path"
+
+#~ msgid ""
+#~ "E.g. <code>_acme-challenge.example.com:12345:98765 "
+#~ "alias.example.com:11111</code>"
+#~ msgstr ""
+#~ "Ex. <code>_acme-challenge.example.com:12345:98765 alias.example.com:111</"
+#~ "code>"
+
+#~ msgid "OCID of tenancy that contains the target DNS zone"
+#~ msgstr "O OCID do locatário que contém a zona de DNS de destino"
+
+#~ msgid "OCID of user with permission to add/remove records from zones"
+#~ msgstr ""
+#~ "OCID do usuário com permissão para adicionar ou remover os registros das "
+#~ "zonas"
+
+#~ msgid ""
+#~ "Open <a href=\"https://www.duckdns.org/\">DuckDNS</a> and copy a token "
+#~ "here"
+#~ msgstr ""
+#~ "Abra o <a href=\"https://www.duckdns.org/\">DuckDNS</a> e copie um token "
+#~ "aqui"
+
+#~ msgid "Path to private API signing key file in PEM format"
+#~ msgstr "Caminho para API privada assinando o arquivo chave em formato PEM"
+
+#~ msgid "Should point to the tenancy home region"
+#~ msgstr "Deve apontar para a região do domicílio do locatário"
+
+#~ msgid "The private API signing key in PEM format"
+#~ msgstr "A chave de assinatura da API privada no formato PEM"
+
+#~ msgid "This is usually NOT an email address"
+#~ msgstr "Geralmente isso não é um endereço de e-mail"

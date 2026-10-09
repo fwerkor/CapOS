@@ -41,8 +41,7 @@ msgstr "網域路徑"
 msgid ""
 "Domains path/URL. If you want to add domains via LuCI, specify the files in "
 "the /etc/antiblock folder."
-msgstr ""
-"網域路徑/URL。若您想透過 LuCI 新增網域，在 /etc/antiblock 目錄中的檔案指定。"
+msgstr "網域路徑/URL。若您想透過 LuCI 新增網域，在 /etc/antiblock 目錄中的檔案指定。"
 
 #: applications/luci-app-antiblock/htdocs/luci-static/resources/view/antiblock/domains.js:93
 msgid "Domains path:"

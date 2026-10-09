@@ -14,7 +14,7 @@ PKG_SOURCE_URL:=https://codeload.github.com/avahi/avahi/tar.gz/v0.9-rc5?
 PKG_HASH:=5b0a9d88110b0fc8aaafc5cc0a26e83e7d2a4aca3a36bc27c9b626db7ead27b0
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(BUILD_VARIANT)/$(PKG_NAME)-0.9-rc5
 
-PKG_MAINTAINER:=
+PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
 PKG_LICENSE:=LGPL-2.1-or-later
 PKG_LICENSE_FILES:=LICENSE
 PKG_CPE_ID:=cpe:/a:avahi:avahi
@@ -29,7 +29,7 @@ define Package/avahi/Default
   SECTION:=net
   CATEGORY:=Network
   TITLE:=An mDNS/DNS-SD implementation
-  URL:=http://www.avahi.org/
+  URL:=https://avahi.org/
 endef
 
 define Package/avahi/Default/description

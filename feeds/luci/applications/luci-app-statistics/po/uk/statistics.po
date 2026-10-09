@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2026-05-18 07:48+0000\n"
+"PO-Revision-Date: 2026-07-08 15:16+0000\n"
 "Last-Translator: Dan <jonweblin2205@protonmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsstatistics/uk/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:54
 msgid "%H: Attenuation on %pi"
@@ -676,9 +676,9 @@ msgid ""
 "Allowed timespan types: min, h, hour(s), d, day(s), w, week(s), m, month(s), "
 "y, year(s)"
 msgstr ""
-"Список проміжків часу, які будуть зберігатися в базі даних RRD. Наприклад, "
-"«1 година 1 день 14 днів». Дозволені типи проміжків часу: хв, год, "
-"година(и), д, день(и), т, тиждень(і), м, місяць(і), р, рік(и)"
+"Список проміжків часу, які будуть зберігатися в базі даних RRD. Наприклад, «"
+"1 година 1 день 14 днів». Дозволені типи проміжків часу: хв, год, година(и), "
+"д, день(и), т, тиждень(і), м, місяць(і), р, рік(и)"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/network.js:40
 msgid "Listen host"
@@ -1003,7 +1003,7 @@ msgstr "Плагін Mqtt увімкнено"
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/curl.js:25
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:25
 msgid "Name"
-msgstr "Імʼя"
+msgstr "Назва"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:374
 msgid "Near CRC Errors"
@@ -1327,8 +1327,7 @@ msgstr "Порт сервера"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/network.js:20
 msgid "Set the maximum size for datagrams sent over the network"
-msgstr ""
-"Встановити максимальний розмір дейтаграм, які надсилаються через мережу"
+msgstr "Встановити максимальний розмір дейтаграм, які надсилаються через мережу"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:185
 msgid "Set up collectd"
@@ -2029,3 +2028,60 @@ msgstr "зменшує rrd розмір"
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/tcpconns.js:45
 msgid "summary of all ports"
 msgstr "зведення всіх портів"
+
+#~ msgid "Bitrate"
+#~ msgstr "Бітрейт"
+
+#~ msgid "DSL Flags"
+#~ msgstr "Прапори DSL"
+
+#~ msgid "DSL Line Uptime"
+#~ msgstr "Час роботи лінії DSL"
+
+#~ msgid "DSL Signal"
+#~ msgstr "Сигнал DSL"
+
+#~ msgid "Errors"
+#~ msgstr "Помилки"
+
+#~ msgid "Line Attenuation Down (LATN)"
+#~ msgstr "Лінійне затухання вниз (LATN)"
+
+#~ msgid "Line Attenuation Up (LATN)"
+#~ msgstr "Лінійне затухання (LATN)"
+
+#~ msgid "Max. Attainable Data Rate (ATTNDR) Down"
+#~ msgstr "Макс. Досяжна швидкість передачі даних (ATTNDR) знижена"
+
+#~ msgid "Max. Attainable Data Rate (ATTNDR) Up"
+#~ msgstr "Макс. Досяжна швидкість передачі даних (ATTNDR) зросла"
+
+#~ msgid "Noise Margin Down (SNR)"
+#~ msgstr "Зниження рівня шуму (SNR)"
+
+#~ msgid "Noise Margin Up (SNR)"
+#~ msgstr "Запас шуму (SNR)"
+
+#~ msgid "Rx Corrupted Far"
+#~ msgstr "Rx пошкоджено далеко"
+
+#~ msgid "Rx Corrupted Near"
+#~ msgstr "Rx пошкоджено поблизу"
+
+#~ msgid "Rx Retransmitted Far"
+#~ msgstr "Rx повторно передано далеко"
+
+#~ msgid "Rx Retransmitted Near"
+#~ msgstr "Rx повторно передано поблизу"
+
+#~ msgid "Signal Attenuation Down (SATN)"
+#~ msgstr "Зниження ослаблення сигналу (SATN)"
+
+#~ msgid "Signal Attenuation Up (SATN)"
+#~ msgstr "Збільшення ослаблення сигналу (SATN)"
+
+#~ msgid "Tx Retransmitted Far"
+#~ msgstr "Tx Retransmited Far"
+
+#~ msgid "Tx Retransmitted Near"
+#~ msgstr "Tx повторно передано поблизу"

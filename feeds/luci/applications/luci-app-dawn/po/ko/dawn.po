@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-03-16 23:09+0000\n"
+"PO-Revision-Date: 2026-07-15 06:01+0000\n"
 "Last-Translator: Hyeonjeong Lee <h9101654@gmail.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsdawn/ko/>\n"
@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:389
 msgid "2.4G Band Metric"
@@ -324,8 +324,8 @@ msgid ""
 "Maximum reported AP-client bandwidth permitted when kicking. Set to zero to "
 "disable the check."
 msgstr ""
-"AP-클라이언트 대역폭이 해당 설정값보다 낮아지면 클라이언트를 추방합니다. 0으"
-"로 설정하면 기능을 끕니다."
+"AP-클라이언트 대역폭이 해당 설정값보다 낮아지면 클라이언트를 추방합니다. "
+"0으로 설정하면 기능을 끕니다."
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:185
 msgid "Method of networking between DAWN instances"
@@ -395,13 +395,13 @@ msgstr "VHT 미지원"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/status/dawn/network_overview.js:93
 msgid "No access points available."
-msgstr "사용 가능한 액세스 포인트가 없습니다."
+msgstr "사용 가능한 액세스 포인트 없음."
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/status/dawn/hearing_map.js:99
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/status/dawn/network_overview.js:78
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/status/dawn/network_overview.js:89
 msgid "No clients connected."
-msgstr "연결 클라이언트가 없습니다."
+msgstr "연결 클라이언트 없음."
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/dawn/dawn-common.js:32
 msgid "Not available"
@@ -410,8 +410,7 @@ msgstr "미지원"
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:347
 msgid ""
 "Number of connected stations to consider \"better\" for use_station_count"
-msgstr ""
-"연결 단말 수 활용(use_station_count) 시 최적 AP로 평가할 단말 수 차이 기준"
+msgstr "연결 단말 수 활용(use_station_count) 시 최적 AP로 평가할 단말 수 차이 기준"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:353
 msgid ""
@@ -429,8 +428,7 @@ msgstr "채널 이용률 값의 평균을 산출하기 위한 샘플링 주기 �
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:359
 msgid "Number of times a client should retry PROBE before acceptance"
-msgstr ""
-"클라이언트의 접속을 허용하기까지 프로브 시도가 연속으로 확인되어야 하는 횟수"
+msgstr "클라이언트의 접속을 허용하기까지 프로브 시도가 연속으로 확인되어야 하는 횟수"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:151
 msgid "Path to hostapd runtime information"
@@ -452,8 +450,8 @@ msgstr "TCP 통신 포트"
 msgid ""
 "Preferred order for using Passive, Active or Table 802.11k BEACON information"
 msgstr ""
-"802.11k 비콘 정보 수집 방식 우선순위 조합 (p: 수동 측정, a: 능동 측정, t: 자"
-"체 표 참조)"
+"802.11k 비콘 정보 수집 방식 우선순위 조합 (p: 수동 측정, a: 능동 측정, t: "
+"자체 표 참조)"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/status/dawn/hearing_map.js:66
 msgid "RCPI"
@@ -613,8 +611,8 @@ msgid ""
 "Timer to refresh / remove the TCP connections to other DAWN instances found "
 "via uMDNS"
 msgstr ""
-"uMDNS를 통해 찾은 다른 DAWN 인스턴스와의 TCP 연결을 새로 고치거나 삭제하는 주"
-"기"
+"uMDNS를 통해 찾은 다른 DAWN 인스턴스와의 TCP 연결을 새로 고치거나 삭제하는 "
+"주기"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:258
 msgid ""
@@ -648,8 +646,8 @@ msgstr "연결이 끊긴 것으로 판단하기까지의 시간"
 msgid ""
 "Unable to query the DAWN service via ubus, the service appears to be stopped."
 msgstr ""
-"ubus를 통해 DAWN 서비스에 연결할 수 없습니다. 서비스가 중지된 상태인 것 같습"
-"니다."
+"ubus를 통해 DAWN 서비스에 연결할 수 없습니다. 서비스가 중지된 상태인 것 "
+"같습니다."
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:245
 msgid "Update Beacon reports"

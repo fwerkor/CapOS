@@ -1,5 +1,5 @@
 Source-Makefile: feeds/luci/applications/luci-app-csshnpd/Makefile
-Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host LUCI_UTMIN:ucode/host 
 
 Package: luci-app-csshnpd
 Submenu: 3. Applications
@@ -172,6 +172,25 @@ Hidden: 1
 Description:     Translation for luci-app-csshnpd - Polski (Polish)
 @@
 
+Package: luci-i18n-csshnpd-pt
+Default: LUCI_LANG_pt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-csshnpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-csshnpd-pt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-csshnpd - pt translation
+Maintainer: Chris Swan <chris@atsign.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-csshnpd - Português (Portuguese)
+@@
+
 Package: luci-i18n-csshnpd-pt-br
 Default: LUCI_LANG_pt_BR||(ALL&&m)
 Version: x
@@ -191,6 +210,25 @@ Hidden: 1
 Description:     Translation for luci-app-csshnpd - Português do Brasil (Brazilian Portuguese)
 @@
 
+Package: luci-i18n-csshnpd-ro
+Default: LUCI_LANG_ro||(ALL&&m)
+Version: x
+Depends: +libc luci-app-csshnpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-csshnpd-ro-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-csshnpd - ro translation
+Maintainer: Chris Swan <chris@atsign.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-csshnpd - Română (Romanian)
+@@
+
 Package: luci-i18n-csshnpd-ru
 Default: LUCI_LANG_ru||(ALL&&m)
 Version: x
@@ -208,6 +246,63 @@ License: GPL-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-csshnpd - Русский (Russian)
+@@
+
+Package: luci-i18n-csshnpd-sv
+Default: LUCI_LANG_sv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-csshnpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-csshnpd-sv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-csshnpd - sv translation
+Maintainer: Chris Swan <chris@atsign.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-csshnpd - Svenska (Swedish)
+@@
+
+Package: luci-i18n-csshnpd-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-csshnpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-csshnpd-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-csshnpd - ta translation
+Maintainer: Chris Swan <chris@atsign.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-csshnpd - Tamil (Tamil)
+@@
+
+Package: luci-i18n-csshnpd-tr
+Default: LUCI_LANG_tr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-csshnpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-csshnpd-tr-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-csshnpd - tr translation
+Maintainer: Chris Swan <chris@atsign.com>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-csshnpd - Türkçe (Turkish)
 @@
 
 Package: luci-i18n-csshnpd-uk

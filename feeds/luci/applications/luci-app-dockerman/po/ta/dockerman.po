@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-06-16 11:44+0000\n"
-"Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
+"PO-Revision-Date: 2026-08-23 19:31+0000\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsdockerman/ta/>\n"
 "Language: ta\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:505
 msgid "/mnt/path"
@@ -34,7 +34,7 @@ msgstr "கொள்கலனில் சேர்க்க கர்னல் 
 msgid "Action"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1824
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1825
 msgid "Action unavailable:"
 msgstr ""
 
@@ -67,7 +67,7 @@ msgstr ""
 msgid "Aliases"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1923
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1924
 msgid "Aliases (optional):"
 msgstr ""
 
@@ -226,7 +226,7 @@ msgstr ""
 msgid "CPUs"
 msgstr "சிபியு கள்"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1933
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1934
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:517
 msgid "Cancel"
 msgstr "ரத்துசெய்"
@@ -309,20 +309,20 @@ msgstr "இயல்புநிலை பாலம் நெட்வொர்�
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:564
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1049
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1119
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1975
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1976
 msgid "Connect"
 msgstr "இணை"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1927
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1928
 msgid "Connect Network"
 msgstr "பிணையத்தை இணைக்கவும்"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1963
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1964
 msgid "Connect network"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1520
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1532
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1521
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1533
 msgid "Connected"
 msgstr ""
 
@@ -330,7 +330,7 @@ msgstr ""
 msgid "Connected to container console"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1405
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1406
 msgid "Connecting…"
 msgstr ""
 
@@ -342,22 +342,22 @@ msgstr "கன்சோல்"
 msgid "Console Connection"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1522
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1773
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1523
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1774
 msgid "Console connected"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1515
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1516
 msgid "Console connection closed"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1559
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1794
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1560
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1795
 msgid "Console disconnected"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1579
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1594
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1580
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1595
 msgid "Console is not connected"
 msgstr ""
 
@@ -407,16 +407,16 @@ msgstr ""
 msgid "Container is not running. Cannot connect to console."
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1385
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1386
 msgid "Container rename"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1393
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1394
 msgid "Container rename failed"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1354
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1370
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1355
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1371
 msgid "Container update failed"
 msgstr ""
 
@@ -504,7 +504,7 @@ msgid ""
 "invoke its corresponding credentials."
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1588
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1589
 msgid "Detach signal sent (Ctrl+D)"
 msgstr ""
 
@@ -526,18 +526,18 @@ msgstr ""
 msgid "Disconnect"
 msgstr "துண்டிக்கவும்"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1862
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1863
 msgid "Disconnect network"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1852
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1853
 msgid "Disconnect network \"%s\" from container?"
 msgstr ""
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1125
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1508
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1538
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1557
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1509
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1539
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1558
 msgid "Disconnected"
 msgstr ""
 
@@ -677,28 +677,28 @@ msgstr "சுற்றுச்சூழல் மாறி (-e)"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:1029
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/configuration.js:76
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1498
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1499
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1540
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1500
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1541
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1576
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1579
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1591
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1594
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1621
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1640
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1665
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1683
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1696
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1731
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1779
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1824
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1945
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1542
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1577
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1580
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1592
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1595
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1622
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1641
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1666
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1684
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1697
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1732
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1780
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1825
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1946
 msgid "Error"
 msgstr "பிழை"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1681
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1695
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1682
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1696
 msgid "Error loading logs:"
 msgstr ""
 
@@ -735,7 +735,7 @@ msgstr "அனைத்து துறைமுகங்களையும் (
 msgid "Exposed Ports(-p)"
 msgstr "வெளிப்படும் துறைமுகங்கள் (-P)"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1778
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1779
 msgid "Failed to connect to console"
 msgstr ""
 
@@ -747,20 +747,24 @@ msgstr ""
 msgid "Failed to load events: %s"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1683
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1694
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1684
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1695
 msgid "Failed to load logs"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1576
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/volumes.js:25
+msgid "Failed to load volumes"
+msgstr ""
+
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1577
 msgid "Failed to send data"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1591
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1592
 msgid "Failed to send detach signal"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1730
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1731
 msgid "Failed to start console"
 msgstr ""
 
@@ -772,7 +776,7 @@ msgstr "அபாயகரமான"
 msgid "File"
 msgstr "கோப்பு"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1610
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1611
 msgid "File uploaded to"
 msgstr ""
 
@@ -861,7 +865,7 @@ msgstr "புரவலன் பெயர்"
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/network.js:60
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/networks.js:178
 msgid "ID"
-msgstr "ஐடி"
+msgstr "ID"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/network_new.js:45
 msgid "IP VLAN"
@@ -881,7 +885,7 @@ msgstr ""
 msgid "IPv4 Address"
 msgstr "ஐபிவி 4 முகவரி"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1919
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1920
 msgid "IPv4 Address (optional):"
 msgstr ""
 
@@ -895,7 +899,7 @@ msgstr ""
 msgid "IPv6 Address"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1921
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1922
 msgid "IPv6 Address (optional):"
 msgstr ""
 
@@ -966,11 +970,11 @@ msgstr "குறியீட்டு சேவையக முகவரி"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/configuration.js:74
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:453
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1515
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1559
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1588
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1794
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1877
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1516
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1560
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1589
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1795
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1878
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/network.js:57
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/overview.js:161
 msgid "Info"
@@ -1014,7 +1018,7 @@ msgid ""
 msgstr "இது டீமான் பதிவு கண்ணாடியை புதிய பதிவேட்டில் கண்ணாடியுடன் மாற்றுகிறது"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:382
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1804
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1805
 msgid "Kill"
 msgstr "கொலை"
 
@@ -1066,7 +1070,7 @@ msgstr ""
 msgid "Load Logs"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1676
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1677
 msgid "Loading logs…"
 msgstr ""
 
@@ -1165,7 +1169,7 @@ msgstr ""
 msgid "Microseconds of CPU time that the container can get in a CPU period"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1657
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1658
 msgid "Missing header or CORS interfering"
 msgstr ""
 
@@ -1229,7 +1233,7 @@ msgstr ""
 msgid "Network Name"
 msgstr "பிணைய பெயர்"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1967
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1968
 msgid "Network connected"
 msgstr ""
 
@@ -1241,7 +1245,7 @@ msgstr ""
 msgid "Network created with warning"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1866
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1867
 msgid "Network disconnected"
 msgstr ""
 
@@ -1284,7 +1288,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1877
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1878
 msgid "No additional networks available to connect"
 msgstr ""
 
@@ -1312,7 +1316,7 @@ msgstr ""
 msgid "No images selected"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1687
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1688
 msgid "No logs available"
 msgstr ""
 
@@ -1320,7 +1324,7 @@ msgstr ""
 msgid "No name specified."
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1945
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1946
 msgid "No network selected"
 msgstr ""
 
@@ -1357,7 +1361,7 @@ msgstr "சிபியு களின் எண்ணிக்கை. எண�
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:864
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:891
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1362
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1363
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/network_new.js:242
 msgid "OK"
 msgstr ""
@@ -1434,10 +1438,10 @@ msgstr ""
 msgid "Path"
 msgstr "பாதை"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1639
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1640
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1663
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1641
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1664
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1665
 msgid "Path error"
 msgstr ""
 
@@ -1446,7 +1450,7 @@ msgid "Path:"
 msgstr ""
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:396
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1805
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1806
 msgid "Pause"
 msgstr ""
 
@@ -1493,7 +1497,7 @@ msgid "Please select an image tag to push"
 msgstr ""
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:1029
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1621
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1622
 msgid "Please specify a path"
 msgstr ""
 
@@ -1597,11 +1601,11 @@ msgstr "பதிவு கண்ணாடிகள்"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:426
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:424
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1807
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1808
 msgid "Remove"
 msgstr "அகற்று"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1814
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1815
 msgid "Remove container?"
 msgstr ""
 
@@ -1627,7 +1631,7 @@ msgid "Resources"
 msgstr "வளங்கள்"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:363
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1802
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1803
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/containers.js:242
 msgid "Restart"
 msgstr "மறுதொடக்கம்"
@@ -1689,7 +1693,7 @@ msgstr ""
 msgid "Select image tag"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1917
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1918
 msgid "Select network to connect:"
 msgstr ""
 
@@ -1732,7 +1736,7 @@ msgid ""
 msgstr ""
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:354
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1801
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1802
 msgid "Start"
 msgstr "தொடங்கு"
 
@@ -1768,7 +1772,7 @@ msgid "Stdout"
 msgstr ""
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:372
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1803
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1804
 msgid "Stop"
 msgstr "நிறுத்து"
 
@@ -1804,8 +1808,8 @@ msgstr ""
 msgid "Subtype"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1522
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1773
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1523
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1774
 msgid "Success"
 msgstr ""
 
@@ -1829,7 +1833,7 @@ msgstr "Sysctls (கர்னல் அளவுருக்கள்) விர
 msgid "TTY (-t)"
 msgstr "Tty (-t)"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1763
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1764
 msgid "TTYd may still be starting up"
 msgstr ""
 
@@ -1956,9 +1960,9 @@ msgstr ""
 msgid "Unexpected error"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1354
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1639
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1682
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1355
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1640
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1683
 msgid "Unknown error"
 msgstr ""
 
@@ -1968,7 +1972,7 @@ msgid "Unless stopped"
 msgstr ""
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:396
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1806
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1807
 msgid "Unpause"
 msgstr ""
 
@@ -1980,7 +1984,7 @@ msgstr ""
 msgid "Update"
 msgstr "புதுப்பிப்பு"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1358
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1359
 msgid "Updated"
 msgstr ""
 
@@ -1989,7 +1993,7 @@ msgstr ""
 msgid "Upload"
 msgstr "பதிவேற்றும்"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1609
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1610
 msgid "Uploading file to container…"
 msgstr ""
 
@@ -1997,7 +2001,7 @@ msgstr ""
 msgid "Uploading image…"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1608
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1609
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/images.js:697
 msgid "Uploading…"
 msgstr ""
@@ -2052,7 +2056,7 @@ msgid "Volumes overview"
 msgstr "தொகுதிகள் கண்ணோட்டம்"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/configuration.js:75
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1763
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1764
 msgid "Warning"
 msgstr "எச்சரிக்கை"
 
@@ -2064,7 +2068,7 @@ msgstr ""
 msgid "WebSocket Console"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1499
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1500
 msgid "WebSocket error"
 msgstr ""
 
@@ -2084,7 +2088,7 @@ msgstr ""
 msgid "commit"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1835
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1836
 msgid "completed"
 msgstr ""
 
@@ -2309,7 +2313,189 @@ msgstr ""
 msgid "volume name"
 msgstr ""
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1360
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1361
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:991
 msgid "with warnings"
 msgstr ""
+
+#~ msgid ""
+#~ "This page displays all containers that have been created on the connected "
+#~ "docker host."
+#~ msgstr ""
+#~ "இந்த பக்கம் இணைக்கப்பட்ட கப்பல்துறை ஓச்டில் உருவாக்கப்பட்ட அனைத்து கொள்கலன்களையும் "
+#~ "காட்டுகிறது."
+
+#~ msgid "Advance"
+#~ msgstr "முன்பணம்"
+
+#~ msgid "Auto create macvlan interface in Openwrt"
+#~ msgstr "OpenWRT இல் ஆட்டோ மேக்வ்லான் இடைமுகத்தை உருவாக்குங்கள்"
+
+#~ msgid "Bind Mount(-v)"
+#~ msgstr "பிணைப்பு மவுண்ட் (-v)"
+
+#~ msgid ""
+#~ "Block IO weight (relative weight) accepts a weight value between 10 and "
+#~ "1000"
+#~ msgstr ""
+#~ "தொகுதி IO எடை (உறவினர் எடை) 10 முதல் 1000 வரை எடை மதிப்பை ஏற்றுக்கொள்கிறது"
+
+#~ msgid ""
+#~ "CPU shares relative weight, if 0 is set, the system will ignore the value "
+#~ "and use the default of 1024."
+#~ msgstr ""
+#~ "சிபியு உறவினர் எடையை பகிர்ந்து கொள்கிறது, 0 அமைக்கப்பட்டால், கணினி மதிப்பை "
+#~ "புறக்கணித்து 1024 இயல்புநிலையைப் பயன்படுத்தும்."
+
+#~ msgid "Command line"
+#~ msgstr "கட்டளை வரி"
+
+#~ msgid "Command line Error"
+#~ msgstr "கட்டளை வரி பிழை"
+
+#~ msgid "Connect to remote endpoint"
+#~ msgstr "தொலைநிலை புள்ளியுடன் இணைக்கவும்"
+
+#~ msgid "Create macvlan interface"
+#~ msgstr "மேக்வ்லான் இடைமுகத்தை உருவாக்கவும்"
+
+#~ msgid "Device"
+#~ msgstr "சாதனம்"
+
+#~ msgid "Docker"
+#~ msgstr "கப்பல்துறை"
+
+#~ msgid "Docker - Container (%s)"
+#~ msgstr "கப்பல்துறை - கொள்கலன்கள்)"
+
+#~ msgid "Docker - Network"
+#~ msgstr "கப்பல்துறை - பிணையம்"
+
+#~ msgid "Docker actions done."
+#~ msgstr "கப்பல்துறை நடவடிக்கைகள் முடிந்தது."
+
+#~ msgid "Example: https://hub-mirror.c.163.com"
+#~ msgstr "எடுத்துக்காட்டு: https://hub-mirror.c.163.com"
+
+#~ msgid "Healthy"
+#~ msgstr "ஆரோக்கியமான"
+
+#~ msgid "Host or IP Address for the connection to a remote docker instance"
+#~ msgstr "தொலைநிலை கப்பல்துறை நிகழ்வுக்கான இணைப்பிற்கான புரவலன் அல்லது ஐபி முகவரி"
+
+#~ msgid "Import Image"
+#~ msgstr "படத்தை இறக்குமதி செய்யுங்கள்"
+
+#~ msgid "Load"
+#~ msgstr "சுமை"
+
+#~ msgid ""
+#~ "Memory limit (format: <number>[<unit>]). Number is a positive integer. "
+#~ "Unit can be one of b, k, m, or g. Minimum is 4M."
+#~ msgstr ""
+#~ "நினைவக வரம்பு (வடிவம்: <எண்> [<init>]). எண் ஒரு நேர்மறையான முழு எண். அலகு b, k, "
+#~ "m, அல்லது g இல் ஒன்றாக இருக்கலாம். குறைந்தபட்சம் 4 மீ."
+
+#~ msgid "Mount/Volume"
+#~ msgstr "மவுண்ட்/தொகுதி"
+
+#~ msgid "Network"
+#~ msgstr "பிணையம்"
+
+#~ msgid "New"
+#~ msgstr "புதிய"
+
+#~ msgid "Number of CPUs. Number is a fractional number. 0.000 means no limit."
+#~ msgstr "சிபியு களின் எண்ணிக்கை. எண் ஒரு பகுதியளவு எண். 0.000 என்றால் வரம்பு இல்லை."
+
+#~ msgid "On this page, the selected container can be managed."
+#~ msgstr "இந்த பக்கத்தில், தேர்ந்தெடுக்கப்பட்ட கொள்கலனை நிர்வகிக்க முடியும்."
+
+#~ msgid "Please input new tag"
+#~ msgstr "புதிய குறிச்சொல்லை உள்ளிடவும்"
+
+#~ msgid "Please input the PATH !"
+#~ msgstr "தயவுசெய்து பாதையை உள்ளிடவும்!"
+
+#~ msgid "Please input the PATH and select the file !"
+#~ msgstr "தயவுசெய்து பாதையை உள்ளிட்டு கோப்பைத் தேர்ந்தெடுக்கவும்!"
+
+#~ msgid "Plese input <docker create/run> command line:"
+#~ msgstr "Plese உள்ளீடு <டோக்கர் உருவாக்கு/ரன்> கட்டளை வரி:"
+
+#~ msgid "Pull Image"
+#~ msgstr "படத்தை இழுக்கவும்"
+
+#~ msgid "Remote Endpoint"
+#~ msgstr "தொலைநிலை புள்ளி"
+
+#~ msgid "Remote Host"
+#~ msgstr "தொலை புரவலன்"
+
+#~ msgid "Remote Port"
+#~ msgstr "தொலை துறைமுகம்"
+
+#~ msgid "RepoTags"
+#~ msgstr "Repotags"
+
+#~ msgid "Resolve CLI"
+#~ msgstr "CLI ஐ தீர்க்கவும்"
+
+#~ msgid "Reveal/hide password"
+#~ msgstr "கடவுச்சொல்லை வெளிப்படுத்தவும்/மறைக்கவும்"
+
+#~ msgid "Save"
+#~ msgstr "சேமி"
+
+#~ msgid "Set environment variables to inside the container"
+#~ msgstr "சுற்றுச்சூழல் மாறிகள் கொள்கலனுக்குள் அமைக்கவும்"
+
+#~ msgid ""
+#~ "Specifies where the Docker daemon will listen for client connections "
+#~ "(default: unix:///var/run/docker.sock)"
+#~ msgstr ""
+#~ "கிளையன்ட் இணைப்புகளுக்கு கப்பல்துறை டீமான் எங்கே கேட்கும் என்பதைக் குறிப்பிடுகிறது "
+#~ "(இயல்புநிலை: யூனிக்ச்: ///var/run/docker.sock)"
+
+#~ msgid "Start Time"
+#~ msgstr "தொடக்க நேரம்"
+
+#~ msgid "Submit"
+#~ msgstr "சமர்ப்பிக்கவும்"
+
+#~ msgid "Sysctl"
+#~ msgstr "இயக்ககட்டு"
+
+#~ msgid "TOP"
+#~ msgstr "மேலே"
+
+#~ msgid "TX/RX"
+#~ msgstr "Tx/rx"
+
+#~ msgid ""
+#~ "The user that commands are run as inside the container.(format: name|"
+#~ "uid[:group|gid])"
+#~ msgstr ""
+#~ "கட்டளைகள் கொள்கலனுக்குள் இயக்கப்படும் பயனர். (வடிவம்: பெயர் | uid [: குழு | gid])"
+
+#~ msgid "UID"
+#~ msgstr "Uid"
+
+#~ msgid "Upgrade"
+#~ msgstr "மேம்படுத்தல்"
+
+#~ msgid "Upload Error"
+#~ msgstr "பிழையைப் பதிவேற்றவும்"
+
+#~ msgid "Upload Success"
+#~ msgstr "வெற்றியைப் பதிவேற்றவும்"
+
+#~ msgid "Upload/Download"
+#~ msgstr "பதிவேற்ற/பதிவிறக்க"
+
+#~ msgid ""
+#~ "When pressing the Import button, both a local image can be loaded onto "
+#~ "the system and a valid image tar can be downloaded from remote."
+#~ msgstr ""
+#~ "இறக்குமதி பொத்தானை அழுத்தும்போது, உள்ளூர் படத்தையும் கணினியில் ஏற்றலாம் மற்றும் "
+#~ "செல்லுபடியாகும் பட தார் ரிமோட்டிலிருந்து பதிவிறக்கம் செய்யலாம்."

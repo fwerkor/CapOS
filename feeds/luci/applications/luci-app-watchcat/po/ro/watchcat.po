@@ -247,3 +247,9 @@ msgstr "Priveștepisica"
 #: applications/luci-app-watchcat/htdocs/luci-static/resources/view/watchcat.js:82
 msgid "Windows: 32 bytes"
 msgstr "Ferestre: 32 octeți"
+
+#~ msgid "Host To Check"
+#~ msgstr "Gazdă de verificat"
+
+#~ msgid "IP address or hostname to ping."
+#~ msgstr "Adresa IP sau numele de gazdă pentru ping."

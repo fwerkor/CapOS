@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2026-05-03 18:07+0000\n"
+"PO-Revision-Date: 2026-08-26 18:52+0000\n"
 "Last-Translator: Džiugas Januševičius <dziugas1959@hotmail.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsstatistics/lt/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "(n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17.1\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:54
 msgid "%H: Attenuation on %pi"
@@ -416,7 +416,7 @@ msgstr "Įjungti šį plėtinį"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/collectd.js:111
 msgid "Enabled"
-msgstr "Įjungta/Įgalinta (-s/-i)"
+msgstr "Įjungtas/Įgalintas"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/entropy.js:10
 #: applications/luci-app-statistics/root/usr/share/luci/statistics/plugins/entropy.json:2
@@ -1132,7 +1132,7 @@ msgstr "Ryšio atsako papildinio konfigūracija"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/collectd.js:134
 msgid "Plugin is disabled"
-msgstr "Papildinys yra išjungtas"
+msgstr "Plėtinys yra išjungtas/išgalintas"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:34
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/olsrd.js:18
@@ -2056,3 +2056,60 @@ msgstr "sumažina „rrd“ dydį"
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/tcpconns.js:45
 msgid "summary of all ports"
 msgstr "visų prievadų santrauka"
+
+#~ msgid "Bitrate"
+#~ msgstr "Pralaidumas (bitų)"
+
+#~ msgid "DSL Flags"
+#~ msgstr "„DSL“ žymos"
+
+#~ msgid "DSL Line Uptime"
+#~ msgstr "„DSL“ linijos veikimo laikas"
+
+#~ msgid "DSL Signal"
+#~ msgstr "„DSL“ signalas"
+
+#~ msgid "Errors"
+#~ msgstr "Klaidos"
+
+#~ msgid "Line Attenuation Down (LATN)"
+#~ msgstr "Linijos slopinimas išjungtas („LATN“)"
+
+#~ msgid "Line Attenuation Up (LATN)"
+#~ msgstr "Linijos slopinimas įjungtas („LATN“)"
+
+#~ msgid "Max. Attainable Data Rate (ATTNDR) Down"
+#~ msgstr "Maks. pasiekiamas duomenų perdavimo spartumas („ATTNDR“) išjungtas"
+
+#~ msgid "Max. Attainable Data Rate (ATTNDR) Up"
+#~ msgstr "Maks. pasiekiamas duomenų perdavimo spartumas („ATTNDR“) įjungtas"
+
+#~ msgid "Noise Margin Down (SNR)"
+#~ msgstr "Triukšmo riba išjungta („SNR“)"
+
+#~ msgid "Noise Margin Up (SNR)"
+#~ msgstr "Triukšmo riba įjungta („SNR“)"
+
+#~ msgid "Rx Corrupted Far"
+#~ msgstr "Atsiųsti/Gauti reaktyviai „tolimai korumpuotas/-i“"
+
+#~ msgid "Rx Corrupted Near"
+#~ msgstr "Atsiųsti/Gauti reaktyviai „artimai korumpuotas/-i“"
+
+#~ msgid "Rx Retransmitted Far"
+#~ msgstr "Atsiųsti/Gauti reaktyviai „tolimai retransliuotas/-i“"
+
+#~ msgid "Rx Retransmitted Near"
+#~ msgstr "Atsiųsti/Gauti reaktyviai „artimai retransliuotas/-i“"
+
+#~ msgid "Signal Attenuation Down (SATN)"
+#~ msgstr "Signalo slopinimas išjungtas („SATN“)"
+
+#~ msgid "Signal Attenuation Up (SATN)"
+#~ msgstr "Signalo slopinimas įjungtas („SATN“)"
+
+#~ msgid "Tx Retransmitted Far"
+#~ msgstr "Nusiųsti reaktyviai „tolimai retransliuotas/-i“"
+
+#~ msgid "Tx Retransmitted Near"
+#~ msgstr "Nusiųsti reaktyviai „artimai retransliuotas/-i“"

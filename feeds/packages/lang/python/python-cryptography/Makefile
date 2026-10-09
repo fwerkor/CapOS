@@ -8,15 +8,15 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-cryptography
-PKG_VERSION:=46.0.6
+PKG_VERSION:=48.0.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=cryptography
-PKG_HASH:=27550628a518c5c6c903d84f637fbecf287f6cb9ced3804838a1295dc1fd0759
+PKG_HASH:=5c3932f4436d1cccb036cb0eaef46e6e2db91035166f1ad6505c3c9d5a635920
 
 PKG_LICENSE:=Apache-2.0 BSD-3-Clause
 PKG_LICENSE_FILES:=LICENSE.APACHE LICENSE.BSD
-PKG_MAINTAINER:=Jeffery To <jeffery.to@gmail.com>
+PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
 PKG_CPE_ID:=cpe:/a:cryptography.io:cryptography
 
 PKG_BUILD_DEPENDS:=libffi/host python-cffi/host python-maturin/host python-setuptools/host
@@ -35,7 +35,6 @@ define Package/python3-cryptography
       +libopenssl \
       +libopenssl-legacy \
       +python3-light \
-      +python3-email \
       +python3-urllib \
       +python3-cffi \
       $(RUST_ARCH_DEPENDS)

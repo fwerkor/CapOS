@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/admin/sudo/Makefile
 
 Package: sudo
-Version: 1.9.17_p2-r1
+Version: 1.9.17_p2-r3
 Depends: +libc +USE_GLIBC:libcrypt-compat
 Conflicts: 
 Menu-Depends: 
@@ -11,6 +11,7 @@ Category: Administration
 Repository: base
 Title: Delegate authority to run commands
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Require-User: :sudo
 Source: sudo-1.9.17p2.tar.gz
 License: ISC
 LicenseFiles: LICENSE.md

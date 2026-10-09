@@ -192,8 +192,8 @@ msgid ""
 "the server. The server must have a matching token for authorization to "
 "succeed."
 msgstr ""
-"ໂທເຄັນ (Token) ກຳນົດໂທເຄັນການອະນຸຍາດທີ່ໃຊ້ເພື່ອສ້າງຄີເພື່ອສົ່ງໄປຫາເຊີເວີ. "
-"ເຊີເວີຕ້ອງມີໂທເຄັນທີ່ກົງກັນເພື່ອໃຫ້ການອະນຸຍາດສຳເລັດ."
+"ໂທເຄັນ (Token) ກຳນົດໂທເຄັນການອະນຸຍາດທີ່ໃຊ້ເພື່ອສ້າງຄີເພື່ອສົ່ງໄປຫາເຊີເວີ. ເຊີເວີຕ້ອງມີໂທເຄັນທີ່ກົງກັນເພື່"
+"ອໃຫ້ການອະນຸຍາດສຳເລັດ."
 
 #: applications/luci-app-xfrpc/htdocs/luci-static/resources/view/xfrpc.js:101
 msgid "Warning"

@@ -14,7 +14,7 @@ Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>, Daniel Engberg <daniel
 Source: netdata-v1.33.1.tar.gz
 License: GPL-3.0-or-later
 LicenseFiles: COPYING
-CPE-ID: cpe:/a:my-netdata:netdata
+CPE-ID: cpe:/a:netdata:netdata
 URL: https://www.netdata.cloud/
 Type: ipkg
 Description:   netdata is a highly optimized Linux daemon providing real-time performance

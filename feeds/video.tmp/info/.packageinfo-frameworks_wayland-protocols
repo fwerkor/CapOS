@@ -4,7 +4,7 @@ Build-Depends/host: wayland/host
 
 Package: wayland-protocols
 Submenu: Frameworks and Toolkits
-Version: 1.45-r1
+Version: 1.49-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -14,7 +14,7 @@ Category: Video
 Repository: base
 Title: wayland-protocols
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: wayland-protocols-1.45.tar.xz
+Source: wayland-protocols-1.49.tar.xz
 License: MIT
 LicenseFiles: COPYING
 URL: https://wayland.freedesktop.org/

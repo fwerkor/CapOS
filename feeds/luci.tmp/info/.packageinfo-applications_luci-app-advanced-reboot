@@ -1,5 +1,5 @@
 Source-Makefile: feeds/luci/applications/luci-app-advanced-reboot/Makefile
-Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host LUCI_UTMIN:ucode/host 
 
 Package: luci-app-advanced-reboot
 Submenu: 3. Applications
@@ -386,6 +386,25 @@ License: AGPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-advanced-reboot - 한국어 (Korean)
+@@
+
+Package: luci-i18n-advanced-reboot-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-advanced-reboot-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - lo translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-advanced-reboot-lt

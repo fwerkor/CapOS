@@ -96,8 +96,8 @@ msgid ""
 "Average Delay and Loss: The delay (in samples) after which loss is computed, "
 "without this delays larger than interval would be treated as loss"
 msgstr ""
-"평균 손실 및 지연: 손실을 계산하기 전 대기할 지연 시간(샘플 수). 이 설정이 없"
-"으면 Ping 전송 주기보다 긴 지연은 모두 손실로 처리됩니다"
+"평균 손실 및 지연: 손실을 계산하기 전 대기할 지연 시간(샘플 수). 이 설정이 "
+"없으면 Ping 전송 주기보다 긴 지연은 모두 손실로 처리됩니다"
 
 #: applications/luci-app-apinger/htdocs/luci-static/resources/view/apinger/targets.js:25
 msgid "Average Delay: How many replies should be used to compute average delay"

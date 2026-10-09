@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-06-05 19:02+0000\n"
-"Last-Translator: 大王叫我来巡山 "
+"PO-Revision-Date: 2026-09-28 18:23+0000\n"
+"Last-Translator: Hosted Weblate user 54392 "
 "<hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/openwrt/luciapplicationsdockerman/zh_Hans/>\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:505
 msgid "/mnt/path"
@@ -35,7 +35,7 @@ msgstr "要添加到容器的内核功能列表"
 msgid "Action"
 msgstr "操作"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1824
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1825
 msgid "Action unavailable:"
 msgstr "操作不可用："
 
@@ -45,7 +45,7 @@ msgstr "操作方"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:582
 msgid "Add"
-msgstr "新增"
+msgstr "添加"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:315
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:620
@@ -68,7 +68,7 @@ msgstr "高级"
 msgid "Aliases"
 msgstr "别名"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1923
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1924
 msgid "Aliases (optional):"
 msgstr "别名（可选）："
 
@@ -217,9 +217,9 @@ msgstr "CPU 使用数据不可用"
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:678
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/overview.js:169
 msgid "CPUs"
-msgstr "线程数量"
+msgstr "CPUs"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1933
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1934
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:517
 msgid "Cancel"
 msgstr "取消"
@@ -302,20 +302,20 @@ msgstr "配置默认桥接网络"
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:564
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1049
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1119
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1975
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1976
 msgid "Connect"
 msgstr "连接"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1927
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1928
 msgid "Connect Network"
 msgstr "连接网络"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1963
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1964
 msgid "Connect network"
 msgstr "连接网络"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1520
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1532
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1521
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1533
 msgid "Connected"
 msgstr "已连接"
 
@@ -323,7 +323,7 @@ msgstr "已连接"
 msgid "Connected to container console"
 msgstr "已连接到容器控制台"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1405
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1406
 msgid "Connecting…"
 msgstr "连接中…"
 
@@ -335,22 +335,22 @@ msgstr "控制台"
 msgid "Console Connection"
 msgstr "控制台连接"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1522
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1773
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1523
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1774
 msgid "Console connected"
 msgstr "控制台已连接"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1515
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1516
 msgid "Console connection closed"
 msgstr "控制台连接已关闭"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1559
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1794
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1560
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1795
 msgid "Console disconnected"
 msgstr "已断开控制台连接"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1579
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1594
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1580
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1595
 msgid "Console is not connected"
 msgstr "未连接控制台"
 
@@ -400,16 +400,16 @@ msgstr "容器未在运行。无法连接到 WebSocket 控制面板。"
 msgid "Container is not running. Cannot connect to console."
 msgstr "容器未在运行。无法连接到控制台。"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1385
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1386
 msgid "Container rename"
 msgstr "重命名容器"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1393
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1394
 msgid "Container rename failed"
 msgstr "重命名容器失败"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1354
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1370
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1355
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1371
 msgid "Container update failed"
 msgstr "容器更新失败"
 
@@ -497,7 +497,7 @@ msgid ""
 "invoke its corresponding credentials."
 msgstr "名称以匹配此表格内条目的 Registry 主机开头的目标将调用其相应的凭证。"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1588
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1589
 msgid "Detach signal sent (Ctrl+D)"
 msgstr "分离发送的信号 (Ctrl+D)"
 
@@ -519,18 +519,18 @@ msgstr "设备"
 msgid "Disconnect"
 msgstr "断开连接"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1862
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1863
 msgid "Disconnect network"
 msgstr "断开网络连接"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1852
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1853
 msgid "Disconnect network \"%s\" from container?"
 msgstr "断开 “%s” 网络与容器的连接？"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1125
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1508
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1538
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1557
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1509
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1539
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1558
 msgid "Disconnected"
 msgstr "已断开"
 
@@ -670,28 +670,28 @@ msgstr "环境变量 (-e)"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:1029
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/configuration.js:76
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1498
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1499
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1540
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1500
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1541
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1576
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1579
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1591
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1594
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1621
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1640
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1665
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1683
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1696
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1731
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1779
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1824
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1945
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1542
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1577
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1580
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1592
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1595
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1622
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1641
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1666
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1684
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1697
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1732
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1780
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1825
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1946
 msgid "Error"
 msgstr "错误"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1681
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1695
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1682
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1696
 msgid "Error loading logs:"
 msgstr "加载日志出错："
 
@@ -728,7 +728,7 @@ msgstr "暴露所有端口 (-P)"
 msgid "Exposed Ports(-p)"
 msgstr "暴露端口 (-p)"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1778
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1779
 msgid "Failed to connect to console"
 msgstr "未能连接到控制面板"
 
@@ -740,20 +740,24 @@ msgstr "执行 \"/etc/init.d/%s %s\" 操作失败：%s"
 msgid "Failed to load events: %s"
 msgstr "加载事件失败：%s"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1683
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1694
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1684
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1695
 msgid "Failed to load logs"
 msgstr "加载日志失败"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1576
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/volumes.js:25
+msgid "Failed to load volumes"
+msgstr "加载卷失败"
+
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1577
 msgid "Failed to send data"
 msgstr "发送数据失败"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1591
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1592
 msgid "Failed to send detach signal"
 msgstr "发送分离信号失败"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1730
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1731
 msgid "Failed to start console"
 msgstr "启动控制面板失败"
 
@@ -765,7 +769,7 @@ msgstr "致命"
 msgid "File"
 msgstr "文件"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1610
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1611
 msgid "File uploaded to"
 msgstr "文件被上传到"
 
@@ -874,7 +878,7 @@ msgstr "IPAM 驱动"
 msgid "IPv4 Address"
 msgstr "IPv4 地址"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1919
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1920
 msgid "IPv4 Address (optional):"
 msgstr "IPv4 地址（可选）："
 
@@ -888,7 +892,7 @@ msgstr "IPv6"
 msgid "IPv6 Address"
 msgstr "IPv6 地址"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1921
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1922
 msgid "IPv6 Address (optional):"
 msgstr "IPv6 地址（可选）："
 
@@ -959,11 +963,11 @@ msgstr "索引服务器地址"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/configuration.js:74
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:453
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1515
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1559
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1588
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1794
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1877
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1516
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1560
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1589
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1795
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1878
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/network.js:57
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/overview.js:161
 msgid "Info"
@@ -972,7 +976,7 @@ msgstr "信息"
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/network.js:73
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/network_new.js:72
 msgid "Ingress"
-msgstr "入口"
+msgstr "入站"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/network_new.js:73
 msgid ""
@@ -1006,7 +1010,7 @@ msgid ""
 msgstr "它将守护程序登记镜像源替换为一组新的登记镜像源"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:382
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1804
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1805
 msgid "Kill"
 msgstr "强制关闭"
 
@@ -1058,7 +1062,7 @@ msgstr "加载事件"
 msgid "Load Logs"
 msgstr "加载日志"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1676
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1677
 msgid "Loading logs…"
 msgstr "加载日志中…"
 
@@ -1157,7 +1161,7 @@ msgstr "跃点数"
 msgid "Microseconds of CPU time that the container can get in a CPU period"
 msgstr "容器在一个 CPU 周期可以获得的 CPU 时间（单位：微秒）"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1657
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1658
 msgid "Missing header or CORS interfering"
 msgstr "缺少标头或 CORS 机制干预"
 
@@ -1221,7 +1225,7 @@ msgstr "网络配置"
 msgid "Network Name"
 msgstr "网络名称"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1967
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1968
 msgid "Network connected"
 msgstr "已连接网络"
 
@@ -1233,7 +1237,7 @@ msgstr "网络已创建"
 msgid "Network created with warning"
 msgstr "已创建网络但有警告"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1866
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1867
 msgid "Network disconnected"
 msgstr "已断开网络连接"
 
@@ -1276,7 +1280,7 @@ msgstr "新建卷"
 msgid "No"
 msgstr "不"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1877
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1878
 msgid "No additional networks available to connect"
 msgstr "没有另外的网络可供连接"
 
@@ -1304,7 +1308,7 @@ msgstr "无映像标签可用"
 msgid "No images selected"
 msgstr "未选中映像"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1687
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1688
 msgid "No logs available"
 msgstr "无日志可用"
 
@@ -1312,7 +1316,7 @@ msgstr "无日志可用"
 msgid "No name specified."
 msgstr "未指定名称。"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1945
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1946
 msgid "No network selected"
 msgstr "未选中网络"
 
@@ -1349,7 +1353,7 @@ msgstr "CPU 数量。数字是小数。0.000 表示没有限制"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:864
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:891
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1362
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1363
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/network_new.js:242
 msgid "OK"
 msgstr "确认"
@@ -1398,7 +1402,7 @@ msgstr "覆盖网络"
 
 #: applications/luci-app-dockerman/root/usr/share/luci/menu.d/luci-app-dockerman.json:19
 msgid "Overview"
-msgstr "概况"
+msgstr "概览"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:847
 msgid "PID"
@@ -1424,10 +1428,10 @@ msgstr "密码"
 msgid "Path"
 msgstr "路径"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1639
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1640
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1663
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1641
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1664
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1665
 msgid "Path error"
 msgstr "路径错误"
 
@@ -1436,7 +1440,7 @@ msgid "Path:"
 msgstr "路径："
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:396
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1805
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1806
 msgid "Pause"
 msgstr "暂停"
 
@@ -1483,7 +1487,7 @@ msgid "Please select an image tag to push"
 msgstr "请选择要推送的映像标签"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:1029
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1621
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1622
 msgid "Please specify a path"
 msgstr "请指定路径"
 
@@ -1587,11 +1591,11 @@ msgstr "Registry 镜像"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:426
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:424
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1807
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1808
 msgid "Remove"
 msgstr "删除"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1814
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1815
 msgid "Remove container?"
 msgstr "删除容器？"
 
@@ -1617,7 +1621,7 @@ msgid "Resources"
 msgstr "资源"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:363
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1802
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1803
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/containers.js:242
 msgid "Restart"
 msgstr "重启"
@@ -1679,7 +1683,7 @@ msgstr "先选类型"
 msgid "Select image tag"
 msgstr "选择映像标签"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1917
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1918
 msgid "Select network to connect:"
 msgstr "选择要连接的网络："
 
@@ -1722,7 +1726,7 @@ msgid ""
 msgstr "明确 Docker 守护进程在何处监听客户端连接。默认值："
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:354
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1801
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1802
 msgid "Start"
 msgstr "启动"
 
@@ -1758,7 +1762,7 @@ msgid "Stdout"
 msgstr "Stdout"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:372
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1803
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1804
 msgid "Stop"
 msgstr "停止"
 
@@ -1794,8 +1798,8 @@ msgstr "子路径"
 msgid "Subtype"
 msgstr "子类型"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1522
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1773
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1523
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1774
 msgid "Success"
 msgstr "成功"
 
@@ -1819,7 +1823,7 @@ msgstr "系统控制(内核参数)选项"
 msgid "TTY (-t)"
 msgstr "TTY (-t)"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1763
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1764
 msgid "TTYd may still be starting up"
 msgstr "TTYd 可能仍在启动"
 
@@ -1913,7 +1917,7 @@ msgstr "令牌和密码在 uci 配置中是非加密的。"
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/volumes.js:45
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/volumes.js:111
 msgid "Total"
-msgstr "总计"
+msgstr "总数"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/overview.js:170
 msgid "Total Memory"
@@ -1944,9 +1948,9 @@ msgstr "USER"
 msgid "Unexpected error"
 msgstr "未预料的错误"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1354
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1639
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1682
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1355
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1640
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1683
 msgid "Unknown error"
 msgstr "未知错误"
 
@@ -1956,7 +1960,7 @@ msgid "Unless stopped"
 msgstr "除非被停止"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:396
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1806
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1807
 msgid "Unpause"
 msgstr "取消暂停"
 
@@ -1968,7 +1972,7 @@ msgstr "恢复运行此容器"
 msgid "Update"
 msgstr "更新"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1358
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1359
 msgid "Updated"
 msgstr "已更新"
 
@@ -1977,7 +1981,7 @@ msgstr "已更新"
 msgid "Upload"
 msgstr "上传"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1609
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1610
 msgid "Uploading file to container…"
 msgstr "正上传文件到容器…"
 
@@ -1985,7 +1989,7 @@ msgstr "正上传文件到容器…"
 msgid "Uploading image…"
 msgstr "上传映像中…"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1608
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1609
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/images.js:697
 msgid "Uploading…"
 msgstr "上传中…"
@@ -2040,7 +2044,7 @@ msgid "Volumes overview"
 msgstr "卷概览"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/configuration.js:75
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1763
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1764
 msgid "Warning"
 msgstr "警告"
 
@@ -2052,7 +2056,7 @@ msgstr "WebSocket"
 msgid "WebSocket Console"
 msgstr "WebSocket 控制台"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1499
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1500
 msgid "WebSocket error"
 msgstr "WebSocket 错误"
 
@@ -2072,7 +2076,7 @@ msgstr "构建工具"
 msgid "commit"
 msgstr "提交"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1835
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1836
 msgid "completed"
 msgstr "已完成"
 
@@ -2188,7 +2192,7 @@ msgstr "节点"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:757
 msgid "none"
-msgstr "无"
+msgstr "none"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:337
 msgid "oom"
@@ -2297,7 +2301,189 @@ msgstr "卷"
 msgid "volume name"
 msgstr "卷名"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1360
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1361
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:991
 msgid "with warnings"
 msgstr "有警告"
+
+#~ msgid "IP Address (optional):"
+#~ msgstr "IP 地址（可选）："
+
+#~ msgid "Progress"
+#~ msgstr "进度"
+
+#~ msgid ""
+#~ "This page displays all containers that have been created on the connected "
+#~ "docker host."
+#~ msgstr "此页面显示在连接的Docker主机上已创建的所有容器。"
+
+#~ msgid "Advance"
+#~ msgstr "高级选项"
+
+#~ msgid "Auto create macvlan interface in Openwrt"
+#~ msgstr "在 Openwrt 中自动创建 macvlan 界面"
+
+#~ msgid "Bind Mount(-v)"
+#~ msgstr "绑定挂载 (-v)"
+
+#~ msgid ""
+#~ "Block IO weight (relative weight) accepts a weight value between 10 and "
+#~ "1000"
+#~ msgstr "块 IO 权重(相对权重)接受10到1000之间的数值"
+
+#~ msgid ""
+#~ "CPU shares relative weight, if 0 is set, the system will ignore the value "
+#~ "and use the default of 1024."
+#~ msgstr "CPU 共享相对权重，如果设置为 0，则系统将忽略该值并使用默认值 1024。"
+
+#~ msgid "Command line"
+#~ msgstr "命令行"
+
+#~ msgid "Command line Error"
+#~ msgstr "命令行错误"
+
+#~ msgid "Connect to remote endpoint"
+#~ msgstr "连接到远程终端"
+
+#~ msgid "Create macvlan interface"
+#~ msgstr "创建 macvlan 界面"
+
+#~ msgid "Device"
+#~ msgstr "设备"
+
+#~ msgid "Docker"
+#~ msgstr "Docker"
+
+#~ msgid "Docker - Container (%s)"
+#~ msgstr "Docker-容器(%s)"
+
+#~ msgid "Docker - Network"
+#~ msgstr "Docker-网络"
+
+#~ msgid "Docker actions done."
+#~ msgstr "Docker 执行完成。"
+
+#~ msgid "Example: https://hub-mirror.c.163.com"
+#~ msgstr "示例： https://hub-mirror.c.163.com"
+
+#~ msgid "Healthy"
+#~ msgstr "健康"
+
+#~ msgid "Host or IP Address for the connection to a remote docker instance"
+#~ msgstr "连接到远程Docker实例的主机或IP地址"
+
+#~ msgid "Import Image"
+#~ msgstr "导入镜像文件"
+
+#~ msgid "Load"
+#~ msgstr "负载"
+
+#~ msgid ""
+#~ "Memory limit (format: <number>[<unit>]). Number is a positive integer. "
+#~ "Unit can be one of b, k, m, or g. Minimum is 4M."
+#~ msgstr ""
+#~ "内存限制 (格式:<数字>[<单位>])。数字是正整数。单位可以是 b、k、m 或 g 之"
+#~ "一。最小值为 4M。"
+
+#~ msgid "Mount/Volume"
+#~ msgstr "挂载/卷"
+
+#~ msgid "Network"
+#~ msgstr "网络"
+
+#~ msgid "New"
+#~ msgstr "新建"
+
+#~ msgid "Number of CPUs. Number is a fractional number. 0.000 means no limit."
+#~ msgstr "CPU 数量。数字是小数。0.000 表示没有限制。"
+
+#~ msgid "On this page, the selected container can be managed."
+#~ msgstr "在此页面上，可以管理所选的容器。"
+
+#~ msgid "Please input new tag"
+#~ msgstr "请输入新的标签"
+
+#~ msgid "Please input the PATH !"
+#~ msgstr "请输入合法路径！"
+
+#~ msgid "Please input the PATH and select the file !"
+#~ msgstr "请输入路径并选择文件！"
+
+#~ msgid "Plese input <docker create/run> command line:"
+#~ msgstr "请输入 <docker 创建/运行> 的命令行："
+
+#~ msgid "Pull Image"
+#~ msgstr "拉取镜像"
+
+#~ msgid "Remote Endpoint"
+#~ msgstr "远程终端"
+
+#~ msgid "Remote Host"
+#~ msgstr "远程主机"
+
+#~ msgid "Remote Port"
+#~ msgstr "远程端口"
+
+#~ msgid "RepoTags"
+#~ msgstr "仓库标签"
+
+#~ msgid "Resolve CLI"
+#~ msgstr "解析 CLI"
+
+#~ msgid "Reveal/hide password"
+#~ msgstr "显示/隐藏 密码"
+
+#~ msgid "Save"
+#~ msgstr "保存"
+
+#~ msgid "Set environment variables to inside the container"
+#~ msgstr "在容器内部设置环境变量"
+
+#~ msgid ""
+#~ "Specifies where the Docker daemon will listen for client connections "
+#~ "(default: unix:///var/run/docker.sock)"
+#~ msgstr ""
+#~ "指定 Docker 守护程序将在何处侦听客户端连接（默认： unix:///var/run/"
+#~ "docker.sock）"
+
+#~ msgid "Start Time"
+#~ msgstr "开始时间"
+
+#~ msgid "Submit"
+#~ msgstr "提交"
+
+#~ msgid "Sysctl"
+#~ msgstr "系统控制"
+
+#~ msgid "TOP"
+#~ msgstr "顶部"
+
+#~ msgid "TX/RX"
+#~ msgstr "发射/接收"
+
+#~ msgid ""
+#~ "The user that commands are run as inside the container.(format: name|"
+#~ "uid[:group|gid])"
+#~ msgstr "在容器中以用户运行命令。(格式:name|uid[:group|gid])"
+
+#~ msgid "UID"
+#~ msgstr "UID"
+
+#~ msgid "Upgrade"
+#~ msgstr "升级"
+
+#~ msgid "Upload Error"
+#~ msgstr "上传错误"
+
+#~ msgid "Upload Success"
+#~ msgstr "上传成功"
+
+#~ msgid "Upload/Download"
+#~ msgstr "上传/下载"
+
+#~ msgid ""
+#~ "When pressing the Import button, both a local image can be loaded onto "
+#~ "the system and a valid image tar can be downloaded from remote."
+#~ msgstr ""
+#~ "按下导入按钮时，既可以将本地镜像文件加载到系统上，也可以从远程下载有效的"
+#~ "Tar格式的镜像文件。"

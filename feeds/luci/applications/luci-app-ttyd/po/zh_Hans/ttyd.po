@@ -1,14 +1,15 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-04-18 17:11+0000\n"
-"Last-Translator: DragonBluep <yangshiji66@outlook.com>\n"
+"PO-Revision-Date: 2026-09-28 18:23+0000\n"
+"Last-Translator: Hosted Weblate user 54392 "
+"<hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/openwrt/luciapplicationsttyd/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:65
 msgid "Accept only one client and exit on disconnection"
@@ -202,7 +203,7 @@ msgstr "设置日志级别 (默认：7)"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:46
 msgid "Signal"
-msgstr "信号强度"
+msgstr "信号"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:46
 msgid "Signal to send to the command when exit it (default: 1, SIGHUP)"
@@ -252,3 +253,10 @@ msgstr "警告"
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:12
 msgid "ttyd Instance"
 msgstr "ttyd 实例"
+
+#~ msgid ""
+#~ "Allow client to send command line arguments in URL (eg: http://"
+#~ "localhost:7681?arg=foo&arg=bar)"
+#~ msgstr ""
+#~ "允许客户端在 URL 中传递命令行参数 (如: http://localhost:7681?"
+#~ "arg=foo&arg=bar)"

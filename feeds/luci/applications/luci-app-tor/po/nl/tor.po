@@ -15,8 +15,8 @@ msgstr ""
 #: applications/luci-app-tor/htdocs/luci-static/resources/view/tor/tor-hs.js:93
 msgid "A pair <code>PublicPort;LocalPort</code> e.g. <code>80;8080</code>."
 msgstr ""
-"Een paar <code>Publieke poort;Locale poort</code> bijvoorbeeld "
-"<code>80;8080</code>."
+"Een paar <code>Publieke poort;Locale poort</code> bijvoorbeeld <code>"
+"80;8080</code>."
 
 #: applications/luci-app-tor/htdocs/luci-static/resources/view/tor/tor-hs.js:94
 msgid ""

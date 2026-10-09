@@ -14,6 +14,7 @@ Maintainer: Carsten Wolff <carsten@wolffcarsten.de>
 Source: BackupPC-3.3.2.tar.gz
 License: GPL-2.0-or-later
 LicenseFiles: LICENSE
+CPE-ID: cpe:/a:backuppc:backuppc
 URL: https://sourceforge.net/projects/backuppc/
 Type: ipkg
 Description:   BackupPC is a disk based backup system featuring a clever pooling scheme and

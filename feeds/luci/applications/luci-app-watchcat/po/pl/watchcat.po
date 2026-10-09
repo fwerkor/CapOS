@@ -244,3 +244,9 @@ msgstr "Watchcat"
 #: applications/luci-app-watchcat/htdocs/luci-static/resources/view/watchcat.js:82
 msgid "Windows: 32 bytes"
 msgstr "Windows: 32 bajty"
+
+#~ msgid "Host To Check"
+#~ msgstr "Host do sprawdzenia"
+
+#~ msgid "IP address or hostname to ping."
+#~ msgstr "Adres IP lub nazwa hosta do pingowania."

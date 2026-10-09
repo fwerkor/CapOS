@@ -26,7 +26,8 @@ msgstr "ເພີ່ມລາຍການບໍລິການໃໝ່"
 msgid ""
 "Additional arguments passed to the server. There is no validation of this "
 "input."
-msgstr "ອາຄິວເມັນ (Arguments) ເເພີ່ມເຕີມທີ່ສົ່ງໄປຍັງເຊີບເວີ. ບໍ່ມີການກວດສອບຄວາມຖືກຕ້ອງຂອງຂໍ້ມູນນີ້."
+msgstr ""
+"ອາຄິວເມັນ (Arguments) ເເພີ່ມເຕີມທີ່ສົ່ງໄປຍັງເຊີບເວີ. ບໍ່ມີການກວດສອບຄວາມຖືກຕ້ອງຂອງຂໍ້ມູນນີ້."
 
 #: applications/luci-app-xinetd/htdocs/luci-static/resources/view/xinetd/xinetd.js:72
 msgid "Advanced Settings"

@@ -391,14 +391,8 @@ msgid "Speed limit up enabled"
 msgstr "上傳限速已啟用"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:179
-msgid ""
-"This is documented on <a href=\"https://www.irif.fr/~jch/software/bittorrent/"
-"tcp-congestion-control.html\" target=\"_blank\" rel=\"noreferrer "
-"noopener\">tcp-congestion-control</a>."
-msgstr ""
-"這被記錄於 <a href=\"https://www.irif.fr/~jch/software/bittorrent/tcp-"
-"congestion-control.html\" target=\"_blank\" rel=\"noreferrer noopener\">tcp-"
-"congestion-control</a>."
+msgid "This is documented on %s."
+msgstr "這被記載於 %s。"
 
 #: applications/luci-app-transmission/root/usr/share/luci/menu.d/luci-app-transmission.json:3
 msgid "Transmission"
@@ -408,8 +402,7 @@ msgstr "Transmission"
 msgid ""
 "Transmission daemon is a simple bittorrent client, here you can configure "
 "the settings."
-msgstr ""
-"Transmission 常駐程式是一個簡易 BitTorrent 用戶端，您可以在這裡設定設定。"
+msgstr "Transmission 常駐程式是一個簡易 BitTorrent 用戶端，您可以在這裡設定設定。"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:116
 msgid "Trash original torrent files"
@@ -439,3 +432,12 @@ msgstr "從子夜 (00:00) 到計劃限速起始/終止的分鐘數"
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:167
 msgid "uTP enabled"
 msgstr "uTP 已啟用"
+
+#~ msgid ""
+#~ "This is documented on <a href=\"https://www.irif.fr/~jch/software/"
+#~ "bittorrent/tcp-congestion-control.html\" target=\"_blank\" "
+#~ "rel=\"noreferrer noopener\">tcp-congestion-control</a>."
+#~ msgstr ""
+#~ "這被記錄於 <a href=\"https://www.irif.fr/~jch/software/bittorrent/tcp-"
+#~ "congestion-control.html\" target=\"_blank\" rel=\"noreferrer "
+#~ "noopener\">tcp-congestion-control</a>."

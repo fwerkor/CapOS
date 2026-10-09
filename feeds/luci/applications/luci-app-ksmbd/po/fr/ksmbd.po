@@ -12,8 +12,7 @@ msgstr ""
 
 #: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:58
 msgid "Add optional guest access to IPC$ share, disabled by default"
-msgstr ""
-"Ajouter un accès invité optionnel au partage IPC$, désactivé par défaut"
+msgstr "Ajouter un accès invité optionnel au partage IPC$, désactivé par défaut"
 
 #: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:57
 msgid "Allow guest on IPC$."

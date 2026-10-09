@@ -84,8 +84,8 @@ msgid ""
 "“FW_ACCESS_TIMEOUT” is not set then the default timeout of 30 seconds will "
 "automatically be set."
 msgstr ""
-"定義在取得源 IP 位址的有效敲門序列後，fwknopd 允許通過防火牆存取的「時間長"
-"度」。若未設定「FW_ACCESS_TIMEOUT」則預設 30 秒逾時。"
+"定義在取得源 IP 位址的有效敲門序列後，fwknopd 允許通過防火牆存取的「時間長度"
+"」。若未設定「FW_ACCESS_TIMEOUT」則預設 30 秒逾時。"
 
 #: applications/luci-app-fwknopd/htdocs/luci-static/resources/view/fwknopd.js:535
 msgid ""
@@ -228,9 +228,9 @@ msgid ""
 "“192.168.10.0/24”), and individual IP addresses can be specified as well. "
 "Multiple entries are comma-separated."
 msgstr ""
-"SPA 封包將被接受的目標位址。若有效 SPA 封包應遵循任何目標 IP，則也接受字串"
-"「ANY」。應該以 CIDR 表示法指定網路 (例如「192.168.10.0/24」)，也可以指定單"
-"個 IP 位址。多個條目以逗號分隔。"
+"SPA 封包將被接受的目標位址。若有效 SPA 封包應遵循任何目標 IP，則也接受字串「"
+"ANY」。應該以 CIDR 表示法指定網路 (例如「192.168.10.0/24」)，也可以指定單個 "
+"IP 位址。多個條目以逗號分隔。"
 
 #: applications/luci-app-fwknopd/htdocs/luci-static/resources/view/fwknopd.js:489
 msgid ""
@@ -238,8 +238,8 @@ msgid ""
 "when the network is up-and-running. This option has precedence over "
 "“PCAP_INTF” option."
 msgstr ""
-"常駐程式監聽的網路。網路啟動並執行時，常駐程式會自動啟動。此選項優先於"
-"「PCAP_INTF」選項。"
+"常駐程式監聽的網路。網路啟動並執行時，常駐程式會自動啟動。此選項優先於「"
+"PCAP_INTF」選項。"
 
 #: applications/luci-app-fwknopd/htdocs/luci-static/resources/view/fwknopd.js:503
 msgid ""
@@ -279,8 +279,7 @@ msgstr ""
 msgid ""
 "When unchecked, the config files in /etc/fwknopd will be used as is, "
 "ignoring any settings here."
-msgstr ""
-"取消選中時，/etc/fwknopd 中的設定檔案將按原樣使用，忽略這裡的任何設定。"
+msgstr "取消選中時，/etc/fwknopd 中的設定檔案將按原樣使用，忽略這裡的任何設定。"
 
 #: applications/luci-app-fwknopd/htdocs/luci-static/resources/view/fwknopd.js:415
 #: applications/luci-app-fwknopd/htdocs/luci-static/resources/view/fwknopd.js:497

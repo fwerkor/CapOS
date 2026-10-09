@@ -7,8 +7,8 @@ msgstr ""
 "Language: ga\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : (n>2 && n<7) ? 2 :"
-"(n>6 && n<11) ? 3 : 4;\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : (n>2 && n<7) ? 2 :(n>"
+"6 && n<11) ? 3 : 4;\n"
 "X-Generator: Weblate 2026.6.dev0\n"
 
 #: applications/luci-app-ocserv/htdocs/luci-static/resources/view/ocserv/main.js:121
@@ -422,3 +422,9 @@ msgid ""
 msgstr ""
 "Féach ar an teastas CA a úsáideann an freastalaí seo. Beidh ort é a shábháil "
 "mar 'ca.pem' agus é a allmhairiú isteach sna cliaint."
+
+#~ msgid "IP"
+#~ msgstr "IP"
+
+#~ msgid "VPN IP"
+#~ msgstr "VPN IP"

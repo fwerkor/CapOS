@@ -11,8 +11,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
-"20)) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : "
+"(n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2;\n"
 "X-Generator: Weblate 5.14-dev\n"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:65
@@ -390,14 +390,8 @@ msgid "Speed limit up enabled"
 msgstr "Limita de viteză în sus activată"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:179
-msgid ""
-"This is documented on <a href=\"https://www.irif.fr/~jch/software/bittorrent/"
-"tcp-congestion-control.html\" target=\"_blank\" rel=\"noreferrer "
-"noopener\">tcp-congestion-control</a>."
+msgid "This is documented on %s."
 msgstr ""
-"Acest lucru este documentat pe <a href=\"https://www.irif.fr/~jch/software/"
-"bittorrent/tcp-congestion-control.html\" target=\"_blank\" rel=\"noreferrer "
-"noopener\">tcp-congestion-control</a>."
 
 #: applications/luci-app-transmission/root/usr/share/luci/menu.d/luci-app-transmission.json:3
 msgid "Transmission"
@@ -439,3 +433,12 @@ msgstr "în minute de la miezul nopții"
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:167
 msgid "uTP enabled"
 msgstr "uTP activat"
+
+#~ msgid ""
+#~ "This is documented on <a href=\"https://www.irif.fr/~jch/software/"
+#~ "bittorrent/tcp-congestion-control.html\" target=\"_blank\" "
+#~ "rel=\"noreferrer noopener\">tcp-congestion-control</a>."
+#~ msgstr ""
+#~ "Acest lucru este documentat pe <a href=\"https://www.irif.fr/~jch/"
+#~ "software/bittorrent/tcp-congestion-control.html\" target=\"_blank\" "
+#~ "rel=\"noreferrer noopener\">tcp-congestion-control</a>."

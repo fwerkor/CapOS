@@ -14,7 +14,7 @@ Maintainer: Peter Denison <openwrt@marshadder.org>
 Source: gkrellm-2.4.0.tar.bz2
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
-URL: http://gkrellm.net/
+URL: https://gkrellm.srcbox.net/
 Type: ipkg
 Description: 	Gkrellmd listens for connections from gkrellm clients. When
 	a gkrellm client connects to a gkrellmd server all builtin

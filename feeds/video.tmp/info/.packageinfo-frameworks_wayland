@@ -5,7 +5,7 @@ Build-Types: host
 
 Package: libwayland
 Submenu: Frameworks and Toolkits
-Version: 1.23.0-r1
+Version: 1.26.0-r1
 Depends: +libc +libexpat +libffi
 Conflicts: 
 Menu-Depends: 
@@ -16,7 +16,7 @@ Repository: base
 Title: wayland
 Maintainer: Daniel Golle <daniel@makrotopia.org>
 Require-User: :video=40
-Source: wayland-1.23.0.tar.xz
+Source: wayland-1.26.0.tar.xz
 License: MIT
 LicenseFiles: COPYING
 URL: https://wayland.freedesktop.org/
@@ -26,7 +26,7 @@ Description: wayland
 
 Package: wayland-scanner
 Submenu: Frameworks and Toolkits
-Version: 1.23.0-r1
+Version: 1.26.0-r1
 Depends: +libc +libxml2 +libexpat
 Conflicts: 
 Menu-Depends: 
@@ -36,7 +36,7 @@ Category: Video
 Repository: base
 Title: wayland
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: wayland-1.23.0.tar.xz
+Source: wayland-1.26.0.tar.xz
 License: MIT
 LicenseFiles: COPYING
 URL: https://wayland.freedesktop.org/

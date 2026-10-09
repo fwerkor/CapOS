@@ -340,3 +340,6 @@ msgstr "tun6Address"
 #: applications/luci-app-bmx7/htdocs/luci-static/resources/view/bmx7/config.js:41
 msgid "tunOut"
 msgstr "tunOut"
+
+#~ msgid "Bmx7 mesh nodes"
+#~ msgstr "Węzły mesh Bmx7"

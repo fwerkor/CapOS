@@ -8,16 +8,16 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=erlang
-PKG_VERSION:=28.0.3
-PKG_RELEASE:=1
+PKG_VERSION:=28.5
+PKG_RELEASE:=2
 
 PKG_SOURCE:=otp_src_$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/erlang/otp/releases/download/OTP-$(PKG_VERSION)
-PKG_HASH:=0cdf3b44e327439ea6677e61e06f28a0f82ea080af2dcbd665bc5a945b167012
+PKG_HASH:=2c7e8ca23e6864eb20eff5d44738bfa123aed8cd21ed6d98e533d751eee28d9c
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE.txt
-PKG_MAINTAINER:=
+PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
 PKG_CPE_ID:=cpe:/a:erlang:erlang
 
 PKG_BUILD_DEPENDS:=erlang/host openssl unixodbc/host
@@ -225,7 +225,7 @@ endef
 
 define Package/erlang-parsetools/description
 $(call Package/erlang/Default/description)
- This package incluides the following tools:
+ This package includes the following tools:
   yecc, LALR-1 Parser Generator.
   leex, Lexical analyzer generator for Erlang.
 endef
@@ -379,7 +379,7 @@ define Package/erlang/install
 		$(CP) $(PKG_INSTALL_DIR)/usr/lib/erlang/bin/$$$$f $(1)/usr/lib/erlang/bin/ ; \
 	done
 	$(INSTALL_DIR) $(1)/usr/lib/erlang/lib
-	for m in erts kernel sasl stdlib; do \
+	for m in erts kernel stdlib; do \
 		$(CP) $(PKG_INSTALL_DIR)/usr/lib/erlang/lib/$$$$m-* $(1)/usr/lib/erlang/lib/ ; \
 		rm -rf $(1)/usr/lib/erlang/lib/$$$$m-*/examples ; \
 		rm -rf $(1)/usr/lib/erlang/lib/$$$$m-*/src ; \

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2026-04-24 15:13+0000\n"
-"Last-Translator: SnIPeRSnIPeR "
-"<snipersniper@users.noreply.hosted.weblate.org>\n"
+"Last-Translator: SnIPeRSnIPeR <snipersniper@users.noreply.hosted.weblate.org>"
+"\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsapinger/ru/>\n"
 "Language: ru\n"
@@ -257,8 +257,7 @@ msgstr ""
 
 #: applications/luci-app-apinger/htdocs/luci-static/resources/view/apinger/alarm_loss.js:10
 msgid "This alarm will be fired when packet loss goes over \"Loss High\""
-msgstr ""
-"Тревога сработает, когда потери пакетов превысят «Верхний порог потерь»"
+msgstr "Тревога сработает, когда потери пакетов превысят «Верхний порог потерь»"
 
 #: applications/luci-app-apinger/htdocs/luci-static/resources/view/apinger/alarm_down.js:10
 msgid "This alarm will be fired when target does not respond for \"Time\""

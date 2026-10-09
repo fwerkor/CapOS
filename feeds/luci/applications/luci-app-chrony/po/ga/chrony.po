@@ -7,8 +7,8 @@ msgstr ""
 "Language: ga\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : (n>2 && n<7) ? 2 :"
-"(n>6 && n<11) ? 3 : 4;\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : (n>2 && n<7) ? 2 :(n>"
+"6 && n<11) ? 3 : 4;\n"
 "X-Generator: Weblate 5.17.1-dev\n"
 
 #: applications/luci-app-chrony/htdocs/luci-static/resources/view/chrony.js:198
@@ -100,8 +100,7 @@ msgstr "Míchumasaithe"
 
 #: applications/luci-app-chrony/htdocs/luci-static/resources/view/chrony.js:51
 msgid "Disables certificate time checks via %s if RTC is absent."
-msgstr ""
-"Díchumasaíonn sé seiceálacha ama deimhnithe trí %s mura bhfuil RTC ann."
+msgstr "Díchumasaíonn sé seiceálacha ama deimhnithe trí %s mura bhfuil RTC ann."
 
 #: applications/luci-app-chrony/htdocs/luci-static/resources/view/chrony.js:27
 msgid "Documentation"

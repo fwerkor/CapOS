@@ -236,3 +236,48 @@ msgstr "সতর্কতা: ডিভাইসের তথ্য পেত�
 #: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced-reboot.js:56
 msgid "invalid argument"
 msgstr ""
+
+#~ msgid ""
+#~ "WARNING: Power off might result in a reboot on a device which doesn't "
+#~ "support power off.<br /><br /> Click \"Proceed\" below to power off your "
+#~ "device."
+#~ msgstr ""
+#~ "সতর্কতা: পাওয়ার অফ সমর্থন করেনা এমন ডিভাইস বন্ধ করলে তা পুনরায় চালু হতে "
+#~ "পারে<br /><br />আপনার ডিভাইসটি বন্ধ করতে নীচে \"এগিয়ে যান\" ক্লিক করুন।"
+
+#~ msgid "Compressed"
+#~ msgstr "সংকুচিত"
+
+#~ msgid "Confirm"
+#~ msgstr "নিশ্চিত করুন"
+
+#~ msgid "Grant UCI and file access for luci-app-advanced-reboot"
+#~ msgstr "luci-app-advanced-reboot এর জন্য UCI এবং ফাইল অ্যাক্সেস প্রদান করুন"
+
+#~ msgid "No access to fw_printenv or fw_printenv!"
+#~ msgstr "fw_printenv বা fw_printenv- এ প্রবেশাধিকার নেই!"
+
+#~ msgid "Reboot Device to an Alternative Partition"
+#~ msgstr "বিকল্প পার্টিশনে ডিভাইস রিবুট করুন"
+
+#~ msgid "Reboot to alternative partition..."
+#~ msgstr "বিকল্প পার্টিশনে রিবুট করুন ..."
+
+#~ msgid ""
+#~ "WARNING: An alternative partition might have its own settings and "
+#~ "completely different firmware.<br /><br /> As your network configuration "
+#~ "and WiFi SSID/password on alternative partition might be different, you "
+#~ "might have to adjust your computer settings to be able to access your "
+#~ "device once it reboots.<br /><br /> Please also be aware that alternative "
+#~ "partition firmware might not provide an easy way to switch active "
+#~ "partition and boot back to the currently active partition.<br /><br /> "
+#~ "Click \"Proceed\" below to reboot device to an alternative partition."
+#~ msgstr ""
+#~ "সতর্কতা: একটি বিকল্প পার্টিশনের নিজস্ব সেটিংস এবং সম্পূর্ণ ভিন্ন ফার্মওয়্যার থাকতে "
+#~ "পারে।<br /><br />যেহেতু বিকল্প পার্টিশনে আপনার নেটওয়ার্ক কনফিগারেশন এবং "
+#~ "ওয়াইফাই এসএসআইডি/পাসওয়ার্ড ভিন্ন হতে পারে, আপনার ডিভাইসটি পুনরায় বুট করার পরে "
+#~ "আপনাকে অ্যাক্সেস করতে সক্ষম হওয়ার জন্য আপনার কম্পিউটার সেটিংস সামঞ্জস্য করতে হতে "
+#~ "পারে।<br /><br />অনুগ্রহ করে সচেতন থাকুন যে বিকল্প পার্টিশনের ফার্মওয়্যার সক্রিয় "
+#~ "পার্টিশন পরিবর্তন করতে এবং বর্তমানে সক্রিয় পার্টিশনে ফিরে যাওয়ার সহজ উপায় "
+#~ "প্রদান নাও করতে পারে।<br /><br />বিকল্প পার্টিশনে ডিভাইস রিবুট করতে নীচে "
+#~ "\"এগিয়ে যান\" ক্লিক করুন।"

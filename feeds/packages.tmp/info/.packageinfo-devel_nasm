@@ -16,7 +16,7 @@ License: BSD-2-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:nasm:netwide_assembler
 Type: ipkg
-Description:   NASM, the Netwide Assembler: an assembler targetting the
+Description:   NASM, the Netwide Assembler: an assembler targeting the
   Intel x86 series of processors, with portable source.
 @@
 

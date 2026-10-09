@@ -1,11 +1,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=spirv-headers
-PKG_VERSION:=1.4.328.0
+PKG_VERSION:=1.4.357.0
+PKG_RELEASE:=1
 
 PKG_SOURCE:=SPIRV-Headers-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/KhronosGroup/SPIRV-Headers/tar.gz/vulkan-sdk-$(PKG_VERSION)?
-PKG_HASH:=00284a33e1e19014723c8e88ca7a16e8988cd23f839ec2b7da6bb1808fd2a751
+PKG_HASH:=4d703067a7e06331ccb37bdfed3f9b7879cc61969a2689ae95c95db34a47ff07
 
 PKG_MAINTAINER:=Daniel Golle <daniel@makrotopia.org>
 PKG_LICENSE:=MIT
