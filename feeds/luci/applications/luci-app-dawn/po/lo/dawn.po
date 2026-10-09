@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-02 12:03+0000\n"
-"Last-Translator: BoneNI <bounkirdni@gmail.com>\n"
+"PO-Revision-Date: 2026-08-15 13:06+0000\n"
+"Last-Translator: Bone NI <bounkirdni@gmail.com>\n"
 "Language-Team: Lao <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsdawn/lo/>\n"
 "Language: lo\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.17.1\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:389
 msgid "2.4G Band Metric"
@@ -40,8 +40,8 @@ msgid ""
 "All timer values are in seconds. They are the main mechanism for DAWN "
 "collecting and managing much of the data that it relies on."
 msgstr ""
-"ຄ່າເວລາທັງໝົດມີຫົວໜ່ວຍເປັນວິນາທີ. ເປັນກົນໄກຫຼັກໃຫ້ DAWN ໃນການເກັບກຳ ແລະ "
-"ຈັດການຂໍ້ມູນທີ່ມັນນຳມາໃຊ້ງານ."
+"ຄ່າເວລາທັງໝົດມີຫົວໜ່ວຍເປັນວິນາທີ. ເປັນກົນໄກຫຼັກໃຫ້ DAWN ໃນການເກັບກຳ ແລະ ຈັດການຂໍ້ມູນທີ່ມັນນຳມາໃຊ້ງາ"
+"ນ."
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:399
 msgid "Ap Weight"
@@ -49,7 +49,7 @@ msgstr "ນ້ຳໜັກຄວາມສຳຄັນຂອງ AP"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/dawn/dawn-common.js:32
 msgid "Available"
-msgstr "ພ້ອມໃຊ້ງານ"
+msgstr "ມີຢູ່"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:285
 msgid "Average channel utilization"
@@ -273,7 +273,7 @@ msgstr "ຄະແນນເລີ່ມຕົ້ນ"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/status/dawn/network_overview.js:44
 msgid "Interface"
-msgstr "ອິນເຕີເຟດ"
+msgstr "ອິນເຕີເຟສ"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:330
 msgid "Kicking"
@@ -323,7 +323,8 @@ msgstr "ຄວາມແຕກຕ່າງສະຖານີສູງສຸດ"
 msgid ""
 "Maximum reported AP-client bandwidth permitted when kicking. Set to zero to "
 "disable the check."
-msgstr "ຄວາມໄວອິນເຕີເນັດ AP-client ສູງສຸດທີ່ອະນຸຍາດເມື່ອເຕະອອກ. ຕັ້ງເປັນສູນເພື່ອປິດການກວດສອບ."
+msgstr ""
+"ຄວາມໄວອິນເຕີເນັດ AP-client ສູງສຸດທີ່ອະນຸຍາດເມື່ອເຕະອອກ. ຕັ້ງເປັນສູນເພື່ອປິດການກວດສອບ."
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:185
 msgid "Method of networking between DAWN instances"
@@ -356,7 +357,8 @@ msgstr "ຄວາມແຕກຕ່າງຄະແນນຕ່ຳສຸດເພ
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:138
 msgid ""
 "More info to help trace where algorithms may be going wrong - for debugging"
-msgstr "ຂໍ້ມູນເພີ່ມເຕີມເພື່ອຊ່ວຍຕິດຕາມວ່າອະລະກໍຣິທຶມອາດຈະຜິດພາດບ່ອນໃດ - ສຳລັບການດີບັກ"
+msgstr ""
+"ຂໍ້ມູນເພີ່ມເຕີມເພື່ອຊ່ວຍຕິດຕາມວ່າອະລະກໍຣິທຶມອາດຈະຜິດພາດບ່ອນໃດ - ສຳລັບການດີບັກ"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:188
 msgid "Multicast"
@@ -408,7 +410,8 @@ msgstr "ບໍ່ພ້ອມໃຊ້ງານ"
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:347
 msgid ""
 "Number of connected stations to consider \"better\" for use_station_count"
-msgstr "ຈຳນວນສະຖານີທີ່ເຊື່ອມຕໍ່ຢູ່ເພື່ອພິຈາລະນາວ່າ \"ດີກວ່າ\" ສຳລັບ use_station_count"
+msgstr ""
+"ຈຳນວນສະຖານີທີ່ເຊື່ອມຕໍ່ຢູ່ເພື່ອພິຈາລະນາວ່າ \"ດີກວ່າ\" ສຳລັບ use_station_count"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:353
 msgid ""
@@ -447,7 +450,8 @@ msgstr "ພອດສຳລັບເຄືອຂ່າຍ TCP"
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:370
 msgid ""
 "Preferred order for using Passive, Active or Table 802.11k BEACON information"
-msgstr "ລຳດັບທີ່ຕ້ອງການສຳລັບການໃຊ້ຂໍ້ມູນ Passive, Active ຫຼື Table 802.11k BEACON"
+msgstr ""
+"ລຳດັບທີ່ຕ້ອງການສຳລັບການໃຊ້ຂໍ້ມູນ Passive, Active ຫຼື Table 802.11k BEACON"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/status/dawn/hearing_map.js:66
 msgid "RCPI"
@@ -592,21 +596,25 @@ msgstr "ຂີດຈຳກັດສຳລັບ RSSI ທີ່ບໍ່ດີ"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:264
 msgid "Timer to (re-)register for hostapd messages for each local BSSID"
-msgstr "ຕົວຕັ້ງເວລາເພື່ອ (ລົງທະບຽນໃໝ່) ຂໍ້ຄວາມ hostapd ສຳລັບແຕ່ລະ BSSID ທ້ອງຖິ່ນ"
+msgstr ""
+"ຕົວຕັ້ງເວລາເພື່ອ (ລົງທະບຽນໃໝ່) ຂໍ້ຄວາມ hostapd ສຳລັບແຕ່ລະ BSSID ທ້ອງຖິ່ນ"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:246
 msgid "Timer to ask all connected clients for a new BEACON REPORT"
-msgstr "ຕົວຕັ້ງເວລາເພື່ອຖາມລູກຄ້າທີ່ເຊື່ອມຕໍ່ຢູ່ທັງໝົດ ສຳລັບ BEACON REPORT ອັນໃໝ່"
+msgstr ""
+"ຕົວຕັ້ງເວລາເພື່ອຖາມລູກຄ້າທີ່ເຊື່ອມຕໍ່ຢູ່ທັງໝົດ ສຳລັບ BEACON REPORT ອັນໃໝ່"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:252
 msgid "Timer to get recent channel utilization figure for each local BSSID"
-msgstr "ຕົວຕັ້ງເວລາເພື່ອດຶງຂໍ້ມູນການໃຊ້ງານຊ່ອງສັນຍານຫຼ້າສຸດ ສຳລັບແຕ່ລະ BSSID ທ້ອງຖິ່ນ"
+msgstr ""
+"ຕົວຕັ້ງເວລາເພື່ອດຶງຂໍ້ມູນການໃຊ້ງານຊ່ອງສັນຍານຫຼ້າສຸດ ສຳລັບແຕ່ລະ BSSID ທ້ອງຖິ່ນ"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:270
 msgid ""
 "Timer to refresh / remove the TCP connections to other DAWN instances found "
 "via uMDNS"
-msgstr "ຕົວຕັ້ງເວລາເພື່ອຣີເຟຣຊ / ລຶບການເຊື່ອມຕໍ່ TCP ໄປຫາ DAWN instances ອື່ນໆທີ່ພົບຜ່ານ uMDNS"
+msgstr ""
+"ຕົວຕັ້ງເວລາເພື່ອຣີເຟຣຊ / ລຶບການເຊື່ອມຕໍ່ TCP ໄປຫາ DAWN instances ອື່ນໆທີ່ພົບຜ່ານ uMDNS"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:258
 msgid ""
@@ -621,7 +629,8 @@ msgstr "ຕົວຕັ້ງເວລາເພື່ອລຶບລາຍກາ
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:240
 msgid "Timer to remove expired PROBE and BEACON entries from core data set"
-msgstr "ຕົວຕັ້ງເວລາເພື່ອລຶບລາຍການ PROBE ແລະ BEACON ທີ່ໝົດອາຍຸອອກຈາກຊຸດຂໍ້ມູນຫຼັກ"
+msgstr ""
+"ຕົວຕັ້ງເວລາເພື່ອລຶບລາຍການ PROBE ແລະ BEACON ທີ່ໝົດອາຍຸອອກຈາກຊຸດຂໍ້ມູນຫຼັກ"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:234
 msgid "Timer to remove expired client entries from core data set"
@@ -638,7 +647,8 @@ msgstr "ໄລຍະເວລາຈົນກວ່າການເຊື່ອມ
 #: applications/luci-app-dawn/htdocs/luci-static/resources/dawn/dawn-common.js:77
 msgid ""
 "Unable to query the DAWN service via ubus, the service appears to be stopped."
-msgstr "ບໍ່ສາມາດສອບຖາມການບໍລິການ DAWN ຜ່ານ ubus, ການບໍລິການດັ່ງກ່າວເບິ່ງຄືວ່າຖືກຢຸດໄວ້."
+msgstr ""
+"ບໍ່ສາມາດສອບຖາມການບໍລິການ DAWN ຜ່ານ ubus, ການບໍລິການດັ່ງກ່າວເບິ່ງຄືວ່າຖືກຢຸດໄວ້."
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:245
 msgid "Update Beacon reports"

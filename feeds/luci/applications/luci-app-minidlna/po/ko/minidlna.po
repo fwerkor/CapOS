@@ -130,8 +130,7 @@ msgstr "루트 컨테이너"
 msgid ""
 "Serial number the miniDLNA daemon will report to clients in its XML "
 "description."
-msgstr ""
-"miniDLNA 데몬이 XML 기기 정보에서 클라이언트에 전달할 시리얼 번호입니다."
+msgstr "miniDLNA 데몬이 XML 기기 정보에서 클라이언트에 전달할 시리얼 번호입니다."
 
 #: applications/luci-app-minidlna/htdocs/luci-static/resources/view/minidlna.js:69
 msgid ""
@@ -142,14 +141,12 @@ msgstr "클라이언트에 표시될 이름을 사용자 정의할 때 설정합
 msgid ""
 "Set this if you would like to specify the directory where you want MiniDLNA "
 "to store its database and album art cache."
-msgstr ""
-"MiniDLNA의 데이터베이스 및 앨범 아트 캐시 저장 경로를 지정할 때 설정합니다."
+msgstr "MiniDLNA의 데이터베이스 및 앨범 아트 캐시 저장 경로를 지정할 때 설정합니다."
 
 #: applications/luci-app-minidlna/htdocs/luci-static/resources/view/minidlna.js:94
 msgid ""
 "Set this to allow serving content outside the media root (via symlinks)."
-msgstr ""
-"(심볼릭 링크를 통해) 미디어 루트 외부의 콘텐츠를 제공할 수 있도록 허용합니다."
+msgstr "(심볼릭 링크를 통해) 미디어 루트 외부의 콘텐츠를 제공할 수 있도록 허용합니다."
 
 #: applications/luci-app-minidlna/htdocs/luci-static/resources/view/minidlna.js:90
 msgid ""
@@ -160,8 +157,7 @@ msgstr "새 파일을 자동으로 감지하도록 inotify 모니터링을 활�
 msgid ""
 "Set this to enable support for streaming .jpg and .mp3 files to a TiVo "
 "supporting HMO."
-msgstr ""
-"HMO를 지원하는 TiVo 기기로 jpg 및 mp3 파일 스트리밍 지원을 활성화합니다."
+msgstr "HMO를 지원하는 TiVo 기기로 jpg 및 mp3 파일 스트리밍 지원을 활성화합니다."
 
 #: applications/luci-app-minidlna/htdocs/luci-static/resources/view/minidlna.js:96
 msgid ""
@@ -169,8 +165,9 @@ msgid ""
 "downscaling of very large JPEG images, which may hurt JPEG serving "
 "performance on (at least) Sony DLNA products."
 msgstr ""
-"DLNA 표준을 엄격하게 준수합니다. 이 옵션은 대용량 JPEG 이미지를 서버에서 직"
-"접 축소하여 전송하므로, Sony 제품 등에서 JPEG 전송 성능이 저하될 수 있습니다."
+"DLNA 표준을 엄격하게 준수합니다. 이 옵션은 대용량 JPEG 이미지를 서버에서 "
+"직접 축소하여 전송하므로, Sony 제품 등에서 JPEG 전송 성능이 저하될 수 "
+"있습니다."
 
 #: applications/luci-app-minidlna/htdocs/luci-static/resources/view/minidlna.js:78
 msgid ""
@@ -205,8 +202,8 @@ msgid ""
 "The miniDLNA service is active, serving %d audio, %d video and %d image "
 "files."
 msgstr ""
-"miniDLNA 서비스가 활성 상태입니다. (오디오 %d개, 비디오 %d개, 이미지 %d개 제"
-"공 중)"
+"miniDLNA 서비스가 활성 상태입니다. (오디오 %d개, 비디오 %d개, 이미지 %d개 "
+"제공 중)"
 
 #: applications/luci-app-minidlna/htdocs/luci-static/resources/view/minidlna.js:18
 #: applications/luci-app-minidlna/htdocs/luci-static/resources/view/status/include/80_minidlna.js:22

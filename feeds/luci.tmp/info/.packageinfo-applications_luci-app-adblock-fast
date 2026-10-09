@@ -1,9 +1,9 @@
 Source-Makefile: feeds/luci/applications/luci-app-adblock-fast/Makefile
-Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host LUCI_UTMIN:ucode/host 
 
 Package: luci-app-adblock-fast
 Submenu: 3. Applications
-Version: 1.2.4-r2
+Version: 1.2.4-r4
 Depends: +libc +luci-base +adblock-fast +rpcd-mod-ucode
 Conflicts: 
 Menu-Depends: 
@@ -15,6 +15,7 @@ Title: AdBlock-Fast Web UI
 Maintainer: OpenWrt LuCI community
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 URL: https://github.com/mossdef-org/luci-app-adblock-fast/
 Type: ipkg
 Description:    Provides Web UI for adblock-fast service.
@@ -24,7 +25,7 @@ Config:
 help
 	AdBlock-Fast Web UI
 	.
-	Version: 1.2.4-2
+	Version: 1.2.4-4
 @@
 
 Package: luci-i18n-adblock-fast-ar
@@ -41,6 +42,7 @@ Title: luci-app-adblock-fast - ar translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - العربية (Arabic)
@@ -60,6 +62,7 @@ Title: luci-app-adblock-fast - bg translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - български (Bulgarian)
@@ -79,6 +82,7 @@ Title: luci-app-adblock-fast - bn translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - বাংলা (Bengali)
@@ -98,6 +102,7 @@ Title: luci-app-adblock-fast - ca translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Català (Catalan)
@@ -117,6 +122,7 @@ Title: luci-app-adblock-fast - cs translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Čeština (Czech)
@@ -136,6 +142,7 @@ Title: luci-app-adblock-fast - da translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Dansk (Danish)
@@ -155,6 +162,7 @@ Title: luci-app-adblock-fast - de translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Deutsch (German)
@@ -174,6 +182,7 @@ Title: luci-app-adblock-fast - el translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Ελληνικά (Greek)
@@ -193,6 +202,7 @@ Title: luci-app-adblock-fast - es translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Español (Spanish)
@@ -212,6 +222,7 @@ Title: luci-app-adblock-fast - fa translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Farsi (Persian)
@@ -231,6 +242,7 @@ Title: luci-app-adblock-fast - fi translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Suomi (Finnish)
@@ -250,6 +262,7 @@ Title: luci-app-adblock-fast - fr translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Français (French)
@@ -269,6 +282,7 @@ Title: luci-app-adblock-fast - ga translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Gaeilge (Irish)
@@ -288,6 +302,7 @@ Title: luci-app-adblock-fast - he translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - עִבְרִית (Hebrew)
@@ -307,6 +322,7 @@ Title: luci-app-adblock-fast - hi translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - हिंदी (Hindi)
@@ -326,6 +342,7 @@ Title: luci-app-adblock-fast - hu translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Magyar (Hungarian)
@@ -345,6 +362,7 @@ Title: luci-app-adblock-fast - it translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Italiano (Italian)
@@ -364,6 +382,7 @@ Title: luci-app-adblock-fast - ja translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - 日本語 (Japanese)
@@ -383,9 +402,30 @@ Title: luci-app-adblock-fast - ko translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - 한국어 (Korean)
+@@
+
+Package: luci-i18n-adblock-fast-lo
+Default: LUCI_LANG_lo||(ALL&&m)
+Version: x
+Depends: +libc luci-app-adblock-fast
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-adblock-fast-lo-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-adblock-fast - lo translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-adblock-fast - ພາສາລາວ (Lao)
 @@
 
 Package: luci-i18n-adblock-fast-lt
@@ -402,6 +442,7 @@ Title: luci-app-adblock-fast - lt translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Lietuvių (Lithuanian)
@@ -421,6 +462,7 @@ Title: luci-app-adblock-fast - mr translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Marāṭhī (Marathi)
@@ -440,6 +482,7 @@ Title: luci-app-adblock-fast - ms translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Bahasa Melayu (Malay)
@@ -459,6 +502,7 @@ Title: luci-app-adblock-fast - no translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Norsk (Norwegian)
@@ -478,6 +522,7 @@ Title: luci-app-adblock-fast - nl translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Nederlands (Dutch)
@@ -497,6 +542,7 @@ Title: luci-app-adblock-fast - pl translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Polski (Polish)
@@ -516,6 +562,7 @@ Title: luci-app-adblock-fast - pt translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Português (Portuguese)
@@ -535,6 +582,7 @@ Title: luci-app-adblock-fast - pt-br translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Português do Brasil (Brazilian Portuguese)
@@ -554,6 +602,7 @@ Title: luci-app-adblock-fast - ro translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Română (Romanian)
@@ -573,6 +622,7 @@ Title: luci-app-adblock-fast - ru translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Русский (Russian)
@@ -592,6 +642,7 @@ Title: luci-app-adblock-fast - sk translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Slovenčina (Slovak)
@@ -611,6 +662,7 @@ Title: luci-app-adblock-fast - sv translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Svenska (Swedish)
@@ -630,6 +682,7 @@ Title: luci-app-adblock-fast - ta translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Tamil (Tamil)
@@ -649,6 +702,7 @@ Title: luci-app-adblock-fast - tr translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Türkçe (Turkish)
@@ -668,6 +722,7 @@ Title: luci-app-adblock-fast - uk translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Українська (Ukrainian)
@@ -687,6 +742,7 @@ Title: luci-app-adblock-fast - vi translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Tiếng Việt (Vietnamese)
@@ -706,6 +762,7 @@ Title: luci-app-adblock-fast - zh-cn translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - 简体中文 (Simplified Chinese)
@@ -725,6 +782,7 @@ Title: luci-app-adblock-fast - zh-tw translation
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
+CPE-ID: cpe:/a:mossdef:luci-app-adblock-fast
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock-fast - 正體中文 (Traditional Chinese)

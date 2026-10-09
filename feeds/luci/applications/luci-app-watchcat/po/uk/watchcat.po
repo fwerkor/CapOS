@@ -101,8 +101,8 @@ msgstr ""
 "Як часто пінгувати вказаний вище вузол. <br /><br />Типовою одиницею є "
 "секунди без суфікса, проте можна використовувати суфікс <b>m</b> для хвилин, "
 "<b>h</b> для годин або <b>d</b> для днів. <br /><br /> Приклади:<ul><li>10 "
-"секунд буде: <b>10</b> або <b>10s</b></li><li>5 хвилин буде: <b>5m</b></"
-"li><li>1 година буде: <b>1h</b></li><li>1 тиждень буде: <b>7d</b></li><ul>"
+"секунд буде: <b>10</b> або <b>10s</b></li><li>5 хвилин буде: <b>5m</b></li>"
+"<li>1 година буде: <b>1h</b></li><li>1 тиждень буде: <b>7d</b></li><ul>"
 
 #: applications/luci-app-watchcat/htdocs/luci-static/resources/view/watchcat.js:85
 msgid "Huge: 1492 bytes"
@@ -141,8 +141,8 @@ msgstr ""
 "сценарій. <br /><br />Типовою одиницею є секунди без суфікса, проте можна "
 "використовувати суфікс <b>m</b> для хвилин, <b>h</b> для годин або <b>d</b> "
 "для днів. <br /><br />Приклади:<ul><li>10 секунд буде: <b>10</b> або <b>10s</"
-"b></li><li>5 хвилин буде: <b>5m</b></li><li> 1 година буде: <b>1h</b></"
-"li><li>1 тиждень буде: <b>7d</b></li><ul>"
+"b></li><li>5 хвилин буде: <b>5m</b></li><li> 1 година буде: <b>1h</b></li>"
+"<li>1 тиждень буде: <b>7d</b></li><ul>"
 
 #: applications/luci-app-watchcat/htdocs/luci-static/resources/view/watchcat.js:102
 msgid "Interface"
@@ -242,3 +242,9 @@ msgstr "Watchcat"
 #: applications/luci-app-watchcat/htdocs/luci-static/resources/view/watchcat.js:82
 msgid "Windows: 32 bytes"
 msgstr "Windows: 32 байти"
+
+#~ msgid "Host To Check"
+#~ msgstr "Хост для перевірки"
+
+#~ msgid "IP address or hostname to ping."
+#~ msgstr "IP-адреса або ім’я хоста для ping."

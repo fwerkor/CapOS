@@ -584,8 +584,8 @@ msgstr "Parece que algo está mal, pero es recuperable"
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:365
 msgid "Space separated list of MACS to use in \"static\" AP Neighbor Report"
 msgstr ""
-"Lista de direcciones MAC separada por espacios para usar en el informe "
-"«estático» de vecinos del punto de acceso"
+"Lista de direcciones MAC separada por espacios para usar en el informe «"
+"estático» de vecinos del punto de acceso"
 
 #: applications/luci-app-dawn/htdocs/luci-static/resources/view/network/dawn.js:140
 msgid "Standard behaviour always worth reporting"

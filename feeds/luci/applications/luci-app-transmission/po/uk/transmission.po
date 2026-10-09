@@ -390,14 +390,8 @@ msgid "Speed limit up enabled"
 msgstr "Обмеження швидкості вивантаження увімкнено"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:179
-msgid ""
-"This is documented on <a href=\"https://www.irif.fr/~jch/software/bittorrent/"
-"tcp-congestion-control.html\" target=\"_blank\" rel=\"noreferrer "
-"noopener\">tcp-congestion-control</a>."
-msgstr ""
-"Це задокументовано на <a href=\"https://www.irif.fr/~jch/software/bittorrent/"
-"tcp-congestion-control.html\" target=\"_blank\" rel=\"noreferrer "
-"noopener\">tcp-congestion- керування</a>."
+msgid "This is documented on %s."
+msgstr "Докладніше про це на %s."
 
 #: applications/luci-app-transmission/root/usr/share/luci/menu.d/luci-app-transmission.json:3
 msgid "Transmission"
@@ -439,3 +433,12 @@ msgstr "у хвилинах від півночі"
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:167
 msgid "uTP enabled"
 msgstr "uTP увімкнено"
+
+#~ msgid ""
+#~ "This is documented on <a href=\"https://www.irif.fr/~jch/software/"
+#~ "bittorrent/tcp-congestion-control.html\" target=\"_blank\" "
+#~ "rel=\"noreferrer noopener\">tcp-congestion-control</a>."
+#~ msgstr ""
+#~ "Це задокументовано на <a href=\"https://www.irif.fr/~jch/software/"
+#~ "bittorrent/tcp-congestion-control.html\" target=\"_blank\" "
+#~ "rel=\"noreferrer noopener\">tcp-congestion- керування</a>."

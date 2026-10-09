@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-04-18 17:10+0000\n"
+"PO-Revision-Date: 2026-09-06 03:21+0000\n"
 "Last-Translator: Franco Castillo <castillofrancodamian@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsaria2/es/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 
 #: applications/luci-app-aria2/htdocs/luci-static/resources/view/aria2/config.js:433
 msgid "<abbr title=\"Local Peer Discovery\">LPD</abbr> enabled"
@@ -189,7 +189,7 @@ msgstr "Error"
 
 #: applications/luci-app-aria2/htdocs/luci-static/resources/view/aria2/config.js:619
 msgid "Extra Settings"
-msgstr "Ajustes Adicionales"
+msgstr "Configuración adicional"
 
 #: applications/luci-app-aria2/htdocs/luci-static/resources/view/aria2/config.js:487
 msgid "False"
@@ -305,8 +305,8 @@ msgid ""
 "List of extra settings. Format: option=value, eg. <code>netrc-path=/"
 "tmp/.netrc</code>."
 msgstr ""
-"Lista de ajustes adicionales. Formato: opción=valor, p. ej. <code>netrc-"
-"path=/tmp/.netrc</code>."
+"Lista de configuraciones adicionales. Formato: opción=valor, p. ej. <code>"
+"netrc-path=/tmp/.netrc</code>."
 
 #: applications/luci-app-aria2/htdocs/luci-static/resources/view/aria2/log.js:49
 msgid "Loading"
@@ -660,15 +660,16 @@ msgstr "Establece el agente de usuario para descargas HTTP(S)."
 
 #: applications/luci-app-aria2/htdocs/luci-static/resources/view/aria2/config.js:188
 msgid "Settings"
-msgstr "Ajustes"
+msgstr "Configuración"
 
 #: applications/luci-app-aria2/htdocs/luci-static/resources/view/aria2/config.js:620
 msgid "Settings in this section will be added to config file."
-msgstr "Los ajustes en esta sección se agregarán al archivo de configuración."
+msgstr ""
+"Las configuraciones en esta sección se agregarán al archivo de configuración."
 
 #: applications/luci-app-aria2/htdocs/luci-static/resources/view/aria2/config.js:624
 msgid "Settings list"
-msgstr "Lista de ajustes"
+msgstr "Lista de configuraciones"
 
 #: applications/luci-app-aria2/htdocs/luci-static/resources/view/aria2/config.js:585
 msgid ""
@@ -684,8 +685,8 @@ msgstr ""
 "de archivos más nuevos como ext4 (con soporte de extensiones), btrfs, xfs o "
 "NTFS (solo compilación MinGW), «falloc» es su mejor opción. Asigna archivos "
 "grandes (pocos GiB) casi instantáneamente, pero es posible que no esté "
-"disponible si su sistema no tiene la función posix_fallocate(3). No utilice "
-"«falloc» con sistemas de archivos heredados como ext3 y FAT32 porque lleva "
+"disponible si su sistema no tiene la función posix_fallocate(3). No utilice «"
+"falloc» con sistemas de archivos heredados como ext3 y FAT32 porque lleva "
 "casi el mismo tiempo que «prealloc» y bloquea aria2 por completo hasta que "
 "finaliza la asignación."
 
@@ -703,10 +704,10 @@ msgid ""
 "with this option, seeding ends when at least one of the conditions is "
 "satisfied. Specifying 0 disables seeding after download completed."
 msgstr ""
-"Especifica el tiempo de sembrado en minutos. Si se especifica la opción "
-"«Proporción de sembrado» junto con esta opción, la siembra finaliza cuando "
-"se cumple al menos una de las condiciones. Especificar 0 desactiva el "
-"sembrado después de completar la descarga."
+"Especifica el tiempo de sembrado en minutos. Si se especifica la opción «"
+"Proporción de sembrado» junto con esta opción, la siembra finaliza cuando se "
+"cumple al menos una de las condiciones. Especificar 0 desactiva el sembrado "
+"después de completar la descarga."
 
 #: applications/luci-app-aria2/htdocs/luci-static/resources/view/aria2/config.js:539
 msgid ""
@@ -809,8 +810,8 @@ msgid ""
 "file must be in PEM format and can contain multiple CA certificates."
 msgstr ""
 "Usa las autoridades de certificación en ARCHIVO para verificar los pares. El "
-"archivo del certificado debe estar en formato .PEM y puede contener "
-"múltiples certificados de CA."
+"archivo del certificado debe estar en formato PEM y puede contener múltiples "
+"certificados CA."
 
 #: applications/luci-app-aria2/htdocs/luci-static/resources/view/aria2/config.js:284
 msgid ""
@@ -870,8 +871,8 @@ msgstr "Nombre de usuario y contraseña"
 msgid ""
 "Verify the peer using certificates specified in \"CA certificate\" option."
 msgstr ""
-"Verifica el par utilizando los certificados especificados en la opción "
-"«Certificado CA»."
+"Verifica el par utilizando los certificados especificados en la opción «"
+"Certificado CA»."
 
 #: applications/luci-app-aria2/htdocs/luci-static/resources/view/aria2/config.js:233
 msgid "Warn"

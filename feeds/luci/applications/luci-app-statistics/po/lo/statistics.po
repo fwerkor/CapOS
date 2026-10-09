@@ -554,8 +554,8 @@ msgid ""
 "Here you can define external commands which will be started by collectd in "
 "order to read certain values. The values will be read from stdout."
 msgstr ""
-"ບ່ອນນີ້ເຈົ້າສາມາດກຳນົດຄຳສັ່ງພາຍນອກທີ່ຈະຖືກເລີ່ມຕົ້ນໂດຍ collectd ເພື່ອອ່ານຄ່າບາງຢ່າງ. "
-"ຄ່າຈະຖືກອ່ານຈາກ stdout."
+"ບ່ອນນີ້ເຈົ້າສາມາດກຳນົດຄຳສັ່ງພາຍນອກທີ່ຈະຖືກເລີ່ມຕົ້ນໂດຍ collectd ເພື່ອອ່ານຄ່າບາງຢ່າງ. ຄ່າຈະຖືກອ່ານຈາ"
+"ກ stdout."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/exec.js:37
 msgid ""
@@ -563,14 +563,15 @@ msgid ""
 "certain threshold values have been reached. The values leading to invocation "
 "will be fed to the the called programs stdin."
 msgstr ""
-"ບ່ອນນີ້ເຈົ້າສາມາດກຳນົດຄຳສັ່ງພາຍນອກທີ່ຈະຖືກເລີ່ມຕົ້ນໂດຍ collectd ເມື່ອຄ່າຂີດຈຳກັດບາງຢ່າງຖືກເຖິງ. "
-"ຄ່າທີ່ນຳໄປສູ່ການຮຽກໃຊ້ຈະຖືກສົ່ງໄປຍັງ stdin ຂອງໂປຣແກຣມທີ່ຖືກຮຽກ."
+"ບ່ອນນີ້ເຈົ້າສາມາດກຳນົດຄຳສັ່ງພາຍນອກທີ່ຈະຖືກເລີ່ມຕົ້ນໂດຍ collectd ເມື່ອຄ່າຂີດຈຳກັດບາງຢ່າງຖືກເຖິງ. ຄ່າທີ່ນ"
+"ຳໄປສູ່ການຮຽກໃຊ້ຈະຖືກສົ່ງໄປຍັງ stdin ຂອງໂປຣແກຣມທີ່ຖືກຮຽກ."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/iptables.js:21
 msgid ""
 "Here you can define various criteria by which the monitored iptables rules "
 "are selected."
-msgstr "ບ່ອນນີ້ເຈົ້າສາມາດກຳນົດເງື່ອນໄຂຕ່າງໆເພື່ອເລືອກກົດລະບຽບ iptables ທີ່ຖືກຕິດຕາມ."
+msgstr ""
+"ບ່ອນນີ້ເຈົ້າສາມາດກຳນົດເງື່ອນໄຂຕ່າງໆເພື່ອເລືອກກົດລະບຽບ iptables ທີ່ຖືກຕິດຕາມ."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/memory.js:14
 msgid "Hide free memory"
@@ -665,9 +666,8 @@ msgid ""
 "Allowed timespan types: min, h, hour(s), d, day(s), w, week(s), m, month(s), "
 "y, year(s)"
 msgstr ""
-"ລາຍການຊ່ວງເວລາທີ່ຈະເກັບໄວ້ໃນຖານຂໍ້ມູນ RRD ເຊັ່ນ: \"1hour 1day 14day\". "
-"ປະເພດຊ່ວງເວລາທີ່ອະນຸຍາດ: min, h, hour(s), d, day(s), w, week(s), m, month(s), y, "
-"year(s)"
+"ລາຍການຊ່ວງເວລາທີ່ຈະເກັບໄວ້ໃນຖານຂໍ້ມູນ RRD ເຊັ່ນ: \"1hour 1day 14day\". ປະເພດຊ່ວງເວລາທີ່ອະນຸ"
+"ຍາດ: min, h, hour(s), d, day(s), w, week(s), m, month(s), y, year(s)"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/network.js:40
 msgid "Listen host"
@@ -710,7 +710,8 @@ msgstr "ກົງກັບກົດລະບຽບ iptables IPv6"
 msgid ""
 "Max values for a period can be used instead of averages when not using 'only "
 "average RRAs'"
-msgstr "ຄ່າສູງສຸດສຳລັບໄລຍະເວລາສາມາດໃຊ້ແທນຄ່າສະເລ່ຍໄດ້ເມື່ອບໍ່ໄດ້ໃຊ້ 'only average RRAs'"
+msgstr ""
+"ຄ່າສູງສຸດສຳລັບໄລຍະເວລາສາມາດໃຊ້ແທນຄ່າສະເລ່ຍໄດ້ເມື່ອບໍ່ໄດ້ໃຊ້ 'only average RRAs'"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:36
 msgid "Maximum Missed Packets"
@@ -1024,8 +1025,8 @@ msgid ""
 "Note: as pages are rendered by user 'nobody', the *.rrd files, the storage "
 "directory and all its parent directories need to be world readable."
 msgstr ""
-"ໝາຍເຫດ: ເນື່ອງຈາກໜ້າເວັບຖືກສະແດງຜົນໂດຍຜູ້ໃຊ້ 'nobody', ໄຟລ໌ *.rrd, ໄດເຣັກທໍຣີຈັດເກັບ ແລະ "
-"ໄດເຣັກທໍຣີແມ່ທັງໝົດຕ້ອງສາມາດອ່ານໄດ້ໂດຍທຸກຄົນ."
+"ໝາຍເຫດ: ເນື່ອງຈາກໜ້າເວັບຖືກສະແດງຜົນໂດຍຜູ້ໃຊ້ 'nobody', ໄຟລ໌ *.rrd, ໄດເຣັກທໍຣີຈັດເກັບ ແລະ ໄດເ"
+"ຣັກທໍຣີແມ່ທັງໝົດຕ້ອງສາມາດອ່ານໄດ້ໂດຍທຸກຄົນ."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/syslog.js:23
 msgid "Notify level"
@@ -1105,7 +1106,8 @@ msgstr "ພອດສຳລັບ chronyd"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/chrony.js:15
 msgid "Possibly bug in collectd. Only 127.0.0.1 and localhost work"
-msgstr "ອາດເປັນບັກໃນ collectd. ເຮັດວຽກໄດ້ສະເພາະ 127.0.0.1 ແລະ localhost ເທົ່ານັ້ນ"
+msgstr ""
+"ອາດເປັນບັກໃນ collectd. ເຮັດວຽກໄດ້ສະເພາະ 127.0.0.1 ແລະ localhost ເທົ່ານັ້ນ"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:53
 msgid "Prefix"
@@ -1483,7 +1485,8 @@ msgstr "ປລັກອິນ NUT ອ່ານຂໍ້ມູນກ່ຽວກ�
 msgid ""
 "The OLSRd plugin reads information about meshed networks from the txtinfo "
 "plugin of OLSRd."
-msgstr "ປລັກອິນ OLSRd ອ່ານຂໍ້ມູນກ່ຽວກັບເຄືອຂ່າຍ meshed ຈາກປລັກອິນ txtinfo ຂອງ OLSRd."
+msgstr ""
+"ປລັກອິນ OLSRd ອ່ານຂໍ້ມູນກ່ຽວກັບເຄືອຂ່າຍ meshed ຈາກປລັກອິນ txtinfo ຂອງ OLSRd."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/openvpn.js:8
 msgid ""
@@ -1547,7 +1550,8 @@ msgstr "ປລັກອິນ disk ເກັບສະຖິຕິການໃຊ
 msgid ""
 "The dns plugin collects detailed statistics about dns related traffic on "
 "selected interfaces."
-msgstr "ປລັກອິນ dns ເກັບສະຖິຕິຢ່າງລະອຽດກ່ຽວກັບທຣາຟິກທີ່ກ່ຽວຂ້ອງກັບ dns ໃນອິນເຕີເຟດທີ່ເລືອກ."
+msgstr ""
+"ປລັກອິນ dns ເກັບສະຖິຕິຢ່າງລະອຽດກ່ຽວກັບທຣາຟິກທີ່ກ່ຽວຂ້ອງກັບ dns ໃນອິນເຕີເຟດທີ່ເລືອກ."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/email.js:8
 msgid ""
@@ -1556,9 +1560,9 @@ msgid ""
 "to be used in conjunction with Mail::SpamAssasin::Plugin::Collectd but can "
 "be used in other ways as well."
 msgstr ""
-"ປລັກອິນ email ສ້າງ unix socket ເຊິ່ງສາມາດໃຊ້ສົ່ງສະຖິຕິອີເມລໄປຍັງ collectd daemon "
-"ທີ່ກຳລັງເຮັດວຽກ. ປລັກອິນນີ້ຖືກອອກແບບມາເພື່ອໃຊ້ຮ່ວມກັບ Mail::SpamAssasin::Plugin::Collectd "
-"ແຕ່ສາມາດໃຊ້ໃນທາງອື່ນໄດ້ເຊັ່ນກັນ."
+"ປລັກອິນ email ສ້າງ unix socket ເຊິ່ງສາມາດໃຊ້ສົ່ງສະຖິຕິອີເມລໄປຍັງ collectd daemon ທີ່ກຳລັງເຮັດ"
+"ວຽກ. ປລັກອິນນີ້ຖືກອອກແບບມາເພື່ອໃຊ້ຮ່ວມກັບ Mail::SpamAssasin::Plugin::Collectd ແຕ່ສາມາດໃຊ້"
+"ໃນທາງອື່ນໄດ້ເຊັ່ນກັນ."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/entropy.js:7
 msgid "The entropy plugin collects statistics about the available entropy."
@@ -1590,8 +1594,8 @@ msgid ""
 "The iptables plugin will monitor selected firewall rules and collect "
 "information about processed bytes and packets per rule."
 msgstr ""
-"ປລັກອິນ iptables ຈະຕິດຕາມກົດລະບຽບໄຟວໍທີ່ເລືອກ ແລະ ເກັບຂໍ້ມູນກ່ຽວກັບ bytes ແລະ packets "
-"ທີ່ຖືກປະມວນຜົນຕໍ່ກົດລະບຽບ."
+"ປລັກອິນ iptables ຈະຕິດຕາມກົດລະບຽບໄຟວໍທີ່ເລືອກ ແລະ ເກັບຂໍ້ມູນກ່ຽວກັບ bytes ແລະ packets ທີ່ຖືກປະ"
+"ມວນຜົນຕໍ່ກົດລະບຽບ."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/irq.js:8
 msgid ""
@@ -1605,7 +1609,8 @@ msgstr ""
 msgid ""
 "The iwinfo plugin collects statistics about wireless signal strength, noise "
 "and quality."
-msgstr "ປລັກອິນ iwinfo ເກັບສະຖິຕິກ່ຽວກັບຄວາມແຮງສັນຍານໄຮ້ສາຍ, ສຽງລົບກວນ ແລະ ຄຸນນະພາບ."
+msgstr ""
+"ປລັກອິນ iwinfo ເກັບສະຖິຕິກ່ຽວກັບຄວາມແຮງສັນຍານໄຮ້ສາຍ, ສຽງລົບກວນ ແລະ ຄຸນນະພາບ."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/load.js:7
 msgid "The load plugin collects statistics about the general system load."
@@ -1629,26 +1634,25 @@ msgid ""
 "client mode locally collected data is transferred to a collectd server "
 "instance, in server mode the local instance receives data from other hosts."
 msgstr ""
-"ປລັກອິນ network ໃຫ້ການສື່ສານຜ່ານເຄືອຂ່າຍລະຫວ່າງ collectd instances ຕ່າງໆ. Collectd "
-"ສາມາດເຮັດວຽກໄດ້ທັງໂໝດ Client ແລະ Server. ໃນໂໝດ Client, "
-"ຂໍ້ມູນທີ່ເກັບມາໃນທ້ອງຖິ່ນຈະຖືກໂອນໄປຍັງ collectd server instance; ໃນໂໝດ Server, instance "
-"ທ້ອງຖິ່ນຈະຮັບຂໍ້ມູນຈາກໂຮສອື່ນ."
+"ປລັກອິນ network ໃຫ້ການສື່ສານຜ່ານເຄືອຂ່າຍລະຫວ່າງ collectd instances ຕ່າງໆ. Collectd ສາມາ"
+"ດເຮັດວຽກໄດ້ທັງໂໝດ Client ແລະ Server. ໃນໂໝດ Client, ຂໍ້ມູນທີ່ເກັບມາໃນທ້ອງຖິ່ນຈະຖືກໂອນໄປຍັງ "
+"collectd server instance; ໃນໂໝດ Server, instance ທ້ອງຖິ່ນຈະຮັບຂໍ້ມູນຈາກໂຮສອື່ນ."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:7
 msgid ""
 "The ping plugin will send icmp echo replies to selected hosts and measure "
 "the roundtrip time for each host."
 msgstr ""
-"ປລັກອິນ ping ຈະສົ່ງ icmp echo replies ໄປຍັງໂຮສທີ່ເລືອກ ແລະ ວັດແທກເວລາ roundtrip "
-"ສຳລັບແຕ່ລະໂຮສ."
+"ປລັກອິນ ping ຈະສົ່ງ icmp echo replies ໄປຍັງໂຮສທີ່ເລືອກ ແລະ ວັດແທກເວລາ roundtrip ສຳລັບແຕ່"
+"ລະໂຮສ."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/processes.js:7
 msgid ""
 "The processes plugin collects information like cpu time, page faults and "
 "memory usage of selected processes."
 msgstr ""
-"ປລັກອິນ processes ເກັບຂໍ້ມູນເຊັ່ນ cpu time, page faults ແລະ "
-"ການໃຊ້ງານໜ່ວຍຄວາມຈຳຂອງໂປຣເຊສທີ່ເລືອກ."
+"ປລັກອິນ processes ເກັບຂໍ້ມູນເຊັ່ນ cpu time, page faults ແລະ ການໃຊ້ງານໜ່ວຍຄວາມຈຳຂອງໂປຣເຊ"
+"ສທີ່ເລືອກ."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/rrdtool.js:7
 msgid ""
@@ -1657,15 +1661,16 @@ msgid ""
 "values will result in a very high memory consumption in the temporary "
 "directory. This can render the device unusable!</strong>"
 msgstr ""
-"ປລັກອິນ rrdtool ຈັດເກັບຂໍ້ມູນທີ່ເກັບມາໄວ້ໃນໄຟລ໌ຖານຂໍ້ມູນ rrd ເຊິ່ງເປັນພື້ນຖານຂອງກຣາຟ.<br /><br /"
-"><strong>ຄຳເຕືອນ: ການຕັ້ງຄ່າທີ່ຜິດພາດຈະເຮັດໃຫ້ການໃຊ້ງານໜ່ວຍຄວາມຈຳໃນໄດເຣັກທໍຣີຊົ່ວຄາວສູງຫຼາຍ. "
-"ນີ້ອາດເຮັດໃຫ້ອຸປະກອນໃຊ້ງານບໍ່ໄດ້!</strong>"
+"ປລັກອິນ rrdtool ຈັດເກັບຂໍ້ມູນທີ່ເກັບມາໄວ້ໃນໄຟລ໌ຖານຂໍ້ມູນ rrd ເຊິ່ງເປັນພື້ນຖານຂອງກຣາຟ.<br /><br />"
+"<strong>ຄຳເຕືອນ: ການຕັ້ງຄ່າທີ່ຜິດພາດຈະເຮັດໃຫ້ການໃຊ້ງານໜ່ວຍຄວາມຈຳໃນໄດເຣັກທໍຣີຊົ່ວຄາວສູງຫຼາຍ. ນີ້ອາ"
+"ດເຮັດໃຫ້ອຸປະກອນໃຊ້ງານບໍ່ໄດ້!</strong>"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/sensors.js:18
 msgid ""
 "The sensors plugin uses the Linux Sensors framework to gather environmental "
 "statistics."
-msgstr "ປລັກອິນ sensors ໃຊ້ Linux Sensors framework ເພື່ອເກັບສະຖິຕິດ້ານສະພາບແວດລ້ອມ."
+msgstr ""
+"ປລັກອິນ sensors ໃຊ້ Linux Sensors framework ເພື່ອເກັບສະຖິຕິດ້ານສະພາບແວດລ້ອມ."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/snmp6.js:8
 msgid "The snmp6 plugin collects IPv6 statistics for selected interfaces."
@@ -1681,7 +1686,8 @@ msgstr "ປລັກອິນ splash leases ໃຊ້ libuci ເພື່ອເ�
 msgid ""
 "The tcpconns plugin collects information about open tcp connections on "
 "selected ports."
-msgstr "ປລັກອິນ tcpconns ເກັບຂໍ້ມູນກ່ຽວກັບການເຊື່ອມຕໍ່ tcp ທີ່ເປີດຢູ່ເທິງພອດທີ່ເລືອກ."
+msgstr ""
+"ປລັກອິນ tcpconns ເກັບຂໍ້ມູນກ່ຽວກັບການເຊື່ອມຕໍ່ tcp ທີ່ເປີດຢູ່ເທິງພອດທີ່ເລືອກ."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/thermal.js:8
 msgid ""
@@ -1887,7 +1893,8 @@ msgstr "ກຳລັງຂຽນໄຟລ໌ *.rrd ໄປຍັງ %s"
 msgid ""
 "You need to configure <em>collectd</em> to gather data into <em>.rrd</em> "
 "files."
-msgstr "ເຈົ້າຕ້ອງຕັ້ງຄ່າ <em>collectd</em> ເພື່ອເກັບຂໍ້ມູນລົງໃນໄຟລ໌ <em>.rrd</em>."
+msgstr ""
+"ເຈົ້າຕ້ອງຕັ້ງຄ່າ <em>collectd</em> ເພື່ອເກັບຂໍ້ມູນລົງໃນໄຟລ໌ <em>.rrd</em>."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/tcpconns.js:44
 msgid "all local listening ports,"

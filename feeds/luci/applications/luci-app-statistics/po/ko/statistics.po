@@ -120,8 +120,8 @@ msgid ""
 "Backup and restore RRD statistics to/from non-volatile storage around "
 "shutdown, reboot, and/or sysupgrade"
 msgstr ""
-"시스템 종료, 재부팅, 시스템 업그레이드 시 비휘발성 저장소에 RRD 통계 데이터"
-"를 백업하고 복원합니다"
+"시스템 종료, 재부팅, 시스템 업그레이드 시 비휘발성 저장소에 RRD 통계 "
+"데이터를 백업하고 복원합니다"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/collectd.js:57
 msgid "Base Directory"
@@ -665,8 +665,8 @@ msgid ""
 "y, year(s)"
 msgstr ""
 "RRD 데이터베이스에 보관할 시간 범위를 설정합니다. (예: \"1hour 1day 14day\") "
-"허용 시간 단위: min, h, hour(s), d, day(s), w, week(s), m, month(s), y, "
-"year(s)"
+"허용 시간 단위: min, h, hour(s), d, day(s), w, week(s), m, month(s), y, year"
+"(s)"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/network.js:40
 msgid "Listen host"
@@ -710,8 +710,8 @@ msgid ""
 "Max values for a period can be used instead of averages when not using 'only "
 "average RRAs'"
 msgstr ""
-"'평균 데이터만 생성' 옵션을 사용하지 않을 경우, 평균값 대신 해당 기간의 최댓"
-"값을 사용할 수 있습니다"
+"'평균 데이터만 생성' 옵션을 사용하지 않을 경우, 평균값 대신 해당 기간의 "
+"최댓값을 사용할 수 있습니다"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:36
 msgid "Maximum Missed Packets"
@@ -1529,8 +1529,8 @@ msgid ""
 "The df plugin collects statistics about the disk space usage on different "
 "devices, mount points or filesystem types."
 msgstr ""
-"DF 플러그인은 장치, 마운트 지점, 파일 시스템별 디스크 공간 사용 통계를 수집합"
-"니다."
+"DF 플러그인은 장치, 마운트 지점, 파일 시스템별 디스크 공간 사용 통계를 "
+"수집합니다."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/dhcpleases.js:7
 msgid "The dhcpleases plugin collects information about assigned DHCP leases."
@@ -1540,15 +1540,13 @@ msgstr "DHCP 할당(dhcpleases) 플러그인은 할당된 DHCP 임대 정보를 
 msgid ""
 "The disk plugin collects detailed usage statistics for selected partitions "
 "or whole disks."
-msgstr ""
-"Disk 플러그인은 선택한 파티션 또는 전체 디스크의 상세 사용 통계를 수집합니다."
+msgstr "Disk 플러그인은 선택한 파티션 또는 전체 디스크의 상세 사용 통계를 수집합니다."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/dns.js:8
 msgid ""
 "The dns plugin collects detailed statistics about dns related traffic on "
 "selected interfaces."
-msgstr ""
-"DNS 플러그인은 선택한 인터페이스의 DNS 관련 트래픽 상세 통계를 수집합니다."
+msgstr "DNS 플러그인은 선택한 인터페이스의 DNS 관련 트래픽 상세 통계를 수집합니다."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/email.js:8
 msgid ""
@@ -1613,8 +1611,8 @@ msgid ""
 "The netlink plugin collects extended information like qdisc-, class- and "
 "filter-statistics for selected interfaces."
 msgstr ""
-"Netlink 플러그인은 선택한 인터페이스의 Qdisc, 클래스, 필터 통계 등 확장 정보"
-"를 수집합니다."
+"Netlink 플러그인은 선택한 인터페이스의 Qdisc, 클래스, 필터 통계 등 확장 "
+"정보를 수집합니다."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/network.js:7
 msgid ""
@@ -1624,9 +1622,9 @@ msgid ""
 "instance, in server mode the local instance receives data from other hosts."
 msgstr ""
 "네트워크 플러그인은 서로 다른 Collectd 인스턴스 간의 통신 기능을 제공합니다. "
-"Collectd는 클라이언트와 서버 모드 모두에서 작동할 수 있습니다. 클라이언트 모"
-"드에서는 로컬에서 수집한 데이터를 서버로 전송하며, 서버 모드에서는 외부 호스"
-"트로부터 데이터를 수신합니다."
+"Collectd는 클라이언트와 서버 모드 모두에서 작동할 수 있습니다. 클라이언트 "
+"모드에서는 로컬에서 수집한 데이터를 서버로 전송하며, 서버 모드에서는 외부 "
+"호스트로부터 데이터를 수신합니다."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:7
 msgid ""
@@ -1647,17 +1645,16 @@ msgid ""
 "values will result in a very high memory consumption in the temporary "
 "directory. This can render the device unusable!</strong>"
 msgstr ""
-"RRDTool 플러그인은 수집된 데이터를 RRD 데이터베이스 파일에 저장하며, 이는 그"
-"래프 생성의 기초가 됩니다.<br /><br /><strong>경고: 잘못된 값을 설정하면 임"
-"시 디렉터리의 메모리 사용량이 급증하여, 기기를 사용할 수 없는 상태가 될 수 있"
-"습니다!</strong>"
+"RRDTool 플러그인은 수집된 데이터를 RRD 데이터베이스 파일에 저장하며, 이는 "
+"그래프 생성의 기초가 됩니다.<br /><br /><strong>경고: 잘못된 값을 설정하면 "
+"임시 디렉터리의 메모리 사용량이 급증하여, 기기를 사용할 수 없는 상태가 될 수 "
+"있습니다!</strong>"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/sensors.js:18
 msgid ""
 "The sensors plugin uses the Linux Sensors framework to gather environmental "
 "statistics."
-msgstr ""
-"센서 플러그인은 Linux Sensors 프레임워크를 사용하여 환경 통계를 수집합니다."
+msgstr "센서 플러그인은 Linux Sensors 프레임워크를 사용하여 환경 통계를 수집합니다."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/snmp6.js:8
 msgid "The snmp6 plugin collects IPv6 statistics for selected interfaces."
@@ -1667,8 +1664,7 @@ msgstr "SNMP6 플러그인은 선택한 인터페이스의 IPv6 통계를 수집
 msgid ""
 "The splash leases plugin uses libuci to collect statistics about splash "
 "leases."
-msgstr ""
-"Splash 임대 플러그인은 libuci를 사용하여 Splash 임대 통계를 수집합니다."
+msgstr "Splash 임대 플러그인은 libuci를 사용하여 Splash 임대 통계를 수집합니다."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/tcpconns.js:7
 msgid ""

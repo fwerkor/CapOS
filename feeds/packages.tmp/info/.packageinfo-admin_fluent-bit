@@ -1,8 +1,8 @@
 Source-Makefile: feeds/packages/admin/fluent-bit/Makefile
 
 Package: fluent-bit
-Version: 4.2.0-r1
-Depends: +libc +libyaml +libopenssl +libcurl +libstdcpp +libatomic +musl-fts +flex +bison +libsasl2
+Version: 5.0.8-r3
+Depends: +libc +libyaml +libopenssl +libcurl +libstdcpp +libatomic +USE_MUSL:musl-fts +flex +bison +libsasl2
 Conflicts: 
 Menu-Depends: 
 Provides: @fluent-bit-any
@@ -10,10 +10,11 @@ Section: admin
 Category: Administration
 Repository: base
 Title: Fast and Lightweight Logs and Metrics processor
-Maintainer: 
-Source: fluent-bit-4.2.0.tar.zst
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: fluent-bit-5.0.8.tar.zst
 License: Apache-2.0
 LicenseFiles: LICENSE
+CPE-ID: cpe:/a:treasuredata:fluent_bit
 URL: https://fluentbit.io/
 Type: ipkg
 Description:   Fluent Bit is a super fast, lightweight, and highly scalable logging

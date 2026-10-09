@@ -231,3 +231,18 @@ msgstr ""
 #: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced-reboot.js:56
 msgid "invalid argument"
 msgstr ""
+
+#~ msgid "Compressed"
+#~ msgstr "דחוס"
+
+#~ msgid "Confirm"
+#~ msgstr "אישור"
+
+#~ msgid "No access to fw_printenv or fw_printenv!"
+#~ msgstr "אין גישה ל־fw_printenv או fw_printenv!"
+
+#~ msgid "Reboot Device to an Alternative Partition"
+#~ msgstr "הפעלת ההתקן מחדש למחיצה חלופית"
+
+#~ msgid "Reboot to alternative partition..."
+#~ msgstr "הפעלה מחדש למחיצה חלופית…"

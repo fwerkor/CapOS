@@ -16,8 +16,7 @@ msgstr ""
 msgid ""
 "A file list/WebDAV program that supports multiple storages, powered by Gin "
 "and Solidjs."
-msgstr ""
-"一個支援多種儲存方式的檔案清單/WebDAV 程式，由 Gin 和 Solidjs 提供支援。"
+msgstr "一個支援多種儲存方式的檔案清單/WebDAV 程式，由 Gin 和 Solidjs 提供支援。"
 
 #: applications/luci-app-openlist/htdocs/luci-static/resources/view/openlist/config.js:119
 msgid ""

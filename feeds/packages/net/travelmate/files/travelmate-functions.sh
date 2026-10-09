@@ -49,8 +49,11 @@ trm_pidfile="${trm_rundir}/travelmate.pid"
 trm_scanfile="${trm_rundir}/travelmate.scan"
 trm_tmpfile="${trm_rundir}/travelmate.tmp"
 trm_rtfile="${trm_rundir}/travelmate.runtime.json"
+trm_revivefile="${trm_rundir}/travelmate.revive"
 trm_captiveurl="http://detectportal.firefox.com"
 trm_useragent="Mozilla/5.0 (X11; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0"
+trm_runmode=""
+trm_active="0"
 
 # ensure runtime directory exists
 #
@@ -59,6 +62,8 @@ trm_useragent="Mozilla/5.0 (X11; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/
 # gather system information
 #
 f_system() {
+	# query package list for travelmate frontend/backend versions, and system model/release info
+	#
 	trm_packages="$("${trm_ubuscmd}" -S call rpc-sys packagelist '{ "all": true }' 2>/dev/null)"
 	trm_fver="$(printf "%s" "${trm_packages}" | "${trm_jsoncmd}" -ql1 -e '@.packages["luci-app-travelmate"]')"
 	trm_bver="$(printf "%s" "${trm_packages}" | "${trm_jsoncmd}" -ql1 -e '@.packages.travelmate')"
@@ -66,9 +71,10 @@ f_system() {
 		"${trm_jsoncmd}" -ql1 -e '@.model' -e '@.release.target' -e '@.release.distribution' -e '@.release.version' -e '@.release.revision' |
 		"${trm_awkcmd}" 'BEGIN{RS="";FS="\n"}{printf "%s, %s, %s %s (%s)",$1,$2,$3,$4,$5}')"
 
-	if [ ! -d "${trm_ntplock}" ]; then
-		"${trm_ubuscmd}" -S call hotplug.ntp call '{ "env": [ "ACTION=stratum" ] }' >/dev/null 2>&1
-	fi
+	# detect cpu cores
+	#
+	[ -z "${trm_cores}" ] && trm_cores="$("${trm_grepcmd}" -cm16 '^processor' /proc/cpuinfo 2>/dev/null)"
+	case "${trm_cores}" in "" | 0 | *[!0-9]*) trm_cores="1" ;; esac
 }
 
 # command selector
@@ -92,6 +98,20 @@ f_cmd() {
 	else
 		printf "%s" "${cmd}"
 	fi
+}
+
+# determine available system memory (MemAvailable) in MB
+# mode "float" returns MiB with two decimals, default is integer MiB
+#
+f_mem() {
+	local mem mode="${1}"
+
+	if [ "${mode}" = "float" ]; then
+		mem="$("${trm_awkcmd}" '/^MemAvailable/{printf "%.2f", $2/1024}' "/proc/meminfo" 2>/dev/null)"
+	else
+		mem="$("${trm_awkcmd}" '/^MemAvailable/{printf "%s", int($2/1024)}' "/proc/meminfo" 2>/dev/null)"
+	fi
+	printf '%s' "${mem:-"0"}"
 }
 
 # load travelmate config
@@ -131,6 +151,10 @@ f_conf() {
 		}
 	}
 	config_load travelmate
+
+	# remember the initial run mode, the service script clears 'trm_action' after its first cycle
+	#
+	[ -n "${trm_action}" ] && trm_runmode="${trm_action}"
 
 	# early exit on stop action, otherwise run runtime sanity checks
 	#
@@ -173,7 +197,7 @@ f_conf() {
 
 	# build curl fetch parameters, bind to uplink device if known
 	#
-	trm_fetchparm="--silent --show-error --location --fail --referer http://www.example.com --retry $((trm_maxwait / 6)) --retry-delay $((trm_maxwait / 6)) --max-time $((trm_maxwait / 6))"
+	trm_fetchparm="--silent --show-error --location --fail --referer http://www.example.com --retry 2 --retry-delay $((trm_maxwait / 6)) --max-time $((trm_maxwait / 6))"
 	device="$("${trm_ifstatuscmd}" "${trm_iface}" | "${trm_jsoncmd}" -ql1 -e '@.device')"
 	[ -n "${device}" ] && trm_fetchparm="${trm_fetchparm} --interface ${device}"
 
@@ -542,6 +566,67 @@ f_getcfg() {
 	done
 }
 
+# load the revive counter of an uplink that has been disabled by the retry limit
+#
+f_reviveload() {
+	local cnt rounds radio bssid essid load_radio="${1}" load_essid="${2}" load_bssid="${3}" found="0" revive=""
+
+	revive="$(f_getval "revive" "0")"
+	revive="${revive//[!0-9]/}"
+	[ -z "${revive}" ] || [ "${revive}" = "0" ] && return 0
+	[ "${revive}" -lt "10" ] && revive="10"
+
+	: >"${trm_revivefile}.tmp"
+	if [ -s "${trm_revivefile}" ]; then
+		while IFS="|" read -r cnt rounds radio bssid essid; do
+			if [ "${radio}" = "${load_radio}" ] && [ "${essid}" = "${load_essid}" ] && [ "${bssid}" = "${load_bssid}" ]; then
+				found="1"
+				rounds="$((rounds + 1))"
+				if [ "${rounds}" -gt "${trm_maxretry}" ]; then
+					cnt="0"
+					f_log "info" "uplink stays disabled '${load_radio}/${load_essid}/${load_bssid:-"-"}', revive limit reached"
+				else
+					cnt="${revive}"
+				fi
+			fi
+			printf "%s|%s|%s|%s|%s\n" "${cnt}" "${rounds}" "${radio}" "${bssid}" "${essid}" >>"${trm_revivefile}.tmp"
+		done <"${trm_revivefile}"
+	fi
+	[ "${found}" = "0" ] && printf "%s|%s|%s|%s|%s\n" "${revive}" "1" "${load_radio}" "${load_bssid}" "${load_essid}" >>"${trm_revivefile}.tmp"
+	mv -f "${trm_revivefile}.tmp" "${trm_revivefile}"
+
+	f_log "debug" "f_reviveload ::: radio: ${load_radio}, essid: ${load_essid}, bssid: ${load_bssid:-"-"}, revive: ${revive}, max_rounds: ${trm_maxretry}"
+}
+
+# count down the loaded uplinks and re-enable them at the end of their revive cycle
+#
+f_revive() {
+	local cnt rounds radio bssid essid
+
+	[ ! -s "${trm_revivefile}" ] && return 0
+
+	: >"${trm_revivefile}.tmp"
+	while IFS="|" read -r cnt rounds radio bssid essid; do
+		if [ "${cnt}" -gt "0" ]; then
+			cnt="$((cnt - 1))"
+			if [ "${cnt}" = "0" ]; then
+				f_getcfg "${radio}" "${essid}" "${bssid}"
+				if [ -z "${trm_uplinkcfg}" ]; then
+					continue
+				fi
+				if [ "$(uci_get "travelmate" "${trm_uplinkcfg}" "enabled")" = "0" ]; then
+					uci_set "travelmate" "${trm_uplinkcfg}" "enabled" "1"
+					uci_commit "travelmate"
+					[ ! -f "${trm_refreshfile}" ] && printf "%s" "cfg_reload" >"${trm_refreshfile}"
+					f_log "info" "uplink has been re-enabled '${radio}/${essid}/${bssid:-"-"}' (${rounds}/${trm_maxretry})"
+				fi
+			fi
+		fi
+		printf "%s|%s|%s|%s|%s\n" "${cnt}" "${rounds}" "${radio}" "${bssid}" "${essid}" >>"${trm_revivefile}.tmp"
+	done <"${trm_revivefile}"
+	mv -f "${trm_revivefile}.tmp" "${trm_revivefile}"
+}
+
 # get travelmate option value in 'uplink' sections
 #
 f_getval() {
@@ -779,18 +864,28 @@ f_addsta() {
 # check net status
 #
 f_net() {
-	local parse err_msg raw json_raw html_raw html_cp js_cp json_ec json_rc json_cp json_cp_url json_ed result="net nok"
+	local parse err_msg raw marker probe_host json_raw html_raw html_cp js_cp json_ec json_rc json_cp json_cp_url json_ed result="net nok"
 
-	# fetch captive-detection url, curl appends '%{json}' metadata after the response body
+	# host of the configured probe url without port, used to spot foreign redirect targets
 	#
-	raw="$("${trm_fetchcmd}" ${trm_fetchparm} --user-agent "${trm_useragent}" --header "Cache-Control: no-cache, no-store, must-revalidate, max-age=0" --write-out "%{json}" "${trm_captiveurl}")"
-	json_raw="${raw#*\{}"
-	html_raw="${raw%%\{*}"
+	probe_host="${trm_captiveurl#*://}"
+	probe_host="${probe_host%%/*}"
+	probe_host="$(printf "%s" "${probe_host}" | "${trm_awkcmd}" '{h=tolower($0);if(h~/^\[/)sub(/\].*$/,"]",h);else sub(/:[0-9]*$/,"",h);printf "%s",h}')"
 
-	# parse curl metadata: exit code, http response code, final redirect target
+	# fetch captive-detection url, curl appends '%{json}' metadata behind a unique
+	# marker - splitting on the first curly brace would break on any response body
+	# that contains one, e.g. inline css/js of a captive portal login page
+	#
+	marker="#trm-meta#"
+	raw="$("${trm_fetchcmd}" ${trm_fetchparm} --user-agent "${trm_useragent}" --header "Cache-Control: no-cache, no-store, must-revalidate, max-age=0" --write-out "\n${marker}%{json}" "${trm_captiveurl}")"
+	json_raw="${raw##*${marker}}"
+	html_raw="${raw%${marker}*}"
+
+	# parse curl metadata: exit code, http response code, effective url. Note that
+	# 'redirect_url' stays empty as long as curl follows redirects on its own
 	#
 	if [ -n "${json_raw}" ]; then
-		parse="$(printf "%s" "{${json_raw}" | "${trm_jsoncmd}" -e '@.exitcode' -e '@.response_code' -e '@.redirect_url')"
+		parse="$(printf "%s" "${json_raw}" | "${trm_jsoncmd}" -e '@.exitcode' -e '@.response_code' -e '@.url_effective')"
 		{
 			IFS= read -r json_ec
 			IFS= read -r json_rc
@@ -799,17 +894,18 @@ f_net() {
 			${parse}
 		EOF
 
-		# extract lowercased host portion of the redirect url
+		# extract lowercased host portion of the effective url, strip the port as
+		# the host ends up in the dnsmasq rebind allowlist
 		#
-		json_cp="$(printf "%s" "${json_cp_url}" | "${trm_awkcmd}" 'BEGIN{FS="/"}{printf "%s",tolower($3)}')"
+		json_cp="$(printf "%s" "${json_cp_url}" | "${trm_awkcmd}" 'BEGIN{FS="/"}{h=tolower($3);if(h~/^\[/)sub(/\].*$/,"]",h);else sub(/:[0-9]*$/,"",h);printf "%s",h}')"
 		if [ "${json_ec}" = "0" ]; then
 
-			# http redirect present: captive portal at redirect host
+			# request ended up on a foreign host: captive portal at that host
 			#
-			if [ -n "${json_cp}" ]; then
+			if [ -n "${json_cp}" ] && [ "${json_cp}" != "${probe_host}" ]; then
 				result="net cp '${json_cp}'"
 
-			# no http redirect: scan body for meta-refresh / js location.href redirects
+			# probe host answered: scan body for meta-refresh / js location.href redirects
 			#
 			else
 				if [ "${json_rc}" = "200" ] || [ "${json_rc}" = "204" ]; then
@@ -828,24 +924,35 @@ f_net() {
 		# curl error path: extract errormsg and any trailing domain token
 		#
 		else
-			err_msg="$(printf "%s" "{${json_raw}" | "${trm_jsoncmd}" -ql1 -e '@.errormsg')"
-			json_ed="$(printf "%s" "{${err_msg}" | "${trm_awkcmd}" '/([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+$/{printf "%s",tolower($NF)}')"
+			err_msg="$(printf "%s" "${json_raw}" | "${trm_jsoncmd}" -ql1 -e '@.errormsg')"
+			json_ed="$(printf "%s" "${err_msg}" | "${trm_awkcmd}" '/([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+$/{printf "%s",tolower($NF)}')"
 			if [ "${json_ec}" = "6" ]; then
-				if [ -n "${json_ed}" ] && [ "${json_ed}" != "${trm_captiveurl#http*://*}" ]; then
+				if [ -n "${json_ed}" ] && [ "${json_ed}" != "${probe_host}" ]; then
 					result="net cp '${json_ed}'"
 				fi
+			elif [ -n "${json_cp}" ] && [ "${json_cp}" != "${probe_host}" ]; then
+				result="net cp '${json_cp}'"
 			fi
 		fi
 	fi
+
+	# without captive portal handling travelmate can neither allowlist the portal
+	# domain nor run a login script, so a detected portal is a dead end, not an
+	# expected intermediate state
+	#
+	case "${result}" in
+	"net cp"*) [ "${trm_captive}" = "0" ] && result="net nok" ;;
+	esac
+
 	printf "%s" "${result}"
 
-	f_log "debug" "f_net       ::: timeout: $((trm_maxwait / 6)), cp (json/html/js): ${json_cp:-"-"}/${html_cp:-"-"}/${js_cp:-"-"}, result: ${result}, error (rc/msg): ${json_ec}/${err_msg:-"-"}, url: ${trm_captiveurl}"
+	f_log "debug" "f_net       ::: timeout: $((trm_maxwait / 6)), cp (url/html/js): ${json_cp:-"-"}/${html_cp:-"-"}/${js_cp:-"-"}, result: ${result}, error (rc/msg): ${json_ec}/${err_msg:-"-"}, probe_host: ${probe_host:-"-"}, eff_url: ${json_cp_url:-"-"}"
 }
 
 # check interface status
 #
 f_check() {
-	local rc raw ifname dev_status result login_script login_script_args cp_domain station_id ifquality
+	local rc raw ifname dev_status result login_script login_script_args cp_domain station_id ifquality sta_id
 	local wait_time="0" enabled="1" mode="${1}" status="${2}" sta_radio="${3}" sta_essid="${4}" sta_bssid="${5}"
 
 	# parse station id from runtime json (initial/dev mode only)
@@ -859,6 +966,7 @@ f_check() {
 		sta_bssid="${sta_bssid//-/}"
 	fi
 	f_getcfg "${sta_radio}" "${sta_essid}" "${sta_bssid}"
+	sta_id="${sta_radio:-"-"}/${sta_essid:-"-"}/${sta_bssid:-"-"}"
 
 	# resolve uplink 'enabled' flag (skip for rev mode and unset stations)
 	#
@@ -929,9 +1037,9 @@ f_check() {
 						trm_ifstatus="$("${trm_ifstatuscmd}" "${trm_iface}" | "${trm_jsoncmd}" -ql1 -e '@.up')"
 						if { [ -n "${trm_connection}" ] && [ "${trm_ifstatus}" = "false" ]; } || [ "${wait_time}" -eq "${trm_maxwait}" ]; then
 							if [ -n "${trm_connection}" ] && [ "${trm_ifstatus}" = "false" ]; then
-								f_log "info" "no signal from uplink"
+								f_log "info" "no signal from uplink '${sta_id}'"
 							else
-								f_log "info" "uplink connection could not be established after ${trm_maxwait} seconds"
+								f_log "info" "uplink connection could not be established after ${trm_maxwait} seconds '${sta_id}'"
 							fi
 							f_vpn "disable"
 							trm_connection=""
@@ -986,7 +1094,7 @@ f_check() {
 											exec "${login_script}" ${login_script_args} >/dev/null 2>&1
 										)
 										rc="${?}"
-										f_log "info" "captive portal login script for '${cp_domain}' has been finished  with rc '${rc}'"
+										f_log "info" "captive portal login script for '${cp_domain}' has been finished with rc '${rc}'"
 										if [ "${rc}" = "0" ]; then
 											result="$(f_net)"
 										fi
@@ -994,12 +1102,20 @@ f_check() {
 								fi
 							fi
 
-							# no internet: tear down vpn, exit early if netcheck enabled
+							# no internet: re-check once before netcheck acts on it, a single
+							# failed probe must not disable an otherwise working uplink
+							#
+							if [ "${result}" = "net nok" ] && [ "${trm_netcheck}" = "1" ]; then
+								result="$(f_net)"
+							fi
+
+							# still no internet: tear down vpn, exit early if netcheck enabled
 							#
 							if [ "${result}" = "net nok" ]; then
 								f_vpn "disable"
 								if [ "${trm_netcheck}" = "1" ]; then
-									f_log "info" "uplink has no internet"
+									f_log "info" "uplink has no internet '${sta_id}'"
+									trm_connection=""
 									trm_ifstatus="${status}"
 									f_genstatus
 									break
@@ -1015,8 +1131,8 @@ f_check() {
 
 					# signal below minquality on existing link: drop and exit
 					#
-					elif [ -n "${trm_connection}" ] && { [ "${trm_netcheck}" = "1" ] || [ "${mode}" = "initial" ]; }; then
-						f_log "info" "uplink is out of range (${ifquality}/${trm_minquality})"
+					elif [ -n "${trm_connection}" ] && [ "${mode}" = "initial" ]; then
+						f_log "info" "uplink is out of range '${sta_id}' (${ifquality}/${trm_minquality})"
 						f_vpn "disable"
 						trm_connection=""
 						trm_ifstatus="${status}"
@@ -1035,7 +1151,7 @@ f_check() {
 				# sta interface vanished while connected
 				#
 				elif [ -n "${trm_connection}" ]; then
-					f_log "info" "uplink connection lost (interface gone)"
+					f_log "info" "uplink connection lost '${sta_id}' (interface gone)"
 					f_vpn "disable"
 					trm_connection=""
 					trm_ifstatus="${status}"
@@ -1056,7 +1172,7 @@ f_check() {
 		#
 		if [ "${mode}" = "initial" ]; then
 			if [ -n "${trm_connection}" ]; then
-				f_log "info" "uplink connection lost (interface down)"
+				f_log "info" "uplink connection lost '${sta_id}' (interface down)"
 				f_vpn "disable"
 				trm_connection=""
 			fi
@@ -1066,7 +1182,7 @@ f_check() {
 		fi
 	done
 
-	f_log "debug" "f_check     ::: mode: ${mode}, name: ${ifname:-"-"}, status: ${trm_ifstatus}, enabled: ${enabled}, connection: ${trm_connection:-"-"}, wait: ${wait_time}, max_wait: ${trm_maxwait}, min_quality/quality: ${trm_minquality}/${ifquality:-"-"}, captive: ${trm_captive}, netcheck: ${trm_netcheck}"
+	f_log "debug" "f_check     ::: mode: ${mode}, sta_id: ${sta_id}, name: ${ifname:-"-"}, status: ${trm_ifstatus}, enabled: ${enabled}, connection: ${trm_connection:-"-"}, wait: ${wait_time}, max_wait: ${trm_maxwait}, min_quality/quality: ${trm_minquality}/${ifquality:-"-"}, captive: ${trm_captive}, netcheck: ${trm_netcheck}"
 }
 
 # get status information
@@ -1091,12 +1207,12 @@ f_getstatus() {
 # generate status information
 #
 f_genstatus() {
-	local sta_json temp_ns s_captive s_proactive s_netcheck s_autoadd s_randomize s_eviltwin s_ntp s_vpn s_mail vpn vpn_iface
-	local section last_date sta_iface sta_radio sta_essid sta_bssid sta_mac dev_status status="${trm_ifstatus}" ntp_done="0" vpn_done="0" mail_done="0"
+	local sta_json temp_ns s_captive s_proactive s_netcheck s_autoadd s_randomize s_eviltwin s_ntp s_vpn s_mail vpn vpn_iface free_mem runtime
+	local section ts sta_iface sta_radio sta_essid sta_bssid sta_mac dev_status status ntp_done="0" vpn_done="0" mail_done="0"
 
 	# get current connection information
 	#
-	if [ "${status}" = "true" ]; then
+	if [ "${trm_ifstatus}" = "true" ]; then
 		status="connected, ${trm_connection:-"-"}"
 		dev_status="$("${trm_ubuscmd}" -S call network.wireless status 2>/dev/null)"
 		sta_json="$(printf "%s" "${dev_status}" | "${trm_jsoncmd}" -ql1 -e '@.*.interfaces[@.config.mode="sta"]')"
@@ -1120,25 +1236,23 @@ f_genstatus() {
 			sta_radio="$(uci_get "wireless" "${section}" "device")"
 			f_getcfg "${sta_radio}" "${sta_essid}" "${sta_bssid}"
 		fi
-		json_get_var last_date "last_run"
 
 		vpn="$(f_getval "vpn")"
 		if [ "${trm_vpn}" = "1" ] && [ -n "${trm_vpninfolist}" ] && [ "${vpn}" = "1" ] && [ -f "${trm_vpnfile}" ]; then
 			vpn_iface="$(f_getval "vpniface")"
 			vpn_done="1"
 		fi
-	elif [ "${status}" = "error" ]; then
+	elif [ "${trm_ifstatus}" = "error" ]; then
 		trm_connection=""
 		status="program error"
 	else
 		trm_connection=""
-		status="processing"
-	fi
-
-	# fallback for missing last_run value
-	#
-	if [ -z "${last_date}" ]; then
-		last_date="$(date "+%Y.%m.%d-%H:%M:%S")"
+		if [ "${trm_active}" = "1" ]; then
+			status="processing"
+		else
+			status="not connected"
+		fi
+		runtime="-"
 	fi
 
 	# check for presence of ntp lock file and mail notification conditions
@@ -1162,6 +1276,14 @@ f_genstatus() {
 	case "${vpn_done}" in "1") s_vpn="✔" ;; *) s_vpn="✘" ;; esac
 	case "${mail_done}" in "1") s_mail="✔" ;; *) s_mail="✘" ;; esac
 
+	# compose runtime string for status file
+	#
+	if [ "${trm_ifstatus}" = "true" ] || [ "${trm_ifstatus}" = "error" ]; then
+		free_mem="$(f_mem float)"
+		ts="$(date "+%Y-%m-%d %H:%M:%S")"
+		runtime="mode: ${trm_runmode:-"n/a"}, date / time: ${ts}, memory: ${free_mem:-0} MB available"
+	fi
+
 	# generate runtime status file
 	#
 	f_subnet
@@ -1172,10 +1294,9 @@ f_genstatus() {
 	json_add_string "station_mac" "${sta_mac:-"-"}"
 	json_add_string "station_interfaces" "${sta_iface:-"-"}, ${vpn_iface:-"-"}"
 	json_add_string "station_subnet" "${trm_subnet:-"-"}"
-	json_add_string "run_flags" "captive: ${s_captive}, proactive: ${s_proactive}, netcheck: ${s_netcheck}, autoadd: ${s_autoadd}, randomize: ${s_randomize}, eviltwin: ${s_eviltwin}"
-	json_add_string "ext_hooks" "ntp: ${s_ntp}, vpn: ${s_vpn}, mail: ${s_mail}"
-	json_add_string "last_run" "${last_date}"
-	json_add_string "system" "${trm_sysver}"
+	json_add_string "run_flags" "autoadd: ${s_autoadd}, captive: ${s_captive}, eviltwin: ${s_eviltwin}, mail: ${s_mail}, netcheck: ${s_netcheck}, ntp: ${s_ntp}, proactive: ${s_proactive}, randomize: ${s_randomize}, vpn: ${s_vpn}"
+	json_add_string "last_run" "${runtime:-"-"}"
+	json_add_string "system_info" "cores: ${trm_cores}, fetch: ${trm_fetchcmd##*/}, ${trm_sysver}"
 	json_dump >"${trm_rtfile}"
 
 	# send mail notification if enabled and conditions are met
@@ -1189,7 +1310,7 @@ f_genstatus() {
 		fi
 	fi
 
-	f_log "debug" "f_genstatus ::: section: ${section:-"-"}, status: ${status:-"-"}, sta_iface: ${sta_iface:-"-"}, sta_radio: ${sta_radio:-"-"}, sta_essid: ${sta_essid:-"-"}, sta_bssid: ${sta_bssid:-"-"}, ntp: ${ntp_done}, vpn: ${vpn:-"0"}/${vpn_done}, mail: ${trm_mail}/${mail_done}"
+	f_log "debug" "f_genstatus ::: section: ${section:-"-"}, status: ${trm_ifstatus:-"-"}, sta_iface: ${sta_iface:-"-"}, sta_radio: ${sta_radio:-"-"}, sta_essid: ${sta_essid:-"-"}, sta_bssid: ${sta_bssid:-"-"}, ntp: ${ntp_done}, vpn: ${vpn:-"0"}/${vpn_done}, mail: ${trm_mail}/${mail_done}"
 }
 
 # send status mail
@@ -1228,7 +1349,7 @@ f_log() {
 		fi
 		if [ "${class}" = "err" ] || [ "${class}" = "emerg" ]; then
 			trm_ifstatus="error"
-			[ -s "${trm_rtfile}" ] && f_genstatus
+			[ -s "${trm_rtfile}" ] && [ -n "${trm_bver}" ] && f_genstatus
 			: >"${trm_pidfile}"
 			exit 1
 		fi
@@ -1343,7 +1464,16 @@ f_scan() {
 #
 f_main() {
 	local radio cnt retrycnt scan_list scan_essid scan_bssid scan_rsn scan_wpa scan_quality scan_open station_id retry_display
-	local section sta sta_essid sta_bssid sta_radio sta_mac open_sta open_essid config_radio config_essid config_bssid
+	local section sta sta_essid sta_bssid sta_radio sta_mac open_sta open_essid esc_essid config_radio config_essid config_bssid
+
+	# mark the run cycle as active, e.g. to distinguish 'processing' from an
+	# idle daemon in f_genstatus
+	#
+	trm_active="1"
+
+	# re-enable uplinks whose revive cycle has expired
+	#
+	f_revive
 
 	# initial check
 	#
@@ -1398,6 +1528,7 @@ f_main() {
 					section="${sta%%-*}"
 					sta_radio="$(uci_get "wireless" "${section}" "device")"
 					sta_essid="$(uci_get "wireless" "${section}" "ssid")"
+					esc_essid="\"${sta_essid//\"/\\\"}\""
 					sta_bssid="$(uci_get "wireless" "${section}" "bssid")"
 					f_normbssid "${sta_bssid}"
 					sta_bssid="${trm_normbssid}"
@@ -1443,17 +1574,19 @@ f_main() {
 								fi
 								open_essid="${scan_essid%?}"
 								open_essid="${open_essid:1}"
+								open_essid="${open_essid//\\\"/\"}"
 								open_sta="$(f_addsta "${radio}" "${open_essid}")"
 								if [ -n "${open_sta}" ]; then
 									section="${open_sta%%-*}"
 									sta_radio="$(uci_get "wireless" "${section}" "device")"
 									sta_essid="$(uci_get "wireless" "${section}" "ssid")"
+									esc_essid="\"${sta_essid//\"/\\\"}\""
 									sta_bssid=""
 									sta_mac=""
 								fi
 							fi
 							if [ -n "${sta_bssid}" ] && [ "${radio}" = "${sta_radio}" ] &&
-								[ "${scan_bssid}" != "${sta_bssid}" ] && [ "${scan_essid}" = "\"${sta_essid}\"" ]; then
+								[ "${scan_bssid}" != "${sta_bssid}" ] && [ "${scan_essid}" = "${esc_essid}" ]; then
 								if [ -n "${trm_uplinkcfg}" ]; then
 									uci_set "travelmate" "${trm_uplinkcfg}" "enabled" "0"
 									uci_commit "travelmate"
@@ -1462,7 +1595,7 @@ f_main() {
 								f_log "info" "bssid mismatch (evil-twin) '${sta_radio}/${sta_essid}/${sta_bssid} => ${scan_bssid}'"
 								continue
 							fi
-							if { { [ "${scan_essid}" = "\"${sta_essid}\"" ] && { [ -z "${sta_bssid}" ] || [ "${scan_bssid}" = "${sta_bssid}" ]; }; } ||
+							if { { [ "${scan_essid}" = "${esc_essid}" ] && { [ -z "${sta_bssid}" ] || [ "${scan_bssid}" = "${sta_bssid}" ]; }; } ||
 								{ [ "${scan_bssid}" = "${sta_bssid}" ] && [ "${scan_essid}" = "hidden" ]; }; } && [ "${radio}" = "${sta_radio}" ]; then
 								if [ "${trm_eviltwin}" = "1" ] && [ -z "${sta_bssid}" ] && [ "${scan_essid}" != "hidden" ]; then
 									if [ "$((0x${scan_bssid%%:*} & 2))" != "0" ]; then
@@ -1496,12 +1629,13 @@ f_main() {
 										return 0
 									else
 										uci -q revert "wireless"
-										f_check "rev" "false"
+										f_check "rev" "false" "${sta_radio}" "${sta_essid}" "${sta_bssid}"
 										if [ "${retrycnt}" -eq "${trm_maxretry}" ]; then
 											if [ -n "${trm_uplinkcfg}" ]; then
 												uci_set "travelmate" "${trm_uplinkcfg}" "enabled" "0"
 												uci_commit "travelmate"
 												[ ! -f "${trm_refreshfile}" ] && printf "%s" "cfg_reload" >"${trm_refreshfile}"
+												f_reviveload "${sta_radio}" "${sta_essid}" "${sta_bssid}"
 											fi
 											f_log "info" "uplink has been disabled '${sta_radio}/${sta_essid}/${sta_bssid:-"-"}' (${retrycnt}/${retry_display})"
 											continue 2
@@ -1522,6 +1656,14 @@ f_main() {
 			done
 		done
 	fi
+
+	# the run cycle is over, settle the status file for the idle phase, e.g.
+	# to turn a leftover 'processing' into 'not connected'
+	#
+	trm_active="0"
+	if [ "${trm_ifstatus}" != "true" ] && [ "${trm_ifstatus}" != "error" ]; then
+		f_genstatus
+	fi
 }
 
 # reference required system utilities
@@ -1529,6 +1671,7 @@ f_main() {
 trm_catcmd="$(f_cmd cat)"
 trm_awkcmd="$(f_cmd gawk awk)"
 trm_sortcmd="$(f_cmd sort)"
+trm_grepcmd="$(f_cmd grep)"
 trm_pgrepcmd="$(f_cmd pgrep)"
 trm_killcmd="$(f_cmd kill)"
 trm_jsoncmd="$(f_cmd jsonfilter)"

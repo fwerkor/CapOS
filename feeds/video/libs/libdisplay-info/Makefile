@@ -1,12 +1,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=libdisplay-info
-PKG_VERSION:=0.2.0
+PKG_VERSION:=0.4.0
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://gitlab.freedesktop.org/emersion/libdisplay-info/-/archive/$(PKG_VERSION)
-PKG_HASH:=f7331fcaf5527251b84c8fb84238d06cd2f458422ce950c80e86c72927aa8c2b
+PKG_HASH:=787b58aec473830b0030251ba2b880560b4b3853dc5d6961a6e9701abae29b55
 
 PKG_MAINTAINER:=Daniel Golle <daniel@makrotopia.org>
 PKG_LICENSE:=MIT

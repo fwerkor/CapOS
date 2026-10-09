@@ -195,8 +195,7 @@ msgstr "IKE w wersji 2"
 
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/globals.js:46
 msgid "IP address to listen on, default depends on Listen Interface"
-msgstr ""
-"Adres IP do nasłuchiwania, domyślnie zależy od interfejsu nasłuchiwania"
+msgstr "Adres IP do nasłuchiwania, domyślnie zależy od interfejsu nasłuchiwania"
 
 #: applications/luci-app-libreswan/htdocs/luci-static/resources/view/libreswan/globals.js:17
 msgid "IPSec Global Settings"

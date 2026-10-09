@@ -385,14 +385,8 @@ msgid "Speed limit up enabled"
 msgstr "வேக வரம்பு இயக்கப்பட்டது"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:179
-msgid ""
-"This is documented on <a href=\"https://www.irif.fr/~jch/software/bittorrent/"
-"tcp-congestion-control.html\" target=\"_blank\" rel=\"noreferrer "
-"noopener\">tcp-congestion-control</a>."
+msgid "This is documented on %s."
 msgstr ""
-"இது <a href=\"https://www.irif.fr/~jch/software/bittorrent/tcp-congestion-"
-"control.html\" target=\"_blank\" rel=\"noreferrer noopener\">tcp-congestion- "
-"இல் ஆவணப்படுத்தப்பட்டுள்ளது. கட்டுப்பாடு </a>."
 
 #: applications/luci-app-transmission/root/usr/share/luci/menu.d/luci-app-transmission.json:3
 msgid "Transmission"
@@ -433,3 +427,12 @@ msgstr "நள்ளிரவில் இருந்து நிமிடங�
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:167
 msgid "uTP enabled"
 msgstr "UTP இயக்கப்பட்டது"
+
+#~ msgid ""
+#~ "This is documented on <a href=\"https://www.irif.fr/~jch/software/"
+#~ "bittorrent/tcp-congestion-control.html\" target=\"_blank\" "
+#~ "rel=\"noreferrer noopener\">tcp-congestion-control</a>."
+#~ msgstr ""
+#~ "இது <a href=\"https://www.irif.fr/~jch/software/bittorrent/tcp-congestion-"
+#~ "control.html\" target=\"_blank\" rel=\"noreferrer noopener\">tcp-"
+#~ "congestion- இல் ஆவணப்படுத்தப்பட்டுள்ளது. கட்டுப்பாடு </a>."

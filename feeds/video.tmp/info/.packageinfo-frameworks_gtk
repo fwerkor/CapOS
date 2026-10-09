@@ -3,7 +3,7 @@ Build-Depends: gst1-plugins-base gst1-plugins-bad
 
 Package: libgtk
 Submenu: Frameworks and Toolkits
-Version: 4.18.6-r1
+Version: 4.22.4-r1
 Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +fribidi +glib2 +harfbuzz +libcairo +libepoxy +libgdk-pixbuf +libgraphene +libgstreamer1 +libgst1player +libpango +libxkbcommon
 Conflicts: 
 Menu-Depends: 
@@ -13,7 +13,7 @@ Category: Video
 Repository: base
 Title: GTK library
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: gtk-4.18.6.tar.xz
+Source: gtk-4.22.4.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:gnome:gtk
@@ -26,7 +26,7 @@ Description:   The GTK Project - A free and open-source cross-platform widget to
 
 Package: libgtk-demos
 Submenu: Video
-Version: 4.18.6-r1
+Version: 4.22.4-r1
 Depends: +libc +libgtk
 Conflicts: 
 Menu-Depends: 
@@ -36,7 +36,7 @@ Category: Utilities
 Repository: base
 Title: GTK demos
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: gtk-4.18.6.tar.xz
+Source: gtk-4.22.4.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:gnome:gtk
@@ -49,7 +49,7 @@ Description:   The GTK Project - A free and open-source cross-platform widget to
 
 Package: libgtk-utils
 Submenu: Video
-Version: 4.18.6-r1
+Version: 4.22.4-r1
 Depends: +libc +libgtk
 Conflicts: 
 Menu-Depends: 
@@ -59,7 +59,7 @@ Category: Utilities
 Repository: base
 Title: GTK utils
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: gtk-4.18.6.tar.xz
+Source: gtk-4.22.4.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:gnome:gtk

@@ -1,5 +1,5 @@
 Source-Makefile: feeds/luci/applications/luci-app-antiblock/Makefile
-Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host LUCI_UTMIN:ucode/host 
 
 Package: luci-app-antiblock
 Submenu: 3. Applications
@@ -37,6 +37,25 @@ License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-antiblock - Čeština (Czech)
+@@
+
+Package: luci-i18n-antiblock-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-antiblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-antiblock-de-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-antiblock - de translation
+Maintainer: Khachatryan Karen <karen0734@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-antiblock - Deutsch (German)
 @@
 
 Package: luci-i18n-antiblock-es
@@ -115,6 +134,25 @@ Hidden: 1
 Description:     Translation for luci-app-antiblock - 日本語 (Japanese)
 @@
 
+Package: luci-i18n-antiblock-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-antiblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-antiblock-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-antiblock - ko translation
+Maintainer: Khachatryan Karen <karen0734@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-antiblock - 한국어 (Korean)
+@@
+
 Package: luci-i18n-antiblock-lo
 Default: LUCI_LANG_lo||(ALL&&m)
 Version: x
@@ -191,6 +229,25 @@ Hidden: 1
 Description:     Translation for luci-app-antiblock - Português (Portuguese)
 @@
 
+Package: luci-i18n-antiblock-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-antiblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-antiblock-pt-br-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-antiblock - pt-br translation
+Maintainer: Khachatryan Karen <karen0734@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-antiblock - Português do Brasil (Brazilian Portuguese)
+@@
+
 Package: luci-i18n-antiblock-ro
 Default: LUCI_LANG_ro||(ALL&&m)
 Version: x
@@ -229,6 +286,25 @@ Hidden: 1
 Description:     Translation for luci-app-antiblock - Русский (Russian)
 @@
 
+Package: luci-i18n-antiblock-sv
+Default: LUCI_LANG_sv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-antiblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-antiblock-sv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-antiblock - sv translation
+Maintainer: Khachatryan Karen <karen0734@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-antiblock - Svenska (Swedish)
+@@
+
 Package: luci-i18n-antiblock-ta
 Default: LUCI_LANG_ta||(ALL&&m)
 Version: x
@@ -246,6 +322,25 @@ License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-antiblock - Tamil (Tamil)
+@@
+
+Package: luci-i18n-antiblock-tr
+Default: LUCI_LANG_tr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-antiblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-antiblock-tr-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-antiblock - tr translation
+Maintainer: Khachatryan Karen <karen0734@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-antiblock - Türkçe (Turkish)
 @@
 
 Package: luci-i18n-antiblock-uk

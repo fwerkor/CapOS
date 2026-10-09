@@ -2,11 +2,12 @@ include $(TOPDIR)/rules.mk
 
 
 PKG_NAME:=wlroots
-PKG_VERSION:=0.18.2
+PKG_VERSION:=0.20.2
+PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://gitlab.freedesktop.org/$(PKG_NAME)/$(PKG_NAME)/-/archive/$(PKG_VERSION)
-PKG_HASH:=703c515917d9eb258e44296795f8626190e119b0ee8bfb32fe9f834dab1a1462
+PKG_HASH:=972c7ac44b17828f4702bfae7cd8347346a3fb5b2c1076cfa2c3fcedac5ec343
 
 PKG_MAINTAINER:=Daniel Golle <daniel@makrotopia.org>
 PKG_LICENSE:=MIT

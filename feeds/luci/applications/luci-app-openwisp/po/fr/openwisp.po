@@ -230,3 +230,7 @@ msgid ""
 "default, but must be enabled also in the controller application in order to "
 "work."
 msgstr ""
+
+#~ msgid ""
+#~ "The URL to the OpenWISP server. Example: https://openwisp2.mynetwork.com"
+#~ msgstr "L'URL du serveur OpenWISP. Exemple: https://openwisp2.mynetwork.com"

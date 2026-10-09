@@ -106,8 +106,7 @@ msgstr ""
 
 #: applications/luci-app-rustdesk-server/htdocs/luci-static/resources/view/rustdesk-server/general.js:522
 msgid "Determine if the connection comes from LAN. Use CIDR notation."
-msgstr ""
-"Визначає, чи підключення надходить із LAN. Використовуйте нотацію CIDR."
+msgstr "Визначає, чи підключення надходить із LAN. Використовуйте нотацію CIDR."
 
 #: applications/luci-app-rustdesk-server/htdocs/luci-static/resources/view/rustdesk-server/general.js:292
 #: applications/luci-app-rustdesk-server/htdocs/luci-static/resources/view/rustdesk-server/general.js:485
@@ -442,8 +441,8 @@ msgid ""
 "Start will only work if at least \"Enable ID Server\" or \"Enable Relay "
 "Server\" is checked in the Configuration section below."
 msgstr ""
-"Запуск спрацює лише якщо у розділі «Конфігурація» нижче позначено принаймні "
-"«Увімкнути ID-сервер» або «Увімкнути Реле-сервер»."
+"Запуск спрацює лише якщо у розділі «Конфігурація» нижче позначено принаймні «"
+"Увімкнути ID-сервер» або «Увімкнути Реле-сервер»."
 
 #: applications/luci-app-rustdesk-server/htdocs/luci-static/resources/view/rustdesk-server/general.js:340
 msgid "Stop"

@@ -2,7 +2,9 @@
 import * as ubus from "ubus";
 import * as uloop from "uloop";
 import { is_equal } from "./utils.uc";
-import { access } from "fs";
+import { access, lsdir } from "fs";
+
+const wds_sta_re = /^(.+)\.sta[0-9]+$/;
 
 const NOTIFY_CMD_UP = 0;
 const NOTIFY_CMD_SET_DATA = 1;
@@ -61,7 +63,7 @@ function handle_link(dev, data, up)
 	};
 
 	if (ap && config.multicast_to_unicast != null)
-		dev_data.multicast_to_unicast = config.multicast_to_unicast;
+		dev_data.multicast_to_unicast = config.multicast_to_unicast ? 1 : 0;
 
 	if (data.type == "vif" && config.mode == "ap") {
 		dev_data.wireless_proxyarp = !!config.proxy_arp;
@@ -79,6 +81,18 @@ function handle_link(dev, data, up)
 			link_ext: true,
 			up,
 		});
+}
+
+function handle_wds_sta_links(data, netdevs)
+{
+	if (data.type != "vif" && data.type != "vlan")
+		return;
+
+	for (let dev in netdevs) {
+		let m = match(dev, wds_sta_re);
+		if (m && m[1] == data.ifname)
+			handle_link(dev, data, true);
+	}
 }
 
 function wdev_config_init(wdev)
@@ -172,6 +186,9 @@ function wdev_teardown_cb(wdev)
 		delete_wdev(wdev.data.name);
 		return;
 	}
+
+	if (wdev.config_change)
+		wdev_config_init(wdev);
 
 	wdev.setup();
 }
@@ -443,6 +460,14 @@ function check()
 	if (!wdev_update_disabled_vifs(this))
 		return;
 
+	/*
+	 * Defer applying a new config while a handler run is in progress: the
+	 * running script keeps its start-time config, and the setup/teardown
+	 * callback re-applies once it finishes (config_change stays set).
+	 */
+	if (this.state != "up" && this.state != "down")
+		return;
+
 	wdev_config_init(this);
 	this.setup();
 }
@@ -453,9 +478,21 @@ function wdev_mark_up(wdev)
 	if (wdev.state != "setup")
 		return;
 
+	if (wdev.cancel_setup || !wdev.autostart || wdev.delete) {
+		delete wdev.cancel_setup;
+		wdev.teardown();
+		return 0;
+	}
+
+	wdev_reset(wdev);
+
+	let netdevs = lsdir("/sys/class/net") ?? [];
 	for (let section, data in wdev.handler_data) {
-		if (data.ifname)
-			handle_link(data.ifname, data, true);
+		if (!data.ifname)
+			continue;
+
+		handle_link(data.ifname, data, true);
+		handle_wds_sta_links(data, netdevs);
 	}
 	wdev.state = "up";
 
@@ -536,7 +573,7 @@ function notify(req)
 function hotplug(name, add)
 {
 	let dev = name;
-	let m = match(name, /(.+)\.sta.+/);
+	let m = match(name, wds_sta_re);
 	if (m)
 		name = m[1];
 
@@ -562,6 +599,8 @@ function get_status_data(wdev, vif, parent_vif)
 	};
 	if (hdata && hdata.ifname)
 		data.ifname = hdata.ifname;
+	if (hdata?.error)
+		data.error = hdata.error;
 	return data;
 }
 
@@ -594,7 +633,7 @@ function status()
 		});
 	}
 	return {
-		up: this.state == "up",
+		up: this.state == "up" && !this.data.config.disabled,
 		pending: this.state == "setup" || this.state == "teardown",
 		autostart: this.autostart,
 		disabled: !!this.data.config.disabled,

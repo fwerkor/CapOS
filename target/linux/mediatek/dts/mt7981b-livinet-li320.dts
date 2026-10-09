@@ -156,8 +156,8 @@
 		reg = <0>;
 
 		spi-max-frequency = <52000000>;
-		spi-tx-buswidth = <4>;
-		spi-rx-buswidth = <4>;
+		spi-tx-bus-width = <4>;
+		spi-rx-bus-width = <4>;
 
 		spi-cal-enable;
 		spi-cal-mode = "read-data";
@@ -186,7 +186,7 @@
 				reg = <0x100000 0x80000>;
 			};
 
-			factory: partition@180000 {
+			partition@180000 {
 				label = "Factory";
 				reg = <0x180000 0x200000>;
 				read-only;

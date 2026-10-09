@@ -7,11 +7,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=util-linux
-PKG_VERSION:=2.41.5
+PKG_VERSION:=2.42.2
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
-PKG_SOURCE_URL:=@KERNEL/linux/utils/$(PKG_NAME)/v2.41
-PKG_HASH:=f586e35d320ff537aab3ffeca37e9ecd482ccbe013590db4429a414d8aa6a728
+PKG_SOURCE_URL:=@KERNEL/linux/utils/$(PKG_NAME)/v2.42
+PKG_HASH:=03a05d3adf9602ef128f2da05b84b3205ce60c351e5737c0370f74000679ce8a
 PKG_CPE_ID:=cpe:/a:kernel:util-linux
 
 include $(INCLUDE_DIR)/host-build.mk

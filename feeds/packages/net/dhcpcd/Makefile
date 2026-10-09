@@ -17,7 +17,7 @@ PKG_HASH:=d582012992efddd2442bb1213c518a37d90febbcf8b11f8e76448c710dacad27
 
 PKG_LICENSE:=BSD-2-Clause
 PKG_LICENSE_FILES:=LICENSE
-PKG_CPE_ID:=cpe:/a:roy_marples:dhcpcd
+PKG_CPE_ID:=cpe:/a:dhcpcd_project:dhcpcd
 
 PKG_MAINTAINER:=Marko Ratkaj <markoratkaj@gmail.com>
 
@@ -30,7 +30,7 @@ define Package/dhcpcd
   SECTION:=net
   CATEGORY:=Network
   TITLE:=DHCPv4/IPv4LL/IPv6RS/DHCPv6 quad stack client
-  URL:=http://roy.marples.name/projects/dhcpcd
+  URL:=https://roy.marples.name/projects/dhcpcd
   USERID:=dhcpcd:dhcpcd
 endef
 

@@ -5,17 +5,18 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=openlist
-PKG_VERSION:=4.2.1
+PKG_VERSION:=4.2.5
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/OpenListTeam/OpenList/tar.gz/v$(PKG_VERSION)?
-PKG_HASH:=95d4a30f9669837a4c92daf88f74d223eca773e3445c270681c67e2b3dc3ac31
+PKG_HASH:=dd9f19bb4dc9b8a06bb839dff91eb69833b2b9c77a9bfe82fc8caf1f47e97df1
 PKG_BUILD_DIR:=$(BUILD_DIR)/OpenList-$(PKG_VERSION)
 
 PKG_LICENSE:=AGPL-3.0-only
 PKG_LICENSE_FILES:=LICENSE
 PKG_MAINTAINER:=Tianling Shen <cnsztl@immortalwrt.org>
+PKG_CPE_ID:=cpe:/a:oplist:openlist
 
 PKG_BUILD_DEPENDS:=golang/host fuse
 PKG_BUILD_PARALLEL:=1
@@ -51,13 +52,13 @@ define Package/openlist/conffiles
 /etc/config/openlist
 endef
 
-WEB_VERSION:=4.2.1
+WEB_VERSION:=4.2.5
 WEB_FILE:=$(PKG_NAME)-frontend-dist-v$(WEB_VERSION).tar.gz
 define Download/openlist-web
 	URL:=https://github.com/OpenListTeam/OpenList-Frontend/releases/download/v$(WEB_VERSION)/
 	URL_FILE:=$(WEB_FILE)
 	FILE:=$(WEB_FILE)
-	HASH:=e63cf21666f9c0ef41e46e5dfe05055c81e1531a668e577ced39f296952f5bd3
+	HASH:=78e957e5b8855e30d00767458ab90ec11125a0344a238cc1e1990f46553d4308
 endef
 
 define Build/Prepare

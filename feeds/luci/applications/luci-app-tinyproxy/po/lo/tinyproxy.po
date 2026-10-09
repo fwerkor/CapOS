@@ -16,14 +16,15 @@ msgid ""
 "upstream proxy, <em>Reject access</em> disables any upstream proxy for the "
 "target"
 msgstr ""
-"<em>Via proxy</em> ສົ່ງຄຳຮ້ອງຂໍໄປຍັງເປົ້າໝາຍທີ່ກຳນົດຜ່ານພຣັອກຊີຂາຂຶ້ນ (upstream proxy) "
-"ທີ່ລະບຸໄວ້, <em>Reject access</em> ຈະປິດການໃຊ້ງານພຣັອກຊີຂາຂຶ້ນທຸກຢ່າງສຳລັບເປົ້າໝາຍນັ້ນ"
+"<em>Via proxy</em> ສົ່ງຄຳຮ້ອງຂໍໄປຍັງເປົ້າໝາຍທີ່ກຳນົດຜ່ານພຣັອກຊີຂາຂຶ້ນ (upstream proxy) ທີ່ລະບຸໄ"
+"ວ້, <em>Reject access</em> ຈະປິດການໃຊ້ງານພຣັອກຊີຂາຂຶ້ນທຸກຢ່າງສຳລັບເປົ້າໝາຍນັ້ນ"
 
 #: applications/luci-app-tinyproxy/htdocs/luci-static/resources/view/tinyproxy/tinyproxy.js:180
 msgid ""
 "Adds an 'X-Tinyproxy' HTTP header with the client IP address to forwarded "
 "requests"
-msgstr "ເພີ່ມ HTTP header 'X-Tinyproxy' ພ້ອມດ້ວຍທີ່ຢູ່ IP ຂອງລູກຂ່າຍເຂົ້າໃນຄຳຮ້ອງຂໍທີ່ສົ່ງຕໍ່"
+msgstr ""
+"ເພີ່ມ HTTP header 'X-Tinyproxy' ພ້ອມດ້ວຍທີ່ຢູ່ IP ຂອງລູກຂ່າຍເຂົ້າໃນຄຳຮ້ອງຂໍທີ່ສົ່ງຕໍ່"
 
 #: applications/luci-app-tinyproxy/htdocs/luci-static/resources/view/tinyproxy/tinyproxy.js:198
 msgid "Allowed clients"
@@ -64,14 +65,15 @@ msgid ""
 "By default, the filter rules act as blacklist. Enable this option to allow "
 "matched URLs or domain names only"
 msgstr ""
-"ໂດຍປົກກະຕິແລ້ວ ກົດການກັ່ນຕອງຈະເຮັດໜ້າທີ່ເປັນບັນຊີດຳ (blacklist). "
-"ເປີດໃຊ້ທາງເລືອກນີ້ເພື່ອອະນຸຍາດສະເພາະ URL ຫຼື ຊື່ໂດເມນທີ່ລະບຸໄວ້ເທົ່ານັ້ນ"
+"ໂດຍປົກກະຕິແລ້ວ ກົດການກັ່ນຕອງຈະເຮັດໜ້າທີ່ເປັນບັນຊີດຳ (blacklist). ເປີດໃຊ້ທາງເລືອກນີ້ເພື່ອອະນຸຍາດສະເ"
+"ພາະ URL ຫຼື ຊື່ໂດເມນທີ່ລະບຸໄວ້ເທົ່ານັ້ນ"
 
 #: applications/luci-app-tinyproxy/htdocs/luci-static/resources/view/tinyproxy/tinyproxy.js:298
 msgid ""
 "Can be either an IP address or range, a domain name or '.' for any host "
 "without domain"
-msgstr "ສາມາດເປັນທີ່ຢູ່ IP ຫຼື ຊ່ວງ IP, ຊື່ໂດເມນ ຫຼື '.' ສຳລັບໂຮສທ໌ໃດກໍຕາມທີ່ບໍ່ມີໂດເມນ"
+msgstr ""
+"ສາມາດເປັນທີ່ຢູ່ IP ຫຼື ຊ່ວງ IP, ຊື່ໂດເມນ ຫຼື '.' ສຳລັບໂຮສທ໌ໃດກໍຕາມທີ່ບໍ່ມີໂດເມນ"
 
 #: applications/luci-app-tinyproxy/htdocs/luci-static/resources/view/tinyproxy/tinyproxy.js:236
 msgid "Connection timeout"
@@ -143,8 +145,8 @@ msgid ""
 "List of allowed ports for the CONNECT method. A single value '0' disables "
 "CONNECT completely, an empty list allows all ports"
 msgstr ""
-"ລາຍການພອດທີ່ອະນຸຍາດສຳລັບວິທີ CONNECT. ຄ່າ '0' ຈະປິດການໃຊ້ງານ CONNECT ໂດຍສິ້ນເຊີງ, "
-"ຖ້າປ່ອຍຫວ່າງຈະອະນຸຍາດທຸກພອດ"
+"ລາຍການພອດທີ່ອະນຸຍາດສຳລັບວິທີ CONNECT. ຄ່າ '0' ຈະປິດການໃຊ້ງານ CONNECT ໂດຍສິ້ນເຊີງ, ຖ້າປ່ອຍຫວ່"
+"າງຈະອະນຸຍາດທຸກພອດ"
 
 #: applications/luci-app-tinyproxy/htdocs/luci-static/resources/view/tinyproxy/tinyproxy.js:111
 msgid "Listen address"
@@ -190,7 +192,8 @@ msgstr "ຈຳນວນລູກຂ່າຍສູງສຸດທີ່ອະນ
 msgid ""
 "Maximum allowed number of requests per process. If it is exeeded, the "
 "process is restarted. Zero means unlimited."
-msgstr "ຈຳນວນຄຳຮ້ອງຂໍສູງສຸດຕໍ່ໂປຣເຊສ. ຖ້າເກີນກຳນົດ, ໂປຣເຊສຈະຖືກຣີສະຕາດ. ຄ່າສູນໝາຍເຖິງບໍ່ຈຳກັດ."
+msgstr ""
+"ຈຳນວນຄຳຮ້ອງຂໍສູງສຸດຕໍ່ໂປຣເຊສ. ຖ້າເກີນກຳນົດ, ໂປຣເຊສຈະຖືກຣີສະຕາດ. ຄ່າສູນໝາຍເຖິງບໍ່ຈຳກັດ."
 
 #: applications/luci-app-tinyproxy/htdocs/luci-static/resources/view/tinyproxy/tinyproxy.js:259
 msgid "Maximum number of prepared idle processes"
@@ -214,7 +217,8 @@ msgstr "ຈຳນວນໂປຣເຊສຫວ່າງທີ່ຈະເລີ
 
 #: applications/luci-app-tinyproxy/htdocs/luci-static/resources/view/tinyproxy/tinyproxy.js:213
 msgid "Plaintext file with URLs or domains to filter. One entry per line"
-msgstr "ໄຟລ໌ຂໍ້ຄວາມທຳມະດາທີ່ບັນຈຸ URL ຫຼື ໂດເມນທີ່ຈະກັ່ນຕອງ. ໃສ່ໜຶ່ງລາຍການຕໍ່ໜຶ່ງແຖວ"
+msgstr ""
+"ໄຟລ໌ຂໍ້ຄວາມທຳມະດາທີ່ບັນຈຸ URL ຫຼື ໂດເມນທີ່ຈະກັ່ນຕອງ. ໃສ່ໜຶ່ງລາຍການຕໍ່ໜຶ່ງແຖວ"
 
 #: applications/luci-app-tinyproxy/htdocs/luci-static/resources/view/tinyproxy/tinyproxy.js:290
 msgid "Policy"
@@ -249,8 +253,8 @@ msgid ""
 "Specifies HTTP header names which are allowed to pass-through, all others "
 "are discarded. Leave empty to disable header filtering"
 msgstr ""
-"ລະບຸຊື່ HTTP header ທີ່ອະນຸຍາດໃຫ້ຜ່ານໄປໄດ້, ເຮດເດີອື່ນໆທັງໝົດຈະຖືກຍົກເລີກ. "
-"ປ່ອຍຫວ່າງໄວ້ເພື່ອປິດການກັ່ນຕອງເຮດເດີ"
+"ລະບຸຊື່ HTTP header ທີ່ອະນຸຍາດໃຫ້ຜ່ານໄປໄດ້, ເຮດເດີອື່ນໆທັງໝົດຈະຖືກຍົກເລີກ. ປ່ອຍຫວ່າງໄວ້ເພື່ອປິດການກັ່ນ"
+"ຕອງເຮດເດີ"
 
 #: applications/luci-app-tinyproxy/htdocs/luci-static/resources/view/tinyproxy/tinyproxy.js:104
 msgid "Specifies the HTTP port Tinyproxy is listening on for requests"
@@ -278,8 +282,8 @@ msgid ""
 "Specifies the upstream proxy to use for accessing the target host. Format is "
 "<code>address:port</code> or <code>socks5 address:port</code>"
 msgstr ""
-"ລະບຸພຣັອກຊີຂາຂຶ້ນ (upstream proxy) ທີ່ຈະໃຊ້ເຂົ້າເຖິງໂຮສທ໌ເປົ້າໝາຍ. ຮູບແບບແມ່ນ "
-"<code>address:port</code> ຫຼື <code>socks5 address:port</code>"
+"ລະບຸພຣັອກຊີຂາຂຶ້ນ (upstream proxy) ທີ່ຈະໃຊ້ເຂົ້າເຖິງໂຮສທ໌ເປົ້າໝາຍ. ຮູບແບບແມ່ນ <code>"
+"address:port</code> ຫຼື <code>socks5 address:port</code>"
 
 #: applications/luci-app-tinyproxy/htdocs/luci-static/resources/view/tinyproxy/tinyproxy.js:164
 msgid "Specifies the user name the Tinyproxy process is running as"
@@ -323,7 +327,8 @@ msgstr "ພຣັອກຊີຂາຂຶ້ນ (Upstream Proxies)"
 msgid ""
 "Upstream proxy rules define proxy servers to use when accessing certain IP "
 "addresses or domains."
-msgstr "ກົດລະບຽບຂອງພຣັອກຊີຂາຂຶ້ນຈະກຳນົດເຊີບເວີພຣັອກຊີທີ່ຈະໃຊ້ເມື່ອເຂົ້າເຖິງທີ່ຢູ່ IP ຫຼື ໂດເມນໃດໜຶ່ງ."
+msgstr ""
+"ກົດລະບຽບຂອງພຣັອກຊີຂາຂຶ້ນຈະກຳນົດເຊີບເວີພຣັອກຊີທີ່ຈະໃຊ້ເມື່ອເຂົ້າເຖິງທີ່ຢູ່ IP ຫຼື ໂດເມນໃດໜຶ່ງ."
 
 #: applications/luci-app-tinyproxy/htdocs/luci-static/resources/view/tinyproxy/tinyproxy.js:141
 msgid "Use syslog"

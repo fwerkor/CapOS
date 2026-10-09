@@ -3,7 +3,7 @@ Build-Depends: wayland/host
 
 Package: cage
 Submenu: Frameworks and Toolkits
-Version: 0.2.0
+Version: 0.3.1-r1
 Depends: +libc +wlroots +xkeyboard-config
 Conflicts: 
 Menu-Depends: 
@@ -13,7 +13,7 @@ Category: Video
 Repository: base
 Title: a Wayland kiosk
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: cage-0.2.0.tar.gz
+Source: cage-0.3.1.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 URL: https://wayland.freedesktop.org/

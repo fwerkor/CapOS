@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=nginx
-PKG_VERSION:=1.26.3
-PKG_RELEASE:=4
+PKG_VERSION:=1.30.5
+PKG_RELEASE:=1
 
 PKG_SOURCE:=nginx-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://nginx.org/download/
-PKG_HASH:=69ee2b237744036e61d24b836668aad3040dda461fe6f570f1787eab570c75aa
+PKG_HASH:=6c20565aa2325cb82216ae804f4a4ff1875179014759a381c42ddc8e11c4906d
 
 PKG_MAINTAINER:=Thomas Heil <heil@terminal-consulting.de> \
 				Christian Marangi <ansuelsmth@gmail.com>
@@ -199,8 +199,8 @@ define Package/nginx-mod-luci
   CATEGORY:=Network
   SUBMENU:=Web Servers/Proxies
   TITLE:=Support file for Nginx
-  URL:=http://nginx.org/
-  DEPENDS:=+uwsgi +uwsgi-luci-support +nginx +nginx-mod-ubus
+  URL:=https://nginx.org/
+  DEPENDS:=nginx +uwsgi +uwsgi-luci-support +nginx-mod-ubus
 endef
 
 define Package/nginx-mod-luci/description
@@ -403,7 +403,7 @@ endef
 define BuildModule
   define Package/nginx-mod-$(1)
     $(call Package/nginx/default)
-    DEPENDS:=+nginx $(2)
+    DEPENDS:=nginx $(2)
     TITLE:=Nginx $(1) module
   endef
 

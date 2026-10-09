@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-06-05 19:01+0000\n"
-"Last-Translator: 大王叫我来巡山 "
+"PO-Revision-Date: 2026-08-31 06:44+0000\n"
+"Last-Translator: Hosted Weblate user 54392 "
 "<hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/openwrt/luciapplicationssmartdns/zh_Hans/>\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:791
 msgid "Additional Args for upstream dns servers"
@@ -344,7 +344,7 @@ msgstr "停用 HTTPS 地址解析。"
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:130
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:637
 msgid "General Settings"
-msgstr "常规设置"
+msgstr "通用设置"
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:598
 msgid "Generate Coredump"
@@ -720,8 +720,8 @@ msgid ""
 "return the fastest IP, Fastest Response: return the fastest DNS response."
 msgstr ""
 "SmartDNS 响应模式，最快 PING：返回最早有 Ping 结果的 IP，速度适中；最快 IP："
-"返回最快 IP，查询请求可能延长； 最快响应：返回最快响应的结果，查询请求时间"
-"短。"
+"返回最快 IP，查询请求可能延长； 最快响应：返回最快响应的结果，查询请求时间短"
+"。"
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:146
 msgid "Smartdns server name"

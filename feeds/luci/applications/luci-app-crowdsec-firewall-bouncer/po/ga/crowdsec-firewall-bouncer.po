@@ -7,8 +7,8 @@ msgstr ""
 "Language: ga\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : (n>2 && n<7) ? 2 :"
-"(n>6 && n<11) ? 3 : 4;\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : (n>2 && n<7) ? 2 :(n>"
+"6 && n<11) ? 3 : 4;\n"
 "X-Generator: Weblate 5.16-dev\n"
 
 #: applications/luci-app-crowdsec-firewall-bouncer/htdocs/luci-static/resources/view/crowdsec-firewall-bouncer/form.js:27
@@ -103,3 +103,10 @@ msgstr "Tá eochair do phreabadóir cláraithe ar an API CrowdSec áitiúil."
 #: applications/luci-app-crowdsec-firewall-bouncer/htdocs/luci-static/resources/view/crowdsec-firewall-bouncer/form.js:22
 msgid "URL of local API"
 msgstr "URL an API áitiúil"
+
+#~ msgid ""
+#~ "Gain <a href=\"http://www.crowdsec.net\">crowd-sourced</a> protection "
+#~ "against malicious IPs. Benefit from the most accurate CTI in the world."
+#~ msgstr ""
+#~ "Faigh cosaint <a href=\"http://www.crowdsec.net\">sluaite</a> ar IPanna "
+#~ "mailíseach. Leas a bhaint as an CTI is cruinne ar domhan."

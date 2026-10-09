@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-04-25 12:14+0000\n"
-"Last-Translator: SnIPeRSnIPeR "
-"<snipersniper@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-08-28 06:20+0000\n"
+"Last-Translator: SnIPeRSnIPeR <snipersniper@users.noreply.hosted.weblate.org>"
+"\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationssshtunnel/ru/>\n"
 "Language: ru\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_tunnels.js:37
 #: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_tunnels.js:75
@@ -24,7 +24,7 @@ msgstr ""
 msgid "A key with that name already exists."
 msgstr "Ключ с таким именем уже существует."
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:124
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:123
 msgid "Accept new and check if not changed"
 msgstr "Принимать новый и проверять что не изменился"
 
@@ -32,7 +32,7 @@ msgstr "Принимать новый и проверять что не изме
 msgid "Add the pub key to %s or %s."
 msgstr "Добавьте этот публичный ключ в %s или в %s."
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:35
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:34
 msgid "Advanced Settings"
 msgstr "Расширенные настройки"
 
@@ -48,15 +48,15 @@ msgstr ""
 "Принимающий соединения IP адрес н.п. <code>192.168.1.1</code> или имя хоста "
 "н.п. <code>localhost</code>."
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:110
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:109
 msgid "Check host IP"
 msgstr "Проверять IP хоста"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:111
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:110
 msgid "Check the host IP address in the %s file."
 msgstr "Проверять IP-адрес хоста в файле %s."
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:76
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:75
 msgid "Compression may be useful on slow connections."
 msgstr "Сжатие может быть полезным на медленном соединении."
 
@@ -64,7 +64,7 @@ msgstr "Сжатие может быть полезным на медленно�
 msgid "Configure TUN/TAP devices for VPN tunnels."
 msgstr "Конифгурация устройств TUN/TAP VPN-туннелей."
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:85
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:84
 msgid "Delay after a connection failure before trying to reconnect."
 msgstr "Задержка перед переподключением."
 
@@ -79,15 +79,15 @@ msgstr "Динамические туннели"
 msgid "Enabled"
 msgstr "Включено"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:52
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:51
 msgid "For Dropbear %s"
 msgstr "Для Dropbear %s"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:53
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:52
 msgid "For OpenSSH %s"
 msgstr "Для OpenSSH %s"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:132
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:131
 msgid "For example, the following command would connect via an HTTP proxy:"
 msgstr "Например, с помощью этой команады подключаться через HTTP-прокси:"
 
@@ -99,7 +99,7 @@ msgstr "Перенаправить порт с локального хоста �
 msgid "Forward a port on the remote host to a service on the local host."
 msgstr "Перенаправить порт с удалённого хоста на сервис на локальном хосте."
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:34
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:33
 msgid "General Settings"
 msgstr "Основные настройки"
 
@@ -115,16 +115,16 @@ msgstr "Сгенерировать новый ключ"
 msgid "Grant UCI access for luci-app-sshtunnel"
 msgstr "Предоставить доступ к UCI для luci-app-sshtunnel"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_hosts.js:39
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:37
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_hosts.js:37
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:36
 msgid "Hostname"
 msgstr "Имя хоста"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:49
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:48
 msgid "Identity Key"
 msgstr "Идентификационный ключ"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:51
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:50
 msgid "If not specified then a default will be used."
 msgstr "Если не указан то используется ключ по умолчанию."
 
@@ -134,7 +134,7 @@ msgid ""
 msgstr ""
 "В LuCI можно сделать это в <a %s>Система / Администрирование / SSH-ключи</a>"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_hosts.js:50
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_hosts.js:48
 msgid "Keys of SSH servers found in %s."
 msgstr "Ключи SSH уже известных серверов из %s."
 
@@ -142,7 +142,7 @@ msgstr "Ключи SSH уже известных серверов из %s."
 msgid "Known Hosts"
 msgstr "Знакомые хосты"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_hosts.js:48
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_hosts.js:46
 msgid "Known hosts"
 msgstr "Знакомые хосты"
 
@@ -166,43 +166,43 @@ msgstr "Локальное устройство dev"
 msgid "Local port"
 msgstr "Локальный порт"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:63
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:62
 msgid "Log level"
 msgstr "Уровень журналирования"
 
 #: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_keys.js:88
 #: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_keys.js:101
 msgid "Name"
-msgstr "Название"
+msgstr "Имя"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:80
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:116
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:126
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:79
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:115
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:125
 msgid "No"
 msgstr "Нет"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:19
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:18
 msgid "No SSH keys found, <a %s>generate a new one</a>"
 msgstr "Нет ни одного ключа, пожалуйста <a %s>сгенерируйте новый</a>"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:42
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:41
 msgid "Port"
 msgstr "Порт"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:50
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:49
 msgid "Private key file with authentication identity."
 msgstr "Файл приватного ключа для авторизации."
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:130
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:129
 msgid "Proxy tunnel command"
 msgstr "Команда прокси-туннеля"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_hosts.js:40
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_hosts.js:38
 #: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_keys.js:89
 msgid "Public Key"
 msgstr "Публичный ключ"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:121
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:120
 msgid "Refuse to connect to hosts whose host key has changed."
 msgstr "Отказывать в подключении к хосту если его ключ поменялся."
 
@@ -224,7 +224,7 @@ msgstr "Удалённое устройство dev"
 msgid "Remote port"
 msgstr "Удалённый порт"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:84
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:83
 msgid "Retry delay"
 msgstr "Задержка попытки"
 
@@ -237,16 +237,16 @@ msgstr "SOCKS-прокси через удалённый хост."
 msgid "SSH Keys"
 msgstr "Ключи SSH"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_hosts.js:24
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_hosts.js:22
 #: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_keys.js:39
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:24
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:23
 #: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_tunnels.js:18
 #: applications/luci-app-sshtunnel/root/usr/share/luci/menu.d/luci-app-sshtunnel.json:3
 #: applications/luci-app-sshtunnel/root/usr/share/luci/menu.d/luci-app-sshtunnel.json:30
 msgid "SSH Tunnels"
 msgstr "SSH-туннели"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:165
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:164
 msgid "See %s."
 msgstr "См. %s."
 
@@ -254,43 +254,43 @@ msgstr "См. %s."
 msgid "Server"
 msgstr "Сервер"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:93
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:92
 msgid "Server keep alive attempts"
 msgstr "Попыток проверки соединения"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:102
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:101
 msgid "Server keep alive interval (seconds)"
 msgstr "Интервал проверки соединения (секунды)"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:29
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:28
 #: applications/luci-app-sshtunnel/root/usr/share/luci/menu.d/luci-app-sshtunnel.json:22
 msgid "Servers"
 msgstr "Серверы"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:120
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:119
 msgid "Strict host key checking"
 msgstr "Строгая проверка ключа хоста"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:131
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:130
 msgid "The command to use to connect to the server."
 msgstr "Команда для подключения к серверу."
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:94
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:93
 msgid ""
 "The number of server alive messages which may be sent before SSH disconnects "
 "from the server."
 msgstr ""
 "Сколько проверочных сообщений на сервер отправить прежде чем отключиться."
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:112
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:111
 msgid ""
 "This allows SSH to detect whether a host key changed due to DNS spoofing."
 msgstr ""
 "Это позволяет SSH определить, изменился ли ключ хоста из-за подмены DNS."
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_hosts.js:25
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_hosts.js:23
 #: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_keys.js:40
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:25
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:24
 #: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_tunnels.js:19
 msgid "This configures <a %s>SSH Tunnels</a>."
 msgstr "Настройка <a %s>SSH-туннелей</a>."
@@ -299,11 +299,11 @@ msgstr "Настройка <a %s>SSH-туннелей</a>."
 msgid "Unable to generate a key: %s"
 msgstr "Ошибка при генерации ключа: %s"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:75
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:74
 msgid "Use compression"
 msgstr "Использовать сжатие"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:46
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:45
 msgid "User"
 msgstr "Пользователь"
 
@@ -315,8 +315,8 @@ msgstr "VPN туннели"
 msgid "VPN type"
 msgstr "Тип VPN"
 
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:79
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:115
-#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:125
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:78
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:114
+#: applications/luci-app-sshtunnel/htdocs/luci-static/resources/view/sshtunnel/ssh_servers.js:124
 msgid "Yes"
 msgstr "Да"

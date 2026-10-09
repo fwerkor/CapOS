@@ -9,7 +9,7 @@ PKG_SOURCE_URL:=https://git.openldap.org/openldap/openldap.git
 PKG_SOURCE_VERSION:=LMDB_$(PKG_VERSION)
 PKG_MIRROR_HASH:=0196b429f21f06fa2a53666e20ae744932dbe08e58825d25e2663e8d306f7f44
 
-PKG_MAINTAINER:=Jan Pavlinec <jan.pavlinec1@gmail.com>
+PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
 PKG_LICENSE:=OLDAP-2.8
 PKG_LICENSE_FILES:=LICENSE
 

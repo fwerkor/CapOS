@@ -1,7 +1,6 @@
 # Example app for js based Luci
 
 This app is meant to be a starting point for developing new LuCI apps using the modern JavaScript client-rendered approach.
-Previously the LuCI used a Lua server-side render approach which is deprecated now.
 
 ## Installation
 
@@ -22,7 +21,7 @@ ssh root@192.168.1.1 "sh /etc/uci-defaults/80_example"
 
 Install the app on your OpenWrt installation. This can be an actual router/device, or something like a QEMU virtual machine.
 
-`opkg install luci-app-example`
+`apk add luci-app-example`
 
 Visit the web UI for the device/virtual machine where the package was installed.
 Log in to OpenWrt, and **Example** should be present in the navigation menu.
@@ -84,6 +83,14 @@ The RPCd script is stored as `/usr/libexec/rpcd/luci.example`, and can be called
 It relies on RPC access, and the relevant ACL declarations are in `root/usr/share/rpcd/acl.d/luci-app-example.json`.
 
 The declaration is `luci-app-example > read > ubus > luci.example`; the list of names under this key is the list of APIs that can be called.
+
+### [file-jsonmap.js](./htdocs/luci-static/resources/view/example/file-jsonmap.js)
+
+The File JSONMap page edits a JSON file, `/etc/example.json`, with a JSONMap that can be saved: a named section plus a list whose entries can be added and removed.
+
+JSONMap's own `save()` does nothing and the form stores every value as a string, so the view replaces `handleSave()`. It calls `map.save()` with a callback that runs after validation, reads the sections back from `map.data` on top of the file as loaded (so keys the form does not edit are kept), restores numbers and writes the file with `fs.write()`.
+
+The file is created by the UCI defaults script, and reading and writing it is granted under `luci-app-example > read > file` and `luci-app-example > write > file` in `root/usr/share/rpcd/acl.d/luci-app-example.json`.
 
 ## ACLs
 

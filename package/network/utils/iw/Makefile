@@ -27,7 +27,7 @@ define Package/iw/Default
   SECTION:=net
   CATEGORY:=Network
   TITLE:=cfg80211 interface configuration utility
-  URL:=http://wireless.kernel.org/en/users/Documentation/iw
+  URL:=https://wireless.kernel.org/en/latest/en/users/documentation/iw.html
   DEPENDS:= +libnl-tiny
 endef
 
