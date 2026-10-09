@@ -1,0 +1,46 @@
+From 453495bceac66990dd7e48ec7f4e1970f96c407a Mon Sep 17 00:00:00 2001
+From: Daniel Golle <daniel@makrotopia.org>
+Date: Sun, 20 Sep 2026 23:53:12 +0100
+Subject: [PATCH 1/6] state: don't let the console become a controlling tty
+
+set_stdio() reopens the standard descriptors with freopen(), which has
+no way to pass O_NOCTTY, so procd asks for a controlling terminal every
+time it redirects to the console. It is a session leader without one
+after the setsid() in main(), so the only thing declining the request
+is tty_open(), which refuses /dev/console, /dev/tty0 and pty masters
+whatever the flags say. set_console() takes its device name from the
+kernel command line and can name a real serial tty, which that
+exclusion does not cover. Use patch_stdio(), which forces O_NOCTTY,
+falls back to /dev/null instead of leaving the descriptors closed, and
+resolves a relative name against /dev itself so the chdir() pair is no
+longer needed.
+
+Fixes: 8b27adcf7516 ("Show the shutdown sequence on the active virtual terminal")
+Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+(cherry picked from commit 615e929c8055529141c74287f5ad78f5cd95d2f1)
+---
+ state.c | 9 ++-------
+ 1 file changed, 2 insertions(+), 7 deletions(-)
+
+diff --git a/state.c b/state.c
+index 8464ba9..478919c 100644
+--- a/state.c
++++ b/state.c
+@@ -45,15 +45,10 @@ static int reboot_event;
+ 
+ static void set_stdio(const char* tty)
+ {
+-	if (chdir("/dev") ||
+-	    !freopen(tty, "r", stdin) ||
+-	    !freopen(tty, "w", stdout) ||
+-	    !freopen(tty, "w", stderr))
+-		ERROR("failed to set stdio: %m\n");
++	if (patch_stdio(tty))
++		ERROR("failed to set stdio\n");
+ 	else
+ 		fcntl(STDERR_FILENO, F_SETFL, fcntl(STDERR_FILENO, F_GETFL) | O_NONBLOCK);
+-	if (chdir("/"))
+-		ERROR("failed to change dir to /: %m\n");
+ }
+ 
+ static void set_console(void)
