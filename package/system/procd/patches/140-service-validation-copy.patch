@@ -1,0 +1,67 @@
+From 85131535f2f6e2425c031f78e569f0cc6094214f Mon Sep 17 00:00:00 2001
+From: Daniel Golle <daniel@makrotopia.org>
+Date: Tue, 22 Sep 2026 01:04:01 +0100
+Subject: [PATCH 5/6] service: copy validation rule strings with a known length
+
+service_validate_add() sizes each vrule with strlen() and then fills it
+with strcpy(), so the allocation and the copy take their length from two
+separate evaluations of the same blobmsg accessor. GCC cannot relate the
+two and rejects the copy under -Warray-bounds:
+
+  service/validate.c:152:17: error: 'strcpy' offset 6 from the object at
+  'cur' is out of the bounds of referenced subobject 'name' with type
+  'uint8_t[]' at offset 6 [-Werror=array-bounds=]
+
+The read is in bounds. blobmsg_name() casts blob_attr.data[] to struct
+blobmsg_hdr and hands back its name[] member, so the compiler sees a
+flexible array member of a nested object, gives it zero extent and
+refuses every access at the resulting constant offset 6. The attribute
+really owns blobmsg_hdrlen(namelen) bytes, which covers the name and its
+terminator.
+
+Keep the lengths the allocation already computed and copy with memcpy().
+The bound then comes from the expression that sized the buffer rather
+than from a second walk of the same string, which is what makes the
+relationship between the two visible, to a reader and to the compiler
+alike.
+
+Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+(cherry picked from commit 3a458d5cebcc7e08c5364ad2c528e97ef8678d89)
+---
+ service/validate.c | 13 +++++++++----
+ 1 file changed, 9 insertions(+), 4 deletions(-)
+
+diff --git a/service/validate.c b/service/validate.c
+index cf04490..1c96cea 100644
+--- a/service/validate.c
++++ b/service/validate.c
+@@ -115,6 +115,7 @@ void
+ service_validate_add(struct service *s, struct blob_attr *msg)
+ {
+ 	struct blob_attr *tb[__SERVICE_VAL_MAX];
++	size_t option_len, rule_len;
+ 	struct validate *v;
+ 	char *type, *package;
+ 	struct blob_attr *cur;
+@@ -144,13 +145,17 @@ service_validate_add(struct service *s, struct blob_attr *msg)
+ 	blobmsg_for_each_attr(cur, tb[SERVICE_VAL_DATA], rem) {
+ 		char *option;
+ 		char *rule;
+-		struct vrule *vr = calloc_a(sizeof(*vr), &option, strlen(blobmsg_name(cur)) + 1,
+-			&rule, strlen(blobmsg_get_string(cur)) + 1);
++		struct vrule *vr;
++
++		option_len = strlen(blobmsg_name(cur)) + 1;
++		rule_len = strlen(blobmsg_get_string(cur)) + 1;
++		vr = calloc_a(sizeof(*vr), &option, option_len,
++			      &rule, rule_len);
+ 
+ 		vr->avl.key = vr->option = option;
+ 		vr->rule = rule;
+-		strcpy(vr->option, blobmsg_name(cur));
+-		strcpy(vr->rule, blobmsg_get_string(cur));
++		memcpy(vr->option, blobmsg_name(cur), option_len);
++		memcpy(vr->rule, blobmsg_get_string(cur), rule_len);
+ 		if (avl_insert(&v->rules, &vr->avl))
+ 			free(vr);
+ 	}
