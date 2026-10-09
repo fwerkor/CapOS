@@ -1,0 +1,86 @@
+From 7b3d93a2c526c7327954271f67de10650a005d17 Mon Sep 17 00:00:00 2001
+From: Daniel Golle <daniel@makrotopia.org>
+Date: Mon, 21 Sep 2026 14:08:23 +0100
+Subject: [PATCH 2/6] signal: report procd's own crash to /dev/kmsg
+
+signal_crash() reports the crash with ERROR() and reboots on the next
+line. Since the conversion to ulog() that message goes to syslog alone,
+so it has to cross a datagram socket to logd and be written out by
+logread before the box goes down, and a procd segfault therefore
+destroys its only record of having segfaulted. Write it to /dev/kmsg,
+which the kernel holds to the last instant and echoes to the console.
+
+The write is open coded rather than going through ulog(ULOG_KMSG) on
+purpose. signal_crash() is the SIGSEGV and SIGBUS handler, so only
+async-signal-safe calls are allowed there, and neither ulog() nor
+ulog_open() is: they reach vsnprintf() and open(). A fault taken inside
+malloc() or syslog() would deadlock on a lock the faulting thread
+already holds, and procd would never reach do_reboot(), which is what
+this exists to guarantee. The descriptor is opened once in
+procd_signal(), leaving the handler with write(), and the loop is there
+because a write to /dev/kmsg can be short or interrupted.
+
+Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+(cherry picked from commit 753420651d4da11b0aaa65b21057a5686f556046)
+---
+ signal.c | 29 ++++++++++++++++++++++++++++-
+ 1 file changed, 28 insertions(+), 1 deletion(-)
+
+diff --git a/signal.c b/signal.c
+index 7cbbe1a..b9fa0bc 100644
+--- a/signal.c
++++ b/signal.c
+@@ -15,10 +15,36 @@
+ #include <sys/reboot.h>
+ #include <sys/types.h>
+ 
++#include <errno.h>
++#include <fcntl.h>
+ #include <unistd.h>
+ 
+ #include "procd.h"
+ 
++static int crash_kmsg_fd = -1;
++
++static void crash_kmsg(void)
++{
++	static const char msg[] = "<3>procd: Rebooting as procd has crashed\n";
++	size_t left = sizeof(msg) - 1;
++	const char *p = msg;
++	ssize_t rv;
++
++	if (crash_kmsg_fd < 0)
++		return;
++
++	while (left > 0) {
++		rv = write(crash_kmsg_fd, p, left);
++		if (rv < 0 && errno == EINTR)
++			continue;
++		if (rv <= 0)
++			return;
++
++		left -= rv;
++		p += rv;
++	}
++}
++
+ static void do_reboot(void)
+ {
+ 	LOG("reboot\n");
+@@ -66,7 +92,7 @@ struct sigaction sa_shutdown = {
+ 
+ static void signal_crash(int signal, siginfo_t *siginfo, void *data)
+ {
+-	ERROR("Rebooting as procd has crashed\n");
++	crash_kmsg();
+ 	do_reboot();
+ }
+ 
+@@ -90,6 +116,7 @@ void procd_signal(void)
+ 	signal(SIGPIPE, SIG_IGN);
+ 	if (getpid() != 1)
+ 		return;
++	crash_kmsg_fd = open("/dev/kmsg", O_WRONLY | O_CLOEXEC);
+ 	sigaction(SIGTERM, &sa_shutdown, NULL);
+ 	sigaction(SIGINT, &sa_shutdown, NULL);
+ 	sigaction(SIGUSR1, &sa_shutdown, NULL);
