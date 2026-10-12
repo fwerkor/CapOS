@@ -5,8 +5,110 @@ on:
     types: [opened, edited, synchronize]
 
 permissions:
+  contents: read
   pull-requests: write
 
 jobs:
   build-pr-profile:
-    uses: openwrt/actions-shared-workflows/.github/workflows/build-pr-profile.yml@main
+    name: Build requested CapOS profile
+    runs-on: ubuntu-22.04
+    timeout-minutes: 360
+    steps:
+      - name: Parse build request
+        id: request
+        shell: bash
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          if [[ "$PR_BODY" =~ (^|[[:space:]])build[[:space:]]+([a-zA-Z0-9_-]+/[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]+) ]]; then
+            IFS=/ read -r target subtarget profile <<< "${BASH_REMATCH[2]}"
+            echo "requested=true" >> "$GITHUB_OUTPUT"
+            echo "target=$target" >> "$GITHUB_OUTPUT"
+            echo "subtarget=$subtarget" >> "$GITHUB_OUTPUT"
+            echo "profile=$profile" >> "$GITHUB_OUTPUT"
+            echo "path=$target/$subtarget/$profile" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Find existing build comment
+        if: steps.request.outputs.requested == 'true'
+        id: existing
+        uses: peter-evans/find-comment@v4
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: github-actions[bot]
+          body-includes: 'Build Results for'
+
+      - name: Post build progress
+        if: steps.request.outputs.requested == 'true'
+        id: progress
+        uses: peter-evans/create-or-update-comment@v5
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-id: ${{ steps.existing.outputs.comment-id }}
+          edit-mode: replace
+          body: |
+            ## Build Results for `${{ steps.request.outputs.path }}`
+
+            Build in progress...
+
+            [Follow progress](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+      - name: Checkout
+        if: steps.request.outputs.requested == 'true'
+        uses: actions/checkout@v4
+
+      - name: Install CapOS build dependencies
+        if: steps.request.outputs.requested == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential libncurses-dev gawk git subversion libssl-dev \
+            gettext zlib1g-dev swig unzip time rsync flex bison \
+            pkg-config fuse3 libfuse3-dev
+
+      - name: Build target
+        if: steps.request.outputs.requested == 'true'
+        id: build
+        run: |
+          make defconfig
+          echo 'CONFIG_DEVEL=y' > .config
+          echo 'CONFIG_BPF_TOOLCHAIN_HOST=y' >> .config
+          echo 'CONFIG_TARGET_${{ steps.request.outputs.target }}=y' >> .config
+          echo 'CONFIG_TARGET_${{ steps.request.outputs.target }}_${{ steps.request.outputs.subtarget }}=y' >> .config
+          echo 'CONFIG_TARGET_${{ steps.request.outputs.target }}_${{ steps.request.outputs.subtarget }}_DEVICE_${{ steps.request.outputs.profile }}=y' >> .config
+          make defconfig
+          make -j"$(nproc)" BUILD_LOG=1
+          echo 'success=true' >> "$GITHUB_OUTPUT"
+
+      - name: Upload build logs
+        if: steps.request.outputs.requested == 'true' && always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log-${{ steps.request.outputs.target }}-${{ steps.request.outputs.subtarget }}-${{ steps.request.outputs.profile }}
+          path: logs/
+          if-no-files-found: ignore
+
+      - name: Archive build artifacts
+        if: steps.build.outputs.success == 'true'
+        run: tar -czf build-artifacts.tar.gz -C bin .
+
+      - name: Upload build artifacts
+        if: steps.build.outputs.success == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ steps.request.outputs.target }}-${{ steps.request.outputs.subtarget }}-${{ steps.request.outputs.profile }}
+          path: build-artifacts.tar.gz
+
+      - name: Post build result
+        if: steps.request.outputs.requested == 'true' && always()
+        uses: peter-evans/create-or-update-comment@v5
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-id: ${{ steps.progress.outputs.comment-id }}
+          edit-mode: replace
+          body: |
+            ## Build Results for `${{ steps.request.outputs.path }}`
+
+            Result: ${{ job.status }}
+
+            [Build logs and artifacts](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
