@@ -71,20 +71,27 @@ platform_do_upgrade_onie() {
 	local bundle="$root_mnt/onie-installer-x86_64"
 	local staged="$bundle.tmp"
 	v "ONIE upgrade: writing bundle to $bundle"
-	if [ -s "$backup" ]; then
-		if ! cat "$image" "$backup" > "$staged"; then
-			v "ONIE upgrade: failed to stage installer bundle"
+	# Remove the verified signature before appending the config archive:
+	# ONIE expects the archive immediately after the original payload.
+	if ! cp "$image" "$staged"; then
+		v "ONIE upgrade: failed to stage installer bundle"
+		rm -f "$staged"
+		umount "$root_mnt"
+		return 1
+	fi
+	if fwtool -q -s /dev/null "$staged"; then
+		if ! fwtool -q -t -s /dev/null "$staged"; then
+			v "ONIE upgrade: failed to strip installer signature"
 			rm -f "$staged"
 			umount "$root_mnt"
 			return 1
 		fi
-	else
-		if ! cp "$image" "$staged"; then
-			v "ONIE upgrade: failed to stage installer bundle"
-			rm -f "$staged"
-			umount "$root_mnt"
-			return 1
-		fi
+	fi
+	if [ -s "$backup" ] && ! cat "$backup" >> "$staged"; then
+		v "ONIE upgrade: failed to stage installer bundle"
+		rm -f "$staged"
+		umount "$root_mnt"
+		return 1
 	fi
 	if ! chmod +x "$staged" || ! mv -f "$staged" "$bundle"; then
 		v "ONIE upgrade: failed to finalize installer bundle"

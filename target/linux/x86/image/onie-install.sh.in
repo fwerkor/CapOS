@@ -96,7 +96,13 @@ if [ "$actual_size" -gt "$BUILD_SIZE" ]; then
     tail -c "+$(( PAYLOAD_OFFSET + 1 ))" "$0" | head -c "$payload_size" \
         | tar -x -C "$payload_dir"
     tail -c "+$(( BUILD_SIZE + 1 ))" "$0" > "$payload_dir/sysupgrade.tgz"
-    echo "Preserved config  : $(wc -c < "$payload_dir/sysupgrade.tgz") bytes"
+    # A directly executed signed installer has an fwtool signature here,
+    # not a sysupgrade backup. Only preserve a valid tar.gz backup.
+    if tar -tzf "$payload_dir/sysupgrade.tgz" >/dev/null 2>&1; then
+        echo "Preserved config  : $(wc -c < "$payload_dir/sysupgrade.tgz") bytes"
+    else
+        rm -f "$payload_dir/sysupgrade.tgz"
+    fi
 else
     dd if="$0" bs="$PAYLOAD_OFFSET" skip=1 2>/dev/null | tar -x -C "$payload_dir"
 fi
