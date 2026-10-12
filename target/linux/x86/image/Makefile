@@ -94,12 +94,14 @@ define Build/onie-installer
 	$(TAR) --numeric-owner --owner=0 --group=0 --sort=name \
 		$(if $(SOURCE_DATE_EPOCH),--mtime=@$(SOURCE_DATE_EPOCH)) \
 		-C $@.onie/payload -cf $@.onie/payload.tar .
+	part_mib=$$(./onie-partsize.sh "$(TARGET_DIR)" "$(KDIR)/$(KERNEL_NAME)" "$(CONFIG_TARGET_ROOTFS_PARTSIZE)") && \
 	sed \
 		-e 's#@SERIAL_CONFIG@#$(strip $(GRUB_SERIAL_CONFIG))#g' \
 		-e 's#@TERMINAL_CONFIG@#$(strip $(GRUB_TERMINAL_CONFIG))#g' \
 		-e 's#@CMDLINE@#$(strip $(BOOTOPTS) $(GRUB_CONSOLE_CMDLINE))#g' \
 		-e 's#@TITLE@#$(GRUB_TITLE)#g' \
 		-e 's#@TIMEOUT@#$(GRUB_TIMEOUT)#g' \
+		-e "s#@PARTSIZE@#$$part_mib#g" \
 		./onie-install.sh.in > $@.onie/installer.sh
 	script_len=$$(wc -c < $@.onie/installer.sh | tr -d ' '); \
 	payload_len=$$(wc -c < $@.onie/payload.tar | tr -d ' '); \

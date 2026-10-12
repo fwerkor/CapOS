@@ -37,7 +37,7 @@ GRUB_TITLE='@TITLE@'
 GRUB_TIMEOUT='@TIMEOUT@'
 
 OPENWRT_VOLUME_LABEL="OPENWRT-ROOT"
-OPENWRT_PART_SIZE=512   # MiB -- OpenWrt x86 default is 104; 512 gives headroom
+OPENWRT_PART_SIZE=@PARTSIZE@   # MiB, computed from the packaged rootfs at build time
 
 echo ""
 echo "=========================================================="
