@@ -84,6 +84,7 @@ jobs:
           tests/onie_upgrade_smoke.sh
           tests/onie_disk_scope_smoke.sh
           tests/onie_image_size_smoke.sh
+          tests/onie_installer_disk_smoke.sh
 
       - name: Kconfig sanity (defconfig)
         shell: bash

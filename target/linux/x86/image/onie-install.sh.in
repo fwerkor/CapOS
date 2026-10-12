@@ -53,9 +53,18 @@ lib_dir="/lib/onie"
 [ -r "$lib_dir/onie-blkdev-common" ] && . "$lib_dir/onie-blkdev-common"
 [ -r /etc/machine.conf ] && . /etc/machine.conf
 
-# Install on the same disk that holds ONIE-BOOT (demo-installer idiom)
-blk_dev=$(blkid | awk -F: '/ONIE-BOOT/ {print $1; exit}' \
-            | sed -e 's/[0-9]*$//' -e 's/p$//')
+# ONIE mounts its own boot partition here. Do not pick the first matching
+# ONIE-BOOT label: another attached disk may contain an older installation.
+onie_part=$(awk '$2 == "/mnt/onie-boot" { print $1; exit }' /proc/mounts)
+case "$onie_part" in
+    /dev/*) onie_part=$(readlink -f "$onie_part") ;;
+    *) echo "ERROR: ONIE-BOOT is not mounted from a block device" >&2; exit 1 ;;
+esac
+[ -b "$onie_part" ] && blkid "$onie_part" | grep -q 'ONIE-BOOT' || {
+    echo "ERROR: unable to identify the mounted ONIE-BOOT partition" >&2
+    exit 1
+}
+blk_dev=$(printf '%s\n' "$onie_part" | sed -e 's/[0-9]*$//' -e 's/p$//')
 [ -b "$blk_dev" ] || {
     echo "ERROR: unable to determine ONIE install block device" >&2
     exit 1
