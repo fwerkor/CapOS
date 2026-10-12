@@ -144,7 +144,7 @@ diffconfig: FORCE
 	mkdir -p $(BIN_DIR)
 	@[ -f $(BIN_DIR)/config.buildinfo ] && \
 		[ -z "$$(find $(DIFFCONFIG_FILES) -newer $(BIN_DIR)/config.buildinfo \
-			\( -name .config -o -name conf -o -name '*.in' -o -name 'Config.*' \) \
+			\( -type d -o -name .config -o -name conf -o -name '*.in' -o -name 'Config.*' \) \
 			-print -quit 2>/dev/null)" ] || \
 		$(SCRIPT_DIR)/diffconfig.sh > $(BIN_DIR)/config.buildinfo
 
