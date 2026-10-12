@@ -30,7 +30,7 @@ jobs:
           fi
 
       - name: Find existing build comment
-        if: steps.request.outputs.requested == 'true'
+        if: steps.request.outputs.requested == 'true' && github.event.pull_request.head.repo.full_name == github.repository
         id: existing
         uses: peter-evans/find-comment@v4
         with:
@@ -39,7 +39,7 @@ jobs:
           body-includes: 'Build Results for'
 
       - name: Post build progress
-        if: steps.request.outputs.requested == 'true'
+        if: steps.request.outputs.requested == 'true' && github.event.pull_request.head.repo.full_name == github.repository
         id: progress
         uses: peter-evans/create-or-update-comment@v5
         with:
@@ -100,7 +100,7 @@ jobs:
           path: build-artifacts.tar.gz
 
       - name: Post build result
-        if: steps.request.outputs.requested == 'true' && always()
+        if: steps.request.outputs.requested == 'true' && github.event.pull_request.head.repo.full_name == github.repository && always()
         uses: peter-evans/create-or-update-comment@v5
         with:
           issue-number: ${{ github.event.pull_request.number }}
