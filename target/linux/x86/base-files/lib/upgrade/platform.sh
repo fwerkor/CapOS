@@ -1,22 +1,41 @@
 RAMFS_COPY_BIN='grub-bios-setup grub-editenv'
 
+# Resolve the disk used to boot this system. ONIE uses a full GPT PARTUUID,
+# which export_bootdevice does not resolve on all OpenWrt configurations.
+onie_boot_diskseq() {
+	local rootpart uevent diskseq
+	rootpart=$(cmdline_get_var root)
+	case "$rootpart" in
+		PARTUUID=*)
+			for uevent in /sys/class/block/*/uevent; do
+				grep -Fiqx "PARTUUID=${rootpart#PARTUUID=}" "$uevent" 2>/dev/null || continue
+				diskseq=$(sed -n 's/^DISKSEQ=//p' "$uevent")
+				[ -n "$diskseq" ] && { echo "$diskseq"; return 0; }
+			done
+			;;
+	esac
+	export_bootdevice && [ -n "$BOOTDEV_DISKSEQ" ] || return 1
+	echo "$BOOTDEV_DISKSEQ"
+}
+
 find_partname_dev() {
-	local partname="$1"
+	local partname="$1" diskseq="$2"
 	local uevent dev
 	for uevent in /sys/class/block/*/uevent; do
-		grep -q "^PARTNAME=$partname\$" "$uevent" 2>/dev/null || continue
+		grep -Fxq "PARTNAME=$partname" "$uevent" 2>/dev/null || continue
+		grep -Fxq "DISKSEQ=$diskseq" "$uevent" 2>/dev/null || continue
 		dev=$(sed -n 's/^DEVNAME=//p' "$uevent")
 		[ -n "$dev" ] && { echo "/dev/$dev"; return 0; }
 	done
 	return 1
 }
 
-# True when the boot disk hosts ONIE: both ONIE-BOOT and OPENWRT-ROOT
-# GPT-labelled partitions present.
+# Only recognize ONIE partitions on the disk that booted this system.
 is_onie_install() {
-	grep -q PARTNAME=ONIE-BOOT /sys/class/block/*/uevent 2>/dev/null || return 1
-	grep -q PARTNAME=OPENWRT-ROOT /sys/class/block/*/uevent 2>/dev/null || return 1
-	return 0
+	local diskseq
+	diskseq=$(onie_boot_diskseq) || return 1
+	find_partname_dev ONIE-BOOT "$diskseq" >/dev/null &&
+		find_partname_dev OPENWRT-ROOT "$diskseq" >/dev/null
 }
 
 # Reinstall via ONIE: append the preserved-config tarball to the installer
@@ -29,11 +48,14 @@ platform_do_upgrade_onie() {
 	local image="$1"
 	local backup="$UPGRADE_BACKUP"
 
-	local root_dev onie_dev
-	root_dev=$(find_partname_dev OPENWRT-ROOT) || {
+	local diskseq root_dev onie_dev
+	diskseq=$(onie_boot_diskseq) || {
+		v "ONIE upgrade: unable to identify boot disk"; return 1;
+	}
+	root_dev=$(find_partname_dev OPENWRT-ROOT "$diskseq") || {
 		v "ONIE upgrade: OPENWRT-ROOT not found"; return 1;
 	}
-	onie_dev=$(find_partname_dev ONIE-BOOT) || {
+	onie_dev=$(find_partname_dev ONIE-BOOT "$diskseq") || {
 		v "ONIE upgrade: ONIE-BOOT not found"; return 1;
 	}
 

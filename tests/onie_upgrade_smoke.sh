@@ -9,6 +9,7 @@ trap 'rm -rf "$work"' EXIT
 source <(sed -e "s@/tmp/upgrade-root@$work/root@g" \
              -e "s@/tmp/upgrade-onie@$work/onie@g" \
              "$repo/target/linux/x86/base-files/lib/upgrade/platform.sh")
+onie_boot_diskseq() { printf '12\n'; }
 find_partname_dev() { printf '/dev/test-%s\n' "$1"; }
 mount() { mkdir -p "${@: -1}"; }
 umount() { :; }
