@@ -47,13 +47,30 @@ platform_do_upgrade_onie() {
 	}
 
 	local bundle="$root_mnt/onie-installer-x86_64"
+	local staged="$bundle.tmp"
 	v "ONIE upgrade: writing bundle to $bundle"
 	if [ -s "$backup" ]; then
-		cat "$image" "$backup" > "$bundle"
+		if ! cat "$image" "$backup" > "$staged"; then
+			v "ONIE upgrade: failed to stage installer bundle"
+			rm -f "$staged"
+			umount "$root_mnt"
+			return 1
+		fi
 	else
-		cp "$image" "$bundle"
+		if ! cp "$image" "$staged"; then
+			v "ONIE upgrade: failed to stage installer bundle"
+			rm -f "$staged"
+			umount "$root_mnt"
+			return 1
+		fi
 	fi
-	chmod +x "$bundle"
+	if ! chmod +x "$staged" || ! mv -f "$staged" "$bundle"; then
+		v "ONIE upgrade: failed to finalize installer bundle"
+		rm -f "$staged"
+		umount "$root_mnt"
+		return 1
+	fi
+	sync
 
 	# One-shot: OpenWrt's grub.cfg reads next_entry and chainloads ONIE.
 	grub-editenv "$root_mnt/boot/grub/grubenv" set next_entry=ONIE || {
