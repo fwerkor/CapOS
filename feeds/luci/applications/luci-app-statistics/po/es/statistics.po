@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-10 03:41+0200\n"
-"PO-Revision-Date: 2026-04-04 03:09+0000\n"
+"PO-Revision-Date: 2026-09-23 19:06+0000\n"
 "Last-Translator: Franco Castillo <castillofrancodamian@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsstatistics/es/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:54
 msgid "%H: Attenuation on %pi"
@@ -1363,7 +1363,7 @@ msgstr "Zócalo %s activo"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/email.js:15
 msgid "Socket file"
-msgstr "Fichero de sockets"
+msgstr "Archivo de sockets"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/email.js:19
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/unixsock.js:19
@@ -1701,8 +1701,8 @@ msgid ""
 "The ping plugin will send icmp echo replies to selected hosts and measure "
 "the roundtrip time for each host."
 msgstr ""
-"El complemento ping enviará ecos ICMP a las máquinas elegidas para medir el "
-"tiempo de viaje para cada host."
+"El complemento ping enviará solicitudes ICMP Echo a los hosts seleccionados "
+"y medirá el tiempo de ida y vuelta de cada uno."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/processes.js:7
 msgid ""
@@ -1745,7 +1745,7 @@ msgid ""
 "leases."
 msgstr ""
 "El complemento «splash leases» usa libuci para recopilar estadísticas sobre "
-"los arrendamientos de salpicaduras."
+"las asignaciones splash."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/tcpconns.js:7
 msgid ""
@@ -2042,3 +2042,60 @@ msgstr "reduce el tamaño RRD"
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/tcpconns.js:45
 msgid "summary of all ports"
 msgstr "resumen de todos los puertos"
+
+#~ msgid "Bitrate"
+#~ msgstr "Tasa de bits"
+
+#~ msgid "DSL Flags"
+#~ msgstr "Indicadores DSL"
+
+#~ msgid "DSL Line Uptime"
+#~ msgstr "Tiempo de actividad del DSL"
+
+#~ msgid "DSL Signal"
+#~ msgstr "Señal del DSL"
+
+#~ msgid "Errors"
+#~ msgstr "Errores"
+
+#~ msgid "Line Attenuation Down (LATN)"
+#~ msgstr "Atenuación de línea descendente (LATN)"
+
+#~ msgid "Line Attenuation Up (LATN)"
+#~ msgstr "Atenuación de línea ascendente (LATN)"
+
+#~ msgid "Max. Attainable Data Rate (ATTNDR) Down"
+#~ msgstr "Velocidad máxima de datos descendentes alcanzable (ATTNDR)"
+
+#~ msgid "Max. Attainable Data Rate (ATTNDR) Up"
+#~ msgstr "Velocidad máxima de datos ascendentes alcanzable (ATTNDR)"
+
+#~ msgid "Noise Margin Down (SNR)"
+#~ msgstr "Reducción del margen del ruido (SNR)"
+
+#~ msgid "Noise Margin Up (SNR)"
+#~ msgstr "Aumento del margen de ruido (SNR)"
+
+#~ msgid "Rx Corrupted Far"
+#~ msgstr "Rx remoto corrupto"
+
+#~ msgid "Rx Corrupted Near"
+#~ msgstr "Rx cercano corrupto"
+
+#~ msgid "Rx Retransmitted Far"
+#~ msgstr "Rx remoto retransmitido"
+
+#~ msgid "Rx Retransmitted Near"
+#~ msgstr "Retransmisión del receptor en el extremo cercano"
+
+#~ msgid "Signal Attenuation Down (SATN)"
+#~ msgstr "atenuación de la señal hacia abajo (satn)"
+
+#~ msgid "Signal Attenuation Up (SATN)"
+#~ msgstr "atenuación de la señal hacia arriba (satn)"
+
+#~ msgid "Tx Retransmitted Far"
+#~ msgstr "TX retransmitido lejos"
+
+#~ msgid "Tx Retransmitted Near"
+#~ msgstr "TX retransmitido cerca"

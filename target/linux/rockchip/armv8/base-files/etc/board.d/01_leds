@@ -8,6 +8,7 @@ boardname="${board##*,}"
 board_config_update
 
 case $board in
+friendlyarm,nanopi-m5|\
 friendlyarm,nanopi-r2c|\
 friendlyarm,nanopi-r2c-plus|\
 friendlyarm,nanopi-r2s|\
@@ -43,6 +44,12 @@ friendlyarm,nanopi-r76s)
 hinlink,h28k)
 	ucidef_set_led_netdev "wan" "WAN" "blue:wan" "eth1"
 	ucidef_set_led_netdev "lan" "LAN" "amber:lan" "eth0"
+	;;
+hinlink,h66k)
+	ucidef_set_led_netdev "wan" "WAN" "blue:wan" "eth0"
+	;;
+hinlink,h68k)
+	ucidef_set_led_netdev "wan" "WAN" "blue:wan" "eth1"
 	;;
 radxa,e20c)
 	ucidef_set_led_netdev "lan" "LAN" "green:lan" "eth0"

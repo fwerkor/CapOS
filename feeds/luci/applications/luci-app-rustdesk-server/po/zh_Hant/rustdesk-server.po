@@ -18,8 +18,7 @@ msgstr "ALWAYS_USE_RELAY"
 msgid ""
 "Additional rendezvous servers. Add one server per entry (hostname or "
 "hostname:port)"
-msgstr ""
-"額外會合伺服器。每個條目新增一個伺服器 (「主機名稱」或「主機名稱:連接埠」)"
+msgstr "額外會合伺服器。每個條目新增一個伺服器 (「主機名稱」或「主機名稱:連接埠」)"
 
 #: applications/luci-app-rustdesk-server/htdocs/luci-static/resources/view/rustdesk-server/general.js:222
 msgid "All existing clients will need to be reconfigured."

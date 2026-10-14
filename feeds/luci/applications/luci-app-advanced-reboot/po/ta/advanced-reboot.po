@@ -240,3 +240,45 @@ msgstr "எச்சரிக்கை: சாதன தகவல்களைப
 #: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced-reboot.js:56
 msgid "invalid argument"
 msgstr ""
+
+#~ msgid ""
+#~ "WARNING: Power off might result in a reboot on a device which doesn't "
+#~ "support power off.<br /><br /> Click \"Proceed\" below to power off your "
+#~ "device."
+#~ msgstr ""
+#~ "எச்சரிக்கை: பவர் ஆஃப் ஒரு சாதனத்தில் மறுதொடக்கம் செய்யக்கூடும், இது சக்தியை ஆதரிக்காது."
+#~ "<br /><br />உங்கள் சாதனத்தை இயக்கக் கீழே உள்ள \"தொடரவும்\" என்பதைக் கிளிக் செய்க."
+
+#~ msgid "Compressed"
+#~ msgstr "சுருக்கப்பட்டது"
+
+#~ msgid "Confirm"
+#~ msgstr "உறுதிப்படுத்தவும்"
+
+#~ msgid "Grant UCI and file access for luci-app-advanced-reboot"
+#~ msgstr "லூசி-ஆப்-மேம்பட்ட-மறுபிரவேசத்திற்கான யு.சி.ஐ மற்றும் கோப்பு அணுகலை வழங்கவும்"
+
+#~ msgid "No access to fw_printenv or fw_printenv!"
+#~ msgstr "FW_PRINTENV அல்லது FW_PRINTENV க்கு அணுகல் இல்லை!"
+
+#~ msgid "Reboot Device to an Alternative Partition"
+#~ msgstr "மாற்று பகிர்வுக்கு சாதனத்தை மறுதொடக்கம் செய்யுங்கள்"
+
+#~ msgid "Reboot to alternative partition..."
+#~ msgstr "மாற்று பகிர்வுக்கு மறுதொடக்கம் செய்யுங்கள் ..."
+
+#~ msgid ""
+#~ "WARNING: An alternative partition might have its own settings and "
+#~ "completely different firmware.<br /><br /> As your network configuration "
+#~ "and WiFi SSID/password on alternative partition might be different, you "
+#~ "might have to adjust your computer settings to be able to access your "
+#~ "device once it reboots.<br /><br /> Please also be aware that alternative "
+#~ "partition firmware might not provide an easy way to switch active "
+#~ "partition and boot back to the currently active partition.<br /><br /> "
+#~ "Click \"Proceed\" below to reboot device to an alternative partition."
+#~ msgstr ""
+#~ "எச்சரிக்கை: ஒரு மாற்று பகிர்வில் அதன் சொந்த அமைப்புகள் மற்றும் முற்றிலும் மாறுபட்ட "
+#~ "ஃபார்ம்வேர்கள் இருக்கலாம். <br /><br />உங்கள் சாதனத்தை மறுதொடக்கம் செய்தவுடன் அணுகவும். "
+#~ "<br /><br />மாற்று பகிர்வுக்குச் சாதனத்தை மறுதொடக்கம் செய்யக் கீழே உள்ள \"தொடரவும்\" "
+#~ "என்பதைக் சொடுக்கு செய்க.<br /><br />மாற்று பகிர்வுக்குச் சாதனத்தை மறுதொடக்கம் செய்யக் "
+#~ "கீழே உள்ள \"தொடரவும்\" என்பதைக் சொடுக்கவும்."

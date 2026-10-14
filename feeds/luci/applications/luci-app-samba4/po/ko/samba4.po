@@ -27,8 +27,8 @@ msgid ""
 "Allow legacy smb(v1)/Lanman connections, needed for older devices without "
 "smb(v2.1/3) support."
 msgstr ""
-"구형 SMB(v1)/LANMAN 연결을 허용합니다. SMB v2.1/3을 지원하지 않는 오래된 기기"
-"에 필요합니다."
+"구형 SMB(v1)/LANMAN 연결을 허용합니다. SMB v2.1/3을 지원하지 않는 오래된 "
+"기기에 필요합니다."
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:117
 msgid "Allowed users"
@@ -146,8 +146,8 @@ msgid ""
 "On lower-end devices may increase speeds, by forcing synchronous I/O instead "
 "of the default asynchronous."
 msgstr ""
-"저사양 기기에서 기본값인 비동기식 I/O 대신 동기식 I/O를 강제 적용하여 처리 속"
-"도를 높일 수 있습니다."
+"저사양 기기에서 기본값인 비동기식 I/O 대신 동기식 I/O를 강제 적용하여 처리 "
+"속도를 높일 수 있습니다."
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:99
 msgid "Path"
@@ -158,8 +158,8 @@ msgid ""
 "Please add directories to share. Each directory refers to a folder on a "
 "mounted device."
 msgstr ""
-"공유할 디렉터리를 추가해 주세요. 각 디렉터리는 마운트된 장치의 폴더를 가리킵"
-"니다."
+"공유할 디렉터리를 추가해 주세요. 각 디렉터리는 마운트된 장치의 폴더를 "
+"가리킵니다."
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:109
 msgid "Read-only"
@@ -177,8 +177,8 @@ msgid ""
 "Settings' tab."
 msgstr ""
 "이 내용은 Samba 설정 파일의 생성 기준이 되는 '/etc/samba/smb.conf.template' "
-"파일의 내용입니다. 파이프 기호('|')로 둘러싸인 값은 변경하지 마세요. 해당 항"
-"목은 '일반 설정' 탭의 설정값이 반영됩니다."
+"파일의 내용입니다. 파이프 기호('|')로 둘러싸인 값은 변경하지 마세요. 해당 "
+"항목은 '일반 설정' 탭의 설정값이 반영됩니다."
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:153
 msgid "Time-machine size in GB"

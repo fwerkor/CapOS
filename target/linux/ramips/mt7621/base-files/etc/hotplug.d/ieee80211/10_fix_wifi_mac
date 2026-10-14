@@ -54,11 +54,6 @@ case "$board" in
 		[ "$PHYNBR" = "1" ] && \
 			macaddr_add $label_mac 2 > /sys${DEVPATH}/macaddress
 		;;
-	dlink,dir-3040-a1)
-		lan_mac_addr="$(mtd_get_mac_binary factory 0xe000)"
-		[ "$PHYNBR" = "0" ] && \
-			macaddr_add $lan_mac_addr 2 > /sys${DEVPATH}/macaddress
-		;;
 	dlink,dir-853-a3)
 		[ "$PHYNBR" = "0" ] && \
 			macaddr_setbit_la "$(mtd_get_mac_binary factory 0xe000)" \
@@ -165,7 +160,8 @@ case "$board" in
 		[ "$PHYNBR" = "0" ] && \
 			macaddr_setbit_la "$(get_mac_label)" > /sys${DEVPATH}/macaddress
 		;;
-	ruijie,rg-ew1200g-pro-v1.1)
+	ruijie,rg-ew1200g-pro-v1.1|\
+	ruijie,rg-ew1300g-v1)
 		hw_mac_addr="$(mtd_get_mac_ascii product_info ethaddr)"
 		[ "$PHYNBR" = "0" ] && macaddr_add $hw_mac_addr 1 > /sys${DEVPATH}/macaddress
 		[ "$PHYNBR" = "1" ] && macaddr_add $hw_mac_addr 2 > /sys${DEVPATH}/macaddress

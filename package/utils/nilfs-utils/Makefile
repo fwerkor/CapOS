@@ -8,13 +8,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=nilfs-utils
-PKG_VERSION:=2.2.17
+PKG_VERSION:=2.3.1
 PKG_RELEASE:=1
 PKG_URL:=https://nilfs.sourceforge.io
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL:=https://nilfs.sourceforge.io/download/
-PKG_HASH:=cc53a2aa7d4f6878d4cdbace5140f2877fb38cf69136d534049534ffb327c51e
+PKG_HASH:=bf89d7ff4579c0df294b3493ed412cd4970b0a1eaaecb658e8f6c730153f0148
 
 PKG_MAINTAINER:=Pavlo Samko <bulldozerbsg@gmail.com>
 PKG_LICENSE:=GPL-2.0
@@ -63,19 +63,12 @@ define Package/libnilfsgc
   DEPENDS:=+libnilfs
 endef
 
-define Package/libnilfscleaner
-  SECTION:=libs
-  CATEGORY:=Libraries
-  TITLE:=libnilfscleaner
-  DEPENDS:=+libuuid +nilfs-cleanerd @KERNEL_POSIX_MQUEUE
-endef
-
 define Package/nilfs-clean
   SECTION:=utils
   CATEGORY:=Utilities
   SUBMENU:=Filesystem
   TITLE:=run garbage collector on NILFS file system
-  DEPENDS:=+libnilfs +libnilfscleaner
+  DEPENDS:=+libuuid +libnilfs @KERNEL_POSIX_MQUEUE
 endef
 
 define Package/nilfs-resize
@@ -121,26 +114,26 @@ endef
 # libmount is used and support of the selinux context mount options
 # depends on the libmount that distro provides.
 CONFIGURE_ARGS += \
-	--enable-usrmerge=no \
+	--enable-usrmerge \
 	--without-selinux
 
 define Package/nilfs-mkfs/install
-	$(INSTALL_DIR) $(1)/sbin
-	$(CP) $(PKG_INSTALL_DIR)/sbin/mkfs.nilfs2 $(1)/sbin/
+	$(INSTALL_DIR) $(1)/usr/sbin
+	$(CP) $(PKG_INSTALL_DIR)/usr/sbin/mkfs.nilfs2 $(1)/usr/sbin/
 endef
 
 define Package/nilfs-cleanerd/install
 	$(INSTALL_DIR) $(1)/etc
 	$(CP) $(PKG_INSTALL_DIR)/etc/nilfs_cleanerd.conf $(1)/etc/
 
-	$(INSTALL_DIR) $(1)/sbin
-	$(CP) $(PKG_INSTALL_DIR)/sbin/nilfs_cleanerd $(1)/sbin/
+	$(INSTALL_DIR) $(1)/usr/sbin
+	$(CP) $(PKG_INSTALL_DIR)/usr/sbin/nilfs_cleanerd $(1)/usr/sbin/
 endef
 
 define Package/nilfs-mount/install
-	$(INSTALL_DIR) $(1)/sbin
-	$(CP) $(PKG_INSTALL_DIR)/sbin/mount.nilfs2 $(1)/sbin/
-	$(CP) $(PKG_INSTALL_DIR)/sbin/umount.nilfs2 $(1)/sbin/
+	$(INSTALL_DIR) $(1)/usr/sbin
+	$(CP) $(PKG_INSTALL_DIR)/usr/sbin/mount.nilfs2 $(1)/usr/sbin/
+	$(CP) $(PKG_INSTALL_DIR)/usr/sbin/umount.nilfs2 $(1)/usr/sbin/
 endef
 
 define Package/libnilfs/install
@@ -151,11 +144,6 @@ endef
 define Package/libnilfsgc/install
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libnilfsgc.so* $(1)/usr/lib/
-endef
-
-define Package/libnilfscleaner/install
-	$(INSTALL_DIR) $(1)/usr/lib
-	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libnilfscleaner.so* $(1)/usr/lib/
 endef
 
 define Package/nilfs-clean/install
@@ -196,7 +184,6 @@ $(eval $(call BuildPackage,nilfs-cleanerd))
 $(eval $(call BuildPackage,nilfs-mount))
 $(eval $(call BuildPackage,libnilfs))
 $(eval $(call BuildPackage,libnilfsgc))
-$(eval $(call BuildPackage,libnilfscleaner))
 $(eval $(call BuildPackage,nilfs-clean))
 $(eval $(call BuildPackage,nilfs-resize))
 $(eval $(call BuildPackage,nilfs-tune))

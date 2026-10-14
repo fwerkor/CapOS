@@ -5,19 +5,18 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=postgresql
-PKG_VERSION:=17.5
-PKG_RELEASE:=3
+PKG_VERSION:=18.6
+PKG_RELEASE:=1
+
 PKG_MAINTAINER:=Daniel Golle <daniel@makrotopia.org>
 PKG_LICENSE:=PostgreSQL
+PKG_LICENSE_FILES:=COPYRIGHT
 PKG_CPE_ID:=cpe:/a:postgresql:postgresql
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
-PKG_SOURCE_URL:=\
-	https://ftp.postgresql.org/pub/source/v$(PKG_VERSION) \
-	http://ftp.postgresql.org/pub/source/v$(PKG_VERSION) \
-	ftp://ftp.postgresql.org/pub/source/v$(PKG_VERSION)
+PKG_SOURCE_URL:=https://ftp.postgresql.org/pub/source/v$(PKG_VERSION)
 
-PKG_HASH:=fcb7ab38e23b264d1902cb25e6adafb4525a6ebcbd015434aeef9eda80f528d8
+PKG_HASH:=555610c24d53e4316da5b7d3fc25c279d96856d5e0e23ee308c328c5fa881d9f
 
 PKG_BUILD_FLAGS:=no-mips16
 PKG_FIXUP:=autoreconf
@@ -33,7 +32,7 @@ define Package/libpq
   CATEGORY:=Libraries
   DEPENDS:=+libpthread
   TITLE:=PostgreSQL client library
-  URL:=http://www.postgresql.org/
+  URL:=https://www.postgresql.org/
   SUBMENU:=Database
 endef
 
@@ -46,7 +45,7 @@ define Package/pgsql-cli
   CATEGORY:=Utilities
   DEPENDS:=+libncursesw +libpq +libreadline +librt +zlib
   TITLE:=Command Line Interface (CLI) to PostgreSQL databases
-  URL:=http://www.postgresql.org/
+  URL:=https://www.postgresql.org/
   SUBMENU:=Database
 endef
 
@@ -59,7 +58,7 @@ define Package/pgsql-cli-extra
   CATEGORY:=Utilities
   DEPENDS:=+libncursesw +libpq +libreadline +librt +zlib
   TITLE:=Command Line extras for PostgreSQL databases
-  URL:=http://www.postgresql.org/
+  URL:=https://www.postgresql.org/
   SUBMENU:=Database
 endef
 
@@ -72,7 +71,7 @@ define Package/pgsql-server
   CATEGORY:=Utilities
   DEPENDS:=+pgsql-cli +blockd
   TITLE:=PostgreSQL databases Server
-  URL:=http://www.postgresql.org/
+  URL:=https://www.postgresql.org/
   SUBMENU:=Database
   USERID:=postgres=5432:postgres=5432
 endef
@@ -237,7 +236,6 @@ define Build/InstallDev
 	$(CP) $(PKG_INSTALL_DIR)/usr/include/pg_config.h $(1)/usr/include/
 	$(CP) $(PKG_INSTALL_DIR)/usr/include/pg_config_manual.h $(1)/usr/include/
 	$(CP) $(PKG_INSTALL_DIR)/usr/include/postgres_ext.h $(1)/usr/include/
-	$(CP) $(PKG_INSTALL_DIR)/usr/include/pg_config_ext.h $(1)/usr/include/
 	$(CP) $(PKG_INSTALL_DIR)/usr/include/postgresql $(1)/usr/include/
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libpq.{a,so*} $(1)/usr/lib/

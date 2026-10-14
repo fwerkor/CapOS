@@ -13,6 +13,7 @@ PKG_RELEASE:=1
 
 PKG_LICENSE:=GPL-2.0-only
 PKG_LICENSE_FILES:=COPYING
+PKG_CPE_ID:=cpe:/a:jool:jool
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/NICMx/Jool.git
@@ -84,8 +85,7 @@ define KernelPackage/jool-netfilter
 	DEPENDS:= \
 		@IPV6 \
 		+kmod-crypto-md5 \
-		+kmod-nf-conntrack \
-		+kmod-nf-conntrack6
+		+kmod-nf-conntrack
 	FILES:= \
 		$(PKG_BUILD_DIR)/src/mod/common/jool_common.$(LINUX_KMOD_SUFFIX) \
 		$(PKG_BUILD_DIR)/src/mod/nat64/jool.$(LINUX_KMOD_SUFFIX) \

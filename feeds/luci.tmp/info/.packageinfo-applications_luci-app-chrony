@@ -1,5 +1,5 @@
 Source-Makefile: feeds/luci/applications/luci-app-chrony/Makefile
-Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host LUCI_UTMIN:ucode/host 
 
 Package: luci-app-chrony
 Submenu: 3. Applications
@@ -37,6 +37,25 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-chrony - Čeština (Czech)
+@@
+
+Package: luci-i18n-chrony-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-chrony
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-chrony-de-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-chrony - de translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-chrony - Deutsch (German)
 @@
 
 Package: luci-i18n-chrony-es
@@ -153,6 +172,25 @@ Hidden: 1
 Description:     Translation for luci-app-chrony - Polski (Polish)
 @@
 
+Package: luci-i18n-chrony-pt
+Default: LUCI_LANG_pt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-chrony
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-chrony-pt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-chrony - pt translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-chrony - Português (Portuguese)
+@@
+
 Package: luci-i18n-chrony-pt-br
 Default: LUCI_LANG_pt_BR||(ALL&&m)
 Version: x
@@ -172,6 +210,25 @@ Hidden: 1
 Description:     Translation for luci-app-chrony - Português do Brasil (Brazilian Portuguese)
 @@
 
+Package: luci-i18n-chrony-ro
+Default: LUCI_LANG_ro||(ALL&&m)
+Version: x
+Depends: +libc luci-app-chrony
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-chrony-ro-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-chrony - ro translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-chrony - Română (Romanian)
+@@
+
 Package: luci-i18n-chrony-ru
 Default: LUCI_LANG_ru||(ALL&&m)
 Version: x
@@ -189,6 +246,63 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-chrony - Русский (Russian)
+@@
+
+Package: luci-i18n-chrony-sv
+Default: LUCI_LANG_sv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-chrony
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-chrony-sv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-chrony - sv translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-chrony - Svenska (Swedish)
+@@
+
+Package: luci-i18n-chrony-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-chrony
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-chrony-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-chrony - ta translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-chrony - Tamil (Tamil)
+@@
+
+Package: luci-i18n-chrony-tr
+Default: LUCI_LANG_tr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-chrony
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-chrony-tr-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-chrony - tr translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-chrony - Türkçe (Turkish)
 @@
 
 Package: luci-i18n-chrony-uk

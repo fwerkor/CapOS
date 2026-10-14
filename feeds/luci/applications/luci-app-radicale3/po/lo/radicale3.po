@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-03 08:19+0000\n"
+"PO-Revision-Date: 2026-07-24 15:15+0000\n"
 "Last-Translator: BoneNI <bounkirdni@gmail.com>\n"
 "Language-Team: Lao <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsradicale3/lo/>\n"
@@ -8,12 +8,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.17.1\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:288
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:298
 msgid "'Plaintext Password' and 'Confirm Plaintext Password' do not match"
-msgstr "'ລະຫັດຜ່ານແບບບໍ່ເຂົ້າລະຫັດ' ແລະ 'ຢືນຢັນລະຫັດຜ່ານແບບບໍ່ເຂົ້າລະຫັດ' ບໍ່ຕົງກັນ"
+msgstr ""
+"'ລະຫັດຜ່ານແບບບໍ່ເຂົ້າລະຫັດ' ແລະ 'ຢືນຢັນລະຫັດຜ່ານແບບບໍ່ເຂົ້າລະຫັດ' ບໍ່ຕົງກັນ"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:397
 msgid ""
@@ -195,9 +196,9 @@ msgid ""
 "remains the existing hash (you can also put your own hash value for the type "
 "of hash listed above)."
 msgstr ""
-"ຖ້າມີການຕື່ມ 'ລະຫັດຜ່ານແບບບໍ່ເຂົ້າລະຫັດ' ແລະ ຕົງກັບ 'ຢືນຢັນລະຫັດຜ່ານແບບບໍ່ເຂົ້າລະຫັດ' "
-"ຊ່ອງນີ້ຈະກາຍເປັນຄ່າແຮຊ (hash) ຂອງລະຫັດຜ່ານນັ້ນ, ຖ້າບໍ່ດັ່ງນັ້ນຊ່ອງນີ້ຈະຍັງຄົງເປັນຄ່າແຮຊເດີມ "
-"(ທ່ານສາມາດໃສ່ຄ່າແຮຊຂອງທ່ານເອງສຳລັບປະເພດການແຮຊທີ່ລະບຸໄວ້ຂ້າງເທິງ)."
+"ຖ້າມີການຕື່ມ 'ລະຫັດຜ່ານແບບບໍ່ເຂົ້າລະຫັດ' ແລະ ຕົງກັບ 'ຢືນຢັນລະຫັດຜ່ານແບບບໍ່ເຂົ້າລະຫັດ' ຊ່ອງນີ້ຈະກາຍເປັນຄ່"
+"າແຮຊ (hash) ຂອງລະຫັດຜ່ານນັ້ນ, ຖ້າບໍ່ດັ່ງນັ້ນຊ່ອງນີ້ຈະຍັງຄົງເປັນຄ່າແຮຊເດີມ (ທ່ານສາມາດໃສ່ຄ່າແຮຊຂອງທ່ານ"
+"ເອງສຳລັບປະເພດການແຮຊທີ່ລະບຸໄວ້ຂ້າງເທິງ)."
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:458
 msgid "Info"
@@ -255,7 +256,8 @@ msgstr "ຫຼາຍໄຟລ໌ໃນລະບົບຈັດເກັບຂໍ
 msgid ""
 "Multiple files on filesystem wit no file-based locking. Must only be used "
 "with a single process."
-msgstr "ຫຼາຍໄຟລ໌ໃນລະບົບຈັດເກັບຂໍ້ມູນແບບບໍ່ມີການລັອກໄຟລ໌. ຕ້ອງໃຊ້ກັບຂະບວນການດຽວເທົ່ານັ້ນ."
+msgstr ""
+"ຫຼາຍໄຟລ໌ໃນລະບົບຈັດເກັບຂໍ້ມູນແບບບໍ່ມີການລັອກໄຟລ໌. ຕ້ອງໃຊ້ກັບຂະບວນການດຽວເທົ່ານັ້ນ."
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:57
 msgid "Need a listen address"
@@ -344,7 +346,7 @@ msgstr "ຜູ້ໃຊ້ Radicale3"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:200
 msgid "Realm"
-msgstr "ຂອບເຂດ (Realm)"
+msgstr "Realm"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:470
 msgid "Redact passwords in logs"
@@ -444,7 +446,8 @@ msgstr "ຊື່ຜູ້ໃຊ້ນີ້ມີຢູ່ແລ້ວ"
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:254
 msgid ""
 "Username can only contain letters, numbers, dots, underscores and hyphens"
-msgstr "ຊື່ຜູ້ໃຊ້ສາມາດບັນຈຸໄດ້ພຽງແຕ່ຕົວອັກສອນ, ຕົວເລກ, ຈຸດ, ຂີດກ້ອງ ແລະ ຂີດກາງເທົ່ານັ້ນ"
+msgstr ""
+"ຊື່ຜູ້ໃຊ້ສາມາດບັນຈຸໄດ້ພຽງແຕ່ຕົວອັກສອນ, ຕົວເລກ, ຈຸດ, ຂີດກ້ອງ ແລະ ຂີດກາງເທົ່ານັ້ນ"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:246
 msgid "Username is required"
@@ -489,4 +492,5 @@ msgstr "ຊື່ໄຟລ໌ທີ່ມີຮູບແບບ htpasswd"
 
 #: applications/luci-app-radicale3/htdocs/luci-static/resources/view/radicale3.js:179
 msgid "password file can have users with a mix of support encryption methods"
-msgstr "ໄຟລ໌ລະຫັດຜ່ານສາມາດມີຜູ້ໃຊ້ທີ່ໃຊ້ປະສົມປະສານວິທີການເຂົ້າລະຫັດຕ່າງໆທີ່ຮອງຮັບໄດ້"
+msgstr ""
+"ໄຟລ໌ລະຫັດຜ່ານສາມາດມີຜູ້ໃຊ້ທີ່ໃຊ້ປະສົມປະສານວິທີການເຂົ້າລະຫັດຕ່າງໆທີ່ຮອງຮັບໄດ້"

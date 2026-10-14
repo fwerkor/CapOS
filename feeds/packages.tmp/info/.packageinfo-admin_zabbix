@@ -1,370 +1,279 @@
 Source-Makefile: feeds/packages/admin/zabbix/Makefile
 
-Package: zabbix-agentd-nossl
+Package: zabbix-agentd
 Submenu: Zabbix
-Version: 7.0.25-r1
-Depends: +libc +BUILD_NLS:libiconv-full +libevent2-pthreads +libpcre2 +zlib
+Version: 7.0.30-r2
+Depends: +libc +BUILD_NLS:libiconv-full +libevent2-pthreads +libpcre2 +zlib +ZABBIX_CURL:libcurl +ZABBIX_CURL_GNUTLS:libcurl-gnutls +ZABBIX_GNUTLS:libgnutls +ZABBIX_LDAP:libopenldap +ZABBIX_NETSNMP:libnetsnmp-ssl +ZABBIX_OPENSSL:libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: @zabbix-agentd-nossl-any zabbix-agentd
-Build-Variant: nossl
-Default-Variant: nossl
+Provides: @zabbix-agentd-any @zabbix-agentd-any zabbix-agentd-ssl zabbix-agentd-openssl
+Build-Variant: full
+Default-Variant: full
 Section: admin
 Category: Administration
 Repository: base
-Title: Zabbix agentd (no SSL)
+Title: Zabbix agentd (full/with TLS)
 Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
 Require-User: zabbix-agent=53:zabbix-agent=53
-Source: zabbix-7.0.25.tar.gz
+Source: zabbix-7.0.30.tar.gz
 License: AGPL-3.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:zabbix:zabbix
 URL: https://www.zabbix.com/
 Type: ipkg
-Description: Zabbix agentd (no SSL)
+Description: Zabbix is a software that monitors numerous parameters of a network and the
+health and integrity of servers, virtual machines, applications, services,
+databases, websites, the cloud and more. Zabbix offers excellent reporting and
+data visualization features based on the stored data.
+.
+Only one variant may be installed per binary (e.g. agent and agentd-basic cannot
+both be installed on the same system).
+.
+Provides the full functionality available in OpenWrt with OpenSSL.
+Includes NetSNMP, cURL, and OpenLDAP support.
+Requires a database server.
+.
+Provides 'Zabbix Agent'.
+.
+Note that 'Zabbix Agent' does not directly use the database, but sends data to
+a 'Zabbix Server' or a 'Zabbix Proxy', which writes to a database.
+@@
+Config:
+	source "feeds/packages/admin/zabbix/Config.in"
 @@
 
-Package: zabbix-agentd-openssl
+Package: zabbix-agentd-basic
 Submenu: Zabbix
-Version: 7.0.25-r1
+Version: 7.0.30-r2
 Depends: +libc +BUILD_NLS:libiconv-full +libevent2-pthreads +libpcre2 +zlib +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: @zabbix-agentd-openssl-any zabbix-agentd zabbix-agentd-ssl
-Build-Variant: openssl
+Provides: @zabbix-agentd-basic-any @zabbix-agentd-any zabbix-agentd-ssl zabbix-agentd-openssl
+Build-Variant: basic
 Section: admin
 Category: Administration
 Repository: base
-Title: Zabbix agentd (with OpenSSL)
+Title: Zabbix agentd (basic/with TLS)
 Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
 Require-User: zabbix-agent=53:zabbix-agent=53
-Source: zabbix-7.0.25.tar.gz
+Source: zabbix-7.0.30.tar.gz
 License: AGPL-3.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:zabbix:zabbix
 URL: https://www.zabbix.com/
 Type: ipkg
-Description: Zabbix agentd (with OpenSSL)
+Description: Zabbix is a software that monitors numerous parameters of a network and the
+health and integrity of servers, virtual machines, applications, services,
+databases, websites, the cloud and more. Zabbix offers excellent reporting and
+data visualization features based on the stored data.
+.
+Only one variant may be installed per binary (e.g. agent and agentd-basic cannot
+both be installed on the same system).
+.
+Provides only basic functionality with SSL/TLS.
+.
+Provides 'Zabbix Agent'.
 @@
 
-Package: zabbix-agentd-gnutls
+Package: zabbix-get
 Submenu: Zabbix
-Version: 7.0.25-r1
-Depends: +libc +BUILD_NLS:libiconv-full +libevent2-pthreads +libpcre2 +zlib +libgnutls
+Version: 7.0.30-r2
+Depends: +libc @(ZABBIX_BUILD_SUPPORT_BIN) +BUILD_NLS:libiconv-full +ZABBIX_GNUTLS:libgnutls +ZABBIX_OPENSSL:libopenssl +libpcre2 +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: @zabbix-agentd-gnutls-any zabbix-agentd zabbix-agentd-ssl
-Build-Variant: gnutls
+Provides: @zabbix-get-any zabbix-get-ssl zabbix-get-openssl
+Build-Variant: full
 Section: admin
 Category: Administration
 Repository: base
-Title: Zabbix agentd (with GnuTLS)
+Title: Zabbix get (with TLS)
 Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
-Require-User: zabbix-agent=53:zabbix-agent=53
-Source: zabbix-7.0.25.tar.gz
+Source: zabbix-7.0.30.tar.gz
 License: AGPL-3.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:zabbix:zabbix
 URL: https://www.zabbix.com/
 Type: ipkg
-Description: Zabbix agentd (with GnuTLS)
-@@
-
-Package: zabbix-get-nossl
-Submenu: Zabbix
-Version: 7.0.25-r1
-Depends: +libc +BUILD_NLS:libiconv-full +libpcre2 +zlib
-Conflicts: 
-Menu-Depends: 
-Provides: @zabbix-get-nossl-any zabbix-get
-Build-Variant: nossl
-Default-Variant: nossl
-Section: admin
-Category: Administration
-Repository: base
-Title: Zabbix get (no SSL)
-Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
-Source: zabbix-7.0.25.tar.gz
-License: AGPL-3.0-only
-LicenseFiles: COPYING
-CPE-ID: cpe:/a:zabbix:zabbix
-URL: https://www.zabbix.com/
-Type: ipkg
-Description: Zabbix get (no SSL)
-@@
-
-Package: zabbix-get-openssl
-Submenu: Zabbix
-Version: 7.0.25-r1
-Depends: +libc +BUILD_NLS:libiconv-full +libpcre2 +zlib +libopenssl
-Conflicts: 
-Menu-Depends: 
-Provides: @zabbix-get-openssl-any zabbix-get zabbix-get-ssl
-Build-Variant: openssl
-Section: admin
-Category: Administration
-Repository: base
-Title: Zabbix get (with OpenSSL)
-Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
-Source: zabbix-7.0.25.tar.gz
-License: AGPL-3.0-only
-LicenseFiles: COPYING
-CPE-ID: cpe:/a:zabbix:zabbix
-URL: https://www.zabbix.com/
-Type: ipkg
-Description: Zabbix get (with OpenSSL)
-@@
-
-Package: zabbix-get-gnutls
-Submenu: Zabbix
-Version: 7.0.25-r1
-Depends: +libc +BUILD_NLS:libiconv-full +libpcre2 +zlib +libgnutls
-Conflicts: 
-Menu-Depends: 
-Provides: @zabbix-get-gnutls-any zabbix-get zabbix-get-ssl
-Build-Variant: gnutls
-Section: admin
-Category: Administration
-Repository: base
-Title: Zabbix get (with GnuTLS)
-Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
-Source: zabbix-7.0.25.tar.gz
-License: AGPL-3.0-only
-LicenseFiles: COPYING
-CPE-ID: cpe:/a:zabbix:zabbix
-URL: https://www.zabbix.com/
-Type: ipkg
-Description: Zabbix get (with GnuTLS)
-@@
-
-Package: zabbix-sender-nossl
-Submenu: Zabbix
-Version: 7.0.25-r1
-Depends: +libc +BUILD_NLS:libiconv-full +libpcre2 +zlib
-Conflicts: 
-Menu-Depends: 
-Provides: @zabbix-sender-nossl-any zabbix-sender
-Build-Variant: nossl
-Default-Variant: nossl
-Section: admin
-Category: Administration
-Repository: base
-Title: Zabbix sender (no SSL)
-Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
-Source: zabbix-7.0.25.tar.gz
-License: AGPL-3.0-only
-LicenseFiles: COPYING
-CPE-ID: cpe:/a:zabbix:zabbix
-URL: https://www.zabbix.com/
-Type: ipkg
-Description: Zabbix sender (no SSL)
-@@
-
-Package: zabbix-sender-openssl
-Submenu: Zabbix
-Version: 7.0.25-r1
-Depends: +libc +BUILD_NLS:libiconv-full +libpcre2 +zlib +libopenssl
-Conflicts: 
-Menu-Depends: 
-Provides: @zabbix-sender-openssl-any zabbix-sender zabbix-sender-ssl
-Build-Variant: openssl
-Section: admin
-Category: Administration
-Repository: base
-Title: Zabbix sender (with OpenSSL)
-Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
-Source: zabbix-7.0.25.tar.gz
-License: AGPL-3.0-only
-LicenseFiles: COPYING
-CPE-ID: cpe:/a:zabbix:zabbix
-URL: https://www.zabbix.com/
-Type: ipkg
-Description: Zabbix sender (with OpenSSL)
-@@
-
-Package: zabbix-sender-gnutls
-Submenu: Zabbix
-Version: 7.0.25-r1
-Depends: +libc +BUILD_NLS:libiconv-full +libpcre2 +zlib +libgnutls
-Conflicts: 
-Menu-Depends: 
-Provides: @zabbix-sender-gnutls-any zabbix-sender zabbix-sender-ssl
-Build-Variant: gnutls
-Section: admin
-Category: Administration
-Repository: base
-Title: Zabbix sender (with GnuTLS)
-Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
-Source: zabbix-7.0.25.tar.gz
-License: AGPL-3.0-only
-LicenseFiles: COPYING
-CPE-ID: cpe:/a:zabbix:zabbix
-URL: https://www.zabbix.com/
-Type: ipkg
-Description: Zabbix sender (with GnuTLS)
-@@
-
-Package: zabbix-proxy-nossl
-Submenu: Zabbix
-Version: 7.0.25-r1
-Depends: +libc +BUILD_NLS:libiconv-full +ZABBIX_MYSQL:libmariadbclient +ZABBIX_POSTGRESQL:libpq +fping +libevent2 +libevent2-pthreads +libevent2-extra +libpcre2 +zlib +ZABBIX_SQLITE:libsqlite3
-Conflicts: 
-Menu-Depends: 
-Provides: @zabbix-proxy-nossl-any zabbix-proxy
-Build-Variant: nossl
-Default-Variant: nossl
-Section: admin
-Category: Administration
-Repository: base
-Title: Zabbix proxy (no SSL)
-Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
-Require-User: zabbix-server=70:zabbix-server=70
-Source: zabbix-7.0.25.tar.gz
-License: AGPL-3.0-only
-LicenseFiles: COPYING
-CPE-ID: cpe:/a:zabbix:zabbix
-URL: https://www.zabbix.com/
-Type: ipkg
-Description: Zabbix proxy (no SSL)
+Description: Zabbix is a software that monitors numerous parameters of a network and the
+health and integrity of servers, virtual machines, applications, services,
+databases, websites, the cloud and more. Zabbix offers excellent reporting and
+data visualization features based on the stored data.
+.
+Only one variant may be installed per binary (e.g. agent and agentd-basic cannot
+both be installed on the same system).
+.
+Provides only basic functionality with SSL/TLS.
+.
+Provides 'Zabbix Get'.
 @@
 Config:
-comment "Database Software"
-
-choice
-        prompt "Selected Database Software"
-        default ZABBIX_POSTGRESQL
-
-        config ZABBIX_MYSQL
-                bool "MySQL/MariaDB"
-
-        config ZABBIX_POSTGRESQL
-                bool "PostgreSQL"
-
-        config ZABBIX_SQLITE
-                bool "SQLite"
-endchoice
+	config ZABBIX_BUILD_SUPPORT_BIN
+		bool
+		depends on PACKAGE_zabbix-agentd
+		default y
+		help
+			This option exists to prevent trying to build get and/or sender when the
+			of agent is not being built. In that case get and sender are not built by
+			the Zabbix build system. This is not a dependency DEPENDS because the
+			binaries do not require the agent to function.
 @@
 
-Package: zabbix-proxy-openssl
+Package: zabbix-sender
 Submenu: Zabbix
-Version: 7.0.25-r1
-Depends: +libc +BUILD_NLS:libiconv-full +ZABBIX_MYSQL:libmariadbclient +ZABBIX_POSTGRESQL:libpq +fping +libevent2 +libevent2-pthreads +libevent2-extra +libpcre2 +zlib +ZABBIX_SQLITE:libsqlite3 +libopenssl
+Version: 7.0.30-r2
+Depends: +libc @(ZABBIX_BUILD_SUPPORT_BIN) +BUILD_NLS:libiconv-full +ZABBIX_GNUTLS:libgnutls +ZABBIX_OPENSSL:libopenssl +libpcre2 +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: @zabbix-proxy-openssl-any zabbix-proxy zabbix-proxy-ssl
-Build-Variant: openssl
+Provides: @zabbix-sender-any zabbix-sender-ssl zabbix-sender-openssl
+Build-Variant: full
 Section: admin
 Category: Administration
 Repository: base
-Title: Zabbix proxy (with OpenSSL)
+Title: Zabbix sender (with TLS)
 Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
-Require-User: zabbix-server=70:zabbix-server=70
-Source: zabbix-7.0.25.tar.gz
+Source: zabbix-7.0.30.tar.gz
 License: AGPL-3.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:zabbix:zabbix
 URL: https://www.zabbix.com/
 Type: ipkg
-Description: Zabbix proxy (with OpenSSL)
+Description: Zabbix is a software that monitors numerous parameters of a network and the
+health and integrity of servers, virtual machines, applications, services,
+databases, websites, the cloud and more. Zabbix offers excellent reporting and
+data visualization features based on the stored data.
+.
+Only one variant may be installed per binary (e.g. agent and agentd-basic cannot
+both be installed on the same system).
+.
+Provides only basic functionality with SSL/TLS.
+.
+Provides 'Zabbix Sender'.
 @@
 
-Package: zabbix-proxy-gnutls
+Package: zabbix-server
 Submenu: Zabbix
-Version: 7.0.25-r1
-Depends: +libc +BUILD_NLS:libiconv-full +ZABBIX_MYSQL:libmariadbclient +ZABBIX_POSTGRESQL:libpq +fping +libevent2 +libevent2-pthreads +libevent2-extra +libpcre2 +zlib +ZABBIX_SQLITE:libsqlite3 +libgnutls
+Version: 7.0.30-r2
+Depends: +libc +BUILD_NLS:libiconv-full +fping +libevent2 +libevent2-pthreads +libevent2-extra +libpcre2 +zlib @(!ZABBIX_SQLITE) +ZABBIX_CURL:libcurl +ZABBIX_CURL_GNUTLS:libcurl-gnutls +ZABBIX_GNUTLS:libgnutls +ZABBIX_LDAP:libopenldap +ZABBIX_MYSQL:libmariadbclient +ZABBIX_OPENSSL:libopenssl +ZABBIX_NETSNMP:libnetsnmp-ssl +ZABBIX_POSTGRESQL:libpq
 Conflicts: 
 Menu-Depends: 
-Provides: @zabbix-proxy-gnutls-any zabbix-proxy zabbix-proxy-ssl
-Build-Variant: gnutls
+Provides: @zabbix-server-any zabbix-server-ssl zabbix-server-openssl
+Build-Variant: full
 Section: admin
 Category: Administration
 Repository: base
-Title: Zabbix proxy (with GnuTLS)
+Title: Zabbix server (full/with OpenSSL)
 Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
 Require-User: zabbix-server=70:zabbix-server=70
-Source: zabbix-7.0.25.tar.gz
+Source: zabbix-7.0.30.tar.gz
 License: AGPL-3.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:zabbix:zabbix
 URL: https://www.zabbix.com/
 Type: ipkg
-Description: Zabbix proxy (with GnuTLS)
+Description: Zabbix is a software that monitors numerous parameters of a network and the
+health and integrity of servers, virtual machines, applications, services,
+databases, websites, the cloud and more. Zabbix offers excellent reporting and
+data visualization features based on the stored data.
+.
+Only one variant may be installed per binary (e.g. agent and agentd-basic cannot
+both be installed on the same system).
+.
+Provides the full functionality available in OpenWrt with OpenSSL.
+Includes NetSNMP, cURL, and OpenLDAP support.
+Requires a database server.
+.
+Provides 'Zabbix Server'.
 @@
 
-Package: zabbix-server-nossl
+Package: zabbix-proxy
 Submenu: Zabbix
-Version: 7.0.25-r1
-Depends: +libc +BUILD_NLS:libiconv-full +ZABBIX_MYSQL:libmariadbclient +ZABBIX_POSTGRESQL:libpq +fping +libevent2 +libevent2-pthreads +libevent2-extra +libpcre2 +zlib @(!ZABBIX_SQLITE)
+Version: 7.0.30-r2
+Depends: +libc +BUILD_NLS:libiconv-full +fping +libevent2 +libevent2-pthreads +libevent2-extra +libpcre2 +zlib +ZABBIX_CURL:libcurl +ZABBIX_CURL_GNUTLS:libcurl-gnutls +ZABBIX_GNUTLS:libgnutls +ZABBIX_LDAP:libopenldap +ZABBIX_MYSQL:libmariadbclient +ZABBIX_NETSNMP:libnetsnmp-ssl +ZABBIX_OPENSSL:libopenssl +ZABBIX_POSTGRESQL:libpq +ZABBIX_SQLITE:libsqlite3
 Conflicts: 
 Menu-Depends: 
-Provides: @zabbix-server-nossl-any zabbix-server
-Build-Variant: nossl
-Default-Variant: nossl
+Provides: @zabbix-proxy-any @zabbix-proxy-any zabbix-proxy-ssl zabbix-proxy-openssl
+Build-Variant: full
+Default-Variant: full
 Section: admin
 Category: Administration
 Repository: base
-Title: Zabbix server (no SSL)
+Title: Zabbix proxy (full/with OpenSSL)
 Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
-Require-User: zabbix-server=70:zabbix-server=70
-Source: zabbix-7.0.25.tar.gz
+Require-User: zabbix-proxy=71:zabbix-proxy=71
+Source: zabbix-7.0.30.tar.gz
 License: AGPL-3.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:zabbix:zabbix
 URL: https://www.zabbix.com/
 Type: ipkg
-Description: Zabbix server (no SSL)
+Description: Zabbix is a software that monitors numerous parameters of a network and the
+health and integrity of servers, virtual machines, applications, services,
+databases, websites, the cloud and more. Zabbix offers excellent reporting and
+data visualization features based on the stored data.
+.
+Only one variant may be installed per binary (e.g. agent and agentd-basic cannot
+both be installed on the same system).
+.
+Provides the full functionality available in OpenWrt with OpenSSL.
+Includes NetSNMP, cURL, and OpenLDAP support.
+Requires a database server.
+.
+Provides 'Zabbix Proxy'.
+@@
+Config:
+	choice
+		prompt "Select Database Software for Zabbix"
+		default ZABBIX_POSTGRESQL
+
+		config ZABBIX_MYSQL
+			bool "MySQL/MariaDB"
+
+		config ZABBIX_POSTGRESQL
+			bool "PostgreSQL"
+
+		config ZABBIX_SQLITE
+			bool "SQLite3"
+	endchoice
 @@
 
-Package: zabbix-server-openssl
+Package: zabbix-proxy-basic-sqlite
 Submenu: Zabbix
-Version: 7.0.25-r1
-Depends: +libc +BUILD_NLS:libiconv-full +ZABBIX_MYSQL:libmariadbclient +ZABBIX_POSTGRESQL:libpq +fping +libevent2 +libevent2-pthreads +libevent2-extra +libpcre2 +zlib @(!ZABBIX_SQLITE) +libopenssl
+Version: 7.0.30-r2
+Depends: +libc +BUILD_NLS:libiconv-full +fping +libevent2 +libevent2-pthreads +libevent2-extra +libpcre2 +zlib +libopenssl +libsqlite3
 Conflicts: 
 Menu-Depends: 
-Provides: @zabbix-server-openssl-any zabbix-server zabbix-server-ssl
-Build-Variant: openssl
+Provides: @zabbix-proxy-basic-sqlite-any @zabbix-proxy-any zabbix-proxy-ssl zabbix-proxy-openssl
+Build-Variant: basic
 Section: admin
 Category: Administration
 Repository: base
-Title: Zabbix server (with OpenSSL)
+Title: Zabbix proxy sqlite3 (basic/with TLS)
 Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
-Require-User: zabbix-server=70:zabbix-server=70
-Source: zabbix-7.0.25.tar.gz
+Require-User: zabbix-proxy=71:zabbix-proxy=71
+Source: zabbix-7.0.30.tar.gz
 License: AGPL-3.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:zabbix:zabbix
 URL: https://www.zabbix.com/
 Type: ipkg
-Description: Zabbix server (with OpenSSL)
-@@
-
-Package: zabbix-server-gnutls
-Submenu: Zabbix
-Version: 7.0.25-r1
-Depends: +libc +BUILD_NLS:libiconv-full +ZABBIX_MYSQL:libmariadbclient +ZABBIX_POSTGRESQL:libpq +fping +libevent2 +libevent2-pthreads +libevent2-extra +libpcre2 +zlib @(!ZABBIX_SQLITE) +libgnutls
-Conflicts: 
-Menu-Depends: 
-Provides: @zabbix-server-gnutls-any zabbix-server zabbix-server-ssl
-Build-Variant: gnutls
-Section: admin
-Category: Administration
-Repository: base
-Title: Zabbix server (with GnuTLS)
-Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
-Require-User: zabbix-server=70:zabbix-server=70
-Source: zabbix-7.0.25.tar.gz
-License: AGPL-3.0-only
-LicenseFiles: COPYING
-CPE-ID: cpe:/a:zabbix:zabbix
-URL: https://www.zabbix.com/
-Type: ipkg
-Description: Zabbix server (with GnuTLS)
+Description: Zabbix is a software that monitors numerous parameters of a network and the
+health and integrity of servers, virtual machines, applications, services,
+databases, websites, the cloud and more. Zabbix offers excellent reporting and
+data visualization features based on the stored data.
+.
+Only one variant may be installed per binary (e.g. agent and agentd-basic cannot
+both be installed on the same system).
+.
+Provides only basic functionality with SSL/TLS.
+.
+Provides 'Zabbix Proxy' using sqlite3 for
+the database.
 @@
 
 Package: zabbix-extra-mac80211
 Submenu: Zabbix
-Version: 7.0.25-r1
-Depends: +libc @KERNEL_DEBUG_FS @PACKAGE_MAC80211_DEBUGFS +zabbix-agentd
+Version: 7.0.30-r2
+Depends: +libc @KERNEL_DEBUG_FS @PACKAGE_MAC80211_DEBUGFS @zabbix-agentd-any
 Conflicts: 
 Menu-Depends: 
 Provides: @zabbix-extra-mac80211-any
@@ -374,7 +283,7 @@ Category: Administration
 Repository: base
 Title: Zabbix discovery/userparameters for mac80211
 Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
-Source: zabbix-7.0.25.tar.gz
+Source: zabbix-7.0.30.tar.gz
 License: AGPL-3.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:zabbix:zabbix
@@ -387,8 +296,8 @@ See https://openwrt.org/docs/guide-user/services/network_monitoring/zabbix for r
 
 Package: zabbix-extra-network
 Submenu: Zabbix
-Version: 7.0.25-r1
-Depends: +libc +libubus-lua +lua +zabbix-agentd
+Version: 7.0.30-r2
+Depends: +libc +libubus-lua +lua @zabbix-agentd-any
 Conflicts: 
 Menu-Depends: 
 Provides: @zabbix-extra-network-any
@@ -398,7 +307,7 @@ Category: Administration
 Repository: base
 Title: Zabbix discovery/userparameters for network
 Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
-Source: zabbix-7.0.25.tar.gz
+Source: zabbix-7.0.30.tar.gz
 License: AGPL-3.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:zabbix:zabbix
@@ -411,8 +320,8 @@ See https://openwrt.org/docs/guide-user/services/network_monitoring/zabbix for r
 
 Package: zabbix-extra-wifi
 Submenu: Zabbix
-Version: 7.0.25-r1
-Depends: +libc +libiwinfo-lua +libubus-lua +lua +zabbix-agentd
+Version: 7.0.30-r2
+Depends: +libc +libiwinfo-lua +libubus-lua +lua @zabbix-agentd-any
 Conflicts: 
 Menu-Depends: 
 Provides: @zabbix-extra-wifi-any
@@ -422,7 +331,7 @@ Category: Administration
 Repository: base
 Title: Zabbix discovery/userparameters for wifi
 Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
-Source: zabbix-7.0.25.tar.gz
+Source: zabbix-7.0.30.tar.gz
 License: AGPL-3.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:zabbix:zabbix
@@ -435,8 +344,8 @@ See https://openwrt.org/docs/guide-user/services/network_monitoring/zabbix for r
 
 Package: zabbix-frontend-server
 Submenu: Zabbix
-Version: 7.0.25-r1
-Depends: +libc php8 @(!ZABBIX_SQLITE) +ZABBIX_MYSQL:php8-mod-mysqli +ZABBIX_POSTGRESQL:php8-mod-pgsql +php8-cgi +php8-mod-gd +php8-mod-bcmath +php8-mod-ctype +php8-mod-filter +php8-mod-gettext +php8-mod-mbstring +php8-mod-openssl +php8-mod-session +php8-mod-sockets +php8-mod-xmlreader +php8-mod-xmlwriter
+Version: 7.0.30-r2
+Depends: +libc php8 @(!ZABBIX_SQLITE) +ZABBIX_MYSQL:php8-mod-mysqli +ZABBIX_POSTGRESQL:php8-mod-pgsql +php8-cgi +php8-mod-gd +php8-mod-bcmath +php8-mod-ctype +php8-mod-curl +php8-mod-filter +php8-mod-gettext +php8-mod-ldap +php8-mod-mbstring +php8-mod-openssl +php8-mod-session +php8-mod-simplexml +php8-mod-sockets +php8-mod-xmlreader +php8-mod-xmlwriter
 Conflicts: 
 Menu-Depends: 
 Provides: @zabbix-frontend-server-any zabbix-server-frontend
@@ -446,13 +355,21 @@ Category: Administration
 Repository: base
 Title: Zabbix frontend server
 Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
-Source: zabbix-7.0.25.tar.gz
+Source: zabbix-7.0.30.tar.gz
 License: AGPL-3.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:zabbix:zabbix
 URL: https://www.zabbix.com/
 Type: ipkg
-Description: Zabbix frontend server
+Description: Zabbix is a software that monitors numerous parameters of a network and the
+health and integrity of servers, virtual machines, applications, services,
+databases, websites, the cloud and more. Zabbix offers excellent reporting and
+data visualization features based on the stored data.
+.
+Only one variant may be installed per binary (e.g. agent and agentd-basic cannot
+both be installed on the same system).
+.
+Provides the Web UI (frontend server) for Zabbix.
 @@
 
 

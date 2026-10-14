@@ -404,3 +404,15 @@ msgstr ""
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:147
 msgid "wildcards * require Validation method: DNS"
 msgstr ""
+
+#, fuzzy
+#~ msgid ""
+#~ "The credentials for the DNS API mode selected above. See https://"
+#~ "github.com/acmesh-official/acme.sh/wiki/dnsapi for the format of "
+#~ "credentials required by each API. Add multiple entries here in KEY=VAL "
+#~ "shell variable format to supply multiple credential variables."
+#~ msgstr ""
+#~ "Prihlasovacie údaje pre vyššie zvolený DNS API mód. Viď https://"
+#~ "github.com/acmesh-official/acme.sh/wiki/dnsapi pre formát údajov "
+#~ "požadovaný každým API. Pre zadanie viacerých údajov tu pridaj hodnoty v "
+#~ "tvare KĽÚČ=HODNOTA."

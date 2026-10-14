@@ -40,8 +40,8 @@ msgstr "Nombre del dispositivo"
 #: applications/luci-app-csshnpd/htdocs/luci-static/resources/view/sshnpd/config.js:24
 msgid "Device names may contain a-z 0-9 _ or - (e.g., \"my_thing1\")."
 msgstr ""
-"Los nombres de los dispositivos pueden contener a-z 0-9 _ o - (por ejemplo, "
-"«mi_cosa1»)."
+"Los nombres de los dispositivos pueden contener a-z 0-9 _ o - (por ejemplo, «"
+"mi_cosa1»)."
 
 #: applications/luci-app-csshnpd/htdocs/luci-static/resources/view/sshnpd/config.js:81
 msgid "Enabled"

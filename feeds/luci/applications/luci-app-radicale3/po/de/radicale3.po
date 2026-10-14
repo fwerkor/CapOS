@@ -508,3 +508,9 @@ msgid "password file can have users with a mix of support encryption methods"
 msgstr ""
 "Eine Passwortdatei kann Benutzer enthalten, die verschiedene "
 "Verschlüsselungsmethoden verwenden"
+
+#~ msgid "Do not filter debug messages starting with 'TRACE'"
+#~ msgstr "Debug-Meldungen, die mit ‚TRACE‘ beginnen, nicht filtern"
+
+#~ msgid "Trace on debug"
+#~ msgstr "Trace auf debug"

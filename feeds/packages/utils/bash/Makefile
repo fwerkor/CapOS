@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=bash
 PKG_VERSION:=5.3
-PKG_RELEASE:=4
+PKG_RELEASE:=5
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=@GNU/bash
@@ -60,7 +60,7 @@ endef
 # bash_cv_job_control_missing: Job control is needed for bash to be used as the
 # default shell
 #
-# bash_cv_sys_named_pipes: Required for process substituion
+# bash_cv_sys_named_pipes: Required for process substitution
 CONFIGURE_VARS += \
 	CFLAGS_FOR_BUILD="-std=gnu17" \
 	ac_cv_rl_prefix="$(STAGING_DIR)/usr" \

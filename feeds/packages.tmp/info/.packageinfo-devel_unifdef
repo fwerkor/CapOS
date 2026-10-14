@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/devel/unifdef/Makefile
 Build-Types: host
 
 Package: unifdef
-Version: 2.12-r1
+Version: 2.12-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -13,7 +13,8 @@ Repository: base
 Title: selectively remove C preprocessor conditionals
 Maintainer: Daniel Golle <daniel@makrotopia.org>
 Source: unifdef-2.12.tar.gz
-License: BSD-2-clause
+License: BSD-2-Clause BSD-3-Clause
+LicenseFiles: COPYING
 URL: https://dotat.at/prog/unifdef
 Type: ipkg
 Build-Only: 1

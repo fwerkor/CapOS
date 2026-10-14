@@ -15,7 +15,7 @@ Maintainer: Federico Capoano <support@openwisp.io>
 Source: openwisp-monitoring-0.3.1.tar.zst
 License: GPL-3.0-or-later
 LicenseFiles: LICENSE
-URL: http://openwisp.org
+URL: https://openwisp.org
 Type: ipkg
 Description: OpenWISP Monitoring agent
 @@
@@ -35,7 +35,7 @@ Maintainer: Federico Capoano <support@openwisp.io>
 Source: openwisp-monitoring-0.3.1.tar.zst
 License: GPL-3.0-or-later
 LicenseFiles: LICENSE
-URL: http://openwisp.org
+URL: https://openwisp.org
 Type: ipkg
 Description: NetJSON Monitoring
 @@

@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-02 12:03+0000\n"
-"Last-Translator: BoneNI <bounkirdni@gmail.com>\n"
+"PO-Revision-Date: 2026-08-15 13:06+0000\n"
+"Last-Translator: Bone NI <bounkirdni@gmail.com>\n"
 "Language-Team: Lao <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationssamba4/lo/>\n"
 "Language: lo\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.17.1\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:120
 msgid "Allow guests"
@@ -23,8 +23,8 @@ msgid ""
 "Allow legacy smb(v1)/Lanman connections, needed for older devices without "
 "smb(v2.1/3) support."
 msgstr ""
-"ອະນຸຍາດການເຊື່ອມຕໍ່ smb(v1)/Lanman ແບບເກົ່າ, ຈຳເປັນສຳລັບອຸປະກອນຮຸ່ນເກົ່າທີ່ບໍ່ຮອງຮັບ "
-"smb(v2.1/3)."
+"ອະນຸຍາດການເຊື່ອມຕໍ່ smb(v1)/Lanman ແບບເກົ່າ, ຈຳເປັນສຳລັບອຸປະກອນຮຸ່ນເກົ່າທີ່ບໍ່ຮອງຮັບ smb(v2.1/3)"
+"."
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:117
 msgid "Allowed users"
@@ -84,16 +84,16 @@ msgid ""
 "speeds and better operation via WiFi. Not recommend if multiple clients "
 "write to the same files, at the same time!"
 msgstr ""
-"ເປີດໃຊ້ງານພາຣາມິເຕີການປັບແຕ່ງທີ່ຊຸມຊົນແນະນຳ, ເຊິ່ງອາດຊ່ວຍເພີ່ມຄວາມໄວໃນການຂຽນ ແລະ "
-"ການເຮັດວຽກຜ່ານ WiFi ໄດ້ດີຂຶ້ນ. ບໍ່ແນະນຳຫາກມີຫຼາຍໄຄລ໌ອຽນຂຽນໄຟລ໌ດຽວກັນໃນເວລາພ້ອມກັນ!"
+"ເປີດໃຊ້ງານພາຣາມິເຕີການປັບແຕ່ງທີ່ຊຸມຊົນແນະນຳ, ເຊິ່ງອາດຊ່ວຍເພີ່ມຄວາມໄວໃນການຂຽນ ແລະ ການເຮັດວຽກຜ່າ"
+"ນ WiFi ໄດ້ດີຂຶ້ນ. ບໍ່ແນະນຳຫາກມີຫຼາຍໄຄລ໌ອຽນຂຽນໄຟລ໌ດຽວກັນໃນເວລາພ້ອມກັນ!"
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:65
 msgid ""
 "Enables Apple's AAPL extension globally and adds macOS compatibility options "
 "to all shares."
 msgstr ""
-"ເປີດໃຊ້ງານ AAPL extension ຂອງ Apple ທົ່ວລະບົບ ແລະ ເພີ່ມຕົວເລືອກຄວາມເຂົ້າກັນໄດ້ກັບ macOS "
-"ໃຫ້ກັບທຸກການແຊຣ໌."
+"ເປີດໃຊ້ງານ AAPL extension ຂອງ Apple ທົ່ວລະບົບ ແລະ ເພີ່ມຕົວເລືອກຄວາມເຂົ້າກັນໄດ້ກັບ macOS ໃຫ້ກັ"
+"ບທຸກການແຊຣ໌."
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:115
 msgid "Force Root"
@@ -121,7 +121,7 @@ msgstr "ສືບທອດເຈົ້າຂອງ"
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:34
 msgid "Interface"
-msgstr "ອິນເຕີເຟດ"
+msgstr "ອິນເຕີເຟສ"
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:35
 msgid "Listen only on the given interface or, if unspecified, on lan"
@@ -141,8 +141,8 @@ msgid ""
 "On lower-end devices may increase speeds, by forcing synchronous I/O instead "
 "of the default asynchronous."
 msgstr ""
-"ໃນອຸປະກອນທີ່ມີສະເປັກຕ່ຳ ອາດຊ່ວຍເພີ່ມຄວາມໄວໄດ້ ໂດຍການບັງຄັບໃຊ້ I/O ແບບຊິ້ງໂຄຣນັດ "
-"ແທນການໃຊ້ແບບອະຊິ້ງໂຄຣນັດຕາມຄ່າເລີ່ມຕົ້ນ."
+"ໃນອຸປະກອນທີ່ມີສະເປັກຕ່ຳ ອາດຊ່ວຍເພີ່ມຄວາມໄວໄດ້ ໂດຍການບັງຄັບໃຊ້ I/O ແບບຊິ້ງໂຄຣນັດ ແທນການໃຊ້ແບບອະ"
+"ຊິ້ງໂຄຣນັດຕາມຄ່າເລີ່ມຕົ້ນ."
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:99
 msgid "Path"
@@ -152,7 +152,8 @@ msgstr "ເສັ້ນທາງ"
 msgid ""
 "Please add directories to share. Each directory refers to a folder on a "
 "mounted device."
-msgstr "ກະລຸນາເພີ່ມໄດເຣັກທໍຣີເພື່ອແຊຣ໌. ແຕ່ລະໄດເຣັກທໍຣີໝາຍເຖິງໂຟນເດີເທິງອຸປະກອນທີ່ເມົາທ໌ໄວ້."
+msgstr ""
+"ກະລຸນາເພີ່ມໄດເຣັກທໍຣີເພື່ອແຊຣ໌. ແຕ່ລະໄດເຣັກທໍຣີໝາຍເຖິງໂຟນເດີເທິງອຸປະກອນທີ່ເມົາທ໌ໄວ້."
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:109
 msgid "Read-only"
@@ -169,9 +170,8 @@ msgid ""
 "('|') should not be changed. They get their values from the 'General "
 "Settings' tab."
 msgstr ""
-"ນີ້ແມ່ນເນື້ອໃນຂອງໄຟລ໌ '/etc/samba/smb.conf.template' ເຊິ່ງການຕັ້ງຄ່າ samba "
-"ຂອງທ່ານຈະຖືກສ້າງຂຶ້ນຈາກໄຟລ໌ນີ້. ຄ່າທີ່ຢູ່ໃນວົງເລັບ pipe ('|') ບໍ່ຄວນແກ້ໄຂ ເພາະມັນຈະດຶງຄ່າຈາກແຖບ "
-"'ການຕັ້ງຄ່າທົ່ວໄປ'."
+"ນີ້ແມ່ນເນື້ອໃນຂອງໄຟລ໌ '/etc/samba/smb.conf.template' ເຊິ່ງການຕັ້ງຄ່າ samba ຂອງທ່ານຈະຖືກສ້າງ"
+"ຂຶ້ນຈາກໄຟລ໌ນີ້. ຄ່າທີ່ຢູ່ໃນວົງເລັບ pipe ('|') ບໍ່ຄວນແກ້ໄຂ ເພາະມັນຈະດຶງຄ່າຈາກແຖບ 'ການຕັ້ງຄ່າທົ່ວໄປ'."
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:153
 msgid "Time-machine size in GB"

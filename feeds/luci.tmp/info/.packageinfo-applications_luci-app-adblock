@@ -1,9 +1,9 @@
 Source-Makefile: feeds/luci/applications/luci-app-adblock/Makefile
-Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host LUCI_UTMIN:ucode/host 
 
 Package: luci-app-adblock
 Submenu: 3. Applications
-Version: 4.5.6-r1
+Version: 4.5.8-r3
 Depends: +libc +luci-base +luci-lib-uqr +adblock
 Conflicts: 
 Menu-Depends: 

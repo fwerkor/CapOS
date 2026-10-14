@@ -3,15 +3,16 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-04-14 17:39+0000\n"
-"Last-Translator: ZW <roc_fe@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-07-08 15:16+0000\n"
+"Last-Translator: 加尼瑪空格把變數都破壞了！ "
+"<roc_fe@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/openwrt/luciapplicationsadvanced-reboot/zh_Hant/>\n"
 "Language: zh_Hant\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
 
 #: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced-reboot.js:358
 #: applications/luci-app-advanced-reboot/root/usr/share/luci/menu.d/luci-app-advanced-reboot.json:3
@@ -34,7 +35,7 @@ msgstr "目前"
 #: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced-reboot.js:162
 #: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced-reboot.js:212
 msgid "Device unreachable! Still waiting for device..."
-msgstr "裝置無法存取！仍在等待裝置中..."
+msgstr "裝置無法連線！仍在等待裝置中..."
 
 #: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced-reboot.js:418
 msgid "ERROR:"
@@ -239,3 +240,48 @@ msgstr "警告: 無法取得裝置資訊！"
 #: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced-reboot.js:56
 msgid "invalid argument"
 msgstr "無效參數"
+
+#~ msgid "Grant file access for luci-app-advanced-reboot"
+#~ msgstr "授予 luci-app-advanced-reboot 檔案存取的權限"
+
+#~ msgid ""
+#~ "WARNING: Power off might result in a reboot on a device which doesn't "
+#~ "support power off.<br /><br /> Click \"Proceed\" below to power off your "
+#~ "device."
+#~ msgstr ""
+#~ "警告：不支援執行關機的裝置強制執行關機可能會導致其重新啟動；<br /><br />點"
+#~ "選下面的「繼續」來執行裝置關機。"
+
+#~ msgid "Compressed"
+#~ msgstr "已壓縮"
+
+#~ msgid "Confirm"
+#~ msgstr "確認"
+
+#~ msgid "Grant UCI and file access for luci-app-advanced-reboot"
+#~ msgstr "授予luci-app-advanced-reboot存取UCI和檔案的權限"
+
+#~ msgid "No access to fw_printenv or fw_printenv!"
+#~ msgstr "無法存取fw_printenv或fw_printenv！"
+
+#~ msgid "Reboot Device to an Alternative Partition"
+#~ msgstr "重新啟動裝置到替代分割區"
+
+#~ msgid "Reboot to alternative partition..."
+#~ msgstr "重新啟動到替代分割區…"
+
+#~ msgid ""
+#~ "WARNING: An alternative partition might have its own settings and "
+#~ "completely different firmware.<br /><br /> As your network configuration "
+#~ "and WiFi SSID/password on alternative partition might be different, you "
+#~ "might have to adjust your computer settings to be able to access your "
+#~ "device once it reboots.<br /><br /> Please also be aware that alternative "
+#~ "partition firmware might not provide an easy way to switch active "
+#~ "partition and boot back to the currently active partition.<br /><br /> "
+#~ "Click \"Proceed\" below to reboot device to an alternative partition."
+#~ msgstr ""
+#~ "警告：替代分割區的設定和韌體可能與目前完全不同；<br /><br />由於替代分割區"
+#~ "的網路設定和 Wi-Fi SSID／密碼可能與目前不同，一旦重新啟動，您需要調整電腦"
+#~ "設定才能存取該裝置。<br /><br />也請注意：替代分割區韌體可能無法提供簡單的"
+#~ "方法來切換啟動的分割區，以及啟動回目前啟動的分割區。<br /><br />點選下面的"
+#~ "「繼續」來執行裝置重新啟動到替代分割區。"

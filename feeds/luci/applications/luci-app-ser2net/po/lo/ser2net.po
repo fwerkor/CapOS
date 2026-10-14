@@ -165,7 +165,8 @@ msgstr "ພອດ TCP ທີ່ລໍຖ້າການເຊື່ອມຕໍ�
 msgid ""
 "The amount of seconds of inactivity before a disconnect occurs.<br/>A value "
 "of zero means wait indefinitely."
-msgstr "ຈຳນວນວິນາທີທີ່ບໍ່ມີການເຄື່ອນໄຫວກ່ອນຈະຕັດການເຊື່ອມຕໍ່.<br/>ຄ່າສູນໝາຍເຖິງການລໍຖ້າແບບບໍ່ມີກຳນົດ."
+msgstr ""
+"ຈຳນວນວິນາທີທີ່ບໍ່ມີການເຄື່ອນໄຫວກ່ອນຈະຕັດການເຊື່ອມຕໍ່.<br/>ຄ່າສູນໝາຍເຖິງການລໍຖ້າແບບບໍ່ມີກຳນົດ."
 
 #: applications/luci-app-ser2net/htdocs/luci-static/resources/view/ser2net/leds.js:19
 msgid "The device itself."

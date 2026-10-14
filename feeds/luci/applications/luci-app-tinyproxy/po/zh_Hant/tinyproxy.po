@@ -67,8 +67,7 @@ msgstr "預設情況下，篩選規則為黑名單。啟用此選項僅允許匹
 msgid ""
 "Can be either an IP address or range, a domain name or '.' for any host "
 "without domain"
-msgstr ""
-"可以是 IP 位址或範圍，也可以是網域名稱，或 '.' 用於指定任何沒有網域的主機"
+msgstr "可以是 IP 位址或範圍，也可以是網域名稱，或 '.' 用於指定任何沒有網域的主機"
 
 #: applications/luci-app-tinyproxy/htdocs/luci-static/resources/view/tinyproxy/tinyproxy.js:236
 msgid "Connection timeout"
@@ -271,8 +270,8 @@ msgid ""
 "Specifies the upstream proxy to use for accessing the target host. Format is "
 "<code>address:port</code> or <code>socks5 address:port</code>"
 msgstr ""
-"指定用於存取目標主機的上游代理。格式為 <code>位址:連接埠</code> 或 "
-"<code>socks5 位址:連接埠</code>"
+"指定用於存取目標主機的上游代理。格式為 <code>位址:連接埠</code> 或 <code>"
+"socks5 位址:連接埠</code>"
 
 #: applications/luci-app-tinyproxy/htdocs/luci-static/resources/view/tinyproxy/tinyproxy.js:164
 msgid "Specifies the user name the Tinyproxy process is running as"

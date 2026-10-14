@@ -15,7 +15,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSerif-Italic
 @@
@@ -35,7 +35,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSerifCondensed-Italic
 @@
@@ -55,7 +55,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSerifCondensed-BoldItalic
 @@
@@ -75,7 +75,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSerifCondensed-Bold
 @@
@@ -95,7 +95,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSerifCondensed
 @@
@@ -115,7 +115,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSerif-BoldItalic
 @@
@@ -135,7 +135,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSerif-Bold
 @@
@@ -155,7 +155,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSerif
 @@
@@ -175,7 +175,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSans-Oblique
 @@
@@ -195,7 +195,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSansMono-Oblique
 @@
@@ -215,7 +215,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSansMono-BoldOblique
 @@
@@ -235,7 +235,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSansMono-Bold
 @@
@@ -255,7 +255,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSansMono
 @@
@@ -275,7 +275,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSans-ExtraLight
 @@
@@ -295,7 +295,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSansCondensed-Oblique
 @@
@@ -315,7 +315,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSansCondensed-BoldOblique
 @@
@@ -335,7 +335,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSansCondensed-Bold
 @@
@@ -355,7 +355,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSansCondensed
 @@
@@ -375,7 +375,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSans-BoldOblique
 @@
@@ -395,7 +395,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSans-Bold
 @@
@@ -415,7 +415,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuSans
 @@
@@ -435,7 +435,7 @@ Maintainer: Mirko Vogt <mirko-dev@nanl.de>
 Source: dejavu-fonts-ttf-2.37.tar.bz2
 License: Bitstream-Vera-Fonts-Copyright Arev-Fonts-Copyright Public-Domain 
 LicenseFiles: LICENSE
-URL: http://dejavu.sourceforge.net/
+URL: https://dejavu-fonts.github.io/
 Type: ipkg
 Description: DejaVuMathTeXGyre
 @@

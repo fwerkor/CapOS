@@ -138,8 +138,8 @@ msgid ""
 "subject name, subsequent names will be alt names. Note that all domain names "
 "must point at the router in the global DNS."
 msgstr ""
-"ຊື່ໂດເມນທີ່ຈະລວມຢູ່ໃນໃບຢັ້ງຢືນ. ຊື່ອັນທຳອິດຈະເປັນຊື່ Subject, ຊື່ຕໍ່ມາຈະເປັນ Alt names. ໝາຍເຫດ: "
-"ຊື່ໂດເມນທັງໝົດຕ້ອງຊີ້ມາທີ່ເຣົາເຕີໃນ Global DNS."
+"ຊື່ໂດເມນທີ່ຈະລວມຢູ່ໃນໃບຢັ້ງຢືນ. ຊື່ອັນທຳອິດຈະເປັນຊື່ Subject, ຊື່ຕໍ່ມາຈະເປັນ Alt names. ໝາຍເຫດ: ຊື່ໂ"
+"ດເມນທັງໝົດຕ້ອງຊີ້ມາທີ່ເຣົາເຕີໃນ Global DNS."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:255
 msgid "ECC 256 bits"
@@ -174,8 +174,8 @@ msgid ""
 "Get certificate from the Letsencrypt staging server (use for testing; the "
 "certificate won't be valid)."
 msgstr ""
-"ຂໍໃບຢັ້ງຢືນຈາກເຊີບເວີ Staging ຂອງ Letsencrypt (ໃຊ້ສຳລັບການທົດສອບ; "
-"ໃບຢັ້ງຢືນນີ້ຈະບໍ່ມີຜົນນຳໃຊ້ຈິງ)."
+"ຂໍໃບຢັ້ງຢືນຈາກເຊີບເວີ Staging ຂອງ Letsencrypt (ໃຊ້ສຳລັບການທົດສອບ; ໃບຢັ້ງຢືນນີ້ຈະບໍ່ມີຜົນນຳໃຊ້ຈິງ)"
+"."
 
 #: applications/luci-app-acme/root/usr/share/rpcd/acl.d/luci-app-acme.json:3
 msgid "Grant UCI access for luci-app-acme"
@@ -202,7 +202,8 @@ msgstr "ຕິດຕັ້ງແພັກເກັດ %s"
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:142
 msgid "Invalid domain. Allowed lowercase a-z, numbers and hyphen -"
-msgstr "ໂດເມນບໍ່ຖືກຕ້ອງ. ອະນຸຍາດໃຫ້ໃຊ້ພຽງຕົວພິມນ້ອຍ a-z, ຕົວເລກ ແລະ ເຄື່ອງໝາຍຂີດ -"
+msgstr ""
+"ໂດເມນບໍ່ຖືກຕ້ອງ. ອະນຸຍາດໃຫ້ໃຊ້ພຽງຕົວພິມນ້ອຍ a-z, ຕົວເລກ ແລະ ເຄື່ອງໝາຍຂີດ -"
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:527
 msgid "Issued on"
@@ -212,7 +213,8 @@ msgstr "ອອກໃບຢັ້ງຢືນເມື່ອ"
 msgid ""
 "It may be needed to change if your web server is behind reverse proxy and "
 "uses a different port."
-msgstr "ອາດຈຳເປັນຕ້ອງປ່ຽນຫາກເວັບເຊີບເວີຂອງທ່ານຢູ່ຫຼັງ Reverse proxy ແລະ ໃຊ້ພອດອື່ນ."
+msgstr ""
+"ອາດຈຳເປັນຕ້ອງປ່ຽນຫາກເວັບເຊີບເວີຂອງທ່ານຢູ່ຫຼັງ Reverse proxy ແລະ ໃຊ້ພອດອື່ນ."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:250
 msgid "Key size (and type) for the generated certificate."
@@ -246,7 +248,8 @@ msgstr "ໂດເມນຫຼັກ"
 msgid ""
 "Note that the domain names in the certificate must already be configured to "
 "point at the router's public IP address."
-msgstr "ໝາຍເຫດ: ຊື່ໂດເມນໃນໃບຢັ້ງຢືນຕ້ອງໄດ້ຮັບການຕັ້ງຄ່າໃຫ້ຊີ້ມາທີ່ທີ່ຢູ່ໄອພີສາທາລະນະຂອງເຣົາເຕີແລ້ວ."
+msgstr ""
+"ໝາຍເຫດ: ຊື່ໂດເມນໃນໃບຢັ້ງຢືນຕ້ອງໄດ້ຮັບການຕັ້ງຄ່າໃຫ້ຊີ້ມາທີ່ທີ່ຢູ່ໄອພີສາທາລະນະຂອງເຣົາເຕີແລ້ວ."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:46
 msgid ""
@@ -263,7 +266,8 @@ msgstr "ຍັງບໍ່ໄດ້ຕິດຕັ້ງແພັກເກັດ
 msgid ""
 "Port where to listen for ACME challenge requests. The port will be "
 "temporarily open during validation."
-msgstr "ພອດທີ່ໃຊ້ຮັບຟັງຄຳຮ້ອງຂໍ ACME challenge. ພອດນີ້ຈະຖືກເປີດຊົ່ວຄາວໃນລະຫວ່າງການກວດສອບ."
+msgstr ""
+"ພອດທີ່ໃຊ້ຮັບຟັງຄຳຮ້ອງຂໍ ACME challenge. ພອດນີ້ຈະຖືກເປີດຊົ່ວຄາວໃນລະຫວ່າງການກວດສອບ."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:525
 msgid "Private Key"
@@ -320,9 +324,9 @@ msgid ""
 "certificate. DNS mode will allow you to use the DNS API of your DNS provider "
 "to issue a certificate."
 msgstr ""
-"ໂໝດ Standalone ຈະໃຊ້ເວັບເຊີບເວີໃນຕົວຂອງ acme.sh ເພື່ອອອກໃບຢັ້ງຢືນ. ໂໝດ Webroot "
-"ຈະໃຊ້ເວັບເຊີບເວີທີ່ມີຢູ່ແລ້ວເພື່ອອອກໃບຢັ້ງຢືນ. ໂໝດ DNS ຈະອະນຸຍາດໃຫ້ທ່ານໃຊ້ DNS API ຂອງຜູ້ໃຫ້ບໍລິການ "
-"DNS ຂອງທ່ານເພື່ອອອກໃບຢັ້ງຢືນ."
+"ໂໝດ Standalone ຈະໃຊ້ເວັບເຊີບເວີໃນຕົວຂອງ acme.sh ເພື່ອອອກໃບຢັ້ງຢືນ. ໂໝດ Webroot ຈະໃຊ້ເວັບເ"
+"ຊີບເວີທີ່ມີຢູ່ແລ້ວເພື່ອອອກໃບຢັ້ງຢືນ. ໂໝດ DNS ຈະອະນຸຍາດໃຫ້ທ່ານໃຊ້ DNS API ຂອງຜູ້ໃຫ້ບໍລິການ DNS ຂອງທ່າ"
+"ນເພື່ອອອກໃບຢັ້ງຢືນ."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:226
 msgid "The challenge alias to use for ALL domains."
@@ -336,7 +340,8 @@ msgstr "ຂໍ້ມູນຢັ້ງຢືນສຳລັບໂໝດ DNS API 
 msgid ""
 "The domain %s in DDNS %s is already configured in %s. Please check it after "
 "the importing."
-msgstr "ໂດເມນ %s ໃນ DDNS %s ໄດ້ຖືກຕັ້ງຄ່າໄວ້ແລ້ວໃນ %s. ກະລຸນາກວດສອບພາຍຫຼັງການນຳເຂົ້າ."
+msgstr ""
+"ໂດເມນ %s ໃນ DDNS %s ໄດ້ຖືກຕັ້ງຄ່າໄວ້ແລ້ວໃນ %s. ກະລຸນາກວດສອບພາຍຫຼັງການນຳເຂົ້າ."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:234
 msgid "The domain alias to use for ALL domains."
@@ -348,8 +353,8 @@ msgid ""
 "Simply fill out this to have the router configured with Letsencrypt-issued "
 "certificates for the web interface."
 msgstr ""
-"ນີ້ເປັນການຕັ້ງຄ່າການຕິດຕັ້ງໃບຢັ້ງຢືນອັດຕະໂນມັດຂອງ ACME (Letsencrypt). "
-"ພຽງແຕ່ຕື່ມຂໍ້ມູນບ່ອນນີ້ເພື່ອໃຫ້ເຣົາເຕີຖືກຕັ້ງຄ່າດ້ວຍໃບຢັ້ງຢືນທີ່ອອກໂດຍ Letsencrypt ສຳລັບອິນເຕີເຟດເວັບ."
+"ນີ້ເປັນການຕັ້ງຄ່າການຕິດຕັ້ງໃບຢັ້ງຢືນອັດຕະໂນມັດຂອງ ACME (Letsencrypt). ພຽງແຕ່ຕື່ມຂໍ້ມູນບ່ອນນີ້ເພື່ອໃຫ້ເຣົ"
+"າເຕີຖືກຕັ້ງຄ່າດ້ວຍໃບຢັ້ງຢືນທີ່ອອກໂດຍ Letsencrypt ສຳລັບອິນເຕີເຟດເວັບ."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:119
 msgid "To temporary open port you can specify your web server port e.g. 80."
@@ -359,7 +364,8 @@ msgstr "ເພື່ອເປີດພອດຊົ່ວຄາວ, ທ່ານ�
 msgid ""
 "To use DNS mode to issue certificates, set this to the name of a DNS API "
 "supported by acme.sh."
-msgstr "ເພື່ອໃຊ້ໂໝດ DNS ໃນການອອກໃບຢັ້ງຢືນ, ໃຫ້ຕັ້ງຄ່ານີ້ເປັນຊື່ຂອງ DNS API ທີ່ຮອງຮັບໂດຍ acme.sh."
+msgstr ""
+"ເພື່ອໃຊ້ໂໝດ DNS ໃນການອອກໃບຢັ້ງຢືນ, ໃຫ້ຕັ້ງຄ່ານີ້ເປັນຊື່ຂອງ DNS API ທີ່ຮອງຮັບໂດຍ acme.sh."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:282
 msgid "Use a custom CA instead of Let's Encrypt."

@@ -16,7 +16,7 @@ PKG_HASH:=87d3480dbb083c1d736222511a8cf380012a8176c2456d01ef483242abbbcf8c
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
-PKG_MAINTAINER:=Jeffery To <jeffery.to@gmail.com>
+PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
 
 HOST_BUILD_DEPENDS:=python3/host python-build/host python-installer/host python-hatchling/host
 PKG_BUILD_DEPENDS:=python3/host python-build/host python-installer/host python-hatchling/host

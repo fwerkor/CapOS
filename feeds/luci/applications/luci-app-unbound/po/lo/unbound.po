@@ -15,19 +15,19 @@ msgstr ""
 msgid "(none)"
 msgstr "(ບໍ່ມີ)"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:73
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:72
 msgid "(root)"
 msgstr "(ຮາກ)"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:117
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:116
 msgid ", and <var>%s</var> entries"
 msgstr ", ແລະ <var>%s</var> ລາຍການ"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:102
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:101
 msgid ", and try <var>%s</var>"
 msgstr ", ແລະ ລອງ <var>%s</var>"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:60
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:59
 msgid "AXFR"
 msgstr "AXFR"
 
@@ -95,7 +95,7 @@ msgstr "ການເຊື່ອມຕໍ່ DHCP"
 msgid "DHCPv4 to SLAAC"
 msgstr "DHCPv4 ໄປຫາ SLAAC"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:126
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:130
 msgid "DNS Cache"
 msgstr "ແຄຊ໌ DNS"
 
@@ -185,7 +185,7 @@ msgstr "ແກ້ໄຂ: UCI"
 msgid "Edit: Unbound"
 msgstr "ແກ້ໄຂ: Unbound"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:124
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:123
 msgid "Enable"
 msgstr "ເປີດໃຊ້ງານ"
 
@@ -245,7 +245,7 @@ msgstr "DNS ເພີ່ມເຕີມ"
 msgid "Fall Back"
 msgstr "ສຳຮອງ (Fall Back)"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:123
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:122
 msgid "Fallback"
 msgstr "ສຳຮອງ"
 
@@ -269,7 +269,7 @@ msgstr "ກອງທີ່ຢູ່ສ່ວນຕົວ"
 msgid "Filter Private Rebind"
 msgstr "ກອງການ Rebind ຂອງເຄືອຂ່າຍສ່ວນຕົວ"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:58
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:57
 msgid "Forward"
 msgstr "ສົ່ງຕໍ່"
 
@@ -277,7 +277,7 @@ msgstr "ສົ່ງຕໍ່"
 msgid "Forward (simple handoff)"
 msgstr "ສົ່ງຕໍ່ (ການສົ່ງມອບແບບງ່າຍ)"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:58
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:57
 msgid "Forward TLS"
 msgstr "ສົ່ງຕໍ່ TLS"
 
@@ -381,7 +381,7 @@ msgstr "ລາຍຊື່ໂດເມນທີ່ຈະຂ້າມການກ
 msgid "Listening Port"
 msgstr "ພອດທີ່ຮັບຟັງ"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:102
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:106
 msgid "Local Data"
 msgstr "ຂໍ້ມູນພາຍໃນ"
 
@@ -413,11 +413,11 @@ msgstr "ເຄືອຂ່າຍຍ່ອຍພາຍໃນ, ແບບເຂົ�
 msgid "Local Subnet, Static Encryption"
 msgstr "ເຄືອຂ່າຍຍ່ອຍພາຍໃນ, ການເຂົ້າລະຫັດແບບຄົງທີ່"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:114
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:118
 msgid "Local Zones"
 msgstr "ໂຊນພາຍໃນ"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:137
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:141
 msgid "Log"
 msgstr "ບັນທຶກການເຮັດວຽກ"
 
@@ -458,27 +458,27 @@ msgstr "ບໍ່ມີການກອງ"
 msgid "No Remote Control"
 msgstr "ບໍ່ມີການຄວບຄຸມໄລຍະໄກ"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:69
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:73
 msgid "No cache dump yet!"
 msgstr "ຍັງບໍ່ມີການດຳແຄຊ໌!"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:53
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:57
 msgid "No local data yet!"
 msgstr "ຍັງບໍ່ມີຂໍ້ມູນພາຍໃນ!"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:36
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:40
 msgid "No related logs yet!"
 msgstr "ຍັງບໍ່ມີບັນທຶກທີ່ກ່ຽວຂ້ອງ!"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:46
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:50
 msgid "No stats yet!"
 msgstr "ຍັງບໍ່ມີສະຖິຕິ!"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:61
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:65
 msgid "No zones data yet!"
 msgstr "ຍັງບໍ່ມີຂໍ້ມູນໂຊນ!"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:41
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:40
 msgid ""
 "Note: SSL/TLS library is missing an API. Please review syslog. >> logread ..."
 msgstr "ໝາຍເຫດ: ໄລບຣາຣີ SSL/TLS ຂາດ API. ກະລຸນາກວດສອບ syslog. >> logread ..."
@@ -490,7 +490,7 @@ msgid ""
 msgstr ""
 "ໝາຍເຫດ: DNS ພາຍໃນຖືກຕັ້ງຄ່າໃຫ້ເບິ່ງ odhpcd, ແຕ່ odhpcd UCI lease trigger ບໍ່ຖືກຕ້ອງ:"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:45
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:44
 msgid ""
 "Organize directed forward, stub, and authoritative zones <a href=\"%s\" "
 "target=\"_blank\">(help)</a>."
@@ -539,7 +539,7 @@ msgstr "ການຫຼຸດຂະໜາດການສອບຖາມ"
 msgid "Query Rate Limit"
 msgstr "ຈຳກັດອັດຕາການສອບຖາມ"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:59
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:58
 msgid "Recurse"
 msgstr "ການຄົ້ນຫາແບບຊ້ຳ (Recurse)"
 
@@ -589,7 +589,7 @@ msgid "Server TLS Port"
 msgstr "ພອດ TLS ຂອງເຊີບເວີ"
 
 #: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zone-details.js:60
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:83
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:82
 msgid "Servers"
 msgstr "ເຊີບເວີ"
 
@@ -621,7 +621,7 @@ msgstr "ນ້ອຍ"
 msgid "Static (local only)"
 msgstr "ຄົງທີ່ (ພາຍໃນເທົ່ານັ້ນ)"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:90
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:94
 msgid "Statistics"
 msgstr "ສະຖິຕິ"
 
@@ -653,7 +653,7 @@ msgstr "TTL ຕ່ຳສຸດ"
 msgid "TTL Neg Max"
 msgstr "TTL ສູງສຸດສຳລັບຄ່າລົບ"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:78
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:82
 msgid "This could display more statistics with the unbound-control package."
 msgstr "ສ່ວນນີ້ສາມາດສະແດງສະຖິຕິໄດ້ຫຼາຍຂຶ້ນຫາກມີແພັກເກັດ unbound-control."
 
@@ -663,26 +663,26 @@ msgstr "ສ່ວນນີ້ສາມາດສະແດງສະຖິຕິໄ
 msgid "This shows '"
 msgstr "ສ່ວນນີ້ສະແດງ '"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:118
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:122
 msgid ""
 "This shows 'ubound-control dump_cache' for auditing records including DNSSEC."
 msgstr "ສ່ວນນີ້ສະແດງ 'ubound-control dump_cache' ສຳລັບການກວດສອບຂໍ້ມູນ ລວມທັງ DNSSEC."
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:94
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:98
 msgid ""
 "This shows Unbound 'local-data:' entries from default, .conf, or control."
 msgstr "ສ່ວນນີ້ສະແດງລາຍການ Unbound 'local-data:' ຈາກຄ່າເລີ່ມຕົ້ນ, .conf, ຫຼື control."
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:106
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:110
 msgid ""
 "This shows Unbound 'local-zone:' entries from default, .conf, or control."
 msgstr "ສ່ວນນີ້ສະແດງລາຍການ Unbound 'local-zone:' ຈາກຄ່າເລີ່ມຕົ້ນ, .conf, ຫຼື control."
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:82
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:86
 msgid "This shows Unbound self reported performance statistics."
 msgstr "ສ່ວນນີ້ສະແດງສະຖິຕິປະສິດທິພາບທີ່ລາຍງານໂດຍ Unbound ເອງ."
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:130
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:134
 msgid "This shows syslog filtered for events involving Unbound."
 msgstr "ສ່ວນນີ້ສະແດງ syslog ທີ່ກອງສະເພາະເຫດການທີ່ກ່ຽວຂ້ອງກັບ Unbound."
 
@@ -699,7 +699,7 @@ msgstr "ໂປ່ງໃສ (ພາຍໃນ/ທົ່ວໄປ)"
 msgid "Trigger Networks"
 msgstr "ເຄືອຂ່າຍທີ່ກະຕຸ້ນການເຮັດວຽກ"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:53
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:52
 msgid "Type"
 msgstr "ປະເພດ"
 
@@ -725,11 +725,11 @@ msgstr "ແອັບຄວບຄຸມ Unbound"
 msgid "Unbound DNS"
 msgstr "DNS ຂອງ Unbound"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:69
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/status.js:73
 msgid "Unbound cache is too large to display in LuCI."
 msgstr "ແຄຊ໌ຂອງ Unbound ໃຫຍ່ເກີນໄປທີ່ຈະສະແດງໃນ LuCI."
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:61
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:60
 msgid "Undefined"
 msgstr "ບໍ່ໄດ້ກຳນົດ"
 
@@ -781,13 +781,13 @@ msgstr "ຊື່ໂຊນ"
 msgid "Zone Type"
 msgstr "ປະເພດໂຊນ"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:44
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:64
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:43
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:63
 #: applications/luci-app-unbound/root/usr/share/luci/menu.d/luci-app-unbound.json:35
 msgid "Zones"
 msgstr "ໂຊນ"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:76
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:75
 msgid "accept upstream results for"
 msgstr "ຍອມຮັບຜົນລັດຈາກຂາຂຶ້ນສຳລັບ"
 
@@ -796,7 +796,7 @@ msgstr "ຍອມຮັບຜົນລັດຈາກຂາຂຶ້ນສຳລ
 msgid "default"
 msgstr "ຄ່າເລີ່ມຕົ້ນ"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:104
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:103
 msgid "download from <var>%s</var>"
 msgstr "ດາວໂຫຼດຈາກ <var>%s</var>"
 
@@ -805,26 +805,26 @@ msgstr "ດາວໂຫຼດຈາກ <var>%s</var>"
 msgid "never"
 msgstr "ບໍ່ເລີຍ"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:78
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:77
 msgid "prefetch zone files for"
 msgstr "ດຶງຂໍ້ມູນໄຟລ໌ໂຊນລ່ວງໜ້າສຳລັບ"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:77
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:76
 msgid "select recursion for"
 msgstr "ເລືອກການຄົ້ນຫາແບບຊ້ຳສຳລັບ"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:80
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:79
 msgid "unknown action for"
 msgstr "ການກະທຳທີ່ບໍ່ຮູ້ຈັກສຳລັບ"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:115
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:114
 msgid "use <var>%s</var> nameservers"
 msgstr "ໃຊ້ເນມເຊີບເວີ <var>%s</var>"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:96
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:95
 msgid "use nameservers"
 msgstr "ໃຊ້ເນມເຊີບເວີ"
 
-#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:99
+#: applications/luci-app-unbound/htdocs/luci-static/resources/view/unbound/zones.js:98
 msgid "with default certificate for <var>%s</var>"
 msgstr "ດ້ວຍໃບຮັບຮອງຄ່າເລີ່ມຕົ້ນສຳລັບ <var>%s</var>"

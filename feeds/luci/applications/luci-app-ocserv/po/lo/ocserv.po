@@ -102,7 +102,8 @@ msgstr "ເປີດໃຊ້ UDP"
 msgid ""
 "Enable UDP channel support; this must be enabled unless you know what you "
 "are doing"
-msgstr "ເປີດໃຊ້ການຮອງຮັບຊ່ອງທາງ UDP; ຕ້ອງເປີດໄວ້ເວັ້ນເສຍແຕ່ວ່າທ່ານຈະຮູ້ວ່າມີຫຍັງເກີດຂຶ້ນ"
+msgstr ""
+"ເປີດໃຊ້ການຮອງຮັບຊ່ອງທາງ UDP; ຕ້ອງເປີດໄວ້ເວັ້ນເສຍແຕ່ວ່າທ່ານຈະຮູ້ວ່າມີຫຍັງເກີດຂຶ້ນ"
 
 #: applications/luci-app-ocserv/htdocs/luci-static/resources/view/ocserv/main.js:83
 #: applications/luci-app-ocserv/htdocs/luci-static/resources/view/ocserv/main.js:84
@@ -218,10 +219,9 @@ msgid ""
 "network in LAN covering 192.168.1.0/24 use 192.168.1.192/26 to reserve the "
 "upper 62 addresses."
 msgstr ""
-"ຈັດຫາທີ່ຢູ່ໃຫ້ໄຄລ໌ແອນຈາກຊັບເນັດຂອງ LAN; ຖ້າເປີດໃຊ້ງານ ເນັດເວີກດ້ານລຸ່ມຕ້ອງເປັນຊັບເນັດຂອງ LAN. "
-"ໝາຍເຫດ: ທີ່ຢູ່ທຳອິດຂອງຊັບເນັດທີ່ລະບຸຈະຖືກຈອງໂດຍ ocserv, ສະນັ້ນມັນບໍ່ຄວນຖືກໃຊ້ງານຢູ່. "
-"ຖ້າທ່ານມີເນັດເວີກໃນ LAN ຄອບຄຸມ 192.168.1.0/24 ໃຫ້ໃຊ້ 192.168.1.192/26 ເພື່ອຈອງ 62 "
-"ທີ່ຢູ່ດ້ານເທິງ."
+"ຈັດຫາທີ່ຢູ່ໃຫ້ໄຄລ໌ແອນຈາກຊັບເນັດຂອງ LAN; ຖ້າເປີດໃຊ້ງານ ເນັດເວີກດ້ານລຸ່ມຕ້ອງເປັນຊັບເນັດຂອງ LAN. ໝາຍເ"
+"ຫດ: ທີ່ຢູ່ທຳອິດຂອງຊັບເນັດທີ່ລະບຸຈະຖືກຈອງໂດຍ ocserv, ສະນັ້ນມັນບໍ່ຄວນຖືກໃຊ້ງານຢູ່. ຖ້າທ່ານມີເນັດເວີກໃນ "
+"LAN ຄອບຄຸມ 192.168.1.0/24 ໃຫ້ໃຊ້ 192.168.1.192/26 ເພື່ອຈອງ 62 ທີ່ຢູ່ດ້ານເທິງ."
 
 #: applications/luci-app-ocserv/htdocs/luci-static/resources/view/ocserv/users.js:142
 #: applications/luci-app-ocserv/htdocs/luci-static/resources/view/ocserv/users.js:169
@@ -262,8 +262,8 @@ msgid ""
 "The DNS servers to be provided to clients; can be either IPv6 or IPv4. "
 "Typically you should include the address of this device"
 msgstr ""
-"ເຊີບເວີ DNS ທີ່ຈະຈັດຫາໃຫ້ໄຄລ໌ແອນ; ສາມາດເປັນໄດ້ທັງ IPv6 ຫຼື IPv4. "
-"ໂດຍປົກກະຕິແລ້ວທ່ານຄວນລວມທີ່ຢູ່ຂອງອຸປະກອນນີ້ເຂົ້າໄປນຳ"
+"ເຊີບເວີ DNS ທີ່ຈະຈັດຫາໃຫ້ໄຄລ໌ແອນ; ສາມາດເປັນໄດ້ທັງ IPv6 ຫຼື IPv4. ໂດຍປົກກະຕິແລ້ວທ່ານຄວນລວມທີ່ຢູ່ຂອ"
+"ງອຸປະກອນນີ້ເຂົ້າໄປນຳ"
 
 #: applications/luci-app-ocserv/htdocs/luci-static/resources/view/ocserv/main.js:104
 msgid ""
@@ -271,14 +271,15 @@ msgid ""
 "network different than the LAN addresses unless proxy ARP is enabled. Leave "
 "empty to attempt auto-configuration."
 msgstr ""
-"ທີ່ຢູ່ຊັບເນັດ IPv4 ທີ່ຈະຈັດຫາໃຫ້ໄຄລ໌ແອນ; ນີ້ຄວນເປັນເນັດເວີກສ່ວນຕົວທີ່ຕ່າງຈາກທີ່ຢູ່ LAN "
-"ເວັ້ນເສຍແຕ່ວ່າຈະເປີດໃຊ້ proxy ARP. ປະວ່າງໄວ້ເພື່ອທົດລອງຕັ້ງຄ່າອັດຕະໂນມັດ."
+"ທີ່ຢູ່ຊັບເນັດ IPv4 ທີ່ຈະຈັດຫາໃຫ້ໄຄລ໌ແອນ; ນີ້ຄວນເປັນເນັດເວີກສ່ວນຕົວທີ່ຕ່າງຈາກທີ່ຢູ່ LAN ເວັ້ນເສຍແຕ່ວ່າຈະເປີດ"
+"ໃຊ້ proxy ARP. ປະວ່າງໄວ້ເພື່ອທົດລອງຕັ້ງຄ່າອັດຕະໂນມັດ."
 
 #: applications/luci-app-ocserv/htdocs/luci-static/resources/view/ocserv/main.js:120
 msgid ""
 "The IPv6 subnet address to provide to clients; leave empty to attempt auto-"
 "configuration."
-msgstr "ທີ່ຢູ່ຊັບເນັດ IPv6 ທີ່ຈະຈັດຫາໃຫ້ໄຄລ໌ແອນ; ປະວ່າງໄວ້ເພື່ອທົດລອງຕັ້ງຄ່າອັດຕະໂນມັດ."
+msgstr ""
+"ທີ່ຢູ່ຊັບເນັດ IPv6 ທີ່ຈະຈັດຫາໃຫ້ໄຄລ໌ແອນ; ປະວ່າງໄວ້ເພື່ອທົດລອງຕັ້ງຄ່າອັດຕະໂນມັດ."
 
 #: applications/luci-app-ocserv/htdocs/luci-static/resources/view/ocserv/main.js:79
 #: applications/luci-app-ocserv/htdocs/luci-static/resources/view/ocserv/user-config.js:81
@@ -292,8 +293,8 @@ msgid ""
 "username-password pair. Use PAM modules to authenticate using another server "
 "(e.g., LDAP, Radius)."
 msgstr ""
-"ວິທີການຢັ້ງຢືນຕົວຕົນສຳລັບຜູ້ໃຊ້. ວິທີທີ່ງ່າຍທີ່ສຸດແມ່ນການໃຊ້ຊື່ຜູ້ໃຊ້-ລະຫັດຜ່ານຄູ່ດຽວ. ໃຊ້ PAM "
-"ໂມດູນເພື່ອຢັ້ງຢືນຕົວຕົນໂດຍໃຊ້ເຊີບເວີອື່ນ (ເຊັ່ນ: LDAP, Radius)."
+"ວິທີການຢັ້ງຢືນຕົວຕົນສຳລັບຜູ້ໃຊ້. ວິທີທີ່ງ່າຍທີ່ສຸດແມ່ນການໃຊ້ຊື່ຜູ້ໃຊ້-ລະຫັດຜ່ານຄູ່ດຽວ. ໃຊ້ PAM ໂມດູນເພື່ອຢັ້ງຢືນຕົວ"
+"ຕົນໂດຍໃຊ້ເຊີບເວີອື່ນ (ເຊັ່ນ: LDAP, Radius)."
 
 #: applications/luci-app-ocserv/htdocs/luci-static/resources/view/ocserv/user-config.js:58
 msgid "The firewall zone that the VPN clients will be set to"
@@ -310,8 +311,8 @@ msgid ""
 "routes, the server will send only the appropriate. Leave empty to set a "
 "default route"
 msgstr ""
-"ຕາຕະລາງການຈັດເສັ້ນທາງທີ່ຈະຈັດຫາໃຫ້ໄຄລ໌ແອນ; ທ່ານສາມາດປະສົມເສັ້ນທາງ IPv4 ແລະ IPv6 ໄດ້, "
-"ເຊີບເວີຈະສົ່ງສະເພາະອັນທີ່ເໝາະສົມເທົ່ານັ້ນ. ປະວ່າງໄວ້ເພື່ອຕັ້ງເປັນເສັ້ນທາງເລີ່ມຕົ້ນ"
+"ຕາຕະລາງການຈັດເສັ້ນທາງທີ່ຈະຈັດຫາໃຫ້ໄຄລ໌ແອນ; ທ່ານສາມາດປະສົມເສັ້ນທາງ IPv4 ແລະ IPv6 ໄດ້, ເຊີບເວີ"
+"ຈະສົ່ງສະເພາະອັນທີ່ເໝາະສົມເທົ່ານັ້ນ. ປະວ່າງໄວ້ເພື່ອຕັ້ງເປັນເສັ້ນທາງເລີ່ມຕົ້ນ"
 
 #: applications/luci-app-ocserv/htdocs/luci-static/resources/view/ocserv/main.js:62
 #: applications/luci-app-ocserv/htdocs/luci-static/resources/view/ocserv/user-config.js:64
@@ -322,7 +323,8 @@ msgstr "ຈະໃຊ້ພອດ UDP ແລະ TCP ດຽວກັນ"
 msgid ""
 "The value to be communicated to the client to verify the server's "
 "certificate; this value only depends on the public key"
-msgstr "ຄ່າທີ່ຈະສົ່ງໃຫ້ໄຄລ໌ແອນເພື່ອຢືນຢັນໃບຢັ້ງຢືນຂອງເຊີບເວີ; ຄ່ານີ້ຂຶ້ນກັບພຽງແຕ່ກຸນແຈສາທາລະນະເທົ່ານັ້ນ"
+msgstr ""
+"ຄ່າທີ່ຈະສົ່ງໃຫ້ໄຄລ໌ແອນເພື່ອຢືນຢັນໃບຢັ້ງຢືນຂອງເຊີບເວີ; ຄ່ານີ້ຂຶ້ນກັບພຽງແຕ່ກຸນແຈສາທາລະນະເທົ່ານັ້ນ"
 
 #: applications/luci-app-ocserv/htdocs/luci-static/resources/view/status/include/80_ocserv.js:107
 msgid "There are no active users."
@@ -372,13 +374,15 @@ msgstr "VPN <abbr title=\"Internet Protocol Version 4\">IPv4</abbr>-ເນັດ
 #: applications/luci-app-ocserv/htdocs/luci-static/resources/view/ocserv/user-config.js:95
 msgid ""
 "VPN <abbr title=\"Internet Protocol Version 4\">IPv4</abbr>-Network-Address"
-msgstr "VPN <abbr title=\"Internet Protocol Version 4\">IPv4</abbr>-ທີ່ຢູ່ເນັດເວີກ"
+msgstr ""
+"VPN <abbr title=\"Internet Protocol Version 4\">IPv4</abbr>-ທີ່ຢູ່ເນັດເວີກ"
 
 #: applications/luci-app-ocserv/htdocs/luci-static/resources/view/ocserv/main.js:119
 #: applications/luci-app-ocserv/htdocs/luci-static/resources/view/ocserv/user-config.js:109
 msgid ""
 "VPN <abbr title=\"Internet Protocol Version 6\">IPv6</abbr>-Network-Address"
-msgstr "VPN <abbr title=\"Internet Protocol Version 6\">IPv6</abbr>-ທີ່ຢູ່ເນັດເວີກ"
+msgstr ""
+"VPN <abbr title=\"Internet Protocol Version 6\">IPv6</abbr>-ທີ່ຢູ່ເນັດເວີກ"
 
 #: applications/luci-app-ocserv/htdocs/luci-static/resources/view/status/include/80_ocserv.js:91
 msgid "VPN IP Address"
@@ -399,4 +403,5 @@ msgstr "VPN IPv6"
 msgid ""
 "View the CA certificate used by this server. You will need to save it as "
 "'ca.pem' and import it into the clients."
-msgstr "ເບິ່ງໃບຢັ້ງຢືນ CA ທີ່ເຊີບເວີນີ້ໃຊ້. ທ່ານຈະຕ້ອງບັນທຶກມັນເປັນ 'ca.pem' ແລະ ນຳເຂົ້າໃສ່ໄຄລ໌ແອນ."
+msgstr ""
+"ເບິ່ງໃບຢັ້ງຢືນ CA ທີ່ເຊີບເວີນີ້ໃຊ້. ທ່ານຈະຕ້ອງບັນທຶກມັນເປັນ 'ca.pem' ແລະ ນຳເຂົ້າໃສ່ໄຄລ໌ແອນ."

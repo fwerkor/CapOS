@@ -1,7 +1,8 @@
 --- /dev/null
 +++ b/configs/mt7987a_routerich_be7200_defconfig
-@@ -0,0 +1,133 @@
+@@ -0,0 +1,137 @@
 +CONFIG_ARM=y
++CONFIG_ARM_SMCCC=y
 +CONFIG_SYS_HAS_NONCACHED_MEMORY=y
 +CONFIG_POSITION_INDEPENDENT=y
 +CONFIG_ARCH_MEDIATEK=y
@@ -40,6 +41,7 @@
 +CONFIG_CMD_ASKENV=y
 +CONFIG_CMD_ERASEENV=y
 +CONFIG_CMD_ENV_FLAGS=y
++CONFIG_CMD_RNG=y
 +CONFIG_CMD_STRINGS=y
 +CONFIG_CMD_CPU=y
 +CONFIG_CMD_DM=y
@@ -121,6 +123,8 @@
 +CONFIG_DM_REGULATOR_GPIO=y
 +CONFIG_DM_PWM=y
 +CONFIG_PWM_MTK=y
++CONFIG_DM_RNG=y
++CONFIG_RNG_MTK_V2=y
 +CONFIG_SCSI=y
 +CONFIG_DM_SERIAL=y
 +CONFIG_SERIAL_RX_BUFFER=y
@@ -276,14 +280,14 @@
 +};
 --- a/arch/arm/dts/Makefile
 +++ b/arch/arm/dts/Makefile
-@@ -1138,6 +1138,7 @@ dtb-$(CONFIG_ARCH_MEDIATEK) += \
+@@ -1116,6 +1116,7 @@ dtb-$(CONFIG_ARCH_MEDIATEK) += \
  	mt7986b-emmc-rfb.dtb \
  	mt7987a-emmc-rfb.dtb \
  	mt7987a-rfb.dtb \
 +	mt7987a-routerich_be7200.dtb \
  	mt7987a-sd-rfb.dtb \
  	mt7988-rfb.dtb \
- 	mt7988-sd-rfb.dtb \
+ 	mt7988-sd-rfb.dtb
 --- /dev/null
 +++ b/arch/arm/dts/mt7987a-routerich_be7200-u-boot.dtsi
 @@ -0,0 +1,84 @@

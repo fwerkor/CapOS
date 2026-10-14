@@ -15,7 +15,7 @@ Source: bison-3.8.2.tar.xz
 License: GPL-3.0-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:gnu:bison
-URL: http://www.gnu.org/software/bison/
+URL: https://www.gnu.org/software/bison/
 Type: ipkg
 Description:   Bison is a general-purpose parser generator
 @@

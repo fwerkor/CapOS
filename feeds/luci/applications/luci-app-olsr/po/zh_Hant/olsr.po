@@ -4,9 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2026-06-25 19:51+0000\n"
-"Last-Translator: 加尼瑪空格把變數都破壞了！ "
-"<roc_fe@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-08-31 06:44+0000\n"
+"Last-Translator: 為什麼不加空格 <c++23@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/openwrt/luciapplicationsolsr/zh_Hant/>\n"
 "Language: zh_Hant\n"
@@ -14,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/status-olsr/mid.js:79
 msgid "Active MID announcements"
@@ -98,9 +97,9 @@ msgid "ETX:"
 msgstr "ETX:"
 
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:58
-#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:504
+#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:505
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:58
-#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:486
+#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:487
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrdiface.js:39
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrdiface6.js:39
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrdplugins.js:50
@@ -205,8 +204,8 @@ msgstr "授予讀取權限"
 msgid "Green"
 msgstr "綠"
 
-#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:540
-#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:523
+#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:541
+#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:524
 #: applications/luci-app-olsr/root/usr/share/luci/menu.d/luci-app-olsr-frontend.json:38
 msgid "HNA"
 msgstr "HNA"
@@ -230,8 +229,8 @@ msgstr "HNA 間隔"
 msgid "HNA validity time"
 msgstr "HNA 有效時間"
 
-#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:519
-#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:502
+#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:520
+#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:503
 msgid "Hello"
 msgstr "Hello"
 
@@ -557,8 +556,8 @@ msgstr "LinkQuality 倍數"
 msgid "Local interface IP"
 msgstr "本地介面 IP"
 
-#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:533
-#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:516
+#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:534
+#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:517
 #: applications/luci-app-olsr/root/usr/share/luci/menu.d/luci-app-olsr-frontend.json:47
 msgid "MID"
 msgstr "MID"
@@ -599,9 +598,9 @@ msgid "Metric"
 msgstr "計量"
 
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:286
-#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:514
+#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:515
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:280
-#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:497
+#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:498
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrdiface.js:51
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrdiface6.js:51
 msgid "Mode"
@@ -659,8 +658,8 @@ msgstr "鄰居"
 msgid "Netmask"
 msgstr "網路遮罩"
 
-#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:512
-#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:494
+#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:513
+#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:495
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrdiface.js:48
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrdiface6.js:48
 msgid "Network"
@@ -822,8 +821,8 @@ msgid ""
 "if you use public IPs and have unstable DNS-Setup then those pages will load "
 "really slow. In this case disable it here."
 msgstr ""
-"解析狀態頁面上的主機名。通常允許這樣做是安全的，但若您使用公共 IP，且具有不穩"
-"定的 DNS 設定，則這些頁面的載入速度會非常慢。這種情況下，在此禁用它。"
+"解析狀態頁面上的主機名稱。通常允許這樣做是安全的，但若您使用公共 IP，且具有不"
+"穩定的 DNS 設定，則這些頁面的載入速度會非常慢。這種情況下，在此禁用它。"
 
 #: applications/luci-app-olsr/root/usr/share/luci/menu.d/luci-app-olsr-frontend.json:20
 msgid "Routes"
@@ -927,8 +926,8 @@ msgstr "從鄰居接收封包的成功率"
 msgid "Success rate of packages sent to the neighbour"
 msgstr "向鄰居發送封包的成功率"
 
-#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:526
-#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:509
+#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd.js:527
+#: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/frontend/olsrd6.js:510
 msgid "TC"
 msgstr "TC"
 
@@ -1149,3 +1148,15 @@ msgstr "已連線"
 #: applications/luci-app-olsr/htdocs/luci-static/resources/view/olsr/status-olsr/smartgw.js:181
 msgid "yes"
 msgstr "是"
+
+#~ msgid ""
+#~ "The OLSR daemon is an implementation of the Optimized Link State Routing "
+#~ "protocol. As such it allows mesh routing for any network equipment. It "
+#~ "runs on any wifi card that supports ad-hoc mode and of course on any "
+#~ "ethernet device. Visit <a href='http://www.olsr.org'>olsrd.org</a> for "
+#~ "help and documentation."
+#~ msgstr ""
+#~ "OLSR守護程式是最佳化連結狀態路由協定的實現。因此，它允許在任何網路裝置上建"
+#~ "立網狀路由。它可以在支援ad-hoc模式的任何wifi卡上執行，當然也可以在任何乙太"
+#~ "網路裝置上執行。訪問 <a href='http://www.olsr.org'>olsrd.org</a> 獲取幫助"
+#~ "和文件。"

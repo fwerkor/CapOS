@@ -1,23 +1,26 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=gdk-pixbuf
-PKG_VERSION:=2.42.12
+PKG_VERSION:=2.44.8
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=@GNOME/$(PKG_NAME)/$(basename $(PKG_VERSION))
-PKG_HASH:=b9505b3445b9a7e48ced34760c3bcb73e966df3ac94c95a148cb669ab748e3c7
+PKG_HASH:=919f529512961a12e81cd4b4b466a48c3933469e7f9a310c6513cd4fb252ba3c
 
 PKG_MAINTAINER:=Daniel Golle <daniel@makrotopia.org>
 PKG_LICENSE:=LGPL-2.1-or-later
 PKG_LICENSE_FILES:=COPYING
 PKG_CPE_ID:=cpe:/a:gnome:gdk-pixbuf
 
+PKG_BUILD_DEPENDS:=glib2/host
+
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/meson.mk
 
 MESON_ARGS += \
-	-Dgtk_doc=false \
+	-Ddocumentation=false \
+	-Dglycin=disabled \
 	-Dinstalled_tests=false \
 	-Dman=false \
 	-Dtests=false
@@ -60,5 +63,4 @@ define Package/libgdk-pixbuf/install
 	$(CP) $(PKG_INSTALL_DIR)/usr/bin/* $(1)/usr/lib/
 endef
 
-$(eval $(call HostBuild))
 $(eval $(call BuildPackage,libgdk-pixbuf))

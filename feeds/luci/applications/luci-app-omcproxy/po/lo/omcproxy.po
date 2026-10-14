@@ -28,7 +28,8 @@ msgstr "ອະນຸຍາດໃຫ້ luci-app-omcproxy ເຂົ້າເຖ�
 
 #: applications/luci-app-omcproxy/htdocs/luci-static/resources/view/omcproxy.js:20
 msgid "Minimum multicast scope to proxy (only affects IPv6 multicast)"
-msgstr "ຂອບເຂດ Multicast ຕ່ຳສຸດທີ່ຈະເຮັດພຣັອກຊີ (ມີຜົນສະເພາະ IPv6 multicast ເທົ່ານັ້ນ)"
+msgstr ""
+"ຂອບເຂດ Multicast ຕ່ຳສຸດທີ່ຈະເຮັດພຣັອກຊີ (ມີຜົນສະເພາະ IPv6 multicast ເທົ່ານັ້ນ)"
 
 #: applications/luci-app-omcproxy/htdocs/luci-static/resources/view/omcproxy.js:15
 msgid "Proxy Instance"

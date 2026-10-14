@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/admin/monit/Makefile
 
 Package: monit
-Version: 5.34.0-r1
+Version: 6.0.0-r1
 Depends: +libc +libpthread +zlib +libopenssl
 Conflicts: 
 Menu-Depends: 
@@ -12,7 +12,7 @@ Category: Administration
 Repository: base
 Title: System services monitoring utility (with SSL support)
 Maintainer: Yaroslav Petrov <info@lank.me>
-Source: monit-5.34.0.tar.gz
+Source: monit-6.0.0.tar.gz
 License: AGPL-3.0
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:tildeslash:monit
@@ -23,7 +23,7 @@ Description: 	An utility for monitoring services on a Unix system
 @@
 
 Package: monit-nossl
-Version: 5.34.0-r1
+Version: 6.0.0-r1
 Depends: +libc +libpthread +zlib
 Conflicts: 
 Menu-Depends: 
@@ -34,7 +34,7 @@ Category: Administration
 Repository: base
 Title: System services monitoring utility (without SSL support)
 Maintainer: Yaroslav Petrov <info@lank.me>
-Source: monit-5.34.0.tar.gz
+Source: monit-6.0.0.tar.gz
 License: AGPL-3.0
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:tildeslash:monit

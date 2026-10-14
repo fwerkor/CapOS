@@ -242,3 +242,9 @@ msgstr "வாட்ச் கேட்"
 #: applications/luci-app-watchcat/htdocs/luci-static/resources/view/watchcat.js:82
 msgid "Windows: 32 bytes"
 msgstr "விண்டோச்: 32 பைட்டுகள்"
+
+#~ msgid "Host To Check"
+#~ msgstr "சரிபார்க்க புரவலன்"
+
+#~ msgid "IP address or hostname to ping."
+#~ msgstr "ஐபி முகவரி அல்லது பிங்கிற்கு ஓச்ட்பெயர்."

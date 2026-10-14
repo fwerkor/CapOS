@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-04-25 12:14+0000\n"
-"Last-Translator: SnIPeRSnIPeR "
-"<snipersniper@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-10-01 12:16+0000\n"
+"Last-Translator: SnIPeRSnIPeR <snipersniper@users.noreply.hosted.weblate.org>"
+"\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsdockerman/ru/>\n"
 "Language: ru\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:505
 msgid "/mnt/path"
@@ -36,7 +36,7 @@ msgstr "Список возможностей ядра для добавлени
 msgid "Action"
 msgstr "Действие"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1824
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1825
 msgid "Action unavailable:"
 msgstr "Действие недоступно:"
 
@@ -67,11 +67,11 @@ msgstr "Дополнительно"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:590
 msgid "Aliases"
-msgstr ""
+msgstr "Псевдонимы"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1923
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1924
 msgid "Aliases (optional):"
-msgstr ""
+msgstr "Псевдонимы (опционально):"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/events.js:342
 msgid "All Subtypes"
@@ -227,9 +227,9 @@ msgstr "Данные об использовании CPU недоступны"
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:678
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/overview.js:169
 msgid "CPUs"
-msgstr "Ядра ЦП"
+msgstr "Процессоры"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1933
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1934
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:517
 msgid "Cancel"
 msgstr "Отмена"
@@ -254,7 +254,7 @@ msgstr "Кэш сборки очищен"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1189
 msgid "Clear"
-msgstr "Сбросить"
+msgstr "Очистить"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/images.js:617
 msgid "Click to add a new tag to this image"
@@ -314,20 +314,20 @@ msgstr "Настроить сеть по умолчанию типа мост"
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:564
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1049
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1119
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1975
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1976
 msgid "Connect"
 msgstr "Подключить"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1927
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1928
 msgid "Connect Network"
 msgstr "Подключить сеть"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1963
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1964
 msgid "Connect network"
 msgstr "Подключить сеть"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1520
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1532
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1521
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1533
 msgid "Connected"
 msgstr "Подключён"
 
@@ -335,7 +335,7 @@ msgstr "Подключён"
 msgid "Connected to container console"
 msgstr "Подключено к консоли контейнера"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1405
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1406
 msgid "Connecting…"
 msgstr "Подключение…"
 
@@ -347,22 +347,22 @@ msgstr "Консоль"
 msgid "Console Connection"
 msgstr "Подключение к консоли"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1522
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1773
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1523
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1774
 msgid "Console connected"
 msgstr "Консоль подключена"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1515
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1516
 msgid "Console connection closed"
 msgstr "Соединение с консолью закрыто"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1559
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1794
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1560
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1795
 msgid "Console disconnected"
 msgstr "Консоль отключена"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1579
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1594
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1580
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1595
 msgid "Console is not connected"
 msgstr "Консоль не подключена"
 
@@ -412,16 +412,16 @@ msgstr "Контейнер не запущен. Невозможно подкл�
 msgid "Container is not running. Cannot connect to console."
 msgstr "Контейнер не запущен. Невозможно подключиться к консоли."
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1385
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1386
 msgid "Container rename"
 msgstr "Переименование контейнера"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1393
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1394
 msgid "Container rename failed"
 msgstr "Не удалось переименовать контейнер"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1354
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1370
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1355
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1371
 msgid "Container update failed"
 msgstr "Не удалось обновить контейнер"
 
@@ -489,7 +489,7 @@ msgstr "Отладка"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:753
 msgid "Default (daemon)"
-msgstr ""
+msgstr "По умолчанию (демон)"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/configuration.js:57
 msgid "Default bridge"
@@ -511,7 +511,7 @@ msgstr ""
 "Адреса, начинающиеся с хоста реестра, соответствующего записи в этой "
 "таблице, используют связанные с ней учётные данные."
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1588
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1589
 msgid "Detach signal sent (Ctrl+D)"
 msgstr "Отправлен сигнал отключения (Ctrl+D)"
 
@@ -533,18 +533,18 @@ msgstr "Устройства"
 msgid "Disconnect"
 msgstr "Отключить"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1862
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1863
 msgid "Disconnect network"
 msgstr "Отключить сеть"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1852
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1853
 msgid "Disconnect network \"%s\" from container?"
 msgstr "Отключить сеть \\\"%s\\\" от контейнера?"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1125
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1508
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1538
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1557
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1509
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1539
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1558
 msgid "Disconnected"
 msgstr "Отключён"
 
@@ -640,7 +640,7 @@ msgstr "Дублировать/Редактировать контейнер: %s
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:422
 msgid "Edit"
-msgstr "Редактировать"
+msgstr "Изменить"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:315
 msgid "Edit Mount"
@@ -684,28 +684,28 @@ msgstr "Переменные окружения (-e)"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:1029
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/configuration.js:76
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1498
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1499
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1540
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1500
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1541
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1576
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1579
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1591
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1594
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1621
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1640
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1665
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1683
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1696
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1731
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1779
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1824
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1945
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1542
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1577
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1580
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1592
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1595
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1622
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1641
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1666
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1684
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1697
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1732
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1780
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1825
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1946
 msgid "Error"
 msgstr "Ошибка"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1681
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1695
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1682
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1696
 msgid "Error loading logs:"
 msgstr "Ошибка загрузки логов:"
 
@@ -742,7 +742,7 @@ msgstr "Открыть все порты (-P)"
 msgid "Exposed Ports(-p)"
 msgstr "Открыть порты (-p)"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1778
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1779
 msgid "Failed to connect to console"
 msgstr "Не удалось подключиться к консоли"
 
@@ -754,32 +754,36 @@ msgstr "Не удалось выполнить \"/etc/init.d/%s %s\" коман�
 msgid "Failed to load events: %s"
 msgstr "Не удалось загрузить события: %s"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1683
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1694
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1684
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1695
 msgid "Failed to load logs"
 msgstr "Не удалось загрузить журналы"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1576
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/volumes.js:25
+msgid "Failed to load volumes"
+msgstr "Ошибка загрузки томов"
+
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1577
 msgid "Failed to send data"
 msgstr "Не удалось отправить данные"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1591
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1592
 msgid "Failed to send detach signal"
 msgstr "Не удалось отправить сигнал отключения"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1730
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1731
 msgid "Failed to start console"
 msgstr "Не удалось запустить консоль"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/configuration.js:77
 msgid "Fatal"
-msgstr "Фатальный"
+msgstr "Критические ошибки"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:924
 msgid "File"
 msgstr "Файл"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1610
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1611
 msgid "File uploaded to"
 msgstr "Файл загружен в"
 
@@ -890,9 +894,9 @@ msgstr "Драйвер IPAM"
 msgid "IPv4 Address"
 msgstr "IPv4-адрес"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1919
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1920
 msgid "IPv4 Address (optional):"
-msgstr ""
+msgstr "IPv4-адрес (опционально):"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/network.js:64
 msgid "IPv6"
@@ -904,9 +908,9 @@ msgstr "IPv6"
 msgid "IPv6 Address"
 msgstr "IPv6‑адрес"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1921
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1922
 msgid "IPv6 Address (optional):"
-msgstr ""
+msgstr "IPv6-адрес (опционально):"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:586
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/network_new.js:134
@@ -975,11 +979,11 @@ msgstr "Адрес сервера индексов"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/configuration.js:74
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:453
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1515
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1559
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1588
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1794
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1877
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1516
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1560
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1589
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1795
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1878
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/network.js:57
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/overview.js:161
 msgid "Info"
@@ -1024,7 +1028,7 @@ msgid ""
 msgstr "Заменяет зеркала реестра, используемые демоном, на новый набор зеркал"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:382
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1804
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1805
 msgid "Kill"
 msgstr "Остановить принудительно"
 
@@ -1076,7 +1080,7 @@ msgstr "Загрузить события"
 msgid "Load Logs"
 msgstr "Загрузить журналы"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1676
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1677
 msgid "Loading logs…"
 msgstr "Загрузка журналов…"
 
@@ -1102,7 +1106,7 @@ msgstr "Опции журналирования"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:751
 msgid "Log driver"
-msgstr ""
+msgstr "Драйвер логирования"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:745
 msgid "Log driver options"
@@ -1134,7 +1138,7 @@ msgstr "Статистика памяти"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:709
 msgid "Memory"
-msgstr "Оперативная память"
+msgstr "Память"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:651
 msgid "Memory + Swap"
@@ -1177,7 +1181,7 @@ msgstr ""
 "Микросекунды процессорного времени, которые контейнер может получить за "
 "период CPU"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1657
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1658
 msgid "Missing header or CORS interfering"
 msgstr "Отсутствует заголовок или мешает CORS"
 
@@ -1214,7 +1218,7 @@ msgstr "Монтирования/Привязки"
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/volumes.js:121
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/volumes.js:241
 msgid "Name"
-msgstr "Название"
+msgstr "Имя"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:213
 msgid "Name of the container that can be selected during container creation"
@@ -1230,7 +1234,7 @@ msgstr "Статистика сети"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:282
 msgid "Network Aliases"
-msgstr ""
+msgstr "Сетевые псевдонимы"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/network.js:100
 msgid "Network Configurations"
@@ -1241,7 +1245,7 @@ msgstr "Конфигурации сети"
 msgid "Network Name"
 msgstr "Название сети"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1967
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1968
 msgid "Network connected"
 msgstr "Сеть подключена"
 
@@ -1253,7 +1257,7 @@ msgstr "Сеть создана"
 msgid "Network created with warning"
 msgstr "Сеть создана с предупреждением"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1866
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1867
 msgid "Network disconnected"
 msgstr "Сеть отключена"
 
@@ -1296,7 +1300,7 @@ msgstr "Новый том"
 msgid "No"
 msgstr "Нет"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1877
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1878
 msgid "No additional networks available to connect"
 msgstr "Нет доступных сетей для подключения"
 
@@ -1324,7 +1328,7 @@ msgstr "Нет доступных тегов образа"
 msgid "No images selected"
 msgstr "Образы не выбраны"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1687
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1688
 msgid "No logs available"
 msgstr "Журналы недоступны"
 
@@ -1332,7 +1336,7 @@ msgstr "Журналы недоступны"
 msgid "No name specified."
 msgstr "Имя не указано."
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1945
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1946
 msgid "No network selected"
 msgstr "Сеть не выбрана"
 
@@ -1373,7 +1377,7 @@ msgstr ""
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:864
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:891
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1362
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1363
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/network_new.js:242
 msgid "OK"
 msgstr "Принять"
@@ -1401,7 +1405,7 @@ msgstr "Только для пользовательских сетей"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/containers.js:351
 msgid "Open in browser"
-msgstr ""
+msgstr "Открыть в браузере"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:899
 msgid "Operation failed"
@@ -1416,7 +1420,7 @@ msgstr "Результат операции"
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/network.js:89
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/network_new.js:80
 msgid "Options"
-msgstr "Опции"
+msgstr "Параметры"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/network_new.js:46
 msgid "Overlay network"
@@ -1450,10 +1454,10 @@ msgstr "Пароль"
 msgid "Path"
 msgstr "Путь"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1639
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1640
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1663
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1641
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1664
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1665
 msgid "Path error"
 msgstr "Ошибка пути"
 
@@ -1462,7 +1466,7 @@ msgid "Path:"
 msgstr "Путь:"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:396
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1805
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1806
 msgid "Pause"
 msgstr "Приостановить"
 
@@ -1473,7 +1477,7 @@ msgstr "Приостановить этот контейнер"
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/containers.js:86
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/containers.js:143
 msgid "Paused"
-msgstr "Приостановлено"
+msgstr "На паузе"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:742
 msgid "Per CPU Stats"
@@ -1509,7 +1513,7 @@ msgid "Please select an image tag to push"
 msgstr "Выберите тег образа для отправки"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:1029
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1621
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1622
 msgid "Please specify a path"
 msgstr "Укажите путь"
 
@@ -1615,11 +1619,11 @@ msgstr "Зеркала реестра"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:426
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:424
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1807
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1808
 msgid "Remove"
 msgstr "Удалить"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1814
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1815
 msgid "Remove container?"
 msgstr "Удалить контейнер?"
 
@@ -1645,7 +1649,7 @@ msgid "Resources"
 msgstr "Ресурсы"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:363
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1802
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1803
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/containers.js:242
 msgid "Restart"
 msgstr "Перезапустить"
@@ -1707,7 +1711,7 @@ msgstr "Сначала выберите тип"
 msgid "Select image tag"
 msgstr "Выберите тег образа"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1917
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1918
 msgid "Select network to connect:"
 msgstr "Выберите сеть для подключения:"
 
@@ -1753,7 +1757,7 @@ msgstr ""
 "Указывает, где демон Docker будет ожидать подключения клиентов. По умолчанию:"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:354
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1801
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1802
 msgid "Start"
 msgstr "Запустить"
 
@@ -1789,7 +1793,7 @@ msgid "Stdout"
 msgstr "STDOUT"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:372
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1803
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1804
 msgid "Stop"
 msgstr "Остановить"
 
@@ -1825,8 +1829,8 @@ msgstr "Подпуть"
 msgid "Subtype"
 msgstr "Подтип"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1522
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1773
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1523
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1774
 msgid "Success"
 msgstr "Успех"
 
@@ -1850,7 +1854,7 @@ msgstr "Настройки sysctl (параметры ядра)"
 msgid "TTY (-t)"
 msgstr "TTY (-t)"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1763
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1764
 msgid "TTYd may still be starting up"
 msgstr "TTYd, возможно, всё ещё запускается"
 
@@ -1983,9 +1987,9 @@ msgstr "ПОЛЬЗОВАТЕЛЬ"
 msgid "Unexpected error"
 msgstr "Непредвиденная ошибка"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1354
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1639
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1682
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1355
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1640
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1683
 msgid "Unknown error"
 msgstr "Неизвестная ошибка"
 
@@ -1995,7 +1999,7 @@ msgid "Unless stopped"
 msgstr "Пока не остановлен"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:396
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1806
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1807
 msgid "Unpause"
 msgstr "Возобновить"
 
@@ -2005,9 +2009,9 @@ msgstr "Возобновить этот контейнер"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:582
 msgid "Update"
-msgstr "Применить"
+msgstr "Обновить"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1358
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1359
 msgid "Updated"
 msgstr "Обновлено"
 
@@ -2016,7 +2020,7 @@ msgstr "Обновлено"
 msgid "Upload"
 msgstr "Загрузить"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1609
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1610
 msgid "Uploading file to container…"
 msgstr "Загрузка файла в контейнер…"
 
@@ -2024,7 +2028,7 @@ msgstr "Загрузка файла в контейнер…"
 msgid "Uploading image…"
 msgstr "Загрузка образа…"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1608
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1609
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/images.js:697
 msgid "Uploading…"
 msgstr "Загрузка…"
@@ -2080,7 +2084,7 @@ msgid "Volumes overview"
 msgstr "Список томов"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/configuration.js:75
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1763
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1764
 msgid "Warning"
 msgstr "Предупреждение"
 
@@ -2092,7 +2096,7 @@ msgstr "WebSocket"
 msgid "WebSocket Console"
 msgstr "Консоль WebSocket"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1499
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1500
 msgid "WebSocket error"
 msgstr "Ошибка WebSocket"
 
@@ -2112,7 +2116,7 @@ msgstr "сборщик"
 msgid "commit"
 msgstr "коммит"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1835
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1836
 msgid "completed"
 msgstr "завершено"
 
@@ -2200,7 +2204,7 @@ msgstr "образ"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:755
 msgid "json-file"
-msgstr ""
+msgstr "json-файл"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:336
 msgid "kill"
@@ -2212,7 +2216,7 @@ msgstr "загрузить"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:754
 msgid "local"
-msgstr ""
+msgstr "локальный"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:383
 msgid "mount"
@@ -2228,7 +2232,7 @@ msgstr "узел"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:757
 msgid "none"
-msgstr ""
+msgstr "нет"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:337
 msgid "oom"
@@ -2297,7 +2301,7 @@ msgstr "остановить"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:756
 msgid "syslog"
-msgstr ""
+msgstr "syslog"
 
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/dockerman/common.js:364
 msgid "tag"
@@ -2337,7 +2341,204 @@ msgstr "том"
 msgid "volume name"
 msgstr "имя тома"
 
-#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1360
+#: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container.js:1361
 #: applications/luci-app-dockerman/htdocs/luci-static/resources/view/dockerman/container_new.js:991
 msgid "with warnings"
 msgstr "с предупреждениями"
+
+#~ msgid "IP Address (optional):"
+#~ msgstr "IP‑адрес (необязательно):"
+
+#~ msgid "Progress"
+#~ msgstr "Прогресс"
+
+#~ msgid ""
+#~ "This page displays all containers that have been created on the connected "
+#~ "docker host."
+#~ msgstr ""
+#~ "На этой странице показаны все контейнеры, которые были созданы на этом "
+#~ "устройстве."
+
+#~ msgid "Advance"
+#~ msgstr "Дополнительно"
+
+#~ msgid "Auto create macvlan interface in Openwrt"
+#~ msgstr "Автоматически создать интерфейс MAC VLAN в OpenWrt"
+
+#~ msgid "Bind Mount(-v)"
+#~ msgstr "Монтирование каталога(-v)"
+
+#~ msgid ""
+#~ "Block IO weight (relative weight) accepts a weight value between 10 and "
+#~ "1000"
+#~ msgstr ""
+#~ "Относительный вес, на основании которого время на операции ввода-вывода "
+#~ "будет распределяться между контейнерами. По умолчанию 500. Минимум 10, "
+#~ "максимум 1000"
+
+#~ msgid ""
+#~ "CPU shares relative weight, if 0 is set, the system will ignore the value "
+#~ "and use the default of 1024."
+#~ msgstr ""
+#~ "Относительный вес, на основании которого время использования ЦП будет "
+#~ "распределяться между контейнерами. Минимум 2. Значение по умолчанию 1024."
+
+#~ msgid "Command line"
+#~ msgstr "Ввести команду"
+
+#~ msgid "Command line Error"
+#~ msgstr "Укажите корректную команду"
+
+#~ msgid "Connect to remote endpoint"
+#~ msgstr "Подключение к удалённой конечной точке"
+
+#~ msgid "Create macvlan interface"
+#~ msgstr "Создать интерфейс MAC VLAN"
+
+#~ msgid "Device"
+#~ msgstr "Устройство"
+
+#~ msgid "Docker"
+#~ msgstr "Docker"
+
+#~ msgid "Docker - Container (%s)"
+#~ msgstr "Docker - Контейнер (%s)"
+
+#~ msgid "Docker - Network"
+#~ msgstr "Docker - Сеть"
+
+#~ msgid "Docker actions done."
+#~ msgstr "Docker завершил задачу."
+
+#~ msgid "Example: https://hub-mirror.c.163.com"
+#~ msgstr "Пример: https://hub-mirror.c.163.com"
+
+#~ msgid "Healthy"
+#~ msgstr "Здоровье"
+
+#~ msgid "Host or IP Address for the connection to a remote docker instance"
+#~ msgstr ""
+#~ "Для подключения к Docker, запущенному на другой машине, введите имя хоста "
+#~ "или его IP-адрес"
+
+#~ msgid "Import Image"
+#~ msgstr "Импортировать образ"
+
+#~ msgid "Load"
+#~ msgstr "Отгрузить"
+
+#~ msgid ""
+#~ "Memory limit (format: <number>[<unit>]). Number is a positive integer. "
+#~ "Unit can be one of b, k, m, or g. Minimum is 4M."
+#~ msgstr ""
+#~ "Ограничение по памяти (формат: <число>[<единица>]). Число целое "
+#~ "положительное. Единицей может быть одна из: b, k, m, или g. Минимум — 4M."
+
+#~ msgid "Mount/Volume"
+#~ msgstr "Смонтировать/Том"
+
+#~ msgid "Network"
+#~ msgstr "Сеть"
+
+#~ msgid "New"
+#~ msgstr "Добавить"
+
+#~ msgid "Number of CPUs. Number is a fractional number. 0.000 means no limit."
+#~ msgstr ""
+#~ "Количество выделенных ядер ЦП в формате десятичной дроби. 0.000 значит "
+#~ "без ограничений."
+
+#~ msgid "On this page, the selected container can be managed."
+#~ msgstr "На этой странице можно изменить параметры выбранного контейнера."
+
+#~ msgid "Please input new tag"
+#~ msgstr "Пожалуйста, введите новую метку"
+
+#~ msgid "Please input the PATH !"
+#~ msgstr "Пожалуйста, введите путь к файлу!"
+
+#~ msgid "Please input the PATH and select the file !"
+#~ msgstr ""
+#~ "Пожалуйста, выберите файл для отгрузки и укажите путь, по которому файл "
+#~ "будет размещен в контейнере!"
+
+#~ msgid "Plese input <docker create/run> command line:"
+#~ msgstr "Пожалуйста, введите команду <docker create/run>:"
+
+#~ msgid "Pull Image"
+#~ msgstr "Скачать образ"
+
+#~ msgid "Remote Endpoint"
+#~ msgstr "Удалённая конечная точка"
+
+#~ msgid "Remote Host"
+#~ msgstr "Удалённый хост"
+
+#~ msgid "Remote Port"
+#~ msgstr "Удалённый порт"
+
+#~ msgid "RepoTags"
+#~ msgstr "RepoTags"
+
+#~ msgid "Resolve CLI"
+#~ msgstr "Заполнить аргументами команды"
+
+#~ msgid "Reveal/hide password"
+#~ msgstr "Показать/скрыть пароль"
+
+#~ msgid "Save"
+#~ msgstr "Сохранить"
+
+#~ msgid "Set environment variables to inside the container"
+#~ msgstr "Переменные окружения, которые будут переданы в контейнер"
+
+#~ msgid ""
+#~ "Specifies where the Docker daemon will listen for client connections "
+#~ "(default: unix:///var/run/docker.sock)"
+#~ msgstr ""
+#~ "Определяет, где демон Docker будет ожидать подключения клиента (по "
+#~ "умолчанию: unix:///var/run/docker.sock)"
+
+#~ msgid "Start Time"
+#~ msgstr "Время начала"
+
+#~ msgid "Submit"
+#~ msgstr "Применить"
+
+#~ msgid "Sysctl"
+#~ msgstr "Sysctl"
+
+#~ msgid "TOP"
+#~ msgstr "TOP"
+
+#~ msgid "TX/RX"
+#~ msgstr "Tx/Rx"
+
+#~ msgid ""
+#~ "The user that commands are run as inside the container.(format: name|"
+#~ "uid[:group|gid])"
+#~ msgstr ""
+#~ "Пользователь, от имени которого будут выполняться команды внутри "
+#~ "контейнера. (формат: name|uid[:group|gid])"
+
+#~ msgid "UID"
+#~ msgstr "UID"
+
+#~ msgid "Upgrade"
+#~ msgstr "Обновить"
+
+#~ msgid "Upload Error"
+#~ msgstr "Ошибка при загрузке"
+
+#~ msgid "Upload Success"
+#~ msgstr "Успешно загружено"
+
+#~ msgid "Upload/Download"
+#~ msgstr "Загрузить/Скачать"
+
+#~ msgid ""
+#~ "When pressing the Import button, both a local image can be loaded onto "
+#~ "the system and a valid image tar can be downloaded from remote."
+#~ msgstr ""
+#~ "По нажатии кнопки \"Импортировать\" в систему может быть загружен как "
+#~ "локальный образ, так и tar-файл из удалённого репозитория."

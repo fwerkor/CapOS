@@ -504,8 +504,8 @@ msgstr "예약됨(Reserved)"
 msgid ""
 "Retry scanning when roam_scan_tries is exceeded after this timeout (in ms)."
 msgstr ""
-"로밍 탐색 시도(roam_scan_tries) 값을 초과한 경우, 해당 대기 시간 (밀리초 단"
-"위)이 지나면 탐색을 다시 시도합니다."
+"로밍 탐색 시도(roam_scan_tries) 값을 초과한 경우, 해당 대기 시간 (밀리초 "
+"단위)이 지나면 탐색을 다시 시도합니다."
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:637
 msgid "Roam kick delay"
@@ -554,8 +554,8 @@ msgid ""
 "SNR difference that the signal must be better compared to signal was on "
 "connection to node."
 msgstr ""
-"현재 연결된 노드보다 신호가 얼마나 더 개선되어야 하는지를 결정하는 SNR 차이값"
-"을 설정합니다."
+"현재 연결된 노드보다 신호가 얼마나 더 개선되어야 하는지를 결정하는 SNR "
+"차이값을 설정합니다."
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:83
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:294
@@ -655,8 +655,8 @@ msgid ""
 "Timeout (s in \"1024ms\") a station is requested to avoid reassociation "
 "after bss transition"
 msgstr ""
-"BSS 전환 발생 후, 해당 단말이 일정 시간 동안 재연결을 시도하지 않도록 요청하"
-"는 대기 시간 [단위: 약 1초(\"1024ms\")]"
+"BSS 전환 발생 후, 해당 단말이 일정 시간 동안 재연결을 시도하지 않도록 "
+"요청하는 대기 시간 [단위: 약 1초(\"1024ms\")]"
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:589
 msgid "Timeout after which a station with SNR < min_SNR will be kicked"

@@ -123,8 +123,8 @@ msgid ""
 "udpxy is an IPTV stream relay, a UDP-to-HTTP multicast traffic relay daemon "
 "which forwards multicast UDP streams to HTTP clients."
 msgstr ""
-"udpxy ແມ່ນຕົວສົ່ງຕໍ່ສາຍສັນຍານ IPTV, ເປັນ daemon ສົ່ງຕໍ່ຂໍ້ມູນ multicast ຈາກ UDP ໄປເປັນ HTTP "
-"ເຊິ່ງເຮັດໜ້າທີ່ສົ່ງຕໍ່ສາຍສັນຍານ UDP multicast ໄປຫາລູກຂ່າຍ HTTP."
+"udpxy ແມ່ນຕົວສົ່ງຕໍ່ສາຍສັນຍານ IPTV, ເປັນ daemon ສົ່ງຕໍ່ຂໍ້ມູນ multicast ຈາກ UDP ໄປເປັນ HTTP ເ"
+"ຊິ່ງເຮັດໜ້າທີ່ສົ່ງຕໍ່ສາຍສັນຍານ UDP multicast ໄປຫາລູກຂ່າຍ HTTP."
 
 #: applications/luci-app-udpxy/htdocs/luci-static/resources/view/udpxy.js:39
 #: applications/luci-app-udpxy/htdocs/luci-static/resources/view/udpxy.js:133

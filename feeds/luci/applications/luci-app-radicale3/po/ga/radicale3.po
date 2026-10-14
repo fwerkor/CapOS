@@ -504,3 +504,9 @@ msgid "password file can have users with a mix of support encryption methods"
 msgstr ""
 "is féidir le húsáideoirí a bhfuil meascán de mhodhanna criptithe tacaíochta "
 "acu a bheith i gcomhad pasfhocail"
+
+#~ msgid "Do not filter debug messages starting with 'TRACE'"
+#~ msgstr "Ná scag teachtaireachtaí dífhabhtaithe ag tosú le 'TRACE'"
+
+#~ msgid "Trace on debug"
+#~ msgstr "Rianú ar dhífhabhtú"

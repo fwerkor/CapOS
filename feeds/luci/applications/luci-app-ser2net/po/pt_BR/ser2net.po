@@ -166,8 +166,8 @@ msgid ""
 "The amount of seconds of inactivity before a disconnect occurs.<br/>A value "
 "of zero means wait indefinitely."
 msgstr ""
-"Quantidade tempo em segundos de inatividade antes que a desconexão ocorra."
-"<br/>Um valor igual a zero significa esperar indefinidamente."
+"Quantidade tempo em segundos de inatividade antes que a desconexão "
+"ocorra.<br/>Um valor igual a zero significa esperar indefinidamente."
 
 #: applications/luci-app-ser2net/htdocs/luci-static/resources/view/ser2net/leds.js:19
 msgid "The device itself."

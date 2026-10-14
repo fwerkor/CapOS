@@ -20,7 +20,8 @@ msgstr "ການຕັ້ງຄ່າຂັ້ນສູງຊ່ວຍໃຫ້
 
 #: applications/luci-app-squid/htdocs/luci-static/resources/view/squid.js:93
 msgid "Can only be set if Squid is compiled with the %s option"
-msgstr "ສາມາດຕັ້ງຄ່າໄດ້ກໍຕໍ່ເມື່ອ Squid ຖືກຄອມພາຍ (compiled) ດ້ວຍຕົວເລືອກ %s ເທົ່ານັ້ນ"
+msgstr ""
+"ສາມາດຕັ້ງຄ່າໄດ້ກໍຕໍ່ເມື່ອ Squid ຖືກຄອມພາຍ (compiled) ດ້ວຍຕົວເລືອກ %s ເທົ່ານັ້ນ"
 
 #: applications/luci-app-squid/htdocs/luci-static/resources/view/squid.js:52
 #: applications/luci-app-squid/htdocs/luci-static/resources/view/squid.js:106

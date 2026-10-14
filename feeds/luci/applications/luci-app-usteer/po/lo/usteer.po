@@ -30,7 +30,8 @@ msgstr "3 ຄຳຂໍປ່ຽນຜ່ານ BSS ໂດຍຈະຕັດກ�
 msgid ""
 "4 BSS-transition-request with disassociation imminent, timer and forced "
 "disassociation"
-msgstr "4 ຄຳຂໍປ່ຽນຜ່ານ BSS ໂດຍຈະຕັດການເຊື່ອມຕໍ່ໃນໄວໆນີ້, ມີເວລາຈັບ ແລະ ບັງຄັບຕັດການເຊື່ອມຕໍ່"
+msgstr ""
+"4 ຄຳຂໍປ່ຽນຜ່ານ BSS ໂດຍຈະຕັດການເຊື່ອມຕໍ່ໃນໄວໆນີ້, ມີເວລາຈັບ ແລະ ບັງຄັບຕັດການເຊື່ອມຕໍ່"
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:760
 msgid "A value of 0 disables threshold."
@@ -59,7 +60,8 @@ msgstr "ລາຍການ MAC ຄວາມດຸດດັນ"
 msgid ""
 "Aggressiveness of BSS-transition-request to push a station to another node "
 "(AP or band)."
-msgstr "ຄວາມດຸດດັນຂອງຄຳຂໍປ່ຽນຜ່ານ BSS ເພື່ອຍ້າຍອຸປະກອນໄປຫາໂນດອື່ນ (AP ຫຼື ຄື້ນຄວາມຖີ່)."
+msgstr ""
+"ຄວາມດຸດດັນຂອງຄຳຂໍປ່ຽນຜ່ານ BSS ເພື່ອຍ້າຍອຸປະກອນໄປຫາໂນດອື່ນ (AP ຫຼື ຄື້ນຄວາມຖີ່)."
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:514
 msgid "All debug messages"
@@ -71,7 +73,8 @@ msgstr "ອະນຸຍາດໃຫ້ເພີກເສີຍຕໍ່ຄຳຂ
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:573
 msgid "Allow rejecting assoc requests for steering purposes"
-msgstr "ອະນຸຍາດໃຫ້ປະຕິເສດຄຳຂໍເຊື່ອມຕໍ່ (Assoc) ເພື່ອຈຸດປະສົງໃນການນຳທິດ (Steering)"
+msgstr ""
+"ອະນຸຍາດໃຫ້ປະຕິເສດຄຳຂໍເຊື່ອມຕໍ່ (Assoc) ເພື່ອຈຸດປະສົງໃນການນຳທິດ (Steering)"
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:336
 msgid "Also be sure to enable rrm reports, 80211kv, etc."
@@ -227,8 +230,8 @@ msgid ""
 "Interval (ms) the device is sent a link-measurement request to help assess "
 "the bi-directional link quality."
 msgstr ""
-"ໄລຍະຫ່າງ (ມິລິວິນາທີ) ທີ່ອຸປະກອນຖືກສົ່ງຄຳຂໍວັດແທກການເຊື່ອມຕໍ່ "
-"ເພື່ອຊ່ວຍປະເມີນຄຸນນະພາບການເຊື່ອມຕໍ່ທັງສອງທາງ."
+"ໄລຍະຫ່າງ (ມິລິວິນາທີ) ທີ່ອຸປະກອນຖືກສົ່ງຄຳຂໍວັດແທກການເຊື່ອມຕໍ່ ເພື່ອຊ່ວຍປະເມີນຄຸນນະພາບການເຊື່ອມຕໍ່ທັງສອງທ"
+"າງ."
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:687
 msgid "Link measurement interval"
@@ -310,7 +313,8 @@ msgstr "ຈຳນວນການລອງໃໝ່ສູງສຸດຂອງຄ
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:528
 msgid "Maximum amount of time (ms) a local unconnected station is tracked"
-msgstr "ໄລຍະເວລາສູງສຸດ (ມິລິວິນາທີ) ທີ່ສະຖານີທ້ອງຖິ່ນທີ່ບໍ່ໄດ້ເຊື່ອມຕໍ່ຈະຖືກຕິດຕາມ"
+msgstr ""
+"ໄລຍະເວລາສູງສຸດ (ມິລິວິນາທີ) ທີ່ສະຖານີທ້ອງຖິ່ນທີ່ບໍ່ໄດ້ເຊື່ອມຕໍ່ຈະຖືກຕິດຕາມ"
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:533
 msgid "Maximum amount of time (ms) a measurement report is stored"
@@ -319,13 +323,15 @@ msgstr "ໄລຍະເວລາສູງສຸດ (ມິລິວິນາທ�
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:523
 msgid ""
 "Maximum amount of time (ms) a station may be blocked due to policy decisions"
-msgstr "ໄລຍະເວລາສູງສຸດ (ມິລິວິນາທີ) ທີ່ສະຖານີອາດຈະຖືກບລັອກເນື່ອງຈາກການຕັດສິນໃຈຕາມນະໂຍບາຍ"
+msgstr ""
+"ໄລຍະເວລາສູງສຸດ (ມິລິວິນາທີ) ທີ່ສະຖານີອາດຈະຖືກບລັອກເນື່ອງຈາກການຕັດສິນໃຈຕາມນະໂຍບາຍ"
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:548
 msgid ""
 "Maximum idle time of a station entry (ms) to be considered for policy "
 "decisions"
-msgstr "ໄລຍະເວລາວ່າງສູງສຸດຂອງສະຖານີ (ມິລິວິນາທີ) ທີ່ຈະຖືກພິຈາລະນາສຳລັບການຕັດສິນໃຈຕາມນະໂຍບາຍ"
+msgstr ""
+"ໄລຍະເວລາວ່າງສູງສຸດຂອງສະຖານີ (ມິລິວິນາທີ) ທີ່ຈະຖືກພິຈາລະນາສຳລັບການຕັດສິນໃຈຕາມນະໂຍບາຍ"
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:609
 msgid "Maximum number of client roaming scan trigger attempts"
@@ -364,8 +370,8 @@ msgid ""
 "Minimal SNR or absolute signal a device has to maintain over "
 "band_steering_interval to be steered to a higher frequency band."
 msgstr ""
-"SNR ຕ່ຳສຸດ ຫຼື ລະດັບສັນຍານທີ່ອຸປະກອນຕ້ອງຮັກສາໄວ້ໃນໄລຍະ band_steering_interval "
-"ເພື່ອທີ່ຈະຖືກນຳທິດໄປຫາຄື້ນຄວາມຖີ່ທີ່ສູງກວ່າ."
+"SNR ຕ່ຳສຸດ ຫຼື ລະດັບສັນຍານທີ່ອຸປະກອນຕ້ອງຮັກສາໄວ້ໃນໄລຍະ band_steering_interval ເພື່ອທີ່ຈະຖືກນຳທິ"
+"ດໄປຫາຄື້ນຄວາມຖີ່ທີ່ສູງກວ່າ."
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:660
 msgid ""
@@ -381,19 +387,22 @@ msgstr "ພາລະຊ່ອງສັນຍານຕ່ຳສຸດ (%) ກ່�
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:665
 msgid ""
 "Minimum number of connected clients before kicking based on channel load"
-msgstr "ຈຳນວນອຸປະກອນທີ່ເຊື່ອມຕໍ່ຕ່ຳສຸດ ກ່ອນທີ່ຈະມີການເຕະອອກໂດຍອີງຕາມພາລະຂອງຊ່ອງສັນຍານ"
+msgstr ""
+"ຈຳນວນອຸປະກອນທີ່ເຊື່ອມຕໍ່ຕ່ຳສຸດ ກ່ອນທີ່ຈະມີການເຕະອອກໂດຍອີງຕາມພາລະຂອງຊ່ອງສັນຍານ"
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:553
 msgid ""
 "Minimum number of stations delta between APs before load balancing policy is "
 "active"
-msgstr "ຈຳນວນສະຖານີທີ່ແຕກຕ່າງກັນຕ່ຳສຸດລະຫວ່າງ AP ກ່ອນທີ່ນະໂຍບາຍການກະຈາຍພາລະຈະເຮັດວຽກ"
+msgstr ""
+"ຈຳນວນສະຖານີທີ່ແຕກຕ່າງກັນຕ່ຳສຸດລະຫວ່າງ AP ກ່ອນທີ່ນະໂຍບາຍການກະຈາຍພາລະຈະເຮັດວຽກ"
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:558
 msgid ""
 "Minimum number of stations delta between bands before band steering policy "
 "is active"
-msgstr "ຈຳນວນສະຖານີທີ່ແຕກຕ່າງກັນຕ່ຳສຸດລະຫວ່າງຄື້ນຄວາມຖີ່ ກ່ອນທີ່ນະໂຍບາຍການນຳທິດຄື້ນຄວາມຖີ່ຈະເຮັດວຽກ"
+msgstr ""
+"ຈຳນວນສະຖານີທີ່ແຕກຕ່າງກັນຕ່ຳສຸດລະຫວ່າງຄື້ນຄວາມຖີ່ ກ່ອນທີ່ນະໂຍບາຍການນຳທິດຄື້ນຄວາມຖີ່ຈະເຮັດວຽກ"
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:642
 msgid "Minimum signal strength difference until AP steering policy is active"
@@ -404,29 +413,32 @@ msgid ""
 "Minimum signal-to-noise ratio or signal level (dBm) before attempting to "
 "trigger client scans for roam"
 msgstr ""
-"ອັດຕາສ່ວນສັນຍານຕໍ່ສິ່ງລົບກວນຕ່ຳສຸດ ຫຼື ລະດັບສັນຍານ (dBm) "
-"ກ່ອນທີ່ຈະພະຍາຍາມກະຕຸ້ນການສະແກນໂຣມມິ່ງຂອງອຸປະກອນ"
+"ອັດຕາສ່ວນສັນຍານຕໍ່ສິ່ງລົບກວນຕ່ຳສຸດ ຫຼື ລະດັບສັນຍານ (dBm) ກ່ອນທີ່ຈະພະຍາຍາມກະຕຸ້ນການສະແກນໂຣມມິ່ງຂອງອຸ"
+"ປະກອນ"
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:627
 msgid ""
 "Minimum signal-to-noise ratio or signal level (dBm) before attempting to "
 "trigger forced client roaming"
 msgstr ""
-"ອັດຕາສ່ວນສັນຍານຕໍ່ສິ່ງລົບກວນຕ່ຳສຸດ ຫຼື ລະດັບສັນຍານ (dBm) "
-"ກ່ອນທີ່ຈະພະຍາຍາມກະຕຸ້ນການບັງຄັບໂຣມມິ່ງຂອງອຸປະກອນ"
+"ອັດຕາສ່ວນສັນຍານຕໍ່ສິ່ງລົບກວນຕ່ຳສຸດ ຫຼື ລະດັບສັນຍານ (dBm) ກ່ອນທີ່ຈະພະຍາຍາມກະຕຸ້ນການບັງຄັບໂຣມມິ່ງຂອງອຸປ"
+"ະກອນ"
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:579
 msgid ""
 "Minimum signal-to-noise ratio or signal level (dBm) to allow connections"
-msgstr "ອັດຕາສ່ວນສັນຍານຕໍ່ສິ່ງລົບກວນຕ່ຳສຸດ ຫຼື ລະດັບສັນຍານ (dBm) ເພື່ອອະນຸຍາດໃຫ້ເຊື່ອມຕໍ່"
+msgstr ""
+"ອັດຕາສ່ວນສັນຍານຕໍ່ສິ່ງລົບກວນຕ່ຳສຸດ ຫຼື ລະດັບສັນຍານ (dBm) ເພື່ອອະນຸຍາດໃຫ້ເຊື່ອມຕໍ່"
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:584
 msgid "Minimum signal-to-noise ratio or signal level (dBm) to remain connected"
-msgstr "ອັດຕາສ່ວນສັນຍານຕໍ່ສິ່ງລົບກວນຕ່ຳສຸດ ຫຼື ລະດັບສັນຍານ (dBm) ເພື່ອຮັກສາການເຊື່ອມຕໍ່ໄວ້"
+msgstr ""
+"ອັດຕາສ່ວນສັນຍານຕໍ່ສິ່ງລົບກວນຕ່ຳສຸດ ຫຼື ລະດັບສັນຍານ (dBm) ເພື່ອຮັກສາການເຊື່ອມຕໍ່ໄວ້"
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:622
 msgid "Minimum time (ms) between client roaming scan trigger attempts"
-msgstr "ເວລາຕ່ຳສຸດ (ມິລິວິນາທີ) ລະຫວ່າງການພະຍາຍາມກະຕຸ້ນການສະແກນໂຣມມິ່ງຂອງອຸປະກອນ"
+msgstr ""
+"ເວລາຕ່ຳສຸດ (ມິລິວິນາທີ) ລະຫວ່າງການພະຍາຍາມກະຕຸ້ນການສະແກນໂຣມມິ່ງຂອງອຸປະກອນ"
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:632
 msgid "Minimum time (ms) between client roaming trigger attempts"
@@ -505,7 +517,8 @@ msgstr "ຈອງໄວ້"
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:615
 msgid ""
 "Retry scanning when roam_scan_tries is exceeded after this timeout (in ms)."
-msgstr "ລອງສະແກນໃໝ່ເມື່ອ roam_scan_tries ເກີນກຳນົດ ຫຼັງຈາກເວລາໝົດກຳນົດນີ້ (ເປັນມິລິວິນາທີ)."
+msgstr ""
+"ລອງສະແກນໃໝ່ເມື່ອ roam_scan_tries ເກີນກຳນົດ ຫຼັງຈາກເວລາໝົດກຳນົດນີ້ (ເປັນມິລິວິນາທີ)."
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:637
 msgid "Roam kick delay"
@@ -553,7 +566,8 @@ msgstr "ໄລຍະຫ່າງການຕົວຊີ້ວັດການໂ
 msgid ""
 "SNR difference that the signal must be better compared to signal was on "
 "connection to node."
-msgstr "ຄວາມແຕກຕ່າງຂອງ SNR ທີ່ສັນຍານຕ້ອງດີກວ່າ ເມື່ອທຽບກັບສັນຍານຕອນທີ່ເຊື່ອມຕໍ່ກັບໂນດ."
+msgstr ""
+"ຄວາມແຕກຕ່າງຂອງ SNR ທີ່ສັນຍານຕ້ອງດີກວ່າ ເມື່ອທຽບກັບສັນຍານຕອນທີ່ເຊື່ອມຕໍ່ກັບໂນດ."
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:83
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:294
@@ -633,8 +647,8 @@ msgid ""
 "Timeout (in ms) after which a association following a disassociation is not "
 "seen as a roam"
 msgstr ""
-"ເວລາໝົດກຳນົດ (ມິລິວິນາທີ) "
-"ຫຼັງຈາກນັ້ນການເຊື່ອມຕໍ່ທີ່ຕາມມາຫຼັງຈາກການຕັດການເຊື່ອມຕໍ່ຈະບໍ່ຖືກເບິ່ງວ່າເປັນການໂຣມມິ່ງ"
+"ເວລາໝົດກຳນົດ (ມິລິວິນາທີ) ຫຼັງຈາກນັ້ນການເຊື່ອມຕໍ່ທີ່ຕາມມາຫຼັງຈາກການຕັດການເຊື່ອມຕໍ່ຈະບໍ່ຖືກເບິ່ງວ່າເປັນການໂຣ"
+"ມມິ່ງ"
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:637
 msgid ""
@@ -647,15 +661,16 @@ msgstr ""
 msgid ""
 "Timeout (ms) for which a client will not be steered after rejecting a BSS-"
 "transition-request"
-msgstr "ເວລາໝົດກຳນົດ (ມິລິວິນາທີ) ທີ່ອຸປະກອນຈະບໍ່ຖືກນຳທິດ ຫຼັງຈາກປະຕິເສດຄຳຂໍປ່ຽນຜ່ານ BSS"
+msgstr ""
+"ເວລາໝົດກຳນົດ (ມິລິວິນາທີ) ທີ່ອຸປະກອນຈະບໍ່ຖືກນຳທິດ ຫຼັງຈາກປະຕິເສດຄຳຂໍປ່ຽນຜ່ານ BSS"
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:749
 msgid ""
 "Timeout (s in \"1024ms\") a station is requested to avoid reassociation "
 "after bss transition"
 msgstr ""
-"ເວລາໝົດກຳນົດ (ເປັນວິນາທີໃນ \"1024ms\") ທີ່ສະຖານີຖືກຮ້ອງຂໍໃຫ້ຫຼີກເວັ້ນການເຊື່ອມຕໍ່ໃໝ່ "
-"ຫຼັງຈາກການປ່ຽນຜ່ານ BSS"
+"ເວລາໝົດກຳນົດ (ເປັນວິນາທີໃນ \"1024ms\") ທີ່ສະຖານີຖືກຮ້ອງຂໍໃຫ້ຫຼີກເວັ້ນການເຊື່ອມຕໍ່ໃໝ່ ຫຼັງຈາກການປ່ຽນຜ່າ"
+"ນ BSS"
 
 #: applications/luci-app-usteer/htdocs/luci-static/resources/view/usteer/usteer.js:589
 msgid "Timeout after which a station with SNR < min_SNR will be kicked"

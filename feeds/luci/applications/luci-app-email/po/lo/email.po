@@ -14,15 +14,16 @@ msgstr ""
 msgid ""
 "<a %s>DNS Block List (DNSBL)</a> used to block connections from known "
 "spammers."
-msgstr "<a %s>ລາຍການບລັອກ DNS (DNSBL)</a> ໃຊ້ເພື່ອບລັອກການເຊື່ອມຕໍ່ຈາກຜູ້ສົ່ງສະແປມທີ່ຮູ້ຈັກ."
+msgstr ""
+"<a %s>ລາຍການບລັອກ DNS (DNSBL)</a> ໃຊ້ເພື່ອບລັອກການເຊື່ອມຕໍ່ຈາກຜູ້ສົ່ງສະແປມທີ່ຮູ້ຈັກ."
 
 #: applications/luci-app-email/htdocs/luci-static/resources/view/email/emailrelay.js:139
 msgid ""
 "<b>Note:</b> The <code>/var/</code> is a small in-memory folder and you'll "
 "lose mail in reboot."
 msgstr ""
-"<b>ໝາຍເຫດ:</b> <code>/var/</code> ເປັນໂຟນເດີຂະໜາດນ້ອຍໃນໜ່ວຍຄວາມຈຳ ແລະ "
-"ອີເມວຂອງທ່ານຈະຫາຍໄປເມື່ອຣີບູດເຄື່ອງ."
+"<b>ໝາຍເຫດ:</b> <code>/var/</code> ເປັນໂຟນເດີຂະໜາດນ້ອຍໃນໜ່ວຍຄວາມຈຳ ແລະ ອີເມວຂອງທ່ານຈ"
+"ະຫາຍໄປເມື່ອຣີບູດເຄື່ອງ."
 
 #: applications/luci-app-email/htdocs/luci-static/resources/view/email/emailrelay.js:51
 msgid "<b>You may receive spam so be careful</b>."
@@ -41,8 +42,8 @@ msgid ""
 "A threshold of zero is useful for testing and means only to log a result "
 "code but allow a connection."
 msgstr ""
-"ການຕັ້ງຄ່າຂີດຈຳກັດເປັນສູນມີປະໂຫຍດສຳລັບການທົດສອບ ແລະ ມີຄວາມໝາຍວ່າໃຫ້ບັນທຶກສະເພາະລຫັດຜົນລັພ "
-"ແຕ່ຍັງອະນຸຍາດໃຫ້ມີການເຊື່ອມຕໍ່."
+"ການຕັ້ງຄ່າຂີດຈຳກັດເປັນສູນມີປະໂຫຍດສຳລັບການທົດສອບ ແລະ ມີຄວາມໝາຍວ່າໃຫ້ບັນທຶກສະເພາະລຫັດຜົນລັພ ແຕ່ຍັງອ"
+"ະນຸຍາດໃຫ້ມີການເຊື່ອມຕໍ່."
 
 #: applications/luci-app-email/htdocs/luci-static/resources/view/email/emailrelay.js:262
 msgid "Address verifier"
@@ -326,8 +327,8 @@ msgid ""
 "Starts with the transport DNS server's address:port, a timeout in "
 "milliseconds, a rejection threshold and list of DNSBL servers."
 msgstr ""
-"ເລີ່ມຕົ້ນດ້ວຍທີ່ຢູ່:ພອດ ຂອງເຊີບເວີ DNS, ເວລາໝົດເວລາເປັນມິນລີວິນາທີ, ຂີດຈຳກັດການປະຕິເສດ ແລະ "
-"ລາຍການເຊີບເວີ DNSBL."
+"ເລີ່ມຕົ້ນດ້ວຍທີ່ຢູ່:ພອດ ຂອງເຊີບເວີ DNS, ເວລາໝົດເວລາເປັນມິນລີວິນາທີ, ຂີດຈຳກັດການປະຕິເສດ ແລະ ລາຍການ"
+"ເຊີບເວີ DNSBL."
 
 #: applications/luci-app-email/htdocs/luci-static/resources/view/email/emailrelay.js:113
 #: applications/luci-app-email/htdocs/luci-static/resources/view/email/emailrelay.js:191
@@ -375,4 +376,5 @@ msgstr ""
 msgid ""
 "Verify an SMTP server's certificate against trusted CA certificates in the "
 "specified file or directory."
-msgstr "ຢືນຢັນໃບຢັ້ງຢືນຂອງເຊີບເວີ SMTP ທຽບກັບໃບຢັ້ງຢືນ CA ທີ່ເຊື່ອຖືໄດ້ໃນໄຟລ໌ ຫຼື ໄດເຣັກທໍຣີທີ່ລະບຸ."
+msgstr ""
+"ຢືນຢັນໃບຢັ້ງຢືນຂອງເຊີບເວີ SMTP ທຽບກັບໃບຢັ້ງຢືນ CA ທີ່ເຊື່ອຖືໄດ້ໃນໄຟລ໌ ຫຼື ໄດເຣັກທໍຣີທີ່ລະບຸ."

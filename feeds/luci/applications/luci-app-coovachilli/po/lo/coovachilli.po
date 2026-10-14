@@ -94,7 +94,8 @@ msgstr "ເຊີເວີສຳຮອງ"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:233
 msgid "Be strict about MAC Auth (no DHCP reply until we get RADIUS reply)"
-msgstr "ເຄັ່ງຄັດກັບການຢືນຢັນຕົວຕົນຜ່ານ MAC (ບໍ່ຕອບ DHCP ຈົນກວ່າຈະໄດ້ຮັບການຕອບຈາກ RADIUS)"
+msgstr ""
+"ເຄັ່ງຄັດກັບການຢືນຢັນຕົວຕົນຜ່ານ MAC (ບໍ່ຕອບ DHCP ຈົນກວ່າຈະໄດ້ຮັບການຕອບຈາກ RADIUS)"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:371
 msgid "Broadcast Answer"
@@ -116,7 +117,8 @@ msgstr "Chilli XML"
 msgid ""
 "ChilliSpot will try to authenticate all users based on their mac address "
 "alone"
-msgstr "ChilliSpot ຈະພະຍາຍາມຢືນຢັນຕົວຕົນຜູ້ໃຊ້ທັງໝົດໂດຍອີງໃສ່ທີ່ຢູ່ MAC ເທົ່ານັ້ນ"
+msgstr ""
+"ChilliSpot ຈະພະຍາຍາມຢືນຢັນຕົວຕົນຜູ້ໃຊ້ທັງໝົດໂດຍອີງໃສ່ທີ່ຢູ່ MAC ເທົ່ານັ້ນ"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:328
 msgid "Connection down script"
@@ -170,11 +172,13 @@ msgstr "ດີບັກ (Debug)"
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:183
 msgid ""
 "Default bandwidth max down set in bps, same as WISPr-Bandwidth-Max-Down."
-msgstr "ແບນວິດຂາລົງສູງສຸດເລີ່ມຕົ້ນຕັ້ງເປັນ bps, ຄືກັນກັບ WISPr-Bandwidth-Max-Down."
+msgstr ""
+"ແບນວິດຂາລົງສູງສຸດເລີ່ມຕົ້ນຕັ້ງເປັນ bps, ຄືກັນກັບ WISPr-Bandwidth-Max-Down."
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:188
 msgid "Default bandwidth max up set in bps, same as WISPr-Bandwidth-Max-Up."
-msgstr "ແບນວິດຂາຂຶ້ນສູງສຸດເລີ່ມຕົ້ນຕັ້ງເປັນ bps, ຄືກັນກັບ WISPr-Bandwidth-Max-Up."
+msgstr ""
+"ແບນວິດຂາຂຶ້ນສູງສຸດເລີ່ມຕົ້ນຕັ້ງເປັນ bps, ຄືກັນກັບ WISPr-Bandwidth-Max-Up."
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:173
 msgid "Default idle timeout"
@@ -219,7 +223,8 @@ msgstr "ບໍ່ຕ້ອງສະເໜີ WISPr 2.0 XML"
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:124
 msgid ""
 "Do not return to UAM server on login success, just redirect to original URL"
-msgstr "ບໍ່ຕ້ອງກັບໄປຍັງເຊີເວີ UAM ເມື່ອລັອກອິນສຳເລັດ, ໃຫ້ປ່ຽນເສັ້ນທາງໄປຍັງ URL ເດີມ"
+msgstr ""
+"ບໍ່ຕ້ອງກັບໄປຍັງເຊີເວີ UAM ເມື່ອລັອກອິນສຳເລັດ, ໃຫ້ປ່ຽນເສັ້ນທາງໄປຍັງ URL ເດີມ"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:311
 msgid "Domain"
@@ -302,7 +307,8 @@ msgstr "ບໍ່ສົນໃຈຜົນສຳເລັດ"
 msgid ""
 "Inspect DNS packets and drop responses with any non- A, CNAME, SOA, or MX "
 "records"
-msgstr "ກວດສອບແພັກເກັດ DNS ແລະຖິ້ມການຕອບສະໜອງທີ່ບໍ່ແມ່ນບັນທຶກ A, CNAME, SOA ຫຼື MX"
+msgstr ""
+"ກວດສອບແພັກເກັດ DNS ແລະຖິ້ມການຕອບສະໜອງທີ່ບໍ່ແມ່ນບັນທຶກ A, CNAME, SOA ຫຼື MX"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:345
 msgid "Lease time"
@@ -459,7 +465,8 @@ msgstr "ການຕັ້ງຄ່າ RADIUS"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:235
 msgid "Re-Authenticate based on MAC address for every initial URL redirection"
-msgstr "ຢືນຢັນຕົວຕົນຄືນໃໝ່ໂດຍອີງໃສ່ທີ່ຢູ່ MAC ສຳລັບການປ່ຽນເສັ້ນທາງ URL ເລີ່ມຕົ້ນທຸກຄັ້ງ"
+msgstr ""
+"ຢືນຢັນຕົວຕົນຄືນໃໝ່ໂດຍອີງໃສ່ທີ່ຢູ່ MAC ສຳລັບການປ່ຽນເສັ້ນທາງ URL ເລີ່ມຕົ້ນທຸກຄັ້ງ"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:85
 msgid "Re-read configuration file at this interval"
@@ -518,13 +525,15 @@ msgstr "ຕົວເລືອກພິເສດສຳລັບການຢືນ
 msgid ""
 "Specifies a pool of dynamic IP addresses. If this option is omitted the "
 "network address specified by the Net option is used"
-msgstr "ລະບຸພູລຂອງ IP ແບບໄດນາມິກ. ຖ້າບໍ່ລະບຸຕົວເລືອກນີ້ ຈະໃຊ້ທີ່ຢູ່ເຄືອຂ່າຍຈາກຕົວເລືອກ Net"
+msgstr ""
+"ລະບຸພູລຂອງ IP ແບບໄດນາມິກ. ຖ້າບໍ່ລະບຸຕົວເລືອກນີ້ ຈະໃຊ້ທີ່ຢູ່ເຄືອຂ່າຍຈາກຕົວເລືອກ Net"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:297
 msgid ""
 "Specifies a pool of static IP addresses. With static address allocation the "
 "IP address of the client can be specified by the RADIUS server."
-msgstr "ລະບຸພູລຂອງ IP ແບບສະຕາຕິກ. ການຈັດສັນແບບນີ້ສາມາດກຳນົດ IP ໂດຍເຊີເວີ RADIUS."
+msgstr ""
+"ລະບຸພູລຂອງ IP ແບບສະຕາຕິກ. ການຈັດສັນແບບນີ້ສາມາດກຳນົດ IP ໂດຍເຊີເວີ RADIUS."
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:107
 msgid "State directory"

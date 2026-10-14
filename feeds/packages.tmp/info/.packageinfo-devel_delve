@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/devel/delve/Makefile
 Build-Depends: golang/host
 
 Package: delve
-Version: 1.24.0-r1
+Version: 1.27.1-r1
 Depends: +libc @(aarch64||i386||x86_64)
 Conflicts: 
 Menu-Depends: 
@@ -11,8 +11,8 @@ Section: devel
 Category: Development
 Repository: base
 Title: Debugger for the Go programming language
-Maintainer: 
-Source: delve-1.24.0.tar.gz
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: delve-1.27.1.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 URL: https://github.com/go-delve/delve

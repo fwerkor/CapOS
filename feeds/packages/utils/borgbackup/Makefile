@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=borgbackup
 PKG_VERSION:=1.4.3
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PYPI_NAME:=borgbackup
 PKG_HASH:=79bbfa745d1901d685973584bd2d16a350686ddd176f6a2244490fb01996441f
@@ -17,6 +17,7 @@ PKG_HASH:=79bbfa745d1901d685973584bd2d16a350686ddd176f6a2244490fb01996441f
 PKG_LICENSE:=BSD-3-Clause
 PKG_LICENSE_FILES:=LICENSE
 PKG_MAINTAINER:=Julien Malik <julien.malik@paraiso.me>
+PKG_CPE_ID:=cpe:/a:borgbackup:borg
 
 include ../../lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -31,7 +32,6 @@ define Package/borgbackup
   DEPENDS:= \
       +python3-light \
       +python3-codecs \
-      +python3-email \
       +python3-logging \
       +python3-lzma \
       +python3-msgpack \

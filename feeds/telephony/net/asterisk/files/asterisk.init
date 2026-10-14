@@ -4,16 +4,18 @@
 START=99
 
 USE_PROCD=1
-
 #PROCD_DEBUG=1
 
 NAME=asterisk
 COMMAND=/usr/sbin/$NAME
 
-LOGGER="/usr/bin/logger -p daemon.err -s -t $NAME --"
+log() {
+  level=$1
+  shift
+  /usr/bin/logger -p daemon.$level -s -t $NAME "$@"
+}
 
 start_service() {
-
   dbdir=/var/lib/asterisk/astdb
   logdir=/var/log/asterisk
   cdrcsvdir=$logdir/cdr-csv
@@ -25,7 +27,7 @@ start_service() {
 
   config_get_bool enabled general enabled 0
   if [ $enabled -eq 0 ]; then
-    $LOGGER service not enabled in /etc/config/$NAME
+    log err "service not enabled in /etc/config/$NAME"
     return 1
   fi
 
@@ -59,9 +61,26 @@ start_service() {
   # same for stdout
   procd_set_param stdout $log_stdout
   procd_close_instance
-
 }
 
 reload_service() {
   procd_send_signal $NAME
+}
+
+extra_command "reregister" "Re-register all outbound registrations"
+reregister() {
+  MODULES=`$COMMAND -x 'module show'` || exit 1
+
+  echo "$MODULES" | grep -q -s '^res_pjsip.so' && {
+    log info "re-registering all outbound pjsip registrations"
+    $COMMAND -x 'pjsip send unregister *all' -x 'pjsip send register *all'
+  }
+}
+
+service_triggers() {
+  config_load $NAME
+  config_get_bool enabled general enabled 0
+  config_get interface general interface ""
+
+  [ $enabled -eq 1 -a -n "$interface" ] && procd_add_interface_trigger "interface.*.up" "$interface" /etc/init.d/$NAME reregister
 }

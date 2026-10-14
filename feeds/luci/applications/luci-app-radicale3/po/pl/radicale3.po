@@ -502,3 +502,9 @@ msgstr "Nazwa pliku w formacie htpasswd"
 msgid "password file can have users with a mix of support encryption methods"
 msgstr ""
 "plik haseł może mieć użytkowników z mieszanką obsługiwanych metod szyfrowania"
+
+#~ msgid "Do not filter debug messages starting with 'TRACE'"
+#~ msgstr "Nie filtruj komunikatów debugowania zaczynających się od „TRACE”"
+
+#~ msgid "Trace on debug"
+#~ msgstr "Śledzenie podczas debugowania"

@@ -8,16 +8,16 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-setuptools-rust
-PKG_VERSION:=1.12.0
+PKG_VERSION:=1.13.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=setuptools-rust
 PYPI_SOURCE_NAME:=setuptools_rust
-PKG_HASH:=d94a93f0c97751c17014565f07bdc324bee45d396cd1bba83d8e7af92b945f0c
+PKG_HASH:=f2afcf4baeee689910ce49cfa8aad4e08cce72f417449bcc32891b8664fdc726
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
-PKG_MAINTAINER:=Jeffery To <jeffery.to@gmail.com>
+PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
 
 PKG_HOST_ONLY:=1
 HOST_BUILD_DEPENDS:= \

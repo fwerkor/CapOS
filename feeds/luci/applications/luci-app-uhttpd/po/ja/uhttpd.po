@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-11-08 14:47+0000\n"
-"Last-Translator: Monarch "
-"<monarch.scrap-0p@users.noreply.hosted.weblate.org>\n"
+"Last-Translator: Monarch <monarch.scrap-0p@users.noreply.hosted.weblate.org>"
+"\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsuhttpd/ja/>\n"
 "Language: ja\n"
@@ -230,8 +230,9 @@ msgid ""
 msgstr "まれに必要とされる設定、または Web UI の提供に影響する設定です"
 
 #: applications/luci-app-uhttpd/htdocs/luci-static/resources/view/uhttpd/uhttpd.js:245
+msgctxt "Certificate state, region or province"
 msgid "State"
-msgstr "状態"
+msgstr ""
 
 #: applications/luci-app-uhttpd/htdocs/luci-static/resources/view/uhttpd/uhttpd.js:212
 msgid "TCP Keepalive"
@@ -287,3 +288,6 @@ msgstr "uHTTPd は、下に表示されている設定で新しい自己署名�
 #: applications/luci-app-uhttpd/htdocs/luci-static/resources/view/uhttpd/uhttpd.js:183
 msgid "ubus integration is disabled if not present"
 msgstr "指定しない場合、ubus 統合は無効になります"
+
+#~ msgid "State"
+#~ msgstr "状態"

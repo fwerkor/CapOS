@@ -7,8 +7,8 @@ msgstr ""
 "Language: ga\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : (n>2 && n<7) ? 2 :"
-"(n>6 && n<11) ? 3 : 4;\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : (n>2 && n<7) ? 2 :(n>"
+"6 && n<11) ? 3 : 4;\n"
 "X-Generator: Weblate 5.16-dev\n"
 
 #: applications/luci-app-nextdns/htdocs/luci-static/resources/view/nextdns/overview.js:23
@@ -28,12 +28,8 @@ msgid "Expose LAN clients information in NextDNS analytics."
 msgstr "Nocht faisnéis do chliaint LAN in anailísíocht NextDNS."
 
 #: applications/luci-app-nextdns/htdocs/luci-static/resources/view/nextdns/overview.js:12
-msgid ""
-"For further information, go to <a href=\"https://nextdns.io\" "
-"target=\"_blank\">nextdns.io</a>."
-msgstr ""
-"Le haghaidh tuilleadh eolais, téigh chuig <a href=\"https://nextdns.io\" "
-"target=\"_blank\">nextdns.io</a>."
+msgid "For further information, go to %s."
+msgstr "Le haghaidh tuilleadh eolais, téigh chuig %s."
 
 #: applications/luci-app-nextdns/htdocs/luci-static/resources/view/nextdns/overview.js:15
 msgid "General"
@@ -83,3 +79,10 @@ msgstr "Tuairiscigh Eolas Cliant"
 #: applications/luci-app-nextdns/htdocs/luci-static/resources/view/nextdns/overview.js:24
 msgid "The ID of your NextDNS configuration."
 msgstr "ID do chumraíocht NextDNS."
+
+#~ msgid ""
+#~ "For further information, go to <a href=\"https://nextdns.io\" "
+#~ "target=\"_blank\">nextdns.io</a>."
+#~ msgstr ""
+#~ "Le haghaidh tuilleadh eolais, téigh chuig <a href=\"https://nextdns.io\" "
+#~ "target=\"_blank\">nextdns.io</a>."

@@ -255,3 +255,53 @@ msgstr "Aviso: Incapaz de obter informações do aparelho!"
 #: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced-reboot.js:56
 msgid "invalid argument"
 msgstr "argumento inválido"
+
+#~ msgid "Grant file access for luci-app-advanced-reboot"
+#~ msgstr "Conceder acesso ao ficheiro para o luci-app-advanced-reboot"
+
+#~ msgid ""
+#~ "WARNING: Power off might result in a reboot on a device which doesn't "
+#~ "support power off.<br /><br /> Click \"Proceed\" below to power off your "
+#~ "device."
+#~ msgstr ""
+#~ "AVISO: Desligar pode causar um reinício num aparelho que não suporte "
+#~ "encerramento.<br /><br /> Selecione \"Continuar\" abaixo para desligar o "
+#~ "seu aparelho."
+
+#~ msgid "Compressed"
+#~ msgstr "Comprimido"
+
+#~ msgid "Confirm"
+#~ msgstr "Confirmar"
+
+#~ msgid "Grant UCI and file access for luci-app-advanced-reboot"
+#~ msgstr "Conceder acesso ao ficheiro e ao UCI ao luci-app-advanced-reboot"
+
+#~ msgid "No access to fw_printenv or fw_printenv!"
+#~ msgstr "Sem acesso ao fw_printenv ou ao fw_printenv!"
+
+#~ msgid "Reboot Device to an Alternative Partition"
+#~ msgstr "Reiniciar o Aparelho para uma Partição Alternativa"
+
+#~ msgid "Reboot to alternative partition..."
+#~ msgstr "Reiniciar para uma partição alternativa..."
+
+#~ msgid ""
+#~ "WARNING: An alternative partition might have its own settings and "
+#~ "completely different firmware.<br /><br /> As your network configuration "
+#~ "and WiFi SSID/password on alternative partition might be different, you "
+#~ "might have to adjust your computer settings to be able to access your "
+#~ "device once it reboots.<br /><br /> Please also be aware that alternative "
+#~ "partition firmware might not provide an easy way to switch active "
+#~ "partition and boot back to the currently active partition.<br /><br /> "
+#~ "Click \"Proceed\" below to reboot device to an alternative partition."
+#~ msgstr ""
+#~ "AVISO: Uma partição alternativa pode conter as suas próprias definições e "
+#~ "firmware completamente diferentes.<br /><br /> Como as suas definições de "
+#~ "rede e palavra-passe/SSID WiFi na partição alternativa podem diferir, "
+#~ "poderá ter que alterar as definições do seu computador para conseguir "
+#~ "aceder ao seu aparelho assim que este reiniciar.<br /><br /> Por favor, "
+#~ "tenha também em atenção que o firmware da partição alternativa pode não "
+#~ "fornecer um modo fácil para mudar a partição ativa e arrancar de volta "
+#~ "para a partição atual.<br /><br /> Selecione \"Continuar\" abaixo para "
+#~ "reiniciar o aparelho para uma partição alternativa."

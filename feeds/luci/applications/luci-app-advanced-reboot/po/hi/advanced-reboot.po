@@ -239,3 +239,49 @@ msgstr "चेतावनी: डिवाइस जानकारी प्�
 #: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced-reboot.js:56
 msgid "invalid argument"
 msgstr ""
+
+#~ msgid ""
+#~ "WARNING: Power off might result in a reboot on a device which doesn't "
+#~ "support power off.<br /><br /> Click \"Proceed\" below to power off your "
+#~ "device."
+#~ msgstr ""
+#~ "चेतावनी: पावर बंद करने से ऐसे डिवाइस पर रीबूट हो सकता है जो पावर बंद करने का समर्थन "
+#~ "नहीं करता है।<br /><br /> अपने डिवाइस को बंद करने के लिए नीचे \"आगे बढ़ें\" पर क्लिक "
+#~ "करें।"
+
+#~ msgid "Compressed"
+#~ msgstr "संकुचित"
+
+#~ msgid "Confirm"
+#~ msgstr "पुष्टि करें"
+
+#~ msgid "Grant UCI and file access for luci-app-advanced-reboot"
+#~ msgstr "luci-app-advanced-reboot के लिए UCI और फ़ाइल एक्सेस प्रदान करें"
+
+#~ msgid "No access to fw_printenv or fw_printenv!"
+#~ msgstr "fw_printenv या fw_printenv तक कोई पहुंच नहीं!"
+
+#~ msgid "Reboot Device to an Alternative Partition"
+#~ msgstr "डिवाइस को वैकल्पिक पार्टीशन पर रीबूट करें"
+
+#~ msgid "Reboot to alternative partition..."
+#~ msgstr "वैकल्पिक पार्टीशन पर रीबूट करें..।"
+
+#~ msgid ""
+#~ "WARNING: An alternative partition might have its own settings and "
+#~ "completely different firmware.<br /><br /> As your network configuration "
+#~ "and WiFi SSID/password on alternative partition might be different, you "
+#~ "might have to adjust your computer settings to be able to access your "
+#~ "device once it reboots.<br /><br /> Please also be aware that alternative "
+#~ "partition firmware might not provide an easy way to switch active "
+#~ "partition and boot back to the currently active partition.<br /><br /> "
+#~ "Click \"Proceed\" below to reboot device to an alternative partition."
+#~ msgstr ""
+#~ "चेतावनी: एक वैकल्पिक विभाजन की अपनी सेटिंग्स और पूरी तरह से अलग फर्मवेयर हो सकता है।"
+#~ "<br /><br /> चूंकि वैकल्पिक विभाजन पर आपका नेटवर्क कॉन्फ़िगरेशन और WiFi SSID/"
+#~ "पासवर्ड भिन्न हो सकता है, इसलिए आपको अपने डिवाइस को रीबूट करने के बाद उस तक पहुंचने "
+#~ "में सक्षम होने के लिए अपने कंप्यूटर सेटिंग्स को समायोजित करना पड़ सकता है।<br /><br /> "
+#~ "कृपया यह भी ध्यान रखें कि वैकल्पिक विभाजन फर्मवेयर सक्रिय विभाजन को स्विच करने और "
+#~ "वर्तमान में सक्रिय विभाजन पर वापस बूट करने का आसान तरीका प्रदान नहीं कर सकता है।"
+#~ "<br /><br /> वैकल्पिक विभाजन पर डिवाइस को रीबूट करने के लिए नीचे \"आगे बढ़ें\" पर "
+#~ "क्लिक करें।"

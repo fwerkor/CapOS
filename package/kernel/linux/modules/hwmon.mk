@@ -63,6 +63,21 @@ endef
 $(eval $(call KernelPackage,hwmon-adt7410))
 
 
+define KernelPackage/hwmon-adt7470
+  TITLE:=ADT7470 monitoring support
+  KCONFIG:=CONFIG_SENSORS_ADT7470
+  FILES:=$(LINUX_DIR)/drivers/hwmon/adt7470.ko
+  AUTOLOAD:=$(call AutoProbe,adt7470)
+  $(call AddDepends/hwmon,+kmod-i2c-core +kmod-regmap-i2c)
+endef
+
+define KernelPackage/hwmon-adt7470/description
+ Kernel module for ADT7470 thermal monitor chip
+endef
+
+$(eval $(call KernelPackage,hwmon-adt7470))
+
+
 define KernelPackage/hwmon-adt7475
   TITLE:=ADT7473/7475/7476/7490 monitoring support
   KCONFIG:=CONFIG_SENSORS_ADT7475
@@ -93,6 +108,21 @@ define KernelPackage/hwmon-coretemp/description
 endef
 
 $(eval $(call KernelPackage,hwmon-coretemp))
+
+
+define KernelPackage/hwmon-corsair-cpro
+  TITLE:=Corsair Commander Pro controller
+  KCONFIG:=CONFIG_SENSORS_CORSAIR_CPRO
+  FILES:=$(LINUX_DIR)/drivers/hwmon/corsair-cpro.ko
+  AUTOLOAD:=$(call AutoProbe,corsair-cpro)
+  $(call AddDepends/hwmon,+kmod-usb-hid)
+endef
+
+define KernelPackage/hwmon-corsair-cpro/description
+ Kernel module for the Corsair Commander Pro controller and Corsair 1000D
+endef
+
+$(eval $(call KernelPackage,hwmon-corsair-cpro))
 
 
 define KernelPackage/hwmon-dme1737
@@ -233,6 +263,21 @@ define KernelPackage/hwmon-ina2xx/description
 endef
 
 $(eval $(call KernelPackage,hwmon-ina2xx))
+
+
+define KernelPackage/hwmon-ina3221
+  TITLE:=INA3221 monitoring support
+  KCONFIG:=CONFIG_SENSORS_INA3221
+  FILES:=$(LINUX_DIR)/drivers/hwmon/ina3221.ko
+  AUTOLOAD:=$(call AutoProbe,ina3221)
+  $(call AddDepends/hwmon,+kmod-i2c-core +kmod-regmap-i2c)
+endef
+
+define KernelPackage/hwmon-ina3221/description
+ Kernel module for ina3221 triple dc current and voltage monitor chips
+endef
+
+$(eval $(call KernelPackage,hwmon-ina3221))
 
 
 define KernelPackage/hwmon-it87
@@ -400,6 +445,21 @@ define KernelPackage/hwmon-ltc4151/description
 endef
 
 $(eval $(call KernelPackage,hwmon-ltc4151))
+
+
+define KernelPackage/hwmon-max6650
+  TITLE:=MAX6650/6651 fan controller
+  KCONFIG:=CONFIG_SENSORS_MAX6650
+  FILES:=$(LINUX_DIR)/drivers/hwmon/max6650.ko
+  AUTOLOAD:=$(call AutoProbe,max6650)
+  $(call AddDepends/hwmon,+kmod-i2c-core +PACKAGE_kmod-thermal:kmod-thermal)
+endef
+
+define KernelPackage/hwmon-max6650/description
+ Kernel module for Maxim MAX6650/6651 fan controller
+endef
+
+$(eval $(call KernelPackage,hwmon-max6650))
 
 
 define KernelPackage/hwmon-max6697

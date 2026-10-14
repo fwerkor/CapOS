@@ -27,7 +27,7 @@ define Package/mosquitto/default
   SECTION:=net
   CATEGORY:=Network
   TITLE:=mosquitto - an MQTT message broker
-  URL:=http://www.mosquitto.org/
+  URL:=https://mosquitto.org/
   MAINTAINER:=Karl Palsson <karlp@etactica.com>
   DEPENDS:= +librt
   USERID:=mosquitto=200:mosquitto=200
@@ -132,7 +132,7 @@ define Package/libmosquitto/default/description
 use by any third party software that wants to communicate with _any_
 MQTT server.
 
-Should be useable for communicating with any MQTT v3.1/3.1.1/5 compatible
+Should be usable for communicating with any MQTT v3.1/3.1.1/5 compatible
 server, in addition to Mosquitto.
 endef
 

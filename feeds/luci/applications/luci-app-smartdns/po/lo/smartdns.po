@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-02 12:02+0000\n"
-"Last-Translator: BoneNI <bounkirdni@gmail.com>\n"
+"PO-Revision-Date: 2026-08-15 13:06+0000\n"
+"Last-Translator: Bone NI <bounkirdni@gmail.com>\n"
 "Language-Team: Lao <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationssmartdns/lo/>\n"
 "Language: lo\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.17.1\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:791
 msgid "Additional Args for upstream dns servers"
@@ -18,7 +18,8 @@ msgstr "Arguments ເພີ່ມເຕີມສຳລັບເຊີເວີ D
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:1089
 msgid ""
 "Additional Flags for rules, read help on domain-rule for more information."
-msgstr "Flags ເພີ່ມເຕີມສຳລັບກົດ, ອ່ານຄຳແນະນຳກ່ຽວກັບ domain-rule ເພື່ອຂໍ້ມູນເພີ່ມເຕີມ."
+msgstr ""
+"Flags ເພີ່ມເຕີມສຳລັບກົດ, ອ່ານຄຳແນະນຳກ່ຽວກັບ domain-rule ເພື່ອຂໍ້ມູນເພີ່ມເຕີມ."
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:884
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:1088
@@ -35,7 +36,8 @@ msgstr "Arguments ເພີ່ມເຕີມຂອງເຊີເວີ"
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:479
 msgid ""
 "Additional server args, refer to the help description of the bind option."
-msgstr "Arguments ເພີ່ມເຕີມຂອງເຊີເວີ, ອ້າງອີງຄຳອະທິບາຍໃນການຊ່ວຍເຫຼືອຂອງຕົວເລືອກ bind."
+msgstr ""
+"Arguments ເພີ່ມເຕີມຂອງເຊີເວີ, ອ້າງອີງຄຳອະທິບາຍໃນການຊ່ວຍເຫຼືອຂອງຕົວເລືອກ bind."
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:131
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:638
@@ -47,8 +49,8 @@ msgid ""
 "Attempts to serve old responses from cache with a TTL of 0 in the response "
 "without waiting for the actual resolution to finish."
 msgstr ""
-"ພະຍາຍາມສົ່ງຄຳຕອບເກົ່າຈາກ cache ໂດຍໃຫ້ຄ່າ TTL ເປັນ 0 ໂດຍບໍ່ຕ້ອງຖ້າການແກ້ໄຂ DNS "
-"ແທ້ຈິງໃຫ້ສຳເລັດ."
+"ພະຍາຍາມສົ່ງຄຳຕອບເກົ່າຈາກ cache ໂດຍໃຫ້ຄ່າ TTL ເປັນ 0 ໂດຍບໍ່ຕ້ອງຖ້າການແກ້ໄຂ DNS ແທ້ຈິງໃຫ້ສຳເລັ"
+"ດ."
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:160
 msgid "Automatically Set Dnsmasq"
@@ -90,7 +92,8 @@ msgstr "ກຳລັງເກັບຂໍ້ມູນ..."
 msgid ""
 "Configure IP blacklists that will be filtered from the results of specific "
 "DNS server."
-msgstr "ຕັ້ງຄ່າບັນຊີລາຍຊື່ IP ທີ່ຖືກບລັອກ ເຊິ່ງຈະຖືກກັ່ນຕອງອອກຈາກຜົນລັດຂອງເຊີເວີ DNS ທີ່ລະບຸ."
+msgstr ""
+"ຕັ້ງຄ່າບັນຊີລາຍຊື່ IP ທີ່ຖືກບລັອກ ເຊິ່ງຈະຖືກກັ່ນຕອງອອກຈາກຜົນລັດຂອງເຊີເວີ DNS ທີ່ລະບຸ."
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:928
 msgid "Configure block domain list."
@@ -239,8 +242,8 @@ msgid ""
 "Download domain list files for domain-rule and include config files, please "
 "refresh the page after download to take effect."
 msgstr ""
-"ດາວໂຫຼດໄຟລ໌ລາຍຊື່ໂດເມນສຳລັບ domain-rule ແລະໄຟລ໌ຕັ້ງຄ່າ, "
-"ກະລຸນາຣີເຟຣຊໜ້າເວັບຫຼັງຈາກດາວໂຫຼດເພື່ອໃຫ້ມີຜົນ."
+"ດາວໂຫຼດໄຟລ໌ລາຍຊື່ໂດເມນສຳລັບ domain-rule ແລະໄຟລ໌ຕັ້ງຄ່າ, ກະລຸນາຣີເຟຣຊໜ້າເວັບຫຼັງຈາກດາວໂຫຼດເພື່ອໃ"
+"ຫ້ມີຜົນ."
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:239
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:1006
@@ -483,8 +486,8 @@ msgid ""
 "Nftset name, Add domain result to nftset when speed check fails, format: "
 "[#[4|6]:[family#table#set]]"
 msgstr ""
-"ຊື່ Nftset, ເພີ່ມຜົນລັດໂດເມນໃສ່ nftset ເມື່ອກວດສອບຄວາມໄວບໍ່ສຳເລັດ, ຮູບແບບ: [#[4|6]:"
-"[family#table#set]]"
+"ຊື່ Nftset, ເພີ່ມຜົນລັດໂດເມນໃສ່ nftset ເມື່ອກວດສອບຄວາມໄວບໍ່ສຳເລັດ, ຮູບແບບ: "
+"[#[4|6]:[family#table#set]]"
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:1013
 msgid "No"
@@ -531,7 +534,8 @@ msgstr "URL ຂອງພຣັອກຊີເຊີເວີ, ຮູບແບບ
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:574
 msgid ""
 "Proxy server URL format error, format: [socks5|http]://user:pass@ip:port."
-msgstr "ຮູບແບບ URL ພຣັອກຊີເຊີເວີຜິດພາດ, ຮູບແບບ: [socks5|http]://user:pass@ip:port."
+msgstr ""
+"ຮູບແບບ URL ພຣັອກຊີເຊີເວີຜິດພາດ, ຮູບແບບ: [socks5|http]://user:pass@ip:port."
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:389
 msgid "Query DNS through specific dns server group, such as office, home."
@@ -568,7 +572,7 @@ msgstr "ຮູບແບບການຕອບສະໜອງ"
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:1173
 msgid "Restart"
-msgstr "ຣີສະຕາດ"
+msgstr "ເລີ່ມໃໝ່"
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:1164
 msgid "Restart Service"
@@ -626,7 +630,8 @@ msgstr ""
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:727
 msgid "Sets the server name indication for query. '-' for disable SNI name."
-msgstr "ຕັ້ງຄ່າການບົ່ງຊີ້ຊື່ເຊີເວີ (SNI) ສຳລັບການສອບຖາມ. ໃຊ້ '-' ເພື່ອປິດການໃຊ້ງານຊື່ SNI."
+msgstr ""
+"ຕັ້ງຄ່າການບົ່ງຊີ້ຊື່ເຊີເວີ (SNI) ສຳລັບການສອບຖາມ. ໃຊ້ '-' ເພື່ອປິດການໃຊ້ງານຊື່ SNI."
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:127
 msgid "Settings"
@@ -699,8 +704,8 @@ msgid ""
 "SmartDNS is a local high-performance DNS server, supports finding fastest "
 "IP, supports ad filtering, and supports avoiding DNS poisoning."
 msgstr ""
-"SmartDNS ເປັນເຊີເວີ DNS ທ້ອງຖິ່ນທີ່ມີປະສິດທິພາບສູງ, ຮອງຮັບການຊອກຫາ IP ທີ່ໄວທີ່ສຸດ, "
-"ຮອງຮັບການກັ່ນຕອງໂຄສະນາ, ແລະ ຮອງຮັບການປ້ອງກັນ DNS poisoning."
+"SmartDNS ເປັນເຊີເວີ DNS ທ້ອງຖິ່ນທີ່ມີປະສິດທິພາບສູງ, ຮອງຮັບການຊອກຫາ IP ທີ່ໄວທີ່ສຸດ, ຮອງຮັບການກັ່ນຕອ"
+"ງໂຄສະນາ, ແລະ ຮອງຮັບການປ້ອງກັນ DNS poisoning."
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:1141
 msgid "SmartDNS official website"
@@ -722,8 +727,8 @@ msgid ""
 "Smartdns response mode, First Ping: return the first ping IP, Fastest IP: "
 "return the fastest IP, Fastest Response: return the fastest DNS response."
 msgstr ""
-"ໂໝດການຕອບສະໜອງຂອງ Smartdns, First Ping: ສົ່ງຄືນ IP ທີ່ ping ໄດ້ກ່ອນ, Fastest IP: "
-"ສົ່ງຄືນ IP ທີ່ໄວທີ່ສຸດ, Fastest Response: ສົ່ງຄືນການຕອບສະໜອງ DNS ທີ່ໄວທີ່ສຸດ."
+"ໂໝດການຕອບສະໜອງຂອງ Smartdns, First Ping: ສົ່ງຄືນ IP ທີ່ ping ໄດ້ກ່ອນ, Fastest IP: ສົ່ງຄື"
+"ນ IP ທີ່ໄວທີ່ສຸດ, Fastest Response: ສົ່ງຄືນການຕອບສະໜອງ DNS ທີ່ໄວທີ່ສຸດ."
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:146
 msgid "Smartdns server name"
@@ -740,8 +745,8 @@ msgid ""
 "in the domains are never forwarded and always replied to with the specified "
 "IP address which may be IPv4 or IPv6."
 msgstr ""
-"ລະບຸທີ່ຢູ່ IP ເພື່ອສົ່ງຄືນສຳລັບໂຮສໃດໆໃນໂດເມນທີ່ໃຫ້, ການສອບຖາມໃນໂດເມນເຫຼົ່ານີ້ຈະບໍ່ຖືກສົ່ງຕໍ່ ແລະ "
-"ຈະຖືກຕອບກັບດ້ວຍທີ່ຢູ່ IP ທີ່ລະບຸສະເໝີ ເຊິ່ງອາດເປັນ IPv4 ຫຼື IPv6."
+"ລະບຸທີ່ຢູ່ IP ເພື່ອສົ່ງຄືນສຳລັບໂຮສໃດໆໃນໂດເມນທີ່ໃຫ້, ການສອບຖາມໃນໂດເມນເຫຼົ່ານີ້ຈະບໍ່ຖືກສົ່ງຕໍ່ ແລະ ຈະຖືກຕອ"
+"ບກັບດ້ວຍທີ່ຢູ່ IP ທີ່ລະບຸສະເໝີ ເຊິ່ງອາດເປັນ IPv4 ຫຼື IPv6."
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:168
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:1015
@@ -816,7 +821,8 @@ msgstr "ອັບໂຫຼດໄຟລ໌ບັນຊີລາຍຊື່ໂດ
 msgid ""
 "Upload domain list file, or configure auto download from Download File "
 "Setting page."
-msgstr "ອັບໂຫຼດໄຟລ໌ບັນຊີລາຍຊື່ໂດເມນ, ຫຼືຕັ້ງຄ່າການດາວໂຫຼດອັດຕະໂນມັດຈາກໜ້າການຕັ້ງຄ່າການດາວໂຫຼດໄຟລ໌."
+msgstr ""
+"ອັບໂຫຼດໄຟລ໌ບັນຊີລາຍຊື່ໂດເມນ, ຫຼືຕັ້ງຄ່າການດາວໂຫຼດອັດຕະໂນມັດຈາກໜ້າການຕັ້ງຄ່າການດາວໂຫຼດໄຟລ໌."
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:920
 msgid "Upload domain list file."
@@ -835,8 +841,8 @@ msgid ""
 "Upstream Servers, support UDP, TCP protocol. Please configure multiple DNS "
 "servers, including multiple foreign DNS servers."
 msgstr ""
-"ເຊີເວີປາຍທາງ, ຮອງຮັບໂປຣໂຕຄໍ UDP, TCP. ກະລຸນາຕັ້ງຄ່າເຊີເວີ DNS ຫຼາຍເຊີເວີ, ລວມທັງເຊີເວີ DNS "
-"ຕ່າງປະເທດຫຼາຍເຊີເວີ."
+"ເຊີເວີປາຍທາງ, ຮອງຮັບໂປຣໂຕຄໍ UDP, TCP. ກະລຸນາຕັ້ງຄ່າເຊີເວີ DNS ຫຼາຍເຊີເວີ, ລວມທັງເຊີເວີ DNS ຕ່າ"
+"ງປະເທດຫຼາຍເຊີເວີ."
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:764
 msgid "Use Proxy"
@@ -852,8 +858,8 @@ msgid ""
 "SPKI fingerprint, leaving blank to indicate that the validity of TLS is not "
 "verified."
 msgstr ""
-"ໃຊ້ເພື່ອຢືນຢັນຄວາມຖືກຕ້ອງຂອງເຊີເວີ TLS, ຄ່າແມ່ນ SPKI fingerprint ທີ່ເຂົ້າລະຫັດ Base64, "
-"ຖ້າປ່ອຍຫວ່າງໄວ້ໝາຍຄວາມວ່າບໍ່ກວດສອບຄວາມຖືກຕ້ອງຂອງ TLS."
+"ໃຊ້ເພື່ອຢືນຢັນຄວາມຖືກຕ້ອງຂອງເຊີເວີ TLS, ຄ່າແມ່ນ SPKI fingerprint ທີ່ເຂົ້າລະຫັດ Base64, ຖ້າປ່ອຍຫ"
+"ວ່າງໄວ້ໝາຍຄວາມວ່າບໍ່ກວດສອບຄວາມຖືກຕ້ອງຂອງ TLS."
 
 #: applications/luci-app-smartdns/htdocs/luci-static/resources/view/smartdns/smartdns.js:261
 msgid "Write cache to disk on exit and load on startup."

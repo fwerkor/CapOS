@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-02 12:03+0000\n"
-"Last-Translator: BoneNI <bounkirdni@gmail.com>\n"
+"PO-Revision-Date: 2026-08-15 13:06+0000\n"
+"Last-Translator: Bone NI <bounkirdni@gmail.com>\n"
 "Language-Team: Lao <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationschrony/lo/>\n"
 "Language: lo\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.17.1\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: applications/luci-app-chrony/htdocs/luci-static/resources/view/chrony.js:198
 #: applications/luci-app-chrony/htdocs/luci-static/resources/view/chrony.js:210
@@ -28,13 +28,15 @@ msgstr "8e-6 (8 ໄມໂຄຣວິນາທີ)"
 msgid ""
 "A fixed round-trip delay in seconds to be used instead of that of the "
 "previous measurements."
-msgstr "ຄວາມລ່າຊ້າຂອງການສົ່ງ-ຮັບຂໍ້ມູນຄົງທີ່ເປັນວິນາທີ ທີ່ຈະໃຊ້ແທນຄ່າຈາກການວັດແທກຄັ້ງກ່ອນ."
+msgstr ""
+"ຄວາມລ່າຊ້າຂອງການສົ່ງ-ຮັບຂໍ້ມູນຄົງທີ່ເປັນວິນາທີ ທີ່ຈະໃຊ້ແທນຄ່າຈາກການວັດແທກຄັ້ງກ່ອນ."
 
 #: applications/luci-app-chrony/htdocs/luci-static/resources/view/chrony.js:150
 msgid ""
 "A single symmetric association allows the peers to be both servers and "
 "clients to each other."
-msgstr "ການເຊື່ອມຕໍ່ແບບສົມມາດອັນດຽວ ອະນຸຍາດໃຫ້ເພຍເປັນທັງເຊີເວີ ແລະ ລູກຂ່າຍໃຫ້ກັນ ແລະ ກັນ."
+msgstr ""
+"ການເຊື່ອມຕໍ່ແບບສົມມາດອັນດຽວ ອະນຸຍາດໃຫ້ເພຍເປັນທັງເຊີເວີ ແລະ ລູກຂ່າຍໃຫ້ກັນ ແລະ ກັນ."
 
 #: applications/luci-app-chrony/htdocs/luci-static/resources/view/chrony.js:38
 msgid "Additional firewall configuration is required if you intend wan access."
@@ -74,8 +76,8 @@ msgid ""
 "Corrects the system clock by stepping immediately when it is so far adrift "
 "that the slewing process would take a very long time."
 msgstr ""
-"ແກ້ໄຂໂມງລະບົບໂດຍການປັບທັນທີ ເມື່ອເວລາຫ່າງກັນຫຼາຍເກີນໄປ "
-"ເຊິ່ງການປັບແບບຄ່ອຍເປັນຄ່ອຍໄປອາດໃຊ້ເວລາດົນເກີນໄປ."
+"ແກ້ໄຂໂມງລະບົບໂດຍການປັບທັນທີ ເມື່ອເວລາຫ່າງກັນຫຼາຍເກີນໄປ ເຊິ່ງການປັບແບບຄ່ອຍເປັນຄ່ອຍໄປອາດໃຊ້ເວລາດົນ"
+"ເກີນໄປ."
 
 #: applications/luci-app-chrony/htdocs/luci-static/resources/view/chrony.js:156
 msgid "DHCP(v6)"
@@ -116,7 +118,7 @@ msgstr "ຊື່ໂຮສ"
 
 #: applications/luci-app-chrony/htdocs/luci-static/resources/view/chrony.js:35
 msgid "Interface"
-msgstr "ອິນເຕີເຟດ"
+msgstr "ອິນເຕີເຟສ"
 
 #: applications/luci-app-chrony/htdocs/luci-static/resources/view/chrony.js:194
 msgid "Interleave"
@@ -158,7 +160,8 @@ msgstr "ຄວາມລ່າຊ້າສູງສຸດ"
 msgid ""
 "Maximum frequency offset of the smoothed time to the tracked NTP time (in "
 "ppm)."
-msgstr "ຄ່າຊົດເຊີຍຄວາມຖີ່ສູງສຸດຂອງເວລາທີ່ປັບໃຫ້ລຽບທຽບກັບເວລາ NTP ທີ່ຕິດຕາມ (ໃນໜ່ວຍ ppm)."
+msgstr ""
+"ຄ່າຊົດເຊີຍຄວາມຖີ່ສູງສຸດຂອງເວລາທີ່ປັບໃຫ້ລຽບທຽບກັບເວລາ NTP ທີ່ຕິດຕາມ (ໃນໜ່ວຍ ppm)."
 
 #: applications/luci-app-chrony/htdocs/luci-static/resources/view/chrony.js:209
 msgid "Maximum poll"
@@ -168,7 +171,8 @@ msgstr "ການຮ້ອງຂໍສູງສຸດ"
 msgid ""
 "Maximum rate at which the frequency offset is allowed to change (in ppm per "
 "second)."
-msgstr "ອັດຕາສູງສຸດທີ່ອະນຸຍາດໃຫ້ຄ່າຊົດເຊີຍຄວາມຖີ່ປ່ຽນແປງໄດ້ (ໃນໜ່ວຍ ppm ຕໍ່ວິນາທີ)."
+msgstr ""
+"ອັດຕາສູງສຸດທີ່ອະນຸຍາດໃຫ້ຄ່າຊົດເຊີຍຄວາມຖີ່ປ່ຽນແປງໄດ້ (ໃນໜ່ວຍ ppm ຕໍ່ວິນາທີ)."
 
 #: applications/luci-app-chrony/htdocs/luci-static/resources/view/chrony.js:240
 msgid "Maximum samples"
@@ -202,13 +206,15 @@ msgstr "ຈຳນວນຕົວຢ່າງທີ່ chronyd ຄວນເກັ
 msgid ""
 "Only leap seconds are smoothed out; ignore normal offset and frequency "
 "changes."
-msgstr "ປັບສະເພາະ leap seconds ໃຫ້ລຽບ; ບໍ່ສົນໃຈຄ່າຊົດເຊີຍປົກກະຕິ ແລະ ການປ່ຽນແປງຄວາມຖີ່."
+msgstr ""
+"ປັບສະເພາະ leap seconds ໃຫ້ລຽບ; ບໍ່ສົນໃຈຄ່າຊົດເຊີຍປົກກະຕິ ແລະ ການປ່ຽນແປງຄວາມຖີ່."
 
 #: applications/luci-app-chrony/htdocs/luci-static/resources/view/chrony.js:157
 msgid ""
 "Options for servers provided to this host via DHCP(v6) (via the WAN for "
 "example)."
-msgstr "ຕົວເລືອກສຳລັບເຊີເວີທີ່ໄດ້ຮັບມາໃຫ້ໂຮສນີ້ຜ່ານ DHCP(v6) (ຕົວຢ່າງ: ຜ່ານທາງ WAN)."
+msgstr ""
+"ຕົວເລືອກສຳລັບເຊີເວີທີ່ໄດ້ຮັບມາໃຫ້ໂຮສນີ້ຜ່ານ DHCP(v6) (ຕົວຢ່າງ: ຜ່ານທາງ WAN)."
 
 #: applications/luci-app-chrony/htdocs/luci-static/resources/view/chrony.js:148
 msgid "Peer"
@@ -296,8 +302,8 @@ msgid ""
 "also, because they could reject this server as a falseticker or fail to "
 "select a source completely."
 msgstr ""
-"ໃຊ້ສະເພາະເມື່ອລູກຂ່າຍບໍ່ໄດ້ຕັ້ງຄ່າໃຫ້ຮ້ອງຂໍຈາກເຊີເວີ NTP ອື່ນ ເພາະພວກມັນອາດປະຕິເສດເຊີເວີນີ້ "
-"ເນື່ອງຈາກເຫັນວ່າຂໍ້ມູນບໍ່ຖືກຕ້ອງ ຫຼື ບໍ່ສາມາດເລືອກແຫຼ່ງຂໍ້ມູນໄດ້ເລີຍ."
+"ໃຊ້ສະເພາະເມື່ອລູກຂ່າຍບໍ່ໄດ້ຕັ້ງຄ່າໃຫ້ຮ້ອງຂໍຈາກເຊີເວີ NTP ອື່ນ ເພາະພວກມັນອາດປະຕິເສດເຊີເວີນີ້ ເນື່ອງຈາກເຫັ"
+"ນວ່າຂໍ້ມູນບໍ່ຖືກຕ້ອງ ຫຼື ບໍ່ສາມາດເລືອກແຫຼ່ງຂໍ້ມູນໄດ້ເລີຍ."
 
 #: applications/luci-app-chrony/htdocs/luci-static/resources/view/chrony.js:54
 msgid "Use system CA bundle"

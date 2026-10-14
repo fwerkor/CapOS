@@ -253,8 +253,7 @@ msgstr ""
 
 #: applications/luci-app-apinger/htdocs/luci-static/resources/view/apinger/alarm_loss.js:11
 msgid "This alarm will be canceled, when the loss drops below \"Loss Low\""
-msgstr ""
-"Tento alarm bude zrušen, pokud ztráta poklesne pod „Spodní práh ztráty“"
+msgstr "Tento alarm bude zrušen, pokud ztráta poklesne pod „Spodní práh ztráty“"
 
 #: applications/luci-app-apinger/htdocs/luci-static/resources/view/apinger/alarm_loss.js:10
 msgid "This alarm will be fired when packet loss goes over \"Loss High\""

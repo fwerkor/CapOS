@@ -1,12 +1,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=mesa
-PKG_VERSION:=25.2.4
+PKG_VERSION:=26.2.2
 PKG_RELEASE:=2
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=https://archive.mesa3d.org/
-PKG_HASH:=a370b4c549cbfbe646b319e34d73edb50ed883978f5e95133f282f0eae39ab52
+PKG_HASH:=eeb29ca7e56cfaa8e8a79538dcf834e3b18e501c31bef5145e959ea437cc4216
 
 PKG_MAINTAINER:=Daniel Golle <daniel@makrotopia.org>
 PKG_LICENSE:=BSD-3-Clause
@@ -16,7 +16,7 @@ PKG_INSTALL:=1
 PKG_BUILD_DEPENDS:=glslang/host python3/host libva vulkan-headers \
 		   MESA_USE_LLVM:llvm MESA_USE_LLVM:mesa/host
 
-HOST_BUILD_DEPENDS:=python3/host spirv-tools/host llvm
+HOST_BUILD_DEPENDS:=python3/host spirv-tools/host MESA_USE_LLVM:llvm
 
 PKG_CONFIG_DEPENDS:= \
 	CONFIG_PACKAGE_libmesa-amd \
@@ -38,7 +38,10 @@ PKG_CONFIG_DEPENDS:= \
 	CONFIG_PACKAGE_libvulkan-lvp \
 	CONFIG_PACKAGE_libvulkan-nouveau \
 	CONFIG_PACKAGE_libvulkan-panfrost \
-	CONFIG_PACKAGE_libvulkan-radeon
+	CONFIG_PACKAGE_libvulkan-radeon \
+	CONFIG_PACKAGE_libvulkan-virtio \
+	CONFIG_PACKAGE_libteflon-rocket \
+	CONFIG_PACKAGE_libteflon-etnaviv
 
 TARGET_CPPFLAGS+=-Wno-format -Wno-format-security
 
@@ -61,7 +64,7 @@ define Package/mesa/Default
   SECTION:=libs
   CATEGORY:=Libraries
   SUBMENU:=Video
-  DEPENDS:=+libatomic
+  DEPENDS:=$(ATOMIC64_DEPENDS)
   TITLE:=Mesa3D
   URL:=https://www.mesa3d.org
 endef
@@ -80,6 +83,14 @@ config MESA_USE_LLVM
 	bool "Use LLVM to build MESA"
 	depends on aarch64||arm||i386||i686||loongarch64||mips||mipsel||mips64||mips64el||riscv64||x86_64
 	default y
+	help
+	  Build LLVM (the heavy 'llvm-mesa' static archive) and link it
+	  into the LLVM-using Mesa variants (amd, intel, tegra, nouveau,
+	  panfrost, virgl, zink, llvmpipe and all libvulkan-*). When
+	  disabled, only the LLVM-free variants (softpipe, broadcom,
+	  lima, etnaviv, libteflon-*) are buildable, but the llvm-mesa
+	  build is skipped entirely - much faster source builds at the
+	  cost of losing the LLVM-using variants.
 endef
 
 define Package/libmesa/Default
@@ -94,7 +105,7 @@ endef
 define Package/libmesa-amd
 $(call Package/libmesa/Default)
   TITLE+= (AMD)
-  DEPENDS+=+libdrm-amdgpu +libdrm-radeon +libelf @MESA_USE_LLVM
+  DEPENDS+=accel-support +libdrm-amdgpu +libdrm-radeon +libelf @MESA_USE_LLVM
   VARIANT:=amd
 endef
 
@@ -118,7 +129,7 @@ endef
 
 define Package/libmesa-intel
 $(call Package/libmesa/Default)
-  DEPENDS+=+libdrm-intel @(i386||i686||x86_64) @MESA_USE_LLVM
+  DEPENDS+=accel-support +libdrm-intel @(i386||i686||x86_64) @MESA_USE_LLVM
   TITLE+= (Intel)
   VARIANT:=intel
 endef
@@ -146,7 +157,7 @@ endef
 
 define Package/libmesa-tegra
 $(call Package/libmesa/Default)
-  DEPENDS+=+libdrm-tegra @(aarch64||arm) @MESA_USE_LLVM
+  DEPENDS+=accel-support +libdrm-tegra @(aarch64||arm) @MESA_USE_LLVM
   TITLE+= (NVIDIA Tegra)
   VARIANT:=tegra
 endef
@@ -160,7 +171,7 @@ endef
 
 define Package/libmesa-etnaviv
 $(call Package/libmesa/Default)
-  DEPENDS+=+libdrm-etnaviv @(aarch64||arm||mips||mips64||mipsel||mips64el||riscv64)
+  DEPENDS+=accel-support +libdrm-etnaviv @(aarch64||arm||mips||mips64||mipsel||mips64el||riscv64)
   TITLE+= (Vivante)
   VARIANT:=etnaviv
 endef
@@ -174,7 +185,7 @@ endef
 
 define Package/libmesa-nouveau
 $(call Package/libmesa/Default)
-  DEPENDS+=+libdrm-nouveau @MESA_USE_LLVM
+  DEPENDS+=accel-support +libdrm-nouveau @MESA_USE_LLVM
   TITLE+= (NVIDIA)
   VARIANT:=nouveau
 endef
@@ -191,7 +202,7 @@ define Package/libmesa-broadcom
 $(call Package/libmesa/Default)
   TITLE+= (Broadcom)
   VARIANT:=broadcom
-  DEPENDS+=+libarchive @(aarch64||arm) @HAS_FPU
+  DEPENDS+=accel-support +libarchive @(aarch64||arm) @HAS_FPU
 endef
 
 define Package/libmesa-broadcom/description
@@ -213,7 +224,7 @@ define Package/libmesa-lima
 $(call Package/libmesa/Default)
   TITLE+= (ARM Mali Utgard)
   VARIANT:=lima
-  DEPENDS+=@(aarch64||arm)
+  DEPENDS+=accel-support @(aarch64||arm)
 endef
 
 define Package/libmesa-lima/description
@@ -236,7 +247,7 @@ define Package/libmesa-panfrost
 $(call Package/libmesa/Default)
   TITLE+= (ARM Mali Midgard and later)
   VARIANT:=panfrost
-  DEPENDS+=@(aarch64||arm) @MESA_USE_LLVM
+  DEPENDS+=accel-support @(aarch64||arm) @MESA_USE_LLVM
 endef
 
 define Package/libmesa-panfrost/description
@@ -261,6 +272,7 @@ define Package/libmesa-virgl
 $(call Package/libmesa/Default)
   TITLE+= (VirtIO GL)
   VARIANT:=virgl
+  DEPENDS+=accel-support
 endef
 
 define Package/libmesa-virgl/description
@@ -275,7 +287,7 @@ define Package/libmesa-zink
 $(call Package/libmesa/Default)
   TITLE+= (Zink GL via Vulkan)
   VARIANT:=vulkan
-  DEPENDS+=@MESA_USE_LLVM
+  DEPENDS+=accel-support @MESA_USE_LLVM
 endef
 
 define Package/libmesa-zink/description
@@ -317,7 +329,7 @@ endef
 
 define Package/libvulkan-broadcom
 $(call Package/mesa/Default)
-  DEPENDS+=+libdrm +libexpat +libstdcpp +libudev +libwayland +libzstd +zlib \
+  DEPENDS+=accel-support +libdisplay-info +libdrm +libexpat +libstdcpp +libudev +libwayland +libzstd +zlib \
 	   @(arm||aarch64) @HAS_FPU
   TITLE+= Broadcom Vulkan driver
   VARIANT:=vulkan
@@ -330,7 +342,7 @@ endef
 
 define Package/libvulkan-imagination
 $(call Package/mesa/Default)
-  DEPENDS+=+libatomic +libdrm +libexpat +libstdcpp +libudev +libwayland +libzstd \
+  DEPENDS+=accel-support +libatomic +libdisplay-info +libdrm +libexpat +libstdcpp +libudev +libwayland +libzstd \
 	   +zlib @(aarch64||arm||mips||mips64||mipsel||mips64el||riscv64)
   TITLE+= Imagination PowerVR driver (EXPERIMENTAL)
   VARIANT:=vulkan
@@ -354,7 +366,7 @@ endef
 
 define Package/libvulkan-intel
 $(call Package/mesa/Default)
-  DEPENDS+=+libdrm-intel +libexpat +libstdcpp +libudev +libwayland +libzstd +zlib \
+  DEPENDS+=accel-support +libdisplay-info +libdrm-intel +libexpat +libstdcpp +libudev +libwayland +libzstd +zlib \
 	   @(i386||i686||x86_64) @MESA_USE_LLVM
   TITLE+= Intel Gen9+ Vulkan driver
   VARIANT:=vulkan
@@ -367,7 +379,7 @@ endef
 
 define Package/libvulkan-intel-hasvk
 $(call Package/mesa/Default)
-  DEPENDS+=+libdrm-intel +libexpat +libstdcpp +libudev +libwayland +libzstd +zlib \
+  DEPENDS+=accel-support +libdisplay-info +libdrm-intel +libexpat +libstdcpp +libudev +libwayland +libzstd +zlib \
 	   @(i386||i686||x86_64) @MESA_USE_LLVM
   TITLE+= Intel Gen7/Gen8 Vulkan driver
   VARIANT:=vulkan
@@ -380,7 +392,7 @@ endef
 
 define Package/libvulkan-lvp
 $(call Package/mesa/Default)
-  DEPENDS+=+libatomic +libdrm +libstdcpp +libudev +libwayland +libzstd +zlib @MESA_USE_LLVM
+  DEPENDS+=+libatomic +libdisplay-info +libdrm +libstdcpp +libudev +libwayland +libzstd +zlib @MESA_USE_LLVM
   TITLE+= LLVM JIT CPU rendering Vulkan driver
   VARIANT:=vulkan
 endef
@@ -393,7 +405,7 @@ endef
 define Package/libvulkan-nouveau
 $(call Package/mesa/Default)
   TITLE+= nouveau Vulkan driver for nVidia GPUs
-  DEPENDS+=$(RUST_ARCH_DEPENDS) @MESA_USE_LLVM @BROKEN
+  DEPENDS+=accel-support $(RUST_ARCH_DEPENDS) @MESA_USE_LLVM @BROKEN
   VARIANT:=vulkan
 # needs rust-bindgen which currently can't be built
 endef
@@ -409,7 +421,7 @@ endef
 
 define Package/libvulkan-panfrost
 $(call Package/mesa/Default)
-  DEPENDS+=+libdrm +libexpat +libstdcpp +libudev +libwayland +libzstd +zlib \
+  DEPENDS+=accel-support +libdisplay-info +libdrm +libexpat +libstdcpp +libudev +libwayland +libzstd +zlib \
 	   @(arm||aarch64) @MESA_USE_LLVM
   TITLE+= ARM Mali Midgard/Bifrost/Valhall Vulkan driver
   VARIANT:=vulkan
@@ -423,7 +435,7 @@ endef
 define Package/libvulkan-radeon
 $(call Package/mesa/Default)
   TITLE+= AMD Radeon Vulkan driver
-  DEPENDS+=+libdrm-amdgpu +libelf +libexpat +libstdcpp +libudev +libwayland \
+  DEPENDS+=accel-support +libdisplay-info +libdrm-amdgpu +libelf +libexpat +libstdcpp +libudev +libwayland \
 	   +libzstd +zlib @MESA_USE_LLVM
   VARIANT:=vulkan
 endef
@@ -432,12 +444,52 @@ define Package/libvulkan-radeon/description
 RADV is a Vulkan driver for AMD GCN/RDNA GPUs.
 endef
 
+define Package/libvulkan-virtio
+$(call Package/mesa/Default)
+  TITLE+= virtio-gpu Vulkan driver (venus)
+  DEPENDS+=accel-support +libdisplay-info +libdrm +libstdcpp +libudev +libwayland +libzstd +zlib
+  VARIANT:=vulkan
+endef
+
+define Package/libvulkan-virtio/description
+Venus is a Vulkan driver for virtio-gpu, used inside virtual machines
+to forward Vulkan API calls to a Vulkan-capable GPU on the host via
+the virtio-gpu transport.
+endef
+
+define Package/libteflon-rocket
+$(call Package/mesa/Default)
+  TITLE+= TFLite delegate for Rockchip RKNPU (rocket)
+  DEPENDS+=+libdrm +libexpat @aarch64
+  VARIANT:=teflon-rocket
+  CONFLICTS:=libteflon-etnaviv
+endef
+
+define Package/libteflon-rocket/description
+Mesa's "teflon" TensorFlow Lite delegate, built with the Rockchip
+RKNPU (rocket) backend. Provides hardware-accelerated TFLite
+inference on Rockchip RK3566 / RK3568 / RK3588(s) NPUs.
+endef
+
+define Package/libteflon-etnaviv
+$(call Package/mesa/Default)
+  TITLE+= TFLite delegate for VeriSilicon NPU (etnaviv)
+  DEPENDS+=+libdrm-etnaviv +libexpat +libzstd +zlib @aarch64
+  VARIANT:=teflon-etnaviv
+endef
+
+define Package/libteflon-etnaviv/description
+Mesa's "teflon" TensorFlow Lite delegate, built with the etnaviv
+backend for VeriSilicon VIP9000-class NPUs (e.g. NXP i.MX 8M Plus,
+i.MX 95).
+endef
+
 ifneq ($(CONFIG_PACKAGE_libvulkan-broadcom),)
   VULKAN_DRIVERS+=broadcom
 endif
 
 ifneq ($(CONFIG_PACKAGE_libvulkan-imagination),)
-  VULKAN_DRIVERS+=imagination-experimental
+  VULKAN_DRIVERS+=imagination
 endif
 
 ifneq ($(CONFIG_PACKAGE_libvulkan-intel),)
@@ -464,6 +516,10 @@ ifneq ($(CONFIG_PACKAGE_libvulkan-radeon),)
   VULKAN_DRIVERS+=amd
 endif
 
+ifneq ($(CONFIG_PACKAGE_libvulkan-virtio),)
+  VULKAN_DRIVERS+=virtio
+endif
+
 MESON_HOST_ARGS += \
 	-Dplatforms= \
 	-Dglx=disabled \
@@ -478,16 +534,26 @@ MESON_HOST_ARGS += \
 	-Dvalgrind=disabled \
 	-Dgallium-drivers= \
 	-Dvulkan-drivers= \
-	-Dtools=nir \
+	-Dshared-llvm=disabled \
+	-Ddraw-use-llvm=false \
+	-Dintel-elk=true
+
+ifneq ($(CONFIG_MESA_USE_LLVM),)
+MESON_HOST_ARGS += \
+	-Dtools=nir,imagination \
 	-Dllvm=enabled \
 	-Dmesa-clc=enabled \
 	-Dprecomp-compiler=enabled \
-	-Dshared-llvm=disabled \
-	-Ddraw-use-llvm=false \
-	-Dintel-elk=true \
 	-Dstatic-libclc=all \
 	-Dinstall-mesa-clc=true \
 	-Dinstall-precomp-compiler=true
+else
+MESON_HOST_ARGS += \
+	-Dtools=nir \
+	-Dllvm=disabled \
+	-Dmesa-clc=disabled \
+	-Dprecomp-compiler=disabled
+endif
 
 MESON_ARGS += \
 	-Dplatforms=wayland \
@@ -526,12 +592,16 @@ endif
 
 ifeq ($(BUILD_VARIANT),etnaviv)
 MESON_ARGS += \
-	-Dgallium-drivers=etnaviv
+	-Dgallium-drivers=etnaviv \
+	-Dllvm=disabled \
+	-Ddraw-use-llvm=false
 endif
 
 ifeq ($(BUILD_VARIANT),broadcom)
 MESON_ARGS += \
-	-Dgallium-drivers=vc4,v3d
+	-Dgallium-drivers=vc4,v3d \
+	-Dllvm=disabled \
+	-Ddraw-use-llvm=false
 endif
 
 ifeq ($(BUILD_VARIANT),nouveau)
@@ -541,7 +611,9 @@ endif
 
 ifeq ($(BUILD_VARIANT),lima)
 MESON_ARGS += \
-	-Dgallium-drivers=lima
+	-Dgallium-drivers=lima \
+	-Dllvm=disabled \
+	-Ddraw-use-llvm=false
 endif
 
 ifeq ($(BUILD_VARIANT),panfrost)
@@ -561,7 +633,25 @@ endif
 
 ifeq ($(BUILD_VARIANT),softpipe)
 MESON_ARGS += \
-	-Dgallium-drivers=softpipe
+	-Dgallium-drivers=softpipe \
+	-Dllvm=disabled \
+	-Ddraw-use-llvm=false
+endif
+
+ifeq ($(BUILD_VARIANT),teflon-rocket)
+MESON_ARGS += \
+	-Dgallium-drivers=rocket \
+	-Dteflon=true \
+	-Dllvm=disabled \
+	-Ddraw-use-llvm=false
+endif
+
+ifeq ($(BUILD_VARIANT),teflon-etnaviv)
+MESON_ARGS += \
+	-Dgallium-drivers=etnaviv \
+	-Dteflon=true \
+	-Dllvm=disabled \
+	-Ddraw-use-llvm=false
 endif
 
 ifeq ($(BUILD_VARIANT),vulkan)
@@ -581,8 +671,8 @@ endif
 
 TARGET_CFLAGS += -I$(MESON_BUILD_DIR)/src/broadcom/
 
-define Host/Configure
-	$(call Py3Build/InstallBuildDepends)
+ifneq ($(CONFIG_MESA_USE_LLVM),)
+define Host/Configure/LLVMMesa
 	$(INSTALL_DIR) $(HOST_BUILD_DIR)/subprojects/llvm
 	$(LN) $(STAGING_DIR_HOST)/llvm-mesa/bin $(HOST_BUILD_DIR)/subprojects/llvm
 	$(LN) $(STAGING_DIR_HOST)/llvm-mesa/include $(HOST_BUILD_DIR)/subprojects/llvm
@@ -601,6 +691,15 @@ define Host/Configure
 		$(STAGING_DIR_HOST)/llvm-mesa/lib/clang/*/include/opencl-c.h \
 		$(STAGING_DIR_HOST)/llvm-mesa/lib/clang/*/include/opencl-c-base.h \
 		$(HOST_BUILD_DIR)/src/compiler/clc
+endef
+else
+define Host/Configure/LLVMMesa
+endef
+endif
+
+define Host/Configure
+	$(call Py3Build/InstallBuildDepends)
+	$(call Host/Configure/LLVMMesa)
 	$(call Host/Configure/Meson)
 endef
 
@@ -676,7 +775,6 @@ endef
 define Package/libvulkan-imagination/install
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libvulkan_powervr_mesa.so $(1)/usr/lib
-	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libpowervr_rogue.so $(1)/usr/lib
 	$(INSTALL_DIR) $(1)/usr/share/vulkan/icd.d
 	$(CP) $(PKG_INSTALL_DIR)/usr/share/vulkan/icd.d/powervr_mesa_icd.*.json $(1)/usr/share/vulkan/icd.d
 endef
@@ -716,6 +814,21 @@ define Package/libvulkan-panfrost/install
 	$(CP) $(PKG_INSTALL_DIR)/usr/share/vulkan/icd.d/panfrost_icd.*.json $(1)/usr/share/vulkan/icd.d
 endef
 
+define Package/libvulkan-virtio/install
+	$(INSTALL_DIR) $(1)/usr/lib
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libvulkan_virtio.so $(1)/usr/lib
+	$(INSTALL_DIR) $(1)/usr/share/vulkan/icd.d
+	$(CP) $(PKG_INSTALL_DIR)/usr/share/vulkan/icd.d/virtio_icd.*.json $(1)/usr/share/vulkan/icd.d
+endef
+
+define Package/libteflon/install
+	$(INSTALL_DIR) $(1)/usr/lib
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libteflon.so $(1)/usr/lib
+endef
+
+Package/libteflon-rocket/install = $(Package/libteflon/install)
+Package/libteflon-etnaviv/install = $(Package/libteflon/install)
+
 Package/libmesa-intel/install = $(Package/libmesa/install)
 Package/libmesa-amd/install = $(Package/libmesa/install)
 Package/libmesa-tegra/install = $(Package/libmesa/install)
@@ -750,4 +863,7 @@ $(eval $(call BuildPackage,libvulkan-lvp))
 $(eval $(call BuildPackage,libvulkan-nouveau))
 $(eval $(call BuildPackage,libvulkan-panfrost))
 $(eval $(call BuildPackage,libvulkan-radeon))
+$(eval $(call BuildPackage,libvulkan-virtio))
+$(eval $(call BuildPackage,libteflon-rocket))
+$(eval $(call BuildPackage,libteflon-etnaviv))
 $(eval $(call HostBuild))

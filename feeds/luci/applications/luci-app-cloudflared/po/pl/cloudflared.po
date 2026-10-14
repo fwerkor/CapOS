@@ -72,6 +72,7 @@ msgid "Debug"
 msgstr "Debugowanie"
 
 #: applications/luci-app-cloudflared/htdocs/luci-static/resources/view/cloudflared/log.js:96
+msgctxt "Log direction"
 msgid "Down"
 msgstr "W dół"
 
@@ -202,6 +203,7 @@ msgid "United States"
 msgstr "Stany Zjednoczone"
 
 #: applications/luci-app-cloudflared/htdocs/luci-static/resources/view/cloudflared/log.js:97
+msgctxt "Log direction"
 msgid "Up"
 msgstr "W górę"
 
@@ -212,3 +214,9 @@ msgstr "Uwaga"
 #: applications/luci-app-cloudflared/htdocs/luci-static/resources/view/cloudflared/config.js:95
 msgid "Warning"
 msgstr "Ostrzeżenie"
+
+#~ msgid "Down"
+#~ msgstr "W dół"
+
+#~ msgid "Up"
+#~ msgstr "W górę"

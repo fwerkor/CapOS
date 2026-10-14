@@ -27,10 +27,8 @@ msgid "Expose LAN clients information in NextDNS analytics."
 msgstr "ສະແດງຂໍ້ມູນລູກເຄືອຂ່າຍ LAN ໃນການວິເຄາະຂອງ NextDNS."
 
 #: applications/luci-app-nextdns/htdocs/luci-static/resources/view/nextdns/overview.js:12
-msgid ""
-"For further information, go to <a href=\"https://nextdns.io\" "
-"target=\"_blank\">nextdns.io</a>."
-msgstr ""
+msgid "For further information, go to %s."
+msgstr "ສຳລັບຂໍ້ມູນເພີ່ມເຕີມ, ເຂົ້າໄປທີ່ %s."
 
 #: applications/luci-app-nextdns/htdocs/luci-static/resources/view/nextdns/overview.js:15
 msgid "General"

@@ -68,8 +68,7 @@ msgstr ""
 
 #: applications/luci-app-chrony/htdocs/luci-static/resources/view/chrony.js:37
 msgid "Choose a wan interface to allow from all IPs."
-msgstr ""
-"Wybierz interfejs WAN, który będzie dozwolony ze wszystkich adresów IP."
+msgstr "Wybierz interfejs WAN, który będzie dozwolony ze wszystkich adresów IP."
 
 #: applications/luci-app-chrony/root/usr/share/luci/menu.d/luci-app-chrony.json:3
 msgid "Chrony"

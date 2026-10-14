@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/devel/scons/Makefile
 Build-Types: host
 
 Package: scons
-Version: 4.0.1-r1
+Version: 4.10.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
@@ -11,8 +11,8 @@ Section: devel
 Category: Development
 Repository: base
 Title: scons
-Maintainer: 
-Source: scons-local-4.0.1.tar.gz
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: scons-local-4.10.1.tar.gz
 License: MIT
 LicenseFiles: scons-LICENSE
 URL: https://scons.org/

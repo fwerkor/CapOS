@@ -105,3 +105,11 @@ msgstr ""
 #: applications/luci-app-crowdsec-firewall-bouncer/htdocs/luci-static/resources/view/crowdsec-firewall-bouncer/form.js:22
 msgid "URL of local API"
 msgstr "Adres URL lokalnego API"
+
+#~ msgid ""
+#~ "Gain <a href=\"http://www.crowdsec.net\">crowd-sourced</a> protection "
+#~ "against malicious IPs. Benefit from the most accurate CTI in the world."
+#~ msgstr ""
+#~ "Uzyskaj <a href=\"http://www.crowdsec.net\">pozyskaną społecznościowo</a> "
+#~ "ochronę przed złośliwymi adresami IP. Skorzystaj z najdokładniejszego CTI "
+#~ "na świecie."

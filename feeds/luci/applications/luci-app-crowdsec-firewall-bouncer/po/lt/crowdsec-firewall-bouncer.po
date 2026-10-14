@@ -106,3 +106,11 @@ msgstr ""
 #: applications/luci-app-crowdsec-firewall-bouncer/htdocs/luci-static/resources/view/crowdsec-firewall-bouncer/form.js:22
 msgid "URL of local API"
 msgstr "Vietinio „API“ „URL“ – saitas"
+
+#~ msgid ""
+#~ "Gain <a href=\"http://www.crowdsec.net\">crowd-sourced</a> protection "
+#~ "against malicious IPs. Benefit from the most accurate CTI in the world."
+#~ msgstr ""
+#~ "Gauti „<a href=\"http://www.crowdsec.net\">bendruomenės išgautas</a>“ "
+#~ "apsaugą prieš žalingus IP(dgs.). Gaukite naudą iš tiksliausio „CTI“ "
+#~ "pasaulyje*."

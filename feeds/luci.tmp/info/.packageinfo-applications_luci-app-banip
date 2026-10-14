@@ -1,9 +1,9 @@
 Source-Makefile: feeds/luci/applications/luci-app-banip/Makefile
-Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host LUCI_UTMIN:ucode/host 
 
 Package: luci-app-banip
 Submenu: 3. Applications
-Version: 1.8.10-r1
+Version: 1.9.0-r1
 Depends: +libc +luci-base +banip
 Conflicts: 
 Menu-Depends: 

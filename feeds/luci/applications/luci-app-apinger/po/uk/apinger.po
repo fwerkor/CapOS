@@ -258,8 +258,8 @@ msgstr ""
 #: applications/luci-app-apinger/htdocs/luci-static/resources/view/apinger/alarm_loss.js:10
 msgid "This alarm will be fired when packet loss goes over \"Loss High\""
 msgstr ""
-"Цю тривогу буде активовано, коли втрати пакетів перевищать «Верхню межу "
-"втрат»"
+"Цю тривогу буде активовано, коли втрати пакетів перевищать «Верхню межу втрат"
+"»"
 
 #: applications/luci-app-apinger/htdocs/luci-static/resources/view/apinger/alarm_down.js:10
 msgid "This alarm will be fired when target does not respond for \"Time\""

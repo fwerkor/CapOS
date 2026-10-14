@@ -86,7 +86,8 @@ msgstr "ຍັງບໍ່ໄດ້ກຳນົດທີ່ຢູ່ໄຟລ໌
 #: applications/luci-app-antiblock/htdocs/luci-static/resources/view/antiblock/args.js:15
 msgid ""
 "Prevent adding IP from these subnets to the routing table, optional parameter"
-msgstr "ປ້ອງກັນການເພີ່ມ IP ຈາກຊັບເນັດເຫຼົ່ານີ້ເຂົ້າໃນຕາຕະລາງເສັ້ນທາງ, ເປັນຕົວເລືອກເສີມ"
+msgstr ""
+"ປ້ອງກັນການເພີ່ມ IP ຈາກຊັບເນັດເຫຼົ່ານີ້ເຂົ້າໃນຕາຕະລາງເສັ້ນທາງ, ເປັນຕົວເລືອກເສີມ"
 
 #: applications/luci-app-antiblock/htdocs/luci-static/resources/view/antiblock/routes.js:8
 #: applications/luci-app-antiblock/htdocs/luci-static/resources/view/antiblock/routes.js:10

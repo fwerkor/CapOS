@@ -222,9 +222,9 @@ msgid ""
 msgstr ""
 
 #: applications/luci-app-uhttpd/htdocs/luci-static/resources/view/uhttpd/uhttpd.js:245
-#, fuzzy
+msgctxt "Certificate state, region or province"
 msgid "State"
-msgstr "상태"
+msgstr "주(州)"
 
 #: applications/luci-app-uhttpd/htdocs/luci-static/resources/view/uhttpd/uhttpd.js:212
 msgid "TCP Keepalive"
@@ -279,3 +279,7 @@ msgstr ""
 #: applications/luci-app-uhttpd/htdocs/luci-static/resources/view/uhttpd/uhttpd.js:183
 msgid "ubus integration is disabled if not present"
 msgstr "지정하지 않으면 ubus 연동 기능이 비활성화됩니다"
+
+#, fuzzy
+#~ msgid "State"
+#~ msgstr "상태"

@@ -2,7 +2,7 @@ Source-Makefile: feeds/telephony/libs/dahdi-linux/Makefile
 
 Package: kmod-dahdi
 Submenu: Voice over IP
-Version: <LINUX_VERSION>.3.4.0-r2
+Version: <LINUX_VERSION>.3.4.0-r3
 Depends: @USB_SUPPORT +kmod-lib-crc-ccitt
 Conflicts: 
 Menu-Depends: 
@@ -21,8 +21,8 @@ Description:   This package contains DAHDI basic infrastructure.
 
 Package: kmod-dahdi-echocan-oslec
 Submenu: Voice over IP
-Version: <LINUX_VERSION>.3.4.0-r2
-Depends: kmod-dahdi +kmod-echo
+Version: <LINUX_VERSION>.3.4.0-r3
+Depends: kmod-dahdi +LINUX_6_12:kmod-echo +!LINUX_6_12:kmod-oslec
 Conflicts: 
 Menu-Depends: 
 Provides: @kmod-dahdi-echocan-oslec-any
@@ -40,7 +40,7 @@ Description:   This package contains DAHDI OSLEC echo canceller support.
 
 Package: kmod-dahdi-dummy
 Submenu: Voice over IP
-Version: <LINUX_VERSION>.3.4.0-r2
+Version: <LINUX_VERSION>.3.4.0-r3
 Depends: kmod-dahdi
 Conflicts: 
 Menu-Depends: 
@@ -60,7 +60,7 @@ Description:   This package contains the dummy DAHDI driver providing only DAHDI
 
 Package: kmod-dahdi-hfcs
 Submenu: Voice over IP
-Version: <LINUX_VERSION>.3.4.0-r2
+Version: <LINUX_VERSION>.3.4.0-r3
 Depends: @PCI_SUPPORT kmod-dahdi
 Conflicts: 
 Menu-Depends: 

@@ -433,3 +433,9 @@ msgid ""
 msgstr ""
 "Peržiūrėti „CA“ sertifikatą, kuris naudojamas šio serverio. Jūs tūrėsite jį "
 "išsaugoti kaip – „ca.pem“ ir importuoti jį klientams."
+
+#~ msgid "IP"
+#~ msgstr "IP"
+
+#~ msgid "VPN IP"
+#~ msgstr "„VPN“ IP"

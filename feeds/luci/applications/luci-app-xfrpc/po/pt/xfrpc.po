@@ -167,8 +167,7 @@ msgstr "Endereço do servidor"
 
 #: applications/luci-app-xfrpc/htdocs/luci-static/resources/view/xfrpc.js:70
 msgid "Server address specifies the address of the server to connect to."
-msgstr ""
-"O endereço do servidor especifica o endereço do servidor para conectar."
+msgstr "O endereço do servidor especifica o endereço do servidor para conectar."
 
 #: applications/luci-app-xfrpc/htdocs/luci-static/resources/view/xfrpc.js:74
 msgid "Server port"

@@ -241,3 +241,49 @@ msgstr "هشدار: قادر به دریافت اطلاعات دستگاه نی�
 #: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced-reboot.js:56
 msgid "invalid argument"
 msgstr ""
+
+#~ msgid ""
+#~ "WARNING: Power off might result in a reboot on a device which doesn't "
+#~ "support power off.<br /><br /> Click \"Proceed\" below to power off your "
+#~ "device."
+#~ msgstr ""
+#~ "هشدار: خاموش کردن ممکن است منجر به راه‌اندازی مجدد دستگاهی شود که از خاموش "
+#~ "کردن پشتیبانی نمی‌کند.<br /><br /> برای خاموش کردن دستگاه خود روی «ادامه» "
+#~ "در زیر کلیک کنید."
+
+#~ msgid "Compressed"
+#~ msgstr "فشرده شده"
+
+#~ msgid "Confirm"
+#~ msgstr "تأیید"
+
+#~ msgid "Grant UCI and file access for luci-app-advanced-reboot"
+#~ msgstr "برای راه‌اندازی مجدد پیشرفته برنامه luci به UCI و فایل دسترسی بدهید"
+
+#~ msgid "No access to fw_printenv or fw_printenv!"
+#~ msgstr "دسترسی به fw_printenv یا fw_setenv امکان‌پذیر نیست!"
+
+#~ msgid "Reboot Device to an Alternative Partition"
+#~ msgstr "راه‌اندازی مجدد دستگاه به یک بخش‌بندی جایگزین"
+
+#~ msgid "Reboot to alternative partition..."
+#~ msgstr "راه‌اندازی مجدد به پارتیشن جایگزین..."
+
+#~ msgid ""
+#~ "WARNING: An alternative partition might have its own settings and "
+#~ "completely different firmware.<br /><br /> As your network configuration "
+#~ "and WiFi SSID/password on alternative partition might be different, you "
+#~ "might have to adjust your computer settings to be able to access your "
+#~ "device once it reboots.<br /><br /> Please also be aware that alternative "
+#~ "partition firmware might not provide an easy way to switch active "
+#~ "partition and boot back to the currently active partition.<br /><br /> "
+#~ "Click \"Proceed\" below to reboot device to an alternative partition."
+#~ msgstr ""
+#~ "هشدار: یک پارتیشن جایگزین ممکن است تنظیمات خاص خود و سیستم‌افزار کاملاً "
+#~ "متفاوتی داشته باشد.<br /><br /> از آنجایی که ممکن است پیکربندی شبکه و "
+#~ "SSID/گذرواژه وای‌فای روی پارتیشن جایگزین متفاوت باشد، ممکن است مجبور شوید "
+#~ "تنظیمات رایانه خود را تنظیم کنید تا بتوانید پس از راه‌اندازی مجدد دستگاه "
+#~ "خود به آن دسترسی داشته باشید.<br /><br /> لطفاً همچنین توجه داشته باشید که "
+#~ "سیستم عامل پارتیشن جایگزین ممکن است برای ارائه راه‌اندازی آسان پارتیشن و "
+#~ "راه‌اندازی پارتیشن جایگزین فعال نباشد<br. /><br /> برای راه‌اندازی مجدد "
+#~ "دستگاه به یک پارتیشن جایگزین روی «ادامه» در زیر کلیک کنید."

@@ -249,8 +249,8 @@ msgstr "Brak aktywnych celów"
 #: applications/luci-app-apinger/htdocs/luci-static/resources/view/apinger/alarm_delay.js:11
 msgid "This alarm will be canceled, when the delay drops below \"Delay Low\""
 msgstr ""
-"Alarm zostanie anulowany, gdy opóźnienie spadnie poniżej „Opóźnienia "
-"niskiego”"
+"Alarm zostanie anulowany, gdy opóźnienie spadnie poniżej „Opóźnienia niskiego"
+"”"
 
 #: applications/luci-app-apinger/htdocs/luci-static/resources/view/apinger/alarm_loss.js:11
 msgid "This alarm will be canceled, when the loss drops below \"Loss Low\""

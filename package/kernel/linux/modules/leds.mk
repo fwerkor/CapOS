@@ -257,7 +257,7 @@ define KernelPackage/leds-st1202
   DEPENDS:=+kmod-i2c-core +kmod-ledtrig-pattern
   KCONFIG:=CONFIG_LEDS_ST1202
   FILES:= $(LINUX_DIR)/drivers/leds/leds-st1202.ko
-  AUTOLOAD:=$(call AutoProbe,leds-st1202)
+  AUTOLOAD:=$(call AutoProbe,leds-st1202,1)
 endef
 
 define KernelPackage/leds-st1202/description
@@ -332,6 +332,23 @@ define KernelPackage/leds-lp55xx-common/description
 endef
 
 $(eval $(call KernelPackage,leds-lp55xx-common))
+
+
+define KernelPackage/leds-lp5521
+  SUBMENU:=$(LEDS_MENU)
+  TITLE:=LED driver for LP5521 controllers
+  DEPENDS:=+kmod-i2c-core +kmod-leds-lp55xx-common
+  KCONFIG:=CONFIG_LEDS_LP5521
+  FILES:=$(LINUX_DIR)/drivers/leds/leds-lp5521.ko
+  AUTOLOAD:=$(call AutoLoad,60,leds-lp5521,1)
+endef
+
+define KernelPackage/leds-lp5521/description
+ This option enables support for Texas Instruments LP5521
+ LED controllers.
+endef
+
+$(eval $(call KernelPackage,leds-lp5521))
 
 
 define KernelPackage/leds-lp5523

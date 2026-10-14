@@ -1,17 +1,18 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=llvm-project
-PKG_VERSION:=21.1.3
+PKG_VERSION:=23.1.1
+PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).src.tar.xz
 PKG_SOURCE_URL:=https://github.com/llvm/llvm-project/releases/download/llvmorg-$(PKG_VERSION)
-PKG_HASH:=9c9db50d8046f668156d83f6b594631b4ca79a0d96e4f19bed9dc019b022e58f
+PKG_HASH:=ebe9be46fe8756d58c5b198ffad0fa2a766257add81a4dc52179bfacc7888ee6
 PKG_CPE_ID:=cpe:/a:llvm:llvm
 
-SPIRV_LLVM_TRANSLATOR_VERSION:=21.1.1
+SPIRV_LLVM_TRANSLATOR_VERSION:=23.1.1
 SPIRV_LLVM_TRANSLATOR_FILE:=SPIRV-LLVM-Translator-$(SPIRV_LLVM_TRANSLATOR_VERSION).tar.gz
 SPIRV_LLVM_TRANSLATOR_URL:=https://codeload.github.com/KhronosGroup/SPIRV-LLVM-Translator/tar.gz/v$(SPIRV_LLVM_TRANSLATOR_VERSION)?
-SPIRV_LLVM_TRANSLATOR_HASH:=dda46febdb060a1d5cc2ceeb9682ccaf33e55ae294fd0793274531b54f07c46b
+SPIRV_LLVM_TRANSLATOR_HASH:=9e0bf1beb0ab7edca6cd8c17fd9bbb7ce3dcd520f3e969e0485ff5b00931f929
 
 HOST_BUILD_DIR:=$(BUILD_DIR_HOST)/llvm-mesa/$(PKG_NAME)-$(PKG_VERSION).src
 PKG_BUILD_DIR:=$(BUILD_DIR)/llvm-mesa/$(PKG_NAME)-$(PKG_VERSION).src
@@ -51,10 +52,9 @@ CMAKE_HOST_OPTIONS += \
 	-DCOMPILER_RT_BUILD_LIBFUZZER=OFF \
 	-DCOMPILER_RT_BUILD_PROFILE=OFF \
 	-DCOMPILER_RT_BUILD_MEMPROF=OFF \
-	-DLIBCLC_TARGETS_TO_BUILD= \
 	-DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD= \
 	-DLLVM_TARGETS_TO_BUILD= \
-	-DLLVM_ENABLE_PROJECTS="libclc;clang" \
+	-DLLVM_ENABLE_PROJECTS="clang" \
 	-DLLVM_INCLUDE_BENCHMARKS=OFF \
 	-DLLVM_INCLUDE_DOCS=OFF \
 	-DLLVM_INCLUDE_EXAMPLES=OFF \
@@ -89,6 +89,8 @@ else
 ifeq ($(ARCH),i686)
   LLVM_TARGETS_TO_BUILD:=X86
 else
+TARGET_LDFLAGS += $(if $(CONFIG_HAS_ATOMIC64),,-latomic)
+
 ifeq ($(ARCH),x86_64)
   LLVM_TARGETS_TO_BUILD:=X86
 else
@@ -106,7 +108,6 @@ ifneq ($(findstring loongarch,$(ARCH)),)
 else
 ifneq ($(findstring mips,$(ARCH)),)
   LLVM_TARGETS_TO_BUILD:=Mips
-  TARGET_LDFLAGS+=-latomic
 else
 ifneq ($(findstring powerpc,$(ARCH)),)
   LLVM_TARGETS_TO_BUILD:=PowerPC
@@ -140,15 +141,13 @@ CMAKE_OPTIONS += \
 	-DCOMPILER_RT_BUILD_LIBFUZZER=OFF \
 	-DCOMPILER_RT_BUILD_PROFILE=OFF \
 	-DCOMPILER_RT_BUILD_MEMPROF=OFF \
-	-DLIBCLC_CUSTOM_LLVM_TOOLS_BINARY_DIR="$(STAGING_DIR_HOST)/llvm-mesa/bin" \
-	-DLIBCLC_TARGETS_TO_BUILD="amdgcn--;amdgcn--amdhsa;clspv--;clspv64--;r600--;nvptx--;nvptx64--;nvptx--nvidiacl;nvptx64--nvidiacl;amdgcn-mesa-mesa3d;spirv-mesa3d-;spirv64-mesa3d-" \
 	-DLLVM_TARGET_ARCH=$(LLVM_TARGET_ARCH) \
 	-DLLVM_TARGETS_TO_BUILD="$(subst $(space),;,$(LLVM_TARGETS_TO_BUILD))" \
 	-DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="$(subst $(space),;,$(LLVM_EXPERIMENTAL_TARGETS_TO_BUILD))" \
 	-DLLVM_DEFAULT_TARGET_TRIPLE=$(LLVM_TARGET_TRIPLE) \
 	-DLLVM_HOST_TRIPLE=$(LLVM_TARGET_TRIPLE) \
 	-DLLVM_NATIVE_TOOL_DIR="$(STAGING_DIR_HOST)/llvm-mesa/bin" \
-	-DLLVM_ENABLE_PROJECTS="libclc;clang" \
+	-DLLVM_ENABLE_PROJECTS="clang" \
 	-DLLVM_INCLUDE_BENCHMARKS=OFF \
 	-DLLVM_INCLUDE_DOCS=OFF \
 	-DLLVM_INCLUDE_EXAMPLES=OFF \
@@ -174,7 +173,7 @@ define Package/llvm
   CATEGORY:=Development
   TITLE:=LLVM
   URL:=https://llvm.org/
-  DEPENDS:=@(!arc&&!powerpc64&&!powerpc||BROKEN)
+  DEPENDS:=@(!powerpc64&&!powerpc||BROKEN)
   BUILDONLY:=1
 endef
 
@@ -187,7 +186,7 @@ define Package/libclang
   CATEGORY:=Libraries
   TITLE:=LLVM Clang library
   URL:=https://llvm.org/
-  DEPENDS:=@(!arc&&!powerpc64&&!powerpc||BROKEN) +libatomic +libstdcpp
+  DEPENDS:=@(!powerpc64&&!powerpc||BROKEN) $(ATOMIC64_DEPENDS) +libstdcpp
 endef
 
 define Package/libclang-cpp
@@ -195,7 +194,7 @@ define Package/libclang-cpp
   CATEGORY:=Libraries
   TITLE:=LLVM Clang C++ library
   URL:=https://llvm.org/
-  DEPENDS:=@(!arc&&!powerpc64&&!powerpc||BROKEN) +libatomic +libstdcpp
+  DEPENDS:=@(!powerpc64&&!powerpc||BROKEN) $(ATOMIC64_DEPENDS) +libstdcpp
 endef
 
 define Package/liblto
@@ -203,7 +202,7 @@ define Package/liblto
   CATEGORY:=Libraries
   TITLE:=LLVM LTO library
   URL:=https://llvm.org/
-  DEPENDS:=@(!arc&&!powerpc64&&!powerpc||BROKEN) +libatomic +libstdcpp
+  DEPENDS:=@(!powerpc64&&!powerpc||BROKEN) $(ATOMIC64_DEPENDS) +libstdcpp
 endef
 
 define Package/libremarks
@@ -211,7 +210,7 @@ define Package/libremarks
   CATEGORY:=Libraries
   TITLE:=LLVM diagnostic remarks library
   URL:=https://llvm.org/
-  DEPENDS:=@(!arc&&!powerpc64&&!powerpc||BROKEN) +libatomic +libstdcpp
+  DEPENDS:=@(!powerpc64&&!powerpc||BROKEN) $(ATOMIC64_DEPENDS) +libstdcpp
 endef
 
 define Host/Prepare
@@ -234,29 +233,18 @@ define Host/Install
 	STRIP_KMOD= PATCHELF= STRIP=strip $(SCRIPT_DIR)/rstrip.sh $(STAGING_DIR_HOST)/llvm-mesa
 	echo "$(PKG_VERSION)" > $(CMAKE_HOST_INSTALL_PREFIX)/.llvm-version
 	$(INSTALL_DIR) $(STAGING_DIR_HOSTPKG)/lib/pkgconfig
-	$(INSTALL_DATA) $(STAGING_DIR_HOST)/llvm-mesa/share/pkgconfig/libclc.pc $(STAGING_DIR_HOSTPKG)/lib/pkgconfig
 	$(INSTALL_DATA) $(STAGING_DIR_HOST)/llvm-mesa/lib/pkgconfig/LLVMSPIRVLib.pc $(STAGING_DIR_HOSTPKG)/lib/pkgconfig
 	$(INSTALL_DATA) $(STAGING_DIR_HOST)/llvm-mesa/lib/libLLVMSPIRVLib.a $(STAGING_DIR_HOSTPKG)/lib
 endef
 
 define Host/Uninstall
 	rm -rf $(STAGING_DIR_HOST)/llvm-mesa*
-	rm -rf $(STAGING_DIR_HOSTPKG)/include/clc
-	rm -rf $(STAGING_DIR_HOSTPKG)/share/clc
-	rm -f $(STAGING_DIR_HOSTPKG)/lib/pkgconfig/libclc.pc
 	rm -f $(STAGING_DIR_HOSTPKG)/lib/pkgconfig/LLVMSPIRVLib.pc
 endef
 
 define Build/Prepare
 	$(call Build/Prepare/Default)
 	$(STAGING_DIR_HOST)/bin/libdeflate-gzip -dc $(DL_DIR)/$(SPIRV_LLVM_TRANSLATOR_FILE) | $(TAR) -C $(PKG_BUILD_DIR)/llvm/projects $(TAR_OPTIONS)
-endef
-
-define Build/Install
-	$(call Build/Install/Default)
-# hack: install SPIRV OpenCL libs also to host build to avoid having to build LLVM three times
-	$(INSTALL_DIR) $(CMAKE_HOST_INSTALL_PREFIX)/share/clc
-	$(CP) $(PKG_INSTALL_DIR)/usr/share/clc/spirv{,64}-mesa3d-.spv $(CMAKE_HOST_INSTALL_PREFIX)/share/clc
 endef
 
 define Package/libclang/install

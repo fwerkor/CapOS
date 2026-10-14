@@ -184,8 +184,8 @@ msgid ""
 "enabled, add a value. For Sunday - 1, Monday - 2, Tuesday - 4, Wednesday - "
 "8, Thursday - 16, Friday - 32, Saturday - 64"
 msgstr ""
-"ຕົວເລກ/bitfield. ເລີ່ມດ້ວຍ 0, ຈາກນັ້ນສຳລັບແຕ່ລະວັນທີ່ຕ້ອງການໃຫ້ຕາຕະລາງເຮັດວຽກ ໃຫ້ບວກຄ່າເພີ່ມ. "
-"ວັນອາທິດ - 1, ວັນຈັນ - 2, ວັນອັງຄານ - 4, ວັນພຸດ - 8, ວັນພະຫັດ - 16, ວັນສຸກ - 32, ວັນເສົາ - "
+"ຕົວເລກ/bitfield. ເລີ່ມດ້ວຍ 0, ຈາກນັ້ນສຳລັບແຕ່ລະວັນທີ່ຕ້ອງການໃຫ້ຕາຕະລາງເຮັດວຽກ ໃຫ້ບວກຄ່າເພີ່ມ. ວັ"
+"ນອາທິດ - 1, ວັນຈັນ - 2, ວັນອັງຄານ - 4, ວັນພຸດ - 8, ວັນພະຫັດ - 16, ວັນສຸກ - 32, ວັນເສົາ - "
 "64"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:106
@@ -385,11 +385,8 @@ msgid "Speed limit up enabled"
 msgstr "ເປີດໃຊ້ຂີດຈຳກັດຄວາມໄວອັບໂຫຼດ"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:179
-msgid ""
-"This is documented on <a href=\"https://www.irif.fr/~jch/software/bittorrent/"
-"tcp-congestion-control.html\" target=\"_blank\" rel=\"noreferrer "
-"noopener\">tcp-congestion-control</a>."
-msgstr ""
+msgid "This is documented on %s."
+msgstr "ມີເອກະສານອ້າງອີງຢູ່ທີ່ %s."
 
 #: applications/luci-app-transmission/root/usr/share/luci/menu.d/luci-app-transmission.json:3
 msgid "Transmission"

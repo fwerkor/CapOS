@@ -102,8 +102,8 @@ msgstr ""
 msgid ""
 "This will permanently delete all recorded station history. Are you sure?"
 msgstr ""
-"Esto eliminará permanentemente todo el historial de estaciones grabadas. "
-"¿Estás seguro?"
+"Esto eliminará permanentemente todo el historial de estaciones grabadas. ¿"
+"Estás seguro?"
 
 #: applications/luci-app-wifihistory/htdocs/luci-static/resources/view/status/wifihistory.js:99
 msgid "Yes"

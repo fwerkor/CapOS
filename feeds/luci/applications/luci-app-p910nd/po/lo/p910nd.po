@@ -56,7 +56,8 @@ msgstr "ໃຫ້ສິດເຂົ້າເຖິງ UCI ສຳລັບ luci-a
 
 #: applications/luci-app-p910nd/htdocs/luci-static/resources/view/p910nd.js:72
 msgid "It is safe to install both, even if only one is needed."
-msgstr "ສາມາດຕິດຕັ້ງທັງສອງຢ່າງໄດ້ຢ່າງປອດໄພ, ເຖິງແມ່ນວ່າຈະຕ້ອງການພຽງຢ່າງດຽວກໍຕາມ."
+msgstr ""
+"ສາມາດຕິດຕັ້ງທັງສອງຢ່າງໄດ້ຢ່າງປອດໄພ, ເຖິງແມ່ນວ່າຈະຕ້ອງການພຽງຢ່າງດຽວກໍຕາມ."
 
 #: applications/luci-app-p910nd/htdocs/luci-static/resources/view/p910nd.js:130
 msgid "Listen IP"
@@ -81,7 +82,8 @@ msgstr "ໝາຍເຫດ: %s ຈະປະກາດພຽງເຄື່ອງ�
 
 #: applications/luci-app-p910nd/htdocs/luci-static/resources/view/p910nd.js:240
 msgid "Note: Set only CMD languages that your printer understands."
-msgstr "ໝາຍເຫດ: ໃຫ້ຕັ້ງຄ່າສະເພາະພາສາຄຳສັ່ງ (CMD) ທີ່ເຄື່ອງພິມຂອງທ່ານຮອງຮັບເທົ່ານັ້ນ."
+msgstr ""
+"ໝາຍເຫດ: ໃຫ້ຕັ້ງຄ່າສະເພາະພາສາຄຳສັ່ງ (CMD) ທີ່ເຄື່ອງພິມຂອງທ່ານຮອງຮັບເທົ່ານັ້ນ."
 
 #: applications/luci-app-p910nd/htdocs/luci-static/resources/view/p910nd.js:154
 msgid "Note: USB hotplug attempts to provide some of the values below."
@@ -96,8 +98,8 @@ msgid ""
 "Note: character device assignment can change upon reboot/reconnect with "
 "multiple USB devices."
 msgstr ""
-"ໝາຍເຫດ: ການກຳນົດອຸປະກອນຕົວອັກສອນອາດປ່ຽນແປງຫຼັງຈາກຣີບູດ ຫຼື ເຊື່ອມຕໍ່ໃໝ່ ໃນກໍລະນີທີ່ມີອຸປະກອນ USB "
-"ຫຼາຍອັນ."
+"ໝາຍເຫດ: ການກຳນົດອຸປະກອນຕົວອັກສອນອາດປ່ຽນແປງຫຼັງຈາກຣີບູດ ຫຼື ເຊື່ອມຕໍ່ໃໝ່ ໃນກໍລະນີທີ່ມີອຸປະກອນ USB ຫຼາ"
+"ຍອັນ."
 
 #: applications/luci-app-p910nd/htdocs/luci-static/resources/view/p910nd.js:177
 msgid "Note: must be %s."

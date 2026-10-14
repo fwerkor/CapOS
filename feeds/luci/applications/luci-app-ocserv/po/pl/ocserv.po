@@ -412,3 +412,9 @@ msgid ""
 msgstr ""
 "Wyświetl certyfikat CA używany przez ten serwer. Musisz zapisać go jako "
 "'ca.pem' i zaimportować do klientów."
+
+#~ msgid "IP"
+#~ msgstr "IP"
+
+#~ msgid "VPN IP"
+#~ msgstr "VPN IP"

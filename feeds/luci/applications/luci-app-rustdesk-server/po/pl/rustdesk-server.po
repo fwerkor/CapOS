@@ -46,8 +46,8 @@ msgid ""
 "Cannot start service: Enable the ID Server or Relay Server in the "
 "configuration first."
 msgstr ""
-"Nie można uruchomić usługi: najpierw włącz w konfiguracji „Serwer ID\" lub "
-"„Serwer pośredniczący”."
+"Nie można uruchomić usługi: najpierw włącz w konfiguracji „Serwer ID\" lub „"
+"Serwer pośredniczący”."
 
 #: applications/luci-app-rustdesk-server/htdocs/luci-static/resources/view/rustdesk-server/general.js:315
 msgid ""

@@ -1,16 +1,17 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=sing-box
-PKG_VERSION:=1.12.17
+PKG_VERSION:=1.14.0
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/SagerNet/sing-box/tar.gz/v$(PKG_VERSION)?
-PKG_HASH:=37188348531f669ead897afc8a2e96806f2f94150e48a78d2b24edacfd4f93f0
+PKG_HASH:=87baf6852e37941cbe40bdd94bec81c957c88a56751cecd6bbf0e6108bc69398
 
 PKG_LICENSE:=GPL-3.0-or-later
 PKG_LICENSE_FILES:=LICENSE
 PKG_MAINTAINER:=Van Waholtz <brvphoenix@gmail.com>
+PKG_CPE_ID:=cpe:/a:sagernet:sing-box
 
 PKG_BUILD_DEPENDS:=golang/host
 PKG_BUILD_PARALLEL:=1
@@ -19,6 +20,7 @@ PKG_BUILD_FLAGS:=no-mips16
 GO_PKG:=github.com/sagernet/sing-box
 GO_PKG_BUILD_PKG:=$(GO_PKG)/cmd/sing-box
 
+GO_PKG_LDFLAGS:=-checklinkname=0
 GO_PKG_LDFLAGS_X:=$(GO_PKG)/constant.Version=$(PKG_VERSION)
 
 include $(INCLUDE_DIR)/package.mk
@@ -62,9 +64,15 @@ define Package/sing-box/config
 		config SINGBOX_WITH_ACME
 			bool "Build with ACME TLS certificate issuer support"
 
+		config SINGBOX_WITH_CCM
+			bool "Build with Claude Code Multiplexer service support"
+
 		config SINGBOX_WITH_CLASH_API
 			bool "Build with Clash API support"
 			default y
+
+		config SINGBOX_WITH_CLOUDFLARED
+			bool "Build with Cloudflare Tunnel inbound support"
 
 		config SINGBOX_WITH_DHCP
 			bool "Build with DHCP support, see DHCP DNS transport."
@@ -79,6 +87,15 @@ define Package/sing-box/config
 			bool "Build with gVisor support"
 			default y
 
+		config SINGBOX_WITH_OCM
+			bool "Build with OpenAI Codex Multiplexer service support"
+
+		config SINGBOX_WITH_OPENCONNECT
+			bool "Build with OpenConnect client support"
+
+		config SINGBOX_WITH_OPENVPN
+			bool "Build with OpenVPN client and server support"
+
 		config SINGBOX_WITH_QUIC
 			bool "Build with QUIC support"
 			default y
@@ -86,6 +103,9 @@ define Package/sing-box/config
 		config SINGBOX_WITH_TAILSCALE
 			bool "Build with Tailscale support"
 			default y
+
+		config SINGBOX_WITH_USBIP
+			bool "Build with USB/IP service support"
 
 		config SINGBOX_WITH_UTLS
 			bool "Build with uTLS support for TLS outbound"
@@ -102,13 +122,19 @@ endef
 
 PKG_CONFIG_DEPENDS:= \
 	CONFIG_SINGBOX_WITH_ACME \
+	CONFIG_SINGBOX_WITH_CCM \
 	CONFIG_SINGBOX_WITH_CLASH_API \
+	CONFIG_SINGBOX_WITH_CLOUDFLARED \
 	CONFIG_SINGBOX_WITH_DHCP \
 	CONFIG_SINGBOX_WITH_EMBEDDED_TOR \
 	CONFIG_SINGBOX_WITH_GRPC \
 	CONFIG_SINGBOX_WITH_GVISOR \
+	CONFIG_SINGBOX_WITH_OCM \
+	CONFIG_SINGBOX_WITH_OPENCONNECT \
+	CONFIG_SINGBOX_WITH_OPENVPN \
 	CONFIG_SINGBOX_WITH_QUIC \
 	CONFIG_SINGBOX_WITH_TAILSCALE \
+	CONFIG_SINGBOX_WITH_USBIP \
 	CONFIG_SINGBOX_WITH_UTLS \
 	CONFIG_SINGBOX_WITH_V2RAY_API \
 	CONFIG_SINGBOX_WITH_WIREGUARD
@@ -117,20 +143,28 @@ ifeq ($(BUILD_VARIANT),tiny)
 ifeq ($(CONFIG_SMALL_FLASH),)
 GO_PKG_TAGS:=with_gvisor
 endif
-GO_PKG_TAGS:=$(GO_PKG_TAGS),with_quic,with_utls,with_clash_api
+GO_PKG_TAGS:=$(subst $(space),$(comma),$(strip $(GO_PKG_TAGS) with_quic with_utls with_clash_api badlinkname tfogo_checklinkname0))
 else
 GO_PKG_TAGS:=$(subst $(space),$(comma),$(strip \
 	$(if $(CONFIG_SINGBOX_WITH_ACME),with_acme) \
+	$(if $(CONFIG_SINGBOX_WITH_CCM),with_ccm) \
 	$(if $(CONFIG_SINGBOX_WITH_CLASH_API),with_clash_api) \
+	$(if $(CONFIG_SINGBOX_WITH_CLOUDFLARED),with_cloudflared) \
 	$(if $(CONFIG_SINGBOX_WITH_DHCP),with_dhcp) \
 	$(if $(CONFIG_SINGBOX_WITH_EMBEDDED_TOR),with_embedded_tor) \
 	$(if $(CONFIG_SINGBOX_WITH_GRPC),with_grpc) \
 	$(if $(CONFIG_SINGBOX_WITH_GVISOR),with_gvisor) \
+	$(if $(CONFIG_SINGBOX_WITH_OCM),with_ocm) \
+	$(if $(CONFIG_SINGBOX_WITH_OPENCONNECT),with_openconnect) \
+	$(if $(CONFIG_SINGBOX_WITH_OPENVPN),with_openvpn) \
 	$(if $(CONFIG_SINGBOX_WITH_QUIC),with_quic) \
 	$(if $(CONFIG_SINGBOX_WITH_TAILSCALE),with_tailscale) \
+	$(if $(CONFIG_SINGBOX_WITH_USBIP),with_usbip) \
 	$(if $(CONFIG_SINGBOX_WITH_UTLS),with_utls) \
 	$(if $(CONFIG_SINGBOX_WITH_V2RAY_API),with_v2ray_api) \
 	$(if $(CONFIG_SINGBOX_WITH_WIREGUARD),with_wireguard) \
+	badlinkname \
+	tfogo_checklinkname0 \
 ))
 endif
 
